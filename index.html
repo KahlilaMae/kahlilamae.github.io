@@ -212,7 +212,6 @@ nav{
 .hero-copy{
   width:47%;
   max-width:525px;
-
   transform:translateY(-18px);
 }
 
@@ -303,7 +302,6 @@ section{
   margin:0 0 14px;
 }
 
-/* Align second heading with first heading */
 .card:nth-child(2) h3{
   margin-top:31px;
 }
@@ -531,7 +529,6 @@ footer{
   .hero-copy{
     width:46%;
     max-width:480px;
-
     transform:translateY(-15px);
   }
 
@@ -561,12 +558,17 @@ footer{
     height:790px;
   }
 
+  /*
+  MOBILE PHOTO FIX:
+  Keep more of Kahlila + chair visible.
+  */
+
   .hero-photo{
     left:0;
     right:0;
 
-    background-size:auto 100%;
-    background-position:57% center;
+    background-size:cover;
+    background-position:68% center;
   }
 
   .hero-photo::before{
@@ -621,7 +623,6 @@ footer{
     min-height:auto;
   }
 
-  /* Reset tablet alignment when cards stack */
   .card:nth-child(2) h3{
     margin-top:0;
   }
@@ -690,7 +691,6 @@ footer{
   .hero-photo{
     left:-40px;
     right:40px;
-
     background-position:center 34%;
   }
 
@@ -941,7 +941,8 @@ What are our systems making easier, and what are they making harder?
 <div class="question-item">
 
 <p class="question-text">
-What should AI help us do better? What should always belong to people?
+What should AI help us do better, and<br>
+<span style="white-space:nowrap;">what should always belong to people?</span>
 </p>
 
 </div>
@@ -1039,7 +1040,7 @@ Email
 </span>
 
 <span>
-Learning · Leadership · Technology · AI
+L&D · Leadership · Exploring Adaptive Learning + AI
 </span>
 
 </footer>
