@@ -46,12 +46,10 @@ body{
 margin:0;
 background:var(--paper);
 color:var(--ink);
-
 font-family:'DM Sans',Arial,sans-serif;
 font-size:16px;
 font-weight:400;
 line-height:1.625;
-
 -webkit-font-smoothing:antialiased
 }
 
@@ -66,10 +64,10 @@ margin:auto
 }
 
 
-/* TYPOGRAPHY SYSTEM */
+/* TYPOGRAPHY */
 
 
-/* 01 — DISPLAY */
+/* DISPLAY */
 
 h1{
 font-family:'Playfair Display',Georgia,serif;
@@ -80,11 +78,12 @@ letter-spacing:-.035em;
 }
 
 
-/* 02 — SECTION HEADING */
+/* SECTION HEADINGS */
 
 h2,
 h3,
-.intro{
+.intro,
+.question-text{
 font-family:'Playfair Display',Georgia,serif;
 font-size:28px;
 font-weight:400;
@@ -93,12 +92,10 @@ letter-spacing:-.02em;
 }
 
 
-/* 03 — LABEL */
+/* LABELS */
 
 .eyebrow,
-.label,
-.num,
-.question-num{
+.label{
 font-family:'DM Sans',Arial,sans-serif;
 font-size:12px;
 font-weight:500;
@@ -107,7 +104,7 @@ letter-spacing:.15em;
 }
 
 
-/* 04 — BODY */
+/* BODY */
 
 p,
 .card p,
@@ -136,20 +133,13 @@ border-bottom:1px solid rgba(221,217,207,.75)
 min-height:70px;
 display:flex;
 align-items:center;
-justify-content:space-between;
-gap:24px
+justify-content:flex-start
 }
 
 .brand{
 font-family:'Playfair Display',Georgia,serif;
 font-size:1.15rem;
 font-weight:400
-}
-
-.nav-buttons{
-display:flex;
-align-items:center;
-gap:10px
 }
 
 
@@ -163,11 +153,9 @@ width:104px;
 height:40px;
 padding:0 12px;
 border-radius:999px;
-
 font-family:'DM Sans',Arial,sans-serif;
 font-size:.88rem;
 font-weight:500;
-
 transition:transform .2s ease,opacity .2s ease
 }
 
@@ -214,10 +202,7 @@ justify-content:center
 .portrait{
 width:min(100%,390px);
 display:block;
-
-filter:drop-shadow(
-0 20px 30px rgba(32,32,30,.12)
-);
+filter:drop-shadow(0 20px 30px rgba(32,32,30,.12));
 
 -webkit-mask-image:linear-gradient(
 to bottom,
@@ -256,7 +241,7 @@ margin:0 0 32px
 }
 
 
-/* SECTIONS */
+/* GENERAL SECTIONS */
 
 section{
 padding:105px 0;
@@ -267,14 +252,40 @@ border-top:1px solid var(--line)
 margin-bottom:24px
 }
 
-.intro{
-max-width:880px;
-margin:0 0 32px
+
+/* WHAT GUIDES ME — OPTION A */
+
+.guides-panel{
+background:rgba(232,223,223,.55);
+border-radius:8px;
+padding:42px;
+display:grid;
+grid-template-columns:minmax(0,1.15fr) minmax(280px,.85fr);
+gap:48px;
+align-items:start
 }
 
-.copy{
-max-width:730px;
+.guides-panel .label{
+margin-bottom:18px
+}
+
+.guides-panel .intro{
+max-width:620px;
+margin:0
+}
+
+.guides-copy{
+border-left:1px solid var(--line);
+padding-left:38px;
 color:var(--muted)
+}
+
+.guides-copy p{
+margin:0 0 18px
+}
+
+.guides-copy p:last-child{
+margin-bottom:0
 }
 
 
@@ -291,37 +302,44 @@ border:1px solid var(--line)
 .card{
 background:var(--card);
 padding:38px;
-min-height:225px
+min-height:205px
 }
 
-.num{
-color:var(--accent);
-margin-bottom:35px
+.card h3{
+margin:0 0 14px
 }
 
-.card h3,
-.topic h3{
-margin:0 0 12px
-}
-
-.card p,
-.topic p{
+.card p{
 color:var(--muted);
 margin:0
 }
 
 
-/* WHAT I'M EXPLORING */
+/* WHAT I'M EXPLORING — OPTION C */
 
-.topics{
+.exploring-list{
+border-top:1px solid var(--line);
+border-bottom:1px solid var(--line);
 display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:24px
+grid-template-columns:repeat(3,1fr)
 }
 
-.topic{
-border-top:2px solid var(--ink);
-padding-top:22px
+.explore-item{
+padding:30px 30px 32px 0
+}
+
+.explore-item + .explore-item{
+border-left:1px solid var(--line);
+padding-left:30px
+}
+
+.explore-item h3{
+margin:0 0 12px
+}
+
+.explore-item p{
+color:var(--muted);
+margin:0
 }
 
 
@@ -342,20 +360,12 @@ background:var(--card);
 border:1px solid var(--line);
 border-radius:8px;
 padding:34px 32px;
-min-height:245px
-}
-
-.question-num{
-color:var(--accent);
-margin-bottom:36px
+min-height:215px;
+display:flex;
+align-items:flex-start
 }
 
 .question-text{
-font-family:'Playfair Display',Georgia,serif;
-font-size:28px;
-font-weight:400;
-line-height:1.3;
-letter-spacing:-.02em;
 margin:0
 }
 
@@ -375,6 +385,11 @@ max-width:830px
 color:var(--muted)
 }
 
+.intro{
+max-width:880px;
+margin:0 0 32px
+}
+
 
 /* CONNECT */
 
@@ -382,8 +397,6 @@ color:var(--muted)
 text-align:center;
 padding:125px 0 100px
 }
-
-/* Say hello matches the main display headline */
 
 .connect h2{
 font-family:'Playfair Display',Georgia,serif;
@@ -414,12 +427,10 @@ footer{
 padding:28px 0 38px;
 border-top:1px solid var(--line);
 color:var(--muted);
-
 font-family:'DM Sans',Arial,sans-serif;
 font-size:12px;
 font-weight:400;
 line-height:1.4;
-
 display:flex;
 justify-content:space-between;
 gap:20px
@@ -429,6 +440,10 @@ gap:20px
 /* MOBILE */
 
 @media(max-width:760px){
+
+.wrap{
+width:min(calc(100% - 32px),var(--max))
+}
 
 .hero-grid{
 grid-template-columns:1fr;
@@ -443,10 +458,6 @@ justify-content:flex-start
 width:min(82vw,360px)
 }
 
-.wrap{
-width:min(calc(100% - 32px),var(--max))
-}
-
 .hero{
 min-height:78vh;
 padding:70px 0
@@ -456,9 +467,26 @@ section{
 padding:72px 0
 }
 
-.cards,
-.topics,
-.question-cards{
+
+/* Guides */
+
+.guides-panel{
+grid-template-columns:1fr;
+gap:30px;
+padding:30px 26px
+}
+
+.guides-copy{
+border-left:0;
+border-top:1px solid var(--line);
+padding-left:0;
+padding-top:28px
+}
+
+
+/* Approach */
+
+.cards{
 grid-template-columns:1fr
 }
 
@@ -466,25 +494,40 @@ grid-template-columns:1fr
 min-height:auto
 }
 
+
+/* Exploring */
+
+.exploring-list{
+grid-template-columns:1fr
+}
+
+.explore-item{
+padding:26px 0
+}
+
+.explore-item + .explore-item{
+border-left:0;
+border-top:1px solid var(--line);
+padding-left:0
+}
+
+
+/* Questions */
+
+.question-cards{
+grid-template-columns:1fr
+}
+
 .question-card{
 min-height:auto;
 padding:30px 28px
 }
 
-.question-num{
-margin-bottom:26px
-}
+
+/* Footer */
 
 footer{
 flex-direction:column
-}
-
-.nav{
-min-height:72px
-}
-
-.nav-buttons{
-gap:7px
 }
 
 
@@ -518,9 +561,7 @@ line-height:1.6
 }
 
 .eyebrow,
-.label,
-.num,
-.question-num{
+.label{
 font-size:12px
 }
 
@@ -542,24 +583,6 @@ font-size:12px
 <a class="brand" href="#">
 Kahlila Mae Liverpool
 </a>
-
-<div class="nav-buttons">
-
-<a
-class="btn linkedin-btn"
-href="https://www.linkedin.com/in/kahlilamae"
-target="_blank"
-rel="noopener">
-LinkedIn
-</a>
-
-<a
-class="btn email-btn"
-href="mailto:kahlilamae@icloud.com?subject=Hello%20Kahlila">
-Email
-</a>
-
-</div>
 
 </div>
 
@@ -612,6 +635,10 @@ alt="Portrait of Kahlila Mae Liverpool">
 
 <div class="wrap">
 
+<div class="guides-panel">
+
+<div>
+
 <div class="label">
 What Guides Me
 </div>
@@ -620,7 +647,10 @@ What Guides Me
 I like working through ideas with people and figuring out how to make them work.
 </h2>
 
-<div class="copy">
+</div>
+
+
+<div class="guides-copy">
 
 <p>
 That curiosity has followed me through teaching, coaching, leadership, higher education, and now learning and technology.
@@ -629,6 +659,8 @@ That curiosity has followed me through teaching, coaching, leadership, higher ed
 <p>
 The work has changed over the years, but what draws me to it hasn’t. I like helping people see something differently, figure out what’s possible, and make it happen.
 </p>
+
+</div>
 
 </div>
 
@@ -652,10 +684,6 @@ My approach
 
 <article class="card">
 
-<div class="num">
-01
-</div>
-
 <h3>
 I ask a lot of questions. Probably too many.
 </h3>
@@ -668,10 +696,6 @@ Usually because I’m trying to understand what’s actually going on before jum
 
 
 <article class="card">
-
-<div class="num">
-02
-</div>
 
 <h3>
 I notice what’s happening.
@@ -686,10 +710,6 @@ I pay attention to who is in the room, who isn’t being heard, and what people 
 
 <article class="card">
 
-<div class="num">
-03
-</div>
-
 <h3>
 I like a good mess.
 </h3>
@@ -702,10 +722,6 @@ Give me something complicated or not quite working yet, and I’ll want to figur
 
 
 <article class="card">
-
-<div class="num">
-04
-</div>
 
 <h3>
 I think about the person on the other side.
@@ -735,10 +751,10 @@ Whether I’m designing learning, facilitating a conversation, or partnering wit
 What I’m exploring
 </div>
 
-<div class="topics">
+<div class="exploring-list">
 
 
-<article class="topic">
+<article class="explore-item">
 
 <h3>
 Learning + Technology
@@ -751,7 +767,7 @@ I'm interested in how technology can make learning more useful, engaging, and ac
 </article>
 
 
-<article class="topic">
+<article class="explore-item">
 
 <h3>
 Leadership Development
@@ -764,7 +780,7 @@ I’m thinking deeply about what helps people become better, especially when thi
 </article>
 
 
-<article class="topic">
+<article class="explore-item">
 
 <h3>
 Adaptive Learning + AI
@@ -799,10 +815,6 @@ Questions I’m still asking
 
 <article class="question-card">
 
-<div class="question-num">
-01
-</div>
-
 <p class="question-text">
 What are our systems making easier, and what are they making harder?
 </p>
@@ -812,10 +824,6 @@ What are our systems making easier, and what are they making harder?
 
 <article class="question-card">
 
-<div class="question-num">
-02
-</div>
-
 <p class="question-text">
 What should AI help us do better, and what should always belong to people?
 </p>
@@ -824,10 +832,6 @@ What should AI help us do better, and what should always belong to people?
 
 
 <article class="question-card">
-
-<div class="question-num">
-03
-</div>
 
 <p class="question-text">
 How could we make it better?
