@@ -18,7 +18,13 @@
 --card:#e8dfdf;
 --line:#cbbebe;
 --accent:#6f5d62;
---max:1120px
+--max:1120px;
+
+/* Button colors */
+--linkedin-bg:#e8dfdf;
+--linkedin-border:#d1c6c6;
+--email-bg:#8b555b;
+--email-text:#f7eeee;
 }
 
 *{box-sizing:border-box}
@@ -41,6 +47,8 @@ width:min(calc(100% - 48px),var(--max));
 margin:auto
 }
 
+/* NAVIGATION */
+
 nav{
 position:sticky;
 top:0;
@@ -54,13 +62,64 @@ border-bottom:1px solid rgba(221,217,207,.75)
 min-height:70px;
 display:flex;
 align-items:center;
-justify-content:space-between
+justify-content:space-between;
+gap:24px
 }
 
 .brand{
 font-family:'Playfair Display',Georgia,serif;
 font-size:1.15rem
 }
+
+.nav-buttons{
+display:flex;
+align-items:center;
+gap:10px
+}
+
+/* BUTTONS */
+
+.btn{
+display:inline-flex;
+align-items:center;
+justify-content:center;
+width:132px;
+min-height:48px;
+padding:0 16px;
+gap:8px;
+border-radius:999px;
+font-size:.96rem;
+font-weight:600;
+transition:transform .2s ease,opacity .2s ease
+}
+
+.btn:hover{
+transform:translateY(-2px);
+opacity:.85
+}
+
+/* LinkedIn = soft neutral */
+
+.linkedin-btn{
+background:var(--linkedin-bg);
+color:var(--ink);
+border:1px solid var(--linkedin-border)
+}
+
+/* Email = muted rose */
+
+.email-btn{
+background:var(--email-bg);
+color:var(--email-text);
+border:1px solid var(--email-bg)
+}
+
+.email-icon{
+width:16px;
+height:16px
+}
+
+/* HERO */
 
 .hero{
 min-height:88vh;
@@ -118,6 +177,8 @@ color:var(--muted);
 margin:0 0 32px
 }
 
+/* SECTIONS */
+
 section{
 padding:105px 0;
 border-top:1px solid var(--line)
@@ -138,6 +199,8 @@ max-width:730px;
 color:var(--muted);
 font-size:1.10rem
 }
+
+/* APPROACH */
 
 .cards{
 display:grid;
@@ -171,6 +234,8 @@ font-size:1.06rem;
 margin:0
 }
 
+/* TOPICS */
+
 .topics{
 display:grid;
 grid-template-columns:repeat(3,1fr);
@@ -181,6 +246,8 @@ gap:24px
 border-top:2px solid var(--ink);
 padding-top:22px
 }
+
+/* QUESTIONS */
 
 .questions{width:100%}
 
@@ -199,6 +266,8 @@ letter-spacing:-.025em
 
 .questions-section + section{padding-top:70px}
 
+/* OUTSIDE OF WORK */
+
 .human{max-width:var(--max)}
 
 .human>h2,.human>p{max-width:830px}
@@ -207,6 +276,8 @@ letter-spacing:-.025em
 color:var(--muted);
 font-size:1.06rem
 }
+
+/* CONNECT */
 
 .connect{
 text-align:center;
@@ -234,42 +305,7 @@ flex-wrap:wrap;
 justify-content:center
 }
 
-.btn{
-display:inline-flex;
-align-items:center;
-justify-content:center;
-width:132px;
-min-height:48px;
-padding:0 16px;
-gap:8px;
-border-radius:999px;
-border:1px solid var(--line);
-font-size:.96rem;
-font-weight:600;
-transition:transform .2s ease, opacity .2s ease
-}
-
-.btn:hover{
-transform:translateY(-2px);
-opacity:.85
-}
-
-.primary{
-background:var(--ink);
-color:var(--paper);
-border-color:var(--ink)
-}
-
-.email-btn{
-background:#e8dfdf;
-color:var(--ink);
-border-color:#d1c6b6
-}
-
-.email-icon{
-width:16px;
-height:16px
-}
+/* FOOTER */
 
 footer{
 padding:28px 0 38px;
@@ -281,16 +317,66 @@ justify-content:space-between;
 gap:20px
 }
 
+/* MOBILE */
+
 @media(max-width:760px){
-.hero-grid{grid-template-columns:1fr;gap:42px}
-.portrait-wrap{justify-content:flex-start}
-.portrait{width:min(82vw,360px)}
-.wrap{width:min(calc(100% - 32px),var(--max))}
-.hero{min-height:78vh;padding:70px 0}
-section{padding:72px 0}
-.cards,.topics{grid-template-columns:1fr}
-.card{min-height:auto}
-footer{flex-direction:column}
+
+.hero-grid{
+grid-template-columns:1fr;
+gap:42px
+}
+
+.portrait-wrap{
+justify-content:flex-start
+}
+
+.portrait{
+width:min(82vw,360px)
+}
+
+.wrap{
+width:min(calc(100% - 32px),var(--max))
+}
+
+.hero{
+min-height:78vh;
+padding:70px 0
+}
+
+section{
+padding:72px 0
+}
+
+.cards,.topics{
+grid-template-columns:1fr
+}
+
+.card{
+min-height:auto
+}
+
+footer{
+flex-direction:column
+}
+
+/* Keep navigation clean on smaller screens */
+
+.nav{
+min-height:72px
+}
+
+.nav-buttons{
+gap:7px
+}
+
+.nav-buttons .btn{
+width:auto;
+min-width:82px;
+min-height:40px;
+padding:0 13px;
+font-size:.84rem
+}
+
 }
 </style>
 </head>
@@ -299,7 +385,27 @@ footer{flex-direction:column}
 
 <nav>
 <div class="wrap nav">
-<a class="brand" href="#">Kahlila Mae Liverpool</a>
+
+<a class="brand" href="#">
+Kahlila Mae Liverpool
+</a>
+
+<div class="nav-buttons">
+
+<a class="btn linkedin-btn"
+href="https://www.linkedin.com/in/kahlilamae"
+target="_blank"
+rel="noopener">
+LinkedIn
+</a>
+
+<a class="btn email-btn"
+href="mailto:kahlilamae@icloud.com?subject=Hello%20Kahlila">
+Email
+</a>
+
+</div>
+
 </div>
 </nav>
 
@@ -309,19 +415,25 @@ footer{flex-direction:column}
 <div class="wrap hero-grid">
 
 <div>
+
 <div class="eyebrow">
 Learning & Development | Leadership | Exploring Adaptive Learning + AI
 </div>
 
-<h1>I’m curious about how people learn and what helps us grow.</h1>
+<h1>
+I’m curious about how people learn and what helps us grow.
+</h1>
 
 <p>
 That curiosity has shaped my work in learning, leadership, and coaching, and how I think about using technology to create better learning experiences.
 </p>
+
 </div>
 
 <div class="portrait-wrap">
-<img class="portrait" src="kahlila-portrait.png" alt="Portrait of Kahlila Mae Liverpool">
+<img class="portrait"
+src="kahlila-portrait.png"
+alt="Portrait of Kahlila Mae Liverpool">
 </div>
 
 </div>
@@ -330,7 +442,9 @@ That curiosity has shaped my work in learning, leadership, and coaching, and how
 <section>
 <div class="wrap">
 
-<div class="label">What Guides Me</div>
+<div class="label">
+What Guides Me
+</div>
 
 <h2 class="intro">
 I like working through ideas with people and figuring out how to make them work.
@@ -347,74 +461,97 @@ The work has changed over the years, but what draws me to it hasn’t. I like he
 </p>
 
 </div>
+
 </div>
 </section>
 
 <section>
 <div class="wrap">
 
-<div class="label">My approach</div>
+<div class="label">
+My approach
+</div>
 
 <div class="cards">
 
 <article class="card">
 <div class="num">01</div>
 <h3>I ask a lot of questions. Probably too many.</h3>
-<p>Usually because I’m trying to understand what’s actually going on before jumping to an answer. I’d rather work in community than figure it out alone.</p>
+<p>
+Usually because I’m trying to understand what’s actually going on before jumping to an answer. I’d rather work in community than figure it out alone.
+</p>
 </article>
 
 <article class="card">
 <div class="num">02</div>
 <h3>I notice what’s happening.</h3>
-<p>I pay attention to who is in the room, who isn’t being heard, and what people need to move forward.</p>
+<p>
+I pay attention to who is in the room, who isn’t being heard, and what people need to move forward.
+</p>
 </article>
 
 <article class="card">
 <div class="num">03</div>
 <h3>I like a good mess.</h3>
-<p>Give me something complicated or not quite working yet, and I’ll want to figure out what’s going on and how to make it better.</p>
+<p>
+Give me something complicated or not quite working yet, and I’ll want to figure out what’s going on and how to make it better.
+</p>
 </article>
 
 <article class="card">
 <div class="num">04</div>
 <h3>I think about the person on the other side.</h3>
-<p>Whether I’m designing learning, facilitating a conversation, or partnering with a leader, I think about how the experience will actually feel.</p>
+<p>
+Whether I’m designing learning, facilitating a conversation, or partnering with a leader, I think about how the experience will actually feel.
+</p>
 </article>
 
 </div>
+
 </div>
 </section>
 
 <section>
 <div class="wrap">
 
-<div class="label">What I’m exploring</div>
+<div class="label">
+What I’m exploring
+</div>
 
 <div class="topics">
 
 <article class="topic">
 <h3>Learning + Technology</h3>
-<p>I'm interested in how technology can make learning more useful, engaging, and accessible.</p>
+<p>
+I'm interested in how technology can make learning more useful, engaging, and accessible.
+</p>
 </article>
 
 <article class="topic">
 <h3>Leadership Development</h3>
-<p>I’m thinking deeply about what helps people become better, especially when things are changing.</p>
+<p>
+I’m thinking deeply about what helps people become better, especially when things are changing.
+</p>
 </article>
 
 <article class="topic">
 <h3>Adaptive Learning + AI</h3>
-<p>I’m curious about how AI can make learning more personal.</p>
+<p>
+I’m curious about how AI can make learning more personal.
+</p>
 </article>
 
 </div>
+
 </div>
 </section>
 
 <section class="questions-section">
 <div class="wrap">
 
-<div class="label">Questions I’m still asking</div>
+<div class="label">
+Questions I’m still asking
+</div>
 
 <div class="questions">
 
@@ -431,13 +568,16 @@ How could we make it better?
 </div>
 
 </div>
+
 </div>
 </section>
 
 <section>
 <div class="wrap human">
 
-<div class="label">Outside of work</div>
+<div class="label">
+Outside of work
+</div>
 
 <h2 class="intro">
 I’m drawn to people’s stories and the beautiful details that make them meaningful.
@@ -461,9 +601,13 @@ Lately, I’ve fallen down the Spider-Man rabbit hole. I blame Zendaya’s red-c
 <section class="connect">
 <div class="wrap">
 
-<div class="label">Let’s connect</div>
+<div class="label">
+Let’s connect
+</div>
 
-<h2>Say hello.</h2>
+<h2>
+Say hello.
+</h2>
 
 <p>
 If something here resonated with you, or you just want to talk about learning, leadership, or a good book, I’d love to hear from you.
@@ -471,7 +615,7 @@ If something here resonated with you, or you just want to talk about learning, l
 
 <div class="buttons">
 
-<a class="btn primary"
+<a class="btn linkedin-btn"
 href="https://www.linkedin.com/in/kahlilamae"
 target="_blank"
 rel="noopener">
@@ -481,23 +625,44 @@ LinkedIn ↗
 <a class="btn email-btn"
 href="mailto:kahlilamae@icloud.com?subject=Hello%20Kahlila">
 
-<svg class="email-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-<path d="M3.5 6.5h17v11h-17z" stroke="currentColor" stroke-width="1.7"/>
-<path d="m4.2 7.2 7.8 6 7.8-6" stroke="currentColor" stroke-width="1.7"/>
+<svg class="email-icon"
+viewBox="0 0 24 24"
+fill="none"
+aria-hidden="true">
+
+<path
+d="M3.5 6.5h17v11h-17z"
+stroke="currentColor"
+stroke-width="1.7"/>
+
+<path
+d="m4.2 7.2 7.8 6 7.8-6"
+stroke="currentColor"
+stroke-width="1.7"/>
+
 </svg>
 
 Email me
+
 </a>
 
 </div>
+
 </div>
 </section>
 
 </main>
 
 <footer class="wrap">
-<span>© 2026 Kahlila Mae Liverpool</span>
-<span>Learning · Leadership · Technology · AI</span>
+
+<span>
+© 2026 Kahlila Mae Liverpool
+</span>
+
+<span>
+Learning · Leadership · Technology · AI
+</span>
+
 </footer>
 
 </body>
