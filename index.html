@@ -23,7 +23,6 @@
 :root{
   --ink:#20201e;
   --muted:#6d6864;
-
   --paper:#eadfd9;
   --card:#f0e7e2;
   --line:#d8cbc5;
@@ -159,9 +158,6 @@ nav{
   background:var(--paper);
 }
 
-
-/* PHOTO LAYER */
-
 .hero-photo{
   position:absolute;
   top:0;
@@ -176,9 +172,6 @@ nav{
 
   z-index:0;
 }
-
-
-/* SUBTLE BOTTOM FADE */
 
 .hero-photo::after{
   content:"";
@@ -278,10 +271,6 @@ section{
   margin:0;
 }
 
-.guides-copy p + p{
-  margin-top:4px;
-}
-
 
 /* ========================= */
 /* MY APPROACH               */
@@ -312,6 +301,11 @@ section{
 
 .card h3{
   margin:0 0 14px;
+}
+
+/* Align second heading with first heading */
+.card:nth-child(2) h3{
+  margin-top:31px;
 }
 
 .card p{
@@ -391,7 +385,7 @@ section{
 
 
 /* ========================= */
-/* OUTSIDE OF WORK           */
+/* FAVORITES                 */
 /* ========================= */
 
 .human{
@@ -522,20 +516,6 @@ footer{
     height:700px;
   }
 
-
-  /*
-  KEY CHANGE
-
-  We are no longer trying to reposition the
-  background within the same rectangle.
-
-  The ENTIRE photo layer is physically moved
-  70px LEFT.
-
-  The layer is also widened by 70px on the
-  right so we don't expose an empty strip.
-  */
-
   .hero-photo{
     left:-70px;
     right:70px;
@@ -543,7 +523,6 @@ footer{
     background-size:cover;
     background-position:center 30%;
   }
-
 
   .hero-content{
     align-items:center;
@@ -590,9 +569,6 @@ footer{
     background-position:57% center;
   }
 
-
-  /* MOBILE VEIL */
-
   .hero-photo::before{
     content:"";
     position:absolute;
@@ -636,10 +612,6 @@ footer{
     padding:72px 0;
   }
 
-  .guides-copy p + p{
-    margin-top:16px;
-  }
-
   .cards{
     grid-template-columns:1fr;
     border-radius:20px;
@@ -647,6 +619,11 @@ footer{
 
   .card{
     min-height:auto;
+  }
+
+  /* Reset tablet alignment when cards stack */
+  .card:nth-child(2) h3{
+    margin-top:0;
   }
 
   .exploring-list{
@@ -755,7 +732,7 @@ Kahlila Mae Liverpool
 <div class="hero-copy">
 
 <div class="eyebrow">
-Learning & Development | Leadership | Exploring Adaptive Learning + AI
+L&amp;D | Leadership | Exploring Adaptive Learning + AI
 </div>
 
 <h1>
@@ -763,7 +740,7 @@ I’m curious about how people learn and what helps us grow.
 </h1>
 
 <p>
-That curiosity has shaped my work in learning, leadership, and coaching, and how I think about using technology to create better learning experiences.
+That curiosity has shaped my work in learning, leadership, and coaching, and how I use technology to make learning better.
 </p>
 
 </div>
@@ -792,11 +769,7 @@ I like working through ideas with people and figuring out how to make them work.
 <div class="guides-copy">
 
 <p>
-That curiosity has followed me through teaching, coaching, leadership, higher education, and now learning and technology.
-</p>
-
-<p>
-The work has changed over the years, but what draws me to it hasn’t. I like helping people see something differently, figure out what’s possible, and make it happen.
+That curiosity has followed me through teaching, coaching, leadership, higher education, and now learning and technology. The work has changed over the years, but what draws me to it hasn’t. I like helping people see something differently, figure out what’s possible, and make it happen.
 </p>
 
 </div>
@@ -841,7 +814,8 @@ I notice what’s happening.
 </h3>
 
 <p>
-I pay attention to who is in the room, who isn’t being heard, and what people need to move forward.
+I pay attention to who is in the room, who isn’t being heard,<br>
+and what people need to move forward.
 </p>
 
 </article>
@@ -926,7 +900,8 @@ Adaptive Learning + AI
 </h3>
 
 <p>
-I’m curious about how AI can make learning more personal.
+I’m curious about how AI can make<br>
+learning more personal.
 </p>
 
 </article>
@@ -966,7 +941,8 @@ What are our systems making easier, and what are they making harder?
 <div class="question-item">
 
 <p class="question-text">
-What should AI help us do better, and what should always belong to people?
+What should AI help us do better, and<br>
+<span style="white-space:nowrap;">what should always belong to people?</span>
 </p>
 
 </div>
@@ -990,14 +966,14 @@ How could we make it better?
 </section>
 
 
-<!-- OUTSIDE OF WORK -->
+<!-- A FEW OF MY FAVORITES -->
 
 <section>
 
 <div class="wrap human">
 
 <div class="label">
-Outside of work
+A Few of My Favorites
 </div>
 
 <h2 class="intro">
@@ -1005,15 +981,7 @@ I’m drawn to people’s stories and the beautiful details that make them meani
 </h2>
 
 <p>
-I adore biographies, especially stories that reveal the person behind the accomplishments. I’m fascinated by how people find their way and what makes life fulfilling.
-</p>
-
-<p>
-A perfect Sunday involves cooking a New York Times Cooking recipe for family and friends. I also enjoy <em>House Guest with Scott Evans</em> and Mythical Kitchen’s <em>Last Meals</em>.
-</p>
-
-<p>
-Lately, I’ve fallen down the Spider-Man rabbit hole. I blame Zendaya’s red-carpet style and my brother, a lifelong comic book fan.
+I adore biographies, especially stories that reveal the person behind the accomplishments. I’m fascinated by how people find their way and what makes life fulfilling. A perfect Sunday involves cooking a New York Times Cooking recipe for family and friends. I also enjoy <em>House Guest with Scott Evans</em> and Mythical Kitchen’s <em>Last Meals</em>. Lately, I’ve fallen down the Spider-Man rabbit hole. I blame Zendaya’s red-carpet style and my brother, a lifelong comic book fan.
 </p>
 
 </div>
