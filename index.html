@@ -2,7 +2,9 @@
 <html lang="en">
 
 <head>
+
 <meta charset="utf-8">
+
 <meta name="viewport" content="width=device-width,initial-scale=1">
 
 <meta
@@ -12,6 +14,7 @@ content="Kahlila Mae Liverpool — Learning & Development | Leadership | Explori
 <title>Kahlila Mae Liverpool | Learning & Development</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
+
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 <link
@@ -21,560 +24,1078 @@ rel="stylesheet">
 <style>
 
 :root{
+
 --ink:#20201e;
+
 --muted:#6d6b64;
---paper:#ded4d4;
---card:#e8dfdf;
---line:#cbbebe;
+
+/* WARMER SITE BACKGROUND */
+--paper:#e7ddd8;
+
+/* WARMER CARDS */
+--card:#eee5e0;
+
+/* WARMER LINES */
+--line:#d5c9c3;
+
 --soft-line:rgba(111,93,98,.14);
---accent:#6f5d62;
+
+--accent:#765f64;
+
 --max:1120px;
+
 --radius:26px;
---linkedin-bg:#e8dfdf;
---linkedin-border:#d1c6c6;
---email-bg:rgba(139,85,91,.50);
+
+--linkedin-bg:#eee5e0;
+
+--linkedin-border:#d5c9c3;
+
+--email-bg:rgba(139,85,91,.42);
+
 --email-border:rgba(139,85,91,.18);
+
 }
+
 
 *{
 box-sizing:border-box;
 }
 
+
 html{
 scroll-behavior:smooth;
 }
 
+
 body{
+
 margin:0;
+
 background:var(--paper);
+
 color:var(--ink);
+
 font-family:'DM Sans',Arial,sans-serif;
+
 font-size:16px;
+
 font-weight:400;
+
 line-height:1.625;
+
 -webkit-font-smoothing:antialiased;
+
 }
+
 
 a{
 color:inherit;
 text-decoration:none;
 }
 
+
 .wrap{
+
 width:min(calc(100% - 48px),var(--max));
+
 margin:auto;
+
 }
 
 
-/* TYPOGRAPHY */
+
+/* -------------------- */
+/* TYPOGRAPHY           */
+/* -------------------- */
+
 
 h1{
+
 font-family:'Playfair Display',Georgia,serif;
+
 font-size:48px;
+
 font-weight:400;
+
 line-height:1.17;
+
 letter-spacing:-.035em;
+
 }
+
 
 h2,
 h3,
 .intro,
 .question-text{
+
 font-family:'Playfair Display',Georgia,serif;
+
 font-size:28px;
+
 font-weight:400;
+
 line-height:1.3;
+
 letter-spacing:-.02em;
+
 }
+
 
 .eyebrow,
 .label{
+
 font-family:'DM Sans',Arial,sans-serif;
+
 font-size:12px;
+
 font-weight:500;
+
 line-height:1.4;
+
 letter-spacing:.15em;
+
 text-transform:uppercase;
+
 color:var(--accent);
+
 }
+
 
 p,
 .card p,
 .explore-item p,
 .human p,
 .connect p{
+
 font-family:'DM Sans',Arial,sans-serif;
+
 font-size:16px;
+
 font-weight:400;
+
 line-height:1.625;
+
 }
 
 
-/* NAVIGATION */
+
+/* -------------------- */
+/* NAVIGATION           */
+/* -------------------- */
+
 
 nav{
+
 position:sticky;
+
 top:0;
+
 z-index:20;
-background:rgba(222,212,212,.82);
+
+background:rgba(231,221,216,.90);
+
 backdrop-filter:blur(14px);
+
 -webkit-backdrop-filter:blur(14px);
-border-bottom:1px solid rgba(221,217,207,.55);
+
+border-bottom:1px solid rgba(213,201,195,.55);
+
 }
+
 
 .nav{
+
 min-height:70px;
+
 display:flex;
+
 align-items:center;
+
 justify-content:flex-start;
+
 }
+
 
 .brand{
+
 font-family:'Playfair Display',Georgia,serif;
+
 font-size:1.15rem;
+
 font-weight:400;
+
 }
 
 
-/* HERO */
+
+/* -------------------- */
+/* HERO                 */
+/* -------------------- */
+
 
 .hero{
+
 position:relative;
-min-height:calc(100vh - 70px);
+
+min-height:760px;
+
 display:flex;
+
 align-items:center;
+
 overflow:hidden;
 
+
+/*
+IMPORTANT:
+
+"contain" keeps the complete photograph visible
+instead of enlarging it until your head gets cropped.
+*/
+
 background-image:url("./Kahlila-hero-background.png");
+
 background-repeat:no-repeat;
+
 background-size:cover;
-background-position:center center;
+
+
+/*
+The image is moved slightly downward so there is
+breathing room above your head.
+*/
+
+background-position:center 38%;
+
+
+/*
+The warm color underneath the photograph matches
+the new site background.
+*/
+
+background-color:#e7ddd8;
+
 }
 
 
-/* FADE PHOTO INTO SITE BACKGROUND */
+
+/* Soft transition from photograph into website */
+
 
 .hero::after{
+
 content:"";
+
 position:absolute;
+
 left:0;
+
 right:0;
+
 bottom:-1px;
-height:190px;
+
+height:175px;
 
 background:linear-gradient(
+
 to bottom,
-rgba(222,212,212,0) 0%,
-rgba(222,212,212,.12) 30%,
-rgba(222,212,212,.55) 68%,
-#ded4d4 100%
+
+rgba(231,221,216,0) 0%,
+
+rgba(231,221,216,.08) 22%,
+
+rgba(231,221,216,.30) 48%,
+
+rgba(231,221,216,.72) 76%,
+
+#e7ddd8 100%
+
 );
 
 pointer-events:none;
+
 z-index:1;
+
 }
+
+
+
+/* HERO CONTENT */
 
 
 .hero-content{
+
 position:relative;
+
 z-index:2;
+
 width:100%;
-padding-top:40px;
-padding-bottom:150px;
+
+padding-top:35px;
+
+padding-bottom:130px;
+
 }
+
 
 .hero-copy{
-width:52%;
-max-width:620px;
+
+width:51%;
+
+max-width:610px;
+
 }
+
 
 .hero h1{
-max-width:620px;
+
+max-width:610px;
+
 margin:22px 0 32px;
+
 }
+
 
 .hero p{
-max-width:590px;
+
+max-width:570px;
+
 color:var(--muted);
+
 margin:0;
+
 }
 
 
-/* GENERAL SECTIONS */
+
+/* -------------------- */
+/* GENERAL SECTIONS     */
+/* -------------------- */
+
 
 section{
+
 padding:105px 0;
+
 border-top:1px solid var(--line);
+
 }
+
 
 .label{
+
 margin-bottom:24px;
+
 }
 
 
-/* WHAT GUIDES ME */
+
+/* -------------------- */
+/* WHAT GUIDES ME       */
+/* -------------------- */
+
 
 .guides-section{
+
 border-top:0;
+
 }
+
 
 .guides-content{
+
 max-width:940px;
+
 margin:0;
+
 text-align:left;
+
 }
+
 
 .guides-content .intro{
+
 max-width:900px;
+
 margin:0 0 20px;
+
 }
+
 
 .guides-copy{
+
 max-width:900px;
+
 margin:0;
+
 color:var(--muted);
+
 }
+
 
 .guides-copy p{
+
 margin:0;
+
 }
+
 
 .guides-copy p + p{
+
 margin-top:4px;
+
 }
 
 
-/* MY APPROACH */
+
+/* -------------------- */
+/* MY APPROACH          */
+/* -------------------- */
+
 
 .cards{
+
 display:grid;
+
 grid-template-columns:repeat(2,1fr);
+
 gap:1px;
+
 background:var(--line);
+
 border:1px solid var(--line);
+
 border-radius:var(--radius);
+
 overflow:hidden;
+
 }
+
 
 .card{
+
 background:var(--card);
+
 padding:38px;
+
 min-height:205px;
+
 }
+
 
 .card .label{
+
 margin-bottom:14px;
+
 }
+
 
 .card h3{
+
 margin:0 0 14px;
+
 }
+
 
 .card p{
+
 color:var(--muted);
+
 margin:0;
+
 }
 
 
-/* WHAT I'M EXPLORING */
+
+/* -------------------- */
+/* WHAT I'M EXPLORING   */
+/* -------------------- */
+
 
 .exploring-list{
+
 display:grid;
+
 grid-template-columns:repeat(3,1fr);
+
 gap:56px;
+
 }
+
 
 .explore-item{
+
 padding:0;
+
 }
+
 
 .explore-item h3{
+
 margin:0 0 14px;
+
 }
+
 
 .explore-item p{
+
 color:var(--muted);
+
 margin:0;
+
 max-width:320px;
+
 }
 
 
-/* QUESTIONS I'M STILL ASKING */
+
+/* -------------------- */
+/* QUESTIONS            */
+/* -------------------- */
+
 
 .questions-section{
+
 padding-bottom:105px;
+
 }
+
 
 .questions-panel{
-background:#e8dfdf;
+
+background:var(--card);
+
 border-radius:var(--radius);
+
 padding:54px 56px 58px;
+
 }
+
 
 .questions-panel .label{
+
 margin-bottom:20px;
+
 }
+
 
 .questions-list{
+
 max-width:900px;
+
 margin:0;
+
 }
+
 
 .question-item{
+
 padding:16px 0;
+
 }
+
 
 .question-item:first-child{
+
 padding-top:0;
+
 }
+
 
 .question-item:last-child{
+
 padding-bottom:0;
+
 }
+
 
 .question-item + .question-item{
+
 border-top:1px solid var(--soft-line);
+
 }
+
 
 .question-text{
+
 margin:0;
+
 max-width:900px;
+
 }
 
 
-/* OUTSIDE OF WORK */
+
+/* -------------------- */
+/* OUTSIDE OF WORK      */
+/* -------------------- */
+
 
 .human{
+
 max-width:var(--max);
+
 }
+
 
 .human>h2,
 .human>p{
+
 max-width:900px;
+
 }
+
 
 .human p{
+
 color:var(--muted);
+
 }
+
 
 .intro{
+
 max-width:880px;
+
 margin:0 0 20px;
+
 }
 
 
-/* BUTTONS */
+
+/* -------------------- */
+/* BUTTONS              */
+/* -------------------- */
+
 
 .btn{
+
 display:inline-flex;
+
 align-items:center;
+
 justify-content:center;
+
 width:104px;
+
 height:40px;
+
 padding:0 12px;
+
 border-radius:999px;
+
 font-family:'DM Sans',Arial,sans-serif;
+
 font-size:.88rem;
+
 font-weight:500;
+
 transition:transform .2s ease,opacity .2s ease;
+
 }
+
 
 .btn:hover{
+
 transform:translateY(-2px);
+
 opacity:.85;
+
 }
+
 
 .linkedin-btn{
+
 background:var(--linkedin-bg);
+
 color:var(--ink);
+
 border:1px solid var(--linkedin-border);
+
 }
+
 
 .email-btn{
+
 background:var(--email-bg);
+
 color:var(--ink);
+
 border:1px solid var(--email-border);
+
 }
 
 
-/* CONNECT */
+
+/* -------------------- */
+/* CONNECT              */
+/* -------------------- */
+
 
 .connect{
+
 text-align:center;
+
 padding:125px 0 100px;
+
 }
+
 
 .connect h2{
+
 font-family:'Playfair Display',Georgia,serif;
+
 font-size:48px;
+
 font-weight:400;
+
 line-height:1.17;
+
 letter-spacing:-.035em;
+
 margin:15px 0 25px;
+
 }
+
 
 .connect p{
+
 max-width:700px;
+
 margin:0 auto 30px;
+
 color:var(--muted);
+
 }
+
 
 .buttons{
+
 display:flex;
+
 gap:10px;
+
 flex-wrap:wrap;
+
 justify-content:center;
+
 }
 
 
-/* FOOTER */
+
+/* -------------------- */
+/* FOOTER               */
+/* -------------------- */
+
 
 footer{
+
 padding:28px 0 38px;
+
 border-top:1px solid var(--line);
+
 color:var(--muted);
+
 font-family:'DM Sans',Arial,sans-serif;
+
 font-size:12px;
+
 font-weight:400;
+
 line-height:1.4;
+
 display:flex;
+
 justify-content:space-between;
+
 gap:20px;
+
 }
 
 
-/* MOBILE */
+
+/* -------------------- */
+/* TABLET               */
+/* -------------------- */
+
+
+@media(max-width:1000px) and (min-width:761px){
+
+.hero{
+
+min-height:720px;
+
+
+/*
+On an iPad we zoom OUT compared with the previous
+version so your entire head stays inside the frame.
+*/
+
+background-size:auto 100%;
+
+background-position:center center;
+
+}
+
+
+.hero-copy{
+
+width:50%;
+
+max-width:520px;
+
+}
+
+
+.hero h1{
+
+font-size:43px;
+
+}
+
+}
+
+
+
+/* -------------------- */
+/* MOBILE               */
+/* -------------------- */
+
 
 @media(max-width:760px){
 
+
 .wrap{
+
 width:min(calc(100% - 32px),var(--max));
+
 }
+
 
 .hero{
-min-height:850px;
+
+min-height:830px;
+
 align-items:flex-start;
 
-background-image:url("./Kahlila-hero-background.png");
+
+/*
+On phones we show the photograph vertically
+without cropping your head.
+*/
+
 background-size:auto 100%;
-background-position:62% center;
+
+background-position:60% center;
+
 background-repeat:no-repeat;
+
+background-color:var(--paper);
+
 }
 
+
+/*
+Soft veil behind text on small screens.
+*/
+
 .hero::before{
+
 content:"";
+
 position:absolute;
+
 inset:0;
 
 background:linear-gradient(
+
 to bottom,
-rgba(222,212,212,.96) 0%,
-rgba(222,212,212,.90) 34%,
-rgba(222,212,212,.35) 58%,
-rgba(222,212,212,.05) 76%
+
+rgba(231,221,216,.96) 0%,
+
+rgba(231,221,216,.91) 31%,
+
+rgba(231,221,216,.52) 50%,
+
+rgba(231,221,216,.10) 70%
+
 );
 
 z-index:1;
+
 pointer-events:none;
+
 }
+
 
 .hero::after{
-height:170px;
+
+height:165px;
+
 z-index:2;
+
 }
+
 
 .hero-content{
+
 z-index:3;
-padding-top:65px;
+
+padding-top:55px;
+
 padding-bottom:170px;
+
 }
+
 
 .hero-copy{
+
 width:100%;
+
 max-width:100%;
+
 }
+
 
 .hero h1{
+
 max-width:520px;
+
 }
+
 
 .hero p{
+
 max-width:520px;
+
 }
+
 
 section{
+
 padding:72px 0;
+
 }
+
 
 .guides-copy p + p{
+
 margin-top:16px;
+
 }
+
 
 .cards{
+
 grid-template-columns:1fr;
+
 border-radius:20px;
+
 }
+
 
 .card{
+
 min-height:auto;
+
 }
+
 
 .exploring-list{
+
 grid-template-columns:1fr;
+
 gap:38px;
+
 }
+
 
 .explore-item p{
+
 max-width:100%;
+
 }
+
 
 .questions-panel{
+
 padding:36px 26px 40px;
+
 border-radius:20px;
+
 }
+
 
 .questions-panel .label{
+
 margin-bottom:20px;
+
 }
+
 
 .question-item{
+
 padding:20px 0;
+
 }
+
 
 footer{
+
 flex-direction:column;
+
 }
 
+
 h1{
+
 font-size:36px;
+
 line-height:1.2;
+
 }
+
 
 h2,
 h3,
 .intro,
 .question-text{
+
 font-size:24px;
+
 line-height:1.32;
+
 }
 
+
 .connect h2{
+
 font-size:36px;
+
 line-height:1.2;
+
 }
+
 
 p,
 .card p,
 .explore-item p,
 .human p,
 .connect p{
+
 font-size:15px;
+
 line-height:1.6;
+
 }
+
 
 .eyebrow,
 .label{
+
 font-size:12px;
+
 }
 
 }
@@ -586,6 +1107,8 @@ font-size:12px;
 
 <body>
 
+
+<!-- NAVIGATION -->
 
 <nav>
 
@@ -630,6 +1153,7 @@ That curiosity has shaped my work in learning, leadership, and coaching, and how
 </header>
 
 
+
 <!-- WHAT GUIDES ME -->
 
 <section class="guides-section">
@@ -663,6 +1187,7 @@ The work has changed over the years, but what draws me to it hasn’t. I like he
 </div>
 
 </section>
+
 
 
 <!-- MY APPROACH -->
@@ -737,6 +1262,7 @@ Whether I’m designing learning, facilitating a conversation, or partnering wit
 </section>
 
 
+
 <!-- WHAT I'M EXPLORING -->
 
 <section>
@@ -796,6 +1322,7 @@ I’m curious about how AI can make learning more personal.
 </section>
 
 
+
 <!-- QUESTIONS I'M STILL ASKING -->
 
 <section class="questions-section">
@@ -847,6 +1374,7 @@ How could we make it better?
 </section>
 
 
+
 <!-- OUTSIDE OF WORK -->
 
 <section>
@@ -876,6 +1404,7 @@ Lately, I’ve fallen down the Spider-Man rabbit hole. I blame Zendaya’s red-c
 </div>
 
 </section>
+
 
 
 <!-- CONNECT -->
@@ -922,6 +1451,7 @@ Email
 </main>
 
 
+
 <footer class="wrap">
 
 <span>
@@ -936,4 +1466,5 @@ Learning · Leadership · Technology · AI
 
 
 </body>
+
 </html>
