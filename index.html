@@ -6,8 +6,8 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 
 <meta
-name="description"
-content="Kahlila Mae Liverpool — Learning & Development | Leadership | Exploring Adaptive Learning + AI.">
+  name="description"
+  content="Kahlila Mae Liverpool — Learning & Development | Leadership | Exploring Adaptive Learning + AI.">
 
 <title>Kahlila Mae Liverpool | Learning & Development</title>
 
@@ -15,88 +15,95 @@ content="Kahlila Mae Liverpool — Learning & Development | Leadership | Explori
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 <link
-href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=Playfair+Display:wght@400&display=swap"
-rel="stylesheet">
+  href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=Playfair+Display:wght@400&display=swap"
+  rel="stylesheet">
 
 <style>
 
 :root{
---ink:#20201e;
---muted:#6d6b64;
---paper:#e7ddd8;
---card:#eee5e0;
---line:#d5c9c3;
---soft-line:rgba(111,93,98,.14);
---accent:#765f64;
---max:1120px;
---radius:26px;
+  --ink:#20201e;
+  --muted:#6d6864;
 
---linkedin-bg:#eee5e0;
---linkedin-border:#d5c9c3;
---email-bg:rgba(139,85,91,.42);
---email-border:rgba(139,85,91,.18);
+  /* WARM PALETTE — KEEP */
+  --paper:#eadfd9;
+  --card:#f0e7e2;
+  --line:#d8cbc5;
+  --soft-line:rgba(111,93,98,.14);
+  --accent:#765f64;
+
+  --max:1120px;
+  --radius:26px;
+
+  --linkedin-bg:#f0e7e2;
+  --linkedin-border:#d8cbc5;
+  --email-bg:rgba(139,85,91,.42);
+  --email-border:rgba(139,85,91,.18);
 }
 
 *{
-box-sizing:border-box;
+  box-sizing:border-box;
 }
 
 html{
-scroll-behavior:smooth;
+  scroll-behavior:smooth;
 }
 
 body{
-margin:0;
-background:var(--paper);
-color:var(--ink);
-font-family:'DM Sans',Arial,sans-serif;
-font-size:16px;
-font-weight:400;
-line-height:1.625;
--webkit-font-smoothing:antialiased;
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+
+  font-family:'DM Sans',Arial,sans-serif;
+  font-size:16px;
+  font-weight:400;
+  line-height:1.625;
+
+  -webkit-font-smoothing:antialiased;
 }
 
 a{
-color:inherit;
-text-decoration:none;
+  color:inherit;
+  text-decoration:none;
 }
 
 .wrap{
-width:min(calc(100% - 48px),var(--max));
-margin:0 auto;
+  width:min(calc(100% - 48px),var(--max));
+  margin:0 auto;
 }
 
 
-/* TYPOGRAPHY */
+/* ========================= */
+/* TYPOGRAPHY                */
+/* ========================= */
 
 h1{
-font-family:'Playfair Display',Georgia,serif;
-font-size:48px;
-font-weight:400;
-line-height:1.17;
-letter-spacing:-.035em;
+  font-family:'Playfair Display',Georgia,serif;
+  font-size:48px;
+  font-weight:400;
+  line-height:1.17;
+  letter-spacing:-.035em;
 }
 
 h2,
 h3,
 .intro,
 .question-text{
-font-family:'Playfair Display',Georgia,serif;
-font-size:28px;
-font-weight:400;
-line-height:1.3;
-letter-spacing:-.02em;
+  font-family:'Playfair Display',Georgia,serif;
+  font-size:28px;
+  font-weight:400;
+  line-height:1.3;
+  letter-spacing:-.02em;
 }
 
 .eyebrow,
 .label{
-font-family:'DM Sans',Arial,sans-serif;
-font-size:12px;
-font-weight:500;
-line-height:1.4;
-letter-spacing:.15em;
-text-transform:uppercase;
-color:var(--accent);
+  font-family:'DM Sans',Arial,sans-serif;
+  font-size:12px;
+  font-weight:500;
+  line-height:1.4;
+  letter-spacing:.15em;
+  text-transform:uppercase;
+  color:var(--accent);
 }
 
 p,
@@ -104,36 +111,42 @@ p,
 .explore-item p,
 .human p,
 .connect p{
-font-family:'DM Sans',Arial,sans-serif;
-font-size:16px;
-font-weight:400;
-line-height:1.625;
+  font-family:'DM Sans',Arial,sans-serif;
+  font-size:16px;
+  font-weight:400;
+  line-height:1.625;
 }
 
 
-/* NAVIGATION */
+/* ========================= */
+/* NAVIGATION                */
+/* ========================= */
 
 nav{
-position:sticky;
-top:0;
-z-index:20;
-background:rgba(231,221,216,.94);
-backdrop-filter:blur(14px);
--webkit-backdrop-filter:blur(14px);
-border-bottom:1px solid rgba(213,201,195,.35);
+  position:sticky;
+  top:0;
+  z-index:20;
+
+  background:rgba(234,223,217,.94);
+
+  backdrop-filter:blur(14px);
+  -webkit-backdrop-filter:blur(14px);
+
+  border-bottom:1px solid rgba(216,203,197,.35);
 }
 
 .nav{
-min-height:70px;
-display:flex;
-align-items:center;
-justify-content:flex-start;
+  min-height:70px;
+
+  display:flex;
+  align-items:center;
+  justify-content:flex-start;
 }
 
 .brand{
-font-family:'Playfair Display',Georgia,serif;
-font-size:1.15rem;
-font-weight:400;
+  font-family:'Playfair Display',Georgia,serif;
+  font-size:1.15rem;
+  font-weight:400;
 }
 
 
@@ -142,346 +155,413 @@ font-weight:400;
 /* ========================= */
 
 .hero{
-position:relative;
-height:720px;
-overflow:hidden;
-background:var(--paper);
+  position:relative;
+
+  height:720px;
+
+  overflow:hidden;
+
+  background:var(--paper);
 }
 
 
 /*
-The photograph is its own layer.
+PHOTO LAYER
 
-This gives us much better control than making
-the entire hero itself the background.
+Your existing image stays:
+Kahlila-hero-background.png
 */
 
 .hero-photo{
-position:absolute;
-inset:0;
+  position:absolute;
+  inset:0;
 
-background-image:url("./Kahlila-hero-background.png");
-background-repeat:no-repeat;
+  background-image:url("./Kahlila-hero-background.png");
+  background-repeat:no-repeat;
 
-/*
-Fill the width while preserving the image ratio.
-*/
+  background-size:cover;
 
-background-size:cover;
+  /*
+  Slight move LEFT from the previous version.
+  This brings you/chair closer to the copy while
+  keeping a comfortable visual gap.
+  */
 
-/*
-Move the composition slightly upward/left so:
-- your full head is visible
-- you stay on the right
-- the empty wall stays available for text
-*/
+  background-position:48% 34%;
 
-background-position:center 35%;
-
-z-index:0;
+  z-index:0;
 }
 
 
 /*
-VERY LIGHT fade only at the bottom.
-
-This does NOT fade across your torso.
+Very subtle bottom transition into the site.
 */
 
 .hero-photo::after{
-content:"";
-position:absolute;
-left:0;
-right:0;
-bottom:-1px;
-height:105px;
+  content:"";
 
-background:linear-gradient(
-to bottom,
-rgba(231,221,216,0) 0%,
-rgba(231,221,216,.12) 35%,
-rgba(231,221,216,.55) 72%,
-var(--paper) 100%
-);
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:-1px;
 
-pointer-events:none;
+  height:90px;
+
+  background:linear-gradient(
+    to bottom,
+    rgba(234,223,217,0) 0%,
+    rgba(234,223,217,.10) 35%,
+    rgba(234,223,217,.45) 72%,
+    var(--paper) 100%
+  );
+
+  pointer-events:none;
 }
 
 
-/* HERO TEXT */
+/* ========================= */
+/* HERO TEXT                 */
+/* ========================= */
 
 .hero-content{
-position:relative;
-z-index:2;
-height:100%;
+  position:relative;
+  z-index:2;
 
-display:flex;
-align-items:center;
+  height:100%;
+
+  display:flex;
+  align-items:center;
 }
 
 .hero-copy{
-width:47%;
-max-width:525px;
+  width:47%;
+  max-width:525px;
 
-transform:translateY(-20px);
+  transform:translateY(-18px);
 }
 
 .hero h1{
-max-width:525px;
-margin:22px 0 28px;
+  max-width:525px;
+
+  margin:22px 0 28px;
 }
 
 .hero p{
-max-width:505px;
-margin:0;
-color:var(--muted);
+  max-width:505px;
+
+  margin:0;
+
+  color:var(--muted);
 }
 
 
-/* GENERAL SECTIONS */
+/* ========================= */
+/* GENERAL SECTIONS          */
+/* ========================= */
 
 section{
-padding:105px 0;
-border-top:1px solid var(--line);
+  padding:105px 0;
+
+  border-top:1px solid var(--line);
 }
 
 .label{
-margin-bottom:24px;
+  margin-bottom:24px;
 }
 
 
-/* WHAT GUIDES ME */
+/* ========================= */
+/* WHAT GUIDES ME            */
+/* ========================= */
 
 .guides-section{
-border-top:0;
+  border-top:0;
 }
 
 .guides-content{
-max-width:940px;
-margin:0;
-text-align:left;
+  max-width:940px;
+
+  margin:0;
+
+  text-align:left;
 }
 
 .guides-content .intro{
-max-width:900px;
-margin:0 0 20px;
+  max-width:900px;
+
+  margin:0 0 20px;
 }
 
 .guides-copy{
-max-width:900px;
-margin:0;
-color:var(--muted);
+  max-width:900px;
+
+  margin:0;
+
+  color:var(--muted);
 }
 
 .guides-copy p{
-margin:0;
+  margin:0;
 }
 
 .guides-copy p + p{
-margin-top:4px;
+  margin-top:4px;
 }
 
 
-/* MY APPROACH */
+/* ========================= */
+/* MY APPROACH               */
+/* ========================= */
 
 .cards{
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:1px;
-background:var(--line);
-border:1px solid var(--line);
-border-radius:var(--radius);
-overflow:hidden;
+  display:grid;
+
+  grid-template-columns:repeat(2,1fr);
+
+  gap:1px;
+
+  background:var(--line);
+
+  border:1px solid var(--line);
+
+  border-radius:var(--radius);
+
+  overflow:hidden;
 }
 
 .card{
-background:var(--card);
-padding:38px;
-min-height:205px;
+  background:var(--card);
+
+  padding:38px;
+
+  min-height:205px;
 }
 
 .card .label{
-margin-bottom:14px;
+  margin-bottom:14px;
 }
 
 .card h3{
-margin:0 0 14px;
+  margin:0 0 14px;
 }
 
 .card p{
-color:var(--muted);
-margin:0;
+  color:var(--muted);
+
+  margin:0;
 }
 
 
-/* WHAT I'M EXPLORING */
+/* ========================= */
+/* WHAT I'M EXPLORING        */
+/* ========================= */
 
 .exploring-list{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:56px;
+  display:grid;
+
+  grid-template-columns:repeat(3,1fr);
+
+  gap:56px;
 }
 
 .explore-item{
-padding:0;
+  padding:0;
 }
 
 .explore-item h3{
-margin:0 0 14px;
+  margin:0 0 14px;
 }
 
 .explore-item p{
-color:var(--muted);
-margin:0;
-max-width:320px;
+  color:var(--muted);
+
+  margin:0;
+
+  max-width:320px;
 }
 
 
-/* QUESTIONS */
+/* ========================= */
+/* QUESTIONS                 */
+/* ========================= */
 
 .questions-section{
-padding-bottom:105px;
+  padding-bottom:105px;
 }
 
 .questions-panel{
-background:var(--card);
-border-radius:var(--radius);
-padding:54px 56px 58px;
+  background:var(--card);
+
+  border-radius:var(--radius);
+
+  padding:54px 56px 58px;
 }
 
 .questions-panel .label{
-margin-bottom:20px;
+  margin-bottom:20px;
 }
 
 .questions-list{
-max-width:900px;
-margin:0;
+  max-width:900px;
+
+  margin:0;
 }
 
 .question-item{
-padding:16px 0;
+  padding:16px 0;
 }
 
 .question-item:first-child{
-padding-top:0;
+  padding-top:0;
 }
 
 .question-item:last-child{
-padding-bottom:0;
+  padding-bottom:0;
 }
 
 .question-item + .question-item{
-border-top:1px solid var(--soft-line);
+  border-top:1px solid var(--soft-line);
 }
 
 .question-text{
-margin:0;
-max-width:900px;
+  margin:0;
+
+  max-width:900px;
 }
 
 
-/* OUTSIDE OF WORK */
+/* ========================= */
+/* OUTSIDE OF WORK           */
+/* ========================= */
 
 .human{
-max-width:var(--max);
+  max-width:var(--max);
 }
 
 .human>h2,
 .human>p{
-max-width:900px;
+  max-width:900px;
 }
 
 .human p{
-color:var(--muted);
+  color:var(--muted);
 }
 
 .intro{
-max-width:880px;
-margin:0 0 20px;
+  max-width:880px;
+
+  margin:0 0 20px;
 }
 
 
-/* BUTTONS */
+/* ========================= */
+/* BUTTONS                   */
+/* ========================= */
 
 .btn{
-display:inline-flex;
-align-items:center;
-justify-content:center;
-width:104px;
-height:40px;
-padding:0 12px;
-border-radius:999px;
+  display:inline-flex;
 
-font-family:'DM Sans',Arial,sans-serif;
-font-size:.88rem;
-font-weight:500;
+  align-items:center;
+  justify-content:center;
 
-transition:transform .2s ease,opacity .2s ease;
+  width:104px;
+  height:40px;
+
+  padding:0 12px;
+
+  border-radius:999px;
+
+  font-family:'DM Sans',Arial,sans-serif;
+  font-size:.88rem;
+  font-weight:500;
+
+  transition:transform .2s ease,opacity .2s ease;
 }
 
 .btn:hover{
-transform:translateY(-2px);
-opacity:.85;
+  transform:translateY(-2px);
+
+  opacity:.85;
 }
 
 .linkedin-btn{
-background:var(--linkedin-bg);
-color:var(--ink);
-border:1px solid var(--linkedin-border);
+  background:var(--linkedin-bg);
+
+  color:var(--ink);
+
+  border:1px solid var(--linkedin-border);
 }
 
 .email-btn{
-background:var(--email-bg);
-color:var(--ink);
-border:1px solid var(--email-border);
+  background:var(--email-bg);
+
+  color:var(--ink);
+
+  border:1px solid var(--email-border);
 }
 
 
-/* CONNECT */
+/* ========================= */
+/* CONNECT                   */
+/* ========================= */
 
 .connect{
-text-align:center;
-padding:125px 0 100px;
+  text-align:center;
+
+  padding:125px 0 100px;
 }
 
 .connect h2{
-font-family:'Playfair Display',Georgia,serif;
-font-size:48px;
-font-weight:400;
-line-height:1.17;
-letter-spacing:-.035em;
-margin:15px 0 25px;
+  font-family:'Playfair Display',Georgia,serif;
+
+  font-size:48px;
+  font-weight:400;
+  line-height:1.17;
+  letter-spacing:-.035em;
+
+  margin:15px 0 25px;
 }
 
 .connect p{
-max-width:700px;
-margin:0 auto 30px;
-color:var(--muted);
+  max-width:700px;
+
+  margin:0 auto 30px;
+
+  color:var(--muted);
 }
 
 .buttons{
-display:flex;
-gap:10px;
-flex-wrap:wrap;
-justify-content:center;
+  display:flex;
+
+  gap:10px;
+
+  flex-wrap:wrap;
+
+  justify-content:center;
 }
 
 
-/* FOOTER */
+/* ========================= */
+/* FOOTER                    */
+/* ========================= */
 
 footer{
-padding:28px 0 38px;
-border-top:1px solid var(--line);
-color:var(--muted);
+  padding:28px 0 38px;
 
-font-family:'DM Sans',Arial,sans-serif;
-font-size:12px;
-font-weight:400;
-line-height:1.4;
+  border-top:1px solid var(--line);
 
-display:flex;
-justify-content:space-between;
-gap:20px;
+  color:var(--muted);
+
+  font-family:'DM Sans',Arial,sans-serif;
+  font-size:12px;
+  font-weight:400;
+  line-height:1.4;
+
+  display:flex;
+
+  justify-content:space-between;
+
+  gap:20px;
 }
 
 
@@ -491,49 +571,46 @@ gap:20px;
 
 @media(max-width:1180px) and (min-width:761px){
 
-.wrap{
-width:min(calc(100% - 96px),var(--max));
-}
+  .wrap{
+    width:min(calc(100% - 96px),var(--max));
+  }
 
+  .hero{
+    height:700px;
+  }
 
-/*
-This is tuned specifically for the composition
-you showed me on your iPad.
-*/
+  /*
+  This is the iPad composition.
 
-.hero{
-height:700px;
-}
+  47% shifts the photograph/chair a little
+  farther LEFT than the previous version.
+  */
 
-.hero-photo{
-background-size:cover;
+  .hero-photo{
+    background-size:cover;
+    background-position:47% 30%;
+  }
 
-/*
-Keep your head inside the frame and
-keep you toward the right.
-*/
+  .hero-content{
+    align-items:center;
+  }
 
-background-position:54% 30%;
-}
+  .hero-copy{
+    width:46%;
+    max-width:480px;
 
-.hero-content{
-align-items:center;
-}
+    transform:translateY(-15px);
+  }
 
-.hero-copy{
-width:46%;
-max-width:480px;
-transform:translateY(-15px);
-}
+  .hero h1{
+    font-size:42px;
 
-.hero h1{
-font-size:42px;
-max-width:480px;
-}
+    max-width:480px;
+  }
 
-.hero p{
-max-width:460px;
-}
+  .hero p{
+    max-width:460px;
+  }
 
 }
 
@@ -544,162 +621,175 @@ max-width:460px;
 
 @media(max-width:760px){
 
-.wrap{
-width:min(calc(100% - 32px),var(--max));
+  .wrap{
+    width:min(calc(100% - 32px),var(--max));
+  }
+
+  .hero{
+    height:790px;
+  }
+
+  .hero-photo{
+    background-size:auto 100%;
+    background-position:57% center;
+  }
+
+  /*
+  Light veil for readability on narrow screens.
+  */
+
+  .hero-photo::before{
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:linear-gradient(
+      to bottom,
+      rgba(234,223,217,.95) 0%,
+      rgba(234,223,217,.88) 32%,
+      rgba(234,223,217,.38) 55%,
+      rgba(234,223,217,0) 72%
+    );
+  }
+
+  .hero-photo::after{
+    height:90px;
+  }
+
+  .hero-content{
+    align-items:flex-start;
+
+    padding-top:55px;
+  }
+
+  .hero-copy{
+    width:100%;
+    max-width:100%;
+
+    transform:none;
+  }
+
+  .hero h1{
+    font-size:36px;
+    line-height:1.2;
+
+    max-width:520px;
+  }
+
+  .hero p{
+    max-width:520px;
+  }
+
+  section{
+    padding:72px 0;
+  }
+
+  .guides-copy p + p{
+    margin-top:16px;
+  }
+
+  .cards{
+    grid-template-columns:1fr;
+
+    border-radius:20px;
+  }
+
+  .card{
+    min-height:auto;
+  }
+
+  .exploring-list{
+    grid-template-columns:1fr;
+
+    gap:38px;
+  }
+
+  .explore-item p{
+    max-width:100%;
+  }
+
+  .questions-panel{
+    padding:36px 26px 40px;
+
+    border-radius:20px;
+  }
+
+  .questions-panel .label{
+    margin-bottom:20px;
+  }
+
+  .question-item{
+    padding:20px 0;
+  }
+
+  footer{
+    flex-direction:column;
+  }
+
+  h2,
+  h3,
+  .intro,
+  .question-text{
+    font-size:24px;
+
+    line-height:1.32;
+  }
+
+  .connect h2{
+    font-size:36px;
+
+    line-height:1.2;
+  }
+
+  p,
+  .card p,
+  .explore-item p,
+  .human p,
+  .connect p{
+    font-size:15px;
+
+    line-height:1.6;
+  }
+
 }
 
-.hero{
-height:790px;
-}
 
-.hero-photo{
-background-size:auto 100%;
-background-position:60% center;
-}
-
-
-/*
-A light veil on mobile only.
-*/
-
-.hero-photo::before{
-content:"";
-position:absolute;
-inset:0;
-
-background:linear-gradient(
-to bottom,
-rgba(231,221,216,.95) 0%,
-rgba(231,221,216,.88) 32%,
-rgba(231,221,216,.38) 55%,
-rgba(231,221,216,0) 72%
-);
-}
-
-.hero-photo::after{
-height:100px;
-}
-
-.hero-content{
-align-items:flex-start;
-padding-top:55px;
-}
-
-.hero-copy{
-width:100%;
-max-width:100%;
-transform:none;
-}
-
-.hero h1{
-font-size:36px;
-line-height:1.2;
-max-width:520px;
-}
-
-.hero p{
-max-width:520px;
-}
-
-section{
-padding:72px 0;
-}
-
-.guides-copy p + p{
-margin-top:16px;
-}
-
-.cards{
-grid-template-columns:1fr;
-border-radius:20px;
-}
-
-.card{
-min-height:auto;
-}
-
-.exploring-list{
-grid-template-columns:1fr;
-gap:38px;
-}
-
-.explore-item p{
-max-width:100%;
-}
-
-.questions-panel{
-padding:36px 26px 40px;
-border-radius:20px;
-}
-
-.questions-panel .label{
-margin-bottom:20px;
-}
-
-.question-item{
-padding:20px 0;
-}
-
-footer{
-flex-direction:column;
-}
-
-h2,
-h3,
-.intro,
-.question-text{
-font-size:24px;
-line-height:1.32;
-}
-
-.connect h2{
-font-size:36px;
-line-height:1.2;
-}
-
-p,
-.card p,
-.explore-item p,
-.human p,
-.connect p{
-font-size:15px;
-line-height:1.6;
-}
-
-}
-
-
-/* LARGE DESKTOP */
+/* ========================= */
+/* LARGE DESKTOP             */
+/* ========================= */
 
 @media(min-width:1400px){
 
-.hero{
-height:760px;
-}
+  .hero{
+    height:760px;
+  }
 
-.hero-photo{
-background-position:center 34%;
-}
+  .hero-photo{
+    background-position:48% 34%;
+  }
 
 }
 
 </style>
-
 </head>
 
 
 <body>
 
 
+<!-- NAVIGATION -->
+
 <nav>
 
-<div class="wrap nav">
+  <div class="wrap nav">
 
-<a class="brand" href="#">
-Kahlila Mae Liverpool
-</a>
+    <a class="brand" href="#">
+      Kahlila Mae Liverpool
+    </a>
 
-</div>
+  </div>
 
 </nav>
 
@@ -711,27 +801,27 @@ Kahlila Mae Liverpool
 
 <header class="hero">
 
-<div class="hero-photo"></div>
+  <div class="hero-photo"></div>
 
-<div class="wrap hero-content">
+  <div class="wrap hero-content">
 
-<div class="hero-copy">
+    <div class="hero-copy">
 
-<div class="eyebrow">
-Learning & Development | Leadership | Exploring Adaptive Learning + AI
-</div>
+      <div class="eyebrow">
+        Learning & Development | Leadership | Exploring Adaptive Learning + AI
+      </div>
 
-<h1>
-I’m curious about how people learn and what helps us grow.
-</h1>
+      <h1>
+        I’m curious about how people learn and what helps us grow.
+      </h1>
 
-<p>
-That curiosity has shaped my work in learning, leadership, and coaching, and how I think about using technology to create better learning experiences.
-</p>
+      <p>
+        That curiosity has shaped my work in learning, leadership, and coaching, and how I think about using technology to create better learning experiences.
+      </p>
 
-</div>
+    </div>
 
-</div>
+  </div>
 
 </header>
 
@@ -740,33 +830,33 @@ That curiosity has shaped my work in learning, leadership, and coaching, and how
 
 <section class="guides-section">
 
-<div class="wrap">
+  <div class="wrap">
 
-<div class="label">
-What Guides Me
-</div>
+    <div class="label">
+      What Guides Me
+    </div>
 
-<div class="guides-content">
+    <div class="guides-content">
 
-<h2 class="intro">
-I like working through ideas with people and figuring out how to make them work.
-</h2>
+      <h2 class="intro">
+        I like working through ideas with people and figuring out how to make them work.
+      </h2>
 
-<div class="guides-copy">
+      <div class="guides-copy">
 
-<p>
-That curiosity has followed me through teaching, coaching, leadership, higher education, and now learning and technology.
-</p>
+        <p>
+          That curiosity has followed me through teaching, coaching, leadership, higher education, and now learning and technology.
+        </p>
 
-<p>
-The work has changed over the years, but what draws me to it hasn’t. I like helping people see something differently, figure out what’s possible, and make it happen.
-</p>
+        <p>
+          The work has changed over the years, but what draws me to it hasn’t. I like helping people see something differently, figure out what’s possible, and make it happen.
+        </p>
 
-</div>
+      </div>
 
-</div>
+    </div>
 
-</div>
+  </div>
 
 </section>
 
@@ -775,68 +865,68 @@ The work has changed over the years, but what draws me to it hasn’t. I like he
 
 <section>
 
-<div class="wrap">
+  <div class="wrap">
 
-<div class="cards">
+    <div class="cards">
 
-<article class="card">
+      <article class="card">
 
-<div class="label">
-My approach
-</div>
+        <div class="label">
+          My approach
+        </div>
 
-<h3>
-I ask a lot of questions. Probably too many.
-</h3>
+        <h3>
+          I ask a lot of questions. Probably too many.
+        </h3>
 
-<p>
-Usually because I’m trying to understand what’s actually going on before jumping to an answer. I’d rather work in community than figure it out alone.
-</p>
+        <p>
+          Usually because I’m trying to understand what’s actually going on before jumping to an answer. I’d rather work in community than figure it out alone.
+        </p>
 
-</article>
-
-
-<article class="card">
-
-<h3>
-I notice what’s happening.
-</h3>
-
-<p>
-I pay attention to who is in the room, who isn’t being heard, and what people need to move forward.
-</p>
-
-</article>
+      </article>
 
 
-<article class="card">
+      <article class="card">
 
-<h3>
-I like a good mess.
-</h3>
+        <h3>
+          I notice what’s happening.
+        </h3>
 
-<p>
-Give me something complicated or not quite working yet, and I’ll want to figure out what’s going on and how to make it better.
-</p>
+        <p>
+          I pay attention to who is in the room, who isn’t being heard, and what people need to move forward.
+        </p>
 
-</article>
+      </article>
 
 
-<article class="card">
+      <article class="card">
 
-<h3>
-I think about the person on the other side.
-</h3>
+        <h3>
+          I like a good mess.
+        </h3>
 
-<p>
-Whether I’m designing learning, facilitating a conversation, or partnering with a leader, I think about how the experience will actually feel.
-</p>
+        <p>
+          Give me something complicated or not quite working yet, and I’ll want to figure out what’s going on and how to make it better.
+        </p>
 
-</article>
+      </article>
 
-</div>
 
-</div>
+      <article class="card">
+
+        <h3>
+          I think about the person on the other side.
+        </h3>
+
+        <p>
+          Whether I’m designing learning, facilitating a conversation, or partnering with a leader, I think about how the experience will actually feel.
+        </p>
+
+      </article>
+
+    </div>
+
+  </div>
 
 </section>
 
@@ -845,104 +935,104 @@ Whether I’m designing learning, facilitating a conversation, or partnering wit
 
 <section>
 
-<div class="wrap">
+  <div class="wrap">
 
-<div class="label">
-What I’m exploring
-</div>
+    <div class="label">
+      What I’m exploring
+    </div>
 
-<div class="exploring-list">
+    <div class="exploring-list">
 
-<article class="explore-item">
+      <article class="explore-item">
 
-<h3>
-Learning + Technology
-</h3>
+        <h3>
+          Learning + Technology
+        </h3>
 
-<p>
-I'm interested in how technology can make learning more useful, engaging, and accessible.
-</p>
+        <p>
+          I'm interested in how technology can make learning more useful, engaging, and accessible.
+        </p>
 
-</article>
-
-
-<article class="explore-item">
-
-<h3>
-Leadership Development
-</h3>
-
-<p>
-I’m thinking deeply about what helps people become better, especially when things are changing.
-</p>
-
-</article>
+      </article>
 
 
-<article class="explore-item">
+      <article class="explore-item">
 
-<h3>
-Adaptive Learning + AI
-</h3>
+        <h3>
+          Leadership Development
+        </h3>
 
-<p>
-I’m curious about how AI can make learning more personal.
-</p>
+        <p>
+          I’m thinking deeply about what helps people become better, especially when things are changing.
+        </p>
 
-</article>
+      </article>
 
-</div>
 
-</div>
+      <article class="explore-item">
+
+        <h3>
+          Adaptive Learning + AI
+        </h3>
+
+        <p>
+          I’m curious about how AI can make learning more personal.
+        </p>
+
+      </article>
+
+    </div>
+
+  </div>
 
 </section>
 
 
-<!-- QUESTIONS -->
+<!-- QUESTIONS I'M STILL ASKING -->
 
 <section class="questions-section">
 
-<div class="wrap">
+  <div class="wrap">
 
-<div class="questions-panel">
+    <div class="questions-panel">
 
-<div class="label">
-Questions I’m still asking
-</div>
+      <div class="label">
+        Questions I’m still asking
+      </div>
 
-<div class="questions-list">
+      <div class="questions-list">
 
-<div class="question-item">
+        <div class="question-item">
 
-<p class="question-text">
-What are our systems making easier, and what are they making harder?
-</p>
+          <p class="question-text">
+            What are our systems making easier, and what are they making harder?
+          </p>
 
-</div>
-
-
-<div class="question-item">
-
-<p class="question-text">
-What should AI help us do better, and what should always belong to people?
-</p>
-
-</div>
+        </div>
 
 
-<div class="question-item">
+        <div class="question-item">
 
-<p class="question-text">
-How could we make it better?
-</p>
+          <p class="question-text">
+            What should AI help us do better, and what should always belong to people?
+          </p>
 
-</div>
+        </div>
 
-</div>
 
-</div>
+        <div class="question-item">
 
-</div>
+          <p class="question-text">
+            How could we make it better?
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
 
 </section>
 
@@ -951,29 +1041,29 @@ How could we make it better?
 
 <section>
 
-<div class="wrap human">
+  <div class="wrap human">
 
-<div class="label">
-Outside of work
-</div>
+    <div class="label">
+      Outside of work
+    </div>
 
-<h2 class="intro">
-I’m drawn to people’s stories and the beautiful details that make them meaningful.
-</h2>
+    <h2 class="intro">
+      I’m drawn to people’s stories and the beautiful details that make them meaningful.
+    </h2>
 
-<p>
-I adore biographies, especially stories that reveal the person behind the accomplishments. I’m fascinated by how people find their way and what makes life fulfilling.
-</p>
+    <p>
+      I adore biographies, especially stories that reveal the person behind the accomplishments. I’m fascinated by how people find their way and what makes life fulfilling.
+    </p>
 
-<p>
-A perfect Sunday involves cooking a New York Times Cooking recipe for family and friends. I also enjoy <em>House Guest with Scott Evans</em> and Mythical Kitchen’s <em>Last Meals</em>.
-</p>
+    <p>
+      A perfect Sunday involves cooking a New York Times Cooking recipe for family and friends. I also enjoy <em>House Guest with Scott Evans</em> and Mythical Kitchen’s <em>Last Meals</em>.
+    </p>
 
-<p>
-Lately, I’ve fallen down the Spider-Man rabbit hole. I blame Zendaya’s red-carpet style and my brother, a lifelong comic book fan.
-</p>
+    <p>
+      Lately, I’ve fallen down the Spider-Man rabbit hole. I blame Zendaya’s red-carpet style and my brother, a lifelong comic book fan.
+    </p>
 
-</div>
+  </div>
 
 </section>
 
@@ -982,39 +1072,39 @@ Lately, I’ve fallen down the Spider-Man rabbit hole. I blame Zendaya’s red-c
 
 <section class="connect">
 
-<div class="wrap">
+  <div class="wrap">
 
-<div class="label">
-Let’s connect
-</div>
+    <div class="label">
+      Let’s connect
+    </div>
 
-<h2>
-Say hello.
-</h2>
+    <h2>
+      Say hello.
+    </h2>
 
-<p>
-If something here resonated with you, or you just want to talk about learning, leadership, or a good book, I’d love to hear from you.
-</p>
+    <p>
+      If something here resonated with you, or you just want to talk about learning, leadership, or a good book, I’d love to hear from you.
+    </p>
 
-<div class="buttons">
+    <div class="buttons">
 
-<a
-class="btn linkedin-btn"
-href="https://www.linkedin.com/in/kahlilamae"
-target="_blank"
-rel="noopener">
-LinkedIn
-</a>
+      <a
+        class="btn linkedin-btn"
+        href="https://www.linkedin.com/in/kahlilamae"
+        target="_blank"
+        rel="noopener">
+        LinkedIn
+      </a>
 
-<a
-class="btn email-btn"
-href="mailto:kahlilamae@icloud.com?subject=Hello%20Kahlila">
-Email
-</a>
+      <a
+        class="btn email-btn"
+        href="mailto:kahlilamae@icloud.com?subject=Hello%20Kahlila">
+        Email
+      </a>
 
-</div>
+    </div>
 
-</div>
+  </div>
 
 </section>
 
@@ -1024,17 +1114,16 @@ Email
 
 <footer class="wrap">
 
-<span>
-© 2026 Kahlila Mae Liverpool
-</span>
+  <span>
+    © 2026 Kahlila Mae Liverpool
+  </span>
 
-<span>
-Learning · Leadership · Technology · AI
-</span>
+  <span>
+    Learning · Leadership · Technology · AI
+  </span>
 
 </footer>
 
 
 </body>
-
 </html>
