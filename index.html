@@ -15,356 +15,184 @@ content="Kahlila Mae Liverpool — Learning & Development | Leadership | Explori
 Kahlila Mae Liverpool | Learning & Development
 </title>
 
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
-
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 <link
 href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=Playfair+Display:wght@400&display=swap"
 rel="stylesheet">
 
-
 <style>
 
-
-/* =========================
-   COLORS + VARIABLES
-========================= */
-
 :root{
-
 --ink:#20201e;
-
 --muted:#6d6b64;
-
 --paper:#ded4d4;
-
 --card:#e8dfdf;
-
 --line:#cbbebe;
-
 --soft-line:rgba(111,93,98,.14);
-
 --accent:#6f5d62;
-
 --max:1120px;
-
 --radius:26px;
-
-
-/* BUTTON COLORS */
-
 --linkedin-bg:#e8dfdf;
-
 --linkedin-border:#d1c6c6;
-
 --email-bg:rgba(139,85,91,.50);
-
 --email-border:rgba(139,85,91,.18);
-
 }
-
-
-
-/* =========================
-   BASE
-========================= */
 
 *{
 box-sizing:border-box;
 }
 
-
 html{
 scroll-behavior:smooth;
 }
 
-
 body{
-
 margin:0;
-
 background:var(--paper);
-
 color:var(--ink);
-
 font-family:'DM Sans',Arial,sans-serif;
-
 font-size:16px;
-
 font-weight:400;
-
 line-height:1.625;
-
 -webkit-font-smoothing:antialiased;
-
 }
-
 
 a{
-
 color:inherit;
-
 text-decoration:none;
-
 }
-
 
 .wrap{
-
 width:min(calc(100% - 48px),var(--max));
-
 margin:auto;
-
 }
 
-
-
-/* =========================
-   TYPOGRAPHY
-========================= */
-
-
-/* DISPLAY */
+/* TYPE */
 
 h1{
-
 font-family:'Playfair Display',Georgia,serif;
-
 font-size:48px;
-
 font-weight:400;
-
 line-height:1.17;
-
 letter-spacing:-.035em;
-
 }
-
-
-/* SECTION HEADINGS */
 
 h2,
 h3,
 .intro,
 .question-text{
-
 font-family:'Playfair Display',Georgia,serif;
-
 font-size:28px;
-
 font-weight:400;
-
 line-height:1.3;
-
 letter-spacing:-.02em;
-
 }
-
-
-/* LABELS */
 
 .eyebrow,
 .label{
-
 font-family:'DM Sans',Arial,sans-serif;
-
 font-size:12px;
-
 font-weight:500;
-
 line-height:1.4;
-
 letter-spacing:.15em;
-
 }
-
-
-/* BODY */
 
 p,
 .card p,
 .explore-item p,
 .human p,
 .connect p{
-
 font-family:'DM Sans',Arial,sans-serif;
-
 font-size:16px;
-
 font-weight:400;
-
 line-height:1.625;
-
 }
 
-
-
-/* =========================
-   NAVIGATION
-========================= */
+/* NAV */
 
 nav{
-
 position:sticky;
-
 top:0;
-
 z-index:5;
-
 background:rgba(222,212,212,.92);
-
 backdrop-filter:blur(14px);
-
 border-bottom:1px solid rgba(221,217,207,.75);
-
 }
-
 
 .nav{
-
 min-height:70px;
-
 display:flex;
-
 align-items:center;
-
 justify-content:flex-start;
-
 }
-
 
 .brand{
-
 font-family:'Playfair Display',Georgia,serif;
-
 font-size:1.15rem;
-
 font-weight:400;
-
 }
 
-
-
-/* =========================
-   BUTTONS
-========================= */
+/* BUTTONS */
 
 .btn{
-
 display:inline-flex;
-
 align-items:center;
-
 justify-content:center;
-
 width:104px;
-
 height:40px;
-
 padding:0 12px;
-
 border-radius:999px;
-
 font-family:'DM Sans',Arial,sans-serif;
-
 font-size:.88rem;
-
 font-weight:500;
-
-transition:
-transform .2s ease,
-opacity .2s ease;
-
+transition:transform .2s ease,opacity .2s ease;
 }
-
 
 .btn:hover{
-
 transform:translateY(-2px);
-
 opacity:.85;
-
 }
-
 
 .linkedin-btn{
-
 background:var(--linkedin-bg);
-
 color:var(--ink);
-
 border:1px solid var(--linkedin-border);
-
 }
-
 
 .email-btn{
-
 background:var(--email-bg);
-
 color:var(--ink);
-
 border:1px solid var(--email-border);
-
 }
 
-
-
-/* =========================
-   HERO
-========================= */
+/* HERO */
 
 .hero{
-
 min-height:88vh;
-
 display:grid;
-
 align-items:center;
-
 padding:95px 0 85px;
-
 }
-
 
 .hero-grid{
-
 display:grid;
-
-grid-template-columns:
-minmax(0,1.35fr)
-minmax(280px,.65fr);
-
+grid-template-columns:minmax(0,1.35fr) minmax(280px,.65fr);
 gap:64px;
-
 align-items:center;
-
 }
-
 
 .portrait-wrap{
-
 align-self:end;
-
 display:flex;
-
 justify-content:center;
-
 }
 
-
 .portrait{
-
 width:min(100%,390px);
-
 display:block;
-
-filter:
-drop-shadow(
-0 20px 30px rgba(32,32,30,.12)
-);
+filter:drop-shadow(0 20px 30px rgba(32,32,30,.12));
 
 -webkit-mask-image:
 linear-gradient(
@@ -385,662 +213,338 @@ rgba(0,0,0,.92) 88%,
 rgba(0,0,0,.58) 94%,
 transparent 100%
 );
-
 }
-
 
 .eyebrow,
 .label{
-
 text-transform:uppercase;
-
 color:var(--accent);
-
 }
-
 
 h1{
-
 max-width:950px;
-
 margin:22px 0 32px;
-
 }
-
 
 .hero p{
-
 max-width:730px;
-
 color:var(--muted);
-
 margin:0 0 32px;
-
 }
-
-
-
-/* =========================
-   GENERAL SECTIONS
-========================= */
-
-section{
-
-padding:105px 0;
-
-border-top:1px solid var(--line);
-
-}
-
-
-.label{
-
-margin-bottom:24px;
-
-}
-
-
-
-/* =========================
-   WHAT GUIDES ME
-========================= */
-
-.guides-panel{
-
-background:rgba(232,223,223,.62);
-
-border-radius:var(--radius);
-
-padding:54px 56px 58px;
-
-}
-
-
-.guides-panel .label{
-
-margin-bottom:34px;
-
-}
-
-
-.guides-content{
-
-max-width:940px;
-
-margin:0;
-
-text-align:left;
-
-}
-
-
-.guides-content .intro{
-
-max-width:850px;
-
-margin:0 0 34px;
-
-}
-
-
-.guides-copy{
-
-max-width:900px;
-
-margin:0;
-
-color:var(--muted);
-
-}
-
-
-.guides-copy p{
-
-margin:0;
-
-}
-
-
-.guides-copy p + p{
-
-margin-top:4px;
-
-}
-
-
-
-/* =========================
-   MY APPROACH
-========================= */
-
-.cards{
-
-display:grid;
-
-grid-template-columns:repeat(2,1fr);
-
-gap:1px;
-
-background:var(--line);
-
-border:1px solid var(--line);
-
-border-radius:var(--radius);
-
-overflow:hidden;
-
-}
-
-
-.card{
-
-background:var(--card);
-
-padding:38px;
-
-min-height:205px;
-
-}
-
-
-.card h3{
-
-margin:0 0 14px;
-
-}
-
-
-.card p{
-
-color:var(--muted);
-
-margin:0;
-
-}
-
-
-
-/* =========================
-   WHAT I'M EXPLORING
-========================= */
-
-.exploring-list{
-
-display:grid;
-
-grid-template-columns:repeat(3,1fr);
-
-gap:56px;
-
-}
-
-
-.explore-item{
-
-padding:0;
-
-}
-
-
-.explore-item h3{
-
-margin:0 0 14px;
-
-}
-
-
-.explore-item p{
-
-color:var(--muted);
-
-margin:0;
-
-max-width:320px;
-
-}
-
-
-
-/* =========================
-   QUESTIONS I'M STILL ASKING
-========================= */
-
-.questions-section{
-
-padding-bottom:105px;
-
-}
-
-
-.questions-panel{
-
-background:rgba(232,223,223,.62);
-
-border-radius:var(--radius);
-
-padding:54px 56px 58px;
-
-}
-
-
-.questions-panel .label{
-
-margin-bottom:34px;
-
-}
-
-
-.questions-list{
-
-max-width:900px;
-
-margin:0 auto;
-
-}
-
-
-.question-item{
-
-padding:30px 0;
-
-}
-
-
-.question-item:first-child{
-
-padding-top:0;
-
-}
-
-
-.question-item:last-child{
-
-padding-bottom:0;
-
-}
-
-
-.question-item + .question-item{
-
-border-top:1px solid var(--soft-line);
-
-}
-
-
-.question-text{
-
-margin:0;
-
-max-width:800px;
-
-}
-
-
-
-/* =========================
-   OUTSIDE OF WORK
-========================= */
-
-.human{
-
-max-width:var(--max);
-
-}
-
-
-.human>h2,
-.human>p{
-
-max-width:830px;
-
-}
-
-
-.human p{
-
-color:var(--muted);
-
-}
-
-
-.intro{
-
-max-width:880px;
-
-margin:0 0 32px;
-
-}
-
-
-
-/* =========================
-   CONNECT
-========================= */
-
-.connect{
-
-text-align:center;
-
-padding:125px 0 100px;
-
-}
-
-
-.connect h2{
-
-font-family:'Playfair Display',Georgia,serif;
-
-font-size:48px;
-
-font-weight:400;
-
-line-height:1.17;
-
-letter-spacing:-.035em;
-
-margin:15px 0 25px;
-
-}
-
-
-.connect p{
-
-max-width:600px;
-
-margin:0 auto 30px;
-
-color:var(--muted);
-
-}
-
-
-.buttons{
-
-display:flex;
-
-gap:10px;
-
-flex-wrap:wrap;
-
-justify-content:center;
-
-}
-
-
-
-/* =========================
-   FOOTER
-========================= */
-
-footer{
-
-padding:28px 0 38px;
-
-border-top:1px solid var(--line);
-
-color:var(--muted);
-
-font-family:'DM Sans',Arial,sans-serif;
-
-font-size:12px;
-
-font-weight:400;
-
-line-height:1.4;
-
-display:flex;
-
-justify-content:space-between;
-
-gap:20px;
-
-}
-
-
-
-/* =========================
-   MOBILE
-========================= */
-
-@media(max-width:760px){
-
-
-.wrap{
-
-width:min(
-calc(100% - 32px),
-var(--max)
-);
-
-}
-
-
-/* HERO */
-
-.hero-grid{
-
-grid-template-columns:1fr;
-
-gap:42px;
-
-}
-
-
-.portrait-wrap{
-
-justify-content:flex-start;
-
-}
-
-
-.portrait{
-
-width:min(82vw,360px);
-
-}
-
-
-.hero{
-
-min-height:78vh;
-
-padding:70px 0;
-
-}
-
 
 /* SECTIONS */
 
 section{
-
-padding:72px 0;
-
+padding:105px 0;
+border-top:1px solid var(--line);
 }
 
+.label{
+margin-bottom:24px;
+}
 
 /* WHAT GUIDES ME */
 
-.guides-panel{
-
-padding:36px 26px 40px;
-
-border-radius:20px;
-
+.guides-content{
+max-width:940px;
+margin:0;
+text-align:left;
 }
-
-
-.guides-panel .label{
-
-margin-bottom:28px;
-
-}
-
 
 .guides-content .intro{
-
-margin-bottom:28px;
-
+max-width:900px;
+margin:0 0 20px;
 }
 
+.guides-copy{
+max-width:900px;
+margin:0;
+color:var(--muted);
+}
+
+.guides-copy p{
+margin:0;
+}
 
 .guides-copy p + p{
-
-margin-top:16px;
-
+margin-top:4px;
 }
-
 
 /* MY APPROACH */
 
 .cards{
-
-grid-template-columns:1fr;
-
-border-radius:20px;
-
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:1px;
+background:var(--line);
+border:1px solid var(--line);
+border-radius:var(--radius);
+overflow:hidden;
 }
-
 
 .card{
-
-min-height:auto;
-
+background:var(--card);
+padding:38px;
+min-height:205px;
 }
 
+.card .label{
+margin-bottom:14px;
+}
+
+.card h3{
+margin:0 0 14px;
+}
+
+.card p{
+color:var(--muted);
+margin:0;
+}
 
 /* WHAT I'M EXPLORING */
 
 .exploring-list{
-
-grid-template-columns:1fr;
-
-gap:38px;
-
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:56px;
 }
 
+.explore-item{
+padding:0;
+}
+
+.explore-item h3{
+margin:0 0 14px;
+}
 
 .explore-item p{
-
-max-width:100%;
-
+color:var(--muted);
+margin:0;
+max-width:320px;
 }
 
+/* QUESTIONS I'M STILL ASKING */
 
-/* QUESTIONS */
+.questions-section{
+padding-bottom:105px;
+}
 
 .questions-panel{
-
-padding:36px 26px 40px;
-
-border-radius:20px;
-
+background:rgba(232,223,223,.62);
+border-radius:var(--radius);
+padding:54px 56px 58px;
 }
-
 
 .questions-panel .label{
-
-margin-bottom:28px;
-
+margin-bottom:20px;
 }
 
+.questions-list{
+max-width:900px;
+margin:0;
+}
 
 .question-item{
-
-padding:26px 0;
-
+padding:16px 0;
 }
 
+.question-item:first-child{
+padding-top:0;
+}
+
+.question-item:last-child{
+padding-bottom:0;
+}
+
+.question-item + .question-item{
+border-top:1px solid var(--soft-line);
+}
+
+.question-text{
+margin:0;
+max-width:900px;
+}
+
+/* OUTSIDE OF WORK */
+
+.human{
+max-width:var(--max);
+}
+
+.human>h2,
+.human>p{
+max-width:900px;
+}
+
+.human p{
+color:var(--muted);
+}
+
+.intro{
+max-width:880px;
+margin:0 0 20px;
+}
+
+/* CONNECT */
+
+.connect{
+text-align:center;
+padding:125px 0 100px;
+}
+
+.connect h2{
+font-family:'Playfair Display',Georgia,serif;
+font-size:48px;
+font-weight:400;
+line-height:1.17;
+letter-spacing:-.035em;
+margin:15px 0 25px;
+}
+
+.connect p{
+max-width:700px;
+margin:0 auto 30px;
+color:var(--muted);
+}
+
+.buttons{
+display:flex;
+gap:10px;
+flex-wrap:wrap;
+justify-content:center;
+}
 
 /* FOOTER */
 
 footer{
-
-flex-direction:column;
-
+padding:28px 0 38px;
+border-top:1px solid var(--line);
+color:var(--muted);
+font-family:'DM Sans',Arial,sans-serif;
+font-size:12px;
+font-weight:400;
+line-height:1.4;
+display:flex;
+justify-content:space-between;
+gap:20px;
 }
 
+/* MOBILE */
 
-/* TYPOGRAPHY */
+@media(max-width:760px){
+
+.wrap{
+width:min(calc(100% - 32px),var(--max));
+}
+
+.hero-grid{
+grid-template-columns:1fr;
+gap:42px;
+}
+
+.portrait-wrap{
+justify-content:flex-start;
+}
+
+.portrait{
+width:min(82vw,360px);
+}
+
+.hero{
+min-height:78vh;
+padding:70px 0;
+}
+
+section{
+padding:72px 0;
+}
+
+.guides-copy p + p{
+margin-top:16px;
+}
+
+.cards{
+grid-template-columns:1fr;
+border-radius:20px;
+}
+
+.card{
+min-height:auto;
+}
+
+.exploring-list{
+grid-template-columns:1fr;
+gap:38px;
+}
+
+.explore-item p{
+max-width:100%;
+}
+
+.questions-panel{
+padding:36px 26px 40px;
+border-radius:20px;
+}
+
+.questions-panel .label{
+margin-bottom:20px;
+}
+
+.question-item{
+padding:20px 0;
+}
+
+footer{
+flex-direction:column;
+}
 
 h1{
-
 font-size:36px;
-
 line-height:1.2;
-
 }
-
 
 h2,
 h3,
 .intro,
 .question-text{
-
 font-size:24px;
-
 line-height:1.32;
-
 }
-
 
 .connect h2{
-
 font-size:36px;
-
 line-height:1.2;
-
 }
-
 
 p,
 .card p,
 .explore-item p,
 .human p,
 .connect p{
-
 font-size:15px;
-
 line-height:1.6;
-
 }
-
 
 .eyebrow,
 .label{
-
 font-size:12px;
+}
 
 }
 
-
-}
-
-
-
-/* =========================
-   END
-========================= */
+/* END MOBILE */
 
 </style>
 
 </head>
 
-
-
 <body>
-
-
-<!-- =========================
-     NAVIGATION
-========================= -->
 
 <nav>
 
 <div class="wrap nav">
 
-<a
-class="brand"
-href="#">
+<a class="brand" href="#">
 Kahlila Mae Liverpool
 </a>
 
@@ -1048,20 +552,13 @@ Kahlila Mae Liverpool
 
 </nav>
 
-
-
 <main>
 
-
-
-<!-- =========================
-     HERO
-========================= -->
+<!-- HERO -->
 
 <header class="hero">
 
 <div class="wrap hero-grid">
-
 
 <div>
 
@@ -1079,8 +576,6 @@ That curiosity has shaped my work in learning, leadership, and coaching, and how
 
 </div>
 
-
-
 <div class="portrait-wrap">
 
 <img
@@ -1090,35 +585,26 @@ alt="Portrait of Kahlila Mae Liverpool">
 
 </div>
 
-
 </div>
 
 </header>
 
 
-
-<!-- =========================
-     WHAT GUIDES ME
-========================= -->
+<!-- WHAT GUIDES ME -->
 
 <section>
 
 <div class="wrap">
 
-<div class="guides-panel">
-
-
 <div class="label">
 What Guides Me
 </div>
-
 
 <div class="guides-content">
 
 <h2 class="intro">
 I like working through ideas with people and figuring out how to make them work.
 </h2>
-
 
 <div class="guides-copy">
 
@@ -1132,9 +618,6 @@ The work has changed over the years, but what draws me to it hasn’t. I like he
 
 </div>
 
-
-</div>
-
 </div>
 
 </div>
@@ -1142,25 +625,19 @@ The work has changed over the years, but what draws me to it hasn’t. I like he
 </section>
 
 
-
-<!-- =========================
-     MY APPROACH
-========================= -->
+<!-- MY APPROACH -->
 
 <section>
 
 <div class="wrap">
 
+<div class="cards">
+
+<article class="card">
 
 <div class="label">
 My approach
 </div>
-
-
-<div class="cards">
-
-
-<article class="card">
 
 <h3>
 I ask a lot of questions. Probably too many.
@@ -1171,7 +648,6 @@ Usually because I’m trying to understand what’s actually going on before jum
 </p>
 
 </article>
-
 
 
 <article class="card">
@@ -1187,7 +663,6 @@ I pay attention to who is in the room, who isn’t being heard, and what people 
 </article>
 
 
-
 <article class="card">
 
 <h3>
@@ -1199,7 +674,6 @@ Give me something complicated or not quite working yet, and I’ll want to figur
 </p>
 
 </article>
-
 
 
 <article class="card">
@@ -1214,7 +688,6 @@ Whether I’m designing learning, facilitating a conversation, or partnering wit
 
 </article>
 
-
 </div>
 
 </div>
@@ -1222,23 +695,17 @@ Whether I’m designing learning, facilitating a conversation, or partnering wit
 </section>
 
 
-
-<!-- =========================
-     WHAT I'M EXPLORING
-========================= -->
+<!-- WHAT I'M EXPLORING -->
 
 <section>
 
 <div class="wrap">
 
-
 <div class="label">
 What I’m exploring
 </div>
 
-
 <div class="exploring-list">
-
 
 <article class="explore-item">
 
@@ -1251,7 +718,6 @@ I'm interested in how technology can make learning more useful, engaging, and ac
 </p>
 
 </article>
-
 
 
 <article class="explore-item">
@@ -1267,7 +733,6 @@ I’m thinking deeply about what helps people become better, especially when thi
 </article>
 
 
-
 <article class="explore-item">
 
 <h3>
@@ -1280,7 +745,6 @@ I’m curious about how AI can make learning more personal.
 
 </article>
 
-
 </div>
 
 </div>
@@ -1288,10 +752,7 @@ I’m curious about how AI can make learning more personal.
 </section>
 
 
-
-<!-- =========================
-     QUESTIONS I'M STILL ASKING
-========================= -->
+<!-- QUESTIONS I'M STILL ASKING -->
 
 <section class="questions-section">
 
@@ -1299,14 +760,11 @@ I’m curious about how AI can make learning more personal.
 
 <div class="questions-panel">
 
-
 <div class="label">
 Questions I’m still asking
 </div>
 
-
 <div class="questions-list">
-
 
 <div class="question-item">
 
@@ -1315,7 +773,6 @@ What are our systems making easier, and what are they making harder?
 </p>
 
 </div>
-
 
 
 <div class="question-item">
@@ -1327,7 +784,6 @@ What should AI help us do better, and what should always belong to people?
 </div>
 
 
-
 <div class="question-item">
 
 <p class="question-text">
@@ -1336,7 +792,6 @@ How could we make it better?
 
 </div>
 
-
 </div>
 
 </div>
@@ -1346,73 +801,56 @@ How could we make it better?
 </section>
 
 
-
-<!-- =========================
-     OUTSIDE OF WORK
-========================= -->
+<!-- OUTSIDE OF WORK -->
 
 <section>
 
 <div class="wrap human">
 
-
 <div class="label">
 Outside of work
 </div>
-
 
 <h2 class="intro">
 I’m drawn to people’s stories and the beautiful details that make them meaningful.
 </h2>
 
-
 <p>
 I adore biographies, especially stories that reveal the person behind the accomplishments. I’m fascinated by how people find their way and what makes life fulfilling.
 </p>
-
 
 <p>
 A perfect Sunday involves cooking a New York Times Cooking recipe for family and friends. I also enjoy <em>House Guest with Scott Evans</em> and Mythical Kitchen’s <em>Last Meals</em>.
 </p>
 
-
 <p>
 Lately, I’ve fallen down the Spider-Man rabbit hole. I blame Zendaya’s red-carpet style and my brother, a lifelong comic book fan.
 </p>
-
 
 </div>
 
 </section>
 
 
-
-<!-- =========================
-     CONNECT
-========================= -->
+<!-- CONNECT -->
 
 <section class="connect">
 
 <div class="wrap">
 
-
 <div class="label">
 Let’s connect
 </div>
-
 
 <h2>
 Say hello.
 </h2>
 
-
 <p>
 If something here resonated with you, or you just want to talk about learning, leadership, or a good book, I’d love to hear from you.
 </p>
 
-
 <div class="buttons">
-
 
 <a
 class="btn linkedin-btn"
@@ -1422,13 +860,11 @@ rel="noopener">
 LinkedIn
 </a>
 
-
 <a
 class="btn email-btn"
 href="mailto:kahlilamae@icloud.com?subject=Hello%20Kahlila">
 Email
 </a>
-
 
 </div>
 
@@ -1436,15 +872,8 @@ Email
 
 </section>
 
-
-
 </main>
 
-
-
-<!-- =========================
-     FOOTER
-========================= -->
 
 <footer class="wrap">
 
@@ -1457,7 +886,6 @@ Learning · Leadership · Technology · AI
 </span>
 
 </footer>
-
 
 </body>
 
