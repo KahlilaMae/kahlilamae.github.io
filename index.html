@@ -84,8 +84,7 @@ letter-spacing:-.035em;
 
 h2,
 h3,
-.intro,
-.q{
+.intro{
 font-family:'Playfair Display',Georgia,serif;
 font-size:28px;
 font-weight:400;
@@ -98,7 +97,8 @@ letter-spacing:-.02em;
 
 .eyebrow,
 .label,
-.num{
+.num,
+.question-num{
 font-family:'DM Sans',Arial,sans-serif;
 font-size:12px;
 font-weight:500;
@@ -327,25 +327,36 @@ padding-top:22px
 
 /* QUESTIONS */
 
-.questions{
-width:100%
-}
-
-.q{
-border-top:1px solid var(--line);
-padding:25px 0
-}
-
-.q:last-child{
-padding-bottom:0
-}
-
 .questions-section{
-padding-bottom:55px
+padding-bottom:105px
 }
 
-.questions-section + section{
-padding-top:70px
+.question-cards{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:18px
+}
+
+.question-card{
+background:var(--card);
+border:1px solid var(--line);
+border-radius:8px;
+padding:34px 32px;
+min-height:245px
+}
+
+.question-num{
+color:var(--accent);
+margin-bottom:36px
+}
+
+.question-text{
+font-family:'Playfair Display',Georgia,serif;
+font-size:28px;
+font-weight:400;
+line-height:1.3;
+letter-spacing:-.02em;
+margin:0
 }
 
 
@@ -446,12 +457,22 @@ padding:72px 0
 }
 
 .cards,
-.topics{
+.topics,
+.question-cards{
 grid-template-columns:1fr
 }
 
 .card{
 min-height:auto
+}
+
+.question-card{
+min-height:auto;
+padding:30px 28px
+}
+
+.question-num{
+margin-bottom:26px
 }
 
 footer{
@@ -477,7 +498,7 @@ line-height:1.2
 h2,
 h3,
 .intro,
-.q{
+.question-text{
 font-size:24px;
 line-height:1.32
 }
@@ -498,7 +519,8 @@ line-height:1.6
 
 .eyebrow,
 .label,
-.num{
+.num,
+.question-num{
 font-size:12px
 }
 
@@ -772,19 +794,47 @@ I’m curious about how AI can make learning more personal.
 Questions I’m still asking
 </div>
 
-<div class="questions">
+<div class="question-cards">
 
-<div class="q">
+
+<article class="question-card">
+
+<div class="question-num">
+01
+</div>
+
+<p class="question-text">
 What are our systems making easier, and what are they making harder?
+</p>
+
+</article>
+
+
+<article class="question-card">
+
+<div class="question-num">
+02
 </div>
 
-<div class="q">
+<p class="question-text">
 What should AI help us do better, and what should always belong to people?
+</p>
+
+</article>
+
+
+<article class="question-card">
+
+<div class="question-num">
+03
 </div>
 
-<div class="q">
+<p class="question-text">
 How could we make it better?
-</div>
+</p>
+
+</article>
+
 
 </div>
 
