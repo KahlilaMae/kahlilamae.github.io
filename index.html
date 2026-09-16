@@ -3,7 +3,6 @@
 
 <head>
 <meta charset="utf-8">
-
 <meta name="viewport" content="width=device-width,initial-scale=1">
 
 <meta
@@ -25,12 +24,11 @@ rel="stylesheet">
 --ink:#20201e;
 --muted:#6d6b64;
 
+/* Warm palette */
 --paper:#e7ddd8;
 --card:#eee5e0;
 --line:#d5c9c3;
-
 --soft-line:rgba(111,93,98,.14);
-
 --accent:#765f64;
 
 --max:1120px;
@@ -38,7 +36,6 @@ rel="stylesheet">
 
 --linkedin-bg:#eee5e0;
 --linkedin-border:#d5c9c3;
-
 --email-bg:rgba(139,85,91,.42);
 --email-border:rgba(139,85,91,.18);
 }
@@ -74,16 +71,29 @@ text-decoration:none;
 }
 
 
+/*
+MASTER GRID
+
+This same wrap controls:
+- your name
+- hero text
+- What Guides Me
+- all other sections
+
+That keeps everything vertically aligned.
+*/
+
 .wrap{
 width:min(calc(100% - 48px),var(--max));
-margin:auto;
+margin-left:auto;
+margin-right:auto;
 }
 
 
 
-/* ============================= */
-/* TYPOGRAPHY                    */
-/* ============================= */
+/* ================================= */
+/* TYPOGRAPHY                        */
+/* ================================= */
 
 
 h1{
@@ -133,9 +143,9 @@ line-height:1.625;
 
 
 
-/* ============================= */
-/* NAVIGATION                    */
-/* ============================= */
+/* ================================= */
+/* NAVIGATION                        */
+/* ================================= */
 
 
 nav{
@@ -169,15 +179,15 @@ font-weight:400;
 
 
 
-/* ============================= */
-/* HERO                          */
-/* ============================= */
+/* ================================= */
+/* HERO                              */
+/* ================================= */
 
 
 .hero{
 position:relative;
 
-min-height:730px;
+min-height:720px;
 
 display:flex;
 align-items:center;
@@ -190,19 +200,33 @@ background-image:url("./Kahlila-hero-background.png");
 
 background-repeat:no-repeat;
 
-background-size:cover;
 
 /*
-Keeps more room above your head
-and keeps you toward the right.
+IMPORTANT CHANGE:
+
+Fit the photograph to the WIDTH.
+
+This prevents Safari from making the photograph
+enormous just to fill the height of the hero.
 */
 
-background-position:center 44%;
+background-size:100% auto;
+
+
+/*
+Anchor the top of the photograph.
+
+This protects the space above your head.
+*/
+
+background-position:center top;
 }
 
 
 
-/* FADE PHOTO INTO SITE */
+/* ================================= */
+/* HERO FADE                         */
+/* ================================= */
 
 
 .hero::after{
@@ -214,7 +238,7 @@ left:0;
 right:0;
 bottom:-1px;
 
-height:165px;
+height:170px;
 
 background:linear-gradient(
 to bottom,
@@ -232,7 +256,9 @@ z-index:1;
 
 
 
-/* HERO TEXT */
+/* ================================= */
+/* HERO TEXT                         */
+/* ================================= */
 
 
 .hero-content{
@@ -242,26 +268,26 @@ z-index:2;
 
 width:100%;
 
-padding-top:25px;
-padding-bottom:120px;
+padding-top:20px;
+padding-bottom:115px;
 }
 
 
 .hero-copy{
-width:49%;
-max-width:570px;
+width:48%;
+max-width:555px;
 }
 
 
 .hero h1{
-max-width:570px;
+max-width:555px;
 
 margin:22px 0 30px;
 }
 
 
 .hero p{
-max-width:545px;
+max-width:535px;
 
 margin:0;
 
@@ -270,9 +296,9 @@ color:var(--muted);
 
 
 
-/* ============================= */
-/* GENERAL SECTIONS              */
-/* ============================= */
+/* ================================= */
+/* GENERAL SECTIONS                  */
+/* ================================= */
 
 
 section{
@@ -288,9 +314,9 @@ margin-bottom:24px;
 
 
 
-/* ============================= */
-/* WHAT GUIDES ME                */
-/* ============================= */
+/* ================================= */
+/* WHAT GUIDES ME                    */
+/* ================================= */
 
 
 .guides-section{
@@ -334,9 +360,9 @@ margin-top:4px;
 
 
 
-/* ============================= */
-/* MY APPROACH                   */
-/* ============================= */
+/* ================================= */
+/* MY APPROACH                       */
+/* ================================= */
 
 
 .cards{
@@ -383,9 +409,9 @@ margin:0;
 
 
 
-/* ============================= */
-/* WHAT I'M EXPLORING            */
-/* ============================= */
+/* ================================= */
+/* WHAT I'M EXPLORING                */
+/* ================================= */
 
 
 .exploring-list{
@@ -417,9 +443,9 @@ max-width:320px;
 
 
 
-/* ============================= */
-/* QUESTIONS                     */
-/* ============================= */
+/* ================================= */
+/* QUESTIONS I'M STILL ASKING        */
+/* ================================= */
 
 
 .questions-section{
@@ -476,9 +502,9 @@ max-width:900px;
 
 
 
-/* ============================= */
-/* OUTSIDE OF WORK               */
-/* ============================= */
+/* ================================= */
+/* OUTSIDE OF WORK                   */
+/* ================================= */
 
 
 .human{
@@ -505,9 +531,9 @@ margin:0 0 20px;
 
 
 
-/* ============================= */
-/* BUTTONS                       */
-/* ============================= */
+/* ================================= */
+/* BUTTONS                           */
+/* ================================= */
 
 
 .btn{
@@ -526,7 +552,6 @@ border-radius:999px;
 font-family:'DM Sans',Arial,sans-serif;
 
 font-size:.88rem;
-
 font-weight:500;
 
 transition:transform .2s ease,opacity .2s ease;
@@ -559,9 +584,9 @@ border:1px solid var(--email-border);
 
 
 
-/* ============================= */
-/* CONNECT                       */
-/* ============================= */
+/* ================================= */
+/* CONNECT                           */
+/* ================================= */
 
 
 .connect{
@@ -575,11 +600,8 @@ padding:125px 0 100px;
 font-family:'Playfair Display',Georgia,serif;
 
 font-size:48px;
-
 font-weight:400;
-
 line-height:1.17;
-
 letter-spacing:-.035em;
 
 margin:15px 0 25px;
@@ -607,9 +629,9 @@ justify-content:center;
 
 
 
-/* ============================= */
-/* FOOTER                        */
-/* ============================= */
+/* ================================= */
+/* FOOTER                            */
+/* ================================= */
 
 
 footer{
@@ -622,9 +644,7 @@ color:var(--muted);
 font-family:'DM Sans',Arial,sans-serif;
 
 font-size:12px;
-
 font-weight:400;
-
 line-height:1.4;
 
 display:flex;
@@ -636,72 +656,81 @@ gap:20px;
 
 
 
-/* ============================= */
-/* IPAD / TABLET                 */
-/* ============================= */
+/* ================================= */
+/* TABLET / IPAD                     */
+/* ================================= */
 
 
 @media(max-width:1180px) and (min-width:761px){
 
+
+/*
+Keep the SAME grid used everywhere else.
+
+This is what aligns:
+Kahlila Mae Liverpool
+hero copy
+What Guides Me
+*/
+
 .wrap{
-width:calc(100% - 96px);
-max-width:none;
+width:min(calc(100% - 48px),var(--max));
+
+margin-left:auto;
+margin-right:auto;
 }
 
 
 /*
-This is the important iPad adjustment.
+This is the main iPad fix.
 
-Instead of "cover", the photograph is sized
-by height. That prevents your head from
-being enlarged and chopped off.
+100% width + automatic height preserves
+the photograph's original proportions.
 */
 
 .hero{
-min-height:720px;
+min-height:700px;
 
-background-size:auto 100%;
+background-size:100% auto;
 
-background-position:center center;
+background-position:center top;
 }
 
 
-/*
-Moves the writing inward from the browser edge
-while keeping comfortable space before the chair.
-*/
-
 .hero-content{
-padding-left:26px;
-padding-right:26px;
+padding-left:0;
+padding-right:0;
+
+padding-top:20px;
+padding-bottom:105px;
 }
 
 
 .hero-copy{
-width:47%;
+width:45%;
 
-max-width:520px;
+max-width:485px;
 }
 
 
 .hero h1{
-font-size:43px;
+font-size:42px;
 
-max-width:520px;
+max-width:485px;
 }
 
 
 .hero p{
-max-width:500px;
+max-width:465px;
 }
 
 }
 
 
 
-/* ============================= */
-/* MOBILE                        */
-/* ============================= */
+/* ================================= */
+/* MOBILE                            */
+/* ================================= */
 
 
 @media(max-width:760px){
@@ -712,8 +741,13 @@ width:min(calc(100% - 32px),var(--max));
 }
 
 
+/*
+Mobile needs a different composition because
+the screen is tall and narrow.
+*/
+
 .hero{
-min-height:830px;
+min-height:820px;
 
 align-items:flex-start;
 
@@ -728,7 +762,8 @@ background-color:var(--paper);
 
 
 /*
-Light veil behind copy for readability.
+Warm veil keeps the text readable
+without adding another box.
 */
 
 .hero::before{
