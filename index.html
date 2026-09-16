@@ -24,7 +24,7 @@
   --ink:#20201e;
   --muted:#6d6864;
 
-  /* WARM PALETTE — KEEP */
+  /* WARM PALETTE */
   --paper:#eadfd9;
   --card:#f0e7e2;
   --line:#d8cbc5;
@@ -165,12 +165,7 @@ nav{
 }
 
 
-/*
-PHOTO LAYER
-
-Your existing image stays:
-Kahlila-hero-background.png
-*/
+/* HERO PHOTO */
 
 .hero-photo{
   position:absolute;
@@ -178,14 +173,7 @@ Kahlila-hero-background.png
 
   background-image:url("./Kahlila-hero-background.png");
   background-repeat:no-repeat;
-
   background-size:cover;
-
-  /*
-  Slight move LEFT from the previous version.
-  This brings you/chair closer to the copy while
-  keeping a comfortable visual gap.
-  */
 
   background-position:48% 34%;
 
@@ -193,9 +181,7 @@ Kahlila-hero-background.png
 }
 
 
-/*
-Very subtle bottom transition into the site.
-*/
+/* SUBTLE BOTTOM FADE */
 
 .hero-photo::after{
   content:"";
@@ -580,15 +566,15 @@ footer{
   }
 
   /*
-  This is the iPad composition.
+  IMPORTANT CHANGE:
 
-  47% shifts the photograph/chair a little
-  farther LEFT than the previous version.
+  Instead of relying on a small percentage change,
+  physically shift the background image 65px left.
   */
 
   .hero-photo{
     background-size:cover;
-    background-position:47% 30%;
+    background-position:calc(50% - 65px) 30%;
   }
 
   .hero-content{
@@ -634,9 +620,8 @@ footer{
     background-position:57% center;
   }
 
-  /*
-  Light veil for readability on narrow screens.
-  */
+
+  /* LIGHT MOBILE VEIL */
 
   .hero-photo::before{
     content:"";
@@ -767,7 +752,7 @@ footer{
   }
 
   .hero-photo{
-    background-position:48% 34%;
+    background-position:calc(50% - 40px) 34%;
   }
 
 }
