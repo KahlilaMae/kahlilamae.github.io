@@ -23,14 +23,11 @@ rel="stylesheet">
 :root{
 --ink:#20201e;
 --muted:#6d6b64;
-
-/* Warm palette */
 --paper:#e7ddd8;
 --card:#eee5e0;
 --line:#d5c9c3;
 --soft-line:rgba(111,93,98,.14);
 --accent:#765f64;
-
 --max:1120px;
 --radius:26px;
 
@@ -40,61 +37,37 @@ rel="stylesheet">
 --email-border:rgba(139,85,91,.18);
 }
 
-
 *{
 box-sizing:border-box;
 }
-
 
 html{
 scroll-behavior:smooth;
 }
 
-
 body{
 margin:0;
 background:var(--paper);
 color:var(--ink);
-
 font-family:'DM Sans',Arial,sans-serif;
 font-size:16px;
 font-weight:400;
 line-height:1.625;
-
 -webkit-font-smoothing:antialiased;
 }
-
 
 a{
 color:inherit;
 text-decoration:none;
 }
 
-
-/*
-MASTER GRID
-
-This same wrap controls:
-- your name
-- hero text
-- What Guides Me
-- all other sections
-
-That keeps everything vertically aligned.
-*/
-
 .wrap{
 width:min(calc(100% - 48px),var(--max));
-margin-left:auto;
-margin-right:auto;
+margin:0 auto;
 }
 
 
-
-/* ================================= */
-/* TYPOGRAPHY                        */
-/* ================================= */
-
+/* TYPOGRAPHY */
 
 h1{
 font-family:'Playfair Display',Georgia,serif;
@@ -103,7 +76,6 @@ font-weight:400;
 line-height:1.17;
 letter-spacing:-.035em;
 }
-
 
 h2,
 h3,
@@ -116,7 +88,6 @@ line-height:1.3;
 letter-spacing:-.02em;
 }
 
-
 .eyebrow,
 .label{
 font-family:'DM Sans',Arial,sans-serif;
@@ -124,11 +95,9 @@ font-size:12px;
 font-weight:500;
 line-height:1.4;
 letter-spacing:.15em;
-
 text-transform:uppercase;
 color:var(--accent);
 }
-
 
 p,
 .card p,
@@ -142,34 +111,24 @@ line-height:1.625;
 }
 
 
-
-/* ================================= */
-/* NAVIGATION                        */
-/* ================================= */
-
+/* NAVIGATION */
 
 nav{
 position:sticky;
 top:0;
 z-index:20;
-
-background:rgba(231,221,216,.90);
-
+background:rgba(231,221,216,.94);
 backdrop-filter:blur(14px);
 -webkit-backdrop-filter:blur(14px);
-
-border-bottom:1px solid rgba(213,201,195,.45);
+border-bottom:1px solid rgba(213,201,195,.35);
 }
-
 
 .nav{
 min-height:70px;
-
 display:flex;
 align-items:center;
 justify-content:flex-start;
 }
-
 
 .brand{
 font-family:'Playfair Display',Georgia,serif;
@@ -178,727 +137,525 @@ font-weight:400;
 }
 
 
-
-/* ================================= */
-/* HERO                              */
-/* ================================= */
-
+/* ========================= */
+/* HERO                      */
+/* ========================= */
 
 .hero{
 position:relative;
-
-min-height:720px;
-
-display:flex;
-align-items:center;
-
+height:720px;
 overflow:hidden;
-
-background-color:var(--paper);
-
-background-image:url("./Kahlila-hero-background.png");
-
-background-repeat:no-repeat;
-
-
-/*
-IMPORTANT CHANGE:
-
-Fit the photograph to the WIDTH.
-
-This prevents Safari from making the photograph
-enormous just to fill the height of the hero.
-*/
-
-background-size:100% auto;
-
-
-/*
-Anchor the top of the photograph.
-
-This protects the space above your head.
-*/
-
-background-position:center top;
+background:var(--paper);
 }
 
 
+/*
+The photograph is its own layer.
 
-/* ================================= */
-/* HERO FADE                         */
-/* ================================= */
+This gives us much better control than making
+the entire hero itself the background.
+*/
 
-
-.hero::after{
-content:"";
-
+.hero-photo{
 position:absolute;
+inset:0;
 
+background-image:url("./Kahlila-hero-background.png");
+background-repeat:no-repeat;
+
+/*
+Fill the width while preserving the image ratio.
+*/
+
+background-size:cover;
+
+/*
+Move the composition slightly upward/left so:
+- your full head is visible
+- you stay on the right
+- the empty wall stays available for text
+*/
+
+background-position:center 35%;
+
+z-index:0;
+}
+
+
+/*
+VERY LIGHT fade only at the bottom.
+
+This does NOT fade across your torso.
+*/
+
+.hero-photo::after{
+content:"";
+position:absolute;
 left:0;
 right:0;
 bottom:-1px;
-
-height:170px;
+height:105px;
 
 background:linear-gradient(
 to bottom,
 rgba(231,221,216,0) 0%,
-rgba(231,221,216,.08) 25%,
-rgba(231,221,216,.30) 52%,
-rgba(231,221,216,.72) 78%,
+rgba(231,221,216,.12) 35%,
+rgba(231,221,216,.55) 72%,
 var(--paper) 100%
 );
 
 pointer-events:none;
-
-z-index:1;
 }
 
 
-
-/* ================================= */
-/* HERO TEXT                         */
-/* ================================= */
-
+/* HERO TEXT */
 
 .hero-content{
 position:relative;
-
 z-index:2;
+height:100%;
 
-width:100%;
-
-padding-top:20px;
-padding-bottom:115px;
+display:flex;
+align-items:center;
 }
-
 
 .hero-copy{
-width:48%;
-max-width:555px;
-}
+width:47%;
+max-width:525px;
 
+transform:translateY(-20px);
+}
 
 .hero h1{
-max-width:555px;
-
-margin:22px 0 30px;
+max-width:525px;
+margin:22px 0 28px;
 }
 
-
 .hero p{
-max-width:535px;
-
+max-width:505px;
 margin:0;
-
 color:var(--muted);
 }
 
 
-
-/* ================================= */
-/* GENERAL SECTIONS                  */
-/* ================================= */
-
+/* GENERAL SECTIONS */
 
 section{
 padding:105px 0;
-
 border-top:1px solid var(--line);
 }
-
 
 .label{
 margin-bottom:24px;
 }
 
 
-
-/* ================================= */
-/* WHAT GUIDES ME                    */
-/* ================================= */
-
+/* WHAT GUIDES ME */
 
 .guides-section{
 border-top:0;
 }
 
-
 .guides-content{
 max-width:940px;
-
 margin:0;
-
 text-align:left;
 }
 
-
 .guides-content .intro{
 max-width:900px;
-
 margin:0 0 20px;
 }
 
-
 .guides-copy{
 max-width:900px;
-
 margin:0;
-
 color:var(--muted);
 }
-
 
 .guides-copy p{
 margin:0;
 }
-
 
 .guides-copy p + p{
 margin-top:4px;
 }
 
 
-
-/* ================================= */
-/* MY APPROACH                       */
-/* ================================= */
-
+/* MY APPROACH */
 
 .cards{
 display:grid;
-
 grid-template-columns:repeat(2,1fr);
-
 gap:1px;
-
 background:var(--line);
-
 border:1px solid var(--line);
-
 border-radius:var(--radius);
-
 overflow:hidden;
 }
 
-
 .card{
 background:var(--card);
-
 padding:38px;
-
 min-height:205px;
 }
-
 
 .card .label{
 margin-bottom:14px;
 }
 
-
 .card h3{
 margin:0 0 14px;
 }
 
-
 .card p{
 color:var(--muted);
-
 margin:0;
 }
 
 
-
-/* ================================= */
-/* WHAT I'M EXPLORING                */
-/* ================================= */
-
+/* WHAT I'M EXPLORING */
 
 .exploring-list{
 display:grid;
-
 grid-template-columns:repeat(3,1fr);
-
 gap:56px;
 }
-
 
 .explore-item{
 padding:0;
 }
 
-
 .explore-item h3{
 margin:0 0 14px;
 }
 
-
 .explore-item p{
 color:var(--muted);
-
 margin:0;
-
 max-width:320px;
 }
 
 
-
-/* ================================= */
-/* QUESTIONS I'M STILL ASKING        */
-/* ================================= */
-
+/* QUESTIONS */
 
 .questions-section{
 padding-bottom:105px;
 }
 
-
 .questions-panel{
 background:var(--card);
-
 border-radius:var(--radius);
-
 padding:54px 56px 58px;
 }
-
 
 .questions-panel .label{
 margin-bottom:20px;
 }
 
-
 .questions-list{
 max-width:900px;
-
 margin:0;
 }
-
 
 .question-item{
 padding:16px 0;
 }
 
-
 .question-item:first-child{
 padding-top:0;
 }
-
 
 .question-item:last-child{
 padding-bottom:0;
 }
 
-
 .question-item + .question-item{
 border-top:1px solid var(--soft-line);
 }
 
-
 .question-text{
 margin:0;
-
 max-width:900px;
 }
 
 
-
-/* ================================= */
-/* OUTSIDE OF WORK                   */
-/* ================================= */
-
+/* OUTSIDE OF WORK */
 
 .human{
 max-width:var(--max);
 }
-
 
 .human>h2,
 .human>p{
 max-width:900px;
 }
 
-
 .human p{
 color:var(--muted);
 }
 
-
 .intro{
 max-width:880px;
-
 margin:0 0 20px;
 }
 
 
-
-/* ================================= */
-/* BUTTONS                           */
-/* ================================= */
-
+/* BUTTONS */
 
 .btn{
 display:inline-flex;
-
 align-items:center;
 justify-content:center;
-
 width:104px;
 height:40px;
-
 padding:0 12px;
-
 border-radius:999px;
 
 font-family:'DM Sans',Arial,sans-serif;
-
 font-size:.88rem;
 font-weight:500;
 
 transition:transform .2s ease,opacity .2s ease;
 }
 
-
 .btn:hover{
 transform:translateY(-2px);
-
 opacity:.85;
 }
 
-
 .linkedin-btn{
 background:var(--linkedin-bg);
-
 color:var(--ink);
-
 border:1px solid var(--linkedin-border);
 }
 
-
 .email-btn{
 background:var(--email-bg);
-
 color:var(--ink);
-
 border:1px solid var(--email-border);
 }
 
 
-
-/* ================================= */
-/* CONNECT                           */
-/* ================================= */
-
+/* CONNECT */
 
 .connect{
 text-align:center;
-
 padding:125px 0 100px;
 }
 
-
 .connect h2{
 font-family:'Playfair Display',Georgia,serif;
-
 font-size:48px;
 font-weight:400;
 line-height:1.17;
 letter-spacing:-.035em;
-
 margin:15px 0 25px;
 }
 
-
 .connect p{
 max-width:700px;
-
 margin:0 auto 30px;
-
 color:var(--muted);
 }
 
-
 .buttons{
 display:flex;
-
 gap:10px;
-
 flex-wrap:wrap;
-
 justify-content:center;
 }
 
 
-
-/* ================================= */
-/* FOOTER                            */
-/* ================================= */
-
+/* FOOTER */
 
 footer{
 padding:28px 0 38px;
-
 border-top:1px solid var(--line);
-
 color:var(--muted);
 
 font-family:'DM Sans',Arial,sans-serif;
-
 font-size:12px;
 font-weight:400;
 line-height:1.4;
 
 display:flex;
-
 justify-content:space-between;
-
 gap:20px;
 }
 
 
-
-/* ================================= */
-/* TABLET / IPAD                     */
-/* ================================= */
-
+/* ========================= */
+/* IPAD / TABLET             */
+/* ========================= */
 
 @media(max-width:1180px) and (min-width:761px){
 
-
-/*
-Keep the SAME grid used everywhere else.
-
-This is what aligns:
-Kahlila Mae Liverpool
-hero copy
-What Guides Me
-*/
-
 .wrap{
-width:min(calc(100% - 48px),var(--max));
-
-margin-left:auto;
-margin-right:auto;
+width:min(calc(100% - 96px),var(--max));
 }
 
 
 /*
-This is the main iPad fix.
-
-100% width + automatic height preserves
-the photograph's original proportions.
+This is tuned specifically for the composition
+you showed me on your iPad.
 */
 
 .hero{
-min-height:700px;
-
-background-size:100% auto;
-
-background-position:center top;
+height:700px;
 }
 
+.hero-photo{
+background-size:cover;
+
+/*
+Keep your head inside the frame and
+keep you toward the right.
+*/
+
+background-position:54% 30%;
+}
 
 .hero-content{
-padding-left:0;
-padding-right:0;
-
-padding-top:20px;
-padding-bottom:105px;
+align-items:center;
 }
-
 
 .hero-copy{
-width:45%;
-
-max-width:485px;
+width:46%;
+max-width:480px;
+transform:translateY(-15px);
 }
-
 
 .hero h1{
 font-size:42px;
-
-max-width:485px;
+max-width:480px;
 }
-
 
 .hero p{
-max-width:465px;
+max-width:460px;
 }
 
 }
 
 
-
-/* ================================= */
-/* MOBILE                            */
-/* ================================= */
-
+/* ========================= */
+/* MOBILE                    */
+/* ========================= */
 
 @media(max-width:760px){
-
 
 .wrap{
 width:min(calc(100% - 32px),var(--max));
 }
 
-
-/*
-Mobile needs a different composition because
-the screen is tall and narrow.
-*/
-
 .hero{
-min-height:820px;
+height:790px;
+}
 
-align-items:flex-start;
-
+.hero-photo{
 background-size:auto 100%;
-
 background-position:60% center;
-
-background-repeat:no-repeat;
-
-background-color:var(--paper);
 }
 
 
 /*
-Warm veil keeps the text readable
-without adding another box.
+A light veil on mobile only.
 */
 
-.hero::before{
+.hero-photo::before{
 content:"";
-
 position:absolute;
-
 inset:0;
 
 background:linear-gradient(
 to bottom,
-rgba(231,221,216,.96) 0%,
-rgba(231,221,216,.91) 31%,
-rgba(231,221,216,.52) 50%,
-rgba(231,221,216,.10) 70%
+rgba(231,221,216,.95) 0%,
+rgba(231,221,216,.88) 32%,
+rgba(231,221,216,.38) 55%,
+rgba(231,221,216,0) 72%
 );
-
-z-index:1;
-
-pointer-events:none;
 }
 
-
-.hero::after{
-height:165px;
-
-z-index:2;
+.hero-photo::after{
+height:100px;
 }
-
 
 .hero-content{
-z-index:3;
-
+align-items:flex-start;
 padding-top:55px;
-
-padding-bottom:170px;
 }
-
 
 .hero-copy{
 width:100%;
-
 max-width:100%;
+transform:none;
 }
-
 
 .hero h1{
+font-size:36px;
+line-height:1.2;
 max-width:520px;
 }
-
 
 .hero p{
 max-width:520px;
 }
 
-
 section{
 padding:72px 0;
 }
-
 
 .guides-copy p + p{
 margin-top:16px;
 }
 
-
 .cards{
 grid-template-columns:1fr;
-
 border-radius:20px;
 }
-
 
 .card{
 min-height:auto;
 }
 
-
 .exploring-list{
 grid-template-columns:1fr;
-
 gap:38px;
 }
-
 
 .explore-item p{
 max-width:100%;
 }
 
-
 .questions-panel{
 padding:36px 26px 40px;
-
 border-radius:20px;
 }
-
 
 .questions-panel .label{
 margin-bottom:20px;
 }
 
-
 .question-item{
 padding:20px 0;
 }
 
-
 footer{
 flex-direction:column;
 }
-
-
-h1{
-font-size:36px;
-
-line-height:1.2;
-}
-
 
 h2,
 h3,
 .intro,
 .question-text{
 font-size:24px;
-
 line-height:1.32;
 }
 
-
 .connect h2{
 font-size:36px;
-
 line-height:1.2;
 }
-
 
 p,
 .card p,
@@ -906,14 +663,22 @@ p,
 .human p,
 .connect p{
 font-size:15px;
-
 line-height:1.6;
 }
 
+}
 
-.eyebrow,
-.label{
-font-size:12px;
+
+/* LARGE DESKTOP */
+
+@media(min-width:1400px){
+
+.hero{
+height:760px;
+}
+
+.hero-photo{
+background-position:center 34%;
 }
 
 }
@@ -925,8 +690,6 @@ font-size:12px;
 
 <body>
 
-
-<!-- NAVIGATION -->
 
 <nav>
 
@@ -941,13 +704,14 @@ Kahlila Mae Liverpool
 </nav>
 
 
-
 <main>
 
 
 <!-- HERO -->
 
 <header class="hero">
+
+<div class="hero-photo"></div>
 
 <div class="wrap hero-content">
 
@@ -970,7 +734,6 @@ That curiosity has shaped my work in learning, leadership, and coaching, and how
 </div>
 
 </header>
-
 
 
 <!-- WHAT GUIDES ME -->
@@ -1008,7 +771,6 @@ The work has changed over the years, but what draws me to it hasn’t. I like he
 </section>
 
 
-
 <!-- MY APPROACH -->
 
 <section>
@@ -1016,7 +778,6 @@ The work has changed over the years, but what draws me to it hasn’t. I like he
 <div class="wrap">
 
 <div class="cards">
-
 
 <article class="card">
 
@@ -1073,13 +834,11 @@ Whether I’m designing learning, facilitating a conversation, or partnering wit
 
 </article>
 
-
 </div>
 
 </div>
 
 </section>
-
 
 
 <!-- WHAT I'M EXPLORING -->
@@ -1093,7 +852,6 @@ What I’m exploring
 </div>
 
 <div class="exploring-list">
-
 
 <article class="explore-item">
 
@@ -1133,7 +891,6 @@ I’m curious about how AI can make learning more personal.
 
 </article>
 
-
 </div>
 
 </div>
@@ -1141,8 +898,7 @@ I’m curious about how AI can make learning more personal.
 </section>
 
 
-
-<!-- QUESTIONS I'M STILL ASKING -->
+<!-- QUESTIONS -->
 
 <section class="questions-section">
 
@@ -1155,7 +911,6 @@ Questions I’m still asking
 </div>
 
 <div class="questions-list">
-
 
 <div class="question-item">
 
@@ -1183,7 +938,6 @@ How could we make it better?
 
 </div>
 
-
 </div>
 
 </div>
@@ -1191,7 +945,6 @@ How could we make it better?
 </div>
 
 </section>
-
 
 
 <!-- OUTSIDE OF WORK -->
@@ -1223,7 +976,6 @@ Lately, I’ve fallen down the Spider-Man rabbit hole. I blame Zendaya’s red-c
 </div>
 
 </section>
-
 
 
 <!-- CONNECT -->
@@ -1268,7 +1020,6 @@ Email
 
 
 </main>
-
 
 
 <footer class="wrap">
