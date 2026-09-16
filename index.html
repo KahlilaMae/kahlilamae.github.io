@@ -11,9 +11,7 @@
 name="description"
 content="Kahlila Mae Liverpool — Learning & Development | Leadership | Exploring Adaptive Learning + AI.">
 
-<title>
-Kahlila Mae Liverpool | Learning & Development
-</title>
+<title>Kahlila Mae Liverpool | Learning & Development</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -69,6 +67,7 @@ width:min(calc(100% - 48px),var(--max));
 margin:auto;
 }
 
+
 /* TYPE */
 
 h1{
@@ -110,15 +109,17 @@ font-weight:400;
 line-height:1.625;
 }
 
+
 /* NAV */
 
 nav{
 position:sticky;
 top:0;
-z-index:5;
-background:rgba(222,212,212,.92);
+z-index:20;
+background:rgba(222,212,212,.82);
 backdrop-filter:blur(14px);
-border-bottom:1px solid rgba(221,217,207,.75);
+-webkit-backdrop-filter:blur(14px);
+border-bottom:1px solid rgba(221,217,207,.55);
 }
 
 .nav{
@@ -133,6 +134,7 @@ font-family:'Playfair Display',Georgia,serif;
 font-size:1.15rem;
 font-weight:400;
 }
+
 
 /* BUTTONS */
 
@@ -167,34 +169,56 @@ color:var(--ink);
 border:1px solid var(--email-border);
 }
 
+
 /* HERO */
 
 .hero{
-min-height:88vh;
-display:grid;
+position:relative;
+min-height:calc(100vh - 70px);
+display:flex;
 align-items:center;
-padding:95px 0 0;
+
+background-image:url("Kahlila-hero-background.png");
+background-size:cover;
+background-position:center center;
+background-repeat:no-repeat;
+
 overflow:hidden;
 }
 
-.hero-grid{
-display:grid;
-grid-template-columns:minmax(0,1.18fr) minmax(360px,.82fr);
-gap:48px;
-align-items:end;
+/* Soft fade from the photograph into the site */
+
+.hero::after{
+content:"";
+position:absolute;
+left:0;
+right:0;
+bottom:-1px;
+height:190px;
+
+background:linear-gradient(
+to bottom,
+rgba(222,212,212,0) 0%,
+rgba(222,212,212,.18) 28%,
+rgba(222,212,212,.60) 66%,
+var(--paper) 100%
+);
+
+pointer-events:none;
+z-index:1;
 }
 
-.portrait-wrap{
-align-self:end;
-display:flex;
-justify-content:center;
-align-items:flex-end;
+.hero-content{
+position:relative;
+z-index:2;
+width:100%;
+padding-top:40px;
+padding-bottom:150px;
 }
 
-.portrait{
-width:min(100%,500px);
-display:block;
-filter:drop-shadow(0 10px 14px rgba(32,32,30,.08));
+.hero-copy{
+width:52%;
+max-width:620px;
 }
 
 .eyebrow,
@@ -204,15 +228,16 @@ color:var(--accent);
 }
 
 h1{
-max-width:950px;
+max-width:620px;
 margin:22px 0 32px;
 }
 
 .hero p{
-max-width:730px;
+max-width:590px;
 color:var(--muted);
-margin:0 0 32px;
+margin:0;
 }
+
 
 /* SECTIONS */
 
@@ -225,7 +250,12 @@ border-top:1px solid var(--line);
 margin-bottom:24px;
 }
 
+
 /* WHAT GUIDES ME */
+
+.guides-section{
+border-top:0;
+}
 
 .guides-content{
 max-width:940px;
@@ -251,6 +281,7 @@ margin:0;
 .guides-copy p + p{
 margin-top:4px;
 }
+
 
 /* MY APPROACH */
 
@@ -283,6 +314,7 @@ color:var(--muted);
 margin:0;
 }
 
+
 /* WHAT I'M EXPLORING */
 
 .exploring-list{
@@ -304,6 +336,7 @@ color:var(--muted);
 margin:0;
 max-width:320px;
 }
+
 
 /* QUESTIONS I'M STILL ASKING */
 
@@ -347,6 +380,7 @@ margin:0;
 max-width:900px;
 }
 
+
 /* OUTSIDE OF WORK */
 
 .human{
@@ -366,6 +400,7 @@ color:var(--muted);
 max-width:880px;
 margin:0 0 20px;
 }
+
 
 /* CONNECT */
 
@@ -396,6 +431,7 @@ flex-wrap:wrap;
 justify-content:center;
 }
 
+
 /* FOOTER */
 
 footer{
@@ -411,6 +447,7 @@ justify-content:space-between;
 gap:20px;
 }
 
+
 /* MOBILE */
 
 @media(max-width:760px){
@@ -419,22 +456,57 @@ gap:20px;
 width:min(calc(100% - 32px),var(--max));
 }
 
-.hero-grid{
-grid-template-columns:1fr;
-gap:42px;
-}
-
-.portrait-wrap{
-justify-content:center;
-}
-
-.portrait{
-width:min(94vw,430px);
-}
+/*
+On phones the image is repositioned so your face remains visible.
+The lower overlay gives the text enough contrast.
+*/
 
 .hero{
-min-height:78vh;
-padding:70px 0 0;
+min-height:850px;
+align-items:flex-start;
+background-size:auto 100%;
+background-position:62% center;
+}
+
+.hero::before{
+content:"";
+position:absolute;
+inset:0;
+
+background:linear-gradient(
+to bottom,
+rgba(222,212,212,.96) 0%,
+rgba(222,212,212,.90) 34%,
+rgba(222,212,212,.35) 58%,
+rgba(222,212,212,.05) 76%
+);
+
+z-index:1;
+pointer-events:none;
+}
+
+.hero::after{
+height:170px;
+z-index:2;
+}
+
+.hero-content{
+z-index:3;
+padding-top:65px;
+padding-bottom:170px;
+}
+
+.hero-copy{
+width:100%;
+max-width:100%;
+}
+
+.hero h1{
+max-width:520px;
+}
+
+.hero p{
+max-width:520px;
 }
 
 section{
@@ -518,7 +590,11 @@ font-size:12px;
 
 </head>
 
+
 <body>
+
+
+<!-- NAV -->
 
 <nav>
 
@@ -532,15 +608,17 @@ Kahlila Mae Liverpool
 
 </nav>
 
+
 <main>
+
 
 <!-- HERO -->
 
 <header class="hero">
 
-<div class="wrap hero-grid">
+<div class="wrap hero-content">
 
-<div>
+<div class="hero-copy">
 
 <div class="eyebrow">
 Learning & Development | Leadership | Exploring Adaptive Learning + AI
@@ -556,15 +634,6 @@ That curiosity has shaped my work in learning, leadership, and coaching, and how
 
 </div>
 
-<div class="portrait-wrap">
-
-<img
-class="portrait"
-src="kahlila-chair-final.png"
-alt="Kahlila Mae Liverpool">
-
-</div>
-
 </div>
 
 </header>
@@ -572,7 +641,7 @@ alt="Kahlila Mae Liverpool">
 
 <!-- WHAT GUIDES ME -->
 
-<section>
+<section class="guides-section">
 
 <div class="wrap">
 
@@ -629,6 +698,7 @@ Usually because I’m trying to understand what’s actually going on before jum
 
 </article>
 
+
 <article class="card">
 
 <h3>
@@ -641,6 +711,7 @@ I pay attention to who is in the room, who isn’t being heard, and what people 
 
 </article>
 
+
 <article class="card">
 
 <h3>
@@ -652,6 +723,7 @@ Give me something complicated or not quite working yet, and I’ll want to figur
 </p>
 
 </article>
+
 
 <article class="card">
 
@@ -684,6 +756,7 @@ What I’m exploring
 
 <div class="exploring-list">
 
+
 <article class="explore-item">
 
 <h3>
@@ -695,6 +768,7 @@ I'm interested in how technology can make learning more useful, engaging, and ac
 </p>
 
 </article>
+
 
 <article class="explore-item">
 
@@ -708,6 +782,7 @@ I’m thinking deeply about what helps people become better, especially when thi
 
 </article>
 
+
 <article class="explore-item">
 
 <h3>
@@ -719,6 +794,7 @@ I’m curious about how AI can make learning more personal.
 </p>
 
 </article>
+
 
 </div>
 
@@ -741,6 +817,7 @@ Questions I’m still asking
 
 <div class="questions-list">
 
+
 <div class="question-item">
 
 <p class="question-text">
@@ -748,6 +825,7 @@ What are our systems making easier, and what are they making harder?
 </p>
 
 </div>
+
 
 <div class="question-item">
 
@@ -757,6 +835,7 @@ What should AI help us do better, and what should always belong to people?
 
 </div>
 
+
 <div class="question-item">
 
 <p class="question-text">
@@ -764,6 +843,7 @@ How could we make it better?
 </p>
 
 </div>
+
 
 </div>
 
@@ -845,6 +925,7 @@ Email
 
 </section>
 
+
 </main>
 
 
@@ -859,6 +940,7 @@ Learning · Leadership · Technology · AI
 </span>
 
 </footer>
+
 
 </body>
 
