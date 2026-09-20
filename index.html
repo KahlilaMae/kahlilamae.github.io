@@ -31,10 +31,12 @@
   --ink:#20201e;
   --muted:#625d5a;
 
-  /* Main site background — matched to portrait */
+  /* Main site background */
   --paper:#C6ABAD;
 
-  --card:rgba(244,238,234,.58);
+  /* All major boxes */
+  --card:#D1BBBC;
+
   --line:rgba(111,93,98,.18);
   --soft-line:rgba(111,93,98,.14);
   --accent:#765f64;
@@ -42,11 +44,17 @@
   --max:1120px;
   --radius:26px;
 
-  --linkedin-bg:rgba(244,238,234,.58);
+  --linkedin-bg:#D1BBBC;
   --linkedin-border:rgba(111,93,98,.18);
-  --email-bg:rgba(244,238,234,.42);
+
+  --email-bg:#D1BBBC;
   --email-border:rgba(111,93,98,.18);
 }
+
+
+/* ========================= */
+/* BASE                      */
+/* ========================= */
 
 *{
   box-sizing:border-box;
@@ -136,11 +144,13 @@ nav{
   z-index:20;
 
   background:#ffffff;
+
   border-bottom:1px solid var(--line);
 }
 
 .nav{
   min-height:70px;
+
   display:flex;
   align-items:center;
   justify-content:flex-start;
@@ -150,6 +160,9 @@ nav{
   font-family:'Playfair Display',Georgia,serif;
   font-size:1.15rem;
   font-weight:400;
+
+  /* Softer than black */
+  color:#625d5a;
 }
 
 
@@ -159,8 +172,11 @@ nav{
 
 .hero{
   position:relative;
+
   height:720px;
+
   overflow:hidden;
+
   background:var(--paper);
 }
 
@@ -171,12 +187,11 @@ nav{
   background-image:url("./Kahlila-hero-final.png");
   background-repeat:no-repeat;
 
-  /*
-  Portrait is intentionally smaller than
-  the full hero and anchored to the bottom.
-  */
+  /* Locked portrait proportions */
   background-size:auto 85%;
-  background-position:right bottom;
+
+  /* Slight move to the right + bottom anchored */
+  background-position:103% bottom;
 
   z-index:0;
 }
@@ -199,27 +214,33 @@ nav{
 .hero-copy{
   width:47%;
   max-width:525px;
+
   transform:translateY(-18px);
 }
 
 .hero h1{
   max-width:525px;
+
   margin:22px 0 28px;
 }
 
 .hero p{
   max-width:505px;
+
   margin:0;
+
   color:var(--muted);
 }
 
 
 /* ========================= */
-/* GENERAL SECTIONS          */
+/* ALL SECTIONS              */
 /* ========================= */
 
 section{
   padding:105px 0;
+
+  /* Thin divider above every section */
   border-top:1px solid var(--line);
 }
 
@@ -233,23 +254,32 @@ section{
 /* ========================= */
 
 .guides-section{
-  border-top:0;
+  /*
+  Keep the same divider as every
+  other section.
+  */
+  border-top:1px solid var(--line);
 }
 
 .guides-content{
   max-width:940px;
+
   margin:0;
+
   text-align:left;
 }
 
 .guides-content .intro{
   max-width:900px;
+
   margin:0 0 20px;
 }
 
 .guides-copy{
   max-width:900px;
+
   margin:0;
+
   color:var(--muted);
 }
 
@@ -264,18 +294,25 @@ section{
 
 .cards{
   display:grid;
+
   grid-template-columns:repeat(2,1fr);
+
   gap:1px;
 
   background:var(--line);
+
   border:1px solid var(--line);
+
   border-radius:var(--radius);
+
   overflow:hidden;
 }
 
 .card{
   background:var(--card);
+
   padding:38px;
+
   min-height:205px;
 }
 
@@ -293,6 +330,7 @@ section{
 
 .card p{
   color:var(--muted);
+
   margin:0;
 }
 
@@ -303,7 +341,9 @@ section{
 
 .exploring-list{
   display:grid;
+
   grid-template-columns:repeat(3,1fr);
+
   gap:56px;
 }
 
@@ -317,7 +357,9 @@ section{
 
 .explore-item p{
   color:var(--muted);
+
   margin:0;
+
   max-width:320px;
 }
 
@@ -332,7 +374,11 @@ section{
 
 .questions-panel{
   background:var(--card);
+
+  border:1px solid var(--line);
+
   border-radius:var(--radius);
+
   padding:54px 56px 58px;
 }
 
@@ -342,6 +388,7 @@ section{
 
 .questions-list{
   max-width:900px;
+
   margin:0;
 }
 
@@ -363,6 +410,7 @@ section{
 
 .question-text{
   margin:0;
+
   max-width:900px;
 }
 
@@ -386,6 +434,7 @@ section{
 
 .intro{
   max-width:880px;
+
   margin:0 0 20px;
 }
 
@@ -396,11 +445,13 @@ section{
 
 .btn{
   display:inline-flex;
+
   align-items:center;
   justify-content:center;
 
   width:104px;
   height:40px;
+
   padding:0 12px;
 
   border-radius:999px;
@@ -409,23 +460,30 @@ section{
   font-size:.88rem;
   font-weight:500;
 
-  transition:transform .2s ease, opacity .2s ease;
+  transition:
+    transform .2s ease,
+    opacity .2s ease;
 }
 
 .btn:hover{
   transform:translateY(-2px);
+
   opacity:.85;
 }
 
 .linkedin-btn{
   background:var(--linkedin-bg);
+
   color:var(--ink);
+
   border:1px solid var(--linkedin-border);
 }
 
 .email-btn{
   background:var(--email-bg);
+
   color:var(--ink);
+
   border:1px solid var(--email-border);
 }
 
@@ -436,14 +494,17 @@ section{
 
 .connect{
   text-align:center;
+
   padding:125px 0 100px;
 }
 
 .connect h2{
   font-family:'Playfair Display',Georgia,serif;
+
   font-size:48px;
   font-weight:400;
   line-height:1.17;
+
   letter-spacing:-.035em;
 
   margin:15px 0 25px;
@@ -451,14 +512,19 @@ section{
 
 .connect p{
   max-width:700px;
+
   margin:0 auto 30px;
+
   color:var(--muted);
 }
 
 .buttons{
   display:flex;
+
   gap:10px;
+
   flex-wrap:wrap;
+
   justify-content:center;
 }
 
@@ -475,12 +541,15 @@ footer{
   color:var(--muted);
 
   font-family:'DM Sans',Arial,sans-serif;
+
   font-size:12px;
   font-weight:400;
   line-height:1.4;
 
   display:flex;
+
   justify-content:space-between;
+
   gap:20px;
 }
 
@@ -501,7 +570,7 @@ footer{
 
   .hero-photo{
     background-size:auto 85%;
-    background-position:right bottom;
+    background-position:103% bottom;
   }
 
   .hero-content{
@@ -510,12 +579,15 @@ footer{
 
   .hero-copy{
     width:46%;
+
     max-width:480px;
+
     transform:translateY(-15px);
   }
 
   .hero h1{
     font-size:42px;
+
     max-width:480px;
   }
 
@@ -538,32 +610,39 @@ footer{
 
   .hero{
     height:790px;
+
     background:var(--paper);
   }
 
   /*
-  No old pink gradient.
-  Same background color throughout.
+  No separate background color.
+  No pink gradient.
   */
   .hero-photo{
     background-size:auto 72%;
+
     background-position:60% bottom;
   }
 
   .hero-content{
     align-items:flex-start;
+
     padding-top:55px;
   }
 
   .hero-copy{
     width:100%;
+
     max-width:100%;
+
     transform:none;
   }
 
   .hero h1{
     font-size:36px;
+
     line-height:1.2;
+
     max-width:520px;
   }
 
@@ -577,6 +656,7 @@ footer{
 
   .cards{
     grid-template-columns:1fr;
+
     border-radius:20px;
   }
 
@@ -590,6 +670,7 @@ footer{
 
   .exploring-list{
     grid-template-columns:1fr;
+
     gap:38px;
   }
 
@@ -599,6 +680,7 @@ footer{
 
   .questions-panel{
     padding:36px 26px 40px;
+
     border-radius:20px;
   }
 
@@ -619,11 +701,13 @@ footer{
   .intro,
   .question-text{
     font-size:24px;
+
     line-height:1.32;
   }
 
   .connect h2{
     font-size:36px;
+
     line-height:1.2;
   }
 
@@ -633,6 +717,7 @@ footer{
   .human p,
   .connect p{
     font-size:15px;
+
     line-height:1.6;
   }
 
@@ -651,7 +736,8 @@ footer{
 
   .hero-photo{
     background-size:auto 85%;
-    background-position:right bottom;
+
+    background-position:103% bottom;
   }
 
 }
@@ -663,9 +749,7 @@ footer{
 <body>
 
 
-<!-- ========================= -->
-<!-- NAVIGATION                -->
-<!-- ========================= -->
+<!-- NAVIGATION -->
 
 <nav>
 
@@ -683,9 +767,7 @@ Kahlila Mae Liverpool
 <main>
 
 
-<!-- ========================= -->
-<!-- HERO                      -->
-<!-- ========================= -->
+<!-- HERO -->
 
 <header class="hero">
 
@@ -714,9 +796,7 @@ That curiosity has shaped my work and how I think about technology’s role. I�
 </header>
 
 
-<!-- ========================= -->
-<!-- WHAT GUIDES ME            -->
-<!-- ========================= -->
+<!-- WHAT GUIDES ME -->
 
 <section class="guides-section">
 
@@ -747,9 +827,7 @@ The work has changed over the years, but what draws me to it hasn’t. I like he
 </section>
 
 
-<!-- ========================= -->
-<!-- MY APPROACH               -->
-<!-- ========================= -->
+<!-- MY APPROACH -->
 
 <section>
 
@@ -782,8 +860,7 @@ I notice what’s happening.
 </h3>
 
 <p>
-I pay attention to who's in the room, who isn’t being heard,<br>
-and what people need to move forward.
+I pay attention to who's in the room, who isn’t being heard, and what people need to move forward.
 </p>
 
 </article>
@@ -822,9 +899,7 @@ Whether I’m designing a learning experience, working through an idea, or partn
 </section>
 
 
-<!-- ========================= -->
-<!-- WHAT I'M EXPLORING        -->
-<!-- ========================= -->
+<!-- WHAT I'M EXPLORING -->
 
 <section>
 
@@ -883,9 +958,7 @@ I’m exploring how AI can make learning more responsive, improve performance, a
 </section>
 
 
-<!-- ========================= -->
-<!-- QUESTIONS                 -->
-<!-- ========================= -->
+<!-- QUESTIONS I'M STILL ASKING -->
 
 <section class="questions-section">
 
@@ -936,9 +1009,7 @@ How do we know it’s actually helping?
 </section>
 
 
-<!-- ========================= -->
-<!-- FAVORITES                 -->
-<!-- ========================= -->
+<!-- FAVORITES -->
 
 <section>
 
@@ -969,9 +1040,7 @@ Lately, I’ve fallen down the Spider-Man rabbit hole. I blame Zendaya’s red-c
 </section>
 
 
-<!-- ========================= -->
-<!-- CONNECT                   -->
-<!-- ========================= -->
+<!-- CONNECT -->
 
 <section class="connect">
 
@@ -1015,9 +1084,7 @@ Email
 </main>
 
 
-<!-- ========================= -->
-<!-- FOOTER                    -->
-<!-- ========================= -->
+<!-- FOOTER -->
 
 <footer class="wrap">
 
@@ -1033,5 +1100,4 @@ L&amp;D · Leadership Development · Exploring Adaptive Learning + AI
 
 
 </body>
-
 </html>
