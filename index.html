@@ -16,7 +16,7 @@
 <meta property="og:description" content="A little more about me and how I think.">
 <meta property="og:image" content="https://kahlilamae.github.io/Kahlila-hero-new2.png">
 
-<title>Kahlila Mae Liverpool | L&D </title>
+<title>Kahlila Mae Liverpool | L&D</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -30,9 +30,15 @@
 :root{
   --ink:#20201e;
   --muted:#6d6864;
-  --paper:#D2ADB5;
+
+  /* Main website background */
+  --paper:#CBB0B4;
+
+  /* Warmer mauve used behind the portrait */
+  --portrait-mauve:#D2ADB5;
+
   --card:#f0e7e2;
-  --line:#d8cbc5;
+  --line:#bfa3a8;
   --soft-line:rgba(111,93,98,.14);
   --accent:#765f64;
 
@@ -40,7 +46,7 @@
   --radius:26px;
 
   --linkedin-bg:#f0e7e2;
-  --linkedin-border:#d8cbc5;
+  --linkedin-border:#bfa3a8;
   --email-bg:rgba(139,85,91,.42);
   --email-border:rgba(139,85,91,.18);
 }
@@ -75,7 +81,6 @@ a{
   width:min(calc(100% - 48px),var(--max));
   margin:0 auto;
 }
-
 
 
 /* ========================= */
@@ -124,7 +129,6 @@ p,
 }
 
 
-
 /* ========================= */
 /* NAVIGATION                */
 /* ========================= */
@@ -134,12 +138,12 @@ nav{
   top:0;
   z-index:20;
 
-  background:rgba(234,223,217,.94);
+  background:rgba(203,176,180,.94);
 
   backdrop-filter:blur(14px);
   -webkit-backdrop-filter:blur(14px);
 
-  border-bottom:1px solid rgba(216,203,197,.35);
+  border-bottom:1px solid rgba(111,93,98,.14);
 }
 
 .nav{
@@ -156,7 +160,6 @@ nav{
 }
 
 
-
 /* ========================= */
 /* HERO                      */
 /* ========================= */
@@ -165,7 +168,18 @@ nav{
   position:relative;
   height:720px;
   overflow:hidden;
-  background:var(--paper);
+
+  /*
+  Mature mauve on the text side.
+  Gradually warms toward the portrait.
+  */
+  background:linear-gradient(
+    to right,
+    var(--paper) 0%,
+    var(--paper) 48%,
+    #CDAEB4 68%,
+    var(--portrait-mauve) 100%
+  );
 }
 
 .hero-photo{
@@ -179,9 +193,35 @@ nav{
   background-repeat:no-repeat;
   background-size:auto 100%;
   background-position:right center;
+
   z-index:0;
 }
 
+/*
+Softly feather the LEFT edge of the portrait into
+the hero rather than creating a hard vertical seam.
+*/
+.hero-photo::before{
+  content:"";
+  position:absolute;
+  inset:0;
+
+  background:linear-gradient(
+    to right,
+    var(--paper) 0%,
+    rgba(203,176,180,.98) 38%,
+    rgba(203,176,180,.72) 51%,
+    rgba(203,176,180,.30) 61%,
+    rgba(203,176,180,0) 70%
+  );
+
+  pointer-events:none;
+}
+
+/*
+Very subtle bottom blend.
+No old beige fade.
+*/
 .hero-photo::after{
   content:"";
 
@@ -190,19 +230,17 @@ nav{
   right:0;
   bottom:-1px;
 
-  height:90px;
+  height:70px;
 
   background:linear-gradient(
     to bottom,
-    rgba(234,223,217,0) 0%,
-    rgba(234,223,217,.10) 35%,
-    rgba(234,223,217,.45) 72%,
+    rgba(203,176,180,0) 0%,
+    rgba(203,176,180,.18) 55%,
     var(--paper) 100%
   );
 
   pointer-events:none;
 }
-
 
 
 /* ========================= */
@@ -237,7 +275,6 @@ nav{
 }
 
 
-
 /* ========================= */
 /* GENERAL SECTIONS          */
 /* ========================= */
@@ -250,7 +287,6 @@ section{
 .label{
   margin-bottom:36px;
 }
-
 
 
 /* ========================= */
@@ -281,7 +317,6 @@ section{
 .guides-copy p{
   margin:0;
 }
-
 
 
 /* ========================= */
@@ -325,7 +360,6 @@ section{
 }
 
 
-
 /* ========================= */
 /* WHAT I'M EXPLORING        */
 /* ========================= */
@@ -349,7 +383,6 @@ section{
   margin:0;
   max-width:320px;
 }
-
 
 
 /* ========================= */
@@ -397,7 +430,6 @@ section{
 }
 
 
-
 /* ========================= */
 /* FAVORITES                 */
 /* ========================= */
@@ -419,7 +451,6 @@ section{
   max-width:880px;
   margin:0 0 20px;
 }
-
 
 
 /* ========================= */
@@ -457,11 +488,10 @@ section{
 }
 
 .email-btn{
-  background:rgba(255, 248, 235, 0.65);
+  background:rgba(255,248,235,.65);
   color:var(--ink);
   border:1px solid var(--email-border);
 }
-
 
 
 /* ========================= */
@@ -496,7 +526,6 @@ section{
 }
 
 
-
 /* ========================= */
 /* FOOTER                    */
 /* ========================= */
@@ -519,7 +548,6 @@ footer{
 }
 
 
-
 /* ========================= */
 /* IPAD / TABLET             */
 /* ========================= */
@@ -534,12 +562,16 @@ footer{
     height:700px;
   }
 
+  /*
+  Preserve portrait proportions on iPad.
+  Do NOT use cover — it crops the face.
+  */
   .hero-photo{
-    left:-70px;
-    right:70px;
+    left:0;
+    right:0;
 
-    background-size:cover;
-    background-position:center 30%;
+    background-size:auto 100%;
+    background-position:right center;
   }
 
   .hero-content{
@@ -564,7 +596,6 @@ footer{
 }
 
 
-
 /* ========================= */
 /* MOBILE                    */
 /* ========================= */
@@ -577,12 +608,15 @@ footer{
 
   .hero{
     height:790px;
-  }
 
-  /*
-  MOBILE PHOTO FIX:
-  Keep more of Kahlila + chair visible.
-  */
+    background:linear-gradient(
+      to bottom,
+      var(--paper) 0%,
+      var(--paper) 45%,
+      #CDAEB4 66%,
+      var(--portrait-mauve) 100%
+    );
+  }
 
   .hero-photo{
     left:0;
@@ -592,6 +626,10 @@ footer{
     background-position:60% center;
   }
 
+  /*
+  Mauve overlay replaces the previous beige mobile overlay.
+  Text remains readable while the portrait appears below.
+  */
   .hero-photo::before{
     content:"";
     position:absolute;
@@ -599,15 +637,23 @@ footer{
 
     background:linear-gradient(
       to bottom,
-      rgba(234,223,217,.95) 0%,
-      rgba(234,223,217,.88) 32%,
-      rgba(234,223,217,.38) 55%,
-      rgba(234,223,217,0) 72%
+      rgba(203,176,180,.98) 0%,
+      rgba(203,176,180,.94) 30%,
+      rgba(203,176,180,.58) 50%,
+      rgba(203,176,180,.16) 68%,
+      rgba(203,176,180,0) 78%
     );
   }
 
   .hero-photo::after{
-    height:90px;
+    height:70px;
+
+    background:linear-gradient(
+      to bottom,
+      rgba(203,176,180,0) 0%,
+      rgba(203,176,180,.18) 55%,
+      var(--paper) 100%
+    );
   }
 
   .hero-content{
@@ -699,7 +745,6 @@ footer{
 }
 
 
-
 /* ========================= */
 /* LARGE DESKTOP             */
 /* ========================= */
@@ -711,9 +756,11 @@ footer{
   }
 
   .hero-photo{
-    left:-40px;
-    right:40px;
-    background-position:center 34%;
+    left:0;
+    right:0;
+
+    background-size:auto 100%;
+    background-position:right center;
   }
 
 }
@@ -722,9 +769,7 @@ footer{
 </head>
 
 
-
 <body>
-
 
 
 <!-- NAVIGATION -->
@@ -742,9 +787,7 @@ Kahlila Mae Liverpool
 </nav>
 
 
-
 <main>
-
 
 
 <!-- HERO -->
@@ -767,13 +810,13 @@ I’m curious about how people learn and what helps us grow.
 
 <p>
 That curiosity has shaped my work and how I think about technology’s role. I’m thinking a lot about what happens after the learning experience. Did the learning change what people actually do, and was that change worth what we invested?
+</p>
 
 </div>
 
 </div>
 
 </header>
-
 
 
 <!-- WHAT GUIDES ME -->
@@ -807,7 +850,6 @@ The work has changed over the years, but what draws me to it hasn’t. I like he
 </section>
 
 
-
 <!-- MY APPROACH -->
 
 <section>
@@ -816,8 +858,6 @@ The work has changed over the years, but what draws me to it hasn’t. I like he
 
 <div class="cards">
 
-
-
 <article class="card">
 
 <div class="label">
@@ -825,7 +865,7 @@ My Approach
 </div>
 
 <h3>
-I ask a lot of questions. 
+I ask a lot of questions.
 </h3>
 
 <p>
@@ -833,7 +873,6 @@ Usually because I’m trying to understand what’s actually going on before jum
 </p>
 
 </article>
-
 
 
 <article class="card">
@@ -850,7 +889,6 @@ and what people need to move forward.
 </article>
 
 
-
 <article class="card">
 
 <h3>
@@ -862,7 +900,6 @@ Give me something complicated or not quite working, and I’ll want to figure ou
 </p>
 
 </article>
-
 
 
 <article class="card">
@@ -877,14 +914,11 @@ Whether I’m designing a learning experience, working through an idea, or partn
 
 </article>
 
-
-
 </div>
 
 </div>
 
 </section>
-
 
 
 <!-- WHAT I'M EXPLORING -->
@@ -899,8 +933,6 @@ What I’m Exploring
 
 <div class="exploring-list">
 
-
-
 <article class="explore-item">
 
 <h3>
@@ -912,7 +944,6 @@ I’m always thinking about how technology can make learning more useful, access
 </p>
 
 </article>
-
 
 
 <article class="explore-item">
@@ -928,7 +959,6 @@ I’m deeply interested in what helps people grow, especially through change, an
 </article>
 
 
-
 <article class="explore-item">
 
 <h3>
@@ -941,14 +971,11 @@ I’m exploring how AI can make learning more responsive, improve performance, a
 
 </article>
 
-
-
 </div>
 
 </div>
 
 </section>
-
 
 
 <!-- QUESTIONS I'M STILL ASKING -->
@@ -965,8 +992,6 @@ Questions I’m Still Asking
 
 <div class="questions-list">
 
-
-
 <div class="question-item">
 
 <p class="question-text">
@@ -974,7 +999,6 @@ What are our systems making easier? What are they making harder?
 </p>
 
 </div>
-
 
 
 <div class="question-item">
@@ -986,7 +1010,6 @@ What should AI help us do better? What should always belong to people?
 </div>
 
 
-
 <div class="question-item">
 
 <p class="question-text">
@@ -995,8 +1018,6 @@ How do we know it’s actually helping?
 
 </div>
 
-
-
 </div>
 
 </div>
@@ -1004,7 +1025,6 @@ How do we know it’s actually helping?
 </div>
 
 </section>
-
 
 
 <!-- A FEW OF MY FAVORITES -->
@@ -1022,17 +1042,20 @@ I’m drawn to people’s stories and the beautiful details that make them meani
 </h2>
 
 <p class="muted">
-I adore biographies, especially stories that reveal the person behind the accomplishments. I’m fascinated by how people find their way and what makes life fulfilling. 
-</p>  
-<p class="muted">A perfect Sunday involves cooking a New York Times Cooking recipe for family and friends. I also enjoy <em>House Guest with Scott Evans</em> and Mythical Kitchen’s <em>Last Meals</em>.
-</p>  
-<p class="muted">Lately, I’ve fallen down the Spider-Man rabbit hole. I blame Zendaya’s red-carpet style and my brother, a lifelong comic book fan.
+I adore biographies, especially stories that reveal the person behind the accomplishments. I’m fascinated by how people find their way and what makes life fulfilling.
+</p>
+
+<p class="muted">
+A perfect Sunday involves cooking a New York Times Cooking recipe for family and friends. I also enjoy <em>House Guest with Scott Evans</em> and Mythical Kitchen’s <em>Last Meals</em>.
+</p>
+
+<p class="muted">
+Lately, I’ve fallen down the Spider-Man rabbit hole. I blame Zendaya’s red-carpet style and my brother, a lifelong comic book fan.
 </p>
 
 </div>
 
 </section>
-
 
 
 <!-- CONNECT -->
@@ -1076,9 +1099,7 @@ Email
 </section>
 
 
-
 </main>
-
 
 
 <footer class="wrap">
@@ -1092,7 +1113,6 @@ L&D · Leadership Development · Exploring Adaptive Learning + AI
 </span>
 
 </footer>
-
 
 
 </body>
