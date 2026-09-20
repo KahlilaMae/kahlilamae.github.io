@@ -3,18 +3,18 @@
 
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
 <meta
   name="description"
   content="Kahlila Mae Liverpool — L&D | Leadership Development | Exploring Adaptive Learning + AI.">
 
-<!-- LinkedIn / Social Preview -->
+<!-- Social Preview -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://kahlilamae.github.io/">
 <meta property="og:title" content="What I’m Thinking About">
 <meta property="og:description" content="A little more about me and how I think.">
-<meta property="og:image" content="https://kahlilamae.github.io/Kahlila-hero-final.PNG">
+<meta property="og:image" content="https://kahlilamae.github.io/Kahlila-hero-final.png">
 
 <title>Kahlila Mae Liverpool | L&D</title>
 
@@ -30,7 +30,9 @@
 :root{
   --ink:#20201e;
   --muted:#625d5a;
-  --paper:#CBB0B4;
+
+  /* Main site background — matched to portrait */
+  --paper:#C6ABAD;
 
   --card:rgba(244,238,234,.58);
   --line:rgba(111,93,98,.18);
@@ -132,6 +134,7 @@ nav{
   position:sticky;
   top:0;
   z-index:20;
+
   background:#ffffff;
   border-bottom:1px solid var(--line);
 }
@@ -163,13 +166,15 @@ nav{
 
 .hero-photo{
   position:absolute;
-  top:0;
-  bottom:0;
-  left:0;
-  right:0;
+  inset:0;
 
   background-image:url("./Kahlila-hero-final.png");
   background-repeat:no-repeat;
+
+  /*
+  Portrait is intentionally smaller than
+  the full hero and anchored to the bottom.
+  */
   background-size:auto 85%;
   background-position:right bottom;
 
@@ -184,7 +189,9 @@ nav{
 .hero-content{
   position:relative;
   z-index:2;
+
   height:100%;
+
   display:flex;
   align-items:center;
 }
@@ -368,8 +375,8 @@ section{
   max-width:var(--max);
 }
 
-.human>h2,
-.human>p{
+.human > h2,
+.human > p{
   max-width:900px;
 }
 
@@ -402,7 +409,7 @@ section{
   font-size:.88rem;
   font-weight:500;
 
-  transition:transform .2s ease,opacity .2s ease;
+  transition:transform .2s ease, opacity .2s ease;
 }
 
 .btn:hover{
@@ -438,6 +445,7 @@ section{
   font-weight:400;
   line-height:1.17;
   letter-spacing:-.035em;
+
   margin:15px 0 25px;
 }
 
@@ -461,7 +469,9 @@ section{
 
 footer{
   padding:28px 0 38px;
+
   border-top:1px solid var(--line);
+
   color:var(--muted);
 
   font-family:'DM Sans',Arial,sans-serif;
@@ -490,8 +500,8 @@ footer{
   }
 
   .hero-photo{
-    background-size:auto 100%;
-    background-position:right center;
+    background-size:auto 85%;
+    background-position:right bottom;
   }
 
   .hero-content{
@@ -531,28 +541,13 @@ footer{
     background:var(--paper);
   }
 
-  .hero-photo{
-    background-size:auto 100%;
-    background-position:60% center;
-  }
-
   /*
-  Soft overlay only for text readability.
-  It uses the SAME site color.
+  No old pink gradient.
+  Same background color throughout.
   */
-  .hero-photo::before{
-    content:"";
-    position:absolute;
-    inset:0;
-
-    background:linear-gradient(
-      to bottom,
-      rgba(203,176,180,.98) 0%,
-      rgba(203,176,180,.92) 30%,
-      rgba(203,176,180,.62) 48%,
-      rgba(203,176,180,.20) 65%,
-      rgba(203,176,180,0) 76%
-    );
+  .hero-photo{
+    background-size:auto 72%;
+    background-position:60% bottom;
   }
 
   .hero-content{
@@ -655,8 +650,8 @@ footer{
   }
 
   .hero-photo{
-    background-size:auto 100%;
-    background-position:right center;
+    background-size:auto 85%;
+    background-position:right bottom;
   }
 
 }
@@ -664,11 +659,16 @@ footer{
 </style>
 </head>
 
+
 <body>
 
-<!-- NAVIGATION -->
+
+<!-- ========================= -->
+<!-- NAVIGATION                -->
+<!-- ========================= -->
 
 <nav>
+
 <div class="wrap nav">
 
 <a class="brand" href="#">
@@ -676,13 +676,16 @@ Kahlila Mae Liverpool
 </a>
 
 </div>
+
 </nav>
 
 
 <main>
 
 
-<!-- HERO -->
+<!-- ========================= -->
+<!-- HERO                      -->
+<!-- ========================= -->
 
 <header class="hero">
 
@@ -711,7 +714,9 @@ That curiosity has shaped my work and how I think about technology’s role. I�
 </header>
 
 
-<!-- WHAT GUIDES ME -->
+<!-- ========================= -->
+<!-- WHAT GUIDES ME            -->
+<!-- ========================= -->
 
 <section class="guides-section">
 
@@ -742,7 +747,9 @@ The work has changed over the years, but what draws me to it hasn’t. I like he
 </section>
 
 
-<!-- MY APPROACH -->
+<!-- ========================= -->
+<!-- MY APPROACH               -->
+<!-- ========================= -->
 
 <section>
 
@@ -815,7 +822,9 @@ Whether I’m designing a learning experience, working through an idea, or partn
 </section>
 
 
-<!-- WHAT I'M EXPLORING -->
+<!-- ========================= -->
+<!-- WHAT I'M EXPLORING        -->
+<!-- ========================= -->
 
 <section>
 
@@ -874,7 +883,9 @@ I’m exploring how AI can make learning more responsive, improve performance, a
 </section>
 
 
-<!-- QUESTIONS I'M STILL ASKING -->
+<!-- ========================= -->
+<!-- QUESTIONS                 -->
+<!-- ========================= -->
 
 <section class="questions-section">
 
@@ -925,7 +936,9 @@ How do we know it’s actually helping?
 </section>
 
 
-<!-- A FEW OF MY FAVORITES -->
+<!-- ========================= -->
+<!-- FAVORITES                 -->
+<!-- ========================= -->
 
 <section>
 
@@ -939,15 +952,15 @@ A Few of My Favorites
 I’m drawn to people’s stories and the beautiful details that make them meaningful.
 </h2>
 
-<p class="muted">
+<p>
 I adore biographies, especially stories that reveal the person behind the accomplishments. I’m fascinated by how people find their way and what makes life fulfilling.
 </p>
 
-<p class="muted">
+<p>
 A perfect Sunday involves cooking a New York Times Cooking recipe for family and friends. I also enjoy <em>House Guest with Scott Evans</em> and Mythical Kitchen’s <em>Last Meals</em>.
 </p>
 
-<p class="muted">
+<p>
 Lately, I’ve fallen down the Spider-Man rabbit hole. I blame Zendaya’s red-carpet style and my brother, a lifelong comic book fan.
 </p>
 
@@ -956,7 +969,9 @@ Lately, I’ve fallen down the Spider-Man rabbit hole. I blame Zendaya’s red-c
 </section>
 
 
-<!-- CONNECT -->
+<!-- ========================= -->
+<!-- CONNECT                   -->
+<!-- ========================= -->
 
 <section class="connect">
 
@@ -977,16 +992,16 @@ If something here resonates, or you just want to talk about learning, leadership
 <div class="buttons">
 
 <a
-class="btn linkedin-btn"
-href="https://www.linkedin.com/in/kahlilamae"
-target="_blank"
-rel="noopener">
+  class="btn linkedin-btn"
+  href="https://www.linkedin.com/in/kahlilamae"
+  target="_blank"
+  rel="noopener">
 LinkedIn
 </a>
 
 <a
-class="btn email-btn"
-href="mailto:kahlilamae@icloud.com?subject=Hello%20Kahlila">
+  class="btn email-btn"
+  href="mailto:kahlilamae@icloud.com?subject=Hello%20Kahlila">
 Email
 </a>
 
@@ -1000,6 +1015,10 @@ Email
 </main>
 
 
+<!-- ========================= -->
+<!-- FOOTER                    -->
+<!-- ========================= -->
+
 <footer class="wrap">
 
 <span>
@@ -1007,11 +1026,12 @@ Email
 </span>
 
 <span>
-L&D · Leadership Development · Exploring Adaptive Learning + AI
+L&amp;D · Leadership Development · Exploring Adaptive Learning + AI
 </span>
 
 </footer>
 
 
 </body>
+
 </html>
