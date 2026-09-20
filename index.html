@@ -14,7 +14,7 @@
 <meta property="og:url" content="https://kahlilamae.github.io/">
 <meta property="og:title" content="What I’m Thinking About">
 <meta property="og:description" content="A little more about me and how I think.">
-<meta property="og:image" content="https://kahlilamae.github.io/Kahlila-hero-new2.png">
+<meta property="og:image" content="https://kahlilamae.github.io/Kahlila-hero-final.PNG">
 
 <title>Kahlila Mae Liverpool | L&D</title>
 
@@ -30,13 +30,9 @@
 :root{
   --ink:#20201e;
   --muted:#625d5a;
-
-  /* Main website background */
   --paper:#CBB0B4;
 
-  /* Soft translucent surfaces */
   --card:rgba(244,238,234,.58);
-
   --line:rgba(111,93,98,.18);
   --soft-line:rgba(111,93,98,.14);
   --accent:#765f64;
@@ -177,57 +173,12 @@ nav{
   left:0;
   right:0;
 
-  background-image:url("./kahlila-hero-mauve.png");
+  background-image:url("./Kahlila-hero-final.PNG");
   background-repeat:no-repeat;
   background-size:auto 100%;
   background-position:right center;
 
   z-index:0;
-}
-
-/* Gradual horizontal blend from site into portrait */
-
-.hero-photo::before{
-  content:"";
-  position:absolute;
-  inset:0;
-
-  background:linear-gradient(
-    to right,
-    var(--paper) 0%,
-    var(--paper) 38%,
-    rgba(203,176,180,.98) 46%,
-    rgba(203,176,180,.90) 54%,
-    rgba(203,176,180,.72) 62%,
-    rgba(203,176,180,.48) 70%,
-    rgba(203,176,180,.24) 78%,
-    rgba(203,176,180,0) 88%
-  );
-
-  pointer-events:none;
-}
-
-/* Gradual bottom blend into rest of website */
-
-.hero-photo::after{
-  content:"";
-
-  position:absolute;
-  left:0;
-  right:0;
-  bottom:-1px;
-
-  height:110px;
-
-  background:linear-gradient(
-    to bottom,
-    rgba(203,176,180,0) 0%,
-    rgba(203,176,180,.12) 35%,
-    rgba(203,176,180,.42) 68%,
-    var(--paper) 100%
-  );
-
-  pointer-events:none;
 }
 
 
@@ -238,9 +189,7 @@ nav{
 .hero-content{
   position:relative;
   z-index:2;
-
   height:100%;
-
   display:flex;
   align-items:center;
 }
@@ -317,10 +266,8 @@ section{
   gap:1px;
 
   background:var(--line);
-
   border:1px solid var(--line);
   border-radius:var(--radius);
-
   overflow:hidden;
 }
 
@@ -452,7 +399,6 @@ section{
 
   width:104px;
   height:40px;
-
   padding:0 12px;
 
   border-radius:999px;
@@ -520,9 +466,7 @@ section{
 
 footer{
   padding:28px 0 38px;
-
   border-top:1px solid var(--line);
-
   color:var(--muted);
 
   font-family:'DM Sans',Arial,sans-serif;
@@ -551,9 +495,6 @@ footer{
   }
 
   .hero-photo{
-    left:0;
-    right:0;
-
     background-size:auto 100%;
     background-position:right center;
   }
@@ -596,15 +537,14 @@ footer{
   }
 
   .hero-photo{
-    left:0;
-    right:0;
-
     background-size:auto 100%;
     background-position:60% center;
   }
 
-  /* Gradual mobile blend */
-
+  /*
+  Soft overlay only for text readability.
+  It uses the SAME site color.
+  */
   .hero-photo::before{
     content:"";
     position:absolute;
@@ -612,24 +552,11 @@ footer{
 
     background:linear-gradient(
       to bottom,
-      var(--paper) 0%,
-      rgba(203,176,180,.98) 30%,
-      rgba(203,176,180,.82) 44%,
-      rgba(203,176,180,.52) 57%,
-      rgba(203,176,180,.22) 68%,
-      rgba(203,176,180,0) 78%
-    );
-  }
-
-  .hero-photo::after{
-    height:110px;
-
-    background:linear-gradient(
-      to bottom,
-      rgba(203,176,180,0) 0%,
-      rgba(203,176,180,.12) 35%,
-      rgba(203,176,180,.42) 68%,
-      var(--paper) 100%
+      rgba(203,176,180,.98) 0%,
+      rgba(203,176,180,.92) 30%,
+      rgba(203,176,180,.62) 48%,
+      rgba(203,176,180,.20) 65%,
+      rgba(203,176,180,0) 76%
     );
   }
 
@@ -733,9 +660,6 @@ footer{
   }
 
   .hero-photo{
-    left:0;
-    right:0;
-
     background-size:auto 100%;
     background-position:right center;
   }
@@ -745,14 +669,11 @@ footer{
 </style>
 </head>
 
-
 <body>
-
 
 <!-- NAVIGATION -->
 
 <nav>
-
 <div class="wrap nav">
 
 <a class="brand" href="#">
@@ -760,7 +681,6 @@ Kahlila Mae Liverpool
 </a>
 
 </div>
-
 </nav>
 
 
@@ -835,6 +755,7 @@ The work has changed over the years, but what draws me to it hasn’t. I like he
 
 <div class="cards">
 
+
 <article class="card">
 
 <div class="label">
@@ -891,6 +812,7 @@ Whether I’m designing a learning experience, working through an idea, or partn
 
 </article>
 
+
 </div>
 
 </div>
@@ -909,6 +831,7 @@ What I’m Exploring
 </div>
 
 <div class="exploring-list">
+
 
 <article class="explore-item">
 
@@ -948,6 +871,7 @@ I’m exploring how AI can make learning more responsive, improve performance, a
 
 </article>
 
+
 </div>
 
 </div>
@@ -968,6 +892,7 @@ Questions I’m Still Asking
 </div>
 
 <div class="questions-list">
+
 
 <div class="question-item">
 
@@ -994,6 +919,7 @@ How do we know it’s actually helping?
 </p>
 
 </div>
+
 
 </div>
 
