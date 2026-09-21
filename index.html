@@ -145,16 +145,12 @@ nav{
   position:sticky;
   top:0;
   z-index:20;
-
-  /* Soft site header */
   background:#E2D4D3;
-
   border-bottom:1px solid var(--line);
 }
 
 .nav{
   min-height:70px;
-
   display:flex;
   align-items:center;
   justify-content:flex-start;
@@ -185,11 +181,7 @@ nav{
 
   background-image:url("./Kahlila-hero-final.png");
   background-repeat:no-repeat;
-
-  /* Portrait size */
   background-size:auto 80%;
-
-  /* Portrait moved closer to text */
   background-position:75% bottom;
 
   z-index:0;
@@ -213,7 +205,6 @@ nav{
 .hero-copy{
   width:47%;
   max-width:525px;
-
   transform:translateY(-18px);
 }
 
@@ -226,6 +217,40 @@ nav{
   max-width:505px;
   margin:0;
   color:var(--muted);
+}
+
+
+/* ========================= */
+/* HERO WORK BUTTON          */
+/* ========================= */
+
+.hero-work-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+
+  margin-top:24px;
+  padding:0 19px;
+  height:35px;
+
+  border:1px solid var(--accent);
+  border-radius:999px;
+  background:transparent;
+  color:var(--ink);
+
+  font-family:'DM Sans',Arial,sans-serif;
+  font-size:12px;
+  font-weight:500;
+  white-space:nowrap;
+
+  transition:
+    transform .2s ease,
+    opacity .2s ease;
+}
+
+.hero-work-btn:hover{
+  transform:translateY(-2px);
+  opacity:.75;
 }
 
 
@@ -348,10 +373,8 @@ section{
 
 .questions-panel{
   background:var(--card);
-
   border:1px solid var(--line);
   border-radius:var(--radius);
-
   padding:54px 56px 58px;
 }
 
@@ -491,10 +514,7 @@ section{
 
 footer{
   padding:28px 0 38px;
-
-  /* No line after LinkedIn / Email */
   border-top:none;
-
   color:var(--muted);
 
   font-family:'DM Sans',Arial,sans-serif;
@@ -564,10 +584,10 @@ footer{
   }
 
   .hero-photo{
-  background-size:auto 72%;
-  background-position:85% bottom;
-  bottom:30px;
-}
+    background-size:auto 72%;
+    background-position:85% bottom;
+    bottom:30px;
+  }
 
   .hero-content{
     align-items:flex-start;
@@ -723,6 +743,10 @@ I’m curious about how people learn and what helps us grow.
 I’m thinking a lot about what happens after the learning experience. Did the learning change what people actually do, and was that change worth what we invested?
 </p>
 
+<a class="hero-work-btn" href="work.html">
+Explore My Work
+</a>
+
 </div>
 
 </div>
@@ -768,7 +792,6 @@ The work has changed over the years, but what draws me to it hasn’t. I like he
 <div class="wrap">
 
 <div class="cards">
-
 
 <article class="card">
 
@@ -825,7 +848,6 @@ Whether I’m designing a learning experience, working through an idea, or partn
 
 </article>
 
-
 </div>
 
 </div>
@@ -844,7 +866,6 @@ What I’m Exploring
 </div>
 
 <div class="exploring-list">
-
 
 <article class="explore-item">
 
@@ -884,7 +905,6 @@ I’m exploring how AI can make learning more responsive, improve performance, a
 
 </article>
 
-
 </div>
 
 </div>
@@ -905,7 +925,6 @@ Questions I’m Still Asking
 </div>
 
 <div class="questions-list">
-
 
 <div class="question-item">
 
@@ -932,7 +951,6 @@ How do we know it’s actually helping?
 </p>
 
 </div>
-
 
 </div>
 
