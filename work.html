@@ -48,8 +48,10 @@
     }
 
     .pdf-viewer {
+      display: block;
       width: 100%;
       height: 85vh;
+      padding: 0;
       border: 1px solid #cbbdb9;
       border-radius: 18px;
       background: white;
@@ -59,11 +61,35 @@
       display: inline-block;
       margin-top: 20px;
       color: #844557;
+      text-decoration: none;
+    }
+
+    .download-link:hover,
+    .back-link:hover {
+      text-decoration: underline;
     }
 
     @media (max-width: 700px) {
+      header {
+        padding: 20px 5%;
+      }
+
+      .name {
+        font-size: 18px;
+      }
+
+      main {
+        width: 92%;
+        margin-top: 10px;
+      }
+
+      h1 {
+        margin-bottom: 22px;
+      }
+
       .pdf-viewer {
         height: 70vh;
+        border-radius: 12px;
       }
     }
   </style>
@@ -72,29 +98,32 @@
 <body>
 
   <header>
-    <a class="name" href="index.html">Kahlila Mae Liverpool</a>
-    <a class="back-link" href="index.html">Back to home</a>
+    <a class="name" href="index.html">
+      Kahlila Mae Liverpool
+    </a>
+
+    <a class="back-link" href="index.html">
+      Back to home
+    </a>
   </header>
 
   <main>
     <h1>After AI Adoption</h1>
 
-    <object
-  class="pdf-viewer"
-  data="AfterAdoption.pdf"
-  type="application/pdf">
+    <iframe
+      class="pdf-viewer"
+      src="AfterAdoption.pdf?v=2"
+      title="After AI Adoption PDF">
+    </iframe>
 
-      <p>
-        Your browser cannot display this PDF.
-        <a href="AfterAdoption.pdf">Open the PDF here.</a>
-      </p>
-
-    </object>
-
-    <a class="download-link" href="AfterAdoption.pdf" download>
+    <a
+      class="download-link"
+      href="AfterAdoption.pdf"
+      download>
       Download the PDF
     </a>
   </main>
 
 </body>
+
 </html>
