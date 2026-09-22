@@ -8,9 +8,12 @@
   <title>After AI Adoption | Kahlila Mae Liverpool</title>
 
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
-      min-height: 100vh;
       background: #f4efec;
       color: #241f20;
       font-family: Arial, sans-serif;
@@ -18,8 +21,8 @@
 
     header {
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
       padding: 24px 5%;
     }
 
@@ -37,13 +40,17 @@
     }
 
     main {
-      width: min(760px, 90%);
-      margin: 100px auto;
+      width: min(900px, 90%);
+      margin: 45px auto 70px;
+    }
+
+    .page-heading {
+      margin-bottom: 35px;
       text-align: center;
     }
 
     .label {
-      margin-bottom: 20px;
+      margin-bottom: 16px;
       color: #844557;
       font-size: 12px;
       font-weight: 600;
@@ -52,25 +59,49 @@
     }
 
     h1 {
-      margin: 0 0 24px;
+      margin: 0 0 16px;
       font-family: Georgia, serif;
-      font-size: clamp(42px, 7vw, 70px);
+      font-size: clamp(42px, 7vw, 68px);
       font-weight: 400;
       line-height: 1.1;
     }
 
     .description {
       max-width: 620px;
-      margin: 0 auto 38px;
+      margin: 0 auto;
       color: #625d5a;
       font-size: 18px;
       line-height: 1.6;
+    }
+
+    .document {
+      width: 100%;
+      padding: 18px;
+      overflow: hidden;
+      background: white;
+      border: 1px solid #d6cac6;
+      border-radius: 20px;
+      box-shadow: 0 15px 45px rgba(36, 31, 32, 0.08);
+    }
+
+    #pdf-canvas {
+      display: block;
+      width: 100%;
+      height: auto;
+      background: white;
+    }
+
+    .loading-message {
+      padding: 60px 20px;
+      color: #625d5a;
+      text-align: center;
     }
 
     .buttons {
       display: flex;
       justify-content: center;
       gap: 14px;
+      margin-top: 28px;
       flex-wrap: wrap;
     }
 
@@ -78,7 +109,7 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-width: 145px;
+      min-width: 150px;
       min-height: 48px;
       padding: 0 24px;
       border: 1px solid #844557;
@@ -106,6 +137,12 @@
       color: #844557;
     }
 
+    .error-message {
+      padding: 50px 20px;
+      color: #844557;
+      text-align: center;
+    }
+
     @media (max-width: 700px) {
       header {
         padding: 20px 5%;
@@ -116,15 +153,21 @@
       }
 
       main {
-        margin: 70px auto;
+        width: 94%;
+        margin-top: 30px;
       }
 
       h1 {
-        font-size: 44px;
+        font-size: 42px;
       }
 
       .description {
         font-size: 16px;
+      }
+
+      .document {
+        padding: 8px;
+        border-radius: 12px;
       }
 
       .buttons {
@@ -152,37 +195,118 @@
   </header>
 
   <main>
-    <div class="label">
-      My Point of View
+
+    <div class="page-heading">
+      <div class="label">
+        My Point of View
+      </div>
+
+      <h1>
+        After AI Adoption
+      </h1>
+
+      <p class="description">
+        A wider view of AI adoption beyond the technology sector.
+      </p>
     </div>
 
-    <h1>
-      After AI Adoption
-    </h1>
+    <div class="document" id="document-container">
+      <div class="loading-message" id="loading-message">
+        Loading the one-pager…
+      </div>
 
-    <p class="description">
-      A wider view of AI adoption beyond the technology sector.
-    </p>
+      <canvas id="pdf-canvas"></canvas>
+    </div>
 
     <div class="buttons">
 
       <a
         class="button open-button"
-        href="AfterAIAdoption.pdf?v=5"
+        href="AfterAIAdoption.pdf?v=6"
         target="_blank"
         rel="noopener">
-        Open the PDF
+        Open PDF
       </a>
 
       <a
         class="button download-button"
-        href="AfterAIAdoption.pdf?v=5"
+        href="AfterAIAdoption.pdf?v=6"
         download="After-AI-Adoption-Kahlila-Mae-Liverpool.pdf">
-        Download the PDF
+        Download PDF
       </a>
 
     </div>
+
   </main>
+
+  <script type="module">
+    import * as pdfjsLib from
+      "https://cdn.jsdelivr.net/npm/pdfjs-dist@4.10.38/build/pdf.mjs";
+
+    pdfjsLib.GlobalWorkerOptions.workerSrc =
+      "https://cdn.jsdelivr.net/npm/pdfjs-dist@4.10.38/build/pdf.worker.mjs";
+
+    const pdfAddress = "AfterAIAdoption.pdf?v=6";
+    const canvas = document.getElementById("pdf-canvas");
+    const context = canvas.getContext("2d");
+    const container = document.getElementById("document-container");
+    const loadingMessage = document.getElementById("loading-message");
+
+    let pdfPage;
+
+    async function loadPDF() {
+      try {
+        const pdf = await pdfjsLib.getDocument(pdfAddress).promise;
+        pdfPage = await pdf.getPage(1);
+
+        loadingMessage.style.display = "none";
+
+        await renderPDF();
+      } catch (error) {
+        loadingMessage.className = "error-message";
+        loadingMessage.innerHTML =
+          'The preview could not load. Please use the "Open PDF" button below.';
+      }
+    }
+
+    async function renderPDF() {
+      if (!pdfPage) {
+        return;
+      }
+
+      const originalViewport = pdfPage.getViewport({ scale: 1 });
+      const availableWidth = container.clientWidth - 36;
+      const displayScale = availableWidth / originalViewport.width;
+      const pixelRatio = Math.min(window.devicePixelRatio || 1, 2);
+
+      const renderViewport = pdfPage.getViewport({
+        scale: displayScale * pixelRatio
+      });
+
+      canvas.width = renderViewport.width;
+      canvas.height = renderViewport.height;
+
+      canvas.style.width =
+        `${renderViewport.width / pixelRatio}px`;
+
+      canvas.style.height =
+        `${renderViewport.height / pixelRatio}px`;
+
+      await pdfPage.render({
+        canvasContext: context,
+        viewport: renderViewport
+      }).promise;
+    }
+
+    let resizeTimer;
+
+    window.addEventListener("resize", () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(renderPDF, 200);
+    });
+
+    loadPDF();
+  </script>
 
 </body>
 
