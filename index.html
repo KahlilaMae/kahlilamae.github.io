@@ -695,6 +695,37 @@ footer{
   }
 
 }
+/* Soft floor shadow beneath the hero portrait */
+.hero::before {
+  content: "";
+  position: absolute;
+  left: 56%;
+  bottom: 6%;
+  width: 31%;
+  height: 9%;
+  border-radius: 50%;
+  background: radial-gradient(
+    ellipse,
+    rgba(58, 36, 56, 0.27) 0%,
+    rgba(58, 36, 56, 0.12) 42%,
+    transparent 75%
+  );
+  filter: blur(14px);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.hero-photo {
+  z-index: 1;
+}
+
+@media (max-width: 760px) {
+  .hero::before {
+    left: 18%;
+    bottom: 5%;
+    width: 72%;
+    height: 7%;
+  }
 
 </style>
 </head>
