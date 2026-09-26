@@ -125,11 +125,13 @@ h3,
   color:var(--accent);
 }
 
+/* Consistent body text across the entire site */
 p,
 .card p,
-.explore-item p,
+.focus-item p,
 .human p,
-.connect p{
+.connect p,
+.guides-copy p{
   font-family:'DM Sans',Arial,sans-serif;
   font-size:16px;
   font-weight:400;
@@ -419,10 +421,6 @@ section{
 }
 
 .focus-item p{
-  font-family:'DM Sans',Arial,sans-serif;
-  font-size:16px;
-  font-weight:400;
-  line-height:1.625;
   color:var(--muted);
   margin:0;
   max-width:320px;
@@ -490,8 +488,6 @@ section{
 
 .human p{
   color:var(--muted);
-  font-size:16px;
-  line-height:1.625;
 }
 
 .intro{
@@ -776,15 +772,6 @@ footer{
     line-height:1.2;
   }
 
-  p,
-  .card p,
-  .explore-item p,
-  .human p,
-  .connect p{
-    font-size:15px;
-    line-height:1.6;
-  }
-
 }
 
 
@@ -822,20 +809,20 @@ footer{
     transparent 75%
   );
   filter: blur(14px);
-  z-index: 0;
-  pointer-events: none;
+  z-index:0;
+  pointer-events:none;
 }
 
-.hero-photo {
-  z-index: 1;
+.hero-photo{
+  z-index:1;
 }
 
-@media (max-width: 760px) {
-  .hero::before {
-    left: 18%;
-    bottom: 5%;
-    width: 72%;
-    height: 7%;
+@media(max-width:760px){
+  .hero::before{
+    left:18%;
+    bottom:5%;
+    width:72%;
+    height:7%;
   }
 }
 
