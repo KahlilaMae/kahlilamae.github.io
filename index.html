@@ -73,7 +73,7 @@ body{
   color:var(--ink);
 
   font-family:'DM Sans',Arial,sans-serif;
-  font-size:20px;
+  font-size:1.25rem;
   font-weight:400;
   line-height:1.625;
 
@@ -83,6 +83,25 @@ body{
 a{
   color:inherit;
   text-decoration:none;
+}
+
+/* Visible focus for keyboard users only */
+a:focus-visible{
+  outline:3px solid var(--accent);
+  outline-offset:3px;
+}
+
+/* Text for screen readers only */
+.sr-only{
+  position:absolute;
+  width:1px;
+  height:1px;
+  margin:-1px;
+  padding:0;
+  overflow:hidden;
+  clip:rect(0 0 0 0);
+  white-space:nowrap;
+  border:0;
 }
 
 .wrap{
@@ -97,7 +116,7 @@ a{
 
 h1{
   font-family:'Playfair Display',Georgia,serif;
-  font-size:48px;
+  font-size:3rem;
   font-weight:400;
   line-height:1.17;
   letter-spacing:-.035em;
@@ -108,7 +127,7 @@ h3,
 .intro,
 .question-text{
   font-family:'Playfair Display',Georgia,serif;
-  font-size:28px;
+  font-size:1.75rem;
   font-weight:400;
   line-height:1.3;
   letter-spacing:-.02em;
@@ -117,7 +136,7 @@ h3,
 .eyebrow,
 .label{
   font-family:'DM Sans',Arial,sans-serif;
-  font-size:12px;
+  font-size:.8125rem;
   font-weight:500;
   line-height:1.4;
   letter-spacing:.15em;
@@ -133,7 +152,7 @@ p,
 .connect p,
 .guides-copy p{
   font-family:'DM Sans',Arial,sans-serif;
-  font-size:16px;
+  font-size:1rem;
   font-weight:400;
   line-height:1.625;
 }
@@ -172,7 +191,7 @@ nav{
 
 .hero{
   position:relative;
-  height:720px;
+  min-height:720px;
   overflow:hidden;
   background:var(--paper);
 }
@@ -198,7 +217,7 @@ nav{
   position:relative;
   z-index:2;
 
-  height:100%;
+  min-height:inherit;
 
   display:flex;
   align-items:center;
@@ -317,7 +336,7 @@ section{
 
 .focus-title{
   font-family:'Playfair Display',Georgia,serif;
-  font-size:34px;
+  font-size:2.125rem;
   font-weight:400;
   line-height:1.25;
   letter-spacing:-.025em;
@@ -370,7 +389,7 @@ section{
 
 .focus-item h3{
   font-family:'Playfair Display',Georgia,serif;
-  font-size:24px;
+  font-size:1.5rem;
   font-weight:400;
   line-height:1.3;
   letter-spacing:-.02em;
@@ -462,7 +481,7 @@ section{
 }
 
 .human .intro{
-  font-size:28px;
+  font-size:1.75rem;
 }
 
 
@@ -475,10 +494,12 @@ section{
   align-items:center;
   justify-content:center;
 
-  width:104px;
-  height:40px;
+  width:auto;
+  min-width:104px;
+  height:auto;
+  min-height:40px;
 
-  padding:0 12px;
+  padding:8px 12px;
   border-radius:999px;
 
   font-family:'DM Sans',Arial,sans-serif;
@@ -521,7 +542,7 @@ section{
 .connect h2{
   font-family:'Playfair Display',Georgia,serif;
 
-  font-size:48px;
+  font-size:3rem;
   font-weight:400;
   line-height:1.17;
   letter-spacing:-.035em;
@@ -553,7 +574,7 @@ footer{
   color:var(--muted);
 
   font-family:'DM Sans',Arial,sans-serif;
-  font-size:12px;
+  font-size:.8125rem;
   font-weight:400;
   line-height:1.4;
 
@@ -573,7 +594,7 @@ footer{
   }
 
   .hero{
-    height:760px;
+    min-height:760px;
   }
 
   .hero-photo{
@@ -592,7 +613,7 @@ footer{
   }
 
   .hero h1{
-    font-size:42px;
+    font-size:2.625rem;
     max-width:480px;
   }
 
@@ -614,7 +635,7 @@ footer{
   }
 
   .hero{
-    height:900px;
+    min-height:900px;
     background:var(--paper);
   }
 
@@ -636,7 +657,7 @@ footer{
   }
 
   .hero h1{
-    font-size:36px;
+    font-size:2.25rem;
     line-height:1.2;
     max-width:520px;
   }
@@ -667,7 +688,7 @@ footer{
   }
 
   .focus-title{
-    font-size:30px;
+    font-size:1.875rem;
     margin-bottom:38px;
   }
 
@@ -700,7 +721,7 @@ footer{
   }
 
   .focus-item h3{
-    font-size:24px;
+    font-size:1.5rem;
   }
 
   .focus-item p{
@@ -729,12 +750,12 @@ footer{
   h3,
   .intro,
   .question-text{
-    font-size:24px;
+    font-size:1.5rem;
     line-height:1.32;
   }
 
   .connect h2{
-    font-size:36px;
+    font-size:2.25rem;
     line-height:1.2;
   }
 
@@ -748,7 +769,7 @@ footer{
 @media(min-width:1400px){
 
   .hero{
-    height:760px;
+    min-height:760px;
   }
 
   .hero-photo{
@@ -792,6 +813,25 @@ footer{
   }
 }
 
+
+/* ========================= */
+/* REDUCED MOTION            */
+/* ========================= */
+
+@media (prefers-reduced-motion: reduce){
+  html{
+    scroll-behavior:auto;
+  }
+
+  .btn{
+    transition:none;
+  }
+
+  .btn:hover{
+    transform:none;
+  }
+}
+
 </style>
 </head>
 
@@ -805,7 +845,7 @@ footer{
 
 <div class="wrap nav">
 
-<a class="brand" href="#">
+<a class="brand" href="./">
 Kahlila Mae Liverpool
 </a>
 
@@ -821,7 +861,7 @@ Kahlila Mae Liverpool
 
 <header class="hero">
 
-<div class="hero-photo"></div>
+<div class="hero-photo" role="img" aria-label="Portrait of Kahlila Mae Liverpool"></div>
 
 <div class="wrap hero-content">
 
@@ -848,11 +888,11 @@ I’m thinking a lot about what happens after the learning experience. Did the l
 
 <!-- WHAT GUIDES ME -->
 
-<section class="guides-section">
+<section class="guides-section" aria-label="What guides me">
 
 <div class="wrap">
 
-<div class="label">
+<div class="label" aria-hidden="true">
 What Guides Me
 </div>
 
@@ -879,7 +919,7 @@ The work has changed over the years, but what draws me to it hasn’t. I like he
 
 <!-- MY APPROACH -->
 
-<section>
+<section aria-label="My approach">
 
 <div class="wrap">
 
@@ -887,7 +927,7 @@ The work has changed over the years, but what draws me to it hasn’t. I like he
 
 <article class="card">
 
-<div class="label">
+<div class="label" aria-hidden="true">
 My Approach
 </div>
 
@@ -949,11 +989,11 @@ Whether I’m designing a learning experience, working through an idea, or partn
 
 <!-- WHAT I'M FOCUSED ON -->
 
-<section class="focus-section">
+<section class="focus-section" aria-labelledby="focus-heading">
 
 <div class="wrap">
 
-<h2 class="focus-title">
+<h2 class="focus-title" id="focus-heading">
 What I’m Focused On
 </h2>
 
@@ -966,7 +1006,7 @@ What I’m Focused On
 
 <div class="focus-icon" aria-hidden="true">
 
-<svg viewBox="0 0 64 64">
+<svg viewBox="0 0 64 64" focusable="false">
   <circle cx="32" cy="19" r="7"></circle>
   <path d="M20 45v-6c0-7 5-12 12-12s12 5 12 12v6"></path>
 
@@ -996,7 +1036,7 @@ I’m deeply interested in what helps people grow, especially through change, an
 
 <div class="focus-icon" aria-hidden="true">
 
-<svg viewBox="0 0 64 64">
+<svg viewBox="0 0 64 64" focusable="false">
   <rect x="15" y="14" width="34" height="25" rx="2"></rect>
   <path d="M10 45h44"></path>
   <path d="M15 45l3 4h28l3-4"></path>
@@ -1021,7 +1061,7 @@ I’m always thinking about how technology can make learning more useful, access
 
 <div class="focus-icon" aria-hidden="true">
 
-<svg viewBox="0 0 64 64">
+<svg viewBox="0 0 64 64" focusable="false">
   <path d="M22 27c0-7 4-13 10-13s10 6 10 13c0 5-3 8-6 11-2 2-2 4-2 6h-4c0-2 0-4-2-6-3-3-6-6-6-11z"></path>
   <path d="M27 48h10"></path>
   <path d="M28 52h8"></path>
@@ -1055,13 +1095,13 @@ I’m exploring how AI can make learning more responsive and whether that leads 
 
 <!-- QUESTIONS I'M STILL ASKING -->
 
-<section class="questions-section">
+<section class="questions-section" aria-label="Questions I’m still asking">
 
 <div class="wrap">
 
 <div class="questions-panel">
 
-<div class="label">
+<div class="label" aria-hidden="true">
 Questions I’m Still Asking
 </div>
 
@@ -1104,11 +1144,11 @@ How do we know it’s actually helping?
 
 <!-- FAVORITES -->
 
-<section>
+<section aria-label="A few of my favorites">
 
 <div class="wrap human">
 
-<div class="label">
+<div class="label" aria-hidden="true">
 A Few of My Favorites
 </div>
 
@@ -1135,11 +1175,11 @@ Lately, I’ve fallen down the Spider-Man rabbit hole. I blame Zendaya’s red-c
 
 <!-- CONNECT -->
 
-<section class="connect">
+<section class="connect" aria-label="Contact">
 
 <div class="wrap">
 
-<div class="label">
+<div class="label" aria-hidden="true">
 Let’s connect
 </div>
 
@@ -1160,7 +1200,7 @@ If something here resonates, or you just want to talk about learning, leadership
   rel="noopener"
   data-goatcounter-click="click-linkedin"
   data-goatcounter-title="LinkedIn button">
-LinkedIn
+LinkedIn<span class="sr-only"> (opens in a new tab)</span>
 </a>
 
 <a
