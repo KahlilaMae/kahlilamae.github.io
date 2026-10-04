@@ -12,8 +12,8 @@
 
 <style>
   :root {
-    --cream: #FBF6EE;
-    --cream-2: #F6EEE2;
+    --cream: #FCFAF5;
+    --cream-2: #FAF7F0;
     --card: #FFFFFF;
     --plum: #5B1A46;
     --plum-deep: #4A1238;
@@ -35,12 +35,32 @@
 
   body {
     margin: 0;
-    background: linear-gradient(
-      180deg,
-      var(--cream) 0%,
-      var(--cream-2) 100%
-    );
+
+    background-color: var(--cream);
+
+    background-image:
+      repeating-linear-gradient(
+        0deg,
+        rgba(91, 26, 70, 0.008) 0px,
+        rgba(91, 26, 70, 0.008) 1px,
+        transparent 1px,
+        transparent 4px
+      ),
+      repeating-linear-gradient(
+        90deg,
+        rgba(120, 98, 82, 0.007) 0px,
+        rgba(120, 98, 82, 0.007) 1px,
+        transparent 1px,
+        transparent 5px
+      ),
+      linear-gradient(
+        180deg,
+        var(--cream) 0%,
+        var(--cream-2) 100%
+      );
+
     background-attachment: fixed;
+
     color: var(--body);
     font-family: "Source Sans 3", system-ui, -apple-system, "Segoe UI", sans-serif;
     font-size: 17px;
@@ -368,7 +388,7 @@
   .work-connect h2 {
     font-family: "Source Serif 4", Georgia, serif;
     font-weight: 500;
-    font-size: clamp(46px, 6vw, 68px);
+    font-size: clamp(42px, 5vw, 58px);
     line-height: 1.1;
     letter-spacing: -0.01em;
     color: var(--plum);
@@ -393,11 +413,11 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 132px;
-    height: 50px;
-    padding: 0 20px;
+    width: 118px;
+    height: 46px;
+    padding: 0 18px;
     font-family: "Source Sans 3", sans-serif;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 400;
     line-height: 1;
     border-radius: 999px;
@@ -407,7 +427,7 @@
   /* LinkedIn button */
 
   .work-connect .btn:not(.primary) {
-    background: #FBF6EE;
+    background: rgba(255, 255, 255, 0.18);
     color: #5B1A46;
     border: 1px solid #78305F;
   }
@@ -508,6 +528,10 @@
 
     .work-connect {
       padding: 48px 10px 60px;
+    }
+
+    .work-connect h2 {
+      font-size: 42px;
     }
 
     .work-connect-text {
