@@ -344,17 +344,41 @@
 
   .work-connect .btn-row {
     justify-content: center;
+    gap: 12px;
     margin-top: 30px;
   }
 
+  .work-connect .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 132px;
+    height: 50px;
+    padding: 0 20px;
+    font-family: "Source Sans 3", sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1;
+    border-radius: 999px;
+    text-decoration: none;
+  }
+
   .work-connect .btn:not(.primary) {
-    background: var(--card);
+    background: #FBF7FA;
+    color: #382335;
+    border: 1px solid #D8C6D3;
+  }
+
+  .work-connect .btn.primary {
+    background: #78305F;
+    color: #FFFFFF;
+    border: 1px solid #78305F;
   }
 
   .work-connect .btn:hover {
-    background: var(--berry);
-    border-color: var(--berry);
-    color: #fff;
+    background: #5B1A46;
+    border-color: #5B1A46;
+    color: #FFFFFF;
   }
 
   footer {
@@ -785,7 +809,7 @@
     <div class="btn-row">
       <a
         class="btn"
-        href="YOUR-LINKEDIN-URL"
+        href="https://www.linkedin.com/in/kahlilamae"
         target="_blank"
         rel="noopener noreferrer"
       >LinkedIn</a>
