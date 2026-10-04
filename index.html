@@ -302,3 +302,954 @@ section{
 /* ========================= */
 
 .cards{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:1px;
+
+  background:var(--line);
+  border:1px solid var(--line);
+
+  border-radius:var(--radius);
+  overflow:hidden;
+}
+
+.card{
+  background:var(--card);
+  padding:38px;
+  min-height:205px;
+}
+
+.card .label{
+  margin-bottom:14px;
+}
+
+.card h3{
+  margin:0 0 14px;
+}
+
+.card:nth-child(2) h3{
+  margin-top:31px;
+}
+
+.card p{
+  color:var(--muted);
+  margin:0;
+}
+
+
+/* ========================= */
+/* WHAT I'M FOCUSED ON       */
+/* ========================= */
+
+.focus-section{
+  padding:78px 0 82px;
+  border-top:1px solid var(--line);
+}
+
+.focus-title{
+  font-family:'Playfair Display',Georgia,serif;
+  font-size:2.125rem;
+  font-weight:400;
+  line-height:1.25;
+  letter-spacing:-.025em;
+  margin:0 0 42px;
+}
+
+.focus-list{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:0;
+}
+
+.focus-item{
+  position:relative;
+  text-align:left;
+  padding:0 38px;
+}
+
+.focus-item:first-child{
+  padding-left:0;
+}
+
+.focus-item:last-child{
+  padding-right:0;
+}
+
+.focus-item + .focus-item{
+  border-left:1px solid var(--soft-line);
+}
+
+.focus-icon{
+  width:48px;
+  height:48px;
+  display:flex;
+  align-items:center;
+  justify-content:flex-start;
+  margin:0 0 18px;
+  color:var(--accent);
+}
+
+.focus-icon svg{
+  width:48px;
+  height:48px;
+  fill:none;
+  stroke:currentColor;
+  stroke-width:1.6;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+
+.focus-item h3{
+  font-family:'Playfair Display',Georgia,serif;
+  font-size:1.5rem;
+  font-weight:400;
+  line-height:1.3;
+  letter-spacing:-.02em;
+  margin:0 0 12px;
+  color:var(--ink);
+}
+
+.focus-item h3 .amp{
+  font-family:'DM Sans',Arial,sans-serif;
+  font-size:.82em;
+  font-weight:400;
+  letter-spacing:0;
+  color:inherit;
+}
+
+.focus-item p{
+  color:var(--muted);
+  margin:0;
+  max-width:320px;
+}
+
+
+/* ========================= */
+/* QUESTIONS                 */
+/* ========================= */
+
+.questions-section{
+  padding-bottom:105px;
+}
+
+.questions-panel{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  padding:54px 56px 58px;
+}
+
+.questions-panel .label{
+  margin-bottom:20px;
+}
+
+.questions-list{
+  max-width:900px;
+  margin:0;
+}
+
+.question-item{
+  padding:16px 0;
+}
+
+.question-item:first-child{
+  padding-top:0;
+}
+
+.question-item:last-child{
+  padding-bottom:0;
+}
+
+.question-item + .question-item{
+  border-top:1px solid var(--soft-line);
+}
+
+.question-text{
+  margin:0;
+  max-width:900px;
+}
+
+
+/* ========================= */
+/* FAVORITES                 */
+/* ========================= */
+
+.human{
+  max-width:var(--max);
+}
+
+.human > h2,
+.human > p{
+  max-width:900px;
+}
+
+.human p{
+  color:var(--muted);
+}
+
+.intro{
+  max-width:880px;
+  margin:0 0 20px;
+}
+
+.human .intro{
+  font-size:1.75rem;
+}
+
+
+/* ========================= */
+/* BUTTONS                   */
+/* ========================= */
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+
+  width:auto;
+  min-width:104px;
+  height:auto;
+  min-height:40px;
+
+  padding:8px 12px;
+  border-radius:999px;
+
+  font-family:'DM Sans',Arial,sans-serif;
+  font-size:.88rem;
+  font-weight:500;
+
+  transition:
+    transform .2s ease,
+    opacity .2s ease;
+}
+
+.btn:hover{
+  transform:translateY(-2px);
+  opacity:.85;
+}
+
+.linkedin-btn{
+  background:var(--linkedin-bg);
+  color:var(--ink);
+  border:1px solid var(--linkedin-border);
+}
+
+.email-btn{
+  background:var(--email-bg);
+  color:#FBF7FA;
+  border:1px solid var(--email-border);
+}
+
+
+/* ========================= */
+/* CONNECT                   */
+/* ========================= */
+
+.connect{
+  text-align:center;
+  padding:125px 0 100px;
+  border-top:none;
+}
+
+.connect h2{
+  font-family:'Playfair Display',Georgia,serif;
+
+  font-size:3rem;
+  font-weight:400;
+  line-height:1.17;
+  letter-spacing:-.035em;
+
+  margin:15px 0 25px;
+}
+
+.connect p{
+  max-width:700px;
+  margin:0 auto 30px;
+  color:var(--muted);
+}
+
+.buttons{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+
+
+/* ========================= */
+/* FOOTER                    */
+/* ========================= */
+
+footer{
+  padding:28px 0 38px;
+  border-top:none;
+  color:var(--muted);
+
+  font-family:'DM Sans',Arial,sans-serif;
+  font-size:.8125rem;
+  font-weight:400;
+  line-height:1.4;
+
+  display:flex;
+  justify-content:flex-end;
+}
+
+
+/* ========================= */
+/* IPAD / TABLET             */
+/* ========================= */
+
+@media(max-width:1180px) and (min-width:761px){
+
+  .wrap{
+    width:min(calc(100% - 96px),var(--max));
+  }
+
+  .hero{
+    min-height:760px;
+  }
+
+  .hero-photo{
+    background-size:auto 80%;
+    background-position:75% bottom;
+  }
+
+  .hero-content{
+    align-items:center;
+  }
+
+  .hero-copy{
+    width:46%;
+    max-width:480px;
+    transform:translateY(-15px);
+  }
+
+  .hero h1{
+    font-size:2.625rem;
+    max-width:480px;
+  }
+
+  .hero p{
+    max-width:460px;
+  }
+
+}
+
+
+/* ========================= */
+/* MOBILE                    */
+/* ========================= */
+
+@media(max-width:760px){
+
+  .wrap{
+    width:min(calc(100% - 32px),var(--max));
+  }
+
+  .hero{
+    min-height:900px;
+    background:var(--paper);
+  }
+
+  .hero-photo{
+    background-size:auto 54%;
+    background-position:80% bottom;
+    bottom:0;
+  }
+
+  .hero-content{
+    align-items:flex-start;
+    padding-top:55px;
+  }
+
+  .hero-copy{
+    width:100%;
+    max-width:100%;
+    transform:none;
+  }
+
+  .hero h1{
+    font-size:2.25rem;
+    line-height:1.2;
+    max-width:520px;
+  }
+
+  .hero p{
+    max-width:520px;
+  }
+
+  section{
+    padding:72px 0;
+  }
+
+  .cards{
+    grid-template-columns:1fr;
+    border-radius:20px;
+  }
+
+  .card{
+    min-height:auto;
+  }
+
+  .card:nth-child(2) h3{
+    margin-top:0;
+  }
+
+  .focus-section{
+    padding:64px 0 68px;
+  }
+
+  .focus-title{
+    font-size:1.875rem;
+    margin-bottom:38px;
+  }
+
+  .focus-list{
+    grid-template-columns:1fr;
+    gap:0;
+  }
+
+  .focus-item,
+  .focus-item:first-child,
+  .focus-item:last-child{
+    padding:34px 0;
+  }
+
+  .focus-item:first-child{
+    padding-top:0;
+  }
+
+  .focus-item:last-child{
+    padding-bottom:0;
+  }
+
+  .focus-item + .focus-item{
+    border-left:none;
+    border-top:1px solid var(--soft-line);
+  }
+
+  .focus-icon{
+    margin:0 0 16px;
+  }
+
+  .focus-item h3{
+    font-size:1.5rem;
+  }
+
+  .focus-item p{
+    max-width:100%;
+  }
+
+  .questions-panel{
+    padding:36px 26px 40px;
+    border-radius:20px;
+  }
+
+  .questions-panel .label{
+    margin-bottom:20px;
+  }
+
+  .question-item{
+    padding:20px 0;
+  }
+
+  footer{
+    flex-direction:column;
+    align-items:flex-end;
+  }
+
+  h2,
+  h3,
+  .intro,
+  .question-text{
+    font-size:1.5rem;
+    line-height:1.32;
+  }
+
+  .connect h2{
+    font-size:2.25rem;
+    line-height:1.2;
+  }
+
+}
+
+
+/* ========================= */
+/* LARGE DESKTOP             */
+/* ========================= */
+
+@media(min-width:1400px){
+
+  .hero{
+    min-height:760px;
+  }
+
+  .hero-photo{
+    background-size:auto 80%;
+    background-position:75% bottom;
+  }
+
+}
+
+
+/* Soft floor shadow beneath the hero portrait */
+.hero::before {
+  content: "";
+  position: absolute;
+  left: 56%;
+  bottom: 6%;
+  width: 31%;
+  height: 9%;
+  border-radius: 50%;
+  background: radial-gradient(
+    ellipse,
+    rgba(58, 36, 56, 0.27) 0%,
+    rgba(58, 36, 56, 0.12) 42%,
+    transparent 75%
+  );
+  filter: blur(14px);
+  z-index:0;
+  pointer-events:none;
+}
+
+.hero-photo{
+  z-index:1;
+}
+
+@media(max-width:760px){
+  .hero::before{
+    left:18%;
+    bottom:5%;
+    width:72%;
+    height:7%;
+  }
+}
+
+
+/* ========================= */
+/* REDUCED MOTION            */
+/* ========================= */
+
+@media (prefers-reduced-motion: reduce){
+  html{
+    scroll-behavior:auto;
+  }
+
+  .btn{
+    transition:none;
+  }
+
+  .btn:hover{
+    transform:none;
+  }
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- NAVIGATION -->
+
+<nav>
+
+<div class="wrap nav">
+
+<a class="brand" href="./">
+Kahlila Mae Liverpool
+</a>
+
+<a class="nav-link" href="impact%202.html">My Work</a>
+
+</div>
+
+</nav>
+
+
+<main>
+
+
+<!-- HERO -->
+
+<header class="hero">
+
+<div class="hero-photo" role="img" aria-label="Portrait of Kahlila Mae Liverpool"></div>
+
+<div class="wrap hero-content">
+
+<div class="hero-copy">
+
+<div class="eyebrow">
+L&amp;D | Leadership Development | Exploring Adaptive Learning + AI
+</div>
+
+<h1>
+I’m curious about how people learn and what helps us grow.
+</h1>
+
+<p>
+I’m thinking a lot about what happens after the learning experience. Did the learning change what people actually do, and was that change worth what we invested?
+</p>
+
+</div>
+
+</div>
+
+</header>
+
+
+<!-- WHAT GUIDES ME -->
+
+<section class="guides-section" aria-label="What guides me">
+
+<div class="wrap">
+
+<div class="label" aria-hidden="true">
+What Guides Me
+</div>
+
+<div class="guides-content">
+
+<h2 class="intro">
+I like working through ideas with people and figuring out how to make them work.
+</h2>
+
+<div class="guides-copy">
+
+<p>
+The work has changed over the years, but what draws me to it hasn’t. I like helping people see something differently and then make the next steps happen.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- MY APPROACH -->
+
+<section aria-label="My approach">
+
+<div class="wrap">
+
+<div class="cards">
+
+<article class="card">
+
+<div class="label" aria-hidden="true">
+My Approach
+</div>
+
+<h3>
+I ask a lot of questions.
+</h3>
+
+<p>
+Usually because I’m trying to understand what’s actually going on before jumping to an answer. I’d rather work in community than go it alone.
+</p>
+
+</article>
+
+
+<article class="card">
+
+<h3>
+I notice what’s happening.
+</h3>
+
+<p>
+I pay attention to who's in the room, who isn’t being heard, and what people need to move forward.
+</p>
+
+</article>
+
+
+<article class="card">
+
+<h3>
+I'm drawn to a puzzle.
+</h3>
+
+<p>
+Give me something complicated or not quite working, and I’ll want to figure out what’s going on and how to make it better.
+</p>
+
+</article>
+
+
+<article class="card">
+
+<h3>
+I think about the person on the other side.
+</h3>
+
+<p>
+Whether I’m designing a learning experience, working through an idea, or partnering with someone, I think about how the experience will actually feel.
+</p>
+
+</article>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- WHAT I'M FOCUSED ON -->
+
+<section class="focus-section" aria-labelledby="focus-heading">
+
+<div class="wrap">
+
+<h2 class="focus-title" id="focus-heading">
+What I’m Focused On
+</h2>
+
+<div class="focus-list">
+
+
+<!-- PEOPLE + LEADERSHIP -->
+
+<article class="focus-item">
+
+<div class="focus-icon" aria-hidden="true">
+
+<svg viewBox="0 0 64 64" focusable="false">
+  <circle cx="32" cy="19" r="7"></circle>
+  <path d="M20 45v-6c0-7 5-12 12-12s12 5 12 12v6"></path>
+
+  <circle cx="15" cy="24" r="5"></circle>
+  <path d="M5 45v-5c0-6 4-10 10-10 3 0 5 1 7 3"></path>
+
+  <circle cx="49" cy="24" r="5"></circle>
+  <path d="M59 45v-5c0-6-4-10-10-10-3 0-5 1-7 3"></path>
+</svg>
+
+</div>
+
+<h3>
+People <span class="amp">&amp;</span> Leadership
+</h3>
+
+<p>
+I’m deeply interested in what helps people grow, especially through change, and become more effective.
+</p>
+
+</article>
+
+
+<!-- LEARNING + PERFORMANCE -->
+
+<article class="focus-item">
+
+<div class="focus-icon" aria-hidden="true">
+
+<svg viewBox="0 0 64 64" focusable="false">
+  <rect x="15" y="14" width="34" height="25" rx="2"></rect>
+  <path d="M10 45h44"></path>
+  <path d="M15 45l3 4h28l3-4"></path>
+</svg>
+
+</div>
+
+<h3>
+Learning <span class="amp">&amp;</span> Performance
+</h3>
+
+<p>
+I’m always thinking about how technology can make learning more useful, accessible, and relevant.
+</p>
+
+</article>
+
+
+<!-- AI + THE FUTURE OF WORK -->
+
+<article class="focus-item">
+
+<div class="focus-icon" aria-hidden="true">
+
+<svg viewBox="0 0 64 64" focusable="false">
+  <path d="M22 27c0-7 4-13 10-13s10 6 10 13c0 5-3 8-6 11-2 2-2 4-2 6h-4c0-2 0-4-2-6-3-3-6-6-6-11z"></path>
+  <path d="M27 48h10"></path>
+  <path d="M28 52h8"></path>
+
+  <path d="M32 6v4"></path>
+  <path d="M17 12l3 3"></path>
+  <path d="M47 12l-3 3"></path>
+  <path d="M12 27h4"></path>
+  <path d="M48 27h4"></path>
+</svg>
+
+</div>
+
+<h3>
+AI <span class="amp">&amp;</span> the Future of Work
+</h3>
+
+<p>
+I’m exploring how AI can make learning more responsive and whether that leads to better performance and a return worth the investment.
+</p>
+
+</article>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- QUESTIONS I'M STILL ASKING -->
+
+<section class="questions-section" aria-label="Questions I’m still asking">
+
+<div class="wrap">
+
+<div class="questions-panel">
+
+<div class="label" aria-hidden="true">
+Questions I’m Still Asking
+</div>
+
+<div class="questions-list">
+
+<div class="question-item">
+
+<p class="question-text">
+What are our systems making easier? What are they making harder?
+</p>
+
+</div>
+
+
+<div class="question-item">
+
+<p class="question-text">
+What should AI help us do better? What should always belong to people?
+</p>
+
+</div>
+
+
+<div class="question-item">
+
+<p class="question-text">
+How do we know it’s actually helping?
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- FAVORITES -->
+
+<section aria-label="A few of my favorites">
+
+<div class="wrap human">
+
+<div class="label" aria-hidden="true">
+A Few of My Favorites
+</div>
+
+<h2 class="intro">
+I’m drawn to people’s stories and the beautiful details that make them meaningful.
+</h2>
+
+<p>
+I adore biographies, especially stories that reveal the person behind the accomplishments. I’m fascinated by how people find their way in the world and what makes their lives fulfilling.
+</p>
+
+<p>
+A perfect Sunday involves cooking a New York Times Cooking recipe, family or friends laughing around the table, and coffee within reach. <em>House Guest with Scott Evans</em>, <em>Happy Hour with Ina Garten</em>, and Mythical Kitchen’s <em>Last Meals</em> are the shows I come back to.
+</p>
+
+<p>
+Lately, I’ve fallen down the Spider-Man rabbit hole. I blame Zendaya’s red-carpet style and my brother, a lifelong comic book fan.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- CONNECT -->
+
+<section class="connect" aria-label="Contact">
+
+<div class="wrap">
+
+<div class="label" aria-hidden="true">
+Let’s connect
+</div>
+
+<h2>
+Say hello.
+</h2>
+
+<p>
+If something here resonates, or you just want to talk about learning, leadership, or a good book, I’d love to hear from you.
+</p>
+
+<div class="buttons">
+
+<a
+  class="btn linkedin-btn"
+  href="https://www.linkedin.com/in/kahlilamae"
+  target="_blank"
+  rel="noopener"
+  data-goatcounter-click="click-linkedin"
+  data-goatcounter-title="LinkedIn button">
+LinkedIn<span class="sr-only"> (opens in a new tab)</span>
+</a>
+
+<a
+  class="btn email-btn"
+  href="mailto:kahlilamae@icloud.com?subject=Hello%20Kahlila"
+  data-goatcounter-click="click-email"
+  data-goatcounter-title="Email button">
+Email
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+</main>
+
+
+<!-- FOOTER -->
+
+<footer class="wrap">
+
+<span>
+© 2026 Kahlila Mae Liverpool
+</span>
+
+</footer>
+
+
+<!-- VISITOR ANALYTICS (GoatCounter) -->
+<script data-goatcounter="https://kahlilamae.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+
+
+</body>
+</html>
