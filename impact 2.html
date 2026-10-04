@@ -14,8 +14,8 @@
 <style>
 
 :root {
-  --cream: #FCFAF5;
-  --cream-2: #FAF7F0;
+  --cream: #FCFBF8;
+  --cream-2: #FBFAF7;
   --card: #FFFFFF;
   --plum: #5B1A46;
   --plum-deep: #4A1238;
@@ -38,28 +38,11 @@ html {
 body {
   margin: 0;
 
-  background-color: var(--cream);
-
-  background-image:
-    repeating-linear-gradient(
-      0deg,
-      rgba(91, 26, 70, 0.008) 0px,
-      rgba(91, 26, 70, 0.008) 1px,
-      transparent 1px,
-      transparent 4px
-    ),
-    repeating-linear-gradient(
-      90deg,
-      rgba(120, 98, 82, 0.007) 0px,
-      rgba(120, 98, 82, 0.007) 1px,
-      transparent 1px,
-      transparent 5px
-    ),
-    linear-gradient(
-      180deg,
-      var(--cream) 0%,
-      var(--cream-2) 100%
-    );
+  background: linear-gradient(
+    180deg,
+    var(--cream) 0%,
+    var(--cream-2) 100%
+  );
 
   background-attachment: fixed;
 
@@ -92,23 +75,7 @@ a:hover {
   top: 0;
   z-index: 50;
 
-  background-color: rgba(252, 250, 245, 0.97);
-
-  background-image:
-    repeating-linear-gradient(
-      0deg,
-      rgba(91, 26, 70, 0.008) 0px,
-      rgba(91, 26, 70, 0.008) 1px,
-      transparent 1px,
-      transparent 4px
-    ),
-    repeating-linear-gradient(
-      90deg,
-      rgba(120, 98, 82, 0.007) 0px,
-      rgba(120, 98, 82, 0.007) 1px,
-      transparent 1px,
-      transparent 5px
-    );
+  background: rgba(252, 251, 248, 0.97);
 
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
