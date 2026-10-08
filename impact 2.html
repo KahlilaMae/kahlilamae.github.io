@@ -12,7 +12,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
 
 <style>
-
 :root {
   --cream: #FCFBF8;
   --cream-2: #FBFAF7;
@@ -37,15 +36,12 @@ html {
 
 body {
   margin: 0;
-
   background: linear-gradient(
     180deg,
     var(--cream) 0%,
     var(--cream-2) 100%
   );
-
   background-attachment: fixed;
-
   color: var(--body);
   font-family: "Source Sans 3", system-ui, -apple-system, "Segoe UI", sans-serif;
   font-size: 17px;
@@ -67,20 +63,16 @@ a:hover {
   padding: 0 28px;
 }
 
-
 /* STICKY PAGE HEADER */
 
 .sticky-header {
   position: sticky;
   top: 0;
   z-index: 50;
-
   background: rgba(252, 251, 248, 0.97);
-
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
 }
-
 
 /* TOP NAVIGATION */
 
@@ -88,19 +80,14 @@ a:hover {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-
   padding: 24px 0 0;
-
   font-size: 15px;
 }
 
 .topbar nav a {
   margin-left: 22px;
-
   text-decoration: none;
-
   color: var(--muted);
-
   font-weight: 500;
 }
 
@@ -114,76 +101,53 @@ a:hover {
   padding-bottom: 3px;
 }
 
-
 /* INTRO */
 
 .intro {
   padding: 26px 0 24px;
-
   max-width: 820px;
 }
 
 .eyebrow {
   margin: 0 0 12px;
-
   font-size: 13px;
   letter-spacing: 0.18em;
-
   text-transform: uppercase;
-
   font-weight: 600;
-
   color: var(--berry);
 }
 
 h1 {
   font-family: "Source Serif 4", Georgia, serif;
-
   font-weight: 700;
-
   font-size: clamp(36px, 5.4vw, 54px);
-
   line-height: 1.08;
-
   letter-spacing: -0.01em;
-
   color: var(--plum);
-
   margin: 0 0 14px;
 }
 
 .lede {
   font-size: 20px;
-
   color: var(--body);
-
   margin: 0;
-
   max-width: 640px;
 }
-
 
 /* CARDS */
 
 .cards {
   display: grid;
-
   gap: 50px;
-
   padding: 10px 0 60px;
 }
 
 .card {
   display: grid;
-
   grid-template-columns: 1fr 292px;
-
   background: var(--card);
-
   border-radius: 18px;
-
   overflow: hidden;
-
   box-shadow:
     0 1px 2px rgba(74, 18, 56, 0.05),
     0 16px 34px -24px rgba(74, 18, 56, 0.45);
@@ -195,205 +159,139 @@ h1 {
 
 .role-line {
   margin: 0 0 6px;
-
   font-size: 12.5px;
-
   letter-spacing: 0.16em;
-
   text-transform: uppercase;
-
   font-weight: 600;
-
   color: var(--berry);
 }
 
 .role-line .sep {
   margin: 0 10px;
-
   color: var(--muted);
-
   font-weight: 400;
 }
 
 .role-line .years {
   color: var(--muted);
-
   letter-spacing: 0.1em;
 }
 
 .card h2 {
   font-family: "Source Serif 4", Georgia, serif;
-
   font-weight: 600;
-
   font-size: 32px;
-
   line-height: 1.15;
-
   letter-spacing: -0.005em;
-
   color: var(--plum-deep);
-
   margin: 0 0 4px;
 }
 
 .org {
   font-family: "Source Serif 4", Georgia, serif;
-
   font-size: 16.5px;
-
   color: var(--ink);
-
   margin: 0 0 16px;
 }
 
 .challenge {
   margin: 0 0 18px;
-
   font-size: 15.5px;
-
   line-height: 1.5;
-
   color: var(--body);
 }
 
 .challenge-label {
   display: block;
-
   margin-bottom: 4px;
-
   font-size: 12.5px;
-
   font-weight: 600;
-
   letter-spacing: 0.12em;
-
   text-transform: uppercase;
-
   color: var(--berry);
 }
 
 .bullets {
   margin: 0;
-
   padding: 0;
-
   list-style: none;
 }
 
 .bullets li {
   position: relative;
-
   padding-left: 26px;
-
   margin: 0 0 11px;
-
   font-size: 16px;
-
   line-height: 1.5;
 }
 
 .bullets li::before {
   content: "";
-
   position: absolute;
-
   left: 7px;
-
   top: 0.62em;
-
   width: 5px;
-
   height: 5px;
-
   border-radius: 50%;
-
   background: var(--berry);
 }
 
 .bullets strong {
   color: var(--ink);
-
   font-weight: 600;
 }
 
 .bullets .hl {
   color: var(--berry);
-
   font-weight: 600;
 }
 
 .pills {
   display: flex;
-
   flex-wrap: wrap;
-
   gap: 8px;
-
   margin: 20px 0 0;
-
   padding: 0;
-
   list-style: none;
 }
 
 .pills li {
   background: var(--pill);
-
   color: var(--plum);
-
   font-size: 12.5px;
-
   font-weight: 500;
-
   padding: 5px 13px;
-
   border-radius: 999px;
 }
-
 
 /* KEY IMPACT COLUMN */
 
 .impact {
-  background:
-    linear-gradient(
-      180deg,
-      var(--plum) 0%,
-      var(--plum-deep) 100%
-    );
-
+  background: linear-gradient(
+    180deg,
+    var(--plum) 0%,
+    var(--plum-deep) 100%
+  );
   color: #fff;
-
   padding: 14px 26px;
-
   display: flex;
-
   flex-direction: column;
-
   justify-content: center;
 }
 
 .impact h3 {
   position: absolute;
-
   width: 1px;
-
   height: 1px;
-
   overflow: hidden;
-
   clip: rect(0 0 0 0);
 }
 
 .stat {
   display: flex;
-
   align-items: center;
-
   gap: 16px;
-
   padding: 16px 0;
-
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
@@ -403,99 +301,74 @@ h1 {
 
 .stat svg {
   flex: 0 0 34px;
-
   width: 34px;
-
   height: 34px;
-
   fill: none;
-
   stroke: #F1DCE8;
-
   stroke-width: 1.4;
-
   stroke-linecap: round;
-
   stroke-linejoin: round;
 }
 
 .stat .num {
   display: block;
-
   font-family: "Source Serif 4", Georgia, serif;
-
   font-weight: 500;
-
   font-size: 34px;
-
   line-height: 1;
-
   color: #fff;
 }
 
 .stat .desc {
   display: block;
-
   margin-top: 5px;
-
   font-size: 13.5px;
-
   line-height: 1.3;
-
   color: #EBD6E2;
 }
 
+/* Combined university and platform metric */
+
+.stat .num.combined-metric {
+  font-size: 20px;
+  line-height: 1.3;
+}
 
 /* BUTTONS */
 
 .btn-row {
   display: flex;
-
   flex-wrap: wrap;
-
   gap: 12px;
-
   margin-top: 18px;
 }
 
 .btn {
   display: inline-block;
-
   text-decoration: none;
-
   font-weight: 600;
-
   font-size: 15px;
-
   padding: 12px 22px;
-
   border-radius: 999px;
-
   border: 1.5px solid var(--plum);
-
   color: var(--plum);
 }
 
 .btn.primary {
   background: var(--plum);
-
   color: #fff;
 }
 
 .btn:hover {
   background: var(--berry);
-
   border-color: var(--berry);
-
   color: #fff;
 }
-
 
 /* LET'S CONNECT */
 
 .work-connect {
   text-align: center;
-
   padding: 110px 24px 84px;
 }
 
@@ -505,111 +378,75 @@ h1 {
 
 .work-connect h2 {
   font-family: "Source Serif 4", Georgia, serif;
-
   font-weight: 500;
-
   font-size: clamp(42px, 5vw, 58px);
-
   line-height: 1.1;
-
   letter-spacing: -0.01em;
-
   color: var(--plum);
-
   margin: 0 0 28px;
 }
 
 .work-connect-text {
   max-width: 760px;
-
   margin: 0 auto;
-
   font-size: 20px;
-
   line-height: 1.6;
-
   color: var(--body);
 }
 
 .work-connect .btn-row {
   justify-content: center;
-
   gap: 12px;
-
   margin-top: 30px;
 }
 
 .work-connect .btn {
   display: inline-flex;
-
   align-items: center;
-
   justify-content: center;
-
   width: 118px;
-
   height: 46px;
-
   padding: 0 18px;
-
   font-family: "Source Sans 3", sans-serif;
-
   font-size: 16px;
-
   font-weight: 400;
-
   line-height: 1;
-
   border-radius: 999px;
-
   text-decoration: none;
 }
-
 
 /* LINKEDIN BUTTON */
 
 .work-connect .btn:not(.primary) {
   background: rgba(255, 255, 255, 0.18);
-
   color: #5B1A46;
-
   border: 1px solid #78305F;
 }
-
 
 /* EMAIL BUTTON */
 
 .work-connect .btn.primary {
   background: #78305F;
-
   color: #FFFFFF;
-
   border: 1px solid #78305F;
 }
 
 .work-connect .btn:hover {
   background: #5B1A46;
-
   border-color: #5B1A46;
-
   color: #FFFFFF;
 }
 
 footer {
   padding: 26px 0 46px;
-
   font-size: 14px;
-
   color: var(--muted);
-
   text-align: right;
 }
-
 
 /* TABLET */
 
 @media (max-width: 860px) {
-
   .card {
     grid-template-columns: 1fr 230px;
   }
@@ -624,22 +461,22 @@ footer {
 
   .stat svg {
     flex-basis: 28px;
-
     width: 28px;
-
     height: 28px;
   }
 
   .stat .num {
     font-size: 28px;
   }
-}
 
+  .stat .num.combined-metric {
+    font-size: 18px;
+  }
+}
 
 /* PHONES */
 
 @media (max-width: 600px) {
-
   body {
     font-size: 16px;
   }
@@ -650,7 +487,6 @@ footer {
 
   .topbar {
     justify-content: flex-end;
-
     padding-top: 18px;
   }
 
@@ -702,7 +538,6 @@ footer {
     font-size: 18px;
   }
 }
-
 </style>
 
 <script
@@ -710,11 +545,9 @@ footer {
   async
   src="//gc.zgo.at/count.js">
 </script>
-
 </head>
 
 <body>
-
 
 <!-- ICONS -->
 
@@ -723,9 +556,7 @@ footer {
   height="0"
   style="position:absolute"
   aria-hidden="true"
-  focusable="false"
->
-
+  focusable="false">
 <defs>
 
 <symbol id="i-school" viewBox="0 0 24 24">
@@ -769,51 +600,37 @@ footer {
 </symbol>
 
 </defs>
-
 </svg>
 
-
 <div class="wrap">
-
 
 <!-- STICKY HEADER -->
 
 <div class="sticky-header">
-
   <header class="topbar">
-
     <nav aria-label="Main">
       <a href="index.html">Home</a>
       <a href="impact%202.html" aria-current="page">My Work</a>
     </nav>
-
   </header>
 
-
   <section class="intro">
-
     <h1>
       Work that changes how people and organizations perform
     </h1>
-
     <p class="lede">
       A closer look at the context, what I did, and what changed.
     </p>
-
   </section>
-
 </div>
-
 
 <!-- EXPERIENCE CARDS -->
 
 <main class="cards">
 
-
 <!-- 1. APPLE PROFESSIONAL LEARNING -->
 
 <article class="card">
-
 <div class="card-main">
 
 <p class="role-line">
@@ -838,7 +655,6 @@ The challenge was not simply learning how to use the technology. It was supporti
 </p>
 
 <ul class="bullets">
-
 <li>
   <strong>Conducted</strong> learning needs assessments across
   <span class="hl">25 schools</span>, partnering with executive
@@ -858,7 +674,6 @@ The challenge was not simply learning how to use the technology. It was supporti
   implementation guides to reinforce learning and support
   on-the-job application.
 </li>
-
 </ul>
 
 <ul class="pills">
@@ -872,83 +687,55 @@ The challenge was not simply learning how to use the technology. It was supporti
 
 </div>
 
-
 <aside class="impact" aria-label="Key impact">
-
 <h3>Key Impact</h3>
 
 <div class="stat">
-
-<svg>
-  <use href="#i-school"/>
-</svg>
-
-<div>
-  <span class="num">25</span>
-  <span class="desc">
-    schools supported toward district-wide implementation
-  </span>
+  <svg><use href="#i-school"/></svg>
+  <div>
+    <span class="num">25</span>
+    <span class="desc">
+      schools supported toward district-wide implementation
+    </span>
+  </div>
 </div>
-
-</div>
-
 
 <div class="stat">
-
-<svg>
-  <use href="#i-people"/>
-</svg>
-
-<div>
-  <span class="num">661</span>
-  <span class="desc">
-    Apple Teacher certifications
-  </span>
+  <svg><use href="#i-people"/></svg>
+  <div>
+    <span class="num">661</span>
+    <span class="desc">
+      Apple Teacher certifications
+    </span>
+  </div>
 </div>
-
-</div>
-
 
 <div class="stat">
-
-<svg>
-  <use href="#i-thumb"/>
-</svg>
-
-<div>
-  <span class="num">97%</span>
-  <span class="desc">
-    client satisfaction
-  </span>
+  <svg><use href="#i-thumb"/></svg>
+  <div>
+    <span class="num">97%</span>
+    <span class="desc">
+      client satisfaction
+    </span>
+  </div>
 </div>
-
-</div>
-
 
 <div class="stat">
-
-<svg>
-  <use href="#i-board"/>
-</svg>
-
-<div>
-  <span class="num">150+</span>
-  <span class="desc">
-    learning experiences designed, facilitated, and evaluated
-  </span>
-</div>
-
+  <svg><use href="#i-board"/></svg>
+  <div>
+    <span class="num">150+</span>
+    <span class="desc">
+      learning experiences designed, facilitated, and evaluated
+    </span>
+  </div>
 </div>
 
 </aside>
-
 </article>
-
 
 <!-- 2. LOWELL HIGH SCHOOL -->
 
 <article class="card">
-
 <div class="card-main">
 
 <p class="role-line">
@@ -975,7 +762,6 @@ The challenge was helping the school maintain stability while adapting to rapidl
 </p>
 
 <ul class="bullets">
-
 <li>
   <strong>Directed</strong> initiatives supporting
   <span class="hl">1,880+ students</span> and
@@ -997,7 +783,6 @@ The challenge was helping the school maintain stability while adapting to rapidl
   Principal in Fall 2022, overseeing school operations, staff,
   and organizational priorities.
 </li>
-
 </ul>
 
 <ul class="pills">
@@ -1011,83 +796,55 @@ The challenge was helping the school maintain stability while adapting to rapidl
 
 </div>
 
-
 <aside class="impact" aria-label="Key impact">
-
 <h3>Key Impact</h3>
 
 <div class="stat">
-
-<svg>
-  <use href="#i-cap"/>
-</svg>
-
-<div>
-  <span class="num">1,880+</span>
-  <span class="desc">
-    students supported
-  </span>
+  <svg><use href="#i-cap"/></svg>
+  <div>
+    <span class="num">1,880+</span>
+    <span class="desc">
+      students supported
+    </span>
+  </div>
 </div>
-
-</div>
-
 
 <div class="stat">
-
-<svg>
-  <use href="#i-people"/>
-</svg>
-
-<div>
-  <span class="num">75+</span>
-  <span class="desc">
-    faculty and staff supported
-  </span>
+  <svg><use href="#i-people"/></svg>
+  <div>
+    <span class="num">75+</span>
+    <span class="desc">
+      faculty and staff supported
+    </span>
+  </div>
 </div>
-
-</div>
-
 
 <div class="stat">
-
-<svg>
-  <use href="#i-school"/>
-</svg>
-
-<div>
-  <span class="num">5</span>
-  <span class="desc">
-    department chairs supervised
-  </span>
+  <svg><use href="#i-school"/></svg>
+  <div>
+    <span class="num">5</span>
+    <span class="desc">
+      department chairs supervised
+    </span>
+  </div>
 </div>
-
-</div>
-
 
 <div class="stat">
-
-<svg>
-  <use href="#i-person"/>
-</svg>
-
-<div>
-  <span class="num">40+</span>
-  <span class="desc">
-    educators coached and evaluated
-  </span>
-</div>
-
+  <svg><use href="#i-person"/></svg>
+  <div>
+    <span class="num">40+</span>
+    <span class="desc">
+      educators coached and evaluated
+    </span>
+  </div>
 </div>
 
 </aside>
-
 </article>
-
 
 <!-- 3. PATHWAY TO TEACHING -->
 
 <article class="card">
-
 <div class="card-main">
 
 <p class="role-line">
@@ -1110,11 +867,10 @@ The challenge was helping the school maintain stability while adapting to rapidl
 </p>
 
 <p>
-The challenge was building a new pipeline of qualified educators for hard-to-fill positions. That meant helping aspiring educators move into licensed teaching roles while developing the knowledge, classroom practice, and supports they needed to succeed. 
+The challenge was building a new pipeline of qualified educators for hard-to-fill positions. That meant helping aspiring educators move into licensed teaching roles while developing the knowledge, classroom practice, and supports they needed to succeed.
 </p>
 
 <ul class="bullets">
-
 <li>
   <strong>Designed</strong> courses in Google Classroom and
   Blackbaud LMS supporting a district-wide teacher development
@@ -1138,7 +894,6 @@ The challenge was building a new pipeline of qualified educators for hard-to-fil
   Workshop Series for
   <span class="hl">46 students</span>.
 </li>
-
 </ul>
 
 <ul class="pills">
@@ -1152,67 +907,45 @@ The challenge was building a new pipeline of qualified educators for hard-to-fil
 
 </div>
 
-
 <aside class="impact" aria-label="Key impact">
-
 <h3>Key Impact</h3>
 
 <div class="stat">
-
-<svg>
-  <use href="#i-people"/>
-</svg>
-
-<div>
-  <span class="num">273</span>
-  <span class="desc">
-    teachers prepared program-wide
-  </span>
+  <svg><use href="#i-people"/></svg>
+  <div>
+    <span class="num">273</span>
+    <span class="desc">
+      teachers prepared program-wide
+    </span>
+  </div>
 </div>
-
-</div>
-
 
 <div class="stat">
-
-<svg>
-  <use href="#i-school"/>
-</svg>
-
-<div>
-  <span class="num">113</span>
-  <span class="desc">
-    schools served by the teacher pipeline
-  </span>
+  <svg><use href="#i-school"/></svg>
+  <div>
+    <span class="num">113</span>
+    <span class="desc">
+      schools served by the teacher pipeline
+    </span>
+  </div>
 </div>
-
-</div>
-
 
 <div class="stat">
-
-<svg>
-  <use href="#i-cap"/>
-</svg>
-
-<div>
-  <span class="num">84%</span>
-  <span class="desc">
-    returned for a third year of teaching
-  </span>
-</div>
-
+  <svg><use href="#i-cap"/></svg>
+  <div>
+    <span class="num">84%</span>
+    <span class="desc">
+      returned for a third year of teaching
+    </span>
+  </div>
 </div>
 
 </aside>
-
 </article>
-
 
 <!-- 4. SAN JOSE STATE UNIVERSITY FOUNDATION -->
 
 <article class="card">
-
 <div class="card-main">
 
 <p class="role-line">
@@ -1239,7 +972,6 @@ The challenge was helping students stay enrolled and make progress toward gradua
 </p>
 
 <ul class="bullets">
-
 <li>
   <strong>Co-taught</strong> career development courses for
   <span class="hl">35 students</span> and designed workshops,
@@ -1254,7 +986,6 @@ The challenge was helping students stay enrolled and make progress toward gradua
   convening stakeholders to advance college-to-career pathways
   for foster youth.
 </li>
-
 </ul>
 
 <ul class="pills">
@@ -1267,51 +998,35 @@ The challenge was helping students stay enrolled and make progress toward gradua
 
 </div>
 
-
 <aside class="impact" aria-label="Key impact">
-
 <h3>Key Impact</h3>
 
 <div class="stat">
-
-<svg>
-  <use href="#i-cap"/>
-</svg>
-
-<div>
-  <span class="num">35</span>
-  <span class="desc">
-    students taught in career development courses
-  </span>
+  <svg><use href="#i-cap"/></svg>
+  <div>
+    <span class="num">35</span>
+    <span class="desc">
+      students taught in career development courses
+    </span>
+  </div>
 </div>
-
-</div>
-
 
 <div class="stat">
-
-<svg>
-  <use href="#i-people"/>
-</svg>
-
-<div>
-  <span class="num">1st Annual</span>
-  <span class="desc">
-    National Blueprint for Success Conference, co-created
-  </span>
-</div>
-
+  <svg><use href="#i-people"/></svg>
+  <div>
+    <span class="num">1st Annual</span>
+    <span class="desc">
+      National Blueprint for Success Conference, co-created
+    </span>
+  </div>
 </div>
 
 </aside>
-
 </article>
-
 
 <!-- 5. ADJUNCT LECTURER -->
 
 <article class="card">
-
 <div class="card-main">
 
 <p class="role-line">
@@ -1338,7 +1053,6 @@ The challenge was creating a more accessible path into teaching. The learning ne
 </p>
 
 <ul class="bullets">
-
 <li>
   <strong>Taught</strong> Characteristics of Learners,
   Instructional Strategies, and Ethical &amp; Legal Practices
@@ -1355,7 +1069,6 @@ The challenge was creating a more accessible path into teaching. The learning ne
   content in <span class="hl">iLearn LMS</span> with activities,
   assessments, and learner feedback.
 </li>
-
 </ul>
 
 <ul class="pills">
@@ -1369,64 +1082,45 @@ The challenge was creating a more accessible path into teaching. The learning ne
 
 </div>
 
-
 <aside class="impact" aria-label="Key impact">
-
 <h3>Key Impact</h3>
 
 <div class="stat">
-
-<svg>
-  <use href="#i-book"/>
-</svg>
-
-<div>
-  <span class="num">5</span>
-  <span class="desc">
-    courses taught
-  </span>
+  <svg><use href="#i-book"/></svg>
+  <div>
+    <span class="num">5</span>
+    <span class="desc">
+      courses taught
+    </span>
+  </div>
 </div>
-
-</div>
-
 
 <div class="stat">
-
-<svg>
-  <use href="#i-school"/>
-</svg>
-
-<div>
-  <span class="num">2</span>
-  <span class="desc">
-    universities, virtual and hybrid
-  </span>
+  <svg><use href="#i-people"/></svg>
+  <div>
+    <span class="num">200+</span>
+    <span class="desc">
+      educators working in classrooms across 4 states
+    </span>
+  </div>
 </div>
-
-</div>
-
 
 <div class="stat">
-
-<svg>
-  <use href="#i-doc"/>
-</svg>
-
-<div>
-  <span class="num">2</span>
-  <span class="desc">
-    learning platforms, Canvas and iLearn
-  </span>
-</div>
-
+  <svg><use href="#i-school"/></svg>
+  <div>
+    <span class="num combined-metric">
+      2 universities · 2 learning platforms
+    </span>
+    <span class="desc">
+      virtual and hybrid | Canvas and iLearn
+    </span>
+  </div>
 </div>
 
 </aside>
-
 </article>
 
 </main>
-
 
 <!-- LET'S CONNECT -->
 
@@ -1445,32 +1139,26 @@ The challenge was creating a more accessible path into teaching. The learning ne
 </p>
 
 <div class="btn-row">
-
 <a
   class="btn"
   href="https://www.linkedin.com/in/kahlilamae"
   target="_blank"
-  rel="noopener noreferrer"
->
+  rel="noopener noreferrer">
   LinkedIn
 </a>
 
 <a
   class="btn primary"
-  href="mailto:kahlilamae@icloud.com"
->
+  href="mailto:kahlilamae@icloud.com">
   Email
 </a>
-
 </div>
 
 </section>
 
-
 <footer>
   &copy; 2026 Kahlila Mae Liverpool
 </footer>
-
 
 </div>
 
