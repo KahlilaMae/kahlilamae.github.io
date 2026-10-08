@@ -1,1166 +1,1266 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Kahlila Mae Liverpool</title>
-<meta name="description" content="A closer look at the context, what I did, and what changed">
+<!-- Keep Safari/browser chrome neutral -->
+<meta name="theme-color" content="#ffffff">
+
+<meta
+  name="description"
+  content="Kahlila Mae Liverpool — L&D | Leadership Development | Exploring Adaptive Learning + AI.">
+
+<!-- Social Preview -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://kahlilamae.github.io/">
+<meta property="og:title" content="What I’m Thinking About">
+<meta property="og:description" content="A little more about me and how I think.">
+<meta property="og:image" content="https://kahlilamae.github.io/Kahlila-hero-final(4).png">
+
+<title>Kahlila Mae Liverpool | L&D</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+
+<link
+  href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=Playfair+Display:wght@400&display=swap"
+  rel="stylesheet">
 
 <style>
-:root {
-  --cream: #FCFBF8;
-  --cream-2: #FBFAF7;
-  --card: #FFFFFF;
-  --plum: #5B1A46;
-  --plum-deep: #4A1238;
-  --berry: #8E1F5A;
-  --ink: #2E2430;
-  --body: #4A3F4C;
-  --muted: #7A6D7C;
-  --pill: #F3E2EB;
-  --line: #EADFD0;
+
+:root{
+  --ink:#3A2438;
+  --muted:#5B4B58;
+
+  /* Main site background */
+  --paper:#F5EBF3;
+
+  /* Major boxes */
+  --card:#FBF7FA;
+
+  --line:rgba(122,46,92,.18);
+  --soft-line:rgba(122,46,92,.14);
+  --accent:#7A2E5C;
+
+  --max:1120px;
+  --radius:26px;
+
+  --linkedin-bg:#FBF7FA;
+  --linkedin-border:rgba(122,46,92,.25);
+
+  --email-bg:#7A2E5C;
+  --email-border:rgba(122,46,92,.18);
 }
 
-* {
-  box-sizing: border-box;
+
+/* ========================= */
+/* BASE                      */
+/* ========================= */
+
+*{
+  box-sizing:border-box;
 }
 
-html {
-  scroll-behavior: smooth;
+html{
+  scroll-behavior:smooth;
 }
 
-body {
-  margin: 0;
-  background: linear-gradient(
-    180deg,
-    var(--cream) 0%,
-    var(--cream-2) 100%
-  );
-  background-attachment: fixed;
-  color: var(--body);
-  font-family: "Source Sans 3", system-ui, -apple-system, "Segoe UI", sans-serif;
-  font-size: 17px;
-  line-height: 1.55;
-  -webkit-font-smoothing: antialiased;
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+
+  font-family:'DM Sans',Arial,sans-serif;
+  font-size:1.25rem;
+  font-weight:400;
+  line-height:1.625;
+
+  -webkit-font-smoothing:antialiased;
 }
 
-a {
-  color: var(--plum);
+a{
+  color:inherit;
+  text-decoration:none;
 }
 
-a:hover {
-  color: var(--berry);
+/* Visible focus for keyboard users only */
+a:focus-visible{
+  outline:3px solid var(--accent);
+  outline-offset:3px;
 }
 
-.wrap {
-  max-width: 1080px;
-  margin: 0 auto;
-  padding: 0 28px;
+/* Text for screen readers only */
+.sr-only{
+  position:absolute;
+  width:1px;
+  height:1px;
+  margin:-1px;
+  padding:0;
+  overflow:hidden;
+  clip:rect(0 0 0 0);
+  white-space:nowrap;
+  border:0;
 }
 
-/* STICKY PAGE HEADER */
-
-.sticky-header {
-  position: sticky;
-  top: 0;
-  z-index: 50;
-  background: rgba(252, 251, 248, 0.97);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+.wrap{
+  width:min(calc(100% - 48px),var(--max));
+  margin:0 auto;
 }
 
-/* TOP NAVIGATION */
 
-.topbar {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  padding: 24px 0 0;
-  font-size: 15px;
+/* ========================= */
+/* TYPOGRAPHY                */
+/* ========================= */
+
+h1{
+  font-family:'Playfair Display',Georgia,serif;
+  font-size:3rem;
+  font-weight:400;
+  line-height:1.17;
+  letter-spacing:-.035em;
 }
 
-.topbar nav a {
-  margin-left: 22px;
-  text-decoration: none;
-  color: var(--muted);
-  font-weight: 500;
+h2,
+h3,
+.intro,
+.question-text{
+  font-family:'Playfair Display',Georgia,serif;
+  font-size:1.75rem;
+  font-weight:400;
+  line-height:1.3;
+  letter-spacing:-.02em;
 }
 
-.topbar nav a:hover,
-.topbar nav a[aria-current="page"] {
-  color: var(--plum);
+.eyebrow,
+.label{
+  font-family:'DM Sans',Arial,sans-serif;
+  font-size:.8125rem;
+  font-weight:500;
+  line-height:1.4;
+  letter-spacing:.15em;
+  text-transform:uppercase;
+  color:var(--accent);
 }
 
-.topbar nav a[aria-current="page"] {
-  border-bottom: 2px solid var(--berry);
-  padding-bottom: 3px;
+/* Consistent body text across the entire site */
+p,
+.card p,
+.focus-item p,
+.human p,
+.connect p,
+.guides-copy p{
+  font-family:'DM Sans',Arial,sans-serif;
+  font-size:1rem;
+  font-weight:400;
+  line-height:1.625;
 }
 
-/* INTRO */
 
-.intro {
-  padding: 26px 0 24px;
-  max-width: 820px;
+/* ========================= */
+/* NAVIGATION                */
+/* ========================= */
+
+nav{
+  position:sticky;
+  top:0;
+  z-index:20;
+  background:#F5EBF3;
+  border-bottom:1px solid var(--line);
 }
 
-.eyebrow {
-  margin: 0 0 12px;
-  font-size: 13px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  font-weight: 600;
-  color: var(--berry);
+.nav{
+  min-height:70px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
 }
 
-h1 {
-  font-family: "Source Serif 4", Georgia, serif;
-  font-weight: 700;
-  font-size: clamp(36px, 5.4vw, 54px);
-  line-height: 1.08;
-  letter-spacing: -0.01em;
-  color: var(--plum);
-  margin: 0 0 14px;
+.brand{
+  font-family:'Playfair Display',Georgia,serif;
+  font-size:1.15rem;
+  font-weight:400;
+  color:#3A2438;
 }
 
-.lede {
-  font-size: 20px;
-  color: var(--body);
-  margin: 0;
-  max-width: 640px;
+.nav-link{
+  font-family:'DM Sans',Arial,sans-serif;
+  font-size:.95rem;
+  font-weight:500;
+  color:var(--accent);
 }
 
-/* CARDS */
-
-.cards {
-  display: grid;
-  gap: 50px;
-  padding: 10px 0 60px;
+.nav-link:hover{
+  text-decoration:underline;
+  text-underline-offset:4px;
 }
 
-.card {
-  display: grid;
-  grid-template-columns: 1fr 292px;
-  background: var(--card);
-  border-radius: 18px;
-  overflow: hidden;
-  box-shadow:
-    0 1px 2px rgba(74, 18, 56, 0.05),
-    0 16px 34px -24px rgba(74, 18, 56, 0.45);
+
+/* ========================= */
+/* HERO                      */
+/* ========================= */
+
+.hero{
+  position:relative;
+  min-height:720px;
+  overflow:hidden;
+  background:var(--paper);
 }
 
-.card-main {
-  padding: 30px 34px 28px;
+.hero-photo{
+  position:absolute;
+  inset:0;
+
+  background-image:url("./Kahlila-hero-final(4).png");
+  background-repeat:no-repeat;
+  background-size:auto 80%;
+  background-position:75% bottom;
+
+  z-index:0;
 }
 
-.role-line {
-  margin: 0 0 6px;
-  font-size: 12.5px;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  font-weight: 600;
-  color: var(--berry);
+
+/* ========================= */
+/* HERO TEXT                 */
+/* ========================= */
+
+.hero-content{
+  position:relative;
+  z-index:2;
+
+  min-height:inherit;
+
+  display:flex;
+  align-items:center;
 }
 
-.role-line .sep {
-  margin: 0 10px;
-  color: var(--muted);
-  font-weight: 400;
+.hero-copy{
+  width:47%;
+  max-width:525px;
+  transform:translateY(-18px);
 }
 
-.role-line .years {
-  color: var(--muted);
-  letter-spacing: 0.1em;
+.hero h1{
+  max-width:525px;
+  margin:22px 0 28px;
 }
 
-.card h2 {
-  font-family: "Source Serif 4", Georgia, serif;
-  font-weight: 600;
-  font-size: 32px;
-  line-height: 1.15;
-  letter-spacing: -0.005em;
-  color: var(--plum-deep);
-  margin: 0 0 4px;
+.hero p{
+  max-width:505px;
+  margin:0;
+  color:var(--muted);
 }
 
-.org {
-  font-family: "Source Serif 4", Georgia, serif;
-  font-size: 16.5px;
-  color: var(--ink);
-  margin: 0 0 16px;
+/* My Work button beneath hero text */
+.hero-actions{
+  display:flex;
+  justify-content:flex-start;
+  margin-top:24px;
 }
 
-.challenge {
-  margin: 0 0 18px;
-  font-size: 15.5px;
-  line-height: 1.5;
-  color: var(--body);
+
+/* ========================= */
+/* ALL SECTIONS              */
+/* ========================= */
+
+section{
+  padding:105px 0;
+  border-top:1px solid var(--line);
 }
 
-.challenge-label {
-  display: block;
-  margin-bottom: 4px;
-  font-size: 12.5px;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--berry);
+.label{
+  margin-bottom:36px;
 }
 
-.bullets {
-  margin: 0;
-  padding: 0;
-  list-style: none;
+
+/* ========================= */
+/* WHAT GUIDES ME            */
+/* ========================= */
+
+.guides-section{
+  border-top:1px solid var(--line);
 }
 
-.bullets li {
-  position: relative;
-  padding-left: 26px;
-  margin: 0 0 11px;
-  font-size: 16px;
-  line-height: 1.5;
+.guides-content{
+  max-width:940px;
+  margin:0;
+  text-align:left;
 }
 
-.bullets li::before {
+.guides-content .intro{
+  max-width:900px;
+  margin:0 0 20px;
+}
+
+.guides-copy{
+  max-width:900px;
+  margin:0;
+  color:var(--muted);
+}
+
+.guides-copy p{
+  margin:0;
+}
+
+
+/* ========================= */
+/* MY APPROACH               */
+/* ========================= */
+
+.cards{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:1px;
+
+  background:var(--line);
+  border:1px solid var(--line);
+
+  border-radius:var(--radius);
+  overflow:hidden;
+}
+
+.card{
+  background:var(--card);
+  padding:38px;
+  min-height:205px;
+}
+
+.card .label{
+  margin-bottom:14px;
+}
+
+.card h3{
+  margin:0 0 14px;
+}
+
+.card:nth-child(2) h3{
+  margin-top:31px;
+}
+
+.card p{
+  color:var(--muted);
+  margin:0;
+}
+
+
+/* ========================= */
+/* WHAT I'M FOCUSED ON       */
+/* ========================= */
+
+.focus-section{
+  padding:78px 0 82px;
+  border-top:1px solid var(--line);
+}
+
+.focus-title{
+  font-family:'Playfair Display',Georgia,serif;
+  font-size:2.125rem;
+  font-weight:400;
+  line-height:1.25;
+  letter-spacing:-.025em;
+  margin:0 0 42px;
+}
+
+.focus-list{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:0;
+}
+
+.focus-item{
+  position:relative;
+  text-align:left;
+  padding:0 38px;
+}
+
+.focus-item:first-child{
+  padding-left:0;
+}
+
+.focus-item:last-child{
+  padding-right:0;
+}
+
+.focus-item + .focus-item{
+  border-left:1px solid var(--soft-line);
+}
+
+.focus-icon{
+  width:48px;
+  height:48px;
+  display:flex;
+  align-items:center;
+  justify-content:flex-start;
+  margin:0 0 18px;
+  color:var(--accent);
+}
+
+.focus-icon svg{
+  width:48px;
+  height:48px;
+  fill:none;
+  stroke:currentColor;
+  stroke-width:1.6;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+
+.focus-item h3{
+  font-family:'Playfair Display',Georgia,serif;
+  font-size:1.5rem;
+  font-weight:400;
+  line-height:1.3;
+  letter-spacing:-.02em;
+  margin:0 0 12px;
+  color:var(--ink);
+}
+
+.focus-item h3 .amp{
+  font-family:'DM Sans',Arial,sans-serif;
+  font-size:.82em;
+  font-weight:400;
+  letter-spacing:0;
+  color:inherit;
+}
+
+.focus-item p{
+  color:var(--muted);
+  margin:0;
+  max-width:320px;
+}
+
+
+/* ========================= */
+/* QUESTIONS                 */
+/* ========================= */
+
+.questions-section{
+  padding-bottom:105px;
+}
+
+.questions-panel{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  padding:54px 56px 58px;
+}
+
+.questions-panel .label{
+  margin-bottom:20px;
+}
+
+.questions-list{
+  max-width:900px;
+  margin:0;
+}
+
+.question-item{
+  padding:16px 0;
+}
+
+.question-item:first-child{
+  padding-top:0;
+}
+
+.question-item:last-child{
+  padding-bottom:0;
+}
+
+.question-item + .question-item{
+  border-top:1px solid var(--soft-line);
+}
+
+.question-text{
+  margin:0;
+  max-width:900px;
+}
+
+
+/* ========================= */
+/* FAVORITES                 */
+/* ========================= */
+
+.human{
+  max-width:var(--max);
+}
+
+.human > h2,
+.human > p{
+  max-width:900px;
+}
+
+.human p{
+  color:var(--muted);
+}
+
+.intro{
+  max-width:880px;
+  margin:0 0 20px;
+}
+
+.human .intro{
+  font-size:1.75rem;
+}
+
+
+/* ========================= */
+/* BUTTONS                   */
+/* ========================= */
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+
+  width:auto;
+  min-width:104px;
+  height:auto;
+  min-height:40px;
+
+  padding:8px 12px;
+  border-radius:999px;
+
+  font-family:'DM Sans',Arial,sans-serif;
+  font-size:.88rem;
+  font-weight:500;
+
+  transition:
+    transform .2s ease,
+    opacity .2s ease;
+}
+
+.btn:hover{
+  transform:translateY(-2px);
+  opacity:.85;
+}
+
+.linkedin-btn{
+  background:var(--linkedin-bg);
+  color:var(--ink);
+  border:1px solid var(--linkedin-border);
+}
+
+.email-btn{
+  background:var(--email-bg);
+  color:#FBF7FA;
+  border:1px solid var(--email-border);
+}
+
+
+/* ========================= */
+/* CONNECT                   */
+/* ========================= */
+
+.connect{
+  text-align:center;
+  padding:125px 0 100px;
+  border-top:none;
+}
+
+.connect h2{
+  font-family:'Playfair Display',Georgia,serif;
+
+  font-size:3rem;
+  font-weight:400;
+  line-height:1.17;
+  letter-spacing:-.035em;
+
+  margin:15px 0 25px;
+}
+
+.connect p{
+  max-width:700px;
+  margin:0 auto 30px;
+  color:var(--muted);
+}
+
+.buttons{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+
+
+/* ========================= */
+/* FOOTER                    */
+/* ========================= */
+
+footer{
+  padding:28px 0 38px;
+  border-top:none;
+  color:var(--muted);
+
+  font-family:'DM Sans',Arial,sans-serif;
+  font-size:.8125rem;
+  font-weight:400;
+  line-height:1.4;
+
+  display:flex;
+  justify-content:flex-end;
+}
+
+
+/* ========================= */
+/* IPAD / TABLET             */
+/* ========================= */
+
+@media(max-width:1180px) and (min-width:761px){
+
+  .wrap{
+    width:min(calc(100% - 96px),var(--max));
+  }
+
+  .hero{
+    min-height:760px;
+  }
+
+  .hero-photo{
+    background-size:auto 80%;
+    background-position:75% bottom;
+  }
+
+  .hero-content{
+    align-items:center;
+  }
+
+  .hero-copy{
+    width:46%;
+    max-width:480px;
+    transform:translateY(-15px);
+  }
+
+  .hero h1{
+    font-size:2.625rem;
+    max-width:480px;
+  }
+
+  .hero p{
+    max-width:460px;
+  }
+
+}
+
+
+/* ========================= */
+/* MOBILE                    */
+/* ========================= */
+
+@media(max-width:760px){
+
+  .wrap{
+    width:min(calc(100% - 32px),var(--max));
+  }
+
+  .hero{
+    min-height:900px;
+    background:var(--paper);
+  }
+
+  .hero-photo{
+    background-size:auto 54%;
+    background-position:80% bottom;
+    bottom:0;
+  }
+
+  .hero-content{
+    align-items:flex-start;
+    padding-top:55px;
+  }
+
+  .hero-copy{
+    width:100%;
+    max-width:100%;
+    transform:none;
+  }
+
+  .hero h1{
+    font-size:2.25rem;
+    line-height:1.2;
+    max-width:520px;
+  }
+
+  .hero p{
+    max-width:520px;
+  }
+
+  section{
+    padding:72px 0;
+  }
+
+  .cards{
+    grid-template-columns:1fr;
+    border-radius:20px;
+  }
+
+  .card{
+    min-height:auto;
+  }
+
+  .card:nth-child(2) h3{
+    margin-top:0;
+  }
+
+  .focus-section{
+    padding:64px 0 68px;
+  }
+
+  .focus-title{
+    font-size:1.875rem;
+    margin-bottom:38px;
+  }
+
+  .focus-list{
+    grid-template-columns:1fr;
+    gap:0;
+  }
+
+  .focus-item,
+  .focus-item:first-child,
+  .focus-item:last-child{
+    padding:34px 0;
+  }
+
+  .focus-item:first-child{
+    padding-top:0;
+  }
+
+  .focus-item:last-child{
+    padding-bottom:0;
+  }
+
+  .focus-item + .focus-item{
+    border-left:none;
+    border-top:1px solid var(--soft-line);
+  }
+
+  .focus-icon{
+    margin:0 0 16px;
+  }
+
+  .focus-item h3{
+    font-size:1.5rem;
+  }
+
+  .focus-item p{
+    max-width:100%;
+  }
+
+  .questions-panel{
+    padding:36px 26px 40px;
+    border-radius:20px;
+  }
+
+  .questions-panel .label{
+    margin-bottom:20px;
+  }
+
+  .question-item{
+    padding:20px 0;
+  }
+
+  footer{
+    flex-direction:column;
+    align-items:flex-end;
+  }
+
+  h2,
+  h3,
+  .intro,
+  .question-text{
+    font-size:1.5rem;
+    line-height:1.32;
+  }
+
+  .connect h2{
+    font-size:2.25rem;
+    line-height:1.2;
+  }
+
+}
+
+
+/* ========================= */
+/* LARGE DESKTOP             */
+/* ========================= */
+
+@media(min-width:1400px){
+
+  .hero{
+    min-height:760px;
+  }
+
+  .hero-photo{
+    background-size:auto 80%;
+    background-position:75% bottom;
+  }
+
+}
+
+
+/* Soft floor shadow beneath the hero portrait */
+.hero::before {
   content: "";
   position: absolute;
-  left: 7px;
-  top: 0.62em;
-  width: 5px;
-  height: 5px;
+  left: 56%;
+  bottom: 6%;
+  width: 31%;
+  height: 9%;
   border-radius: 50%;
-  background: var(--berry);
-}
-
-.bullets strong {
-  color: var(--ink);
-  font-weight: 600;
-}
-
-.bullets .hl {
-  color: var(--berry);
-  font-weight: 600;
-}
-
-.pills {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin: 20px 0 0;
-  padding: 0;
-  list-style: none;
-}
-
-.pills li {
-  background: var(--pill);
-  color: var(--plum);
-  font-size: 12.5px;
-  font-weight: 500;
-  padding: 5px 13px;
-  border-radius: 999px;
-}
-
-/* KEY IMPACT COLUMN */
-
-.impact {
-  background: linear-gradient(
-    180deg,
-    var(--plum) 0%,
-    var(--plum-deep) 100%
+  background: radial-gradient(
+    ellipse,
+    rgba(58, 36, 56, 0.27) 0%,
+    rgba(58, 36, 56, 0.12) 42%,
+    transparent 75%
   );
-  color: #fff;
-  padding: 14px 26px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  filter: blur(14px);
+  z-index:0;
+  pointer-events:none;
 }
 
-.impact h3 {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
+.hero-photo{
+  z-index:1;
 }
 
-.stat {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  padding: 16px 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.stat:last-child {
-  border-bottom: 0;
-}
-
-.stat svg {
-  flex: 0 0 34px;
-  width: 34px;
-  height: 34px;
-  fill: none;
-  stroke: #F1DCE8;
-  stroke-width: 1.4;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-
-.stat .num {
-  display: block;
-  font-family: "Source Serif 4", Georgia, serif;
-  font-weight: 500;
-  font-size: 34px;
-  line-height: 1;
-  color: #fff;
-}
-
-.stat .desc {
-  display: block;
-  margin-top: 5px;
-  font-size: 13.5px;
-  line-height: 1.3;
-  color: #EBD6E2;
-}
-
-/* Combined university and platform metric */
-
-.stat .num.combined-metric {
-  font-size: 20px;
-  line-height: 1.3;
-}
-
-/* BUTTONS */
-
-.btn-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 18px;
-}
-
-.btn {
-  display: inline-block;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 15px;
-  padding: 12px 22px;
-  border-radius: 999px;
-  border: 1.5px solid var(--plum);
-  color: var(--plum);
-}
-
-.btn.primary {
-  background: var(--plum);
-  color: #fff;
-}
-
-.btn:hover {
-  background: var(--berry);
-  border-color: var(--berry);
-  color: #fff;
-}
-
-/* LET'S CONNECT */
-
-.work-connect {
-  text-align: center;
-  padding: 110px 24px 84px;
-}
-
-.work-connect .eyebrow {
-  margin-bottom: 30px;
-}
-
-.work-connect h2 {
-  font-family: "Source Serif 4", Georgia, serif;
-  font-weight: 500;
-  font-size: clamp(42px, 5vw, 58px);
-  line-height: 1.1;
-  letter-spacing: -0.01em;
-  color: var(--plum);
-  margin: 0 0 28px;
-}
-
-.work-connect-text {
-  max-width: 760px;
-  margin: 0 auto;
-  font-size: 20px;
-  line-height: 1.6;
-  color: var(--body);
-}
-
-.work-connect .btn-row {
-  justify-content: center;
-  gap: 12px;
-  margin-top: 30px;
-}
-
-.work-connect .btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 118px;
-  height: 46px;
-  padding: 0 18px;
-  font-family: "Source Sans 3", sans-serif;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 1;
-  border-radius: 999px;
-  text-decoration: none;
-}
-
-/* LINKEDIN BUTTON */
-
-.work-connect .btn:not(.primary) {
-  background: rgba(255, 255, 255, 0.18);
-  color: #5B1A46;
-  border: 1px solid #78305F;
-}
-
-/* EMAIL BUTTON */
-
-.work-connect .btn.primary {
-  background: #78305F;
-  color: #FFFFFF;
-  border: 1px solid #78305F;
-}
-
-.work-connect .btn:hover {
-  background: #5B1A46;
-  border-color: #5B1A46;
-  color: #FFFFFF;
-}
-
-footer {
-  padding: 26px 0 46px;
-  font-size: 14px;
-  color: var(--muted);
-  text-align: right;
-}
-
-/* TABLET */
-
-@media (max-width: 860px) {
-  .card {
-    grid-template-columns: 1fr 230px;
-  }
-
-  .card-main {
-    padding: 26px 24px 24px;
-  }
-
-  .impact {
-    padding: 10px 20px;
-  }
-
-  .stat svg {
-    flex-basis: 28px;
-    width: 28px;
-    height: 28px;
-  }
-
-  .stat .num {
-    font-size: 28px;
-  }
-
-  .stat .num.combined-metric {
-    font-size: 18px;
+@media(max-width:760px){
+  .hero::before{
+    left:18%;
+    bottom:5%;
+    width:72%;
+    height:7%;
   }
 }
 
-/* PHONES */
 
-@media (max-width: 600px) {
-  body {
-    font-size: 16px;
+/* ========================= */
+/* REDUCED MOTION            */
+/* ========================= */
+
+@media (prefers-reduced-motion: reduce){
+  html{
+    scroll-behavior:auto;
   }
 
-  .wrap {
-    padding: 0 14px;
+  .btn{
+    transition:none;
   }
 
-  .topbar {
-    justify-content: flex-end;
-    padding-top: 18px;
-  }
-
-  .topbar nav a {
-    margin: 0 0 0 14px;
-  }
-
-  .intro {
-    padding: 22px 0 20px;
-  }
-
-  h1 {
-    font-size: clamp(34px, 10vw, 44px);
-  }
-
-  .card {
-    grid-template-columns: 1fr;
-  }
-
-  .card-main {
-    padding: 24px 20px 22px;
-  }
-
-  .role-line {
-    font-size: 12px;
-  }
-
-  .card h2 {
-    font-size: 26px;
-  }
-
-  .impact {
-    padding: 6px 22px;
-  }
-
-  .stat {
-    padding: 14px 0;
-  }
-
-  .work-connect {
-    padding: 48px 10px 60px;
-  }
-
-  .work-connect h2 {
-    font-size: 42px;
-  }
-
-  .work-connect-text {
-    font-size: 18px;
+  .btn:hover{
+    transform:none;
   }
 }
+
 </style>
-
-<script
-  data-goatcounter="https://kahlilamae.goatcounter.com/count"
-  async
-  src="//gc.zgo.at/count.js">
-</script>
 </head>
+
 
 <body>
 
-<!-- ICONS -->
 
-<svg
-  width="0"
-  height="0"
-  style="position:absolute"
-  aria-hidden="true"
-  focusable="false">
-<defs>
+<!-- NAVIGATION -->
 
-<symbol id="i-school" viewBox="0 0 24 24">
-  <path d="M3 21h18M5 21V10l7-5 7 5v11M9 21v-5h6v5M12 5V2.5h3M9 11h.01M15 11h.01"/>
-</symbol>
+<nav>
 
-<symbol id="i-people" viewBox="0 0 24 24">
-  <circle cx="9" cy="8" r="3"/>
-  <circle cx="17" cy="9" r="2.4"/>
-  <path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M15.5 14.3c3 .2 5.5 2.5 5.5 5.7"/>
-</symbol>
+<div class="wrap nav">
 
-<symbol id="i-thumb" viewBox="0 0 24 24">
-  <path d="M7 11v9H4v-9h3zM7 11l4-7c1.5 0 2.5 1 2.5 2.5V9H19a2 2 0 012 2.3l-1.2 7A2 2 0 0117.8 20H7"/>
-</symbol>
+<a class="brand" href="./">
+Kahlila Mae Liverpool
+</a>
 
-<symbol id="i-board" viewBox="0 0 24 24">
-  <rect x="3" y="4" width="18" height="12" rx="1.5"/>
-  <path d="M12 16v3M8 21l4-2 4 2"/>
-</symbol>
+</div>
 
-<symbol id="i-person" viewBox="0 0 24 24">
-  <circle cx="12" cy="8" r="3.5"/>
-  <path d="M5 21c0-4 3-7 7-7s7 3 7 7z"/>
-</symbol>
+</nav>
 
-<symbol id="i-cap" viewBox="0 0 24 24">
-  <path d="M2 9l10-5 10 5-10 5-10-5zM6 11.5V16c0 1.5 3 3 6 3s6-1.5 6-3v-4.5M22 9v6"/>
-</symbol>
 
-<symbol id="i-chat" viewBox="0 0 24 24">
-  <path d="M4 5h16v11H10l-5 4v-4H4z"/>
-</symbol>
+<main>
 
-<symbol id="i-book" viewBox="0 0 24 24">
-  <path d="M12 6c-2-1.5-5-2-9-2v14c4 0 7 .5 9 2 2-1.5 5-2 9-2V4c-4 0-7 .5-9 2zM12 6v14"/>
-</symbol>
 
-<symbol id="i-doc" viewBox="0 0 24 24">
-  <path d="M6 3h9l4 4v14H6zM14 3v5h5M9 13h7M9 17h7"/>
-</symbol>
+<!-- HERO -->
 
-</defs>
-</svg>
+<header class="hero">
+
+<div class="hero-photo" role="img" aria-label="Portrait of Kahlila Mae Liverpool"></div>
+
+<div class="wrap hero-content">
+
+<div class="hero-copy">
+
+<div class="eyebrow">
+L&amp;D | Leadership Development | Exploring Adaptive Learning + AI
+</div>
+
+<h1>
+I’m curious about how people learn and what helps us grow.
+</h1>
+
+<p>
+I’m thinking a lot about what happens after the learning experience. Did the learning change what people actually do, and was that change worth what we invested?
+</p>
+
+<div class="hero-actions">
+<a class="btn email-btn" href="impact%202.html">
+My Work
+</a>
+</div>
+
+</div>
+
+</div>
+
+</header>
+
+
+<!-- WHAT GUIDES ME -->
+
+<section class="guides-section" aria-label="What guides me">
 
 <div class="wrap">
 
-<!-- STICKY HEADER -->
-
-<div class="sticky-header">
-  <header class="topbar">
-    <nav aria-label="Main">
-      <a href="index.html">Home</a>
-      <a href="impact%202.html" aria-current="page">My Work</a>
-    </nav>
-  </header>
-
-  <section class="intro">
-    <h1>
-      Work that changes how people and organizations perform
-    </h1>
-    <p class="lede">
-      A closer look at the context, what I did, and what changed.
-    </p>
-  </section>
+<div class="label" aria-hidden="true">
+What Guides Me
 </div>
 
-<!-- EXPERIENCE CARDS -->
+<div class="guides-content">
 
-<main class="cards">
-
-<!-- 1. APPLE PROFESSIONAL LEARNING -->
-
-<article class="card">
-<div class="card-main">
-
-<p class="role-line">
-  Apple Professional Learning Specialist
-  <span class="sep">|</span>
-  <span class="years">Jun 2025 – Jul 2026</span>
-</p>
-
-<h2>Apple</h2>
-
-<p class="org">
-  Large K-12 public school district
-</p>
-
-<p class="challenge">
-  <span class="challenge-label">Context</span>
-  The district had made a significant investment in technology, providing students and educators with access to devices across the system. But access alone did not mean the technology was being used consistently or meaningfully. Educators entered with different levels of confidence and experience, while leaders were working to move technology from an available tool to part of everyday teaching and learning.
-</p>
-
-<p>
-The challenge was not simply learning how to use the technology. It was supporting a shift in practice across 25 schools—building educator capability, developing leadership support, and creating structures that could sustain adoption beyond individual professional learning sessions.
-</p>
-
-<ul class="bullets">
-<li>
-  <strong>Conducted</strong> learning needs assessments across
-  <span class="hl">25 schools</span>, partnering with executive
-  leadership, IT, and cross-functional teams to align technology
-  adoption and implementation with organizational priorities.
-</li>
-
-<li>
-  <strong>Designed, facilitated, and evaluated</strong>
-  <span class="hl">150+ learning experiences</span>, resulting in
-  <span class="hl">661 Apple Teacher certifications</span> and a
-  <span class="hl">97% client satisfaction</span> rate.
-</li>
-
-<li>
-  <strong>Developed</strong> learning assets, workshops, and
-  implementation guides to reinforce learning and support
-  on-the-job application.
-</li>
-</ul>
-
-<ul class="pills">
-  <li>Needs Assessment</li>
-  <li>Learning Strategy</li>
-  <li>Facilitation</li>
-  <li>Technology Adoption</li>
-  <li>Executive Partnership</li>
-  <li>Evaluation</li>
-</ul>
-
-</div>
-
-<aside class="impact" aria-label="Key impact">
-<h3>Key Impact</h3>
-
-<div class="stat">
-  <svg><use href="#i-school"/></svg>
-  <div>
-    <span class="num">25</span>
-    <span class="desc">
-      schools supported toward district-wide implementation
-    </span>
-  </div>
-</div>
-
-<div class="stat">
-  <svg><use href="#i-people"/></svg>
-  <div>
-    <span class="num">661</span>
-    <span class="desc">
-      Apple Teacher certifications
-    </span>
-  </div>
-</div>
-
-<div class="stat">
-  <svg><use href="#i-thumb"/></svg>
-  <div>
-    <span class="num">97%</span>
-    <span class="desc">
-      client satisfaction
-    </span>
-  </div>
-</div>
-
-<div class="stat">
-  <svg><use href="#i-board"/></svg>
-  <div>
-    <span class="num">150+</span>
-    <span class="desc">
-      learning experiences designed, facilitated, and evaluated
-    </span>
-  </div>
-</div>
-
-</aside>
-</article>
-
-<!-- 2. LOWELL HIGH SCHOOL -->
-
-<article class="card">
-<div class="card-main">
-
-<p class="role-line">
-  Assistant Principal
-  <span class="sep">|</span>
-  <span class="years">Aug 2021 – Jul 2023</span>
-</p>
-
-<h2>
-  Lowell High School
+<h2 class="intro">
+I like working through ideas with people and figuring out how to make them work.
 </h2>
 
-<p class="org">
-  San Francisco Unified School District
-</p>
-
-<p class="challenge">
-  <span class="challenge-label">Context</span>
-  A large public high school serving more than 1,880 students was navigating pandemic recovery, changing student needs, a contentious admissions debate, and significant district budget pressure. At the same time, the school needed to keep complex student-support systems running across counseling, special education, wellness, college and career services, and other critical programs.
-</p>
+<div class="guides-copy">
 
 <p>
-The challenge was helping the school maintain stability while adapting to rapidly changing conditions. That required coordinating across teams, supporting staff through uncertainty, protecting essential student services, and making decisions that balanced immediate needs with the school’s broader goals.
+The work has changed over the years, but what draws me to it hasn’t. I like helping people see something differently and then make the next steps happen.
 </p>
 
-<ul class="bullets">
-<li>
-  <strong>Directed</strong> initiatives supporting
-  <span class="hl">1,880+ students</span> and
-  <span class="hl">75+ faculty and staff</span>. Supervised,
-  coached, and evaluated
-  <span class="hl">5 department chairs</span> and
-  <span class="hl">40+ educators</span>, using performance data
-  and improvement plans to address performance gaps.
-</li>
-
-<li>
-  <strong>Partnered</strong> with department and district leaders
-  on cross-functional initiatives and developed the Student &amp;
-  Family Handbook, codifying school policies and practices.
-</li>
-
-<li>
-  <strong>Assumed</strong> campus-wide leadership as Acting
-  Principal in Fall 2022, overseeing school operations, staff,
-  and organizational priorities.
-</li>
-</ul>
-
-<ul class="pills">
-  <li>Team Leadership</li>
-  <li>Coaching</li>
-  <li>Performance Management</li>
-  <li>Cross-Functional Partnership</li>
-  <li>Policy Development</li>
-  <li>Change Leadership</li>
-</ul>
+</div>
 
 </div>
 
-<aside class="impact" aria-label="Key impact">
-<h3>Key Impact</h3>
-
-<div class="stat">
-  <svg><use href="#i-cap"/></svg>
-  <div>
-    <span class="num">1,880+</span>
-    <span class="desc">
-      students supported
-    </span>
-  </div>
-</div>
-
-<div class="stat">
-  <svg><use href="#i-people"/></svg>
-  <div>
-    <span class="num">75+</span>
-    <span class="desc">
-      faculty and staff supported
-    </span>
-  </div>
-</div>
-
-<div class="stat">
-  <svg><use href="#i-school"/></svg>
-  <div>
-    <span class="num">5</span>
-    <span class="desc">
-      department chairs supervised
-    </span>
-  </div>
-</div>
-
-<div class="stat">
-  <svg><use href="#i-person"/></svg>
-  <div>
-    <span class="num">40+</span>
-    <span class="desc">
-      educators coached and evaluated
-    </span>
-  </div>
-</div>
-
-</aside>
-</article>
-
-<!-- 3. PATHWAY TO TEACHING -->
-
-<article class="card">
-<div class="card-main">
-
-<p class="role-line">
-  Teacher Development Coach
-  <span class="sep">|</span>
-  <span class="years">Aug 2018 – Jul 2021</span>
-</p>
-
-<h2>
-  Pathway to Teaching Pipeline Program
-</h2>
-
-<p class="org">
-  San Francisco Unified School District
-</p>
-
-<p class="challenge">
-  <span class="challenge-label">Context</span>
-  San Francisco was facing a teacher-shortage crisis, especially in special education, science, math, and other hard-to-fill areas. The district needed to grow its own pool of qualified educators while making licensure more accessible to people already working in schools.
-</p>
-
-<p>
-The challenge was building a new pipeline of qualified educators for hard-to-fill positions. That meant helping aspiring educators move into licensed teaching roles while developing the knowledge, classroom practice, and supports they needed to succeed.
-</p>
-
-<ul class="bullets">
-<li>
-  <strong>Designed</strong> courses in Google Classroom and
-  Blackbaud LMS supporting a district-wide teacher development
-  pipeline serving educators across
-  <span class="hl">113 schools</span>.
-</li>
-
-<li>
-  <strong>
-    Coached <span class="hl">39 teachers</span>
-  </strong>
-  through CA licensure using weekly observations, individualized
-  feedback reports, SMART goals, and continuous improvement cycles
-  to strengthen performance.
-</li>
-
-<li>
-  <strong>Managed</strong> learning programs including Migrant
-  Education Summer School for
-  <span class="hl">85 students and 4 teachers</span> and a Science
-  Workshop Series for
-  <span class="hl">46 students</span>.
-</li>
-</ul>
-
-<ul class="pills">
-  <li>Coaching</li>
-  <li>Learning Design</li>
-  <li>LMS Design</li>
-  <li>Program Management</li>
-  <li>Continuous Improvement</li>
-  <li>Feedback</li>
-</ul>
-
-</div>
-
-<aside class="impact" aria-label="Key impact">
-<h3>Key Impact</h3>
-
-<div class="stat">
-  <svg><use href="#i-people"/></svg>
-  <div>
-    <span class="num">273</span>
-    <span class="desc">
-      teachers prepared program-wide
-    </span>
-  </div>
-</div>
-
-<div class="stat">
-  <svg><use href="#i-school"/></svg>
-  <div>
-    <span class="num">113</span>
-    <span class="desc">
-      schools served by the teacher pipeline
-    </span>
-  </div>
-</div>
-
-<div class="stat">
-  <svg><use href="#i-cap"/></svg>
-  <div>
-    <span class="num">84%</span>
-    <span class="desc">
-      returned for a third year of teaching
-    </span>
-  </div>
-</div>
-
-</aside>
-</article>
-
-<!-- 4. SAN JOSE STATE UNIVERSITY FOUNDATION -->
-
-<article class="card">
-<div class="card-main">
-
-<p class="role-line">
-  Education Coordinator
-  <span class="sep">|</span>
-  <span class="years">May 2007 – Jan 2010</span>
-</p>
-
-<h2>
-  San José State University Foundation
-</h2>
-
-<p class="org">
-  CME Society a Former Foster Youth Program within EOP&amp;S
-</p>
-
-<p class="challenge">
-  <span class="challenge-label">Context</span>
-  Former foster youth at San José State University were entering college without many of the supports their peers could rely on. Staying enrolled often meant managing school while also figuring out where to live, how to pay for basic needs, and what to do when something went wrong. For most students, there was no family safety net to fall back on.
-</p>
-
-<p>
-The challenge was helping students stay enrolled and make progress toward graduation by connecting them to the resources and supports they needed along the way.
-</p>
-
-<ul class="bullets">
-<li>
-  <strong>Co-taught</strong> career development courses for
-  <span class="hl">35 students</span> and designed workshops,
-  educational programs, and residential summer camps.
-</li>
-
-<li>
-  <strong>Co-created</strong> the
-  <span class="hl">
-    inaugural National Blueprint for Success Conference
-  </span>,
-  convening stakeholders to advance college-to-career pathways
-  for foster youth.
-</li>
-</ul>
-
-<ul class="pills">
-  <li>Program Design</li>
-  <li>Facilitation</li>
-  <li>Curriculum Development</li>
-  <li>Stakeholder Engagement</li>
-  <li>Event Design</li>
-</ul>
-
-</div>
-
-<aside class="impact" aria-label="Key impact">
-<h3>Key Impact</h3>
-
-<div class="stat">
-  <svg><use href="#i-cap"/></svg>
-  <div>
-    <span class="num">35</span>
-    <span class="desc">
-      students taught in career development courses
-    </span>
-  </div>
-</div>
-
-<div class="stat">
-  <svg><use href="#i-people"/></svg>
-  <div>
-    <span class="num">1st Annual</span>
-    <span class="desc">
-      National Blueprint for Success Conference, co-created
-    </span>
-  </div>
-</div>
-
-</aside>
-</article>
-
-<!-- 5. ADJUNCT LECTURER -->
-
-<article class="card">
-<div class="card-main">
-
-<p class="role-line">
-  Adjunct Lecturer
-  <span class="sep">|</span>
-  <span class="years">2021 – 2024</span>
-</p>
-
-<h2>
-  University Appointments
-</h2>
-
-<p class="org">
-  Reach University, Oxford Teachers College | San Francisco State University
-</p>
-
-<p class="challenge">
-  <span class="challenge-label">Context</span>
-  Working adults were preparing to become stronger educators while balancing jobs, coursework, and the realities of the classroom. For many, the cost of higher education was a barrier. The long path from starting a degree to becoming a credentialed teacher made that barrier even greater.
-</p>
-
-<p>
-The challenge was creating a more accessible path into teaching. The learning needed to fit into students’ lives and help them keep moving toward a degree and credential.
-</p>
-
-<ul class="bullets">
-<li>
-  <strong>Taught</strong> Characteristics of Learners,
-  Instructional Strategies, and Ethical &amp; Legal Practices
-  (Reach University, virtual, 2023 – 2024), applying adult learning
-  and learning experience design principles to build content,
-  activities, and assessments in
-  <span class="hl">Canvas LMS</span>.
-</li>
-
-<li>
-  <strong>Taught</strong> Introduction to Disability and The
-  Science of Early Intervention (San Francisco State University,
-  hybrid, 2021 – 2022), designing learning experiences and course
-  content in <span class="hl">iLearn LMS</span> with activities,
-  assessments, and learner feedback.
-</li>
-</ul>
-
-<ul class="pills">
-  <li>Adult Learning</li>
-  <li>Learning Experience Design</li>
-  <li>Course Development</li>
-  <li>Assessment Design</li>
-  <li>Canvas</li>
-  <li>iLearn</li>
-</ul>
-
-</div>
-
-<aside class="impact" aria-label="Key impact">
-<h3>Key Impact</h3>
-
-<div class="stat">
-  <svg><use href="#i-book"/></svg>
-  <div>
-    <span class="num">5</span>
-    <span class="desc">
-      courses taught
-    </span>
-  </div>
-</div>
-
-<div class="stat">
-  <svg><use href="#i-people"/></svg>
-  <div>
-    <span class="num">200+</span>
-    <span class="desc">
-      educators working in classrooms across 4 states
-    </span>
-  </div>
-</div>
-
-<div class="stat">
-  <svg><use href="#i-school"/></svg>
-  <div>
-    <span class="num combined-metric">
-      2 universities · 2 learning platforms
-    </span>
-    <span class="desc">
-      virtual and hybrid | Canvas and iLearn
-    </span>
-  </div>
-</div>
-
-</aside>
-</article>
-
-</main>
-
-<!-- LET'S CONNECT -->
-
-<section class="work-connect" aria-labelledby="connect-heading">
-
-<p class="eyebrow">
-  Let’s Connect
-</p>
-
-<h2 id="connect-heading">
-  Say hello.
-</h2>
-
-<p class="work-connect-text">
-  If something here resonates with you, I’d love to hear from you.
-</p>
-
-<div class="btn-row">
-<a
-  class="btn"
-  href="https://www.linkedin.com/in/kahlilamae"
-  target="_blank"
-  rel="noopener noreferrer">
-  LinkedIn
-</a>
-
-<a
-  class="btn primary"
-  href="mailto:kahlilamae@icloud.com">
-  Email
-</a>
 </div>
 
 </section>
 
-<footer>
-  &copy; 2026 Kahlila Mae Liverpool
-</footer>
+
+<!-- MY APPROACH -->
+
+<section aria-label="My approach">
+
+<div class="wrap">
+
+<div class="cards">
+
+<article class="card">
+
+<div class="label" aria-hidden="true">
+My Approach
+</div>
+
+<h3>
+I ask a lot of questions.
+</h3>
+
+<p>
+Usually because I’m trying to understand what’s actually going on before jumping to an answer. I’d rather work in community than go it alone.
+</p>
+
+</article>
+
+
+<article class="card">
+
+<h3>
+I notice what’s happening.
+</h3>
+
+<p>
+I pay attention to who's in the room, who isn’t being heard, and what people need to move forward.
+</p>
+
+</article>
+
+
+<article class="card">
+
+<h3>
+I'm drawn to a puzzle.
+</h3>
+
+<p>
+Give me something complicated or not quite working, and I’ll want to figure out what’s going on and how to make it better.
+</p>
+
+</article>
+
+
+<article class="card">
+
+<h3>
+I think about the person on the other side.
+</h3>
+
+<p>
+Whether I’m designing a learning experience, working through an idea, or partnering with someone, I think about how the experience will actually feel.
+</p>
+
+</article>
 
 </div>
+
+</div>
+
+</section>
+
+
+<!-- WHAT I'M FOCUSED ON -->
+
+<section class="focus-section" aria-labelledby="focus-heading">
+
+<div class="wrap">
+
+<h2 class="focus-title" id="focus-heading">
+What I’m Focused On
+</h2>
+
+<div class="focus-list">
+
+
+<!-- PEOPLE + LEADERSHIP -->
+
+<article class="focus-item">
+
+<div class="focus-icon" aria-hidden="true">
+
+<svg viewBox="0 0 64 64" focusable="false">
+  <circle cx="32" cy="19" r="7"></circle>
+  <path d="M20 45v-6c0-7 5-12 12-12s12 5 12 12v6"></path>
+
+  <circle cx="15" cy="24" r="5"></circle>
+  <path d="M5 45v-5c0-6 4-10 10-10 3 0 5 1 7 3"></path>
+
+  <circle cx="49" cy="24" r="5"></circle>
+  <path d="M59 45v-5c0-6-4-10-10-10-3 0-5 1-7 3"></path>
+</svg>
+
+</div>
+
+<h3>
+People <span class="amp">&amp;</span> Leadership
+</h3>
+
+<p>
+I’m deeply interested in what helps people grow, especially through change, and become more effective.
+</p>
+
+</article>
+
+
+<!-- LEARNING + PERFORMANCE -->
+
+<article class="focus-item">
+
+<div class="focus-icon" aria-hidden="true">
+
+<svg viewBox="0 0 64 64" focusable="false">
+  <rect x="15" y="14" width="34" height="25" rx="2"></rect>
+  <path d="M10 45h44"></path>
+  <path d="M15 45l3 4h28l3-4"></path>
+</svg>
+
+</div>
+
+<h3>
+Learning <span class="amp">&amp;</span> Performance
+</h3>
+
+<p>
+I’m always thinking about how technology can make learning more useful, accessible, and relevant.
+</p>
+
+</article>
+
+
+<!-- AI + THE FUTURE OF WORK -->
+
+<article class="focus-item">
+
+<div class="focus-icon" aria-hidden="true">
+
+<svg viewBox="0 0 64 64" focusable="false">
+  <path d="M22 27c0-7 4-13 10-13s10 6 10 13c0 5-3 8-6 11-2 2-2 4-2 6h-4c0-2 0-4-2-6-3-3-6-6-6-11z"></path>
+  <path d="M27 48h10"></path>
+  <path d="M28 52h8"></path>
+
+  <path d="M32 6v4"></path>
+  <path d="M17 12l3 3"></path>
+  <path d="M47 12l-3 3"></path>
+  <path d="M12 27h4"></path>
+  <path d="M48 27h4"></path>
+</svg>
+
+</div>
+
+<h3>
+AI <span class="amp">&amp;</span> the Future of Work
+</h3>
+
+<p>
+I’m exploring how AI can make learning more responsive and whether that leads to better performance and a return worth the investment.
+</p>
+
+</article>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- QUESTIONS I'M STILL ASKING -->
+
+<section class="questions-section" aria-label="Questions I’m still asking">
+
+<div class="wrap">
+
+<div class="questions-panel">
+
+<div class="label" aria-hidden="true">
+Questions I’m Still Asking
+</div>
+
+<div class="questions-list">
+
+<div class="question-item">
+
+<p class="question-text">
+What are our systems making easier? What are they making harder?
+</p>
+
+</div>
+
+
+<div class="question-item">
+
+<p class="question-text">
+What should AI help us do better? What should always belong to people?
+</p>
+
+</div>
+
+
+<div class="question-item">
+
+<p class="question-text">
+How do we know it’s actually helping?
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- FAVORITES -->
+
+<section aria-label="A few of my favorites">
+
+<div class="wrap human">
+
+<div class="label" aria-hidden="true">
+A Few of My Favorites
+</div>
+
+<h2 class="intro">
+I’m drawn to people’s stories and the beautiful details that make them meaningful.
+</h2>
+
+<p>
+I adore biographies, especially stories that reveal the person behind the accomplishments. I’m fascinated by how people find their way in the world and what makes their lives fulfilling.
+</p>
+
+<p>
+A perfect Sunday involves cooking a New York Times Cooking recipe, family or friends laughing around the table, and coffee within reach. <em>House Guest with Scott Evans</em>, <em>Happy Hour with Ina Garten</em>, and Mythical Kitchen’s <em>Last Meals</em> are the shows I come back to.
+</p>
+
+<p>
+Lately, I’ve fallen down the Spider-Man rabbit hole. I blame Zendaya’s red-carpet style and my brother, a lifelong comic book fan.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- CONNECT -->
+
+<section class="connect" aria-label="Contact">
+
+<div class="wrap">
+
+<div class="label" aria-hidden="true">
+Let’s connect
+</div>
+
+<h2>
+Say hello.
+</h2>
+
+<p>
+If something here resonates, or you just want to talk about learning, leadership, or a good book, I’d love to hear from you.
+</p>
+
+<div class="buttons">
+
+<a
+  class="btn linkedin-btn"
+  href="https://www.linkedin.com/in/kahlilamae"
+  target="_blank"
+  rel="noopener"
+  data-goatcounter-click="click-linkedin"
+  data-goatcounter-title="LinkedIn button">
+LinkedIn<span class="sr-only"> (opens in a new tab)</span>
+</a>
+
+<a
+  class="btn email-btn"
+  href="mailto:kahlilamae@icloud.com?subject=Hello%20Kahlila"
+  data-goatcounter-click="click-email"
+  data-goatcounter-title="Email button">
+Email
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+</main>
+
+
+<!-- FOOTER -->
+
+<footer class="wrap">
+
+<span>
+© 2026 Kahlila Mae Liverpool
+</span>
+
+</footer>
+
+
+<!-- VISITOR ANALYTICS (GoatCounter) -->
+<script data-goatcounter="https://kahlilamae.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+
 
 </body>
 </html>
