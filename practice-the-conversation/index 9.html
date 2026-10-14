@@ -1,0 +1,5998 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>
+    What Would You Say? | Kahlila Mae Liverpool
+  </title>
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=Playfair+Display:wght@400&display=swap"
+    rel="stylesheet"
+  >
+
+
+  <style>
+
+    :root {
+
+      --ink: #3A2438;
+      --muted: #5B4B58;
+
+      --paper: #F5EBF3;
+      --card: #FBF7FA;
+
+      --accent: #7A2E5C;
+      --accent-dark: #63244A;
+
+      --line: rgba(122,46,92,.18);
+      --soft-line: rgba(122,46,92,.14);
+
+      --soft-berry: #EEDDE8;
+
+      --radius: 26px;
+
+      --max: 1120px;
+
+    }
+
+
+    * {
+      box-sizing: border-box;
+    }
+
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+
+    body {
+
+      margin: 0;
+
+      background: var(--paper);
+
+      color: var(--ink);
+
+      font-family:
+        "DM Sans",
+        Arial,
+        sans-serif;
+
+      font-size: 1rem;
+
+      line-height: 1.625;
+
+      -webkit-font-smoothing: antialiased;
+
+    }
+
+
+    a {
+      color: inherit;
+    }
+
+
+    button {
+
+      font-family:
+        "DM Sans",
+        Arial,
+        sans-serif;
+
+    }
+
+
+
+    /* ============================= */
+    /* TOP NAVIGATION                */
+    /* ============================= */
+
+
+    .site-nav {
+
+      position: sticky;
+
+      top: 0;
+
+      z-index: 1000;
+
+      background:
+        rgba(
+          245,
+          235,
+          243,
+          .96
+        );
+
+      border-bottom:
+        1px solid
+        var(--line);
+
+      backdrop-filter:
+        blur(12px);
+
+      -webkit-backdrop-filter:
+        blur(12px);
+
+    }
+
+
+    .site-nav-inner {
+
+      width:
+        min(
+          calc(100% - 48px),
+          var(--max)
+        );
+
+      margin:
+        0 auto;
+
+      min-height:
+        70px;
+
+      display:
+        flex;
+
+      align-items:
+        center;
+
+      justify-content:
+        space-between;
+
+      gap:
+        24px;
+
+    }
+
+
+    .site-brand {
+
+      font-family:
+        "Playfair Display",
+        Georgia,
+        serif;
+
+      font-size:
+        1.15rem;
+
+      font-weight:
+        400;
+
+      color:
+        var(--ink);
+
+      text-decoration:
+        none;
+
+      white-space:
+        nowrap;
+
+    }
+
+
+    .site-nav-links {
+
+      display:
+        flex;
+
+      align-items:
+        center;
+
+      gap:
+        22px;
+
+    }
+
+
+    .site-nav-link {
+
+      font-family:
+        "DM Sans",
+        Arial,
+        sans-serif;
+
+      font-size:
+        .95rem;
+
+      font-weight:
+        500;
+
+      color:
+        var(--muted);
+
+      text-decoration:
+        none;
+
+      padding-bottom:
+        3px;
+
+      border-bottom:
+        2px solid
+        transparent;
+
+      transition:
+        color .2s ease,
+        border-color .2s ease;
+
+    }
+
+
+    .site-nav-link:hover {
+
+      color:
+        var(--accent);
+
+    }
+
+
+    .site-nav-link.active {
+
+      color:
+        var(--accent);
+
+      border-bottom-color:
+        var(--accent);
+
+    }
+
+
+
+    /* ============================= */
+    /* PAGE                          */
+    /* ============================= */
+
+
+    .page {
+
+      width:
+        min(
+          calc(100% - 48px),
+          920px
+        );
+
+      margin:
+        0 auto;
+
+      padding:
+        72px 0 90px;
+
+    }
+
+
+
+    /* ============================= */
+    /* HERO                          */
+    /* ============================= */
+
+
+    .eyebrow,
+    .label {
+
+      font-family:
+        "DM Sans",
+        Arial,
+        sans-serif;
+
+      font-size:
+        .8125rem;
+
+      font-weight:
+        500;
+
+      line-height:
+        1.4;
+
+      letter-spacing:
+        .15em;
+
+      text-transform:
+        uppercase;
+
+      color:
+        var(--accent);
+
+    }
+
+
+    .eyebrow {
+
+      margin-bottom:
+        14px;
+
+    }
+
+
+    h1,
+    h2,
+    h3 {
+
+      font-family:
+        "Playfair Display",
+        Georgia,
+        serif;
+
+      font-weight:
+        400;
+
+    }
+
+
+    h1 {
+
+      margin:
+        0;
+
+      color:
+        var(--ink);
+
+      font-size:
+        clamp(
+          2.7rem,
+          5.5vw,
+          4.4rem
+        );
+
+      line-height:
+        1.12;
+
+      letter-spacing:
+        -.035em;
+
+    }
+
+
+    .single-line-title {
+
+      white-space:
+        nowrap;
+
+    }
+
+
+    .subtitle {
+
+      max-width:
+        760px;
+
+      margin-top:
+        18px;
+
+      font-family:
+        "Playfair Display",
+        Georgia,
+        serif;
+
+      font-size:
+        1.4rem;
+
+      line-height:
+        1.4;
+
+      color:
+        var(--ink);
+
+    }
+
+
+    .intro {
+
+      max-width:
+        720px;
+
+      margin:
+        26px 0 0;
+
+      color:
+        var(--ink);
+
+      font-size:
+        1rem;
+
+    }
+
+
+    .start-note {
+
+      max-width:
+        720px;
+
+      margin:
+        16px 0 0;
+
+      color:
+        var(--muted);
+
+      font-size:
+        .95rem;
+
+    }
+
+
+
+    /* ============================= */
+    /* EXPERIENCE                    */
+    /* ============================= */
+
+
+    .experience {
+
+      margin-top:
+        58px;
+
+    }
+
+
+    .card {
+
+      margin-bottom:
+        28px;
+
+      padding:
+        40px;
+
+      background:
+        var(--card);
+
+      border:
+        1px solid
+        var(--line);
+
+      border-radius:
+        var(--radius);
+
+    }
+
+
+    .customer-card {
+
+      margin-bottom:
+        28px;
+
+      padding:
+        46px;
+
+      background:
+        var(--accent);
+
+      color:
+        var(--card);
+
+      border-radius:
+        var(--radius);
+
+    }
+
+
+    .label {
+
+      margin-bottom:
+        14px;
+
+    }
+
+
+    .customer-card
+    .label {
+
+      color:
+        rgba(
+          251,
+          247,
+          250,
+          .78
+        );
+
+    }
+
+
+    .customer-text {
+
+      max-width:
+        780px;
+
+      font-family:
+        "Playfair Display",
+        Georgia,
+        serif;
+
+      font-size:
+        clamp(
+          1.45rem,
+          3vw,
+          1.8rem
+        );
+
+      line-height:
+        1.45;
+
+    }
+
+
+    .round {
+
+      margin-bottom:
+        8px;
+
+      color:
+        var(--muted);
+
+      font-size:
+        .82rem;
+
+    }
+
+
+    .prompt {
+
+      margin:
+        0 0 10px;
+
+      color:
+        var(--ink);
+
+      font-size:
+        1.75rem;
+
+      line-height:
+        1.3;
+
+    }
+
+
+    .supporting-text {
+
+      max-width:
+        660px;
+
+      margin:
+        0 0 26px;
+
+      color:
+        var(--muted);
+
+    }
+
+
+
+    /* ============================= */
+    /* AUDIO + BUTTONS               */
+    /* ============================= */
+
+
+    .actions {
+
+      display:
+        flex;
+
+      align-items:
+        center;
+
+      flex-wrap:
+        wrap;
+
+      gap:
+        18px;
+
+    }
+
+
+    .audio-action {
+
+      display:
+        inline-flex;
+
+      align-items:
+        center;
+
+      gap:
+        12px;
+
+      color:
+        var(--ink);
+
+      font-size:
+        .92rem;
+
+      font-weight:
+        500;
+
+    }
+
+
+    .customer-card
+    .audio-action {
+
+      margin-top:
+        26px;
+
+      color:
+        var(--card);
+
+    }
+
+
+    .mic-button {
+
+      width:
+        58px;
+
+      height:
+        58px;
+
+      padding:
+        0;
+
+      border-radius:
+        50%;
+
+      display:
+        inline-flex;
+
+      align-items:
+        center;
+
+      justify-content:
+        center;
+
+      flex-shrink:
+        0;
+
+      cursor:
+        pointer;
+
+      transition:
+        transform .2s ease,
+        opacity .2s ease,
+        background .2s ease;
+
+    }
+
+
+    .mic-button:hover {
+
+      transform:
+        translateY(-2px);
+
+    }
+
+
+    .mic-button:disabled {
+
+      opacity:
+        .45;
+
+      cursor:
+        default;
+
+      transform:
+        none;
+
+    }
+
+
+    .mic-button svg {
+
+      width:
+        24px;
+
+      height:
+        24px;
+
+      fill:
+        none;
+
+      stroke:
+        currentColor;
+
+      stroke-width:
+        1.8;
+
+      stroke-linecap:
+        round;
+
+      stroke-linejoin:
+        round;
+
+    }
+
+
+    .mic-button-light {
+
+      background:
+        var(--card);
+
+      color:
+        var(--accent);
+
+      border:
+        1px solid
+        rgba(
+          255,
+          255,
+          255,
+          .4
+        );
+
+    }
+
+
+    .mic-button-berry {
+
+      background:
+        var(--accent);
+
+      color:
+        var(--card);
+
+      border:
+        1px solid
+        var(--line);
+
+    }
+
+
+    .pill-button {
+
+      min-height:
+        40px;
+
+      padding:
+        8px 14px;
+
+      border-radius:
+        999px;
+
+      font-size:
+        .88rem;
+
+      font-weight:
+        500;
+
+      cursor:
+        pointer;
+
+      transition:
+        transform .2s ease,
+        opacity .2s ease;
+
+    }
+
+
+    .pill-button:hover {
+
+      transform:
+        translateY(-2px);
+
+      opacity:
+        .85;
+
+    }
+
+
+    .pill-button:disabled {
+
+      opacity:
+        .42;
+
+      cursor:
+        default;
+
+      transform:
+        none;
+
+    }
+
+
+    .button-light {
+
+      background:
+        var(--card);
+
+      color:
+        var(--ink);
+
+      border:
+        1px solid
+        rgba(
+          122,
+          46,
+          92,
+          .25
+        );
+
+    }
+
+
+    .button-berry {
+
+      background:
+        var(--accent);
+
+      color:
+        var(--card);
+
+      border:
+        1px solid
+        var(--line);
+
+    }
+
+
+
+    /* ============================= */
+    /* TRANSCRIPT                    */
+    /* ============================= */
+
+
+    #status {
+
+      margin-top:
+        18px;
+
+      color:
+        var(--accent);
+
+      font-size:
+        .88rem;
+
+      font-weight:
+        500;
+
+    }
+
+
+    #transcript {
+
+      min-height:
+        100px;
+
+      margin-top:
+        22px;
+
+      padding:
+        22px;
+
+      background:
+        rgba(
+          245,
+          235,
+          243,
+          .55
+        );
+
+      color:
+        var(--ink);
+
+      border:
+        1px solid
+        var(--line);
+
+      border-radius:
+        18px;
+
+      font-size:
+        1rem;
+
+    }
+
+
+
+    /* ============================= */
+    /* FEEDBACK                      */
+    /* ============================= */
+
+
+    .feedback-card {
+
+      background:
+        var(--accent);
+
+      color:
+        var(--card);
+
+      border:
+        none;
+
+    }
+
+
+    .feedback-card
+    .label {
+
+      color:
+        rgba(
+          251,
+          247,
+          250,
+          .76
+        );
+
+    }
+
+
+    .feedback {
+
+      max-width:
+        720px;
+
+      font-size:
+        1.02rem;
+
+    }
+
+
+    .feedback-section {
+
+      margin-bottom:
+        28px;
+
+    }
+
+
+    .feedback strong {
+
+      display:
+        block;
+
+      margin-bottom:
+        6px;
+
+      color:
+        var(--card);
+
+      font-family:
+        "Playfair Display",
+        Georgia,
+        serif;
+
+      font-size:
+        1.5rem;
+
+      font-weight:
+        400;
+
+    }
+
+
+    .feedback-card
+    .button-light {
+
+      margin-top:
+        6px;
+
+      color:
+        var(--accent);
+
+      background:
+        var(--card);
+
+      border-color:
+        var(--card);
+
+    }
+
+
+
+    /* ============================= */
+    /* ROUND SCORE BOXES             */
+    /* ============================= */
+
+
+    .round-score-panel {
+
+      margin:
+        32px 0 30px;
+
+      padding-top:
+        28px;
+
+      border-top:
+        1px solid
+        rgba(
+          251,
+          247,
+          250,
+          .28
+        );
+
+    }
+
+
+    .round-score-heading {
+
+      margin:
+        0 0 16px;
+
+      color:
+        var(--card);
+
+      font-family:
+        "Playfair Display",
+        Georgia,
+        serif;
+
+      font-size:
+        1.35rem;
+
+      font-weight:
+        400;
+
+    }
+
+
+    .round-score-grid {
+
+      display:
+        grid;
+
+      grid-template-columns:
+        repeat(5,1fr);
+
+      gap:
+        10px;
+
+    }
+
+
+    .round-score-box {
+
+      min-height:
+        92px;
+
+      padding:
+        14px 12px;
+
+      background:
+        rgba(
+          251,
+          247,
+          250,
+          .10
+        );
+
+      border:
+        1px solid
+        rgba(
+          251,
+          247,
+          250,
+          .28
+        );
+
+      border-radius:
+        16px;
+
+      display:
+        flex;
+
+      flex-direction:
+        column;
+
+      justify-content:
+        space-between;
+
+      transition:
+        background .25s ease,
+        border-color .25s ease,
+        transform .25s ease;
+
+    }
+
+
+    .round-score-box.highlighted {
+
+      background:
+        var(--card);
+
+      border:
+        2px solid
+        var(--card);
+
+      transform:
+        translateY(-3px);
+
+    }
+
+
+    .round-score-name {
+
+      color:
+        rgba(
+          251,
+          247,
+          250,
+          .82
+        );
+
+      font-size:
+        .78rem;
+
+      line-height:
+        1.3;
+
+    }
+
+
+    .round-score-box.highlighted
+    .round-score-name {
+
+      color:
+        var(--accent);
+
+      font-weight:
+        500;
+
+    }
+
+
+    .round-score-value {
+
+      margin-top:
+        8px;
+
+      color:
+        var(--card);
+
+      font-family:
+        "Playfair Display",
+        Georgia,
+        serif;
+
+      font-size:
+        1.55rem;
+
+      line-height:
+        1;
+
+    }
+
+
+    .round-score-box.highlighted
+    .round-score-value {
+
+      color:
+        var(--accent);
+
+    }
+
+
+    .score-focus-note {
+
+      margin-top:
+        14px;
+
+      color:
+        rgba(
+          251,
+          247,
+          250,
+          .82
+        );
+
+      font-size:
+        .85rem;
+
+    }
+
+
+
+    /* ============================= */
+    /* REPORT                        */
+    /* ============================= */
+
+
+    .report-title {
+
+      margin:
+        0 0 8px;
+
+      color:
+        var(--ink);
+
+      font-size:
+        clamp(
+          2rem,
+          4vw,
+          2.7rem
+        );
+
+      line-height:
+        1.2;
+
+    }
+
+
+    .overall {
+
+      margin-bottom:
+        34px;
+
+      color:
+        var(--accent);
+
+      font-size:
+        1.05rem;
+
+      font-weight:
+        500;
+
+    }
+
+
+    .score-row {
+
+      display:
+        grid;
+
+      grid-template-columns:
+        1fr 80px;
+
+      gap:
+        24px;
+
+      align-items:
+        center;
+
+      padding:
+        17px 0;
+
+      border-bottom:
+        1px solid
+        var(--line);
+
+    }
+
+
+    .score {
+
+      color:
+        var(--accent);
+
+      font-weight:
+        500;
+
+      text-align:
+        right;
+
+    }
+
+
+    .reflection-box {
+
+      margin-top:
+        36px;
+
+      padding:
+        30px;
+
+      background:
+        var(--soft-berry);
+
+      border-radius:
+        22px;
+
+    }
+
+
+    .reflection-box h3 {
+
+      margin:
+        0 0 6px;
+
+      color:
+        var(--ink);
+
+      font-size:
+        1.45rem;
+
+    }
+
+
+    .reflection-box p {
+
+      margin:
+        4px 0 24px;
+
+    }
+
+
+    .download-area {
+
+      margin-top:
+        28px;
+
+    }
+
+
+    .hidden {
+
+      display:
+        none;
+
+    }
+
+
+
+    /* ============================= */
+    /* RUBRIC                        */
+    /* ============================= */
+
+
+    .rubric-section {
+
+      margin-top:
+        72px;
+
+    }
+
+
+    .section-title {
+
+      margin:
+        0 0 14px;
+
+      color:
+        var(--ink);
+
+      font-size:
+        clamp(
+          2rem,
+          4vw,
+          2.7rem
+        );
+
+      line-height:
+        1.2;
+
+    }
+
+
+    .section-copy {
+
+      max-width:
+        720px;
+
+      color:
+        var(--muted);
+
+      margin-bottom:
+        28px;
+
+    }
+
+
+    .scale-grid {
+
+      display:
+        grid;
+
+      grid-template-columns:
+        repeat(4,1fr);
+
+      gap:
+        14px;
+
+      margin-bottom:
+        30px;
+
+    }
+
+
+    .scale-item {
+
+      padding:
+        20px;
+
+      background:
+        var(--card);
+
+      border:
+        1px solid
+        var(--line);
+
+      border-radius:
+        18px;
+
+    }
+
+
+    .scale-number {
+
+      margin-bottom:
+        8px;
+
+      color:
+        var(--accent);
+
+      font-family:
+        "Playfair Display",
+        Georgia,
+        serif;
+
+      font-size:
+        1.7rem;
+
+      line-height:
+        1;
+
+    }
+
+
+    .scale-name {
+
+      margin-bottom:
+        6px;
+
+      font-weight:
+        500;
+
+    }
+
+
+    .scale-description {
+
+      color:
+        var(--muted);
+
+      font-size:
+        .88rem;
+
+      line-height:
+        1.5;
+
+    }
+
+
+    details {
+
+      margin-bottom:
+        12px;
+
+      background:
+        var(--card);
+
+      border:
+        1px solid
+        var(--line);
+
+      border-radius:
+        18px;
+
+      overflow:
+        hidden;
+
+    }
+
+
+    summary {
+
+      padding:
+        18px 22px;
+
+      cursor:
+        pointer;
+
+      color:
+        var(--ink);
+
+      font-weight:
+        500;
+
+    }
+
+
+    .rubric-detail {
+
+      padding:
+        0 22px 22px;
+
+      color:
+        var(--muted);
+
+    }
+
+
+    .rubric-row {
+
+      padding:
+        10px 0;
+
+      border-top:
+        1px solid
+        var(--line);
+
+    }
+
+
+    .rubric-row strong {
+
+      color:
+        var(--accent);
+
+    }
+
+
+    .prototype-note {
+
+      margin-top:
+        20px;
+
+      padding:
+        20px 22px;
+
+      color:
+        var(--muted);
+
+      background:
+        rgba(
+          251,
+          247,
+          250,
+          .65
+        );
+
+      border-left:
+        3px solid
+        var(--accent);
+
+      border-radius:
+        0 14px 14px 0;
+
+      font-size:
+        .9rem;
+
+    }
+
+
+
+    /* ============================= */
+    /* RESEARCH                      */
+    /* ============================= */
+
+
+    .research {
+
+      margin-top:
+        80px;
+
+      padding-top:
+        34px;
+
+      border-top:
+        1px solid
+        var(--line);
+
+    }
+
+
+    .research h2 {
+
+      margin:
+        0 0 10px;
+
+      color:
+        var(--ink);
+
+      font-size:
+        1.65rem;
+
+    }
+
+
+    .research-intro {
+
+      max-width:
+        720px;
+
+      margin-bottom:
+        24px;
+
+      color:
+        var(--muted);
+
+      font-size:
+        .92rem;
+
+    }
+
+
+    .reference {
+
+      margin-bottom:
+        22px;
+
+      color:
+        var(--muted);
+
+      font-size:
+        .88rem;
+
+      line-height:
+        1.6;
+
+    }
+
+
+    .reference strong {
+
+      color:
+        var(--ink);
+
+      font-weight:
+        500;
+
+    }
+
+
+    footer {
+
+      margin-top:
+        56px;
+
+      padding-top:
+        24px;
+
+      border-top:
+        1px solid
+        var(--line);
+
+      color:
+        var(--muted);
+
+      font-size:
+        .8rem;
+
+      text-align:
+        right;
+
+    }
+
+
+
+    /* ============================= */
+    /* MOBILE                        */
+    /* ============================= */
+
+
+    @media (max-width: 760px) {
+
+
+      .site-nav-inner {
+
+        width:
+          min(
+            calc(100% - 32px),
+            var(--max)
+          );
+
+        min-height:
+          64px;
+
+      }
+
+
+      .site-brand {
+
+        font-size:
+          1rem;
+
+      }
+
+
+      .site-nav-links {
+
+        gap:
+          14px;
+
+      }
+
+
+      .site-nav-link {
+
+        font-size:
+          .82rem;
+
+      }
+
+
+      .page {
+
+        width:
+          min(
+            calc(100% - 32px),
+            920px
+          );
+
+        padding-top:
+          48px;
+
+      }
+
+
+      .single-line-title {
+
+        white-space:
+          normal;
+
+        font-size:
+          2.35rem;
+
+      }
+
+
+      .card,
+      .customer-card {
+
+        padding:
+          28px;
+
+      }
+
+
+      .actions {
+
+        align-items:
+          flex-start;
+
+        flex-direction:
+          column;
+
+      }
+
+
+      .scale-grid {
+
+        grid-template-columns:
+          1fr;
+
+      }
+
+
+      .round-score-grid {
+
+        grid-template-columns:
+          repeat(2,1fr);
+
+      }
+
+    }
+
+
+
+    /* ============================= */
+    /* CONVERSATION SELECTOR         */
+    /* ============================= */
+
+    .conversation-selector {
+      margin-top: 48px;
+    }
+
+    .conversation-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .conversation-choice {
+      width: 100%;
+      min-height: 300px;
+      padding: 30px 30px 28px;
+      border: 0;
+      border-radius: 26px;
+      background: linear-gradient(145deg, #8A315F 0%, #67234A 100%);
+      color: #FBF7FA;
+      text-align: left;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      box-shadow: 0 10px 28px rgba(58, 36, 56, .10);
+      transition: transform .22s ease, box-shadow .22s ease, filter .22s ease;
+    }
+
+    .conversation-choice:nth-child(2) {
+      background: linear-gradient(145deg, #9A3B70 0%, #742750 100%);
+    }
+
+    .conversation-choice:nth-child(3) {
+      background: linear-gradient(145deg, #7A2E5C 0%, #55203F 100%);
+    }
+
+    .conversation-choice:hover,
+    .conversation-choice:focus-visible {
+      transform: translateY(-5px);
+      box-shadow: 0 18px 38px rgba(58, 36, 56, .18);
+      filter: brightness(1.035);
+      outline: none;
+    }
+
+    .choice-icon {
+      width: 58px;
+      height: 58px;
+      margin-bottom: 26px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255,255,255,.12);
+      color: #FBF7FA;
+      border: 1px solid rgba(255,255,255,.16);
+    }
+
+    .choice-icon svg {
+      width: 26px;
+      height: 26px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.7;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .choice-title {
+      margin: 0;
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: clamp(1.65rem, 2.5vw, 2.05rem);
+      line-height: 1.14;
+      font-weight: 400;
+      color: #FBF7FA;
+    }
+
+    .choice-enter {
+      margin-top: auto;
+      padding-top: 48px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-size: .9rem;
+      font-weight: 500;
+      color: #FBF7FA;
+    }
+
+    .choice-arrow {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      background: #FBF7FA;
+      color: #7A2E5C;
+      font-size: 1.45rem;
+      line-height: 1;
+      transition: transform .22s ease;
+    }
+
+    .conversation-choice:hover .choice-arrow,
+    .conversation-choice:focus-visible .choice-arrow {
+      transform: translateX(3px);
+    }
+
+    .experience.is-hidden {
+      display: none;
+    }
+
+    @media (max-width: 820px) {
+      .conversation-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .conversation-choice {
+        min-height: 230px;
+      }
+    }
+
+
+
+    /* ============================= */
+    /* SCENARIO CASE STUDY + NOTES   */
+    /* ============================= */
+
+    .scenario-intro {
+      margin-bottom: 34px;
+    }
+
+    .scenario-purpose {
+      max-width: 760px;
+      margin: 18px 0 0;
+      padding: 18px 20px;
+      background: rgba(238, 221, 232, .72);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 16px 16px 0;
+      color: var(--ink);
+      font-size: .98rem;
+    }
+
+    .conversation-practice-card {
+      padding: 38px;
+      background: linear-gradient(145deg, #87305f 0%, #70254f 100%);
+      box-shadow: 0 14px 34px rgba(58,36,56,.12);
+    }
+
+    .customer-message-row {
+      display: grid;
+      grid-template-columns: 92px 1fr;
+      gap: 22px;
+      align-items: start;
+      margin-top: 20px;
+    }
+
+    .customer-avatar-wrap {
+      text-align: center;
+    }
+
+    .customer-avatar {
+      width: 78px;
+      height: 78px;
+      margin: 0 auto 8px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(251,247,250,.14);
+      border: 1px solid rgba(251,247,250,.28);
+      color: var(--card);
+    }
+
+    .customer-avatar svg {
+      width: 34px;
+      height: 34px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.7;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .customer-name {
+      color: rgba(251,247,250,.92);
+      font-size: .82rem;
+    }
+
+    .customer-bubble {
+      position: relative;
+      padding: 24px 28px;
+      background: var(--card);
+      color: var(--ink);
+      border-radius: 22px;
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: clamp(1.25rem, 2.4vw, 1.65rem);
+      line-height: 1.45;
+    }
+
+    .customer-bubble::before {
+      content: "";
+      position: absolute;
+      left: -14px;
+      top: 34px;
+      width: 0;
+      height: 0;
+      border-top: 12px solid transparent;
+      border-bottom: 12px solid transparent;
+      border-right: 16px solid var(--card);
+    }
+
+    .customer-audio-inline {
+      margin-top: 14px;
+    }
+
+    .response-panel {
+      margin-top: 26px;
+      padding: 24px;
+      background: var(--card);
+      color: var(--ink);
+      border-radius: 22px;
+    }
+
+    .response-panel .round {
+      margin-bottom: 6px;
+    }
+
+    .response-panel .label {
+      margin-bottom: 8px;
+    }
+
+    .response-panel .prompt {
+      margin-bottom: 8px;
+    }
+
+    .response-panel .supporting-text {
+      margin-bottom: 16px;
+    }
+
+    #transcript[contenteditable="true"] {
+      min-height: 120px;
+      margin-top: 0;
+      padding: 18px;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      outline: none;
+      color: var(--ink);
+      cursor: text;
+    }
+
+    #transcript[contenteditable="true"]:focus {
+      border-color: rgba(122,46,92,.45);
+      box-shadow: 0 0 0 3px rgba(122,46,92,.08);
+    }
+
+    #transcript[contenteditable="true"]:empty::before {
+      content: attr(data-placeholder);
+      color: rgba(91,75,88,.60);
+      pointer-events: none;
+    }
+
+    .response-actions {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+      margin-top: 16px;
+      flex-wrap: wrap;
+    }
+
+    .response-actions .audio-action {
+      color: var(--ink);
+    }
+
+    .response-actions .mic-button {
+      width: 48px;
+      height: 48px;
+    }
+
+    .design-section,
+    .measurement-section {
+      margin-top: 64px;
+      padding: 32px;
+      background: rgba(251,247,250,.78);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+    }
+
+    .design-grid,
+    .measurement-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 22px;
+    }
+
+    .design-item,
+    .measurement-item {
+      padding: 20px;
+      background: var(--card);
+      border: 1px solid var(--soft-line);
+      border-radius: 18px;
+    }
+
+    .design-item strong,
+    .measurement-item strong {
+      display: block;
+      margin-bottom: 5px;
+      color: var(--ink);
+      font-weight: 500;
+    }
+
+    .design-item span,
+    .measurement-item span {
+      color: var(--muted);
+      font-size: .9rem;
+      line-height: 1.5;
+    }
+
+    .annotated {
+      position: relative;
+    }
+
+    @media (min-width: 1180px) {
+      body.design-revealed .annotated::before {
+        content: "";
+        position: absolute;
+        left: calc(100% + 16px);
+        top: 12px;
+        bottom: 12px;
+        width: 12px;
+        border-right: 1px solid rgba(122,46,92,.72);
+        border-top: 1px solid rgba(122,46,92,.72);
+        border-bottom: 1px solid rgba(122,46,92,.72);
+        pointer-events: none;
+      }
+
+      body.design-revealed .annotated::after {
+        content: attr(data-annotation);
+        position: absolute;
+        left: calc(100% + 44px);
+        top: 50%;
+        transform: translateY(-50%);
+        width: 120px;
+        color: var(--accent);
+        font-size: .74rem;
+        font-weight: 500;
+        letter-spacing: .10em;
+        text-transform: uppercase;
+        line-height: 1.35;
+        pointer-events: none;
+      }
+    }
+
+    /* Tablet / smaller desktop: keep the learning-design annotations visible
+       without pushing content outside the viewport. */
+    @media (max-width: 1179px) {
+      body.design-revealed .annotated {
+        padding-top: 52px;
+      }
+
+      body.design-revealed .annotated::before {
+        content: "";
+        position: absolute;
+        top: 22px;
+        right: 22px;
+        width: 28px;
+        height: 12px;
+        border-top: 1px solid rgba(122,46,92,.72);
+        border-right: 1px solid rgba(122,46,92,.72);
+        pointer-events: none;
+      }
+
+      body.design-revealed .annotated::after {
+        content: attr(data-annotation);
+        position: absolute;
+        top: 14px;
+        right: 58px;
+        color: var(--accent);
+        font-size: .72rem;
+        font-weight: 500;
+        letter-spacing: .10em;
+        text-transform: uppercase;
+        line-height: 1.35;
+        pointer-events: none;
+      }
+    }
+
+    @media (max-width: 760px) {
+      /* Phone: use a quiet, in-flow learning-design label instead of a bracket callout. */
+      body.design-revealed .annotated {
+        padding-top: 38px;
+      }
+
+      body.design-revealed .annotated::before {
+        content: "";
+        position: absolute;
+        top: 18px;
+        left: 0;
+        width: 22px;
+        height: 1px;
+        background: rgba(122,46,92,.72);
+        border: 0;
+        pointer-events: none;
+      }
+
+      body.design-revealed .annotated::after {
+        content: attr(data-annotation);
+        position: absolute;
+        top: 8px;
+        left: 30px;
+        right: auto;
+        transform: none;
+        width: auto;
+        color: var(--accent);
+        font-size: .66rem;
+        font-weight: 500;
+        letter-spacing: .11em;
+        text-transform: uppercase;
+        line-height: 1.2;
+        white-space: nowrap;
+        pointer-events: none;
+      }
+
+      .customer-message-row {
+        grid-template-columns: 1fr;
+      }
+
+      .customer-avatar-wrap {
+        display: none;
+      }
+
+      .customer-bubble::before {
+        display: none;
+      }
+
+      .conversation-practice-card {
+        padding: 28px;
+      }
+
+      .response-panel {
+        padding: 20px;
+      }
+
+      .design-grid,
+      .measurement-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+<!-- ============================ -->
+<!-- NAVIGATION                   -->
+<!-- ============================ -->
+
+
+<nav class="site-nav">
+
+  <div class="site-nav-inner">
+
+
+    <a
+      class="site-brand"
+      href="../"
+    >
+      Kahlila Mae Liverpool
+    </a>
+
+
+    <div class="site-nav-links">
+
+
+      <a
+        class="site-nav-link"
+        href="../"
+      >
+        Home
+      </a>
+
+
+      <a
+        class="site-nav-link"
+        href="../impact%202.html"
+      >
+        My Work
+      </a>
+
+
+      <a
+        class="site-nav-link active"
+        href="./"
+        aria-current="page"
+      >
+        Adaptive Learning
+      </a>
+
+
+    </div>
+
+
+  </div>
+
+</nav>
+
+
+
+<main class="page">
+
+
+  <div id="landingContent">
+
+  <!-- INTRO -->
+
+
+  <div class="eyebrow">
+    Adaptive Learning Prototype
+  </div>
+
+
+  <h1 class="single-line-title">
+    What Would You Say?
+  </h1>
+
+<p class="start-note">
+  Respond as you would in the moment.<br>
+  As the conversation continues, the next prompt will shift based on how you respond.
+  <br><br>
+  There is no script to follow.
+</p>
+
+
+  <!-- EXPERIENCE -->
+
+
+  <!-- CONVERSATION SELECTOR -->
+  <section
+    id="conversationSelector"
+    class="conversation-selector"
+    aria-label="Choose a conversation"
+  >
+    <div class="conversation-grid">
+
+      <button
+        class="conversation-choice"
+        type="button"
+        onclick="openUpsetCustomer()"
+        aria-label="Enter Upset Customer conversation"
+      >
+        <span class="choice-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24">
+            <path d="M21 15a4 4 0 0 1-4 4H8l-5 3 1.7-5A8 8 0 1 1 21 15Z" />
+            <path d="M8 11h.01M12 11h.01M16 11h.01" />
+          </svg>
+        </span>
+        <span class="choice-title">Upset Customer</span>
+        <span class="choice-enter">
+          <span class="choice-arrow">→</span>
+          <span>Enter conversation</span>
+        </span>
+      </button>
+
+      <button
+        class="conversation-choice"
+        type="button"
+        onclick="conversationNotBuilt('Software Delay')"
+        aria-label="Software Delay conversation"
+      >
+        <span class="choice-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24">
+            <rect x="3" y="5" width="18" height="16" rx="2" />
+            <path d="M16 3v4M8 3v4M3 10h18" />
+            <circle cx="16" cy="16" r="3" />
+            <path d="M16 14.5V16l1 1" />
+          </svg>
+        </span>
+        <span class="choice-title">Software Delay</span>
+        <span class="choice-enter">
+          <span class="choice-arrow">→</span>
+          <span>Enter conversation</span>
+        </span>
+      </button>
+
+      <button
+        class="conversation-choice"
+        type="button"
+        onclick="conversationNotBuilt('Difficult Conversation')"
+        aria-label="Difficult Conversation"
+      >
+        <span class="choice-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24">
+            <circle cx="9" cy="8" r="3" />
+            <path d="M3 20v-2a6 6 0 0 1 12 0v2" />
+            <circle cx="17" cy="9" r="2.5" />
+            <path d="M16 14a5 5 0 0 1 5 5v1" />
+          </svg>
+        </span>
+        <span class="choice-title">Difficult Conversation</span>
+        <span class="choice-enter">
+          <span class="choice-arrow">→</span>
+          <span>Enter conversation</span>
+        </span>
+      </button>
+
+    </div>
+  </section>
+
+  </div>
+
+  <div class="experience is-hidden" id="upsetCustomerExperience">
+
+    <section class="scenario-intro annotated" data-annotation="1  Purpose">
+      <div class="eyebrow">
+        Upset Customer
+      </div>
+
+      <h1 class="single-line-title">
+        What Would You Say?
+      </h1>
+
+      <p class="intro">
+        Customer service team members often know the correct process but struggle to apply it during emotionally charged conversations.
+      </p>
+
+      <div class="scenario-purpose">
+        This prototype tests whether repeated practice and targeted feedback can improve how learners respond in difficult customer conversations.
+      </div>
+    </section>
+
+
+    <!-- CUSTOMER -->
+
+
+    <section class="customer-card conversation-practice-card annotated" data-annotation="2  Practice">
+
+      <div class="label">
+        The conversation
+      </div>
+
+      <div class="customer-message-row">
+        <div class="customer-avatar-wrap">
+          <div class="customer-avatar" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <circle cx="12" cy="8" r="4"></circle>
+              <path d="M4 21a8 8 0 0 1 16 0"></path>
+            </svg>
+          </div>
+          <div class="customer-name">Customer</div>
+        </div>
+
+        <div>
+          <div id="customerText" class="customer-bubble">
+            I've contacted your company three times about this charge. Nobody has fixed it, and now I've been charged again. I'm frustrated and I need someone to actually take accountability.
+          </div>
+
+          <div class="audio-action customer-audio-inline">
+            <button
+              id="customerAudioButton"
+              class="mic-button mic-button-light"
+              onclick="playCustomerAudio()"
+              aria-label="Hear the customer"
+              title="Hear the customer"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 15a3 3 0 0 0 3-3V6a3 3 0 0 0-6 0v6a3 3 0 0 0 3 3Z" />
+                <path d="M19 11v1a7 7 0 0 1-14 0v-1" />
+                <path d="M12 19v3" />
+                <path d="M8 22h8" />
+              </svg>
+            </button>
+            <span>Hear the customer</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="response-panel">
+        <div id="roundNumber" class="round">
+          Conversation 1 of 3
+        </div>
+
+        <div class="label">
+          Your response
+        </div>
+
+        <h2 class="prompt">
+          What would you say?
+        </h2>
+
+        <p class="supporting-text">
+          Respond naturally. You can type your response or speak it aloud.
+        </p>
+
+        <div
+          id="transcript"
+          contenteditable="true"
+          role="textbox"
+          aria-multiline="true"
+          data-placeholder="Type your response here..."
+          oninput="handleTypedResponse()"
+        ></div>
+
+        <div id="status"></div>
+
+        <div class="response-actions">
+          <div class="audio-action">
+            <button
+              id="recordButton"
+              class="mic-button mic-button-berry"
+              onclick="startListening()"
+              aria-label="Start speaking"
+              title="Start speaking"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 15a3 3 0 0 0 3-3V6a3 3 0 0 0-6 0v6a3 3 0 0 0 3 3Z" />
+                <path d="M19 11v1a7 7 0 0 1-14 0v-1" />
+                <path d="M12 19v3" />
+                <path d="M8 22h8" />
+              </svg>
+            </button>
+            <span>Speak response</span>
+          </div>
+
+          <button
+            id="evaluateButton"
+            class="pill-button button-berry"
+            onclick="evaluateResponse()"
+            disabled
+          >
+            Submit response →
+          </button>
+        </div>
+      </div>
+
+    </section>
+
+
+    <!-- FEEDBACK -->
+
+
+    <section
+      id="feedbackCard"
+      class="card feedback-card hidden annotated"
+      data-annotation="3  Feedback"
+    >
+
+
+      <div class="label">
+        Feedback
+      </div>
+
+
+      <div
+        id="feedback"
+        class="feedback"
+      ></div>
+
+
+
+      <div
+        id="roundScorePanel"
+        class="round-score-panel"
+      >
+
+
+        <h3 class="round-score-heading">
+          Your scores this round
+        </h3>
+
+
+        <div class="round-score-grid">
+
+
+          <div
+            class="round-score-box"
+            data-skill="empathy"
+          >
+
+            <div class="round-score-name">
+              Empathy
+            </div>
+
+            <div
+              id="roundScore-empathy"
+              class="round-score-value"
+            >
+              —
+            </div>
+
+          </div>
+
+
+          <div
+            class="round-score-box"
+            data-skill="listening"
+          >
+
+            <div class="round-score-name">
+              Listening
+            </div>
+
+            <div
+              id="roundScore-listening"
+              class="round-score-value"
+            >
+              —
+            </div>
+
+          </div>
+
+
+          <div
+            class="round-score-box"
+            data-skill="ownership"
+          >
+
+            <div class="round-score-name">
+              Ownership
+            </div>
+
+            <div
+              id="roundScore-ownership"
+              class="round-score-value"
+            >
+              —
+            </div>
+
+          </div>
+
+
+          <div
+            class="round-score-box"
+            data-skill="problemSolving"
+          >
+
+            <div class="round-score-name">
+              Problem Solving
+            </div>
+
+            <div
+              id="roundScore-problemSolving"
+              class="round-score-value"
+            >
+              —
+            </div>
+
+          </div>
+
+
+          <div
+            class="round-score-box"
+            data-skill="communication"
+          >
+
+            <div class="round-score-name">
+              Communication
+            </div>
+
+            <div
+              id="roundScore-communication"
+              class="round-score-value"
+            >
+              —
+            </div>
+
+          </div>
+
+
+        </div>
+
+
+        <div
+          id="scoreFocusNote"
+          class="score-focus-note"
+        ></div>
+
+
+      </div>
+
+
+
+      <button
+        id="continueButton"
+        class="pill-button button-light"
+        onclick="continueConversation()"
+      >
+        Keep going
+      </button>
+
+
+    </section>
+
+
+
+    <!-- REPORT CARD -->
+
+
+    <section
+      id="reportCard"
+      class="card hidden annotated"
+      data-annotation="4  Reflection"
+    >
+
+
+      <div class="label">
+        After the conversation
+      </div>
+
+
+      <h2 class="report-title">
+        What changed as you practiced?
+      </h2>
+
+
+      <div
+        id="overallScore"
+        class="overall"
+      ></div>
+
+
+      <div id="scores"></div>
+
+
+      <div
+        id="growth"
+        class="reflection-box"
+      ></div>
+
+
+      <div class="download-area">
+
+
+        <button
+          class="pill-button button-berry"
+          onclick="downloadReportCard()"
+        >
+          Download report card
+        </button>
+
+
+      </div>
+
+
+    </section>
+
+
+  </div>
+
+
+
+  <div id="postScenarioContent" class="hidden">
+
+
+  <!-- LEARNING DESIGN -->
+
+  <section class="design-section annotated" data-annotation="5  Learning Design">
+    <div class="eyebrow">Design principles</div>
+    <h2 class="section-title">How it works</h2>
+
+    <div class="design-grid">
+      <div class="design-item">
+        <strong>Practice, not content</strong>
+        <span>Learners respond to realistic situations instead of reading about them.</span>
+      </div>
+      <div class="design-item">
+        <strong>Behavior-based feedback</strong>
+        <span>Responses are evaluated against observable conversational behaviors.</span>
+      </div>
+      <div class="design-item">
+        <strong>Adaptive practice</strong>
+        <span>The next prompt changes based on the learner's performance.</span>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- MEASUREMENT -->
+
+  <section class="measurement-section annotated" data-annotation="6  Measurement">
+    <div class="eyebrow">What I would measure</div>
+    <h2 class="section-title">Did the learning change performance?</h2>
+
+    <div class="measurement-grid">
+      <div class="measurement-item">
+        <strong>Improvement over time</strong>
+        <span>Changes in performance across attempts.</span>
+      </div>
+      <div class="measurement-item">
+        <strong>Transfer to the workplace</strong>
+        <span>Use of the skills in real customer interactions.</span>
+      </div>
+      <div class="measurement-item">
+        <strong>Customer outcomes</strong>
+        <span>Changes in satisfaction and issue resolution.</span>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- RUBRIC -->
+
+
+  <section class="rubric-section">
+
+
+    <div class="eyebrow">
+      How responses are assessed
+    </div>
+
+
+    <h2 class="section-title">
+      What does a 1–4 score mean?
+    </h2>
+
+
+    <p class="section-copy">
+
+      Responses are assessed across five skills.
+
+      The prototype looks for observable behaviors
+      in what the learner says and uses those results
+      to determine what the learner practices next.
+
+    </p>
+
+
+
+    <div class="scale-grid">
+
+
+      <div class="scale-item">
+
+        <div class="scale-number">
+          1
+        </div>
+
+        <div class="scale-name">
+          Needs development
+        </div>
+
+        <div class="scale-description">
+
+          The behavior is missing, unclear,
+          or works against the conversation.
+
+        </div>
+
+      </div>
+
+
+      <div class="scale-item">
+
+        <div class="scale-number">
+          2
+        </div>
+
+        <div class="scale-name">
+          Developing
+        </div>
+
+        <div class="scale-description">
+
+          The behavior is present, but incomplete,
+          generic, or inconsistent.
+
+        </div>
+
+      </div>
+
+
+      <div class="scale-item">
+
+        <div class="scale-number">
+          3
+        </div>
+
+        <div class="scale-name">
+          Proficient
+        </div>
+
+        <div class="scale-description">
+
+          The behavior is clear, appropriate,
+          and supports the conversation.
+
+        </div>
+
+      </div>
+
+
+      <div class="scale-item">
+
+        <div class="scale-number">
+          4
+        </div>
+
+        <div class="scale-name">
+          Strong
+        </div>
+
+        <div class="scale-description">
+
+          The behavior is specific, responsive
+          to the customer, and helps move the
+          conversation forward effectively.
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+
+
+    <details>
+
+      <summary>
+        Empathy
+      </summary>
+
+      <div class="rubric-detail">
+
+        <div class="rubric-row">
+          <strong>1</strong>
+          — Does not acknowledge the customer's frustration or emotion.
+        </div>
+
+        <div class="rubric-row">
+          <strong>2</strong>
+          — Uses a general acknowledgment, but it could apply to almost any situation.
+        </div>
+
+        <div class="rubric-row">
+          <strong>3</strong>
+          — Specifically acknowledges the customer's frustration and connects it to what happened.
+        </div>
+
+        <div class="rubric-row">
+          <strong>4</strong>
+          — Recognizes both the customer's emotion and why the situation created that reaction before moving toward resolution.
+        </div>
+
+      </div>
+
+    </details>
+
+
+
+    <details>
+
+      <summary>
+        Listening
+      </summary>
+
+      <div class="rubric-detail">
+
+        <div class="rubric-row">
+          <strong>1</strong>
+          — Misses or misinterprets the main concern.
+        </div>
+
+        <div class="rubric-row">
+          <strong>2</strong>
+          — Responds to the general issue but does not reference important details.
+        </div>
+
+        <div class="rubric-row">
+          <strong>3</strong>
+          — Accurately responds to at least one specific concern or detail the customer raised.
+        </div>
+
+        <div class="rubric-row">
+          <strong>4</strong>
+          — Demonstrates understanding of both the immediate issue and the customer's underlying concern.
+        </div>
+
+      </div>
+
+    </details>
+
+
+
+    <details>
+
+      <summary>
+        Ownership
+      </summary>
+
+      <div class="rubric-detail">
+
+        <div class="rubric-row">
+          <strong>1</strong>
+          — Deflects responsibility or leaves the customer unclear about who will help.
+        </div>
+
+        <div class="rubric-row">
+          <strong>2</strong>
+          — Offers assistance but relies heavily on process language or another team.
+        </div>
+
+        <div class="rubric-row">
+          <strong>3</strong>
+          — Clearly states what they will personally do to move the issue forward.
+        </div>
+
+        <div class="rubric-row">
+          <strong>4</strong>
+          — Takes clear ownership, explains what will happen next, and sets realistic expectations for follow-through.
+        </div>
+
+      </div>
+
+    </details>
+
+
+
+    <details>
+
+      <summary>
+        Problem Solving
+      </summary>
+
+      <div class="rubric-detail">
+
+        <div class="rubric-row">
+          <strong>1</strong>
+          — Does not offer a meaningful next step.
+        </div>
+
+        <div class="rubric-row">
+          <strong>2</strong>
+          — Offers a vague or incomplete solution.
+        </div>
+
+        <div class="rubric-row">
+          <strong>3</strong>
+          — Gives a specific, realistic next step that addresses the problem.
+        </div>
+
+        <div class="rubric-row">
+          <strong>4</strong>
+          — Provides a clear solution, explains what happens next, and addresses potential barriers or uncertainty.
+        </div>
+
+      </div>
+
+    </details>
+
+
+
+    <details>
+
+      <summary>
+        Communication
+      </summary>
+
+      <div class="rubric-detail">
+
+        <div class="rubric-row">
+          <strong>1</strong>
+          — The response is confusing, abrupt, overly defensive, or difficult to follow.
+        </div>
+
+        <div class="rubric-row">
+          <strong>2</strong>
+          — Generally understandable but may be too vague, lengthy, scripted, or unclear.
+        </div>
+
+        <div class="rubric-row">
+          <strong>3</strong>
+          — Clear, calm, concise, and professional.
+        </div>
+
+        <div class="rubric-row">
+          <strong>4</strong>
+          — Clear and concise while also sounding natural, confident, and responsive to the customer's situation.
+        </div>
+
+      </div>
+
+    </details>
+
+
+
+    <div class="prototype-note">
+
+      This is a rule-based prototype.
+
+      The scoring uses observable words,
+      phrases, response length, and combinations
+      of behaviors as proxies for the rubric.
+
+      A future AI-enabled version could evaluate
+      meaning and context more deeply.
+
+    </div>
+
+
+  </section>
+
+
+
+  <!-- RESEARCH -->
+
+
+  <section class="research annotated" data-annotation="7  Evidence">
+
+
+    <div class="eyebrow">
+      Evidence base
+    </div>
+
+
+    <h2>
+      Research that informed this prototype
+    </h2>
+
+
+    <p class="research-intro">
+
+      The design draws on research about
+      simulation-based practice, feedback,
+      and adaptive learning.
+
+    </p>
+
+
+
+    <div class="reference">
+
+      <strong>
+
+        Chernikova, O., Heitzmann, N., Stadler, M.,
+        Holzberger, D., Seidel, T., & Fischer, F. (2020).
+
+      </strong>
+
+      Simulation-Based Learning in Higher Education:
+      A Meta-Analysis.
+
+      <em>
+        Review of Educational Research, 90
+      </em>
+      (4), 499–541.
+
+      <a
+        href="https://journals.sagepub.com/doi/full/10.3102/0034654320933544"
+        target="_blank"
+        rel="noopener"
+      >
+        View research
+      </a>
+
+    </div>
+
+
+
+    <div class="reference">
+
+      <strong>
+        Hattie, J., & Timperley, H. (2007).
+      </strong>
+
+      The Power of Feedback.
+
+      <em>
+        Review of Educational Research, 77
+      </em>
+      (1), 81–112.
+
+      <a
+        href="https://journals.sagepub.com/doi/10.3102/003465430298487"
+        target="_blank"
+        rel="noopener"
+      >
+        View research
+      </a>
+
+    </div>
+
+
+
+    <div class="reference">
+
+      <strong>
+
+        Chernikova, O., Sommerhoff, D., Stadler, M.,
+        Holzberger, D., Nickl, M., Seidel, T.,
+        Kasneci, E., Küchemann, S., Kuhn, J.,
+        Fischer, F., & Heitzmann, N. (2025).
+
+      </strong>
+
+      Personalization through adaptivity or adaptability?
+      A meta-analysis on simulation-based learning
+      in higher education.
+
+      <em>
+        Educational Research Review, 46
+      </em>,
+      100662.
+
+      <a
+        href="https://doi.org/10.1016/j.edurev.2024.100662"
+        target="_blank"
+        rel="noopener"
+      >
+        View research
+      </a>
+
+    </div>
+
+
+  </section>
+
+
+
+  <footer>
+
+    © 2026 Kahlila Mae Liverpool
+
+  </footer>
+
+
+  </div>
+
+
+</main>
+
+
+
+<script
+  src="https://unpkg.com/jspdf@4.2.1/dist/jspdf.umd.min.js">
+</script>
+
+
+
+<script>
+
+
+  function openUpsetCustomer() {
+    const landingContent = document.getElementById("landingContent");
+    const experience = document.getElementById("upsetCustomerExperience");
+    const postScenarioContent = document.getElementById("postScenarioContent");
+
+    if (landingContent) {
+      landingContent.style.display = "none";
+    }
+
+    if (experience) {
+      experience.classList.remove("is-hidden");
+      experience.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+
+  }
+
+  function conversationNotBuilt(name) {
+    window.alert(name + " will be connected when that conversation is built.");
+  }
+
+
+  function handleTypedResponse() {
+    const transcript = document.getElementById("transcript");
+    const evaluateButton = document.getElementById("evaluateButton");
+
+    transcriptText = transcript ? transcript.innerText.trim() : "";
+
+    if (evaluateButton) {
+      evaluateButton.disabled = !transcriptText;
+    }
+  }
+
+
+
+
+/* ============================== */
+/* STATE                          */
+/* ============================== */
+
+
+let currentRound =
+  1;
+
+
+let transcriptText =
+  "";
+
+
+const maxRounds =
+  3;
+
+
+
+const customerAudio = {
+
+
+  opening:
+    "./customer-opening.m4a",
+
+
+  empathy:
+    "./customer-empathy.m4a",
+
+
+  ownership:
+    "./customer-ownership.m4a",
+
+
+  problemSolving:
+    "./customer-problem-solving.m4a",
+
+
+  listening:
+    "./customer-listening.m4a",
+
+
+  communication:
+    "./customer-communication.m4a",
+
+
+  advanced:
+    "./customer-advanced.m4a"
+
+
+};
+
+
+
+let currentAudioKey =
+  "opening";
+
+
+let activeCustomerAudio =
+  null;
+
+
+
+const scores = {
+
+
+  empathy: [],
+
+
+  listening: [],
+
+
+  ownership: [],
+
+
+  problemSolving: [],
+
+
+  communication: []
+
+
+};
+
+
+
+/* ============================== */
+/* CUSTOMER QUESTIONS             */
+/* ============================== */
+
+
+const customerQuestions = {
+
+
+  empathy:
+
+    "You keep telling me what you're going to do, but I don't feel like you understand why I'm frustrated. What do you think the real problem is?",
+
+
+  ownership:
+
+    "So are you actually going to take care of this, or are you going to send me to someone else again?",
+
+
+  problemSolving:
+
+    "Okay, but what exactly happens next? I need to know what you're going to do.",
+
+
+  listening:
+
+    "I've already explained this several times. Can you tell me what you understand the problem to be?",
+
+
+  communication:
+
+    "I'm still not clear about what you're telling me. Can you explain it more simply?",
+
+
+  advanced:
+
+    "That sounds better, but I need this resolved today. What can you realistically promise me?"
+
+
+};
+
+
+
+/* ============================== */
+/* HELPERS                        */
+/* ============================== */
+
+
+function containsAny(
+  text,
+  phrases
+) {
+
+  return phrases.some(
+
+    phrase =>
+
+      text.includes(
+        phrase
+      )
+
+  );
+
+}
+
+
+
+function countMatches(
+  text,
+  phrases
+) {
+
+  return phrases.filter(
+
+    phrase =>
+
+      text.includes(
+        phrase
+      )
+
+  ).length;
+
+}
+
+
+
+/* ============================== */
+/* CUSTOMER AUDIO                 */
+/* ============================== */
+
+
+function playCustomerAudio() {
+
+
+  if (
+    activeCustomerAudio
+  ) {
+
+    activeCustomerAudio.pause();
+
+    activeCustomerAudio.currentTime =
+      0;
+
+  }
+
+
+  activeCustomerAudio =
+    new Audio(
+      customerAudio[
+        currentAudioKey
+      ]
+    );
+
+
+  activeCustomerAudio
+    .play()
+    .catch(
+
+      error => {
+
+
+        console.error(
+          "Audio playback error:",
+          error
+        );
+
+
+        alert(
+          "The customer audio could not play. Please tap the button again."
+        );
+
+
+      }
+
+    );
+
+}
+
+
+
+/* ============================== */
+/* LEARNER SPEECH                 */
+/* ============================== */
+
+
+function startListening() {
+
+
+  const SpeechRecognition =
+
+    window.SpeechRecognition ||
+
+    window.webkitSpeechRecognition;
+
+
+
+  if (
+    !SpeechRecognition
+  ) {
+
+    alert(
+      "Speech recognition is not supported in this browser. Chrome usually works best for this prototype."
+    );
+
+    return;
+
+  }
+
+
+
+  if (
+    activeCustomerAudio
+  ) {
+
+    activeCustomerAudio.pause();
+
+  }
+
+
+
+  const recognition =
+    new SpeechRecognition();
+
+
+
+  recognition.lang =
+    "en-US";
+
+
+  recognition.interimResults =
+    false;
+
+
+  recognition.continuous =
+    false;
+
+
+
+  document
+    .getElementById(
+      "status"
+    )
+    .innerText =
+      "Listening...";
+
+
+
+  document
+    .getElementById(
+      "recordButton"
+    )
+    .disabled =
+      true;
+
+
+
+  recognition.start();
+
+
+
+  recognition.onresult =
+    function(event) {
+
+
+      transcriptText =
+
+        event
+          .results[0][0]
+          .transcript;
+
+
+
+      document
+        .getElementById(
+          "transcript"
+        )
+        .innerText =
+          transcriptText;
+
+
+
+      document
+        .getElementById(
+          "status"
+        )
+        .innerText =
+          "Response captured.";
+
+
+
+      document
+        .getElementById(
+          "evaluateButton"
+        )
+        .disabled =
+          false;
+
+
+
+      document
+        .getElementById(
+          "recordButton"
+        )
+        .disabled =
+          false;
+
+
+    };
+
+
+
+  recognition.onerror =
+    function() {
+
+
+      document
+        .getElementById(
+          "status"
+        )
+        .innerText =
+          "The response wasn't captured. Please try again.";
+
+
+
+      document
+        .getElementById(
+          "recordButton"
+        )
+        .disabled =
+          false;
+
+
+    };
+
+
+
+  recognition.onend =
+    function() {
+
+
+      document
+        .getElementById(
+          "recordButton"
+        )
+        .disabled =
+          false;
+
+
+    };
+
+
+}
+
+
+
+/* ============================== */
+/* RUBRIC SCORING                 */
+/* ============================== */
+
+
+function scoreEmpathy(
+  text
+) {
+
+
+  const generalEmpathy = [
+
+    "sorry",
+    "apologize",
+    "understand",
+    "i hear you",
+    "i hear how",
+    "i can imagine",
+    "i appreciate"
+
+  ];
+
+
+  const emotionWords = [
+
+    "frustrated",
+    "frustrating",
+    "upset",
+    "annoyed",
+    "disappointed",
+    "angry",
+    "fed up"
+
+  ];
+
+
+  const situationDetails = [
+
+    "three times",
+    "multiple times",
+    "charged again",
+    "another charge",
+    "contacted us",
+    "called us",
+    "called three",
+    "still not resolved",
+    "still hasn't been fixed",
+    "hasn't been fixed"
+
+  ];
+
+
+  const validation = [
+
+    "makes sense",
+    "i can see why",
+    "i understand why",
+    "you shouldn't have had to",
+    "should not have had to",
+    "that's not the experience",
+    "that isn't the experience"
+
+  ];
+
+
+
+  const hasGeneral =
+    containsAny(
+      text,
+      generalEmpathy
+    );
+
+
+  const hasEmotion =
+    containsAny(
+      text,
+      emotionWords
+    );
+
+
+  const hasSituation =
+    containsAny(
+      text,
+      situationDetails
+    );
+
+
+  const hasValidation =
+    containsAny(
+      text,
+      validation
+    );
+
+
+
+  if (
+    !hasGeneral &&
+    !hasEmotion
+  ) {
+
+    return 1;
+
+  }
+
+
+  if (
+    (
+      hasGeneral ||
+      hasEmotion
+    ) &&
+    !hasSituation
+  ) {
+
+    return 2;
+
+  }
+
+
+  if (
+    hasSituation &&
+    (
+      hasGeneral ||
+      hasEmotion
+    ) &&
+    !hasValidation
+  ) {
+
+    return 3;
+
+  }
+
+
+  if (
+    hasSituation &&
+    (
+      hasGeneral ||
+      hasEmotion
+    ) &&
+    hasValidation
+  ) {
+
+    return 4;
+
+  }
+
+
+  return 2;
+
+}
+
+
+
+/* LISTENING */
+
+
+function scoreListening(
+  text
+) {
+
+
+  const generalIssue = [
+
+    "charge",
+    "billing",
+    "payment",
+    "account",
+    "problem",
+    "issue"
+
+  ];
+
+
+  const specificDetails = [
+
+    "three times",
+    "charged again",
+    "another charge",
+    "contacted us",
+    "called us",
+    "called three",
+    "still not fixed",
+    "still unresolved",
+    "take responsibility",
+    "someone to take responsibility"
+
+  ];
+
+
+  const underlyingConcern = [
+
+    "trust",
+    "responsibility",
+    "take ownership",
+    "ownership",
+    "you've had to",
+    "you have had to",
+    "keep calling",
+    "repeatedly",
+    "again and again"
+
+  ];
+
+
+
+  const generalCount =
+    countMatches(
+      text,
+      generalIssue
+    );
+
+
+  const detailCount =
+    countMatches(
+      text,
+      specificDetails
+    );
+
+
+  const hasUnderlying =
+    containsAny(
+      text,
+      underlyingConcern
+    );
+
+
+
+  if (
+    generalCount === 0 &&
+    detailCount === 0
+  ) {
+
+    return 1;
+
+  }
+
+
+  if (
+    generalCount > 0 &&
+    detailCount === 0
+  ) {
+
+    return 2;
+
+  }
+
+
+  if (
+    detailCount === 1 &&
+    !hasUnderlying
+  ) {
+
+    return 3;
+
+  }
+
+
+  if (
+    detailCount >= 2 ||
+    (
+      detailCount >= 1 &&
+      hasUnderlying
+    )
+  ) {
+
+    return 4;
+
+  }
+
+
+  return 2;
+
+}
+
+
+
+/* OWNERSHIP */
+
+
+function scoreOwnership(
+  text
+) {
+
+
+  const deflection = [
+
+    "not my department",
+    "you need to call",
+    "you'll have to call",
+    "you will have to call",
+    "someone else handles",
+    "another department handles",
+    "that's not something i",
+    "i can't do anything",
+    "i cannot do anything"
+
+  ];
+
+
+  const generalHelp = [
+
+    "i can help",
+    "let me help",
+    "i'll help",
+    "i will help",
+    "we can help"
+
+  ];
+
+
+  const personalAction = [
+
+    "i will review",
+    "i'll review",
+    "i will check",
+    "i'll check",
+    "let me check",
+    "let me review",
+    "i will look",
+    "i'll look",
+    "let me look",
+    "i will investigate",
+    "i'll investigate",
+    "i will take care",
+    "i'll take care",
+    "i will resolve",
+    "i'll resolve"
+
+  ];
+
+
+  const followThrough = [
+
+    "i will follow up",
+    "i'll follow up",
+    "i will make sure",
+    "i'll make sure",
+    "i will stay with",
+    "i'll stay with",
+    "before we end",
+    "until this is",
+    "i will update you",
+    "i'll update you",
+    "you can expect",
+    "by the end of",
+    "within"
+
+  ];
+
+
+
+  const hasDeflection =
+    containsAny(
+      text,
+      deflection
+    );
+
+
+  const hasGeneral =
+    containsAny(
+      text,
+      generalHelp
+    );
+
+
+  const hasAction =
+    containsAny(
+      text,
+      personalAction
+    );
+
+
+  const hasFollowThrough =
+    containsAny(
+      text,
+      followThrough
+    );
+
+
+
+  if (
+    hasDeflection &&
+    !hasAction
+  ) {
+
+    return 1;
+
+  }
+
+
+  if (
+    !hasGeneral &&
+    !hasAction
+  ) {
+
+    return 1;
+
+  }
+
+
+  if (
+    hasGeneral &&
+    !hasAction
+  ) {
+
+    return 2;
+
+  }
+
+
+  if (
+    hasAction &&
+    !hasFollowThrough
+  ) {
+
+    return 3;
+
+  }
+
+
+  if (
+    hasAction &&
+    hasFollowThrough
+  ) {
+
+    return 4;
+
+  }
+
+
+  return 2;
+
+}
+
+
+
+/* PROBLEM SOLVING */
+
+
+function scoreProblemSolving(
+  text
+) {
+
+
+  const vagueActions = [
+
+    "look into",
+    "look at",
+    "see what",
+    "try to",
+    "see if",
+    "figure out",
+    "work on",
+    "check on"
+
+  ];
+
+
+  const concreteActions = [
+
+    "review the charge",
+    "check the charge",
+    "review your account",
+    "check your account",
+    "issue a refund",
+    "process a refund",
+    "reverse the charge",
+    "remove the charge",
+    "investigate the charge",
+    "contact billing",
+    "escalate",
+    "open a case",
+    "create a case",
+    "confirm the charge"
+
+  ];
+
+
+  const expectationSetting = [
+
+    "today",
+    "within",
+    "by tomorrow",
+    "by the end",
+    "next step",
+    "then i will",
+    "after that",
+    "if that doesn't",
+    "if that does not",
+    "if we can't",
+    "if we cannot",
+    "you can expect",
+    "i'll update",
+    "i will update"
+
+  ];
+
+
+
+  const hasVague =
+    containsAny(
+      text,
+      vagueActions
+    );
+
+
+  const hasConcrete =
+    containsAny(
+      text,
+      concreteActions
+    );
+
+
+  const hasExpectation =
+    containsAny(
+      text,
+      expectationSetting
+    );
+
+
+
+  if (
+    !hasVague &&
+    !hasConcrete
+  ) {
+
+    return 1;
+
+  }
+
+
+  if (
+    hasVague &&
+    !hasConcrete
+  ) {
+
+    return 2;
+
+  }
+
+
+  if (
+    hasConcrete &&
+    !hasExpectation
+  ) {
+
+    return 3;
+
+  }
+
+
+  if (
+    hasConcrete &&
+    hasExpectation
+  ) {
+
+    return 4;
+
+  }
+
+
+  return 2;
+
+}
+
+
+
+/* COMMUNICATION */
+
+
+function scoreCommunication(
+  text
+) {
+
+
+  const words =
+
+    text
+      .trim()
+      .split(/\s+/)
+      .filter(Boolean);
+
+
+
+  const wordCount =
+    words.length;
+
+
+
+  const defensiveLanguage = [
+
+    "calm down",
+    "that's not my fault",
+    "that is not my fault",
+    "there's nothing i can do",
+    "there is nothing i can do",
+    "you need to understand",
+    "like i said",
+    "as i already said"
+
+  ];
+
+
+  const clarityMarkers = [
+
+    "here's what i can do",
+    "here is what i can do",
+    "what i can do",
+    "the next step",
+    "first",
+    "then",
+    "from here",
+    "what will happen next"
+
+  ];
+
+
+
+  const hasDefensiveLanguage =
+    containsAny(
+      text,
+      defensiveLanguage
+    );
+
+
+  const hasClarityMarker =
+    containsAny(
+      text,
+      clarityMarkers
+    );
+
+
+
+  if (
+    hasDefensiveLanguage ||
+    wordCount < 6
+  ) {
+
+    return 1;
+
+  }
+
+
+  if (
+    wordCount < 12 ||
+    wordCount > 90
+  ) {
+
+    return 2;
+
+  }
+
+
+  if (
+    wordCount >= 12 &&
+    wordCount <= 70 &&
+    !hasClarityMarker
+  ) {
+
+    return 3;
+
+  }
+
+
+  if (
+    wordCount >= 12 &&
+    wordCount <= 65 &&
+    hasClarityMarker
+  ) {
+
+    return 4;
+
+  }
+
+
+  return 3;
+
+}
+
+
+
+/* ============================== */
+/* EVALUATION                     */
+/* ============================== */
+
+
+function evaluateResponse() {
+
+
+  if (
+    !transcriptText.trim()
+  ) {
+
+    return;
+
+  }
+
+
+
+  const response =
+    transcriptText
+      .toLowerCase();
+
+
+
+  const roundScores = {
+
+
+    empathy:
+      scoreEmpathy(
+        response
+      ),
+
+
+    listening:
+      scoreListening(
+        response
+      ),
+
+
+    ownership:
+      scoreOwnership(
+        response
+      ),
+
+
+    problemSolving:
+      scoreProblemSolving(
+        response
+      ),
+
+
+    communication:
+      scoreCommunication(
+        response
+      )
+
+
+  };
+
+
+
+  for (
+    let skill
+    in roundScores
+  ) {
+
+
+    scores[
+      skill
+    ].push(
+      roundScores[
+        skill
+      ]
+    );
+
+
+  }
+
+
+
+  const weakest =
+    findWeakestSkill(
+      roundScores
+    );
+
+
+
+  displayFeedback(
+    roundScores,
+    weakest
+  );
+
+
+
+  displayRoundScores(
+    roundScores,
+    weakest
+  );
+
+
+
+  document
+    .getElementById(
+      "feedbackCard"
+    )
+    .classList
+    .remove(
+      "hidden"
+    );
+
+
+
+  document
+    .getElementById(
+      "evaluateButton"
+    )
+    .disabled =
+      true;
+
+
+
+  if (
+    currentRound >=
+    maxRounds
+  ) {
+
+
+    document
+      .getElementById(
+        "continueButton"
+      )
+      .innerText =
+        "View report card";
+
+
+  }
+
+
+}
+
+
+
+/* ============================== */
+/* ROUND SCORE DISPLAY            */
+/* ============================== */
+
+
+function displayRoundScores(
+  roundScores,
+  weakest
+) {
+
+
+  const skillLabels = {
+
+    empathy:
+      "Empathy",
+
+    listening:
+      "Listening",
+
+    ownership:
+      "Ownership",
+
+    problemSolving:
+      "Problem Solving",
+
+    communication:
+      "Communication"
+
+  };
+
+
+
+  Object.keys(
+    roundScores
+  ).forEach(
+
+    skill => {
+
+
+      document
+        .getElementById(
+          `roundScore-${skill}`
+        )
+        .innerText =
+          `${roundScores[skill]}/4`;
+
+
+    }
+
+  );
+
+
+
+  const boxes =
+
+    document
+      .querySelectorAll(
+        ".round-score-box"
+      );
+
+
+
+  boxes.forEach(
+
+    box => {
+
+
+      box
+        .classList
+        .remove(
+          "highlighted"
+        );
+
+
+    }
+
+  );
+
+
+
+  const focusNote =
+
+    document
+      .getElementById(
+        "scoreFocusNote"
+      );
+
+
+
+  if (
+    weakest ===
+    "advanced"
+  ) {
+
+
+    boxes.forEach(
+
+      box => {
+
+
+        box
+          .classList
+          .add(
+            "highlighted"
+          );
+
+
+      }
+
+    );
+
+
+    focusNote.innerText =
+
+      "The response met the proficient threshold across all five skills, so the next conversation will be more challenging.";
+
+
+  } else {
+
+
+    const targetBox =
+
+      document
+        .querySelector(
+          `.round-score-box[data-skill="${weakest}"]`
+        );
+
+
+
+    if (
+      targetBox
+    ) {
+
+
+      targetBox
+        .classList
+        .add(
+          "highlighted"
+        );
+
+
+    }
+
+
+
+    focusNote.innerText =
+
+      `${skillLabels[weakest]} is highlighted because it is the skill the next conversation will target.`;
+
+
+  }
+
+
+}
+
+
+
+/* ============================== */
+/* ADAPTIVE PATH                  */
+/* ============================== */
+
+
+function findWeakestSkill(
+  roundScores
+) {
+
+
+  const skills =
+    Object.keys(
+      roundScores
+    );
+
+
+
+  let weakest =
+    skills[0];
+
+
+
+  skills.forEach(
+
+    skill => {
+
+
+      if (
+        roundScores[
+          skill
+        ] <
+        roundScores[
+          weakest
+        ]
+      ) {
+
+
+        weakest =
+          skill;
+
+
+      }
+
+
+    }
+
+  );
+
+
+
+  const allStrong =
+
+    Object
+      .values(
+        roundScores
+      )
+      .every(
+        score =>
+          score >= 3
+      );
+
+
+
+  if (
+    allStrong
+  ) {
+
+    return "advanced";
+
+  }
+
+
+
+  return weakest;
+
+}
+
+
+
+/* ============================== */
+/* FEEDBACK                       */
+/* ============================== */
+
+
+const feedbackLibrary = {
+
+
+  empathy: {
+
+
+    strong:
+
+      "You connected the customer's frustration to what actually happened instead of moving immediately to the solution.",
+
+
+    improve:
+
+      "Acknowledge both the frustration and what caused it before moving into the solution."
+
+
+  },
+
+
+  listening: {
+
+
+    strong:
+
+      "You responded to specific details the customer shared rather than giving a general response.",
+
+
+    improve:
+
+      "Reference a specific part of what the customer said so the response reflects the situation they actually described."
+
+
+  },
+
+
+  ownership: {
+
+
+    strong:
+
+      "You made your role in moving the issue forward clear.",
+
+
+    improve:
+
+      "Be more specific about what you will personally do next and how the customer will know what happened."
+
+
+  },
+
+
+  problemSolving: {
+
+
+    strong:
+
+      "You gave the customer a concrete next step rather than a general reassurance.",
+
+
+    improve:
+
+      "Name a specific action you can take and what the customer should expect after that action."
+
+
+  },
+
+
+  communication: {
+
+
+    strong:
+
+      "Your response was clear and easy to follow.",
+
+
+    improve:
+
+      "Make the response more direct and easier to follow. Focus on the customer concern and the next step."
+
+
+  }
+
+
+};
+
+
+
+function displayFeedback(
+  roundScores,
+  weakest
+) {
+
+
+  const ranked =
+
+    Object
+      .keys(
+        roundScores
+      )
+      .sort(
+        (
+          a,
+          b
+        ) =>
+          roundScores[
+            b
+          ] -
+          roundScores[
+            a
+          ]
+      );
+
+
+
+  const strongest =
+    ranked[0];
+
+
+
+  let html = `
+
+
+    <div class="feedback-section">
+
+      <strong>
+        What worked
+      </strong>
+
+      ${
+        feedbackLibrary[
+          strongest
+        ].strong
+      }
+
+    </div>
+
+
+  `;
+
+
+
+  if (
+    weakest ===
+    "advanced"
+  ) {
+
+
+    html += `
+
+
+      <div class="feedback-section">
+
+        <strong>
+          Next challenge
+        </strong>
+
+        The response was proficient
+        across the five skills.
+        The next conversation will
+        add more complexity.
+
+      </div>
+
+
+    `;
+
+
+  } else {
+
+
+    html += `
+
+
+      <div class="feedback-section">
+
+        <strong>
+          Try next
+        </strong>
+
+        ${
+          feedbackLibrary[
+            weakest
+          ].improve
+        }
+
+      </div>
+
+
+    `;
+
+
+  }
+
+
+
+  document
+    .getElementById(
+      "feedback"
+    )
+    .innerHTML =
+      html;
+
+
+
+  window.nextSkill =
+    weakest;
+
+
+}
+
+
+
+/* ============================== */
+/* NEXT ROUND                     */
+/* ============================== */
+
+
+function continueConversation() {
+
+
+  document
+    .getElementById(
+      "feedbackCard"
+    )
+    .classList
+    .add(
+      "hidden"
+    );
+
+
+
+  if (
+    currentRound >=
+    maxRounds
+  ) {
+
+
+    generateReport();
+
+    return;
+
+
+  }
+
+
+
+  currentRound++;
+
+
+
+  document
+    .getElementById(
+      "roundNumber"
+    )
+    .innerText =
+
+      `Conversation ${currentRound} of ${maxRounds}`;
+
+
+
+  const nextSkill =
+    window.nextSkill;
+
+
+
+  const nextQuestion =
+
+    customerQuestions[
+      nextSkill
+    ];
+
+
+
+  currentAudioKey =
+    nextSkill;
+
+
+
+  document
+    .getElementById(
+      "customerText"
+    )
+    .innerText =
+      nextQuestion;
+
+
+
+  document
+    .getElementById(
+      "transcript"
+    )
+    .innerText =
+      "";
+
+
+
+  document
+    .getElementById(
+      "status"
+    )
+    .innerText =
+      "";
+
+
+
+  transcriptText =
+    "";
+
+
+
+  document
+    .getElementById(
+      "evaluateButton"
+    )
+    .disabled =
+      true;
+
+
+
+  setTimeout(
+
+    () => {
+
+      playCustomerAudio();
+
+    },
+
+    300
+
+  );
+
+
+}
+
+
+
+/* ============================== */
+/* REPORT HELPERS                 */
+/* ============================== */
+
+
+function average(
+  values
+) {
+
+
+  const total =
+
+    values.reduce(
+      (
+        sum,
+        value
+      ) =>
+        sum + value,
+      0
+    );
+
+
+
+  return Math.round(
+    total /
+    values.length
+  );
+
+
+}
+
+
+
+function getFinalScores() {
+
+
+  return {
+
+
+    empathy:
+      average(
+        scores.empathy
+      ),
+
+
+    listening:
+      average(
+        scores.listening
+      ),
+
+
+    ownership:
+      average(
+        scores.ownership
+      ),
+
+
+    problemSolving:
+      average(
+        scores.problemSolving
+      ),
+
+
+    communication:
+      average(
+        scores.communication
+      )
+
+
+  };
+
+
+}
+
+
+
+function getLevel(
+  total
+) {
+
+
+  if (
+    total >= 18
+  ) {
+
+    return "Strong";
+
+  }
+
+
+  if (
+    total >= 14
+  ) {
+
+    return "Proficient";
+
+  }
+
+
+  return "Developing";
+
+
+}
+
+
+
+function getLabels() {
+
+
+  return {
+
+
+    empathy:
+      "Empathy",
+
+
+    listening:
+      "Listening",
+
+
+    ownership:
+      "Ownership",
+
+
+    problemSolving:
+      "Problem Solving",
+
+
+    communication:
+      "Communication"
+
+
+  };
+
+
+}
+
+
+
+/* ============================== */
+/* REPORT CARD                    */
+/* ============================== */
+
+
+function generateReport() {
+
+
+  const finalScores =
+    getFinalScores();
+
+
+  const labels =
+    getLabels();
+
+
+
+  const total =
+
+    Object
+      .values(
+        finalScores
+      )
+      .reduce(
+        (
+          a,
+          b
+        ) =>
+          a + b,
+        0
+      );
+
+
+
+  const level =
+    getLevel(
+      total
+    );
+
+
+
+  document
+    .getElementById(
+      "overallScore"
+    )
+    .innerText =
+
+      `${level} — ${total}/20`;
+
+
+
+  let scoreHTML =
+    "";
+
+
+
+  for (
+    let skill
+    in finalScores
+  ) {
+
+
+    scoreHTML += `
+
+
+      <div class="score-row">
+
+        <div>
+          ${
+            labels[
+              skill
+            ]
+          }
+        </div>
+
+        <div class="score">
+          ${
+            finalScores[
+              skill
+            ]
+          }/4
+        </div>
+
+      </div>
+
+
+    `;
+
+
+  }
+
+
+
+  document
+    .getElementById(
+      "scores"
+    )
+    .innerHTML =
+      scoreHTML;
+
+
+
+  const weakest =
+
+    Object
+      .keys(
+        finalScores
+      )
+      .reduce(
+        (
+          a,
+          b
+        ) =>
+
+          finalScores[
+            a
+          ] <
+          finalScores[
+            b
+          ]
+
+          ? a
+          : b
+      );
+
+
+
+  const first =
+    scores[
+      weakest
+    ][0];
+
+
+
+  const last =
+
+    scores[
+      weakest
+    ][
+      scores[
+        weakest
+      ].length - 1
+    ];
+
+
+
+  document
+    .getElementById(
+      "growth"
+    )
+    .innerHTML = `
+
+
+      <h3>
+        What changed?
+      </h3>
+
+
+      <p>
+
+        ${
+          labels[
+            weakest
+          ]
+        }
+
+        moved from
+
+        <strong>
+          ${first}
+        </strong>
+
+        to
+
+        <strong>
+          ${last}
+        </strong>
+
+        during the practice.
+
+      </p>
+
+
+      <h3>
+        Something to keep working on
+      </h3>
+
+
+      <p>
+
+        ${
+          feedbackLibrary[
+            weakest
+          ].improve
+        }
+
+      </p>
+
+
+    `;
+
+
+
+  document
+    .getElementById(
+      "reportCard"
+    )
+    .classList
+    .remove(
+      "hidden"
+    );
+
+
+  // Reveal the portfolio learning-design layer only after the practice is complete.
+  document.body.classList.add("design-revealed");
+
+  const postScenarioContent = document.getElementById("postScenarioContent");
+
+  if (postScenarioContent) {
+    postScenarioContent.classList.remove("hidden");
+  }
+
+
+  document
+    .getElementById(
+      "reportCard"
+    )
+    .scrollIntoView({
+
+      behavior:
+        "smooth"
+
+    });
+
+
+}
+
+
+
+/* ============================== */
+/* PDF DOWNLOAD                   */
+/* ============================== */
+
+
+function downloadReportCard() {
+
+
+  if (
+    !window.jspdf ||
+    !window.jspdf.jsPDF
+  ) {
+
+
+    alert(
+      "The PDF tool did not load. Please refresh the page and try again."
+    );
+
+
+    return;
+
+
+  }
+
+
+
+  const {
+    jsPDF
+  } =
+    window.jspdf;
+
+
+
+  const doc =
+
+    new jsPDF({
+
+      orientation:
+        "portrait",
+
+      unit:
+        "mm",
+
+      format:
+        "a4"
+
+    });
+
+
+
+  const finalScores =
+    getFinalScores();
+
+
+  const labels =
+    getLabels();
+
+
+
+  const total =
+
+    Object
+      .values(
+        finalScores
+      )
+      .reduce(
+        (
+          a,
+          b
+        ) =>
+          a + b,
+        0
+      );
+
+
+
+  const level =
+    getLevel(
+      total
+    );
+
+
+
+  const weakest =
+
+    Object
+      .keys(
+        finalScores
+      )
+      .reduce(
+        (
+          a,
+          b
+        ) =>
+
+          finalScores[
+            a
+          ] <
+          finalScores[
+            b
+          ]
+
+          ? a
+          : b
+      );
+
+
+
+  const first =
+    scores[
+      weakest
+    ][0];
+
+
+
+  const last =
+
+    scores[
+      weakest
+    ][
+      scores[
+        weakest
+      ].length - 1
+    ];
+
+
+
+  const accent =
+    [122,46,92];
+
+
+  const ink =
+    [58,36,56];
+
+
+  const muted =
+    [91,75,88];
+
+
+  const paper =
+    [245,235,243];
+
+
+  const card =
+    [251,247,250];
+
+
+  const softBerry =
+    [238,221,232];
+
+
+  const line =
+    [222,206,217];
+
+
+
+  doc.setFillColor(
+    ...paper
+  );
+
+
+  doc.rect(
+    0,
+    0,
+    210,
+    297,
+    "F"
+  );
+
+
+
+  doc.setFillColor(
+    ...card
+  );
+
+
+  doc.roundedRect(
+    18,
+    18,
+    174,
+    258,
+    5,
+    5,
+    "F"
+  );
+
+
+
+  doc.setFont(
+    "helvetica",
+    "bold"
+  );
+
+
+  doc.setFontSize(
+    8.5
+  );
+
+
+  doc.setTextColor(
+    ...accent
+  );
+
+
+  doc.text(
+    "Conversation Lab",
+    30,
+    34
+  );
+
+
+
+  doc.setFont(
+    "times",
+    "normal"
+  );
+
+
+  doc.setFontSize(
+    27
+  );
+
+
+  doc.setTextColor(
+    ...ink
+  );
+
+
+  doc.text(
+    "Your report card",
+    30,
+    49
+  );
+
+
+
+  doc.setFont(
+    "helvetica",
+    "normal"
+  );
+
+
+  doc.setFontSize(
+    10
+  );
+
+
+  doc.setTextColor(
+    ...muted
+  );
+
+
+  doc.text(
+    "Rule-based adaptive learning | Difficult customer conversations",
+    30,
+    58
+  );
+
+
+
+  doc.setFont(
+    "helvetica",
+    "bold"
+  );
+
+
+  doc.setFontSize(
+    15
+  );
+
+
+  doc.setTextColor(
+    ...accent
+  );
+
+
+  doc.text(
+    `${level} - ${total}/20`,
+    30,
+    73
+  );
+
+
+
+  let y =
+    88;
+
+
+
+  Object
+    .keys(
+      finalScores
+    )
+    .forEach(
+
+      skill => {
+
+
+        doc.setFont(
+          "helvetica",
+          "normal"
+        );
+
+
+        doc.setFontSize(
+          11
+        );
+
+
+        doc.setTextColor(
+          ...ink
+        );
+
+
+        doc.text(
+          labels[
+            skill
+          ],
+          30,
+          y
+        );
+
+
+
+        doc.setFont(
+          "helvetica",
+          "bold"
+        );
+
+
+        doc.setTextColor(
+          ...accent
+        );
+
+
+        doc.text(
+
+          `${
+            finalScores[
+              skill
+            ]
+          }/4`,
+
+          177,
+
+          y,
+
+          {
+            align:
+              "right"
+          }
+
+        );
+
+
+
+        doc.setDrawColor(
+          ...line
+        );
+
+
+        doc.line(
+          30,
+          y + 4,
+          177,
+          y + 4
+        );
+
+
+
+        y +=
+          14;
+
+
+      }
+
+    );
+
+
+
+  const boxY =
+    y + 8;
+
+
+
+  doc.setFillColor(
+    ...softBerry
+  );
+
+
+  doc.roundedRect(
+    28,
+    boxY,
+    154,
+    76,
+    4,
+    4,
+    "F"
+  );
+
+
+
+  doc.setFont(
+    "times",
+    "normal"
+  );
+
+
+  doc.setFontSize(
+    15
+  );
+
+
+  doc.setTextColor(
+    ...ink
+  );
+
+
+  doc.text(
+    "What changed?",
+    36,
+    boxY + 13
+  );
+
+
+
+  doc.setFont(
+    "helvetica",
+    "normal"
+  );
+
+
+  doc.setFontSize(
+    10.5
+  );
+
+
+
+  const changeText =
+
+    `${
+      labels[
+        weakest
+      ]
+    } moved from ${first} to ${last} during the practice.`;
+
+
+
+  doc.text(
+
+    doc.splitTextToSize(
+      changeText,
+      135
+    ),
+
+    36,
+
+    boxY + 22
+
+  );
+
+
+
+  doc.setFont(
+    "times",
+    "normal"
+  );
+
+
+  doc.setFontSize(
+    15
+  );
+
+
+  doc.text(
+    "Something to keep working on",
+    36,
+    boxY + 45
+  );
+
+
+
+  doc.setFont(
+    "helvetica",
+    "normal"
+  );
+
+
+  doc.setFontSize(
+    10.5
+  );
+
+
+
+  const practiceText =
+
+    feedbackLibrary[
+      weakest
+    ].improve;
+
+
+
+  doc.text(
+
+    doc.splitTextToSize(
+      practiceText,
+      135
+    ),
+
+    36,
+
+    boxY + 54
+
+  );
+
+
+
+  doc.setFont(
+    "helvetica",
+    "normal"
+  );
+
+
+  doc.setFontSize(
+    8
+  );
+
+
+  doc.setTextColor(
+    ...muted
+  );
+
+
+  doc.text(
+    "Conversation Lab | Rule-based Adaptive Learning Prototype",
+    30,
+    263
+  );
+
+
+
+  doc.save(
+    "Conversation-Lab-Report-Card.pdf"
+  );
+
+
+}
+
+
+</script>
+
+
+</body>
+
+</html>
