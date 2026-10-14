@@ -14,7 +14,6 @@
     Practice the Conversation | Kahlila Mae Liverpool
   </title>
 
-
   <link
     rel="preconnect"
     href="https://fonts.googleapis.com"
@@ -90,11 +89,7 @@
 
 
     a {
-
-      color: var(--accent);
-
-      text-underline-offset: 4px;
-
+      color: inherit;
     }
 
 
@@ -108,6 +103,167 @@
     }
 
 
+
+    /* ============================= */
+    /* TOP NAVIGATION                */
+    /* ============================= */
+
+
+    .site-nav {
+
+      position: sticky;
+
+      top: 0;
+
+      z-index: 1000;
+
+      background:
+        rgba(
+          245,
+          235,
+          243,
+          .96
+        );
+
+      border-bottom:
+        1px solid
+        var(--line);
+
+      backdrop-filter:
+        blur(12px);
+
+      -webkit-backdrop-filter:
+        blur(12px);
+
+    }
+
+
+    .site-nav-inner {
+
+      width:
+        min(
+          calc(100% - 48px),
+          var(--max)
+        );
+
+      margin:
+        0 auto;
+
+      min-height:
+        70px;
+
+      display:
+        flex;
+
+      align-items:
+        center;
+
+      justify-content:
+        space-between;
+
+      gap:
+        24px;
+
+    }
+
+
+    .site-brand {
+
+      font-family:
+        "Playfair Display",
+        Georgia,
+        serif;
+
+      font-size:
+        1.15rem;
+
+      font-weight:
+        400;
+
+      color:
+        var(--ink);
+
+      text-decoration:
+        none;
+
+      white-space:
+        nowrap;
+
+    }
+
+
+    .site-nav-links {
+
+      display:
+        flex;
+
+      align-items:
+        center;
+
+      gap:
+        22px;
+
+    }
+
+
+    .site-nav-link {
+
+      font-family:
+        "DM Sans",
+        Arial,
+        sans-serif;
+
+      font-size:
+        .95rem;
+
+      font-weight:
+        500;
+
+      color:
+        var(--muted);
+
+      text-decoration:
+        none;
+
+      padding-bottom:
+        3px;
+
+      border-bottom:
+        2px solid
+        transparent;
+
+      transition:
+        color .2s ease,
+        border-color .2s ease;
+
+    }
+
+
+    .site-nav-link:hover {
+
+      color:
+        var(--accent);
+
+    }
+
+
+    .site-nav-link.active {
+
+      color:
+        var(--accent);
+
+      border-bottom-color:
+        var(--accent);
+
+    }
+
+
+
+    /* ============================= */
+    /* PAGE                          */
+    /* ============================= */
+
+
     .page {
 
       width:
@@ -116,12 +272,14 @@
           920px
         );
 
-      margin: 0 auto;
+      margin:
+        0 auto;
 
       padding:
         72px 0 90px;
 
     }
+
 
 
     /* ============================= */
@@ -137,23 +295,32 @@
         Arial,
         sans-serif;
 
-      font-size: .8125rem;
+      font-size:
+        .8125rem;
 
-      font-weight: 500;
+      font-weight:
+        500;
 
-      line-height: 1.4;
+      line-height:
+        1.4;
 
-      letter-spacing: .15em;
+      letter-spacing:
+        .15em;
 
-      text-transform: uppercase;
+      text-transform:
+        uppercase;
 
-      color: var(--accent);
+      color:
+        var(--accent);
 
     }
 
 
     .eyebrow {
-      margin-bottom: 14px;
+
+      margin-bottom:
+        14px;
+
     }
 
 
@@ -166,16 +333,19 @@
         Georgia,
         serif;
 
-      font-weight: 400;
+      font-weight:
+        400;
 
     }
 
 
     h1 {
 
-      margin: 0;
+      margin:
+        0;
 
-      color: var(--ink);
+      color:
+        var(--ink);
 
       font-size:
         clamp(
@@ -184,68 +354,81 @@
           4.4rem
         );
 
-      font-weight: 400;
+      line-height:
+        1.12;
 
-      line-height: 1.12;
-
-      letter-spacing: -.035em;
+      letter-spacing:
+        -.035em;
 
     }
 
 
     .single-line-title {
 
-      white-space: nowrap;
+      white-space:
+        nowrap;
 
     }
 
 
     .subtitle {
 
-      max-width: 760px;
+      max-width:
+        760px;
 
-      margin-top: 18px;
+      margin-top:
+        18px;
 
       font-family:
         "Playfair Display",
         Georgia,
         serif;
 
-      font-size: 1.4rem;
+      font-size:
+        1.4rem;
 
-      line-height: 1.4;
+      line-height:
+        1.4;
 
-      color: var(--ink);
+      color:
+        var(--ink);
 
     }
 
 
     .intro {
 
-      max-width: 720px;
+      max-width:
+        720px;
 
       margin:
         26px 0 0;
 
-      color: var(--ink);
+      color:
+        var(--ink);
 
-      font-size: 1rem;
+      font-size:
+        1rem;
 
     }
 
 
     .start-note {
 
-      max-width: 720px;
+      max-width:
+        720px;
 
       margin:
         16px 0 0;
 
-      color: var(--muted);
+      color:
+        var(--muted);
 
-      font-size: .95rem;
+      font-size:
+        .95rem;
 
     }
+
 
 
     /* ============================= */
@@ -255,18 +438,22 @@
 
     .experience {
 
-      margin-top: 58px;
+      margin-top:
+        58px;
 
     }
 
 
     .card {
 
-      margin-bottom: 28px;
+      margin-bottom:
+        28px;
 
-      padding: 40px;
+      padding:
+        40px;
 
-      background: var(--card);
+      background:
+        var(--card);
 
       border:
         1px solid
@@ -280,9 +467,11 @@
 
     .customer-card {
 
-      margin-bottom: 28px;
+      margin-bottom:
+        28px;
 
-      padding: 46px;
+      padding:
+        46px;
 
       background:
         var(--accent);
@@ -298,12 +487,14 @@
 
     .label {
 
-      margin-bottom: 14px;
+      margin-bottom:
+        14px;
 
     }
 
 
-    .customer-card .label {
+    .customer-card
+    .label {
 
       color:
         rgba(
@@ -318,7 +509,8 @@
 
     .customer-text {
 
-      max-width: 780px;
+      max-width:
+        780px;
 
       font-family:
         "Playfair Display",
@@ -332,19 +524,22 @@
           1.8rem
         );
 
-      line-height: 1.45;
+      line-height:
+        1.45;
 
     }
 
 
     .round {
 
-      margin-bottom: 8px;
+      margin-bottom:
+        8px;
 
       color:
         var(--muted);
 
-      font-size: .82rem;
+      font-size:
+        .82rem;
 
     }
 
@@ -357,16 +552,19 @@
       color:
         var(--ink);
 
-      font-size: 1.75rem;
+      font-size:
+        1.75rem;
 
-      line-height: 1.3;
+      line-height:
+        1.3;
 
     }
 
 
     .supporting-text {
 
-      max-width: 660px;
+      max-width:
+        660px;
 
       margin:
         0 0 26px;
@@ -377,6 +575,7 @@
     }
 
 
+
     /* ============================= */
     /* AUDIO + BUTTONS               */
     /* ============================= */
@@ -384,13 +583,17 @@
 
     .actions {
 
-      display: flex;
+      display:
+        flex;
 
-      align-items: center;
+      align-items:
+        center;
 
-      flex-wrap: wrap;
+      flex-wrap:
+        wrap;
 
-      gap: 18px;
+      gap:
+        18px;
 
     }
 
@@ -403,7 +606,8 @@
       align-items:
         center;
 
-      gap: 12px;
+      gap:
+        12px;
 
       color:
         var(--ink);
@@ -420,7 +624,8 @@
     .customer-card
     .audio-action {
 
-      margin-top: 26px;
+      margin-top:
+        26px;
 
       color:
         var(--card);
@@ -430,11 +635,14 @@
 
     .mic-button {
 
-      width: 58px;
+      width:
+        58px;
 
-      height: 58px;
+      height:
+        58px;
 
-      padding: 0;
+      padding:
+        0;
 
       border-radius:
         50%;
@@ -448,9 +656,11 @@
       justify-content:
         center;
 
-      flex-shrink: 0;
+      flex-shrink:
+        0;
 
-      cursor: pointer;
+      cursor:
+        pointer;
 
       transition:
         transform .2s ease,
@@ -470,27 +680,34 @@
 
     .mic-button:disabled {
 
-      opacity: .45;
+      opacity:
+        .45;
 
-      cursor: default;
+      cursor:
+        default;
 
-      transform: none;
+      transform:
+        none;
 
     }
 
 
     .mic-button svg {
 
-      width: 24px;
+      width:
+        24px;
 
-      height: 24px;
+      height:
+        24px;
 
-      fill: none;
+      fill:
+        none;
 
       stroke:
         currentColor;
 
-      stroke-width: 1.8;
+      stroke-width:
+        1.8;
 
       stroke-linecap:
         round;
@@ -538,7 +755,8 @@
 
     .pill-button {
 
-      min-height: 40px;
+      min-height:
+        40px;
 
       padding:
         8px 14px;
@@ -567,18 +785,22 @@
       transform:
         translateY(-2px);
 
-      opacity: .85;
+      opacity:
+        .85;
 
     }
 
 
     .pill-button:disabled {
 
-      opacity: .42;
+      opacity:
+        .42;
 
-      cursor: default;
+      cursor:
+        default;
 
-      transform: none;
+      transform:
+        none;
 
     }
 
@@ -618,6 +840,7 @@
     }
 
 
+
     /* ============================= */
     /* TRANSCRIPT                    */
     /* ============================= */
@@ -625,7 +848,8 @@
 
     #status {
 
-      margin-top: 18px;
+      margin-top:
+        18px;
 
       color:
         var(--accent);
@@ -641,11 +865,14 @@
 
     #transcript {
 
-      min-height: 100px;
+      min-height:
+        100px;
 
-      margin-top: 22px;
+      margin-top:
+        22px;
 
-      padding: 22px;
+      padding:
+        22px;
 
       background:
         rgba(
@@ -662,11 +889,14 @@
         1px solid
         var(--line);
 
-      border-radius: 18px;
+      border-radius:
+        18px;
 
-      font-size: 1rem;
+      font-size:
+        1rem;
 
     }
+
 
 
     /* ============================= */
@@ -682,7 +912,8 @@
       color:
         var(--card);
 
-      border: none;
+      border:
+        none;
 
     }
 
@@ -703,25 +934,30 @@
 
     .feedback {
 
-      max-width: 720px;
+      max-width:
+        720px;
 
-      font-size: 1.02rem;
+      font-size:
+        1.02rem;
 
     }
 
 
     .feedback-section {
 
-      margin-bottom: 28px;
+      margin-bottom:
+        28px;
 
     }
 
 
     .feedback strong {
 
-      display: block;
+      display:
+        block;
 
-      margin-bottom: 6px;
+      margin-bottom:
+        6px;
 
       color:
         var(--card);
@@ -743,7 +979,8 @@
     .feedback-card
     .button-light {
 
-      margin-top: 6px;
+      margin-top:
+        6px;
 
       color:
         var(--accent);
@@ -755,6 +992,210 @@
         var(--card);
 
     }
+
+
+
+    /* ============================= */
+    /* ROUND SCORE BOXES             */
+    /* ============================= */
+
+
+    .round-score-panel {
+
+      margin:
+        32px 0 30px;
+
+      padding-top:
+        28px;
+
+      border-top:
+        1px solid
+        rgba(
+          251,
+          247,
+          250,
+          .28
+        );
+
+    }
+
+
+    .round-score-heading {
+
+      margin:
+        0 0 16px;
+
+      color:
+        var(--card);
+
+      font-family:
+        "Playfair Display",
+        Georgia,
+        serif;
+
+      font-size:
+        1.35rem;
+
+      font-weight:
+        400;
+
+    }
+
+
+    .round-score-grid {
+
+      display:
+        grid;
+
+      grid-template-columns:
+        repeat(5,1fr);
+
+      gap:
+        10px;
+
+    }
+
+
+    .round-score-box {
+
+      min-height:
+        92px;
+
+      padding:
+        14px 12px;
+
+      background:
+        rgba(
+          251,
+          247,
+          250,
+          .10
+        );
+
+      border:
+        1px solid
+        rgba(
+          251,
+          247,
+          250,
+          .28
+        );
+
+      border-radius:
+        16px;
+
+      display:
+        flex;
+
+      flex-direction:
+        column;
+
+      justify-content:
+        space-between;
+
+      transition:
+        background .25s ease,
+        border-color .25s ease,
+        transform .25s ease;
+
+    }
+
+
+    .round-score-box.highlighted {
+
+      background:
+        var(--card);
+
+      border:
+        2px solid
+        var(--card);
+
+      transform:
+        translateY(-3px);
+
+    }
+
+
+    .round-score-name {
+
+      color:
+        rgba(
+          251,
+          247,
+          250,
+          .82
+        );
+
+      font-size:
+        .78rem;
+
+      line-height:
+        1.3;
+
+    }
+
+
+    .round-score-box.highlighted
+    .round-score-name {
+
+      color:
+        var(--accent);
+
+      font-weight:
+        500;
+
+    }
+
+
+    .round-score-value {
+
+      margin-top:
+        8px;
+
+      color:
+        var(--card);
+
+      font-family:
+        "Playfair Display",
+        Georgia,
+        serif;
+
+      font-size:
+        1.55rem;
+
+      line-height:
+        1;
+
+    }
+
+
+    .round-score-box.highlighted
+    .round-score-value {
+
+      color:
+        var(--accent);
+
+    }
+
+
+    .score-focus-note {
+
+      margin-top:
+        14px;
+
+      color:
+        rgba(
+          251,
+          247,
+          250,
+          .82
+        );
+
+      font-size:
+        .85rem;
+
+    }
+
 
 
     /* ============================= */
@@ -777,35 +1218,42 @@
           2.7rem
         );
 
-      line-height: 1.2;
+      line-height:
+        1.2;
 
     }
 
 
     .overall {
 
-      margin-bottom: 34px;
+      margin-bottom:
+        34px;
 
       color:
         var(--accent);
 
-      font-size: 1.05rem;
+      font-size:
+        1.05rem;
 
-      font-weight: 500;
+      font-weight:
+        500;
 
     }
 
 
     .score-row {
 
-      display: grid;
+      display:
+        grid;
 
       grid-template-columns:
         1fr 80px;
 
-      gap: 24px;
+      gap:
+        24px;
 
-      align-items: center;
+      align-items:
+        center;
 
       padding:
         17px 0;
@@ -833,14 +1281,17 @@
 
     .reflection-box {
 
-      margin-top: 36px;
+      margin-top:
+        36px;
 
-      padding: 30px;
+      padding:
+        30px;
 
       background:
         var(--soft-berry);
 
-      border-radius: 22px;
+      border-radius:
+        22px;
 
     }
 
@@ -853,7 +1304,8 @@
       color:
         var(--ink);
 
-      font-size: 1.45rem;
+      font-size:
+        1.45rem;
 
     }
 
@@ -868,16 +1320,19 @@
 
     .download-area {
 
-      margin-top: 28px;
+      margin-top:
+        28px;
 
     }
 
 
     .hidden {
 
-      display: none;
+      display:
+        none;
 
     }
+
 
 
     /* ============================= */
@@ -887,7 +1342,8 @@
 
     .rubric-section {
 
-      margin-top: 72px;
+      margin-top:
+        72px;
 
     }
 
@@ -907,40 +1363,47 @@
           2.7rem
         );
 
-      line-height: 1.2;
+      line-height:
+        1.2;
 
     }
 
 
     .section-copy {
 
-      max-width: 720px;
+      max-width:
+        720px;
 
       color:
         var(--muted);
 
-      margin-bottom: 28px;
+      margin-bottom:
+        28px;
 
     }
 
 
     .scale-grid {
 
-      display: grid;
+      display:
+        grid;
 
       grid-template-columns:
         repeat(4,1fr);
 
-      gap: 14px;
+      gap:
+        14px;
 
-      margin-bottom: 30px;
+      margin-bottom:
+        30px;
 
     }
 
 
     .scale-item {
 
-      padding: 20px;
+      padding:
+        20px;
 
       background:
         var(--card);
@@ -949,14 +1412,16 @@
         1px solid
         var(--line);
 
-      border-radius: 18px;
+      border-radius:
+        18px;
 
     }
 
 
     .scale-number {
 
-      margin-bottom: 8px;
+      margin-bottom:
+        8px;
 
       color:
         var(--accent);
@@ -966,18 +1431,22 @@
         Georgia,
         serif;
 
-      font-size: 1.7rem;
+      font-size:
+        1.7rem;
 
-      line-height: 1;
+      line-height:
+        1;
 
     }
 
 
     .scale-name {
 
-      margin-bottom: 6px;
+      margin-bottom:
+        6px;
 
-      font-weight: 500;
+      font-weight:
+        500;
 
     }
 
@@ -990,14 +1459,16 @@
       font-size:
         .88rem;
 
-      line-height: 1.5;
+      line-height:
+        1.5;
 
     }
 
 
     details {
 
-      margin-bottom: 12px;
+      margin-bottom:
+        12px;
 
       background:
         var(--card);
@@ -1006,9 +1477,11 @@
         1px solid
         var(--line);
 
-      border-radius: 18px;
+      border-radius:
+        18px;
 
-      overflow: hidden;
+      overflow:
+        hidden;
 
     }
 
@@ -1018,12 +1491,14 @@
       padding:
         18px 22px;
 
-      cursor: pointer;
+      cursor:
+        pointer;
 
       color:
         var(--ink);
 
-      font-weight: 500;
+      font-weight:
+        500;
 
     }
 
@@ -1061,7 +1536,8 @@
 
     .prototype-note {
 
-      margin-top: 20px;
+      margin-top:
+        20px;
 
       padding:
         20px 22px;
@@ -1090,6 +1566,7 @@
     }
 
 
+
     /* ============================= */
     /* RESEARCH                      */
     /* ============================= */
@@ -1097,9 +1574,11 @@
 
     .research {
 
-      margin-top: 80px;
+      margin-top:
+        80px;
 
-      padding-top: 34px;
+      padding-top:
+        34px;
 
       border-top:
         1px solid
@@ -1124,9 +1603,11 @@
 
     .research-intro {
 
-      max-width: 720px;
+      max-width:
+        720px;
 
-      margin-bottom: 24px;
+      margin-bottom:
+        24px;
 
       color:
         var(--muted);
@@ -1139,7 +1620,8 @@
 
     .reference {
 
-      margin-bottom: 22px;
+      margin-bottom:
+        22px;
 
       color:
         var(--muted);
@@ -1147,7 +1629,8 @@
       font-size:
         .88rem;
 
-      line-height: 1.6;
+      line-height:
+        1.6;
 
     }
 
@@ -1157,16 +1640,19 @@
       color:
         var(--ink);
 
-      font-weight: 500;
+      font-weight:
+        500;
 
     }
 
 
     footer {
 
-      margin-top: 56px;
+      margin-top:
+        56px;
 
-      padding-top: 24px;
+      padding-top:
+        24px;
 
       border-top:
         1px solid
@@ -1178,9 +1664,11 @@
       font-size:
         .8rem;
 
-      text-align: right;
+      text-align:
+        right;
 
     }
+
 
 
     /* ============================= */
@@ -1188,9 +1676,46 @@
     /* ============================= */
 
 
-    @media (
-      max-width: 760px
-    ) {
+    @media (max-width: 760px) {
+
+
+      .site-nav-inner {
+
+        width:
+          min(
+            calc(100% - 32px),
+            var(--max)
+          );
+
+        min-height:
+          64px;
+
+      }
+
+
+      .site-brand {
+
+        font-size:
+          1rem;
+
+      }
+
+
+      .site-nav-links {
+
+        gap:
+          14px;
+
+      }
+
+
+      .site-nav-link {
+
+        font-size:
+          .82rem;
+
+      }
+
 
       .page {
 
@@ -1200,16 +1725,19 @@
             920px
           );
 
-        padding-top: 48px;
+        padding-top:
+          48px;
 
       }
 
 
       .single-line-title {
 
-        white-space: normal;
+        white-space:
+          normal;
 
-        font-size: 2.35rem;
+        font-size:
+          2.35rem;
 
       }
 
@@ -1217,7 +1745,8 @@
       .card,
       .customer-card {
 
-        padding: 28px;
+        padding:
+          28px;
 
       }
 
@@ -1240,6 +1769,14 @@
 
       }
 
+
+      .round-score-grid {
+
+        grid-template-columns:
+          repeat(2,1fr);
+
+      }
+
     }
 
 
@@ -1251,12 +1788,65 @@
 <body>
 
 
+<!-- ============================ -->
+<!-- NAVIGATION                   -->
+<!-- ============================ -->
+
+
+<nav class="site-nav">
+
+  <div class="site-nav-inner">
+
+
+    <a
+      class="site-brand"
+      href="../"
+    >
+      Kahlila Mae Liverpool
+    </a>
+
+
+    <div class="site-nav-links">
+
+
+      <a
+        class="site-nav-link"
+        href="../"
+      >
+        Home
+      </a>
+
+
+      <a
+        class="site-nav-link"
+        href="../impact%202.html"
+      >
+        My Work
+      </a>
+
+
+      <a
+        class="site-nav-link active"
+        href="./"
+        aria-current="page"
+      >
+        Practice the Conversation
+      </a>
+
+
+    </div>
+
+
+  </div>
+
+</nav>
+
+
+
 <main class="page">
 
 
-  <!-- ========================== -->
-  <!-- INTRO                      -->
-  <!-- ========================== -->
+  <!-- INTRO -->
 
 
   <div class="eyebrow">
@@ -1275,25 +1865,27 @@
 
 
   <p class="intro">
+
     Some conversations are harder than others.
     Respond to the customer as you would in the moment.
     As the conversation continues, the next prompt will
     shift based on how you respond.
+
   </p>
 
 
   <p class="start-note">
+
     There is no script to follow.
     The goal is to notice what you do,
     what changes, and what you might try
     differently next time.
+
   </p>
 
 
 
-  <!-- ========================== -->
-  <!-- EXPERIENCE                 -->
-  <!-- ========================== -->
+  <!-- EXPERIENCE -->
 
 
   <div class="experience">
@@ -1335,7 +1927,6 @@
           title="Hear the customer"
         >
 
-
           <svg
             viewBox="0 0 24 24"
             aria-hidden="true"
@@ -1358,7 +1949,6 @@
             />
 
           </svg>
-
 
         </button>
 
@@ -1405,7 +1995,6 @@
         were speaking directly to you.
 
         You do not need to sound perfect.
-
         Just respond naturally.
 
       </p>
@@ -1424,7 +2013,6 @@
             aria-label="Start speaking"
             title="Start speaking"
           >
-
 
             <svg
               viewBox="0 0 24 24"
@@ -1448,7 +2036,6 @@
               />
 
             </svg>
-
 
           </button>
 
@@ -1504,6 +2091,129 @@
         id="feedback"
         class="feedback"
       ></div>
+
+
+
+      <div
+        id="roundScorePanel"
+        class="round-score-panel"
+      >
+
+
+        <h3 class="round-score-heading">
+          Your scores this round
+        </h3>
+
+
+        <div class="round-score-grid">
+
+
+          <div
+            class="round-score-box"
+            data-skill="empathy"
+          >
+
+            <div class="round-score-name">
+              Empathy
+            </div>
+
+            <div
+              id="roundScore-empathy"
+              class="round-score-value"
+            >
+              —
+            </div>
+
+          </div>
+
+
+          <div
+            class="round-score-box"
+            data-skill="listening"
+          >
+
+            <div class="round-score-name">
+              Listening
+            </div>
+
+            <div
+              id="roundScore-listening"
+              class="round-score-value"
+            >
+              —
+            </div>
+
+          </div>
+
+
+          <div
+            class="round-score-box"
+            data-skill="ownership"
+          >
+
+            <div class="round-score-name">
+              Ownership
+            </div>
+
+            <div
+              id="roundScore-ownership"
+              class="round-score-value"
+            >
+              —
+            </div>
+
+          </div>
+
+
+          <div
+            class="round-score-box"
+            data-skill="problemSolving"
+          >
+
+            <div class="round-score-name">
+              Problem Solving
+            </div>
+
+            <div
+              id="roundScore-problemSolving"
+              class="round-score-value"
+            >
+              —
+            </div>
+
+          </div>
+
+
+          <div
+            class="round-score-box"
+            data-skill="communication"
+          >
+
+            <div class="round-score-name">
+              Communication
+            </div>
+
+            <div
+              id="roundScore-communication"
+              class="round-score-value"
+            >
+              —
+            </div>
+
+          </div>
+
+
+        </div>
+
+
+        <div
+          id="scoreFocusNote"
+          class="score-focus-note"
+        ></div>
+
+
+      </div>
+
 
 
       <button
@@ -1574,9 +2284,7 @@
 
 
 
-  <!-- ========================== -->
-  <!-- RUBRIC                     -->
-  <!-- ========================== -->
+  <!-- RUBRIC -->
 
 
   <section class="rubric-section">
@@ -1618,8 +2326,10 @@
         </div>
 
         <div class="scale-description">
+
           The behavior is missing, unclear,
           or works against the conversation.
+
         </div>
 
       </div>
@@ -1636,8 +2346,10 @@
         </div>
 
         <div class="scale-description">
+
           The behavior is present, but incomplete,
           generic, or inconsistent.
+
         </div>
 
       </div>
@@ -1654,8 +2366,10 @@
         </div>
 
         <div class="scale-description">
+
           The behavior is clear, appropriate,
           and supports the conversation.
+
         </div>
 
       </div>
@@ -1672,9 +2386,11 @@
         </div>
 
         <div class="scale-description">
+
           The behavior is specific, responsive
           to the customer, and helps move the
           conversation forward effectively.
+
         </div>
 
       </div>
@@ -1872,9 +2588,7 @@
 
 
 
-  <!-- ========================== -->
-  <!-- RESEARCH                   -->
-  <!-- ========================== -->
+  <!-- RESEARCH -->
 
 
   <section class="research">
@@ -1903,8 +2617,10 @@
     <div class="reference">
 
       <strong>
+
         Chernikova, O., Heitzmann, N., Stadler, M.,
         Holzberger, D., Seidel, T., & Fischer, F. (2020).
+
       </strong>
 
       Simulation-Based Learning in Higher Education:
@@ -1955,10 +2671,12 @@
     <div class="reference">
 
       <strong>
+
         Chernikova, O., Sommerhoff, D., Stadler, M.,
         Holzberger, D., Nickl, M., Seidel, T.,
         Kasneci, E., Küchemann, S., Kuhn, J.,
         Fischer, F., & Heitzmann, N. (2025).
+
       </strong>
 
       Personalization through adaptivity or adaptability?
@@ -1996,11 +2714,6 @@
 
 
 
-<!-- ============================ -->
-<!-- PDF LIBRARY                  -->
-<!-- ============================ -->
-
-
 <script
   src="https://unpkg.com/jspdf@4.2.1/dist/jspdf.umd.min.js">
 </script>
@@ -2008,6 +2721,7 @@
 
 
 <script>
+
 
 
 /* ============================== */
@@ -2027,37 +2741,40 @@ const maxRounds =
   3;
 
 
-/*
-These audio files are in the SAME
-practice-the-conversation folder
-as index.html.
-*/
-
 
 const customerAudio = {
+
 
   opening:
     "./customer-opening.m4a",
 
+
   empathy:
     "./customer-empathy.m4a",
+
 
   ownership:
     "./customer-ownership.m4a",
 
+
   problemSolving:
     "./customer-problem-solving.m4a",
+
 
   listening:
     "./customer-listening.m4a",
 
+
   communication:
     "./customer-communication.m4a",
+
 
   advanced:
     "./customer-advanced.m4a"
 
+
 };
+
 
 
 let currentAudioKey =
@@ -2068,17 +2785,24 @@ let activeCustomerAudio =
   null;
 
 
+
 const scores = {
+
 
   empathy: [],
 
+
   listening: [],
+
 
   ownership: [],
 
+
   problemSolving: [],
 
+
   communication: []
+
 
 };
 
@@ -2137,10 +2861,13 @@ function containsAny(
 ) {
 
   return phrases.some(
+
     phrase =>
+
       text.includes(
         phrase
       )
+
   );
 
 }
@@ -2153,10 +2880,13 @@ function countMatches(
 ) {
 
   return phrases.filter(
+
     phrase =>
+
       text.includes(
         phrase
       )
+
   ).length;
 
 }
@@ -2194,7 +2924,9 @@ function playCustomerAudio() {
   activeCustomerAudio
     .play()
     .catch(
+
       error => {
+
 
         console.error(
           "Audio playback error:",
@@ -2206,7 +2938,9 @@ function playCustomerAudio() {
           "The customer audio could not play. Please tap the button again."
         );
 
+
       }
+
     );
 
 }
@@ -2393,11 +3127,6 @@ function startListening() {
 /* ============================== */
 
 
-/* ------------------------------ */
-/* EMPATHY                        */
-/* ------------------------------ */
-
-
 function scoreEmpathy(
   text
 ) {
@@ -2498,7 +3227,6 @@ function scoreEmpathy(
   }
 
 
-
   if (
     (
       hasGeneral ||
@@ -2510,7 +3238,6 @@ function scoreEmpathy(
     return 2;
 
   }
-
 
 
   if (
@@ -2527,7 +3254,6 @@ function scoreEmpathy(
   }
 
 
-
   if (
     hasSituation &&
     (
@@ -2542,16 +3268,13 @@ function scoreEmpathy(
   }
 
 
-
   return 2;
 
 }
 
 
 
-/* ------------------------------ */
-/* LISTENING                      */
-/* ------------------------------ */
+/* LISTENING */
 
 
 function scoreListening(
@@ -2635,7 +3358,6 @@ function scoreListening(
   }
 
 
-
   if (
     generalCount > 0 &&
     detailCount === 0
@@ -2646,7 +3368,6 @@ function scoreListening(
   }
 
 
-
   if (
     detailCount === 1 &&
     !hasUnderlying
@@ -2655,7 +3376,6 @@ function scoreListening(
     return 3;
 
   }
-
 
 
   if (
@@ -2671,16 +3391,13 @@ function scoreListening(
   }
 
 
-
   return 2;
 
 }
 
 
 
-/* ------------------------------ */
-/* OWNERSHIP                      */
-/* ------------------------------ */
+/* OWNERSHIP */
 
 
 function scoreOwnership(
@@ -2794,7 +3511,6 @@ function scoreOwnership(
   }
 
 
-
   if (
     !hasGeneral &&
     !hasAction
@@ -2803,7 +3519,6 @@ function scoreOwnership(
     return 1;
 
   }
-
 
 
   if (
@@ -2816,7 +3531,6 @@ function scoreOwnership(
   }
 
 
-
   if (
     hasAction &&
     !hasFollowThrough
@@ -2825,7 +3539,6 @@ function scoreOwnership(
     return 3;
 
   }
-
 
 
   if (
@@ -2838,16 +3551,13 @@ function scoreOwnership(
   }
 
 
-
   return 2;
 
 }
 
 
 
-/* ------------------------------ */
-/* PROBLEM SOLVING                */
-/* ------------------------------ */
+/* PROBLEM SOLVING */
 
 
 function scoreProblemSolving(
@@ -2942,7 +3652,6 @@ function scoreProblemSolving(
   }
 
 
-
   if (
     hasVague &&
     !hasConcrete
@@ -2951,7 +3660,6 @@ function scoreProblemSolving(
     return 2;
 
   }
-
 
 
   if (
@@ -2964,7 +3672,6 @@ function scoreProblemSolving(
   }
 
 
-
   if (
     hasConcrete &&
     hasExpectation
@@ -2975,16 +3682,13 @@ function scoreProblemSolving(
   }
 
 
-
   return 2;
 
 }
 
 
 
-/* ------------------------------ */
-/* COMMUNICATION                  */
-/* ------------------------------ */
+/* COMMUNICATION */
 
 
 function scoreCommunication(
@@ -3060,7 +3764,6 @@ function scoreCommunication(
   }
 
 
-
   if (
     wordCount < 12 ||
     wordCount > 90
@@ -3069,7 +3772,6 @@ function scoreCommunication(
     return 2;
 
   }
-
 
 
   if (
@@ -3083,7 +3785,6 @@ function scoreCommunication(
   }
 
 
-
   if (
     wordCount >= 12 &&
     wordCount <= 65 &&
@@ -3093,7 +3794,6 @@ function scoreCommunication(
     return 4;
 
   }
-
 
 
   return 3;
@@ -3196,6 +3896,13 @@ function evaluateResponse() {
 
 
 
+  displayRoundScores(
+    roundScores,
+    weakest
+  );
+
+
+
   document
     .getElementById(
       "feedbackCard"
@@ -3238,6 +3945,163 @@ function evaluateResponse() {
 
 
 /* ============================== */
+/* ROUND SCORE DISPLAY            */
+/* ============================== */
+
+
+function displayRoundScores(
+  roundScores,
+  weakest
+) {
+
+
+  const skillLabels = {
+
+    empathy:
+      "Empathy",
+
+    listening:
+      "Listening",
+
+    ownership:
+      "Ownership",
+
+    problemSolving:
+      "Problem Solving",
+
+    communication:
+      "Communication"
+
+  };
+
+
+
+  Object.keys(
+    roundScores
+  ).forEach(
+
+    skill => {
+
+
+      document
+        .getElementById(
+          `roundScore-${skill}`
+        )
+        .innerText =
+          `${roundScores[skill]}/4`;
+
+
+    }
+
+  );
+
+
+
+  const boxes =
+
+    document
+      .querySelectorAll(
+        ".round-score-box"
+      );
+
+
+
+  boxes.forEach(
+
+    box => {
+
+
+      box
+        .classList
+        .remove(
+          "highlighted"
+        );
+
+
+    }
+
+  );
+
+
+
+  const focusNote =
+
+    document
+      .getElementById(
+        "scoreFocusNote"
+      );
+
+
+
+  if (
+    weakest ===
+    "advanced"
+  ) {
+
+
+    boxes.forEach(
+
+      box => {
+
+
+        box
+          .classList
+          .add(
+            "highlighted"
+          );
+
+
+      }
+
+    );
+
+
+    focusNote.innerText =
+
+      "The response met the proficient threshold across all five skills, so the next conversation will be more challenging.";
+
+
+  } else {
+
+
+    const targetBox =
+
+      document
+        .querySelector(
+          `.round-score-box[data-skill="${weakest}"]`
+        );
+
+
+
+    if (
+      targetBox
+    ) {
+
+
+      targetBox
+        .classList
+        .add(
+          "highlighted"
+        );
+
+
+    }
+
+
+
+    focusNote.innerText =
+
+      `${skillLabels[weakest]} is highlighted because it is the skill the next conversation will target.`;
+
+
+  }
+
+
+}
+
+
+
+/* ============================== */
 /* ADAPTIVE PATH                  */
 /* ============================== */
 
@@ -3260,6 +4124,7 @@ function findWeakestSkill(
 
 
   skills.forEach(
+
     skill => {
 
 
@@ -3281,6 +4146,7 @@ function findWeakestSkill(
 
 
     }
+
   );
 
 
@@ -3638,18 +4504,16 @@ function continueConversation() {
 
 
 
-  /*
-  Automatically play your recording
-  for the next customer response.
-  */
-
   setTimeout(
+
     () => {
 
       playCustomerAudio();
 
     },
+
     300
+
   );
 
 
@@ -4015,8 +4879,10 @@ function generateReport() {
       "reportCard"
     )
     .scrollIntoView({
+
       behavior:
         "smooth"
+
     });
 
 
@@ -4318,6 +5184,7 @@ function downloadReportCard() {
       finalScores
     )
     .forEach(
+
       skill => {
 
 
@@ -4359,17 +5226,22 @@ function downloadReportCard() {
 
 
         doc.text(
+
           `${
             finalScores[
               skill
             ]
           }/4`,
+
           177,
+
           y,
+
           {
             align:
               "right"
           }
+
         );
 
 
@@ -4393,6 +5265,7 @@ function downloadReportCard() {
 
 
       }
+
     );
 
 
