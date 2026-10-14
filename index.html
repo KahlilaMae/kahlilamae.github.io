@@ -252,10 +252,12 @@ nav{
   color:var(--muted);
 }
 
-/* My Work button beneath hero text */
+/* Hero buttons beneath hero text */
 .hero-actions{
   display:flex;
   justify-content:flex-start;
+  gap:10px;
+  flex-wrap:wrap;
   margin-top:24px;
 }
 
@@ -838,6 +840,7 @@ footer{
 /* ========================= */
 
 @media (prefers-reduced-motion: reduce){
+
   html{
     scroll-behavior:auto;
   }
@@ -849,6 +852,7 @@ footer{
   .btn:hover{
     transform:none;
   }
+
 }
 
 </style>
@@ -880,7 +884,11 @@ Kahlila Mae Liverpool
 
 <header class="hero">
 
-<div class="hero-photo" role="img" aria-label="Portrait of Kahlila Mae Liverpool"></div>
+<div
+  class="hero-photo"
+  role="img"
+  aria-label="Portrait of Kahlila Mae Liverpool">
+</div>
 
 <div class="wrap hero-content">
 
@@ -899,9 +907,19 @@ I’m thinking a lot about what happens after the learning experience. Did the l
 </p>
 
 <div class="hero-actions">
-<a class="btn email-btn" href="impact%202.html">
+
+<a
+  class="btn email-btn"
+  href="impact%202.html">
 My Work
 </a>
+
+<a
+  class="btn linkedin-btn"
+  href="practice-the-conversation/">
+Practice the Conversation
+</a>
+
 </div>
 
 </div>
@@ -913,11 +931,15 @@ My Work
 
 <!-- WHAT GUIDES ME -->
 
-<section class="guides-section" aria-label="What guides me">
+<section
+  class="guides-section"
+  aria-label="What guides me">
 
 <div class="wrap">
 
-<div class="label" aria-hidden="true">
+<div
+  class="label"
+  aria-hidden="true">
 What Guides Me
 </div>
 
@@ -952,7 +974,9 @@ The work has changed over the years, but what draws me to it hasn’t. I like he
 
 <article class="card">
 
-<div class="label" aria-hidden="true">
+<div
+  class="label"
+  aria-hidden="true">
 My Approach
 </div>
 
@@ -1014,11 +1038,15 @@ Whether I’m designing a learning experience, working through an idea, or partn
 
 <!-- WHAT I'M FOCUSED ON -->
 
-<section class="focus-section" aria-labelledby="focus-heading">
+<section
+  class="focus-section"
+  aria-labelledby="focus-heading">
 
 <div class="wrap">
 
-<h2 class="focus-title" id="focus-heading">
+<h2
+  class="focus-title"
+  id="focus-heading">
 What I’m Focused On
 </h2>
 
@@ -1029,17 +1057,44 @@ What I’m Focused On
 
 <article class="focus-item">
 
-<div class="focus-icon" aria-hidden="true">
+<div
+  class="focus-icon"
+  aria-hidden="true">
 
-<svg viewBox="0 0 64 64" focusable="false">
-  <circle cx="32" cy="19" r="7"></circle>
-  <path d="M20 45v-6c0-7 5-12 12-12s12 5 12 12v6"></path>
+<svg
+  viewBox="0 0 64 64"
+  focusable="false">
 
-  <circle cx="15" cy="24" r="5"></circle>
-  <path d="M5 45v-5c0-6 4-10 10-10 3 0 5 1 7 3"></path>
+  <circle
+    cx="32"
+    cy="19"
+    r="7">
+  </circle>
 
-  <circle cx="49" cy="24" r="5"></circle>
-  <path d="M59 45v-5c0-6-4-10-10-10-3 0-5 1-7 3"></path>
+  <path
+    d="M20 45v-6c0-7 5-12 12-12s12 5 12 12v6">
+  </path>
+
+  <circle
+    cx="15"
+    cy="24"
+    r="5">
+  </circle>
+
+  <path
+    d="M5 45v-5c0-6 4-10 10-10 3 0 5 1 7 3">
+  </path>
+
+  <circle
+    cx="49"
+    cy="24"
+    r="5">
+  </circle>
+
+  <path
+    d="M59 45v-5c0-6-4-10-10-10-3 0-5 1-7 3">
+  </path>
+
 </svg>
 
 </div>
@@ -1059,12 +1114,26 @@ I’m deeply interested in what helps people grow, especially through change, an
 
 <article class="focus-item">
 
-<div class="focus-icon" aria-hidden="true">
+<div
+  class="focus-icon"
+  aria-hidden="true">
 
-<svg viewBox="0 0 64 64" focusable="false">
-  <rect x="15" y="14" width="34" height="25" rx="2"></rect>
+<svg
+  viewBox="0 0 64 64"
+  focusable="false">
+
+  <rect
+    x="15"
+    y="14"
+    width="34"
+    height="25"
+    rx="2">
+  </rect>
+
   <path d="M10 45h44"></path>
+
   <path d="M15 45l3 4h28l3-4"></path>
+
 </svg>
 
 </div>
@@ -1084,18 +1153,32 @@ I’m always thinking about how technology can make learning more useful, access
 
 <article class="focus-item">
 
-<div class="focus-icon" aria-hidden="true">
+<div
+  class="focus-icon"
+  aria-hidden="true">
 
-<svg viewBox="0 0 64 64" focusable="false">
-  <path d="M22 27c0-7 4-13 10-13s10 6 10 13c0 5-3 8-6 11-2 2-2 4-2 6h-4c0-2 0-4-2-6-3-3-6-6-6-11z"></path>
+<svg
+  viewBox="0 0 64 64"
+  focusable="false">
+
+  <path
+    d="M22 27c0-7 4-13 10-13s10 6 10 13c0 5-3 8-6 11-2 2-2 4-2 6h-4c0-2 0-4-2-6-3-3-6-6-6-11z">
+  </path>
+
   <path d="M27 48h10"></path>
+
   <path d="M28 52h8"></path>
 
   <path d="M32 6v4"></path>
+
   <path d="M17 12l3 3"></path>
+
   <path d="M47 12l-3 3"></path>
+
   <path d="M12 27h4"></path>
+
   <path d="M48 27h4"></path>
+
 </svg>
 
 </div>
@@ -1110,7 +1193,6 @@ I’m exploring how AI can make learning more responsive and whether that leads 
 
 </article>
 
-
 </div>
 
 </div>
@@ -1120,13 +1202,17 @@ I’m exploring how AI can make learning more responsive and whether that leads 
 
 <!-- QUESTIONS I'M STILL ASKING -->
 
-<section class="questions-section" aria-label="Questions I’m still asking">
+<section
+  class="questions-section"
+  aria-label="Questions I’m still asking">
 
 <div class="wrap">
 
 <div class="questions-panel">
 
-<div class="label" aria-hidden="true">
+<div
+  class="label"
+  aria-hidden="true">
 Questions I’m Still Asking
 </div>
 
@@ -1173,7 +1259,9 @@ How do we know it’s actually helping?
 
 <div class="wrap human">
 
-<div class="label" aria-hidden="true">
+<div
+  class="label"
+  aria-hidden="true">
 A Few of My Favorites
 </div>
 
@@ -1200,11 +1288,15 @@ Lately, I’ve fallen down the Spider-Man rabbit hole. I blame Zendaya’s red-c
 
 <!-- CONNECT -->
 
-<section class="connect" aria-label="Contact">
+<section
+  class="connect"
+  aria-label="Contact">
 
 <div class="wrap">
 
-<div class="label" aria-hidden="true">
+<div
+  class="label"
+  aria-hidden="true">
 Let’s connect
 </div>
 
@@ -1225,7 +1317,9 @@ If something here resonates, or you just want to talk about learning, leadership
   rel="noopener"
   data-goatcounter-click="click-linkedin"
   data-goatcounter-title="LinkedIn button">
+
 LinkedIn<span class="sr-only"> (opens in a new tab)</span>
+
 </a>
 
 <a
@@ -1233,7 +1327,9 @@ LinkedIn<span class="sr-only"> (opens in a new tab)</span>
   href="mailto:kahlilamae@icloud.com?subject=Hello%20Kahlila"
   data-goatcounter-click="click-email"
   data-goatcounter-title="Email button">
+
 Email
+
 </a>
 
 </div>
@@ -1257,9 +1353,13 @@ Email
 </footer>
 
 
-<!-- VISITOR ANALYTICS (GoatCounter) -->
-<script data-goatcounter="https://kahlilamae.goatcounter.com/count"
-        async src="//gc.zgo.at/count.js"></script>
+<!-- VISITOR ANALYTICS -->
+
+<script
+  data-goatcounter="https://kahlilamae.goatcounter.com/count"
+  async
+  src="//gc.zgo.at/count.js">
+</script>
 
 
 </body>
