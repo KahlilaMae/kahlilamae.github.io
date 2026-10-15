@@ -1,0 +1,5050 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>
+    What Would You Say? | Kahlila Mae Liverpool
+  </title>
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=Playfair+Display:wght@400&display=swap"
+    rel="stylesheet"
+  >
+
+
+  <style>
+
+    :root {
+
+      --ink: #3A2438;
+      --muted: #5B4B58;
+
+      --paper: #F5EBF3;
+      --card: #FBF7FA;
+
+      --accent: #7A2E5C;
+      --accent-dark: #63244A;
+
+      --line: rgba(122,46,92,.18);
+      --soft-line: rgba(122,46,92,.14);
+
+      --soft-berry: #EEDDE8;
+
+      --radius: 26px;
+
+      --max: 1120px;
+
+    }
+
+
+    * {
+      box-sizing: border-box;
+    }
+
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+
+    body {
+
+      margin: 0;
+
+      background: var(--paper);
+
+      color: var(--ink);
+
+      font-family:
+        "DM Sans",
+        Arial,
+        sans-serif;
+
+      font-size: 1rem;
+
+      line-height: 1.625;
+
+      -webkit-font-smoothing: antialiased;
+
+    }
+
+
+    a {
+      color: inherit;
+    }
+
+
+    button {
+
+      font-family:
+        "DM Sans",
+        Arial,
+        sans-serif;
+
+    }
+
+
+
+    /* ============================= */
+    /* TOP NAVIGATION                */
+    /* ============================= */
+
+
+    .site-nav {
+
+      position: sticky;
+
+      top: 0;
+
+      z-index: 1000;
+
+      background:
+        rgba(
+          245,
+          235,
+          243,
+          .96
+        );
+
+      border-bottom:
+        1px solid
+        var(--line);
+
+      backdrop-filter:
+        blur(12px);
+
+      -webkit-backdrop-filter:
+        blur(12px);
+
+    }
+
+
+    .site-nav-inner {
+      width: calc(100% - 96px);
+      max-width: 1680px;
+      margin: 0 auto;
+      min-height: 88px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+    }
+
+
+    .site-brand {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 1.28rem;
+      font-weight: 400;
+      color: var(--ink);
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+
+    .site-nav-links {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+    }
+
+
+    .site-nav-link {
+
+      font-family:
+        "DM Sans",
+        Arial,
+        sans-serif;
+
+      font-size:
+        .95rem;
+
+      font-weight:
+        500;
+
+      color:
+        var(--muted);
+
+      text-decoration:
+        none;
+
+      padding-bottom:
+        3px;
+
+      border-bottom:
+        2px solid
+        transparent;
+
+      transition:
+        color .2s ease,
+        border-color .2s ease;
+
+    }
+
+
+    .site-nav-link:hover {
+
+      color:
+        var(--accent);
+
+    }
+
+
+    .site-nav-link.active {
+
+      color:
+        var(--accent);
+
+      border-bottom-color:
+        var(--accent);
+
+    }
+
+
+
+    /* ============================= */
+    /* PAGE                          */
+    /* ============================= */
+
+
+    .page {
+
+      width:
+        min(
+          calc(100% - 48px),
+          920px
+        );
+
+      margin:
+        0 auto;
+
+      padding:
+        72px 0 90px;
+
+    }
+
+
+
+    /* ============================= */
+    /* HERO                          */
+    /* ============================= */
+
+
+    .eyebrow,
+    .label {
+
+      font-family:
+        "DM Sans",
+        Arial,
+        sans-serif;
+
+      font-size:
+        .8125rem;
+
+      font-weight:
+        500;
+
+      line-height:
+        1.4;
+
+      letter-spacing:
+        .15em;
+
+      text-transform:
+        uppercase;
+
+      color:
+        var(--accent);
+
+    }
+
+
+    .eyebrow {
+
+      margin-bottom:
+        14px;
+
+    }
+
+
+    h1,
+    h2,
+    h3 {
+
+      font-family:
+        "Playfair Display",
+        Georgia,
+        serif;
+
+      font-weight:
+        400;
+
+    }
+
+
+    h1 {
+
+      margin:
+        0;
+
+      color:
+        var(--ink);
+
+      font-size:
+        clamp(
+          2.7rem,
+          5.5vw,
+          4.4rem
+        );
+
+      line-height:
+        1.12;
+
+      letter-spacing:
+        -.035em;
+
+    }
+
+
+    .single-line-title {
+
+      white-space:
+        nowrap;
+
+    }
+
+
+    .subtitle {
+
+      max-width:
+        760px;
+
+      margin-top:
+        18px;
+
+      font-family:
+        "Playfair Display",
+        Georgia,
+        serif;
+
+      font-size:
+        1.4rem;
+
+      line-height:
+        1.4;
+
+      color:
+        var(--ink);
+
+    }
+
+
+    .intro {
+
+      max-width:
+        720px;
+
+      margin:
+        26px 0 0;
+
+      color:
+        var(--ink);
+
+      font-size:
+        1rem;
+
+    }
+
+
+    .start-note {
+
+      max-width:
+        720px;
+
+      margin:
+        16px 0 0;
+
+      color:
+        var(--muted);
+
+      font-size:
+        .95rem;
+
+    }
+
+
+
+    /* ============================= */
+    /* EXPERIENCE                    */
+    /* ============================= */
+
+
+    .experience {
+
+      margin-top:
+        58px;
+
+    }
+
+
+    .card {
+
+      margin-bottom:
+        28px;
+
+      padding:
+        40px;
+
+      background:
+        var(--card);
+
+      border:
+        1px solid
+        var(--line);
+
+      border-radius:
+        var(--radius);
+
+    }
+
+
+    .customer-card {
+
+      margin-bottom:
+        28px;
+
+      padding:
+        46px;
+
+      background:
+        var(--accent);
+
+      color:
+        var(--card);
+
+      border-radius:
+        var(--radius);
+
+    }
+
+
+    .label {
+
+      margin-bottom:
+        14px;
+
+    }
+
+
+    .customer-card
+    .label {
+
+      color:
+        rgba(
+          251,
+          247,
+          250,
+          .78
+        );
+
+    }
+
+
+    .customer-text {
+
+      max-width:
+        780px;
+
+      font-family:
+        "Playfair Display",
+        Georgia,
+        serif;
+
+      font-size:
+        clamp(
+          1.45rem,
+          3vw,
+          1.8rem
+        );
+
+      line-height:
+        1.45;
+
+    }
+
+
+    .round {
+
+      margin-bottom:
+        8px;
+
+      color:
+        var(--muted);
+
+      font-size:
+        .82rem;
+
+    }
+
+
+    .prompt {
+
+      margin:
+        0 0 10px;
+
+      color:
+        var(--ink);
+
+      font-size:
+        1.75rem;
+
+      line-height:
+        1.3;
+
+    }
+
+
+    .supporting-text {
+
+      max-width:
+        660px;
+
+      margin:
+        0 0 26px;
+
+      color:
+        var(--muted);
+
+    }
+
+
+
+    /* ============================= */
+    /* AUDIO + BUTTONS               */
+    /* ============================= */
+
+
+    .actions {
+
+      display:
+        flex;
+
+      align-items:
+        center;
+
+      flex-wrap:
+        wrap;
+
+      gap:
+        18px;
+
+    }
+
+
+    .audio-action {
+
+      display:
+        inline-flex;
+
+      align-items:
+        center;
+
+      gap:
+        12px;
+
+      color:
+        var(--ink);
+
+      font-size:
+        .92rem;
+
+      font-weight:
+        500;
+
+    }
+
+
+    .customer-card
+    .audio-action {
+
+      margin-top:
+        26px;
+
+      color:
+        var(--card);
+
+    }
+
+
+    .mic-button {
+
+      width:
+        58px;
+
+      height:
+        58px;
+
+      padding:
+        0;
+
+      border-radius:
+        50%;
+
+      display:
+        inline-flex;
+
+      align-items:
+        center;
+
+      justify-content:
+        center;
+
+      flex-shrink:
+        0;
+
+      cursor:
+        pointer;
+
+      transition:
+        transform .2s ease,
+        opacity .2s ease,
+        background .2s ease;
+
+    }
+
+
+    .mic-button:hover {
+
+      transform:
+        translateY(-2px);
+
+    }
+
+
+    .mic-button:disabled {
+
+      opacity:
+        .45;
+
+      cursor:
+        default;
+
+      transform:
+        none;
+
+    }
+
+
+    .mic-button svg {
+
+      width:
+        24px;
+
+      height:
+        24px;
+
+      fill:
+        none;
+
+      stroke:
+        currentColor;
+
+      stroke-width:
+        1.8;
+
+      stroke-linecap:
+        round;
+
+      stroke-linejoin:
+        round;
+
+    }
+
+
+    .mic-button-light {
+
+      background:
+        var(--card);
+
+      color:
+        var(--accent);
+
+      border:
+        1px solid
+        rgba(
+          255,
+          255,
+          255,
+          .4
+        );
+
+    }
+
+
+    .mic-button-berry {
+
+      background:
+        var(--accent);
+
+      color:
+        var(--card);
+
+      border:
+        1px solid
+        var(--line);
+
+    }
+
+
+    .pill-button {
+
+      min-height:
+        40px;
+
+      padding:
+        8px 14px;
+
+      border-radius:
+        999px;
+
+      font-size:
+        .88rem;
+
+      font-weight:
+        500;
+
+      cursor:
+        pointer;
+
+      transition:
+        transform .2s ease,
+        opacity .2s ease;
+
+    }
+
+
+    .pill-button:hover {
+
+      transform:
+        translateY(-2px);
+
+      opacity:
+        .85;
+
+    }
+
+
+    .pill-button:disabled {
+
+      opacity:
+        .42;
+
+      cursor:
+        default;
+
+      transform:
+        none;
+
+    }
+
+
+    .button-light {
+
+      background:
+        var(--card);
+
+      color:
+        var(--ink);
+
+      border:
+        1px solid
+        rgba(
+          122,
+          46,
+          92,
+          .25
+        );
+
+    }
+
+
+    .button-berry {
+
+      background:
+        var(--accent);
+
+      color:
+        var(--card);
+
+      border:
+        1px solid
+        var(--line);
+
+    }
+
+
+
+    /* ============================= */
+    /* TRANSCRIPT                    */
+    /* ============================= */
+
+
+    #status {
+
+      margin-top:
+        18px;
+
+      color:
+        var(--accent);
+
+      font-size:
+        .88rem;
+
+      font-weight:
+        500;
+
+    }
+
+
+    #transcript {
+
+      min-height:
+        100px;
+
+      margin-top:
+        22px;
+
+      padding:
+        22px;
+
+      background:
+        rgba(
+          245,
+          235,
+          243,
+          .55
+        );
+
+      color:
+        var(--ink);
+
+      border:
+        1px solid
+        var(--line);
+
+      border-radius:
+        18px;
+
+      font-size:
+        1rem;
+
+    }
+
+
+
+    /* ============================= */
+    /* FEEDBACK                      */
+    /* ============================= */
+
+
+    .feedback-card {
+
+      background:
+        var(--accent);
+
+      color:
+        var(--card);
+
+      border:
+        none;
+
+    }
+
+
+    .feedback-card
+    .label {
+
+      color:
+        rgba(
+          251,
+          247,
+          250,
+          .76
+        );
+
+    }
+
+
+    .feedback {
+
+      max-width:
+        720px;
+
+      font-size:
+        1.02rem;
+
+    }
+
+
+    .feedback-section {
+
+      margin-bottom:
+        28px;
+
+    }
+
+
+    .feedback strong {
+
+      display:
+        block;
+
+      margin-bottom:
+        6px;
+
+      color:
+        var(--card);
+
+      font-family:
+        "Playfair Display",
+        Georgia,
+        serif;
+
+      font-size:
+        1.5rem;
+
+      font-weight:
+        400;
+
+    }
+
+
+    .feedback-card
+    .button-light {
+
+      margin-top:
+        6px;
+
+      color:
+        var(--accent);
+
+      background:
+        var(--card);
+
+      border-color:
+        var(--card);
+
+    }
+
+
+
+    /* ============================= */
+    /* ROUND SCORE BOXES             */
+    /* ============================= */
+
+
+    .round-score-panel {
+
+      margin:
+        32px 0 30px;
+
+      padding-top:
+        28px;
+
+      border-top:
+        1px solid
+        rgba(
+          251,
+          247,
+          250,
+          .28
+        );
+
+    }
+
+
+    .round-score-heading {
+
+      margin:
+        0 0 16px;
+
+      color:
+        var(--card);
+
+      font-family:
+        "Playfair Display",
+        Georgia,
+        serif;
+
+      font-size:
+        1.35rem;
+
+      font-weight:
+        400;
+
+    }
+
+
+    .round-score-grid {
+
+      display:
+        grid;
+
+      grid-template-columns:
+        repeat(5,1fr);
+
+      gap:
+        10px;
+
+    }
+
+
+    .round-score-box {
+
+      min-height:
+        92px;
+
+      padding:
+        14px 12px;
+
+      background:
+        rgba(
+          251,
+          247,
+          250,
+          .10
+        );
+
+      border:
+        1px solid
+        rgba(
+          251,
+          247,
+          250,
+          .28
+        );
+
+      border-radius:
+        16px;
+
+      display:
+        flex;
+
+      flex-direction:
+        column;
+
+      justify-content:
+        space-between;
+
+      transition:
+        background .25s ease,
+        border-color .25s ease,
+        transform .25s ease;
+
+    }
+
+
+    .round-score-box.highlighted {
+
+      background:
+        var(--card);
+
+      border:
+        2px solid
+        var(--card);
+
+      transform:
+        translateY(-3px);
+
+    }
+
+
+    .round-score-name {
+
+      color:
+        rgba(
+          251,
+          247,
+          250,
+          .82
+        );
+
+      font-size:
+        .78rem;
+
+      line-height:
+        1.3;
+
+    }
+
+
+    .round-score-box.highlighted
+    .round-score-name {
+
+      color:
+        var(--accent);
+
+      font-weight:
+        500;
+
+    }
+
+
+    .round-score-value {
+
+      margin-top:
+        8px;
+
+      color:
+        var(--card);
+
+      font-family:
+        "Playfair Display",
+        Georgia,
+        serif;
+
+      font-size:
+        1.55rem;
+
+      line-height:
+        1;
+
+    }
+
+
+    .round-score-box.highlighted
+    .round-score-value {
+
+      color:
+        var(--accent);
+
+    }
+
+
+    .score-focus-note {
+
+      margin-top:
+        14px;
+
+      color:
+        rgba(
+          251,
+          247,
+          250,
+          .82
+        );
+
+      font-size:
+        .85rem;
+
+    }
+
+
+
+    /* ============================= */
+    /* REPORT                        */
+    /* ============================= */
+
+
+    .report-title {
+
+      margin:
+        0 0 8px;
+
+      color:
+        var(--ink);
+
+      font-size:
+        clamp(
+          2rem,
+          4vw,
+          2.7rem
+        );
+
+      line-height:
+        1.2;
+
+    }
+
+
+    .overall {
+
+      margin-bottom:
+        34px;
+
+      color:
+        var(--accent);
+
+      font-size:
+        1.05rem;
+
+      font-weight:
+        500;
+
+    }
+
+
+    .score-row {
+
+      display:
+        grid;
+
+      grid-template-columns:
+        1fr 80px;
+
+      gap:
+        24px;
+
+      align-items:
+        center;
+
+      padding:
+        17px 0;
+
+      border-bottom:
+        1px solid
+        var(--line);
+
+    }
+
+
+    .score {
+
+      color:
+        var(--accent);
+
+      font-weight:
+        500;
+
+      text-align:
+        right;
+
+    }
+
+
+    .reflection-box {
+
+      margin-top:
+        36px;
+
+      padding:
+        30px;
+
+      background:
+        var(--soft-berry);
+
+      border-radius:
+        22px;
+
+    }
+
+
+    .reflection-box h3 {
+
+      margin:
+        0 0 6px;
+
+      color:
+        var(--ink);
+
+      font-size:
+        1.45rem;
+
+    }
+
+
+    .reflection-box p {
+
+      margin:
+        4px 0 24px;
+
+    }
+
+
+    .learner-reflection {
+      margin-top: 28px;
+      padding: 24px;
+      background: rgba(251,247,250,.72);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+    }
+
+    .learner-reflection-title {
+      margin: 0 0 8px;
+      color: var(--ink);
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 1.35rem;
+      font-weight: 400;
+    }
+
+    .learner-reflection-prompt {
+      margin: 0 0 16px;
+      color: var(--muted);
+      font-size: .92rem;
+    }
+
+    #reflectionText {
+      min-height: 96px;
+      padding: 18px;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      outline: none;
+      color: var(--ink);
+    }
+
+    #reflectionText:focus {
+      border-color: rgba(122,46,92,.45);
+      box-shadow: 0 0 0 3px rgba(122,46,92,.08);
+    }
+
+    #reflectionText:empty::before {
+      content: attr(data-placeholder);
+      color: rgba(91,75,88,.60);
+      pointer-events: none;
+    }
+
+    .reflection-actions {
+      margin-top: 14px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .reflection-actions .mic-button {
+      width: 46px;
+      height: 46px;
+    }
+
+    #reflectionStatus {
+      color: var(--accent);
+      font-size: .84rem;
+      font-weight: 500;
+    }
+
+
+    .download-area {
+
+      margin-top:
+        28px;
+
+    }
+
+
+    .hidden {
+
+      display:
+        none;
+
+    }
+
+
+
+    /* ============================= */
+    /* RUBRIC                        */
+    /* ============================= */
+
+
+    .rubric-section {
+
+      margin-top:
+        72px;
+
+    }
+
+
+    .section-title {
+
+      margin:
+        0 0 14px;
+
+      color:
+        var(--ink);
+
+      font-size:
+        clamp(
+          2rem,
+          4vw,
+          2.7rem
+        );
+
+      line-height:
+        1.2;
+
+    }
+
+
+    .section-copy {
+
+      max-width:
+        720px;
+
+      color:
+        var(--muted);
+
+      margin-bottom:
+        28px;
+
+    }
+
+
+    .scale-grid {
+
+      display:
+        grid;
+
+      grid-template-columns:
+        repeat(4,1fr);
+
+      gap:
+        14px;
+
+      margin-bottom:
+        30px;
+
+    }
+
+
+    .scale-item {
+
+      padding:
+        20px;
+
+      background:
+        var(--card);
+
+      border:
+        1px solid
+        var(--line);
+
+      border-radius:
+        18px;
+
+    }
+
+
+    .scale-number {
+
+      margin-bottom:
+        8px;
+
+      color:
+        var(--accent);
+
+      font-family:
+        "Playfair Display",
+        Georgia,
+        serif;
+
+      font-size:
+        1.7rem;
+
+      line-height:
+        1;
+
+    }
+
+
+    .scale-name {
+
+      margin-bottom:
+        6px;
+
+      font-weight:
+        500;
+
+    }
+
+
+    .scale-description {
+
+      color:
+        var(--muted);
+
+      font-size:
+        .88rem;
+
+      line-height:
+        1.5;
+
+    }
+
+
+    details {
+
+      margin-bottom:
+        12px;
+
+      background:
+        var(--card);
+
+      border:
+        1px solid
+        var(--line);
+
+      border-radius:
+        18px;
+
+      overflow:
+        hidden;
+
+    }
+
+
+    summary {
+
+      padding:
+        18px 22px;
+
+      cursor:
+        pointer;
+
+      color:
+        var(--ink);
+
+      font-weight:
+        500;
+
+    }
+
+
+    .rubric-detail {
+
+      padding:
+        0 22px 22px;
+
+      color:
+        var(--muted);
+
+    }
+
+
+    .rubric-row {
+
+      padding:
+        10px 0;
+
+      border-top:
+        1px solid
+        var(--line);
+
+    }
+
+
+    .rubric-row strong {
+
+      color:
+        var(--accent);
+
+    }
+
+
+    .prototype-note {
+
+      margin-top:
+        20px;
+
+      padding:
+        20px 22px;
+
+      color:
+        var(--muted);
+
+      background:
+        rgba(
+          251,
+          247,
+          250,
+          .65
+        );
+
+      border-left:
+        3px solid
+        var(--accent);
+
+      border-radius:
+        0 14px 14px 0;
+
+      font-size:
+        .9rem;
+
+    }
+
+
+
+    /* ============================= */
+    /* RESEARCH                      */
+    /* ============================= */
+
+
+    .research {
+
+      margin-top:
+        80px;
+
+      padding-top:
+        34px;
+
+      border-top:
+        1px solid
+        var(--line);
+
+    }
+
+
+    .research h2 {
+
+      margin:
+        0 0 10px;
+
+      color:
+        var(--ink);
+
+      font-size:
+        1.65rem;
+
+    }
+
+
+    .research-intro {
+
+      max-width:
+        720px;
+
+      margin-bottom:
+        24px;
+
+      color:
+        var(--muted);
+
+      font-size:
+        .92rem;
+
+    }
+
+
+    .reference {
+
+      margin-bottom:
+        22px;
+
+      color:
+        var(--muted);
+
+      font-size:
+        .88rem;
+
+      line-height:
+        1.6;
+
+    }
+
+
+    .reference strong {
+
+      color:
+        var(--ink);
+
+      font-weight:
+        500;
+
+    }
+
+
+    footer {
+
+      margin-top:
+        56px;
+
+      padding-top:
+        24px;
+
+      border-top:
+        1px solid
+        var(--line);
+
+      color:
+        var(--muted);
+
+      font-size:
+        .8rem;
+
+      text-align:
+        right;
+
+    }
+
+
+
+    /* ============================= */
+    /* MOBILE                        */
+    /* ============================= */
+
+
+    @media (max-width: 760px) {
+
+
+      .site-nav-inner {
+
+        width:
+          min(
+            calc(100% - 32px),
+            var(--max)
+          );
+
+        min-height:
+          64px;
+
+      }
+
+
+      .site-brand {
+
+        font-size:
+          1rem;
+
+      }
+
+
+      .site-nav-links {
+
+        gap:
+          14px;
+
+      }
+
+
+      .site-nav-link {
+
+        font-size:
+          .82rem;
+
+      }
+
+
+      .page {
+
+        width:
+          min(
+            calc(100% - 32px),
+            920px
+          );
+
+        padding-top:
+          48px;
+
+      }
+
+
+      .single-line-title {
+
+        white-space:
+          normal;
+
+        font-size:
+          2.35rem;
+
+      }
+
+
+      .card,
+      .customer-card {
+
+        padding:
+          28px;
+
+      }
+
+
+      .actions {
+
+        align-items:
+          flex-start;
+
+        flex-direction:
+          column;
+
+      }
+
+
+      .scale-grid {
+
+        grid-template-columns:
+          1fr;
+
+      }
+
+
+      .round-score-grid {
+
+        grid-template-columns:
+          repeat(2,1fr);
+
+      }
+
+    }
+
+
+
+    /* ============================= */
+    /* CONVERSATION SELECTOR         */
+    /* ============================= */
+
+    .conversation-selector {
+      margin-top: 48px;
+    }
+
+    .conversation-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .conversation-choice {
+      width: 100%;
+      min-height: 300px;
+      padding: 30px 30px 28px;
+      border: 0;
+      border-radius: 26px;
+      background: linear-gradient(145deg, #8A315F 0%, #67234A 100%);
+      color: #FBF7FA;
+      text-align: left;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      box-shadow: 0 10px 28px rgba(58, 36, 56, .10);
+      transition: transform .22s ease, box-shadow .22s ease, filter .22s ease;
+    }
+
+    .conversation-choice:nth-child(2) {
+      background: linear-gradient(145deg, #9A3B70 0%, #742750 100%);
+    }
+
+    .conversation-choice:nth-child(3) {
+      background: linear-gradient(145deg, #7A2E5C 0%, #55203F 100%);
+    }
+
+    .conversation-choice:hover,
+    .conversation-choice:focus-visible {
+      transform: translateY(-5px);
+      box-shadow: 0 18px 38px rgba(58, 36, 56, .18);
+      filter: brightness(1.035);
+      outline: none;
+    }
+
+    .choice-icon {
+      width: 58px;
+      height: 58px;
+      margin-bottom: 26px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255,255,255,.12);
+      color: #FBF7FA;
+      border: 1px solid rgba(255,255,255,.16);
+    }
+
+    .choice-icon svg {
+      width: 26px;
+      height: 26px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.7;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .choice-title {
+      margin: 0;
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: clamp(1.65rem, 2.5vw, 2.05rem);
+      line-height: 1.14;
+      font-weight: 400;
+      color: #FBF7FA;
+    }
+
+    .choice-enter {
+      margin-top: auto;
+      padding-top: 48px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-size: .9rem;
+      font-weight: 500;
+      color: #FBF7FA;
+    }
+
+    .choice-arrow {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      background: #FBF7FA;
+      color: #7A2E5C;
+      font-size: 1.45rem;
+      line-height: 1;
+      transition: transform .22s ease;
+    }
+
+    .conversation-choice:hover .choice-arrow,
+    .conversation-choice:focus-visible .choice-arrow {
+      transform: translateX(3px);
+    }
+
+    .experience.is-hidden {
+      display: none;
+    }
+
+    @media (max-width: 820px) {
+      .conversation-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .conversation-choice {
+        min-height: 230px;
+      }
+    }
+
+
+
+    /* ============================= */
+    /* SCENARIO CASE STUDY + NOTES   */
+    /* ============================= */
+
+    .scenario-intro {
+      margin-bottom: 34px;
+    }
+
+    .scenario-purpose {
+      max-width: 760px;
+      margin: 18px 0 0;
+      padding: 18px 20px;
+      background: rgba(238, 221, 232, .72);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 16px 16px 0;
+      color: var(--ink);
+      font-size: .98rem;
+    }
+
+    .conversation-practice-card {
+      padding: 38px;
+      background: linear-gradient(145deg, #87305f 0%, #70254f 100%);
+      box-shadow: 0 14px 34px rgba(58,36,56,.12);
+    }
+
+    .customer-message-row {
+      display: grid;
+      grid-template-columns: 92px 1fr;
+      gap: 22px;
+      align-items: start;
+      margin-top: 20px;
+    }
+
+    .customer-avatar-wrap {
+      text-align: center;
+    }
+
+    .customer-avatar {
+      width: 78px;
+      height: 78px;
+      margin: 0 auto 8px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(251,247,250,.14);
+      border: 1px solid rgba(251,247,250,.28);
+      color: var(--card);
+    }
+
+    .customer-avatar svg {
+      width: 34px;
+      height: 34px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.7;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .customer-name {
+      color: rgba(251,247,250,.92);
+      font-size: .82rem;
+    }
+
+    .customer-bubble {
+      position: relative;
+      padding: 24px 28px;
+      background: var(--card);
+      color: var(--ink);
+      border-radius: 22px;
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: clamp(1.25rem, 2.4vw, 1.65rem);
+      line-height: 1.45;
+    }
+
+    .customer-bubble::before {
+      content: "";
+      position: absolute;
+      left: -14px;
+      top: 34px;
+      width: 0;
+      height: 0;
+      border-top: 12px solid transparent;
+      border-bottom: 12px solid transparent;
+      border-right: 16px solid var(--card);
+    }
+
+    .customer-audio-inline {
+      margin-top: 14px;
+    }
+
+    .response-panel {
+      margin-top: 26px;
+      padding: 24px;
+      background: var(--card);
+      color: var(--ink);
+      border-radius: 22px;
+    }
+
+    .response-panel .round {
+      margin-bottom: 6px;
+    }
+
+    .response-panel .label {
+      margin-bottom: 8px;
+    }
+
+    .response-panel .prompt {
+      margin-bottom: 8px;
+    }
+
+    .response-panel .supporting-text {
+      margin-bottom: 16px;
+    }
+
+    #transcript[contenteditable="true"] {
+      min-height: 120px;
+      margin-top: 0;
+      padding: 18px;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      outline: none;
+      color: var(--ink);
+      cursor: text;
+    }
+
+    #transcript[contenteditable="true"]:focus {
+      border-color: rgba(122,46,92,.45);
+      box-shadow: 0 0 0 3px rgba(122,46,92,.08);
+    }
+
+    #transcript[contenteditable="true"]:empty::before {
+      content: attr(data-placeholder);
+      color: rgba(91,75,88,.60);
+      pointer-events: none;
+    }
+
+    .response-actions {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+      margin-top: 16px;
+      flex-wrap: wrap;
+    }
+
+    .response-actions .audio-action {
+      color: var(--ink);
+    }
+
+    .response-actions .mic-button {
+      width: 48px;
+      height: 48px;
+    }
+
+    .design-section,
+    .measurement-section {
+      margin-top: 64px;
+      padding: 32px;
+      background: rgba(251,247,250,.78);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+    }
+
+    .design-grid,
+    .measurement-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 22px;
+    }
+
+    .design-item,
+    .measurement-item {
+      padding: 20px;
+      background: var(--card);
+      border: 1px solid var(--soft-line);
+      border-radius: 18px;
+    }
+
+    .design-item strong,
+    .measurement-item strong {
+      display: block;
+      margin-bottom: 5px;
+      color: var(--ink);
+      font-weight: 500;
+    }
+
+    .design-item span,
+    .measurement-item span {
+      color: var(--muted);
+      font-size: .9rem;
+      line-height: 1.5;
+    }
+
+    .annotated {
+      position: relative;
+    }
+
+    @media (min-width: 1180px) {
+      body.design-revealed .annotated::before {
+        content: "";
+        position: absolute;
+        left: calc(100% + 16px);
+        top: 12px;
+        bottom: 12px;
+        width: 12px;
+        border-right: 1px solid rgba(122,46,92,.72);
+        border-top: 1px solid rgba(122,46,92,.72);
+        border-bottom: 1px solid rgba(122,46,92,.72);
+        pointer-events: none;
+      }
+
+      body.design-revealed .annotated::after {
+        content: attr(data-annotation);
+        position: absolute;
+        left: calc(100% + 44px);
+        top: 50%;
+        transform: translateY(-50%);
+        width: 120px;
+        color: var(--accent);
+        font-size: .74rem;
+        font-weight: 500;
+        letter-spacing: .10em;
+        text-transform: uppercase;
+        line-height: 1.35;
+        pointer-events: none;
+      }
+    }
+
+    /* Tablet / smaller desktop: keep the learning-design annotations visible
+       without pushing content outside the viewport. */
+    @media (max-width: 1179px) {
+      body.design-revealed .annotated {
+        padding-top: 52px;
+      }
+
+      body.design-revealed .annotated::before {
+        content: "";
+        position: absolute;
+        top: 22px;
+        right: 22px;
+        width: 28px;
+        height: 12px;
+        border-top: 1px solid rgba(122,46,92,.72);
+        border-right: 1px solid rgba(122,46,92,.72);
+        pointer-events: none;
+      }
+
+      body.design-revealed .annotated::after {
+        content: attr(data-annotation);
+        position: absolute;
+        top: 14px;
+        right: 58px;
+        color: var(--accent);
+        font-size: .72rem;
+        font-weight: 500;
+        letter-spacing: .10em;
+        text-transform: uppercase;
+        line-height: 1.35;
+        pointer-events: none;
+      }
+    }
+
+    @media (max-width: 760px) {
+      /* Phone: use a quiet, in-flow learning-design label instead of a bracket callout. */
+      body.design-revealed .annotated {
+        padding-top: 38px;
+      }
+
+      body.design-revealed .annotated::before {
+        content: "";
+        position: absolute;
+        top: 18px;
+        left: 0;
+        width: 22px;
+        height: 1px;
+        background: rgba(122,46,92,.72);
+        border: 0;
+        pointer-events: none;
+      }
+
+      body.design-revealed .annotated::after {
+        content: attr(data-annotation);
+        position: absolute;
+        top: 8px;
+        left: 30px;
+        right: auto;
+        transform: none;
+        width: auto;
+        color: var(--accent);
+        font-size: .66rem;
+        font-weight: 500;
+        letter-spacing: .11em;
+        text-transform: uppercase;
+        line-height: 1.2;
+        white-space: nowrap;
+        pointer-events: none;
+      }
+
+      .customer-message-row {
+        grid-template-columns: 1fr;
+      }
+
+      .customer-avatar-wrap {
+        display: none;
+      }
+
+      .customer-bubble::before {
+        display: none;
+      }
+
+      .conversation-practice-card {
+        padding: 28px;
+      }
+
+      .response-panel {
+        padding: 20px;
+      }
+
+      .design-grid,
+      .measurement-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+
+    /* ============================= */
+    /* REFINED FEEDBACK + REPORT     */
+    /* ============================= */
+
+    .feedback-card,
+    .report-card {
+      background: #FBF7FA;
+      color: var(--ink);
+      border: 1px solid rgba(122,46,92,.12);
+      box-shadow: 0 10px 30px rgba(58,36,56,.035);
+    }
+
+    .result-summary-grid {
+      display: grid;
+      grid-template-columns: minmax(0, .95fr) minmax(360px, 1.05fr);
+      gap: 54px;
+      align-items: center;
+    }
+
+    .result-summary-copy {
+      display: grid;
+      grid-template-columns: 72px 1fr;
+      gap: 22px;
+      align-items: start;
+    }
+
+    .result-icon {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(238,221,232,.66);
+      color: var(--accent);
+    }
+
+    .result-icon svg {
+      width: 34px;
+      height: 34px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.65;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .result-title {
+      margin: 0 0 14px;
+      color: var(--accent-dark);
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: clamp(2rem, 4vw, 2.65rem);
+      line-height: 1.08;
+      font-weight: 400;
+    }
+
+    .result-subtitle {
+      max-width: 430px;
+      margin: 0;
+      color: var(--muted);
+      font-size: .98rem;
+      line-height: 1.55;
+    }
+
+    .skill-bars {
+      display: grid;
+      gap: 16px;
+    }
+
+    .skill-bar-row {
+      display: grid;
+      grid-template-columns: 142px minmax(150px, 1fr) 42px;
+      gap: 14px;
+      align-items: center;
+    }
+
+    .skill-bar-label {
+      color: var(--ink);
+      font-size: .94rem;
+    }
+
+    .skill-bar-track {
+      height: 14px;
+      overflow: hidden;
+      border-radius: 999px;
+      background: rgba(91,75,88,.10);
+    }
+
+    .skill-bar-fill {
+      height: 100%;
+      border-radius: inherit;
+      background: #8E4B75;
+      transition: width .45s ease;
+    }
+
+    .skill-bar-score {
+      color: var(--ink);
+      font-size: .94rem;
+      text-align: right;
+      white-space: nowrap;
+    }
+
+    .narrative-feedback {
+      max-width: none;
+      margin-top: 34px;
+      padding-top: 28px;
+      border-top: 1px solid var(--line);
+      display: grid;
+      grid-template-columns: repeat(2,minmax(0,1fr));
+      gap: 26px;
+    }
+
+    .feedback-section {
+      margin: 0;
+      padding: 0;
+      color: var(--muted);
+    }
+
+    .feedback strong {
+      color: var(--ink);
+      font-size: 1.25rem;
+    }
+
+    .report-overall {
+      margin: 26px 0 0;
+      font-size: .95rem;
+      color: var(--accent);
+    }
+
+    .report-card .reflection-box {
+      margin-top: 30px;
+    }
+
+    .feedback-card .button-berry {
+      margin-top: 28px;
+    }
+
+    @media (max-width: 820px) {
+      .result-summary-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+
+      .result-summary-copy {
+        grid-template-columns: 58px 1fr;
+        gap: 16px;
+      }
+
+      .result-icon {
+        width: 58px;
+        height: 58px;
+      }
+
+      .result-icon svg {
+        width: 28px;
+        height: 28px;
+      }
+
+      .skill-bar-row {
+        grid-template-columns: 118px 1fr 40px;
+        gap: 10px;
+      }
+
+      .narrative-feedback {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .skill-bar-row {
+        grid-template-columns: 1fr 40px;
+      }
+
+      .skill-bar-label {
+        grid-column: 1 / -1;
+      }
+
+      .skill-bar-track {
+        grid-column: 1;
+      }
+
+      .skill-bar-score {
+        grid-column: 2;
+      }
+    }
+
+    /* ============================= */
+    /* REPORT CARD NAVIGATION        */
+    /* ============================= */
+
+    .report-card {
+      position: relative;
+    }
+
+    .report-card-nav {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 28px;
+      margin: 0 0 34px;
+      padding-bottom: 18px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .report-card-nav a {
+      position: relative;
+      color: var(--muted);
+      text-decoration: none;
+      font-family: "DM Sans", Arial, sans-serif;
+      font-size: .95rem;
+      font-weight: 500;
+      padding-bottom: 5px;
+    }
+
+    .report-card-nav a:hover,
+    .report-card-nav a:focus-visible {
+      color: var(--accent);
+      outline: none;
+    }
+
+    .report-card-nav a:last-child {
+      color: var(--accent);
+    }
+
+    .report-card-nav a:last-child::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -1px;
+      height: 2px;
+      background: var(--accent);
+    }
+
+    @media (max-width: 760px) {
+      .site-nav-inner {
+        width: calc(100% - 32px);
+        min-height: 68px;
+      }
+
+      .site-nav-links {
+        gap: 14px;
+      }
+
+      .report-card-nav {
+        justify-content: flex-start;
+        gap: 18px;
+        overflow-x: auto;
+        padding-bottom: 14px;
+      }
+
+      .report-card-nav a {
+        font-size: .82rem;
+        white-space: nowrap;
+      }
+    }
+
+    /* Hide the name only on the completed report-card view */
+    body.report-visible .site-brand {
+      display: none;
+    }
+
+    body.report-visible .site-nav-inner {
+      justify-content: flex-end;
+    }
+
+    /* ============================= */
+    /* SIMPLIFIED REPORT CARD        */
+    /* ============================= */
+
+    .report-card-heading-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 28px;
+      margin-bottom: 28px;
+    }
+
+    .report-card-actions {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .report-section {
+      margin-top: 20px;
+      padding: 26px 28px;
+      background: rgba(251,247,250,.84);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+    }
+
+    .report-section-title {
+      margin: 0 0 18px;
+      color: var(--ink);
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 1.45rem;
+      font-weight: 400;
+    }
+
+    .report-overall-section {
+      min-height: 180px;
+    }
+
+    .overall-score-display {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 2px;
+      color: var(--ink);
+    }
+
+    .overall-score-main {
+      color: var(--accent-dark);
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: clamp(3.4rem, 7vw, 5.2rem);
+      line-height: .95;
+    }
+
+    .overall-score-main span {
+      font-size: .42em;
+      color: var(--muted);
+    }
+
+    .overall-score-level {
+      margin-top: 4px;
+      color: var(--accent);
+      font-size: .9rem;
+      font-weight: 500;
+    }
+
+    .report-skill-bars {
+      max-width: 760px;
+    }
+
+    .coaching-report-section {
+      display: grid;
+      grid-template-columns: 56px 1fr;
+      gap: 18px;
+      align-items: start;
+    }
+
+    .coaching-report-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(238,221,232,.72);
+      color: var(--accent);
+      font-size: 1.5rem;
+    }
+
+    .report-coaching-copy {
+      color: var(--muted);
+      font-size: .98rem;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 760px) {
+      .report-card-heading-row {
+        flex-direction: column;
+      }
+
+      .report-card-actions {
+        justify-content: flex-start;
+      }
+
+      .coaching-report-section {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* ============================= */
+    /* APPROVED REPORT CARD MOCKUP   */
+    /* ============================= */
+
+    .report-card {
+      background: transparent;
+      border: 0;
+      box-shadow: none;
+      padding: 0;
+    }
+
+    .report-card-heading-row {
+      margin-bottom: 30px;
+    }
+
+    .report-card-heading-row .result-title {
+      margin-bottom: 8px;
+      font-size: clamp(2.7rem, 5vw, 4rem);
+      color: var(--ink);
+    }
+
+    .report-card-heading-row .result-subtitle {
+      max-width: 680px;
+      font-size: 1rem;
+    }
+
+    .report-card-actions {
+      padding-top: 8px;
+    }
+
+    .report-card-actions .pill-button {
+      min-height: 44px;
+      padding: 10px 18px;
+      font-size: .9rem;
+    }
+
+    .report-section {
+      margin-top: 18px;
+      padding: 28px 30px;
+      background: rgba(251,247,250,.86);
+      border: 1px solid rgba(122,46,92,.12);
+      border-radius: 22px;
+      box-shadow: 0 8px 24px rgba(58,36,56,.025);
+    }
+
+    .report-section-title {
+      margin: 0 0 18px;
+      font-size: 1.55rem;
+      color: var(--ink);
+    }
+
+    .report-overall-section {
+      min-height: 240px;
+    }
+
+    .overall-score-display {
+      display: block;
+    }
+
+    .overall-score-ring {
+      --score: 0;
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background:
+        conic-gradient(
+          var(--accent) calc(var(--score) * 1%),
+          rgba(122,46,92,.13) 0
+        );
+      position: relative;
+    }
+
+    .overall-score-ring::before {
+      content: "";
+      position: absolute;
+      width: 138px;
+      height: 138px;
+      border-radius: 50%;
+      background: #FBF7FA;
+    }
+
+    .overall-score-center {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+    }
+
+    .overall-score-number {
+      display: block;
+      color: var(--ink);
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 3rem;
+      line-height: .95;
+    }
+
+    .overall-score-denominator {
+      display: block;
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: .88rem;
+    }
+
+    .report-skill-bars {
+      max-width: 860px;
+    }
+
+    .report-skill-bars .skill-bar-row {
+      grid-template-columns: 180px minmax(220px, 1fr) 64px;
+      gap: 18px;
+    }
+
+    .report-skill-bars .skill-bar-score {
+      font-weight: 500;
+      color: var(--ink);
+    }
+
+    .coaching-report-section {
+      grid-template-columns: 64px 1fr;
+      gap: 20px;
+      align-items: start;
+    }
+
+    .coaching-report-icon {
+      width: 64px;
+      height: 64px;
+      font-size: 1.65rem;
+    }
+
+    .report-coaching-copy {
+      max-width: 980px;
+      color: var(--ink);
+      font-size: 1rem;
+      line-height: 1.65;
+    }
+
+    body.report-visible #postScenarioContent {
+      display: none !important;
+    }
+
+    @media (max-width: 760px) {
+      .report-card-actions {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr;
+      }
+
+      .report-card-actions .pill-button {
+        width: 100%;
+      }
+
+      .report-section {
+        padding: 24px 22px;
+      }
+
+      .report-overall-section {
+        min-height: 0;
+      }
+
+      .overall-score-ring {
+        width: 150px;
+        height: 150px;
+      }
+
+      .overall-score-ring::before {
+        width: 114px;
+        height: 114px;
+      }
+
+      .overall-score-number {
+        font-size: 2.55rem;
+      }
+
+      .report-skill-bars .skill-bar-row {
+        grid-template-columns: 1fr 56px;
+        gap: 8px 12px;
+      }
+
+      .report-skill-bars .skill-bar-label {
+        grid-column: 1 / -1;
+      }
+
+      .report-skill-bars .skill-bar-track {
+        grid-column: 1;
+      }
+
+      .report-skill-bars .skill-bar-score {
+        grid-column: 2;
+      }
+    }
+
+    /* ============================= */
+    /* CLEANER CONVERSATION VIEW     */
+    /* ============================= */
+
+    /* Approved color scheme from the current live conversation view */
+    :root {
+      --ink: #3A2438;
+      --muted: #5B4B58;
+      --paper: #F5EBF2;
+      --card: #FBF7FA;
+      --accent: #862F5E;
+      --accent-dark: #70264F;
+      --line: rgba(134,47,94,.18);
+      --soft-line: rgba(134,47,94,.14);
+      --soft-berry: #ECE1EA;
+    }
+
+    /* Keep the rich berry conversation card */
+    .conversation-practice-card {
+      background: #862F5E;
+    }
+
+    /* Remove the Conversation / Challenge / New information strip */
+    .conversation-progress {
+      display: none !important;
+    }
+
+    /* Remove all learning-design side tags and bracket annotations */
+    body.design-revealed .annotated::before,
+    body.design-revealed .annotated::after {
+      display: none !important;
+      content: none !important;
+    }
+
+    /* Undo extra spacing that existed only to make room for annotations */
+    body.design-revealed .annotated {
+      padding-top: inherit;
+    }
+
+    /* Keep scenario copy clean after annotation removal */
+    .scenario-intro {
+      margin-bottom: 34px;
+    }
+
+    /* Slightly stronger berry for buttons / bars to stay consistent */
+    .button-berry,
+    .mic-button-berry,
+    .skill-bar-fill {
+      background: #862F5E;
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+<!-- ============================ -->
+<!-- NAVIGATION                   -->
+<!-- ============================ -->
+
+
+<nav class="site-nav">
+
+  <div class="site-nav-inner">
+
+
+    <a
+      class="site-brand"
+      href="../"
+    >
+      Kahlila Mae Liverpool
+    </a>
+
+
+    <div class="site-nav-links">
+
+
+      <a
+        class="site-nav-link"
+        href="../"
+      >
+        Home
+      </a>
+
+
+      <a
+        class="site-nav-link"
+        href="../impact%202.html"
+      >
+        My Work
+      </a>
+
+
+      <a
+        class="site-nav-link active"
+        href="./"
+        aria-current="page"
+      >
+        Adaptive Learning
+      </a>
+
+
+    </div>
+
+
+  </div>
+
+</nav>
+
+
+
+<main class="page">
+
+
+  <div id="landingContent">
+
+  <!-- INTRO -->
+
+
+  <div class="eyebrow">
+    Adaptive Learning Prototype
+  </div>
+
+
+  <h1 class="single-line-title">
+    What Would You Say?
+  </h1>
+
+<p class="start-note">
+  Respond as you would in the moment.<br>
+  As the conversation continues, the next prompt will shift based on how you respond.
+  <br><br>
+  There is no script to follow.
+</p>
+
+
+  <!-- EXPERIENCE -->
+
+
+  <!-- CONVERSATION SELECTOR -->
+  <section
+    id="conversationSelector"
+    class="conversation-selector"
+    aria-label="Choose a conversation"
+  >
+    <div class="conversation-grid">
+
+      <button
+        class="conversation-choice"
+        type="button"
+        onclick="openUpsetCustomer()"
+        aria-label="Enter Upset Customer conversation"
+      >
+        <span class="choice-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24">
+            <path d="M21 15a4 4 0 0 1-4 4H8l-5 3 1.7-5A8 8 0 1 1 21 15Z" />
+            <path d="M8 11h.01M12 11h.01M16 11h.01" />
+          </svg>
+        </span>
+        <span class="choice-title">Upset Customer</span>
+        <span class="choice-enter">
+          <span class="choice-arrow">→</span>
+          <span>Enter conversation</span>
+        </span>
+      </button>
+
+      <button
+        class="conversation-choice"
+        type="button"
+        onclick="openSoftwareDelay()"
+        aria-label="Software Delay conversation"
+      >
+        <span class="choice-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24">
+            <rect x="3" y="5" width="18" height="16" rx="2" />
+            <path d="M16 3v4M8 3v4M3 10h18" />
+            <circle cx="16" cy="16" r="3" />
+            <path d="M16 14.5V16l1 1" />
+          </svg>
+        </span>
+        <span class="choice-title">Software<br>Delay</span>
+        <span class="choice-enter">
+          <span class="choice-arrow">→</span>
+          <span>Enter conversation</span>
+        </span>
+      </button>
+
+      <button
+        class="conversation-choice"
+        type="button"
+        onclick="openPerformanceConversation()"
+        aria-label="Performance Conversation"
+      >
+        <span class="choice-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24">
+            <circle cx="9" cy="8" r="3" />
+            <path d="M3 20v-2a6 6 0 0 1 12 0v2" />
+            <circle cx="17" cy="9" r="2.5" />
+            <path d="M16 14a5 5 0 0 1 5 5v1" />
+          </svg>
+        </span>
+        <span class="choice-title">Performance<br>Conversation</span>
+        <span class="choice-enter">
+          <span class="choice-arrow">→</span>
+          <span>Enter conversation</span>
+        </span>
+      </button>
+
+    </div>
+  </section>
+
+  </div>
+
+  <div class="experience is-hidden" id="upsetCustomerExperience">
+
+    <section class="scenario-intro annotated" data-annotation="Purpose">
+      <div id="scenarioEyebrow" class="eyebrow">
+        Upset Customer
+      </div>
+
+      <h1 class="single-line-title">
+        What Would You Say?
+      </h1>
+
+      <p class="intro">
+        <span id="scenarioIntroText">Customer service team members often know the correct process but struggle to apply it during emotionally charged conversations.</span>
+      </p>
+
+      <div class="scenario-purpose">
+        <span id="scenarioPurposeText">This prototype tests whether repeated practice and targeted feedback can improve how learners respond in difficult customer conversations.</span>
+      </div>
+    </section>
+
+
+    <!-- CUSTOMER -->
+
+
+    <section class="customer-card conversation-practice-card annotated" data-annotation="Practice">
+
+      <div class="label">
+        The conversation
+      </div>
+
+      <div class="conversation-progress" aria-label="Conversation progress">
+        <div class="progress-step active" data-progress-step="1">Conversation</div>
+        <div class="progress-step" data-progress-step="2">Challenge</div>
+        <div class="progress-step" data-progress-step="3">New information</div>
+      </div>
+
+      <div class="conversation-layout">
+        <div class="conversation-left">
+          <div id="conversationThread" class="conversation-thread hidden" aria-label="Conversation so far"></div>
+
+          <div class="customer-message-row">
+        <div class="customer-avatar-wrap">
+          <div class="customer-avatar" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <circle cx="12" cy="8" r="4"></circle>
+              <path d="M4 21a8 8 0 0 1 16 0"></path>
+            </svg>
+          </div>
+          <div id="speakerName" class="customer-name">Customer</div>
+        </div>
+
+        <div>
+          <div id="customerText" class="customer-bubble">
+            <span class="conversation-sentence">I've contacted your company three times about this charge.</span>
+            <span class="conversation-sentence">Nobody has fixed it, and now I've been charged again.</span>
+            <span class="conversation-sentence">I'm frustrated and I need someone to actually take accountability.</span>
+          </div>
+
+          <div class="audio-action customer-audio-inline">
+            <button
+              id="customerAudioButton"
+              class="mic-button mic-button-light"
+              onclick="playCustomerAudio()"
+              aria-label="Hear the customer"
+              title="Hear the customer"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 15a3 3 0 0 0 3-3V6a3 3 0 0 0-6 0v6a3 3 0 0 0 3 3Z" />
+                <path d="M19 11v1a7 7 0 0 1-14 0v-1" />
+                <path d="M12 19v3" />
+                <path d="M8 22h8" />
+              </svg>
+            </button>
+            <span id="hearSpeakerLabel">Hear the customer</span>
+          </div>
+        </div>
+      </div>
+
+        </div>
+
+        <div class="response-panel">
+        <div id="roundNumber" class="round">
+          Conversation 1 of 3
+        </div>
+
+        <div class="label">
+          Your response
+        </div>
+
+        <h2 class="prompt">
+          What would you say?
+        </h2>
+
+        <p class="supporting-text">
+          Respond naturally. You can type your response or speak it aloud.
+        </p>
+
+        <div
+          id="transcript"
+          contenteditable="true"
+          role="textbox"
+          aria-multiline="true"
+          data-placeholder="Type your response here..."
+          oninput="handleTypedResponse()"
+        ></div>
+
+        <div id="status"></div>
+
+        <div class="response-actions">
+          <div class="audio-action">
+            <button
+              id="recordButton"
+              class="mic-button mic-button-berry"
+              onclick="startListening()"
+              aria-label="Start speaking"
+              title="Start speaking"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 15a3 3 0 0 0 3-3V6a3 3 0 0 0-6 0v6a3 3 0 0 0 3 3Z" />
+                <path d="M19 11v1a7 7 0 0 1-14 0v-1" />
+                <path d="M12 19v3" />
+                <path d="M8 22h8" />
+              </svg>
+            </button>
+            <span>Speak response</span>
+          </div>
+
+          <button
+            id="evaluateButton"
+            class="pill-button button-berry"
+            onclick="evaluateResponse()"
+            disabled
+          >
+            Submit response →
+          </button>
+        </div>
+      </div>
+      </div>
+
+    </section>
+
+
+    <!-- FEEDBACK -->
+
+    <section
+      id="feedbackCard"
+      class="card feedback-card hidden annotated"
+      data-annotation="Feedback"
+    >
+      <div class="result-summary-grid">
+        <div class="result-summary-copy">
+          <div class="result-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path d="M21 15a4 4 0 0 1-4 4H8l-5 3 1.7-5A8 8 0 1 1 21 15Z" />
+            </svg>
+          </div>
+          <div>
+            <h2 class="result-title">Your Feedback</h2>
+            <p class="result-subtitle">Here’s how you did in this conversation. Use this feedback to build on your strengths and identify areas to practice.</p>
+          </div>
+        </div>
+        <div id="roundScoreBars" class="skill-bars" aria-label="Feedback scores"></div>
+      </div>
+
+      <div id="coachingSummary" class="coaching-summary"></div>
+
+      <div id="feedback" class="feedback narrative-feedback"></div>
+
+      <div id="adaptiveNote" class="adaptive-note">
+        Your response shaped what happens next.
+      </div>
+
+      <button
+        id="continueButton"
+        class="pill-button button-berry"
+        onclick="continueConversation()"
+      >
+        Keep going
+      </button>
+    </section>
+
+
+    <!-- REPORT CARD -->
+
+
+    <section
+      id="reportCard"
+      class="card report-card hidden annotated"
+      data-annotation="Reflection"
+    >
+      <div class="report-card-heading-row">
+        <div>
+          <h2 class="result-title">Report Card</h2>
+          <p class="result-subtitle">Here’s how your responses showed up and where to focus next.</p>
+        </div>
+
+        <div class="report-card-actions">
+          <button
+            class="pill-button button-berry"
+            onclick="downloadReportCard()"
+          >
+            Download PDF
+          </button>
+
+          <button
+            class="pill-button button-light"
+            onclick="downloadConversationData()"
+          >
+            Download CSV
+          </button>
+
+          <button
+            class="pill-button button-light"
+            onclick="tryAgain()"
+          >
+            Try Again
+          </button>
+        </div>
+      </div>
+
+      <section class="report-section report-overall-section">
+        <h3 class="report-section-title">Your Overall Score</h3>
+        <div id="overallScore" class="overall-score-display"></div>
+      </section>
+
+      <section class="report-section">
+        <h3 class="report-section-title">Skill Scores</h3>
+        <div id="reportScoreBars" class="skill-bars report-skill-bars" aria-label="Report card scores"></div>
+      </section>
+
+      <section class="report-section coaching-report-section">
+        <div class="coaching-report-icon" aria-hidden="true">✦</div>
+        <div>
+          <h3 class="report-section-title">Coaching Summary</h3>
+          <div id="reportCoachingSummary" class="report-coaching-copy"></div>
+        </div>
+      </section>
+
+      <div
+        id="sheetSaveStatus"
+        style="margin-top:12px;color:var(--muted);font-size:.84rem;"
+        aria-live="polite"
+      ></div>
+    </section>
+
+  </div>
+
+
+  <div id="postScenarioContent" class="hidden">
+
+
+  <!-- LEARNING DESIGN -->
+
+  <section class="design-section annotated" data-annotation="Learning Design">
+    <div class="eyebrow">Design principles</div>
+    <h2 class="section-title">How it works</h2>
+
+    <div class="design-grid">
+      <div class="design-item">
+        <strong>Practice, not content</strong>
+        <span>Learners respond to realistic situations instead of reading about them.</span>
+      </div>
+      <div class="design-item">
+        <strong>Behavior-based feedback</strong>
+        <span>Responses are evaluated against observable conversational behaviors.</span>
+      </div>
+      <div class="design-item">
+        <strong>Adaptive practice</strong>
+        <span>The next prompt changes based on the learner's performance.</span>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- MEASUREMENT -->
+
+  <section class="measurement-section annotated" data-annotation="Measurement">
+    <div class="eyebrow">What I would measure</div>
+    <h2 class="section-title">Did the learning change performance?</h2>
+
+    <div class="measurement-grid">
+      <div class="measurement-item">
+        <strong>Improvement over time</strong>
+        <span>Changes in performance across attempts.</span>
+      </div>
+      <div class="measurement-item">
+        <strong>Transfer to the workplace</strong>
+        <span>Use of the skills in real customer interactions.</span>
+      </div>
+      <div class="measurement-item">
+        <strong>Customer outcomes</strong>
+        <span>Changes in satisfaction and issue resolution.</span>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- RUBRIC -->
+
+  <section id="rubricSection" class="rubric-section">
+    <div class="eyebrow">How responses are assessed</div>
+    <h2 class="section-title">What does a 1–4 score mean?</h2>
+    <p id="rubricIntro" class="section-copy">
+      Responses are assessed across five skills. The prototype looks for observable behaviors in what the learner says and uses those results to shape the practice.
+    </p>
+
+    <div class="scale-grid">
+      <div class="scale-item">
+        <div class="scale-number">1</div>
+        <div class="scale-name">Needs development</div>
+        <div class="scale-description">The behavior is missing, unclear, or works against the situation.</div>
+      </div>
+      <div class="scale-item">
+        <div class="scale-number">2</div>
+        <div class="scale-name">Developing</div>
+        <div class="scale-description">The behavior is present, but incomplete, generic, or inconsistent.</div>
+      </div>
+      <div class="scale-item">
+        <div class="scale-number">3</div>
+        <div class="scale-name">Proficient</div>
+        <div class="scale-description">The behavior is clear, appropriate, and supports the decision or conversation.</div>
+      </div>
+      <div class="scale-item">
+        <div class="scale-number">4</div>
+        <div class="scale-name">Strong</div>
+        <div class="scale-description">The behavior is specific, responsive to the evidence, and helps move the situation forward.</div>
+      </div>
+    
+      <div class="scale-item">
+        <div class="scale-number">5</div>
+        <div class="scale-name">Exceptional</div>
+        <div class="scale-description">Specific, complete, and adaptive to the situation.</div>
+      </div>
+    </div>
+
+    <div id="rubricDetails"></div>
+
+    <div class="prototype-note">
+      This prototype uses rule-based language patterns as proxies for observable behaviors. In a production AI-enabled experience, responses could be evaluated more deeply for meaning, context, reasoning, and change over time.
+    </div>
+  </section>
+
+
+  <!-- RESEARCH -->
+
+
+  <section class="research annotated" data-annotation="Evidence">
+
+
+    <div class="eyebrow">
+      Evidence base
+    </div>
+
+
+    <h2>
+      Research that informed this prototype
+    </h2>
+
+
+    <p class="research-intro">
+
+      The design draws on research about
+      simulation-based practice, feedback,
+      and adaptive learning.
+
+    </p>
+
+
+
+    <div class="reference">
+
+      <strong>
+
+        Chernikova, O., Heitzmann, N., Stadler, M.,
+        Holzberger, D., Seidel, T., & Fischer, F. (2020).
+
+      </strong>
+
+      Simulation-Based Learning in Higher Education:
+      A Meta-Analysis.
+
+      <em>
+        Review of Educational Research, 90
+      </em>
+      (4), 499–541.
+
+      <a
+        href="https://journals.sagepub.com/doi/full/10.3102/0034654320933544"
+        target="_blank"
+        rel="noopener"
+      >
+        View research
+      </a>
+
+    </div>
+
+
+
+    <div class="reference">
+
+      <strong>
+        Hattie, J., & Timperley, H. (2007).
+      </strong>
+
+      The Power of Feedback.
+
+      <em>
+        Review of Educational Research, 77
+      </em>
+      (1), 81–112.
+
+      <a
+        href="https://journals.sagepub.com/doi/10.3102/003465430298487"
+        target="_blank"
+        rel="noopener"
+      >
+        View research
+      </a>
+
+    </div>
+
+
+
+    <div class="reference">
+
+      <strong>
+
+        Chernikova, O., Sommerhoff, D., Stadler, M.,
+        Holzberger, D., Nickl, M., Seidel, T.,
+        Kasneci, E., Küchemann, S., Kuhn, J.,
+        Fischer, F., & Heitzmann, N. (2025).
+
+      </strong>
+
+      Personalization through adaptivity or adaptability?
+      A meta-analysis on simulation-based learning
+      in higher education.
+
+      <em>
+        Educational Research Review, 46
+      </em>,
+      100662.
+
+      <a
+        href="https://doi.org/10.1016/j.edurev.2024.100662"
+        target="_blank"
+        rel="noopener"
+      >
+        View research
+      </a>
+
+    </div>
+
+
+  </section>
+
+
+
+  <footer>
+
+    © 2026 Kahlila Mae Liverpool
+
+  </footer>
+
+
+  </div>
+
+
+</main>
+
+
+
+<script
+  src="https://unpkg.com/jspdf@4.2.1/dist/jspdf.umd.min.js">
+</script>
+
+
+
+<script>
+
+/* ============================== */
+/* GOOGLE SHEET AUTO-SAVE CONFIG  */
+/* ============================== */
+
+/*
+  SETUP:
+  1. Create a Google Sheet.
+  2. Open Extensions → Apps Script.
+  3. Paste in the companion google_apps_script_code.gs file.
+  4. Deploy it as a Web App.
+  5. Paste that Web App URL below.
+*/
+const GOOGLE_SHEET_WEB_APP_URL = "";
+
+
+
+let activeScenario = "customer";
+let currentRound = 1;
+const maxRounds = 3;
+let transcriptText = "";
+let currentAudioKey = "opening";
+let activeCustomerAudio = null;
+let softwareRoundOneDecision = "neutral";
+let performanceRoundOneApproach = "balanced";
+let roundResponses = [];
+
+const scenarioConfigs = {
+  customer: {
+    eyebrow: "Upset Customer",
+    intro: "Customer service team members often know the correct process but struggle to apply it during emotionally charged conversations.",
+    purpose: "This prototype tests whether repeated practice and targeted feedback can improve how learners respond in difficult customer conversations.",
+    speaker: "Customer",
+    hearLabel: "Hear the customer",
+    opening: "I've contacted your company three times about this charge. Nobody has fixed it, and now I've been charged again. I'm frustrated and I need someone to actually take accountability.",
+    reflectionPrompt: "What will you do differently next time?",
+    audio: {
+      opening: "./customer-opening.m4a",
+      ownership: "./customer-ownership.m4a",
+      advanced: "./customer-advanced.m4a"
+    },
+    sequence: {
+      2: "ownership",
+      3: "advanced"
+    },
+    questions: {
+      ownership: "So are you actually going to take care of this, or are you going to send me to someone else again?",
+      advanced: "That sounds better, but I need this resolved today. What can you realistically promise me?"
+    },
+    skills: [
+      ["empathy","Empathy"],
+      ["listening","Listening"],
+      ["ownership","Ownership"],
+      ["problemSolving","Problem Solving"],
+      ["communication","Communication"]
+    ],
+    feedback: {
+      empathy: {
+        strong: "You connected the customer's frustration to what actually happened instead of moving immediately to the solution.",
+        improve: "Acknowledge both the frustration and what caused it before moving into the solution."
+      },
+      listening: {
+        strong: "You responded to specific details the customer shared rather than giving a general response.",
+        improve: "Reference a specific part of what the customer said so the response reflects the situation they actually described."
+      },
+      ownership: {
+        strong: "You made your role in moving the issue forward clear.",
+        improve: "Be more specific about what you will personally do next and how the customer will know what happened."
+      },
+      problemSolving: {
+        strong: "You gave the customer a concrete next step rather than a general reassurance.",
+        improve: "Name a specific action you can take and what the customer should expect after that action."
+      },
+      communication: {
+        strong: "Your response was clear and easy to follow.",
+        improve: "Make the response more direct and easier to follow. Focus on the customer concern and the next step."
+      }
+    },
+    rubric: {
+      empathy: [
+        "Does not acknowledge the customer's frustration or emotion.",
+        "Uses a general acknowledgment, but it could apply to almost any situation.",
+        "Specifically acknowledges the customer's frustration and connects it to what happened.",
+        "Recognizes both the customer's emotion and why the situation created that reaction before moving toward resolution."
+      ],
+      listening: [
+        "Does not reflect the issue the customer described.",
+        "Recognizes the general issue but misses important details.",
+        "References a specific detail from the customer's situation.",
+        "Connects multiple details and the underlying concern to show accurate understanding."
+      ],
+      ownership: [
+        "Deflects responsibility or sends the customer elsewhere without taking action.",
+        "Offers general help but does not name a personal action.",
+        "Names a clear action the learner will personally take.",
+        "Names a clear action and explains how they will follow through."
+      ],
+      problemSolving: [
+        "Does not offer a useful next step.",
+        "Offers a vague action without a clear outcome.",
+        "Offers a concrete action that addresses the issue.",
+        "Offers a concrete action and sets a clear expectation for what happens next."
+      ],
+      communication: [
+        "The response is unclear, very brief, or defensive.",
+        "The response communicates the general idea but lacks structure or precision.",
+        "The response is clear, direct, and appropriately detailed.",
+        "The response is concise, structured, and makes the next step easy to understand."
+      ]
+    }
+  },
+
+  software: {
+    eyebrow: "Software Delay",
+    intro: "A team is preparing to release software when late information raises a possible risk to users.",
+    purpose: "This prototype tests whether learners can weigh incomplete evidence, competing consequences, and new information before making and communicating a recommendation.",
+    speaker: "Product Lead",
+    hearLabel: "Hear the product lead",
+    opening: "We're scheduled to release the software tomorrow. Late today, we received a report that a small number of users may be losing unsaved work. Engineering has not been able to reproduce the issue, and everything else has passed testing. Leadership is unavailable, and we need to make a recommendation within the hour. What do you recommend?",
+    reflectionPrompt: "What information influenced your thinking most, and what would you do differently next time?",
+    audio: {
+      opening: "./software-opening.m4a",
+      delayChallenge: "./software-delay-challenge.m4a",
+      launchChallenge: "./software-launch-challenge.m4a",
+      update: "./software-update.m4a"
+    },
+    skills: [
+      ["judgment","Judgment"],
+      ["riskAssessment","Risk Assessment"],
+      ["perspectiveTaking","Perspective Taking"],
+      ["problemSolving","Problem Solving"],
+      ["communication","Communication"]
+    ],
+    feedback: {
+      judgment: {
+        strong: "You made a recommendation and connected it to the evidence available rather than treating the decision as obvious.",
+        improve: "State a recommendation, explain why the current evidence supports it, and name what would cause you to reconsider."
+      },
+      riskAssessment: {
+        strong: "You considered both the potential severity of the user impact and the uncertainty in the evidence.",
+        improve: "Separate what is known from what is uncertain, then weigh both the likelihood and the consequence of the risk."
+      },
+      perspectiveTaking: {
+        strong: "You considered more than one stakeholder and recognized that either decision creates consequences.",
+        improve: "Include the impact on users as well as the teams, customers, and business commitments affected by the decision."
+      },
+      problemSolving: {
+        strong: "You moved beyond a binary launch-or-delay choice and identified a concrete way to reduce or manage the risk.",
+        improve: "Name a practical mitigation, test, rollout option, or contingency that could reduce risk while the team decides."
+      },
+      communication: {
+        strong: "Your recommendation was clear and the reasoning was easy to follow.",
+        improve: "Lead with the recommendation, give the key reasons, and make the next step explicit."
+      }
+    },
+    rubric: {
+      judgment: [
+        "Does not make a recommendation or makes one without relevant reasoning.",
+        "Makes a recommendation but relies on a single factor or unsupported assumption.",
+        "Makes a clear recommendation and connects it to the available evidence and trade-offs.",
+        "Makes a clear recommendation, explains the trade-offs, and identifies what new evidence would change the decision."
+      ],
+      riskAssessment: [
+        "Does not identify the user or business risk.",
+        "Recognizes that risk exists but does not distinguish severity, likelihood, or uncertainty.",
+        "Identifies the potential consequence and acknowledges uncertainty in the evidence.",
+        "Weighs severity, likelihood, evidence quality, and the cost of being wrong."
+      ],
+      perspectiveTaking: [
+        "Considers only one stakeholder or consequence.",
+        "Mentions another stakeholder but does not incorporate that perspective into the recommendation.",
+        "Weighs the impact on users and at least one other stakeholder.",
+        "Balances multiple perspectives and explains how competing consequences affect the recommendation."
+      ],
+      problemSolving: [
+        "Treats the situation only as launch versus delay with no next step.",
+        "Suggests a general action but does not explain how it reduces risk.",
+        "Proposes a concrete mitigation, test, escalation, or contingency.",
+        "Proposes a practical mitigation and explains how it changes the risk, decision, or monitoring plan."
+      ],
+      communication: [
+        "The recommendation is unclear, very brief, or difficult to follow.",
+        "The recommendation is understandable but the reasoning is loosely organized.",
+        "The recommendation is clear, direct, and supported by relevant reasons.",
+        "The recommendation is concise, structured, and communicates both the decision and conditions for revisiting it."
+      ]
+    }
+  },
+  performance: {
+    eyebrow: "Performance Conversation",
+    intro: "A manager is seeing a decline in a previously strong employee's performance, but the available evidence points to more than one possible cause.",
+    purpose: "This prototype tests whether managers can diagnose performance concerns before prescribing a solution, while still setting clear expectations and accountability.",
+    speaker: "Employee",
+    hearLabel: "Hear the employee",
+    opening: "I know I've missed a couple of deadlines, but I've also been covering work that used to belong to two people. I'm still getting things done. I'm not sure why this is suddenly being treated like a performance issue.",
+    reflectionPrompt: "What assumptions did you make at first, and what evidence changed or strengthened your thinking?",
+    audio: {
+      opening: "./performance-opening.m4a",
+      accountabilityChallenge: "./performance-accountability-challenge.m4a",
+      supportChallenge: "./performance-support-challenge.m4a",
+      update: "./performance-update.m4a"
+    },
+    skills: [
+      ["diagnosis","Diagnosis"],
+      ["accountability","Accountability"],
+      ["curiosity","Curiosity"],
+      ["judgment","Judgment"],
+      ["communication","Communication"]
+    ],
+    feedback: {
+      diagnosis: {
+        strong: "You treated the performance change as something to understand rather than immediately assigning a single cause.",
+        improve: "Separate possible causes such as workload, skill, motivation, process, and prioritization before deciding what the problem is."
+      },
+      accountability: {
+        strong: "You kept expectations visible while still making room to understand what is contributing to the performance change.",
+        improve: "Be clear about the work standard, what needs to change, and how you will follow up without turning the conversation into a verdict."
+      },
+      curiosity: {
+        strong: "You used questions to gather information instead of relying only on your first interpretation of the situation.",
+        improve: "Ask a specific question that helps uncover what changed, what is getting in the way, or how the employee is prioritizing the work."
+      },
+      judgment: {
+        strong: "You balanced employee context with the manager's responsibility to address missed commitments.",
+        improve: "Avoid choosing between empathy and accountability. Use the evidence to decide what support, expectation, or performance action is appropriate."
+      },
+      communication: {
+        strong: "You made the purpose of the conversation and the next step easy to understand.",
+        improve: "State the concern clearly, invite the employee's perspective, and make the next step explicit."
+      }
+    },
+    rubric: {
+      diagnosis: [
+        "Assumes a cause or labels the issue without gathering relevant information.",
+        "Identifies one possible cause but does not explore alternatives.",
+        "Considers multiple plausible causes and seeks evidence before deciding.",
+        "Distinguishes among capacity, skill, motivation, process, and prioritization and uses evidence to narrow the diagnosis."
+      ],
+      accountability: [
+        "Avoids the performance concern or makes no expectation clear.",
+        "Mentions the concern but leaves the standard or next step vague.",
+        "Names the expectation and a concrete next step.",
+        "Names the expectation, agrees on measurable next steps, and establishes a follow-up point."
+      ],
+      curiosity: [
+        "Makes assumptions or gives direction without asking a meaningful question.",
+        "Asks a broad or generic question.",
+        "Asks a specific question that explores what changed or what is getting in the way.",
+        "Uses focused follow-up questions to test assumptions and uncover contributing factors."
+      ],
+      judgment: [
+        "Treats the situation as either an employee problem or a workload problem without weighing evidence.",
+        "Recognizes competing factors but leans on one without explaining why.",
+        "Balances context and accountability using the available evidence.",
+        "Explains what the evidence supports now and what new information would change the manager's response."
+      ],
+      communication: [
+        "The response is unclear, accusatory, or avoids the issue.",
+        "The response is understandable but lacks structure or a clear purpose.",
+        "The response is clear, respectful, and direct about the concern and next step.",
+        "The response is concise, specific, and makes both the concern and collaborative next step easy to understand."
+      ]
+    }
+  }
+};
+
+let scores = {};
+
+function emptyScores() {
+  scores = {};
+  scenarioConfigs[activeScenario].skills.forEach(([key]) => scores[key] = []);
+}
+
+function openUpsetCustomer() {
+  activeScenario = "customer";
+  openScenario();
+}
+
+function openSoftwareDelay() {
+  activeScenario = "software";
+  openScenario();
+}
+
+function openPerformanceConversation() {
+  activeScenario = "performance";
+  openScenario();
+}
+
+function conversationNotBuilt(name) {
+  window.alert(name + " will be connected when that conversation is built.");
+}
+
+function openScenario() {
+  const config = scenarioConfigs[activeScenario];
+  document.body.classList.remove("report-visible");
+  currentRound = 1;
+  transcriptText = "";
+  currentAudioKey = "opening";
+  softwareRoundOneDecision = "neutral";
+  performanceRoundOneApproach = "balanced";
+  roundResponses = [];
+  emptyScores();
+
+  const landingContent = document.getElementById("landingContent");
+  const experience = document.getElementById("upsetCustomerExperience");
+  const postScenarioContent = document.getElementById("postScenarioContent");
+
+  if (landingContent) landingContent.style.display = "none";
+  if (postScenarioContent) postScenarioContent.classList.add("hidden");
+
+  document.body.classList.add("design-revealed");
+
+  setText("scenarioEyebrow", config.eyebrow);
+  setText("scenarioIntroText", config.intro);
+  setText("scenarioPurposeText", config.purpose);
+  setText("speakerName", config.speaker);
+  setText("hearSpeakerLabel", config.hearLabel);
+  setConversationText(config.opening);
+  setText("roundNumber", "Conversation 1 of 3");
+  setText("reflectionPromptText", config.reflectionPrompt);
+  clearConversationThread();
+  updateConversationProgress();
+
+  const transcript = document.getElementById("transcript");
+  if (transcript) transcript.innerText = "";
+  setText("status", "");
+
+  const feedbackCard = document.getElementById("feedbackCard");
+  const reportCard = document.getElementById("reportCard");
+  if (feedbackCard) feedbackCard.classList.add("hidden");
+  if (reportCard) reportCard.classList.add("hidden");
+
+  const continueButton = document.getElementById("continueButton");
+  if (continueButton) continueButton.innerText = "Keep going";
+
+  updatePostScenarioCopy();
+  renderRubric();
+
+  if (experience) {
+    experience.classList.remove("is-hidden");
+    experience.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+}
+
+function setText(id, value) {
+  const el = document.getElementById(id);
+  if (el) el.textContent = value;
+}
+
+function setConversationText(value) {
+  const el = document.getElementById("customerText");
+  if (!el) return;
+
+  // Break the prompt into sentence-sized visual chunks for easier reading.
+  const sentences = value.match(/[^.!?]+[.!?]+(?:["']?)(?=\s|$)|[^.!?]+$/g) || [value];
+
+  el.innerHTML = sentences
+    .map(sentence => `<span class="conversation-sentence">${sentence.trim()}</span>`)
+    .join("");
+}
+
+function updateConversationProgress() {
+  document.querySelectorAll("[data-progress-step]").forEach(step => {
+    const stepNumber = Number(step.dataset.progressStep);
+    step.classList.toggle("active", stepNumber === currentRound);
+    step.classList.toggle("completed", stepNumber < currentRound);
+  });
+}
+
+function clearConversationThread() {
+  const thread = document.getElementById("conversationThread");
+  if (!thread) return;
+  thread.innerHTML = "";
+  thread.classList.add("hidden");
+}
+
+function addCompletedTurnToThread() {
+  const thread = document.getElementById("conversationThread");
+  const speakerText = document.getElementById("customerText")?.innerText.trim() || "";
+  const learnerText = roundResponses[currentRound - 1] || "";
+
+  if (!thread || !speakerText || !learnerText) return;
+
+  const speakerName = scenarioConfigs[activeScenario].speaker || "Speaker";
+
+  const speakerTurn = document.createElement("div");
+  speakerTurn.className = "thread-turn thread-turn-speaker";
+  speakerTurn.innerHTML = `<span class="thread-label">${speakerName}</span>${speakerText}`;
+
+  const learnerTurn = document.createElement("div");
+  learnerTurn.className = "thread-turn thread-turn-learner";
+  learnerTurn.innerHTML = `<span class="thread-label">You</span>${learnerText}`;
+
+  thread.appendChild(speakerTurn);
+  thread.appendChild(learnerTurn);
+  thread.classList.remove("hidden");
+}
+
+function getLargestGrowthSkill() {
+  const labels = getLabels();
+  let bestKey = null;
+  let bestDelta = -Infinity;
+
+  Object.keys(scores).forEach(key => {
+    const values = scores[key] || [];
+    if (!values.length) return;
+    const delta = values[values.length - 1] - values[0];
+    if (delta > bestDelta) {
+      bestDelta = delta;
+      bestKey = key;
+    }
+  });
+
+  if (!bestKey) return null;
+
+  const values = scores[bestKey];
+  return {
+    key: bestKey,
+    label: labels[bestKey],
+    first: values[0],
+    last: values[values.length - 1],
+    delta: bestDelta
+  };
+}
+
+function renderChangeSummary() {
+  const container = document.getElementById("changeSummary");
+  if (!container) return;
+
+  const growth = getLargestGrowthSkill();
+  let firstApproach = "First response";
+  let finalApproach = "Final response";
+
+  if (activeScenario === "software") {
+    firstApproach = softwareRoundOneDecision === "delay"
+      ? "Delay the launch"
+      : softwareRoundOneDecision === "launch"
+        ? "Move forward"
+        : "Still weighing options";
+
+    const finalDecision = detectSoftwareDecision((roundResponses[2] || "").toLowerCase());
+    finalApproach = finalDecision === "delay"
+      ? "Delay the launch"
+      : finalDecision === "launch"
+        ? "Move forward"
+        : "More conditional / nuanced";
+  }
+
+  if (activeScenario === "performance") {
+    firstApproach = performanceRoundOneApproach === "accountability"
+      ? "Accountability first"
+      : performanceRoundOneApproach === "support"
+        ? "Support first"
+        : "Diagnose + balance";
+
+    const finalManagerApproach = detectPerformanceApproach((roundResponses[2] || "").toLowerCase());
+    finalApproach = finalManagerApproach === "accountability"
+      ? "Accountability first"
+      : finalManagerApproach === "support"
+        ? "Support first"
+        : "Diagnose + balance";
+  }
+
+  const growthText = growth
+    ? `${growth.label}: ${growth.first * 4}/20 → ${growth.last * 4}/20`
+    : "No score change recorded";
+
+  container.innerHTML = `
+    <h3>How your response changed</h3>
+    <div class="change-grid">
+      <div class="change-item">
+        <span>First approach</span>
+        <strong>${firstApproach}</strong>
+      </div>
+      <div class="change-item">
+        <span>Final approach</span>
+        <strong>${finalApproach}</strong>
+      </div>
+      <div class="change-item">
+        <span>Biggest growth</span>
+        <strong>${growthText}</strong>
+      </div>
+    </div>
+  `;
+}
+
+function containsAny(text, phrases) {
+  return phrases.some(phrase => text.includes(phrase));
+}
+
+function countMatches(text, phrases) {
+  return phrases.filter(phrase => text.includes(phrase)).length;
+}
+
+function handleTypedResponse() {
+  const transcript = document.getElementById("transcript");
+  const evaluateButton = document.getElementById("evaluateButton");
+  transcriptText = transcript ? transcript.innerText.trim() : "";
+  if (evaluateButton) evaluateButton.disabled = !transcriptText;
+}
+
+/* ============================== */
+/* AUDIO                          */
+/* ============================== */
+
+function playCustomerAudio() {
+  const config = scenarioConfigs[activeScenario];
+  const src = config.audio[currentAudioKey];
+
+  if (!src) {
+    alert("Audio for this prompt has not been added yet.");
+    return;
+  }
+
+  if (activeCustomerAudio) {
+    activeCustomerAudio.pause();
+    activeCustomerAudio.currentTime = 0;
+  }
+
+  activeCustomerAudio = new Audio(src);
+  activeCustomerAudio.play().catch(error => {
+    console.error("Audio playback error:", error);
+    alert("The audio could not play. Please tap the button again.");
+  });
+}
+
+/* ============================== */
+/* SPEECH INPUT                   */
+/* ============================== */
+
+function startListening() {
+  const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+
+  if (!SpeechRecognition) {
+    alert("Speech recognition is not supported in this browser. Chrome usually works best for this prototype.");
+    return;
+  }
+
+  if (activeCustomerAudio) activeCustomerAudio.pause();
+
+  const recognition = new SpeechRecognition();
+  recognition.lang = "en-US";
+  recognition.interimResults = false;
+  recognition.continuous = false;
+
+  setText("status", "Listening...");
+  document.getElementById("recordButton").disabled = true;
+  recognition.start();
+
+  recognition.onresult = function(event) {
+    transcriptText = event.results[0][0].transcript;
+    document.getElementById("transcript").innerText = transcriptText;
+    setText("status", "Response captured.");
+    document.getElementById("evaluateButton").disabled = false;
+    document.getElementById("recordButton").disabled = false;
+  };
+
+  recognition.onerror = function() {
+    setText("status", "The response wasn't captured. Please try again.");
+    document.getElementById("recordButton").disabled = false;
+  };
+
+  recognition.onend = function() {
+    document.getElementById("recordButton").disabled = false;
+  };
+}
+
+function startReflectionListening() {
+  const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+  const status = document.getElementById("reflectionStatus");
+  const reflection = document.getElementById("reflectionText");
+
+  if (!SpeechRecognition) {
+    if (status) status.innerText = "Speech input is not supported in this browser.";
+    return;
+  }
+
+  if (activeCustomerAudio) activeCustomerAudio.pause();
+
+  const recognition = new SpeechRecognition();
+  recognition.lang = "en-US";
+  recognition.interimResults = false;
+  recognition.continuous = false;
+
+  if (status) status.innerText = "Listening...";
+  recognition.start();
+
+  recognition.onresult = function(event) {
+    const spokenText = event.results[0][0].transcript;
+    if (reflection) {
+      const existing = reflection.innerText.trim();
+      reflection.innerText = existing ? existing + " " + spokenText : spokenText;
+    }
+    if (status) status.innerText = "Reflection captured.";
+  };
+
+  recognition.onerror = function() {
+    if (status) status.innerText = "Try again.";
+  };
+
+  recognition.onend = function() {
+    if (status && status.innerText === "Listening...") status.innerText = "";
+  };
+}
+
+/* ============================== */
+/* CUSTOMER SCORING               */
+/* ============================== */
+
+function scoreCustomerEmpathy(text) {
+  const general = ["sorry","apologize","understand","i hear you","i hear how","i can imagine","i appreciate"];
+  const emotion = ["frustrated","frustrating","upset","annoyed","disappointed","angry","fed up"];
+  const detail = ["three times","multiple times","charged again","another charge","contacted us","called us","still not resolved","hasn't been fixed"];
+  const validation = ["makes sense","i can see why","i understand why","you shouldn't have had to","should not have had to"];
+  const hasGeneral = containsAny(text,general);
+  const hasEmotion = containsAny(text,emotion);
+  const hasDetail = containsAny(text,detail);
+  const hasValidation = containsAny(text,validation);
+  if (!hasGeneral && !hasEmotion) return 1;
+  if ((hasGeneral || hasEmotion) && !hasDetail) return 2;
+  if (hasDetail && (hasGeneral || hasEmotion) && !hasValidation) return 3;
+  if (hasDetail && (hasGeneral || hasEmotion) && hasValidation) return 4;
+  return 2;
+}
+
+function scoreCustomerListening(text) {
+  const general = ["charge","billing","payment","account","problem","issue"];
+  const detail = ["three times","charged again","another charge","contacted us","called us","still not fixed","still unresolved","take responsibility"];
+  const underlying = ["trust","responsibility","take ownership","ownership","keep calling","repeatedly","again and again"];
+  const g = countMatches(text,general);
+  const d = countMatches(text,detail);
+  const u = containsAny(text,underlying);
+  if (g === 0 && d === 0) return 1;
+  if (g > 0 && d === 0) return 2;
+  if (d === 1 && !u) return 3;
+  if (d >= 2 || (d >= 1 && u)) return 4;
+  return 2;
+}
+
+function scoreCustomerOwnership(text) {
+  const deflect = ["not my department","you need to call","you'll have to call","someone else handles","i can't do anything"];
+  const general = ["i can help","let me help","i'll help","i will help","we can help"];
+  const action = ["i will review","i'll review","i will check","i'll check","let me check","i will investigate","i'll investigate","i will take care","i'll take care","i will resolve","i'll resolve"];
+  const follow = ["i will follow up","i'll follow up","i will make sure","i'll make sure","i will update you","i'll update you","you can expect","within"];
+  const d = containsAny(text,deflect), g = containsAny(text,general), a = containsAny(text,action), f = containsAny(text,follow);
+  if (d && !a) return 1;
+  if (!g && !a) return 1;
+  if (g && !a) return 2;
+  if (a && !f) return 3;
+  if (a && f) return 4;
+  return 2;
+}
+
+function scoreCustomerProblemSolving(text) {
+  const vague = ["look into","look at","see what","try to","see if","figure out","work on","check on"];
+  const concrete = ["review the charge","check the charge","review your account","check your account","issue a refund","process a refund","reverse the charge","remove the charge","investigate the charge","contact billing","escalate","open a case","create a case"];
+  const expectation = ["today","within","by tomorrow","by the end","next step","then i will","after that","you can expect","i'll update","i will update"];
+  const v = containsAny(text,vague), c = containsAny(text,concrete), e = containsAny(text,expectation);
+  if (!v && !c) return 1;
+  if (v && !c) return 2;
+  if (c && !e) return 3;
+  if (c && e) return 4;
+  return 2;
+}
+
+/* ============================== */
+/* SOFTWARE SCORING               */
+/* ============================== */
+
+function scoreSoftwareJudgment(text) {
+  const recommendation = ["delay","postpone","hold","pause","stop the release","move forward","proceed","launch","release","staged rollout","phased rollout","limited rollout"];
+  const rationale = ["because","given","since","risk","evidence","impact","uncertain","uncertainty","trade-off","tradeoff"];
+  const reconsider = ["if we learn","if engineering","if the issue","would change","reconsider","change my recommendation","if evidence","if testing","depending on"];
+  const r = containsAny(text,recommendation);
+  const why = containsAny(text,rationale);
+  const update = containsAny(text,reconsider);
+  if (!r) return 1;
+  if (r && !why) return 2;
+  if (r && why && !update) return 3;
+  return 4;
+}
+
+function scoreSoftwareRisk(text) {
+  const consequence = ["lose work","losing work","data loss","unsaved work","user impact","users","customer impact","severity","harm"];
+  const uncertainty = ["not reproduced","can't reproduce","cannot reproduce","uncertain","uncertainty","small number","limited evidence","one report","unknown","likelihood"];
+  const costWrong = ["cost of delay","cost of launching","reputation","trust","support","rollback","business impact","customer announcement","commitment"];
+  const c = containsAny(text,consequence);
+  const u = containsAny(text,uncertainty);
+  const w = containsAny(text,costWrong);
+  if (!c && !u) return 1;
+  if (c !== u) return 2;
+  if (c && u && !w) return 3;
+  return 4;
+}
+
+function scoreSoftwarePerspective(text) {
+  const users = ["users","customers","customer","user experience","trust"];
+  const teams = ["team","teams","engineering","product","support","sales","marketing"];
+  const business = ["business","announcement","commitment","deadline","launch plan","revenue","reputation"];
+  let groups = 0;
+  if (containsAny(text,users)) groups++;
+  if (containsAny(text,teams)) groups++;
+  if (containsAny(text,business)) groups++;
+  if (groups === 0) return 1;
+  if (groups === 1) return 2;
+  if (groups === 2) return 3;
+  return 4;
+}
+
+function scoreSoftwareProblemSolving(text) {
+  const generic = ["investigate","look into","test more","check","monitor"];
+  const concrete = ["staged rollout","phased rollout","limited rollout","pilot","delay the release","hold the release","rollback","workaround","feature flag","disable","additional test","reproduce","monitor closely","support plan","contingency","escalate"];
+  const plan = ["then","while","before","until","if","within","next","monitor","reassess","re-evaluate","reevaluate"];
+  const g = containsAny(text,generic);
+  const c = containsAny(text,concrete);
+  const p = containsAny(text,plan);
+  if (!g && !c) return 1;
+  if (g && !c) return 2;
+  if (c && !p) return 3;
+  return 4;
+}
+
+
+/* ============================== */
+/* PERFORMANCE SCORING            */
+/* ============================== */
+
+function scorePerformanceDiagnosis(text) {
+  const capacity = ["workload","capacity","too much","covering","projects","resources","bandwidth","priorities"];
+  const skill = ["skill","training","system","tool","new system","experience","knowledge","capability"];
+  const motivation = ["motivation","engagement","checked out","disengaged","interest","energy"];
+  const process = ["started late","planning","prioritization","prioritize","process","workflow","time management","dependencies"];
+  const evidence = ["data","pattern","examples","review","look at","understand","before deciding","before we decide","what changed","root cause"];
+
+  let causes = 0;
+  if (containsAny(text,capacity)) causes++;
+  if (containsAny(text,skill)) causes++;
+  if (containsAny(text,motivation)) causes++;
+  if (containsAny(text,process)) causes++;
+
+  const evidenceBased = containsAny(text,evidence);
+
+  if (causes === 0 && !evidenceBased) return 1;
+  if (causes <= 1 && !evidenceBased) return 2;
+  if (causes >= 2 || (causes >= 1 && evidenceBased)) return 3;
+  return 4;
+}
+
+function scorePerformanceAccountability(text) {
+  const concern = ["missed deadline","missed deadlines","deadline","quality","mistake","mistakes","performance","commitment","expectation","standard"];
+  const clear = ["need to","expect","by","on time","complete","deliver","improve","change","priority"];
+  const followup = ["follow up","check in","revisit","next week","next meeting","review progress","measure","track","specific goal","timeline","date"];
+  const c = containsAny(text,concern);
+  const e = containsAny(text,clear);
+  const f = containsAny(text,followup);
+
+  if (!c && !e) return 1;
+  if (c && !e) return 2;
+  if (e && !f) return 3;
+  return 4;
+}
+
+function scorePerformanceCuriosity(text) {
+  const genericQuestion = ["tell me more","help me understand","what's going on","what is going on","how are things","what happened"];
+  const focusedQuestion = ["what changed","what is getting in the way","what's getting in the way","walk me through","how are you prioritizing","how have you been prioritizing","where is the workload","which work","what support","what do you need","what has made","what is contributing","what's contributing"];
+  const assumptionCheck = ["i don't want to assume","i do not want to assume","before i assume","before we decide","i want to understand","let's understand","let us understand"];
+  const g = containsAny(text,genericQuestion);
+  const f = containsAny(text,focusedQuestion);
+  const a = containsAny(text,assumptionCheck);
+
+  if (!g && !f && !a && !text.includes("?")) return 1;
+  if (g && !f && !a) return 2;
+  if (f || a) return 3;
+  if ((f && a) || (f && text.split("?").length > 2)) return 4;
+  return 2;
+}
+
+function scorePerformanceJudgment(text) {
+  const employeeContext = ["workload","capacity","covering","support","new system","context","resources"];
+  const accountability = ["deadline","deadlines","expectation","performance","standard","commitment","quality","started late","prioritization"];
+  const evidence = ["data","examples","pattern","review","understand","evidence","what changed","before deciding"];
+  const conditional = ["if","depending on","would change","then","based on what we learn","after we understand","reassess","revisit"];
+
+  const context = containsAny(text,employeeContext);
+  const account = containsAny(text,accountability);
+  const ev = containsAny(text,evidence);
+  const cond = containsAny(text,conditional);
+
+  if (!context && !account) return 1;
+  if (context !== account) return 2;
+  if (context && account && !cond && !ev) return 3;
+  return 4;
+}
+
+function detectPerformanceApproach(text) {
+  const accountabilityHeavy = [
+    "need to improve","must improve","not acceptable","unacceptable","performance issue",
+    "need you to","expect you to","hold you accountable","write up","formal warning",
+    "missed deadlines","meet the deadline","meet deadlines"
+  ];
+  const supportHeavy = [
+    "take something off your plate","reduce your workload","move work","reassign",
+    "give you more time","extend the deadline","what support do you need",
+    "how can i support","how can we support","i understand you're overloaded",
+    "i understand you are overloaded"
+  ];
+  const diagnostic = [
+    "help me understand","what changed","what's getting in the way","what is getting in the way",
+    "walk me through","before we decide","before i assume","i want to understand",
+    "how are you prioritizing","what is contributing"
+  ];
+
+  const a = countMatches(text, accountabilityHeavy);
+  const s = countMatches(text, supportHeavy);
+  const d = countMatches(text, diagnostic);
+
+  if (d > 0 || (a > 0 && s > 0)) return "balanced";
+  if (a > s) return "accountability";
+  if (s > a) return "support";
+  return "balanced";
+}
+
+function scoreCommunication(text) {
+  const words = text.trim().split(/\s+/).filter(Boolean);
+  const wordCount = words.length;
+  const defensive = ["calm down","that's not my fault","that is not my fault","there's nothing i can do","there is nothing i can do"];
+  const clarity = ["i recommend","my recommendation","here's what","here is what","first","then","next","because","the reason"];
+  if (containsAny(text,defensive) || wordCount < 6) return 1;
+  if (wordCount < 12 || wordCount > 120) return 2;
+  if (!containsAny(text,clarity)) return 3;
+  return 4;
+}
+
+
+function toFivePointScore(baseScore, text) {
+  const wordCount = text.trim().split(/\s+/).filter(Boolean).length;
+  const questionCount = (text.match(/\?/g) || []).length;
+  const structureSignals = [
+    "because","first","then","next","if","depending on","follow up",
+    "reassess","review","understand","recommend","expect","within"
+  ];
+  const richness = countMatches(text, structureSignals);
+
+  if (baseScore <= 2) return baseScore;
+  if (baseScore === 3) {
+    return (wordCount >= 18 || richness >= 2 || questionCount >= 1) ? 4 : 3;
+  }
+
+  // A previous top-tier 4 becomes either 4 or 5 depending on completeness.
+  return (wordCount >= 24 && (richness >= 2 || questionCount >= 1)) ? 5 : 4;
+}
+
+function evaluateCurrentScenario(text) {
+  let rawScores;
+
+  if (activeScenario === "software") {
+    rawScores = {
+      judgment: scoreSoftwareJudgment(text),
+      riskAssessment: scoreSoftwareRisk(text),
+      perspectiveTaking: scoreSoftwarePerspective(text),
+      problemSolving: scoreSoftwareProblemSolving(text),
+      communication: scoreCommunication(text)
+    };
+  } else if (activeScenario === "performance") {
+    rawScores = {
+      diagnosis: scorePerformanceDiagnosis(text),
+      accountability: scorePerformanceAccountability(text),
+      curiosity: scorePerformanceCuriosity(text),
+      judgment: scorePerformanceJudgment(text),
+      communication: scoreCommunication(text)
+    };
+  } else {
+    rawScores = {
+      empathy: scoreCustomerEmpathy(text),
+      listening: scoreCustomerListening(text),
+      ownership: scoreCustomerOwnership(text),
+      problemSolving: scoreCustomerProblemSolving(text),
+      communication: scoreCommunication(text)
+    };
+  }
+
+  const fivePointScores = {};
+  Object.entries(rawScores).forEach(([key,value]) => {
+    fivePointScores[key] = toFivePointScore(value, text);
+  });
+
+  return fivePointScores;
+}
+
+/* ============================== */
+/* EVALUATION + FEEDBACK          */
+/* ============================== */
+
+function evaluateResponse() {
+  if (!transcriptText.trim()) return;
+
+  const rawResponse = transcriptText.trim();
+  const response = rawResponse.toLowerCase();
+  const roundScores = evaluateCurrentScenario(response);
+
+  roundResponses[currentRound - 1] = rawResponse;
+  Object.keys(roundScores).forEach(skill => scores[skill].push(roundScores[skill]));
+
+  if (activeScenario === "software" && currentRound === 1) {
+    softwareRoundOneDecision = detectSoftwareDecision(response);
+  }
+
+  if (activeScenario === "performance" && currentRound === 1) {
+    performanceRoundOneApproach = detectPerformanceApproach(response);
+  }
+
+  const weakest = findWeakestSkill(roundScores);
+  displayFeedback(roundScores, weakest);
+  renderScoreBars("roundScoreBars", roundScores);
+
+  document.getElementById("feedbackCard").classList.remove("hidden");
+  document.getElementById("evaluateButton").disabled = true;
+
+  if (currentRound >= maxRounds) {
+    document.getElementById("continueButton").innerText = "View report card";
+  }
+
+  document.getElementById("feedbackCard").scrollIntoView({behavior:"smooth", block:"start"});
+}
+
+function detectSoftwareDecision(text) {
+  const delay = ["delay","postpone","hold","pause","stop the release","do not launch","don't launch"];
+  const launch = ["move forward","proceed","launch","release","ship"];
+  if (containsAny(text,delay)) return "delay";
+  if (containsAny(text,launch)) return "launch";
+  return "neutral";
+}
+
+function findWeakestSkill(roundScores) {
+  const skills = Object.keys(roundScores);
+  let weakest = skills[0];
+  skills.forEach(skill => {
+    if (roundScores[skill] < roundScores[weakest]) weakest = skill;
+  });
+  const allStrong = Object.values(roundScores).every(score => score >= 4);
+  return allStrong ? "advanced" : weakest;
+}
+
+function displayFeedback(roundScores, weakest) {
+  const config = scenarioConfigs[activeScenario];
+  const ranked = Object.keys(roundScores).sort((a,b) => roundScores[b] - roundScores[a]);
+  const strongest = ranked[0];
+
+  let html = `
+    <div class="feedback-section">
+      <strong>What worked</strong>
+      ${config.feedback[strongest].strong}
+    </div>
+  `;
+
+  if (weakest === "advanced") {
+    html += `
+      <div class="feedback-section">
+        <strong>Next challenge</strong>
+        The response met the proficient threshold across all five skills. The next conversation adds more complexity and asks you to reconsider your reasoning as the situation changes.
+      </div>
+    `;
+  } else {
+    html += `
+      <div class="feedback-section">
+        <strong>Try next</strong>
+        ${config.feedback[weakest].improve}
+      </div>
+    `;
+  }
+
+  document.getElementById("feedback").innerHTML = html;
+
+  const coachingSummary = document.getElementById("coachingSummary");
+  if (coachingSummary) {
+    if (weakest === "advanced") {
+      coachingSummary.textContent = `You showed strength across all five skills. The next turn will test whether you can maintain that quality as the situation becomes more complex.`;
+    } else {
+      const strongestLabel = config.skills.find(([key]) => key === strongest)?.[1] || strongest;
+      const weakestLabel = config.skills.find(([key]) => key === weakest)?.[1] || weakest;
+      coachingSummary.textContent = `You showed strength in ${strongestLabel}. Your next opportunity is to strengthen ${weakestLabel} before the conversation moves forward.`;
+    }
+  }
+
+  const adaptiveNote = document.getElementById("adaptiveNote");
+  if (adaptiveNote) {
+    adaptiveNote.textContent = currentRound < maxRounds
+      ? "Your response shaped what happens next."
+      : "You’ve completed the practice. Your report card will show how your responses changed.";
+  }
+}
+
+function renderScoreBars(containerId, scoreObject) {
+  const config = scenarioConfigs[activeScenario];
+  const container = document.getElementById(containerId);
+  if (!container) return;
+
+  container.innerHTML = config.skills.map(([key,label]) => {
+    const rubricScore = scoreObject[key] || 0;
+    const points = rubricScore * 4;
+    const width = Math.max(0, Math.min(100, points * 5));
+
+    return `
+      <div class="skill-bar-row">
+        <div class="skill-bar-label">${label}</div>
+        <div class="skill-bar-track" aria-hidden="true">
+          <div class="skill-bar-fill" style="width:${width}%"></div>
+        </div>
+        <div class="skill-bar-score">${points}/20</div>
+      </div>
+    `;
+  }).join("");
+}
+
+/* ============================== */
+/* NEXT ROUND                     */
+/* ============================== */
+
+function continueConversation() {
+  document.getElementById("feedbackCard").classList.add("hidden");
+
+  addCompletedTurnToThread();
+
+  if (currentRound >= maxRounds) {
+    generateReport();
+    return;
+  }
+
+  currentRound++;
+  setText("roundNumber", `Conversation ${currentRound} of ${maxRounds}`);
+  updateConversationProgress();
+
+  let nextQuestion = "";
+  if (activeScenario === "software") {
+    if (currentRound === 2) {
+      if (softwareRoundOneDecision === "delay") {
+        currentAudioKey = "delayChallenge";
+        nextQuestion = "I understand the concern. But delaying tomorrow's launch affects several teams, and a customer announcement has already gone out. We still don't know whether this is an isolated issue. What evidence would you need before changing your recommendation?";
+      } else if (softwareRoundOneDecision === "launch") {
+        currentAudioKey = "launchChallenge";
+        nextQuestion = "I understand. But if this issue is real, users could lose work, and we may not know the full impact until after release. What would make you reconsider moving forward?";
+      } else {
+        currentAudioKey = "delayChallenge";
+        nextQuestion = "We need a clearer recommendation. Delaying affects several teams and a customer announcement, but moving forward could expose users to a real problem. What evidence matters most to your decision, and what would make you change it?";
+      }
+    } else {
+      currentAudioKey = "update";
+      nextQuestion = "We have new information. Engineering has now reproduced the issue once, but only under a specific condition that appears to affect a small percentage of users. There is a temporary workaround, but it has not been widely tested. We still need a final recommendation. What would you do now, and how would you explain your decision to the team?";
+    }
+  } else if (activeScenario === "performance") {
+    if (currentRound === 2) {
+      if (performanceRoundOneApproach === "accountability") {
+        currentAudioKey = "accountabilityChallenge";
+        nextQuestion = "It feels like you've already decided this is about my performance. Have you looked at what my workload has actually been? I'm carrying more projects than I was before the reorganization.";
+      } else {
+        currentAudioKey = "supportChallenge";
+        nextQuestion = "I appreciate that you're trying to understand the workload. But I also need to know what you actually expect from me. What specifically needs to change, and how will we know whether I'm back on track?";
+      }
+    } else {
+      currentAudioKey = "update";
+      nextQuestion = "You review the workload data. The employee is carrying more projects than most of the team. But you also find that two of the missed deadlines were caused by work being started too late, not just workload. You need to agree on what changes next. What would you say now?";
+    }
+  } else {
+    const key = scenarioConfigs.customer.sequence[currentRound];
+    currentAudioKey = key;
+    nextQuestion = scenarioConfigs.customer.questions[key];
+  }
+
+  setConversationText(nextQuestion);
+  document.getElementById("transcript").innerText = "";
+  setText("status", "");
+  transcriptText = "";
+  document.getElementById("evaluateButton").disabled = true;
+
+  setTimeout(() => playCustomerAudio(), 300);
+}
+
+/* ============================== */
+/* REPORT                         */
+/* ============================== */
+
+function average(values) {
+  if (!values.length) return 0;
+  return Math.round(values.reduce((sum,value) => sum + value, 0) / values.length);
+}
+
+function getFinalScores() {
+  const finalScores = {};
+  scenarioConfigs[activeScenario].skills.forEach(([key]) => {
+    finalScores[key] = average(scores[key] || []);
+  });
+  return finalScores;
+}
+
+function getLabels() {
+  const labels = {};
+  scenarioConfigs[activeScenario].skills.forEach(([key,label]) => labels[key] = label);
+  return labels;
+}
+
+function getLevel(totalPoints) {
+  if (totalPoints >= 85) return "Strong";
+  if (totalPoints >= 70) return "Proficient";
+  return "Developing";
+}
+
+function generateReport() {
+  const finalScores = getFinalScores();
+  const totalPoints = Object.values(finalScores)
+    .reduce((sum,score) => sum + (score * 4), 0);
+  const level = getLevel(totalPoints);
+
+  const overall = document.getElementById("overallScore");
+  if (overall) {
+    overall.innerHTML = `
+      <div class="overall-score-ring" style="--score:${totalPoints};" aria-label="${totalPoints} out of 100">
+        <div class="overall-score-center">
+          <span class="overall-score-number">${totalPoints}</span>
+          <span class="overall-score-denominator">out of 100</span>
+        </div>
+      </div>
+    `;
+  }
+
+  renderScoreBars("reportScoreBars", finalScores);
+
+  const ranked = Object.keys(finalScores).sort((a,b) => finalScores[b] - finalScores[a]);
+  const strongest = ranked[0];
+  const weakest = ranked[ranked.length - 1];
+  const labels = getLabels();
+  const config = scenarioConfigs[activeScenario];
+
+  const summary = document.getElementById("reportCoachingSummary");
+  if (summary) {
+    summary.innerHTML = `
+      You showed strength in <strong>${labels[strongest]}</strong> and adjusted your response as the conversation developed.
+      Your next opportunity is to continue strengthening <strong>${labels[weakest]}</strong>.
+      ${config.feedback[weakest].improve}
+    `;
+  }
+
+  document.body.classList.add("report-visible");
+  document.getElementById("reportCard").classList.remove("hidden");
+
+  const postScenarioContent = document.getElementById("postScenarioContent");
+  if (postScenarioContent) postScenarioContent.classList.add("hidden");
+
+  saveConversationDataToGoogleSheet();
+  document.getElementById("reportCard").scrollIntoView({behavior:"smooth"});
+}
+
+function tryAgain() {
+  openScenario();
+}
+
+
+function updatePostScenarioCopy() {
+  const measurementItems = document.querySelectorAll(".measurement-item");
+  if (measurementItems.length < 3) return;
+
+  if (activeScenario === "software") {
+    measurementItems[0].querySelector("strong").textContent = "Improvement over time";
+    measurementItems[0].querySelector("span").textContent = "Changes in judgment and reasoning across attempts.";
+    measurementItems[1].querySelector("strong").textContent = "Transfer to the workplace";
+    measurementItems[1].querySelector("span").textContent = "Use of evidence, trade-offs, and contingency planning in real decisions.";
+    measurementItems[2].querySelector("strong").textContent = "Decision outcomes";
+    measurementItems[2].querySelector("span").textContent = "Quality, reversibility, risk reduction, and the consequences of the decision.";
+  } else if (activeScenario === "performance") {
+    measurementItems[0].querySelector("strong").textContent = "Improvement over time";
+    measurementItems[0].querySelector("span").textContent = "Changes in diagnosis, curiosity, and accountability across attempts.";
+    measurementItems[1].querySelector("strong").textContent = "Transfer to the workplace";
+    measurementItems[1].querySelector("span").textContent = "Use of evidence and manager judgment in real performance conversations.";
+    measurementItems[2].querySelector("strong").textContent = "Performance outcomes";
+    measurementItems[2].querySelector("span").textContent = "Clarity of expectations, follow-through, and improvement after the conversation.";
+  } else {
+    measurementItems[0].querySelector("strong").textContent = "Improvement over time";
+    measurementItems[0].querySelector("span").textContent = "Changes in performance across attempts.";
+    measurementItems[1].querySelector("strong").textContent = "Transfer to the workplace";
+    measurementItems[1].querySelector("span").textContent = "Use of the skills in real customer interactions.";
+    measurementItems[2].querySelector("strong").textContent = "Customer outcomes";
+    measurementItems[2].querySelector("span").textContent = "Changes in satisfaction and issue resolution.";
+  }
+}
+
+function renderRubric() {
+  const config = scenarioConfigs[activeScenario];
+  const container = document.getElementById("rubricDetails");
+  if (!container) return;
+
+  container.innerHTML = config.skills.map(([key,label]) => {
+    const sourceRows = config.rubric[key] || [];
+    const rows = [...sourceRows];
+
+    if (rows.length === 4) {
+      rows.push("Demonstrates the behavior consistently, specifically, and adapts it thoughtfully to the situation.");
+    }
+
+    return `
+      <details>
+        <summary>${label}</summary>
+        <div class="rubric-detail">
+          ${rows.map((row,index) => `<div class="rubric-row"><strong>${index+1}</strong> — ${row}</div>`).join("")}
+        </div>
+      </details>
+    `;
+  }).join("");
+}
+
+
+/* ============================== */
+/* CSV DATA DOWNLOAD              */
+/* ============================== */
+
+
+function buildConversationDataPayload() {
+  const completedAt = new Date();
+  const finalScores = getFinalScores();
+  const config = scenarioConfigs[activeScenario];
+  const totalPoints = Object.values(finalScores)
+    .reduce((sum,score) => sum + (score * 4), 0);
+  const level = getLevel(totalPoints);
+  const reflection = document.getElementById("reflectionText")?.innerText.trim() || "";
+
+  const payload = {
+    completedDate: completedAt.toLocaleDateString(),
+    completedTime: completedAt.toLocaleTimeString(),
+    isoTimestamp: completedAt.toISOString(),
+    scenario: config.eyebrow,
+    performanceLevel: level,
+    totalScore: totalPoints,
+    round1Response: roundResponses[0] || "",
+    round2Response: roundResponses[1] || "",
+    round3Response: roundResponses[2] || "",
+    reflection
+  };
+
+  config.skills.forEach(([key,label]) => {
+    const safeLabel = label.replace(/[^A-Za-z0-9]+/g, "_");
+    payload[`round1_${safeLabel}`] = (scores[key]?.[0] ?? 0) * 4;
+    payload[`round2_${safeLabel}`] = (scores[key]?.[1] ?? 0) * 4;
+    payload[`round3_${safeLabel}`] = (scores[key]?.[2] ?? 0) * 4;
+    payload[`final_${safeLabel}`] = (finalScores[key] ?? 0) * 4;
+  });
+
+  if (activeScenario === "software") {
+    payload.initialRecommendation = softwareRoundOneDecision;
+  }
+
+  if (activeScenario === "performance") {
+    payload.initialManagerApproach = performanceRoundOneApproach;
+  }
+
+  return payload;
+}
+
+async function saveConversationDataToGoogleSheet() {
+  const status = document.getElementById("sheetSaveStatus");
+
+  if (!GOOGLE_SHEET_WEB_APP_URL) {
+    if (status) {
+      status.textContent = "Automatic saving is ready once the Google Sheet Web App URL is added.";
+    }
+    return;
+  }
+
+  try {
+    if (status) status.textContent = "Saving results…";
+
+    const payload = buildConversationDataPayload();
+
+    await fetch(GOOGLE_SHEET_WEB_APP_URL, {
+      method: "POST",
+      mode: "no-cors",
+      headers: {
+        "Content-Type": "text/plain;charset=utf-8"
+      },
+      body: JSON.stringify(payload)
+    });
+
+    if (status) {
+      status.textContent = "Results saved.";
+    }
+  } catch (error) {
+    console.error("Google Sheet save failed:", error);
+    if (status) {
+      status.textContent = "Automatic save did not complete. You can still download the CSV.";
+    }
+  }
+}
+
+function csvEscape(value) {
+  const text = value == null ? "" : String(value);
+  return `"${text.replace(/"/g, '""')}"`;
+}
+
+function formatFileTimestamp(date) {
+  const pad = value => String(value).padStart(2, "0");
+  return [
+    date.getFullYear(),
+    pad(date.getMonth() + 1),
+    pad(date.getDate())
+  ].join("-") + "_" + [
+    pad(date.getHours()),
+    pad(date.getMinutes()),
+    pad(date.getSeconds())
+  ].join("-");
+}
+
+function downloadConversationData() {
+  const completedAt = new Date();
+  const finalScores = getFinalScores();
+  const config = scenarioConfigs[activeScenario];
+  const totalPoints = Object.values(finalScores)
+    .reduce((sum,score) => sum + (score * 4), 0);
+  const level = getLevel(totalPoints);
+  const reflection = document.getElementById("reflectionText")?.innerText.trim() || "";
+
+  const headers = [
+    "Completed Date",
+    "Completed Time",
+    "ISO Timestamp",
+    "Scenario",
+    "Performance Level",
+    "Total Score (/100)",
+    "Round 1 Response",
+    "Round 2 Response",
+    "Round 3 Response"
+  ];
+
+  const values = [
+    completedAt.toLocaleDateString(),
+    completedAt.toLocaleTimeString(),
+    completedAt.toISOString(),
+    config.eyebrow,
+    level,
+    totalPoints,
+    roundResponses[0] || "",
+    roundResponses[1] || "",
+    roundResponses[2] || ""
+  ];
+
+  config.skills.forEach(([key,label]) => {
+    headers.push(`Round 1 - ${label} (/20)`);
+    headers.push(`Round 2 - ${label} (/20)`);
+    headers.push(`Round 3 - ${label} (/20)`);
+    headers.push(`Final - ${label} (/20)`);
+
+    values.push(
+      (scores[key]?.[0] ?? 0) * 4,
+      (scores[key]?.[1] ?? 0) * 4,
+      (scores[key]?.[2] ?? 0) * 4,
+      (finalScores[key] ?? 0) * 4
+    );
+  });
+
+  if (activeScenario === "software") {
+    headers.push("Initial Recommendation");
+    values.push(softwareRoundOneDecision);
+  }
+
+  if (activeScenario === "performance") {
+    headers.push("Initial Manager Approach");
+    values.push(performanceRoundOneApproach);
+  }
+
+  headers.push("Reflection");
+  values.push(reflection);
+
+  const csv = [
+    headers.map(csvEscape).join(","),
+    values.map(csvEscape).join(",")
+  ].join("\n");
+
+  const blob = new Blob([csv], {type: "text/csv;charset=utf-8;"});
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement("a");
+
+  const scenarioName = config.eyebrow
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "");
+
+  link.href = url;
+  link.download = `${scenarioName}-data_${formatFileTimestamp(completedAt)}.csv`;
+  document.body.appendChild(link);
+  link.click();
+  link.remove();
+
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+}
+
+/* ============================== */
+/* PDF DOWNLOAD                   */
+/* ============================== */
+
+function downloadReportCard() {
+  if (!window.jspdf || !window.jspdf.jsPDF) {
+    alert("The PDF tool did not load. Please refresh the page and try again.");
+    return;
+  }
+
+  const { jsPDF } = window.jspdf;
+  const doc = new jsPDF({orientation:"portrait", unit:"mm", format:"a4"});
+  const finalScores = getFinalScores();
+  const labels = getLabels();
+  const totalPoints = Object.values(finalScores)
+    .reduce((sum,score) => sum + (score * 4), 0);
+  const level = getLevel(totalPoints);
+  const config = scenarioConfigs[activeScenario];
+
+  const accent = [122,46,92];
+  const ink = [58,36,56];
+  const muted = [91,75,88];
+  const paper = [245,235,243];
+  const card = [251,247,250];
+  const line = [222,206,217];
+
+  doc.setFillColor(...paper);
+  doc.rect(0,0,210,297,"F");
+  doc.setFillColor(...card);
+  doc.roundedRect(18,18,174,258,5,5,"F");
+
+  doc.setFont("helvetica","bold");
+  doc.setFontSize(8.5);
+  doc.setTextColor(...accent);
+  doc.text("YOUR REPORT CARD",30,32);
+
+  doc.setFont("times","normal");
+  doc.setFontSize(25);
+  doc.setTextColor(...ink);
+  doc.text("Adaptive Learning Prototype",30,47);
+
+  doc.setFont("helvetica","normal");
+  doc.setFontSize(9.5);
+  doc.setTextColor(...muted);
+  doc.text(`${config.eyebrow} | Rule-based adaptive learning`,30,57);
+
+  // Top-right navigation buttons in the downloaded report card.
+  const navButtons = [
+    {label:"Home", x:119, w:18, url:"https://kahlilamae.github.io/"},
+    {label:"My Work", x:140, w:23, url:"https://kahlilamae.github.io/impact%202.html"},
+    {label:"Conversation Lab", x:166, w:26, url:"https://kahlilamae.github.io/practice-the-conversation/"}
+  ];
+
+  navButtons.forEach(btn => {
+    doc.setDrawColor(210,188,202);
+    doc.setFillColor(251,247,250);
+    doc.roundedRect(btn.x,25,btn.w,7,3.5,3.5,"FD");
+    doc.setFont("helvetica","normal");
+    doc.setFontSize(6.5);
+    doc.setTextColor(...accent);
+    doc.text(btn.label, btn.x + btn.w/2, 29.6, {align:"center"});
+    doc.link(btn.x,25,btn.w,7,{url:btn.url});
+  });
+
+  doc.setFont("helvetica","bold");
+  doc.setFontSize(15);
+  doc.setTextColor(...accent);
+  doc.text(`${totalPoints}/100`,30,72);
+
+  let y = 87;
+  const barX = 88;
+  const barW = 70;
+  const barH = 5.5;
+  const barTrack = [235,229,233];
+  const barFill = [142,75,117];
+
+  Object.keys(finalScores).forEach(skill => {
+    const rubricScore = finalScores[skill];
+    const score = rubricScore * 4;
+    const fillW = Math.max(0, Math.min(barW, barW * (score / 20)));
+
+    doc.setFont("helvetica","normal");
+    doc.setFontSize(10.5);
+    doc.setTextColor(...ink);
+    doc.text(labels[skill],30,y + 4.2);
+
+    doc.setFillColor(...barTrack);
+    doc.roundedRect(barX,y,barW,barH,barH/2,barH/2,"F");
+
+    if (fillW > 0) {
+      doc.setFillColor(...barFill);
+      doc.roundedRect(barX,y,fillW,barH,barH/2,barH/2,"F");
+    }
+
+    doc.setFont("helvetica","normal");
+    doc.setFontSize(10);
+    doc.setTextColor(...ink);
+    doc.text(`${score}/20`,177,y + 4.2,{align:"right"});
+
+    y += 14;
+  });
+
+  doc.setFont("times","normal");
+  doc.setFontSize(15);
+  doc.setTextColor(...ink);
+  doc.text("Reflection",30,y+13);
+
+  doc.setFont("helvetica","normal");
+  doc.setFontSize(10);
+  doc.setTextColor(...muted);
+  const reflection = document.getElementById("reflectionText")?.innerText.trim() || "No reflection entered.";
+  doc.text(doc.splitTextToSize(reflection,145),30,y+23);
+
+  doc.setFontSize(8);
+  doc.text("Conversation Lab | Rule-based Adaptive Learning Prototype",30,263);
+
+  const filename = activeScenario === "software"
+    ? "Software-Delay-Report-Card.pdf"
+    : activeScenario === "performance"
+      ? "Performance-Conversation-Report-Card.pdf"
+      : "Upset-Customer-Report-Card.pdf";
+
+  doc.save(filename);
+}
+
+emptyScores();
+renderRubric();
+
+</script>
+
+
+</body>
+
+</html>
