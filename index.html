@@ -1,1169 +1,1722 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <title>Kahlila Mae Liverpool</title>
-  <meta name="description" content="What I did and what changed.">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
-
-  <style>
-    :root {
-      --cream: #FCFBF8;
-      --cream-2: #FBFAF7;
-      --card: #FFFFFF;
-      --plum: #5B1A46;
-      --plum-deep: #4A1238;
-      --berry: #8E1F5A;
-      --ink: #2E2430;
-      --body: #4A3F4C;
-      --muted: #7A6D7C;
-      --pill: #F8F2F6;
-      --line: #EADFD0;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      margin: 0;
-      background: #F5EBF3;
-      background-attachment: fixed;
-      color: var(--body);
-      font-family: "Source Sans 3", system-ui, -apple-system, "Segoe UI", sans-serif;
-      font-size: 17px;
-      line-height: 1.55;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    a {
-      color: var(--plum);
-    }
-
-    a:hover {
-      color: var(--berry);
-    }
-
-    .wrap {
-      max-width: 1080px;
-      margin: 0 auto;
-      padding: 0 28px;
-    }
-
-    /* STICKY PAGE HEADER */
-
-    .sticky-header {
-      position: sticky;
-      top: 0;
-      z-index: 50;
-      background: rgba(245, 235, 243, 0.97);
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-      border-bottom: 1px solid rgba(122, 46, 92, .12);
-    }
-
-    /* TOP NAVIGATION */
-
-    .topbar {
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
-      max-width: 920px;
-      min-height: 82px;
-      margin: 0 auto;
-      padding: 18px 32px;
-      font-size: 15px;
-    }
-
-    .topbar nav a {
-      margin-left: 22px;
-      text-decoration: none;
-      color: var(--muted);
-      font-weight: 500;
-    }
-
-    .topbar nav a:hover,
-    .topbar nav a[aria-current="page"] {
-      color: var(--plum);
-    }
-
-    .topbar nav a[aria-current="page"] {
-      border-bottom: 2px solid var(--berry);
-      padding-bottom: 3px;
-    }
-
-    /* INTRO */
-
-    .intro {
-      max-width: none;
-      margin: 0;
-      padding: 68px 0 48px;
-    }
-
-    .eyebrow {
-      margin: 0 0 12px;
-      font-size: 13px;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      font-weight: 600;
-      color: var(--berry);
-    }
-
-    h1 {
-      font-family: "Playfair Display", Georgia, serif;
-      font-weight: 400;
-      font-size: clamp(3.65rem, 5.5vw, 4.45rem);
-      line-height: 1.16;
-      letter-spacing: -0.032em;
-      color: #3A2438;
-      margin: 0 0 14px;
-    }
-
-    .lede {
-      font-size: 20px;
-      color: var(--body);
-      margin: 0;
-      max-width: 640px;
-    }
-
-    /* CARDS */
-
-    .cards {
-      display: grid;
-      gap: 50px;
-      padding: 10px 0 60px;
-    }
-
-    .card {
-      display: grid;
-      grid-template-columns: 1fr 292px;
-      background: var(--card);
-      border-radius: 18px;
-      overflow: hidden;
-      box-shadow:
-        0 4px 16px rgba(58, 36, 56, 0.045),
-        0 20px 48px rgba(58, 36, 56, 0.075);
-      transition: transform .24s ease, box-shadow .24s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-4px);
-      box-shadow:
-        0 8px 22px rgba(58, 36, 56, 0.065),
-        0 28px 58px rgba(58, 36, 56, 0.11);
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      .card { transition: none; }
-      .card:hover { transform: none; }
-    }
-
-    .card-main {
-      padding: 30px 34px 28px;
-    }
-
-    .role-line {
-      margin: 0 0 6px;
-      font-size: 12.5px;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      font-weight: 600;
-      color: var(--berry);
-    }
-
-    .role-line .sep {
-      margin: 0 10px;
-      color: var(--muted);
-      font-weight: 400;
-    }
-
-    .role-line .years {
-      color: var(--muted);
-      letter-spacing: 0.08em;
-      font-size: 11.5px;
-      font-weight: 400;
-    }
-
-    .card h2 {
-      font-family: "Source Serif 4", Georgia, serif;
-      font-weight: 600;
-      font-size: 32px;
-      line-height: 1.15;
-      letter-spacing: -0.005em;
-      color: var(--plum-deep);
-      margin: 16px 0 4px;
-    }
-
-    .org {
-      font-family: "Source Serif 4", Georgia, serif;
-      font-size: 16.5px;
-      color: var(--ink);
-      margin: 0 0 16px;
-    }
-
-    .challenge {
-      margin: 0 0 18px;
-      font-size: 15.5px;
-      line-height: 1.5;
-      color: var(--body);
-    }
-
-    .challenge-label {
-      display: block;
-      margin-bottom: 4px;
-      font-size: 12.5px;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--berry);
-    }
-
-    .bullets {
-      margin: 0;
-      padding: 0;
-      list-style: none;
-    }
-
-    .bullets li {
-      position: relative;
-      padding-left: 26px;
-      margin: 0 0 11px;
-      font-size: 16px;
-      line-height: 1.5;
-    }
-
-    .bullets li::before {
-      content: "";
-      position: absolute;
-      left: 7px;
-      top: 0.62em;
-      width: 5px;
-      height: 5px;
-      border-radius: 50%;
-      background: var(--berry);
-    }
-
-    .bullets strong {
-      color: var(--ink);
-      font-weight: 600;
-    }
-
-    .bullets .hl {
-      color: var(--berry);
-      font-weight: 600;
-    }
-
-    .pills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin: 20px 0 0;
-      padding: 0;
-      list-style: none;
-    }
-
-    .pills li {
-      background: var(--pill);
-      color: #705A6C;
-      font-size: 12px;
-      font-weight: 400;
-      padding: 4px 11px;
-      border-radius: 999px;
-      border: 1px solid rgba(122, 46, 92, .08);
-    }
-
-    /* KEY IMPACT COLUMN */
-
-    .impact {
-      background: #78305F;
-      color: #fff;
-      padding: 14px 26px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-
-    .impact h3 {
-      position: absolute;
-      width: 1px;
-      height: 1px;
-      overflow: hidden;
-      clip: rect(0 0 0 0);
-    }
-
-    .stat {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      padding: 16px 0;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-    }
-
-    .stat:last-child {
-      border-bottom: 0;
-    }
-
-    .stat svg {
-      flex: 0 0 34px;
-      width: 34px;
-      height: 34px;
-      fill: none;
-      stroke: #F1DCE8;
-      stroke-width: 1.4;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-    }
-
-    .stat .num {
-      display: block;
-      font-family: "Source Serif 4", Georgia, serif;
-      font-weight: 500;
-      font-size: 34px;
-      line-height: 1;
-      color: #fff;
-    }
-
-    .stat .desc {
-      display: block;
-      margin-top: 5px;
-      font-size: 13.5px;
-      line-height: 1.3;
-      color: #EBD6E2;
-    }
-
-    /* BUTTONS */
-
-    .btn-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 18px;
-    }
-
-    .btn {
-      display: inline-block;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 15px;
-      padding: 12px 22px;
-      border-radius: 999px;
-      border: 1.5px solid var(--plum);
-      color: var(--plum);
-    }
-
-    .btn.primary {
-      background: var(--plum);
-      color: #fff;
-    }
-
-    .btn:hover {
-      background: var(--berry);
-      border-color: var(--berry);
-      color: #fff;
-    }
-
-    /* LET'S CONNECT */
-
-    .work-connect {
-      text-align: center;
-      padding: 110px 24px 84px;
-    }
-
-    .work-connect .eyebrow {
-      margin-bottom: 30px;
-    }
-
-    .work-connect h2 {
-      font-family: "Source Serif 4", Georgia, serif;
-      font-weight: 500;
-      font-size: clamp(42px, 5vw, 58px);
-      line-height: 1.1;
-      letter-spacing: -0.01em;
-      color: var(--plum);
-      margin: 0 0 28px;
-    }
-
-    .work-connect-text {
-      max-width: 760px;
-      margin: 0 auto;
-      font-size: 20px;
-      line-height: 1.6;
-      color: var(--body);
-    }
-
-    .work-connect .btn-row {
-      justify-content: center;
-      gap: 12px;
-      margin-top: 30px;
-    }
-
-    .work-connect .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 118px;
-      height: 46px;
-      padding: 0 18px;
-      font-family: "Source Sans 3", sans-serif;
-      font-size: 16px;
-      font-weight: 400;
-      line-height: 1;
-      border-radius: 999px;
-      text-decoration: none;
-    }
-
-    /* LINKEDIN BUTTON */
-
-    .work-connect .btn:not(.primary) {
-      background: rgba(255, 255, 255, 0.18);
-      color: #5B1A46;
-      border: 1px solid rgba(122, 46, 92, .25);
-    }
-
-    /* EMAIL BUTTON */
-
-    .work-connect .btn.primary {
-      background: #78305F;
-      color: #FFFFFF;
-      border: 1px solid #D9B7CB;
-    }
-
-    .work-connect .btn:hover {
-      background: #5B1A46;
-      border-color: #5B1A46;
-      color: #FFFFFF;
-    }
-
-    footer {
-      padding: 26px 0 46px;
-      font-size: 14px;
-      color: var(--muted);
-      text-align: right;
-    }
-
-    /* TABLET */
-
-    @media (max-width: 860px) {
-      .card {
-        grid-template-columns: 1fr 230px;
-      }
-
-      .card-main {
-        padding: 26px 24px 24px;
-      }
-
-      .impact {
-        padding: 10px 20px;
-      }
-
-      .stat svg {
-        flex-basis: 28px;
-        width: 28px;
-        height: 28px;
-      }
-
-      .stat .num {
-        font-size: 28px;
-      }
-    }
-
-    /* PHONES */
-
-    @media (max-width: 600px) {
-      body {
-        font-size: 16px;
-      }
-
-      .wrap {
-        padding: 0 14px;
-      }
-
-      .topbar {
-        justify-content: flex-end;
-        min-height: 64px;
-        padding: 12px 14px;
-      }
-
-      .topbar nav a {
-        margin: 0 0 0 14px;
-      }
-
-      .intro {
-        padding: 44px 0 36px;
-      }
-
-      h1 {
-        font-size: clamp(2.8rem, 8.5vw, 3.5rem);
-        line-height: 1.2;
-      }
-
-      .card {
-        grid-template-columns: 1fr;
-      }
-
-      .card-main {
-        padding: 24px 20px 22px;
-      }
-
-      .role-line {
-        font-size: 12px;
-      }
-
-      .card h2 {
-        font-size: 26px;
-      }
-
-      .impact {
-        padding: 6px 22px;
-      }
-
-      .stat {
-        padding: 14px 0;
-      }
-
-      .work-connect {
-        padding: 48px 10px 60px;
-      }
-
-      .work-connect h2 {
-        font-size: 42px;
-      }
-
-      .work-connect-text {
-        font-size: 18px;
-      }
-    }
-
-
-    /* Keep the enrollment change on one line with a smaller arrow. */
-
-    .stat .num.enrollment-change {
-      display: flex;
-      align-items: baseline;
-      gap: 3px;
-      white-space: nowrap;
-      font-size: 29px;
-      letter-spacing: -0.04em;
-    }
-
-    .stat .change-arrow {
-      font-size: 0.55em;
-      letter-spacing: 0;
-    }
-
-    @media (min-width: 601px) and (max-width: 860px) {
-      .stat .num.enrollment-change {
-        font-size: 24px;
-      }
-
-      .enrollment-stat {
-        gap: 8px;
-      }
-    }
-
-    /* FLOATING DETAILS — consistent with the homepage */
-    /* Cards keep the existing ambient shadow and gentle hover lift. */
-
-    /* Contact buttons float softly, without changing their colors or shape. */
-    .work-connect .btn {
-      box-shadow:
-        0 5px 14px rgba(58, 36, 56, .075),
-        0 12px 28px rgba(58, 36, 56, .065);
-      transition: transform .24s ease, box-shadow .24s ease,
-                  background-color .24s ease, border-color .24s ease,
-                  color .24s ease;
-    }
-
-    @media (hover: hover) {
-      .work-connect .btn:hover {
-        transform: translateY(-3px);
-        box-shadow:
-          0 8px 20px rgba(58, 36, 56, .10),
-          0 18px 34px rgba(58, 36, 56, .10);
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      .work-connect .btn { transition: none; }
-      .work-connect .btn:hover { transform: none; }
-    }
-  </style>
-
-  <script
-    data-goatcounter="https://kahlilamae.goatcounter.com/count"
-    async
-    src="//gc.zgo.at/count.js">
-  </script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Keep Safari/browser chrome neutral -->
+<meta name="theme-color" content="#ffffff">
+
+<meta
+  name="description"
+  content="Kahlila Mae Liverpool — L&D | Leadership Development | Exploring Adaptive Learning + AI.">
+
+<!-- Social Preview -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://kahlilamae.github.io/">
+<meta property="og:title" content="What I’m Thinking About">
+<meta property="og:description" content="A little more about me and how I think.">
+<meta property="og:image" content="https://kahlilamae.github.io/Kahlila-hero-final(4).png">
+
+<title>Kahlila Mae Liverpool | L&D</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link
+  href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=Playfair+Display:wght@400&display=swap"
+  rel="stylesheet">
+
+<style>
+
+:root{
+  --ink:#3A2438;
+  --muted:#5B4B58;
+
+  /* Main site background */
+  --paper:#F5EBF3;
+
+  /* Major boxes */
+  --card:#FBF7FA;
+
+  --line:rgba(122,46,92,.18);
+  --soft-line:rgba(122,46,92,.14);
+  --accent:#7A2E5C;
+
+  --max:1040px;
+  --radius:26px;
+
+  --linkedin-bg:#FBF7FA;
+  --linkedin-border:rgba(122,46,92,.25);
+
+  --email-bg:#7A2E5C;
+  --email-border:rgba(122,46,92,.18);
+}
+
+
+/* ========================= */
+/* BASE                      */
+/* ========================= */
+
+*{
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+
+  font-family:'DM Sans',Arial,sans-serif;
+  font-size:1.25rem;
+  font-weight:400;
+  line-height:1.625;
+
+  -webkit-font-smoothing:antialiased;
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+/* Visible focus for keyboard users only */
+a:focus-visible{
+  outline:3px solid var(--accent);
+  outline-offset:3px;
+}
+
+/* Text for screen readers only */
+.sr-only{
+  position:absolute;
+  width:1px;
+  height:1px;
+  margin:-1px;
+  padding:0;
+  overflow:hidden;
+  clip:rect(0 0 0 0);
+  white-space:nowrap;
+  border:0;
+}
+
+.wrap{
+  width:min(calc(100% - 120px),var(--max));
+  margin:0 auto;
+}
+
+
+/* ========================= */
+/* TYPOGRAPHY                */
+/* ========================= */
+
+h1{
+  font-family:'Playfair Display',Georgia,serif;
+  font-size:3rem;
+  font-weight:400;
+  line-height:1.17;
+  letter-spacing:-.035em;
+}
+
+h2,
+h3,
+.intro,
+.question-text{
+  font-family:'Playfair Display',Georgia,serif;
+  font-size:1.75rem;
+  font-weight:400;
+  line-height:1.3;
+  letter-spacing:-.02em;
+}
+
+.eyebrow,
+.label{
+  font-family:'DM Sans',Arial,sans-serif;
+  font-size:.8125rem;
+  font-weight:500;
+  line-height:1.4;
+  letter-spacing:.15em;
+  text-transform:uppercase;
+  color:var(--accent);
+}
+
+/* Consistent body text across the entire site */
+p,
+.card p,
+.focus-item p,
+.human p,
+.connect p,
+.guides-copy p{
+  font-family:'DM Sans',Arial,sans-serif;
+  font-size:1rem;
+  font-weight:400;
+  line-height:1.625;
+}
+
+
+/* ========================= */
+/* NAVIGATION                */
+/* ========================= */
+
+nav{
+  position:sticky;
+  top:0;
+  z-index:20;
+  background:#F5EBF3;
+  border-bottom:1px solid var(--line);
+}
+
+.nav{
+  min-height:70px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.brand{
+  font-family:'Playfair Display',Georgia,serif;
+  font-size:1.15rem;
+  font-weight:400;
+  color:#3A2438;
+}
+
+.nav-link{
+  font-family:'DM Sans',Arial,sans-serif;
+  font-size:.95rem;
+  font-weight:500;
+  color:var(--accent);
+}
+
+.nav-link:hover{
+  text-decoration:underline;
+  text-underline-offset:4px;
+}
+
+.nav-links{
+  display:grid;
+  grid-template-columns:repeat(3,132px);
+  gap:10px;
+  align-items:center;
+}
+
+.nav-link{
+  width:132px;
+  min-height:40px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:0 10px 3px;
+  text-align:center;
+}
+
+.nav-link.active{
+  text-decoration:underline;
+  text-underline-offset:8px;
+  text-decoration-thickness:2px;
+}
+
+@media(max-width:760px){
+  .nav{
+    gap:16px;
+  }
+
+  .nav-links{
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:6px;
+    width:min(100%,420px);
+  }
+
+  .nav-link{
+    width:100%;
+    min-height:38px;
+    padding:0 4px 3px;
+    font-size:.78rem;
+  }
+}
+
+
+/* ========================= */
+/* HERO                      */
+/* ========================= */
+
+.hero{
+  position:relative;
+  min-height:720px;
+  overflow:hidden;
+  background:var(--paper);
+}
+
+.hero-photo{
+  position:absolute;
+  inset:0;
+
+  background-image:url("./Kahlila-hero-final(4).png");
+  background-repeat:no-repeat;
+  background-size:auto 80%;
+  background-position:75% bottom;
+
+  z-index:0;
+}
+
+
+/* ========================= */
+/* HERO TEXT                 */
+/* ========================= */
+
+.hero-content{
+  position:relative;
+  z-index:2;
+
+  min-height:inherit;
+
+  display:flex;
+  align-items:center;
+}
+
+.hero-copy{
+  width:47%;
+  max-width:525px;
+  transform:translateY(-18px);
+}
+
+.hero h1{
+  max-width:525px;
+  margin:22px 0 28px;
+}
+
+.hero p{
+  max-width:505px;
+  margin:0;
+  color:var(--muted);
+}
+
+/* Hero buttons beneath hero text */
+.hero-actions{
+  display:flex;
+  justify-content:flex-start;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-top:24px;
+}
+
+
+/* ========================= */
+/* ALL SECTIONS              */
+/* ========================= */
+
+section{
+  padding:105px 0;
+  border-top:1px solid var(--line);
+}
+
+.label{
+  margin-bottom:36px;
+}
+
+
+/* ========================= */
+/* WHAT GUIDES ME            */
+/* ========================= */
+
+.guides-section{
+  border-top:1px solid var(--line);
+}
+
+.guides-content{
+  max-width:940px;
+  margin:0;
+  text-align:left;
+}
+
+.guides-content .intro{
+  max-width:900px;
+  margin:0 0 20px;
+}
+
+.guides-copy{
+  max-width:900px;
+  margin:0;
+  color:var(--muted);
+}
+
+.guides-copy p{
+  margin:0;
+}
+
+
+/* ========================= */
+/* MY APPROACH               */
+/* ========================= */
+
+.cards{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:20px;
+
+  background:transparent;
+  border:none;
+
+  border-radius:var(--radius);
+  overflow:visible;
+}
+
+.card{
+  background:var(--card);
+  padding:38px;
+  min-height:205px;
+  border-radius:var(--radius);
+}
+
+.card .label{
+  margin-bottom:14px;
+}
+
+.card h3{
+  margin:0 0 14px;
+}
+
+.card:nth-child(2) h3{
+  margin-top:31px;
+}
+
+.card p{
+  color:var(--muted);
+  margin:0;
+}
+
+
+/* ========================= */
+/* WHAT I'M FOCUSED ON       */
+/* ========================= */
+
+.focus-section{
+  padding:78px 0 82px;
+  border-top:1px solid var(--line);
+}
+
+.focus-title{
+  font-family:'Playfair Display',Georgia,serif;
+  font-size:2.125rem;
+  font-weight:400;
+  line-height:1.25;
+  letter-spacing:-.025em;
+  margin:0 0 42px;
+}
+
+.focus-list{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:0;
+}
+
+.focus-item{
+  position:relative;
+  text-align:left;
+  padding:0 38px;
+}
+
+.focus-item:first-child{
+  padding-left:0;
+}
+
+.focus-item:last-child{
+  padding-right:0;
+}
+
+.focus-item + .focus-item{
+  border-left:1px solid var(--soft-line);
+}
+
+.focus-icon{
+  width:48px;
+  height:48px;
+  display:flex;
+  align-items:center;
+  justify-content:flex-start;
+  margin:0 0 18px;
+  color:var(--accent);
+}
+
+.focus-icon svg{
+  width:48px;
+  height:48px;
+  fill:none;
+  stroke:currentColor;
+  stroke-width:1.6;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+
+.focus-item h3{
+  font-family:'Playfair Display',Georgia,serif;
+  font-size:1.5rem;
+  font-weight:400;
+  line-height:1.3;
+  letter-spacing:-.02em;
+  margin:0 0 12px;
+  color:var(--ink);
+}
+
+.focus-item h3 .amp{
+  font-family:'DM Sans',Arial,sans-serif;
+  font-size:.82em;
+  font-weight:400;
+  letter-spacing:0;
+  color:inherit;
+}
+
+.focus-item p{
+  color:var(--muted);
+  margin:0;
+  max-width:320px;
+}
+
+
+/* ========================= */
+/* QUESTIONS                 */
+/* ========================= */
+
+.questions-section{
+  padding-bottom:105px;
+}
+
+.questions-panel{
+  background:var(--card);
+  border:1px solid #A06A8A;
+  border-radius:var(--radius);
+  padding:54px 56px 58px;
+}
+
+.questions-panel .label{
+  margin-bottom:20px;
+}
+
+.questions-list{
+  max-width:900px;
+  margin:0;
+}
+
+.question-item{
+  padding:16px 0;
+}
+
+.question-item:first-child{
+  padding-top:0;
+}
+
+.question-item:last-child{
+  padding-bottom:0;
+}
+
+.question-item + .question-item{
+  border-top:1px solid var(--soft-line);
+}
+
+.question-text{
+  margin:0;
+  max-width:900px;
+}
+
+
+/* ========================= */
+/* FAVORITES                 */
+/* ========================= */
+
+.human{
+  max-width:var(--max);
+}
+
+.human > h2,
+.human > p{
+  max-width:900px;
+}
+
+.human p{
+  color:var(--muted);
+}
+
+.intro{
+  max-width:880px;
+  margin:0 0 20px;
+}
+
+.human .intro{
+  font-size:1.75rem;
+}
+
+
+/* ========================= */
+/* BUTTONS                   */
+/* ========================= */
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+
+  width:auto;
+  min-width:104px;
+  height:auto;
+  min-height:40px;
+
+  padding:8px 12px;
+  border-radius:999px;
+
+  font-family:'DM Sans',Arial,sans-serif;
+  font-size:.88rem;
+  font-weight:500;
+
+  transition:
+    transform .2s ease,
+    opacity .2s ease;
+}
+
+.btn:hover{
+  transform:translateY(-2px);
+  opacity:.85;
+}
+
+.linkedin-btn{
+  background:var(--linkedin-bg);
+  color:var(--ink);
+  border:1px solid var(--linkedin-border);
+}
+
+.email-btn{
+  background:var(--email-bg);
+  color:#FBF7FA;
+  border:1px solid var(--email-border);
+}
+
+
+/* ========================= */
+/* CONNECT                   */
+/* ========================= */
+
+.connect{
+  text-align:center;
+  padding:125px 0 100px;
+  border-top:none;
+}
+
+.connect h2{
+  font-family:'Playfair Display',Georgia,serif;
+
+  font-size:3rem;
+  font-weight:400;
+  line-height:1.17;
+  letter-spacing:-.035em;
+
+  margin:15px 0 25px;
+}
+
+.connect p{
+  max-width:700px;
+  margin:0 auto 30px;
+  color:var(--muted);
+}
+
+.buttons{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+
+
+/* ========================= */
+/* FOOTER                    */
+/* ========================= */
+
+footer{
+  padding:28px 0 38px;
+  border-top:none;
+  color:var(--muted);
+
+  font-family:'DM Sans',Arial,sans-serif;
+  font-size:.8125rem;
+  font-weight:400;
+  line-height:1.4;
+
+  display:flex;
+  justify-content:flex-end;
+}
+
+
+/* ========================= */
+/* IPAD / TABLET             */
+/* ========================= */
+
+@media(max-width:1180px) and (min-width:761px){
+
+  .wrap{
+    width:min(calc(100% - 128px),var(--max));
+  }
+
+  .hero{
+    min-height:760px;
+  }
+
+  .hero-photo{
+    background-size:auto 80%;
+    background-position:75% bottom;
+  }
+
+  .hero-content{
+    align-items:center;
+  }
+
+  .hero-copy{
+    width:46%;
+    max-width:480px;
+    transform:translateY(-15px);
+  }
+
+  .hero h1{
+    font-size:2.625rem;
+    max-width:480px;
+  }
+
+  .hero p{
+    max-width:460px;
+  }
+
+}
+
+
+/* ========================= */
+/* MOBILE                    */
+/* ========================= */
+
+@media(max-width:760px){
+
+  .wrap{
+    width:min(calc(100% - 40px),var(--max));
+  }
+
+  .hero{
+    min-height:900px;
+    background:var(--paper);
+  }
+
+  .hero-photo{
+    background-size:auto 54%;
+    background-position:80% bottom;
+    bottom:0;
+  }
+
+  .hero-content{
+    align-items:flex-start;
+    padding-top:55px;
+  }
+
+  .hero-copy{
+    width:100%;
+    max-width:100%;
+    transform:none;
+  }
+
+  .hero h1{
+    font-size:2.25rem;
+    line-height:1.2;
+    max-width:520px;
+  }
+
+  .hero p{
+    max-width:520px;
+  }
+
+  section{
+    padding:72px 0;
+  }
+
+  .cards{
+    grid-template-columns:1fr;
+    border-radius:20px;
+  }
+
+  .card{
+    min-height:auto;
+  }
+
+  .card:nth-child(2) h3{
+    margin-top:0;
+  }
+
+  .focus-section{
+    padding:64px 0 68px;
+  }
+
+  .focus-title{
+    font-size:1.875rem;
+    margin-bottom:38px;
+  }
+
+  .focus-list{
+    grid-template-columns:1fr;
+    gap:0;
+  }
+
+  .focus-item,
+  .focus-item:first-child,
+  .focus-item:last-child{
+    padding:34px 0;
+  }
+
+  .focus-item:first-child{
+    padding-top:0;
+  }
+
+  .focus-item:last-child{
+    padding-bottom:0;
+  }
+
+  .focus-item + .focus-item{
+    border-left:none;
+    border-top:1px solid var(--soft-line);
+  }
+
+  .focus-icon{
+    margin:0 0 16px;
+  }
+
+  .focus-item h3{
+    font-size:1.5rem;
+  }
+
+  .focus-item p{
+    max-width:100%;
+  }
+
+  .questions-panel{
+    padding:36px 26px 40px;
+    border-radius:20px;
+  }
+
+  .questions-panel .label{
+    margin-bottom:20px;
+  }
+
+  .question-item{
+    padding:20px 0;
+  }
+
+  footer{
+    flex-direction:column;
+    align-items:flex-end;
+  }
+
+  h2,
+  h3,
+  .intro,
+  .question-text{
+    font-size:1.5rem;
+    line-height:1.32;
+  }
+
+  .connect h2{
+    font-size:2.25rem;
+    line-height:1.2;
+  }
+
+}
+
+
+/* ========================= */
+/* LARGE DESKTOP             */
+/* ========================= */
+
+@media(min-width:1400px){
+
+  .hero{
+    min-height:760px;
+  }
+
+  .hero-photo{
+    background-size:auto 80%;
+    background-position:75% bottom;
+  }
+
+}
+
+
+/* Soft floor shadow beneath the hero portrait */
+.hero::before {
+  content: "";
+  position: absolute;
+  left: 56%;
+  bottom: 6%;
+  width: 31%;
+  height: 9%;
+  border-radius: 50%;
+  background: radial-gradient(
+    ellipse,
+    rgba(58, 36, 56, 0.27) 0%,
+    rgba(58, 36, 56, 0.12) 42%,
+    transparent 75%
+  );
+  filter: blur(14px);
+  z-index:0;
+  pointer-events:none;
+}
+
+.hero-photo{
+  z-index:1;
+}
+
+@media(max-width:760px){
+  .hero::before{
+    left:18%;
+    bottom:5%;
+    width:72%;
+    height:7%;
+  }
+}
+
+
+/* ========================= */
+/* SOFT TILE SHADOWS         */
+/* ========================= */
+
+/* Diffused ambient shadow at rest; a gentle lift on hover. */
+.card,
+.questions-panel{
+  box-shadow:0 12px 32px rgba(58,36,56,.085),
+             0 3px 10px rgba(58,36,56,.035);
+  transition:box-shadow .25s ease, transform .25s ease;
+}
+
+@media (hover:hover){
+  .card:hover,
+  .questions-panel:hover{
+    transform:translateY(-4px);
+    box-shadow:0 18px 42px rgba(58,36,56,.12),
+               0 6px 15px rgba(58,36,56,.055);
+  }
+}
+
+@media (max-width:760px){
+  .cards{gap:16px;}
+}
+
+@media (prefers-reduced-motion:reduce){
+  .card,
+  .questions-panel{transition:none;}
+  .card:hover,
+  .questions-panel:hover{transform:none;}
+}
+
+
+/* ========================= */
+/* FLOATING BUTTONS + QUESTIONS PANEL */
+/* ========================= */
+
+/* Match the soft elevation of the My Approach tiles. */
+.btn{
+  box-shadow:0 10px 25px rgba(58,36,56,.11),
+             0 3px 9px rgba(58,36,56,.04);
+  transition:transform .25s ease, box-shadow .25s ease, opacity .2s ease;
+}
+
+/* Give the plum-filled My Work and Email buttons the same visible elevation
+   as the light buttons, without changing their colors or dimensions. */
+.btn.email-btn{
+  box-shadow:0 10px 25px rgba(58,36,56,.20),
+             0 3px 9px rgba(58,36,56,.085);
+}
+
+@media (hover:hover){
+  .btn.email-btn:hover{
+    box-shadow:0 17px 38px rgba(58,36,56,.25),
+               0 6px 14px rgba(58,36,56,.11);
+  }
+}
+
+/* Remove the outlined frame, leaving a floating question panel. */
+.questions-panel{
+  border:none;
+}
+
+@media (hover:hover){
+  .btn:hover{
+    transform:translateY(-4px);
+    box-shadow:0 16px 34px rgba(58,36,56,.15),
+               0 5px 12px rgba(58,36,56,.06);
+  }
+}
+
+@media (prefers-reduced-motion:reduce){
+  .btn{transition:none;}
+  .btn:hover{transform:none;}
+}
+
+/* ========================= */
+/* REDUCED MOTION            */
+/* ========================= */
+
+@media (prefers-reduced-motion: reduce){
+
+  html{
+    scroll-behavior:auto;
+  }
+
+  .btn{
+    transition:none;
+  }
+
+  .btn:hover{
+    transform:none;
+  }
+
+}
+
+
+/* ========================= */
+/* CONSISTENT FLOATING DEPTH */
+/* ========================= */
+
+/* One quiet panel for What Guides Me, keeping its original copy. */
+.guides-content{
+  max-width:none;
+  background:var(--card);
+  border-radius:var(--radius);
+  padding:44px 48px;
+  box-shadow:0 12px 32px rgba(58,36,56,.085),
+             0 3px 10px rgba(58,36,56,.035);
+  transition:box-shadow .25s ease, transform .25s ease;
+}
+
+/* Three separately floating areas instead of dividing lines. */
+.focus-list{gap:20px;}
+.focus-item,
+.focus-item:first-child,
+.focus-item:last-child{
+  padding:30px 28px;
+  background:var(--card);
+  border:0;
+  border-radius:var(--radius);
+  box-shadow:0 12px 32px rgba(58,36,56,.085),
+             0 3px 10px rgba(58,36,56,.035);
+  transition:box-shadow .25s ease, transform .25s ease;
+}
+.focus-item + .focus-item{border:0;}
+
+/* Favorites intentionally stays editorial and open. */
+.human{padding-top:4px;}
+
+/* Exact same resting and hover depth for all buttons, filled or light. */
+.btn,
+.btn.email-btn{
+  box-shadow:0 10px 25px rgba(58,36,56,.18),
+             0 3px 9px rgba(58,36,56,.075);
+  transition:transform .25s ease, box-shadow .25s ease, opacity .2s ease;
+}
+@media (hover:hover){
+  .guides-content:hover,
+  .focus-item:hover{
+    transform:translateY(-4px);
+    box-shadow:0 18px 42px rgba(58,36,56,.12),
+               0 6px 15px rgba(58,36,56,.055);
+  }
+  .btn:hover,
+  .btn.email-btn:hover{
+    transform:translateY(-4px);
+    box-shadow:0 17px 38px rgba(58,36,56,.24),
+               0 6px 14px rgba(58,36,56,.10);
+  }
+}
+@media (max-width:760px){
+  .guides-content{padding:32px 26px;}
+  .focus-list{gap:16px;}
+  .focus-item,
+  .focus-item:first-child,
+  .focus-item:last-child{padding:28px 26px;}
+  .focus-item + .focus-item{border:0;}
+}
+@media (prefers-reduced-motion:reduce){
+  .guides-content,.focus-item,.btn{transition:none;}
+  .guides-content:hover,.focus-item:hover,.btn:hover{transform:none;}
+}
+
+
+/* ========================= */
+/* UNIFIED SUBSECTION HEADINGS */
+/* ========================= */
+/* Match the existing What I'm Focused On heading; every heading sits outside its tile. */
+.guides-section > .wrap > .label,
+.human > .label,
+.subsection-heading{
+  display:block;
+  font-family:'Playfair Display',Georgia,serif;
+  font-size:2.125rem;
+  font-weight:400;
+  line-height:1.25;
+  letter-spacing:-.025em;
+  text-transform:none;
+  color:var(--ink);
+  margin:0 0 42px;
+}
+/* Favorites body is larger, without affecting text elsewhere. */
+.human > p{
+  font-size:1.125rem;
+  line-height:1.7;
+}
+@media(max-width:760px){
+  .guides-section > .wrap > .label,
+  .human > .label,
+  .subsection-heading{
+    font-size:1.875rem;
+    margin-bottom:38px;
+  }
+}
+
+
+/* ========================= */
+/* MATCH HOMEPAGE EYEBROW LABELS */
+/* ========================= */
+/* All subsection labels use the exact typography of the L&D hero line.
+   Existing section positions, layout and card content remain unchanged. */
+.guides-section > .wrap > .label,
+.subsection-heading,
+.focus-title,
+.human > .label,
+.connect .label {
+  font-family:'DM Sans',Arial,sans-serif;
+  font-size:.8125rem;
+  font-weight:500;
+  line-height:1.4;
+  letter-spacing:.15em;
+  text-transform:uppercase;
+  color:var(--accent);
+  margin:0 0 36px;
+}
+
+/* Smaller questions with readable spacing between separate sentences. */
+.questions-list .question-text {
+  font-size:1.375rem;
+  line-height:1.45;
+}
+
+@media(max-width:760px) {
+  .guides-section > .wrap > .label,
+  .subsection-heading,
+  .focus-title,
+  .human > .label,
+  .connect .label {
+    font-size:.8125rem;
+    margin-bottom:30px;
+  }
+  .questions-list .question-text {
+    font-size:1.1875rem;
+    line-height:1.5;
+  }
+}
+
+
+/* ========================= */
+/* BUTTONS — VISIBLE FLOAT   */
+/* ========================= */
+/* A defined contact shadow plus a soft ambient shadow keeps both
+   plum and cream buttons visibly raised even on touchscreens. */
+.hero-actions .btn,
+.connect .btn {
+  position: relative;
+  box-shadow:
+    0 5px 9px rgba(58,36,56,.22),
+    0 15px 32px rgba(58,36,56,.22),
+    0 24px 46px rgba(58,36,56,.11);
+  transition: transform .25s ease, box-shadow .25s ease, opacity .2s ease;
+}
+@media (hover:hover) {
+  .hero-actions .btn:hover,
+  .connect .btn:hover {
+    transform: translateY(-4px);
+    box-shadow:
+      0 9px 13px rgba(58,36,56,.22),
+      0 22px 42px rgba(58,36,56,.25),
+      0 32px 58px rgba(58,36,56,.13);
+  }
+}
+@media (prefers-reduced-motion:reduce) {
+  .hero-actions .btn,
+  .connect .btn { transition:none; }
+  .hero-actions .btn:hover,
+  .connect .btn:hover { transform:none; }
+}
+
+
+/* EMAIL BUTTON — MORE DEFINED RESTING ELEVATION */
+/* A close edge shadow makes the plum button read as raised on iPad,
+   while a broad shadow gives it the same airy depth as the other tiles. */
+.connect .btn.email-btn {
+  position: relative;
+  box-shadow:
+    0 2px 3px rgba(43, 19, 37, .30),
+    0 8px 13px rgba(58, 36, 56, .32),
+    0 18px 32px rgba(58, 36, 56, .26),
+    0 30px 50px rgba(58, 36, 56, .13),
+    inset 0 1px 0 rgba(255,255,255,.20);
+}
+@media (hover:hover) {
+  .connect .btn.email-btn:hover {
+    transform: translateY(-4px);
+    box-shadow:
+      0 4px 6px rgba(43, 19, 37, .27),
+      0 14px 24px rgba(58, 36, 56, .34),
+      0 26px 44px rgba(58, 36, 56, .27),
+      inset 0 1px 0 rgba(255,255,255,.20);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .connect .btn.email-btn:hover { transform: none; }
+}
+
+
+/* SITE RHYTHM — cohesive, warm, restrained; no content changes */
+:root {
+  --float-rest: 0 3px 7px rgba(58,36,56,.09), 0 15px 35px rgba(58,36,56,.12);
+  --float-hover: 0 7px 13px rgba(58,36,56,.12), 0 21px 43px rgba(58,36,56,.16);
+}
+/* Maintain one consistent surface vocabulary across every content tile. */
+.guides-content, .card, .focus-item, .questions-panel {
+  box-shadow: var(--float-rest);
+  transition: transform .26s ease, box-shadow .26s ease;
+}
+/* The questions and guides are for reading, not to suggest a click. */
+@media (hover:hover) {
+  .card:hover, .focus-item:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--float-hover);
+  }
+  .guides-content:hover, .questions-panel:hover {
+    transform: none;
+    box-shadow: var(--float-rest);
+  }
+}
+/* All calls to action float visibly at rest, regardless of fill color. */
+.hero-actions .btn, .connect .btn,
+.connect .btn.email-btn {
+  border-color: rgba(122,46,92,.22);
+  box-shadow: 0 3px 6px rgba(58,36,56,.18), 0 12px 25px rgba(58,36,56,.18);
+  transition: transform .24s ease, box-shadow .24s ease;
+}
+@media (hover:hover) {
+  .hero-actions .btn:hover, .connect .btn:hover,
+  .connect .btn.email-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 11px rgba(58,36,56,.18), 0 18px 35px rgba(58,36,56,.22);
+  }
+}
+/* Open editorial section is intentionally not a tile. */
+.human { background: transparent; box-shadow: none; }
+@media (prefers-reduced-motion:reduce) {
+  .guides-content,.card,.focus-item,.questions-panel,
+  .hero-actions .btn,.connect .btn,.connect .btn.email-btn { transition:none; }
+  .card:hover,.focus-item:hover,.guides-content:hover,.questions-panel:hover,
+  .hero-actions .btn:hover,.connect .btn:hover,.connect .btn.email-btn:hover {transform:none;}
+}
+
+
+/* QUIET SECTION TRANSITIONS — whitespace carries the rhythm. */
+main > section {
+  border-top-color: rgba(122,46,92,.085);
+}
+main > section .wrap > .subsection-heading,
+main > section .wrap > .focus-title,
+main > section .wrap > .label {
+  margin-bottom: 30px;
+}
+@media (max-width:760px) {
+  main > section .wrap > .subsection-heading,
+  main > section .wrap > .focus-title,
+  main > section .wrap > .label { margin-bottom: 26px; }
+}
+</style>
 </head>
+
 
 <body>
 
-  <!-- ICONS -->
 
-  <svg
-    width="0"
-    height="0"
-    style="position:absolute"
-    aria-hidden="true"
-    focusable="false"
-  >
-    <defs>
-      <symbol id="i-school" viewBox="0 0 24 24">
-        <path d="M3 21h18M5 21V10l7-5 7 5v11M9 21v-5h6v5M12 5V2.5h3M9 11h.01M15 11h.01"/>
-      </symbol>
+<!-- NAVIGATION -->
 
-      <symbol id="i-people" viewBox="0 0 24 24">
-        <circle cx="9" cy="8" r="3"/>
-        <circle cx="17" cy="9" r="2.4"/>
-        <path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M15.5 14.3c3 .2 5.5 2.5 5.5 5.7"/>
-      </symbol>
+<nav>
 
-      <symbol id="i-thumb" viewBox="0 0 24 24">
-        <path d="M7 11v9H4v-9h3zM7 11l4-7c1.5 0 2.5 1 2.5 2.5V9H19a2 2 0 012 2.3l-1.2 7A2 2 0 0117.8 20H7"/>
-      </symbol>
+<div class="wrap nav">
 
-      <symbol id="i-board" viewBox="0 0 24 24">
-        <rect x="3" y="4" width="18" height="12" rx="1.5"/>
-        <path d="M12 16v3M8 21l4-2 4 2"/>
-      </symbol>
+<a class="brand" href="./">
+Kahlila Mae Liverpool
+</a>
 
-      <symbol id="i-person" viewBox="0 0 24 24">
-        <circle cx="12" cy="8" r="3.5"/>
-        <path d="M5 21c0-4 3-7 7-7s7 3 7 7z"/>
-      </symbol>
+</div>
 
-      <symbol id="i-cap" viewBox="0 0 24 24">
-        <path d="M2 9l10-5 10 5-10 5-10-5zM6 11.5V16c0 1.5 3 3 6 3s6-1.5 6-3v-4.5M22 9v6"/>
-      </symbol>
-
-      <symbol id="i-chat" viewBox="0 0 24 24">
-        <path d="M4 5h16v11H10l-5 4v-4H4z"/>
-      </symbol>
-
-      <symbol id="i-book" viewBox="0 0 24 24">
-        <path d="M12 6c-2-1.5-5-2-9-2v14c4 0 7 .5 9 2 2-1.5 5-2 9-2V4c-4 0-7 .5-9 2zM12 6v14"/>
-      </symbol>
-
-      <symbol id="i-doc" viewBox="0 0 24 24">
-        <path d="M6 3h9l4 4v14H6zM14 3v5h5M9 13h7M9 17h7"/>
-      </symbol>
-    </defs>
-  </svg>
-
-  <div class="wrap">
-
-    <!-- STICKY HEADER -->
-
-    <div class="sticky-header">
-      <header class="topbar">
-        <nav aria-label="Main">
-  <a href="index.html">Home</a>
-  <a href="impact.html" aria-current="page">My Work</a>
-          <a href="practice-the-conversation/">Adaptive Learning</a>
 </nav>
-      </header>
-    </div>
-
-    <!-- Intro is intentionally outside the sticky navigation. -->
-    <section class="intro">
-      <p class="eyebrow">My Experience</p>
-      <h1>Work With Impact</h1>
-      <p class="lede">
-        A closer look at what I did and what changed.
-      </p>
-    </section>
-
-    <!-- EXPERIENCE CARDS -->
-
-    <main class="cards">
-
-      <!-- 1. APPLE PROFESSIONAL LEARNING -->
-
-      <article class="card">
-        <div class="card-main">
-          <p class="role-line">
-            Apple Professional Learning Specialist
-            <span class="sep">|</span>
-            <span class="years">Jun 2025 – Jul 2026</span>
-          </p>
-
-          <h2>Apple</h2>
-
-          <p class="org">
-            K-12 public school
-          </p>
-
-          <p class="challenge">
-            <span class="challenge-label">Context</span>
-            A large K–12 district was expanding access to Apple technology across 25 schools. Educators had different levels of confidence using iPad and Mac, and the district wanted technology to support broader instructional goals.
-          </p>
-
-          <p class="challenge">
-            <span class="challenge-label">The Challenge</span>
-            Moving beyond access to meaningful adoption. Some educators were resistant to changing how they worked and needed practical, job-embedded learning to use the technology confidently in their classrooms.
-          </p>
-
-          <ul class="bullets">
-            <li>
-              <strong>Conducted</strong> learning needs assessments across
-              <span class="hl">25 schools</span>, partnering with executive
-              leadership, IT, and cross-functional teams to align technology
-              adoption and implementation with organizational priorities.
-            </li>
-
-            <li>
-              <strong>Designed, facilitated, and evaluated</strong>
-              <span class="hl">150+ learning experiences</span>, resulting in
-              <span class="hl">661 Apple Teacher certifications</span> and a
-              <span class="hl">97% client satisfaction</span> rate.
-            </li>
-
-            <li>
-              <strong>Developed</strong> learning assets, workshops, and
-              implementation guides to reinforce learning and support
-              on-the-job application.
-            </li>
-          </ul>
-
-          <ul class="pills">
-            <li>Needs Assessment</li>
-            <li>Learning Strategy</li>
-            <li>Facilitation</li>
-            <li>Technology Adoption</li>
-            <li>Executive Partnership</li>
-            <li>Evaluation</li>
-          </ul>
-        </div>
-
-        <aside class="impact" aria-label="Key impact">
-          <h3>Key Impact</h3>
-
-          <div class="stat">
-            <svg><use href="#i-school"/></svg>
-            <div>
-              <span class="num">25</span>
-              <span class="desc">schools supported</span>
-            </div>
-          </div>
-
-          <div class="stat">
-            <svg><use href="#i-thumb"/></svg>
-            <div>
-              <span class="num">97%</span>
-              <span class="desc">client satisfaction</span>
-            </div>
-          </div>
-
-          <div class="stat">
-            <svg><use href="#i-board"/></svg>
-            <div>
-              <span class="num">150+</span>
-              <span class="desc">learning experiences</span>
-            </div>
-          </div>
-
-          <div class="stat">
-            <svg><use href="#i-people"/></svg>
-            <div>
-              <span class="num">661</span>
-              <span class="desc">Apple Teacher certifications</span>
-            </div>
-          </div>
-        </aside>
-      </article>
-
-      <!-- 2. LOWELL HIGH SCHOOL -->
-
-      <article class="card">
-        <div class="card-main">
-          <p class="role-line">
-            Assistant Principal
-            <span class="sep">|</span>
-            <span class="years">Aug 2021 – Jul 2023</span>
-          </p>
-
-          <h2>Lowell High School</h2>
-
-          <p class="org">
-            San Francisco Unified School District
-          </p>
-
-          <p class="challenge">
-            <span class="challenge-label">Context</span>
-            With 1,880 students depending on it, the school was navigating pandemic recovery, changing student needs, a contentious admissions debate, and significant budget pressures. Essential student services still had to run.
-          </p>
-
-          <p class="challenge">
-            <span class="challenge-label">The Challenge</span>
-            Keeping the school stable while conditions kept changing. Staff needed support through uncertainty, students needed essential services, and difficult decisions had to be made without losing sight of the school’s broader goals.
-          </p>
-
-          <ul class="bullets">
-            <li>
-              <strong>Directed</strong> initiatives supporting
-              <span class="hl">1,880+ students</span> and
-              <span class="hl">75+ faculty and staff</span>. Supervised,
-              coached, and evaluated
-              <span class="hl">5 department chairs</span> and
-              <span class="hl">40+ educators</span>, using performance data
-              and improvement plans to address performance gaps.
-            </li>
-
-            <li>
-              <strong>Partnered</strong> with department and district leaders
-              on cross-functional initiatives and developed the Student &amp;
-              Family Handbook, codifying school policies and practices.
-            </li>
-
-            <li>
-              <strong>Assumed</strong> campus-wide leadership as Acting
-              Principal in Fall 2022, overseeing school operations, staff,
-              and organizational priorities.
-            </li>
-          </ul>
-
-          <ul class="pills">
-            <li>Team Leadership</li>
-            <li>Coaching</li>
-            <li>Performance Management</li>
-            <li>Cross-Functional Partnership</li>
-            <li>Policy Development</li>
-            <li>Change Leadership</li>
-          </ul>
-        </div>
-
-        <aside class="impact" aria-label="Key impact">
-          <h3>Key Impact</h3>
-
-          <div class="stat">
-            <svg><use href="#i-school"/></svg>
-            <div>
-              <span class="num">5</span>
-              <span class="desc">department chairs</span>
-            </div>
-          </div>
-
-          <div class="stat">
-            <svg><use href="#i-person"/></svg>
-            <div>
-              <span class="num">40+</span>
-              <span class="desc">staff members coached and evaluated</span>
-            </div>
-          </div>
-
-          <div class="stat">
-            <svg><use href="#i-cap"/></svg>
-            <div>
-              <span class="num">1,880+</span>
-              <span class="desc">students supported</span>
-            </div>
-          </div>
-        </aside>
-      </article>
-
-      <!-- 3. PATHWAY TO TEACHING -->
-
-      <article class="card">
-        <div class="card-main">
-          <p class="role-line">
-            Teacher Development Coach
-            <span class="sep">|</span>
-            <span class="years">Aug 2018 – Jul 2021</span>
-          </p>
-
-          <h2>Pathway to Teaching Pipeline Program</h2>
-
-          <p class="org">
-            San Francisco Unified School District
-          </p>
-
-          <p class="challenge">
-            <span class="challenge-label">Context</span>
-            San Francisco was facing a teacher shortage, especially in special education, science, math, and other hard-to-fill areas. The district needed more qualified teachers and a more accessible path to licensure for people already working in schools.
-          </p>
-
-          <p class="challenge">
-            <span class="challenge-label">The Challenge</span>
-            Helping aspiring educators become licensed teachers while developing the knowledge, classroom skills, and supports they needed to improve student social and academic outcomes.
-          </p>
-
-          <ul class="bullets">
-            <li>
-              <strong>Designed</strong> courses in Google Classroom and
-              Blackbaud LMS supporting a district-wide teacher development
-              pipeline serving educators across
-              <span class="hl">113 schools</span>.
-            </li>
-
-            <li>
-              <strong>Coached <span class="hl">39 teachers</span></strong>
-              through CA licensure using weekly observations, individualized
-              feedback reports, SMART goals, and continuous improvement cycles
-              to strengthen performance.
-            </li>
-
-            <li>
-              <strong>Managed</strong> learning programs including Migrant
-              Education Summer School for
-              <span class="hl">85 students and 4 teachers</span> and a Science
-              Workshop Series for
-              <span class="hl">46 students</span>.
-            </li>
-          </ul>
-
-          <ul class="pills">
-            <li>Coaching</li>
-            <li>Learning Design</li>
-            <li>LMS Design</li>
-            <li>Program Management</li>
-            <li>Continuous Improvement</li>
-            <li>Feedback</li>
-          </ul>
-        </div>
-
-        <aside class="impact" aria-label="Key impact">
-          <h3>Key Impact</h3>
-
-          <div class="stat">
-            <svg><use href="#i-people"/></svg>
-            <div>
-              <span class="num">39</span>
-              <span class="desc">teachers coached</span>
-            </div>
-          </div>
-
-          <div class="stat">
-            <svg><use href="#i-school"/></svg>
-            <div>
-              <span class="num">113</span>
-              <span class="desc">schools served</span>
-            </div>
-          </div>
-
-          <div class="stat">
-            <svg><use href="#i-cap"/></svg>
-            <div>
-              <span class="num">1,200+</span>
-              <span class="desc">students impacted</span>
-            </div>
-          </div>
-        </aside>
-      </article>
-
-      <!-- 4. SAN JOSE STATE UNIVERSITY FOUNDATION -->
-
-      <article class="card">
-        <div class="card-main">
-          <p class="role-line">
-            Education Coordinator
-            <span class="sep">|</span>
-            <span class="years">May 2007 – Jan 2010</span>
-          </p>
-
-          <h2>San José State University, Research Foundation</h2>
-
-          <p class="org">
-            CME Society, EOP&amp;S Former Foster Youth Program
-          </p>
-
-          <p class="challenge">
-            <span class="challenge-label">Context</span>
-            Former foster youth were entering college without many of the supports their peers could rely on. Staying enrolled meant figuring out where to live, how to pay for basic needs, and what to do when something went wrong. For many, there was no family safety net.
-          </p>
-
-          <p class="challenge">
-            <span class="challenge-label">The Challenge</span>
-            Helping students stay enrolled and move toward graduation by connecting them with the resources and support they couldn’t always count on elsewhere.
-          </p>
-
-          <ul class="bullets">
-            <li>
-              <strong>Co-taught</strong> career development courses for
-              <span class="hl">35+ students</span> and designed workshops,
-              educational programs, and residential summer camps.
-            </li>
-
-            <li>
-              <strong>Co-created</strong> the
-              <span class="hl">
-                inaugural National Blueprint for Success Conference
-              </span>,
-              convening stakeholders to advance college-to-career pathways
-              for foster youth.
-            </li>
-          </ul>
-
-          <ul class="pills">
-            <li>Program Design</li>
-            <li>Facilitation</li>
-            <li>Curriculum Development</li>
-            <li>Stakeholder Engagement</li>
-            <li>Event Design</li>
-          </ul>
-        </div>
-
-        <aside class="impact" aria-label="Key impact">
-          <h3>Key Impact</h3>
-
-          <div class="stat">
-            <svg><use href="#i-people"/></svg>
-            <div>
-              <span class="num">1st annual</span>
-              <span class="desc">national conference</span>
-            </div>
-          </div>
-
-          <div class="stat">
-            <svg><use href="#i-school"/></svg>
-            <div>
-              <span class="num enrollment-change">
-                <span>12%</span>
-                <span class="change-arrow">→</span>
-                <span>50%</span>
-              </span>
-              <span class="desc">college enrollment</span>
-            </div>
-          </div>
-
-          <div class="stat">
-            <svg><use href="#i-cap"/></svg>
-            <div>
-              <span class="num">76%</span>
-              <span class="desc">persisted toward graduation</span>
-            </div>
-          </div>
-        </aside>
-      </article>
-
-      <!-- 5. ADJUNCT LECTURER -->
-
-      <article class="card">
-        <div class="card-main">
-          <p class="role-line">
-            Adjunct Lecturer
-            <span class="sep">|</span>
-            <span class="years">2021 – 2024</span>
-          </p>
-
-          <h2>University Appointments</h2>
-
-          <p class="org">
-            Reach University, Oxford Teachers College | San Francisco State University
-          </p>
-
-          <p class="challenge">
-            <span class="challenge-label">Context</span>
-            Working adults were preparing to become educators while balancing jobs, coursework, and classroom responsibilities. The cost of higher education and the long path to earning a credential made that work even harder.
-          </p>
-
-          <p class="challenge">
-            <span class="challenge-label">The Challenge</span>
-            Making learning more accessible and practical for working adults, so they could keep moving toward a degree and teaching credential.
-          </p>
-
-          <ul class="bullets">
-            <li>
-              <strong>Taught</strong> Characteristics of Learners,
-              Instructional Strategies, and Ethical &amp; Legal Practices
-              (Reach University, virtual, 2023 – 2024), applying adult learning
-              and learning experience design principles to build content,
-              activities, and assessments in
-              <span class="hl">Canvas LMS</span>.
-            </li>
-
-            <li>
-              <strong>Taught</strong> Introduction to Disability and The
-              Science of Early Intervention (San Francisco State University,
-              hybrid, 2021 – 2022), designing learning experiences and course
-              content in <span class="hl">iLearn LMS</span> with activities,
-              assessments, and learner feedback.
-            </li>
-          </ul>
-
-          <ul class="pills">
-            <li>Adult Learning</li>
-            <li>Learning Experience Design</li>
-            <li>Course Development</li>
-            <li>Assessment Design</li>
-            <li>Canvas</li>
-            <li>iLearn</li>
-          </ul>
-        </div>
-
-        <aside class="impact" aria-label="Key impact">
-          <h3>Key Impact</h3>
-
-          <div class="stat">
-            <svg><use href="#i-school"/></svg>
-            <div>
-              <span class="num">2 universities</span>
-              <span class="desc">2 learning platforms</span>
-            </div>
-          </div>
-
-          <div class="stat">
-            <svg><use href="#i-book"/></svg>
-            <div>
-              <span class="num">5</span>
-              <span class="desc">courses taught</span>
-            </div>
-          </div>
-
-          <div class="stat">
-            <svg><use href="#i-people"/></svg>
-            <div>
-              <span class="num">200+</span>
-              <span class="desc">educators</span>
-            </div>
-          </div>
-        </aside>
-      </article>
-
-    </main>
-
-    <!-- LET'S CONNECT -->
-
-    <section class="work-connect" aria-labelledby="connect-heading">
-      <p class="eyebrow">Let’s Connect</p>
-
-      <h2 id="connect-heading">Say hello.</h2>
-
-      <p class="work-connect-text">
-        If something here resonates with you, I’d love to hear from you.
-      </p>
-
-      <div class="btn-row">
-        <a
-          class="btn"
-          href="https://www.linkedin.com/in/kahlilamae"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          LinkedIn
-        </a>
-
-        <a
-          class="btn primary"
-          href="mailto:kahlilamae@icloud.com"
-        >
-          Email
-        </a>
-      </div>
-    </section>
-
-    <footer>
-      &copy; 2026 Kahlila Mae Liverpool
-    </footer>
-
-  </div>
+
+
+<main>
+
+
+<!-- HERO -->
+
+<header class="hero">
+
+<div
+  class="hero-photo"
+  role="img"
+  aria-label="Portrait of Kahlila Mae Liverpool">
+</div>
+
+<div class="wrap hero-content">
+
+<div class="hero-copy">
+
+<div class="eyebrow">
+L&amp;D | Leadership Development | Exploring Adaptive Learning + AI
+</div>
+
+<h1>
+I’m curious about how people learn and what helps us grow.
+</h1>
+
+<p>
+I’m thinking a lot about what happens after the learning experience. Did the learning change what people actually do, and was that change worth what we invested?
+</p>
+
+<div class="hero-actions">
+
+<a
+  class="btn email-btn"
+  href="impact%202.html">
+My Work
+</a>
+
+<a
+  class="btn linkedin-btn"
+  href="practice-the-conversation/">
+Adaptive Learning 
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</header>
+
+
+<!-- WHAT GUIDES ME -->
+
+<section
+  class="guides-section"
+  aria-label="What guides me">
+
+<div class="wrap">
+
+<div
+  class="label"
+  aria-hidden="true">
+What Guides Me
+</div>
+
+<div class="guides-content">
+
+<h2 class="intro">
+I like working through ideas with people and <br>
+figuring out how to make them work.
+</h2>
+
+<div class="guides-copy">
+
+<p>
+The work has changed over the years, but what draws me to it hasn’t. I like helping people see something differently and then make the next steps happen.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- MY APPROACH -->
+
+<section aria-label="My approach">
+
+<div class="wrap">
+
+<h2 class="subsection-heading">My Approach</h2>
+
+<div class="cards">
+
+<article class="card">
+
+<h3>
+I ask a lot of questions.
+</h3>
+
+<p>
+Usually because I’m trying to understand what’s actually going on before jumping to an answer. I’d rather work in community than go it alone.
+</p>
+
+</article>
+
+
+<article class="card">
+
+<h3>
+I notice what’s happening.
+</h3>
+
+<p>
+I pay attention to who's in the room, who isn’t being heard, and what people need to move forward.
+</p>
+
+</article>
+
+
+<article class="card">
+
+<h3>
+I'm drawn to a puzzle.
+</h3>
+
+<p>
+Give me something complicated or not quite working, and I’ll want to figure out what’s going on and how to make it better.
+</p>
+
+</article>
+
+
+<article class="card">
+
+<h3>
+I think about the person on the other side.
+</h3>
+
+<p>
+Whether I’m designing a learning experience, working through an idea, or partnering with someone, I think about how the experience will actually feel.
+</p>
+
+</article>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- WHAT I'M FOCUSED ON -->
+
+<section
+  class="focus-section"
+  aria-labelledby="focus-heading">
+
+<div class="wrap">
+
+<h2
+  class="focus-title"
+  id="focus-heading">
+What I’m Focused On
+</h2>
+
+<div class="focus-list">
+
+
+<!-- PEOPLE + LEADERSHIP -->
+
+<article class="focus-item">
+
+<div
+  class="focus-icon"
+  aria-hidden="true">
+
+<svg
+  viewBox="0 0 64 64"
+  focusable="false">
+
+  <circle
+    cx="32"
+    cy="19"
+    r="7">
+  </circle>
+
+  <path
+    d="M20 45v-6c0-7 5-12 12-12s12 5 12 12v6">
+  </path>
+
+  <circle
+    cx="15"
+    cy="24"
+    r="5">
+  </circle>
+
+  <path
+    d="M5 45v-5c0-6 4-10 10-10 3 0 5 1 7 3">
+  </path>
+
+  <circle
+    cx="49"
+    cy="24"
+    r="5">
+  </circle>
+
+  <path
+    d="M59 45v-5c0-6-4-10-10-10-3 0-5 1-7 3">
+  </path>
+
+</svg>
+
+</div>
+
+<h3>
+People <span class="amp">&amp;</span> Leadership
+</h3>
+
+<p>
+I’m deeply interested in what helps people grow, especially through change, and become more effective.
+</p>
+
+</article>
+
+
+<!-- LEARNING + PERFORMANCE -->
+
+<article class="focus-item">
+
+<div
+  class="focus-icon"
+  aria-hidden="true">
+
+<svg
+  viewBox="0 0 64 64"
+  focusable="false">
+
+  <rect x="10" y="39" width="8" height="10" rx="1"></rect>
+  <rect x="27" y="31" width="8" height="18" rx="1"></rect>
+  <rect x="44" y="21" width="8" height="28" rx="1"></rect>
+
+  <path d="M10 28c10-2 19-7 27-14 5-4 10-9 14-15"></path>
+  <path d="M43 2h9v9"></path>
+
+</svg>
+
+</div>
+
+<h3>
+Learning <span class="amp">&amp;</span> Performance
+</h3>
+
+<p>
+I’m always thinking about how technology can make learning more useful, accessible, and relevant.
+</p>
+
+</article>
+
+
+<!-- AI + THE FUTURE OF WORK -->
+
+<article class="focus-item">
+
+<div
+  class="focus-icon"
+  aria-hidden="true">
+
+<svg
+  viewBox="0 0 64 64"
+  focusable="false">
+
+  <circle cx="25" cy="23" r="8"></circle>
+  <path d="M12 49v-5c0-8 5-13 13-13s13 5 13 13v5"></path>
+
+  <path d="M46 8l2.1 5.4L53.5 15.5 48.1 17.6 46 23l-2.1-5.4-5.4-2.1 5.4-2.1L46 8z"></path>
+
+</svg>
+
+</div>
+
+<h3>
+AI <span class="amp">&amp;</span> the Future of Work
+</h3>
+
+<p>
+I’m exploring how AI can make learning more responsive and whether that leads to better performance and a return worth the investment.
+</p>
+
+</article>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- QUESTIONS I'M STILL ASKING -->
+
+<section
+  class="questions-section"
+  aria-label="Questions I’m still asking">
+
+<div class="wrap">
+
+<h2 class="subsection-heading">Questions I’m Still Asking</h2>
+
+<div class="questions-panel">
+
+<div class="questions-list">
+
+<div class="question-item">
+
+<p class="question-text">
+What are our systems making easier?&nbsp; What are they making harder?
+</p>
+
+</div>
+
+
+<div class="question-item">
+
+<p class="question-text">
+What should AI help us do better?&nbsp; What should always belong to people?
+</p>
+
+</div>
+
+
+<div class="question-item">
+
+<p class="question-text">
+How do we know it’s actually helping?
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- FAVORITES -->
+
+<section aria-label="A few of my favorites">
+
+<div class="wrap human">
+
+<div
+  class="label"
+  aria-hidden="true">
+A Few of My Favorites
+</div>
+
+<h2 class="intro">
+I’m drawn to people’s stories and the beautiful details <br>
+that make them meaningful.
+</h2>
+
+<p>
+I adore autobiographies, especially stories that reveal the person behind the accomplishments. I’m fascinated by how people find their way in the world and what makes their lives fulfilling.
+</p>
+
+<p>
+A perfect Sunday involves cooking a New York Times Cooking recipe while family and friends laugh around the table. <em>House Guest with Scott Evans</em>, <em>Happy Hour with Ina Garten</em>, and Mythical Kitchen’s <em>Last Meals</em> are the shows I come back to.
+</p>
+
+<p>
+Lately, I’ve fallen down the Spider-Man rabbit hole. I blame Zendaya’s red-carpet style and my brother, a lifelong comic book fan.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- CONNECT -->
+
+<section
+  class="connect"
+  aria-label="Contact">
+
+<div class="wrap">
+
+<div
+  class="label"
+  aria-hidden="true">
+Let’s connect
+</div>
+
+<h2>
+Say hello.
+</h2>
+
+<p>
+If something here resonates, or you just want to talk about learning, leadership, or a good book, I’d love to hear from you.
+</p>
+
+<div class="buttons">
+
+<a
+  class="btn linkedin-btn"
+  href="https://www.linkedin.com/in/kahlilamae"
+  target="_blank"
+  rel="noopener"
+  data-goatcounter-click="click-linkedin"
+  data-goatcounter-title="LinkedIn button">
+
+LinkedIn<span class="sr-only"> (opens in a new tab)</span>
+
+</a>
+
+<a
+  class="btn email-btn"
+  href="mailto:kahlilamae@icloud.com?subject=Hello%20Kahlila"
+  data-goatcounter-click="click-email"
+  data-goatcounter-title="Email button">
+
+Email
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+</main>
+
+
+<!-- FOOTER -->
+
+<footer class="wrap">
+
+<span>
+© 2026 Kahlila Mae Liverpool
+</span>
+
+</footer>
+
+
+<!-- VISITOR ANALYTICS -->
+
+<script
+  data-goatcounter="https://kahlilamae.goatcounter.com/count"
+  async
+  src="//gc.zgo.at/count.js">
+</script>
+
+
 </body>
 </html>
