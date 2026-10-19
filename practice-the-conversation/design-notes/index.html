@@ -6,7 +6,7 @@
 <title>Design Notes</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=Playfair+Display:wght@400;500&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{--ink:#381b36;--plum:#6c416d;--muted:#81648c;--line:#bdaac8;--mist:#f1eef5;--paper:#fdfcff;--panel:#f5f0f8}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#f0edf4;color:var(--ink);font-family:'Source Sans 3',Arial,sans-serif;font-size:16px;line-height:1.42}
@@ -20,55 +20,134 @@ h1,h2{font-family:'Playfair Display',Georgia,serif;font-weight:400}h1{font-size:
 .metrics{margin-bottom:0}.metrics td:first-child{font-weight:500}
 @media(max-width:840px){.sheet{width:calc(100% - 24px);margin:12px auto;padding:28px 24px;border-radius:22px}.top{flex-wrap:wrap}.notice{width:100%;max-width:410px}.logic-grid{grid-template-columns:1fr;gap:10px}.flow{flex-wrap:wrap;gap:7px}.node{flex:1 1 40%;min-height:80px}.arrow{flex:0 0 24px;text-align:center}.section-head{gap:12px}}
 @media(max-width:520px){.sheet{padding:24px 16px}.index{font-size:2.2rem;min-width:42px}.bar{height:28px}h2{font-size:1.7rem}.section-head{align-items:center}th,td{padding:7px 9px;font-size:.84rem}.node{flex:1 1 100%;min-height:65px}.arrow{flex:1 1 100%;transform:rotate(90deg);text-align:center}.formula{font-size:1.35rem}}
+
+/* Editorial refinements: retain original dotted white canvas and color palette */
+.site-navigation{display:flex;justify-content:flex-end;gap:38px;margin:-10px 0 30px;font-family:"DM Sans",Arial,sans-serif;font-size:.95rem;font-weight:500;color:#5B4B58}
+.site-navigation a{text-decoration:none;border-bottom:2px solid transparent;padding:9px 0}
+.site-navigation a:hover,.site-navigation a:focus-visible,.site-navigation a.active{color:#7A2E5C;border-bottom-color:#7A2E5C}
+.top{display:block;margin-bottom:22px}.smalltag,.section-heading h3{display:none}
+.notice{width:100%;min-height:unset;padding:19px 22px;gap:18px;margin:26px 0 32px;align-items:center;border:1px solid #e6daea}
+.notice .bang{display:flex;align-items:center;justify-content:center;flex:0 0 32px;width:32px;height:32px;border-radius:50%;font-size:1.35rem;font-weight:700;background:#784c7c;color:white;font-family:Arial,sans-serif}
+.notice strong{margin-bottom:4px}.notice span{line-height:1.4}
+.section{padding:44px 0 49px}.section:first-of-type{padding-top:0}.section-head{margin-bottom:25px}
+.section-content>h3{margin:30px 0 12px}.section-content>h3:first-child{margin-top:0}
+.section-copy{max-width:840px;color:#6e5b76;margin:0 0 18px}
+.goal-table td:first-child{width:32%}
+.flow{margin-top:16px}.node{padding:14px 11px;min-height:70px}.node svg{display:none}
+.plain-note{font-size:.88rem;color:#765f7a;margin:9px 0 0}
+.scoring-explain{padding:18px 21px;border:1px solid #e1d6e6;border-radius:10px;background:rgba(247,244,251,.70);margin:16px 0 23px}
+.score-bars{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:16px;align-items:end;padding:25px 20px 16px;background:rgba(246,243,249,.73);border:1px solid #e1d6e6;border-radius:12px;min-height:256px}
+.score-col{text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:8px;height:215px}
+.score-track{height:154px;width:min(100%,68px);display:flex;align-items:flex-end;background:#e9e1ed;border-radius:7px 7px 0 0;overflow:hidden}
+.score-fill{width:100%;background:linear-gradient(180deg,#9b699f,#785181);height:var(--score);border-radius:7px 7px 0 0}
+.score-value{color:#5d3761}.score-name{font-size:.82rem;min-height:38px;line-height:1.2;color:#644967}
+.metric-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:15px 0}
+.metric-panel{padding:20px;border:1px solid #e3dae9;border-radius:10px;background:rgba(247,244,251,.6)}
+.metric-panel strong{display:block;color:#65416b;margin-bottom:7px}
+.research-list{padding-left:22px;font-size:.95rem;color:#5f4c63;line-height:1.6}
+.research-list li{margin-bottom:10px}
+.research-list a{color:#69446f;text-decoration:underline;text-underline-offset:3px}
+.measured{font-size:.85rem;color:#806c83}
+@media(max-width:760px){.site-navigation{flex-wrap:wrap;gap:16px;margin:0 0 25px}.section{padding:35px 0 40px}.score-bars{gap:8px;padding:20px 10px}.score-col{height:185px}.score-track{height:120px}.score-name{font-size:.7rem}.metric-grid{grid-template-columns:1fr}}
+@media(max-width:520px){.score-bars{grid-template-columns:repeat(5,minmax(0,1fr));gap:5px}.score-track{width:100%}.score-value{font-size:.79rem}.score-name{font-size:.64rem;overflow-wrap:anywhere}.notice{padding:15px}.site-navigation{justify-content:flex-end;font-size:.82rem}}
+
+/* Site color alignment only — layout, font sizes, content and links unchanged. */
+:root{--ink:#3A2438;--plum:#7A2E5C;--muted:#5B4B58;--line:rgba(122,46,92,.18);--mist:#F5EBF3;--paper:#FBF7FA;--panel:#EEDDE8}
+body{background:#F5EBF3;color:var(--ink)}
+.sheet{background-color:#FBF7FA;background-image:radial-gradient(circle,rgba(122,46,92,.11) .7px,transparent .9px);box-shadow:0 20px 42px rgba(58,36,56,.12),0 4px 12px rgba(58,36,56,.05)}
+h3{color:#7A2E5C}.index{color:#3A2438}.bar{background:rgba(122,46,92,.3)}
+.section{border-top-color:rgba(122,46,92,.22)}
+.notice{background:linear-gradient(105deg,#F5EBF3,#FBF7FA);border-color:rgba(122,46,92,.15)}
+.notice .bang{background:#7A2E5C}.notice strong{color:#3A2438}.notice span{color:#5B4B58}
+th,td{border-color:rgba(122,46,92,.18)}th{background:rgba(238,221,232,.45);color:#7A2E5C}td:first-child{color:#3A2438}
+.node{background:#F5EBF3;border-color:rgba(122,46,92,.14);color:#3A2438}.arrow{color:#7A2E5C}
+.panel{background:linear-gradient(115deg,rgba(238,221,232,.65),rgba(251,247,250,.88))}
+.formula{color:#3A2438}.definition{color:#5B4B58}.definition>*{border-color:rgba(122,46,92,.16)}.definition b{color:#7A2E5C}
+.section-copy,.plain-note,.measured{color:#5B4B58}
+.scoring-explain,.score-bars,.metric-panel{background:rgba(251,247,250,.78);border-color:rgba(122,46,92,.15)}
+.score-track{background:#EEDDE8}.score-fill{background:linear-gradient(180deg,#9A3B70,#7A2E5C)}.score-value{color:#7A2E5C}.score-name{color:#5B4B58}
+.metric-panel strong{color:#7A2E5C}.research-list{color:#5B4B58}.research-list a{color:#7A2E5C}
+
+/* Requested refinements only: berry navigation and quieter AI clarification. */
+.site-navigation a,.site-navigation a:visited,.site-navigation a:hover,.site-navigation a:focus-visible,.site-navigation a.active{color:#7A2E5C}
+.notice{padding:12px 17px;gap:12px;margin:20px 0 27px}
+.notice strong{font-size:.86rem;font-weight:600;margin-bottom:2px}
+.notice span{font-size:.82rem;line-height:1.32;margin-top:2px}
 </style>
 </head>
 <body>
 <main class="sheet">
-<header class="top">
-  <aside class="notice" aria-label="Adaptive learning clarification">
-    <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M9 3h10l5 5v21H9z M19 3v6h5 M12 14h9 M12 18h9 M12 22h7"/></svg>
-    <p><strong>Not Adaptive Learning</strong><span>This experience does not use adaptive learning with AI.</span></p>
-  </aside>
-</header>
+<nav class="site-navigation" aria-label="Site navigation"><a href="../../index.html">Home</a><a href="../../impact.html">My Work</a><a class="active" href="../index.html" aria-current="page">Adaptive Learning</a></nav>
+<header class="top"><h1>Design Notes</h1></header>
+<aside class="notice" aria-label="Clarification about adaptive learning"><span class="bang" aria-hidden="true">!</span><p><strong>This is not AI-adaptive learning.</strong><span>The experience uses authored branching paths, predefined rules and targeted feedback. It does not use AI to evaluate responses or generate new learning paths in real time.</span></p></aside>
 <section class="section" aria-labelledby="design-title">
- <div class="section-head"><span class="index">01</span><span class="bar" aria-hidden="true"></span><div class="section-heading"><h2 id="design-title">Behind the Design</h2><h3>Key goals and design flow</h3></div></div>
- <div class="table-wrap"><table><thead><tr><th>Goal</th><th>Design approach</th></tr></thead><tbody>
- <tr><td>Build core skills</td><td>Structured progression with clear checkpoints</td></tr>
- <tr><td>Maintain focus</td><td>Short, purposeful sessions with single objectives</td></tr>
- <tr><td>Support independence</td><td>Clear guidance and immediate feedback</td></tr>
- <tr><td>Keep experience consistent</td><td>Unified layout and familiar patterns</td></tr>
+ <div class="section-head"><span class="index">01</span><span class="bar" aria-hidden="true"></span><div class="section-heading"><h2 id="design-title">The Design</h2></div></div>
+ <div class="section-content">
+ <div class="table-wrap"><table class="goal-table"><thead><tr><th>Goal</th><th>How the experience supports it</th></tr></thead><tbody>
+ <tr><td>Practice real skills</td><td>Realistic customer, software-release &amp; leadership conversations. Learners respond in their own words.</td></tr>
+ <tr><td>Make feedback useful</td><td>Identify what worked, suggest one improvement &amp; let learners respond again.</td></tr>
+ <tr><td>Support accessibility</td><td>Readable typography, consistent structure, clear instructions, &amp; text or speech response options. Full accessibility testing is still required.</td></tr>
+ <tr><td>Reduce cognitive load</td><td>One decision at a time, generous spacing, restrained color, plain language &amp; repeated interaction patterns.</td></tr>
+ <tr><td>Encourage workplace transfer</td><td>Introduce changed information, repeat practice &amp; end with one action to apply at work.</td></tr>
  </tbody></table></div>
- <h3>Learning flow</h3>
- <div class="flow" aria-label="Introduce concept, Guided practice, Independent practice, Check understanding">
-  <div class="node"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5h12M8 12h12M8 19h12M3 5h2M3 12h2M3 19h2"/></svg>Introduce<br>concept</div><span class="arrow" aria-hidden="true">→</span>
-  <div class="node"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 2h10l4 4v16H5zM15 2v5h4M8 12h8M8 16h8"/></svg>Guided<br>practice</div><span class="arrow" aria-hidden="true">→</span>
-  <div class="node"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m7 12 3 3 7-7"/></svg>Independent<br>practice</div><span class="arrow" aria-hidden="true">→</span>
-  <div class="node"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 21v-5M10 21v-9M16 21V7M22 21V3"/></svg>Check<br>understanding</div>
+ <h3>Learning flow</h3><div class="flow" aria-label="Choose scenario, Respond, Receive feedback, New information, Respond again, Reflect">
+ <div class="node">Choose a scenario</div><span class="arrow" aria-hidden="true">→</span>
+ <div class="node">Respond</div><span class="arrow" aria-hidden="true">→</span>
+ <div class="node">Receive feedback</div><span class="arrow" aria-hidden="true">→</span>
+ <div class="node">New information</div><span class="arrow" aria-hidden="true">→</span>
+ <div class="node">Respond again</div><span class="arrow" aria-hidden="true">→</span>
+ <div class="node">Reflect and view progress</div>
+ </div>
+ <h3>What is being practiced</h3><div class="table-wrap"><table><thead><tr><th>Scenario</th><th>Skills assessed</th></tr></thead><tbody>
+ <tr><td>Upset Customer</td><td>Empathy, Listening, Ownership, Problem Solving, Communication</td></tr>
+ <tr><td>Software Delay</td><td>Judgment, Risk Assessment, Perspective Taking, Problem Solving, Communication</td></tr>
+ <tr><td>Performance Conversation</td><td>Diagnosis, Accountability, Curiosity, Judgment, Communication</td></tr>
+ </tbody></table></div>
  </div>
 </section>
 <section class="section" aria-labelledby="logic-title">
- <div class="section-head"><span class="index">02</span><span class="bar" aria-hidden="true"></span><div class="section-heading"><h2 id="logic-title">Behind the Logic</h2><h3>Scoring and progression</h3></div></div>
- <div class="logic-grid">
-  <div class="panel"><h3>Mastery score</h3><div class="formula">S = <span class="fraction"><span class="numerator">(C + 0.5P + 0.5R)</span><span class="denominator">N</span></span></div>
-   <div class="definition"><b>S</b><span>Mastery score</span><b>C</b><span>Correct responses</span><b>P</b><span>Partial credit</span><b>R</b><span>Revisions</span><b>N</b><span>Total items</span></div>
-  </div>
-  <div><h3>Progression rules</h3><div class="table-wrap"><table><thead><tr><th>Condition</th><th>Action</th></tr></thead><tbody>
-   <tr><td><i>S</i> ≥ 0.8</td><td>Advance to next level</td></tr>
-   <tr><td>0.6 ≤ <i>S</i> &lt; 0.8</td><td>Provide additional practice</td></tr>
-   <tr><td><i>S</i> &lt; 0.6</td><td>Revisit current level</td></tr>
-   <tr><td>Streak ≥ 3</td><td>Unlock challenge set</td></tr>
-  </tbody></table></div></div>
+ <div class="section-head"><span class="index">02</span><span class="bar" aria-hidden="true"></span><div class="section-heading"><h2 id="logic-title">The Logic</h2></div></div>
+ <div class="section-content">
+ <p class="section-copy">A response is checked against the criteria for that scenario. Its words and structure help determine skill ratings, feedback and the next authored prompt. The customer scenario has less branching than the other two.</p>
+ <div class="flow" aria-label="Response, Language indicators, Five skill ratings, Targeted feedback, Next prompt">
+ <div class="node">Your response</div><span class="arrow" aria-hidden="true">→</span><div class="node">Language indicators</div><span class="arrow" aria-hidden="true">→</span><div class="node">Five skill ratings</div><span class="arrow" aria-hidden="true">→</span><div class="node">Targeted feedback</div><span class="arrow" aria-hidden="true">→</span><div class="node">Next prompt</div>
+ </div>
+ <h3>How feedback is selected</h3><div class="table-wrap"><table><thead><tr><th>What the system finds</th><th>What the learner sees</th></tr></thead><tbody>
+ <tr><td>Highest-rated skill</td><td>“What worked” — specific positive guidance</td></tr><tr><td>Lowest-rated skill</td><td>“Try next” — one focused improvement</td></tr><tr><td>All five skills rated at least 4 out of 5</td><td>A more challenging next step</td></tr>
+ </tbody></table></div>
+ <h3>How scoring works</h3>
+ <div class="scoring-explain"><p><strong>Each scenario tracks five skills.</strong> A response receives a rating for each skill, usually from 1 to 5. After the practice rounds, the system averages the ratings for each skill and rounds that average to a whole number. Each final skill rating is worth up to 20 points. Five skills together make a score out of 100.</p></div>
+ <div class="score-bars" role="img" aria-label="Illustrative learner score: empathy 16 of 20, listening 12 of 20, ownership 20 of 20, problem solving 16 of 20, communication 16 of 20. Total 80 out of 100.">
+ <div class="score-col"><span class="score-value">16/20</span><div class="score-track"><div class="score-fill" style="--score:80%"></div></div><span class="score-name">Empathy</span></div>
+ <div class="score-col"><span class="score-value">12/20</span><div class="score-track"><div class="score-fill" style="--score:60%"></div></div><span class="score-name">Listening</span></div>
+ <div class="score-col"><span class="score-value">20/20</span><div class="score-track"><div class="score-fill" style="--score:100%"></div></div><span class="score-name">Ownership</span></div>
+ <div class="score-col"><span class="score-value">16/20</span><div class="score-track"><div class="score-fill" style="--score:80%"></div></div><span class="score-name">Problem solving</span></div>
+ <div class="score-col"><span class="score-value">16/20</span><div class="score-track"><div class="score-fill" style="--score:80%"></div></div><span class="score-name">Communication</span></div>
+ </div>
+ <p class="plain-note"><strong>Example:</strong> 16 + 12 + 20 + 16 + 16 = <strong>80/100 (Proficient)</strong>. These are illustrative ratings, not results from a real learner.</p>
+ <h3>What the overall score means</h3><div class="table-wrap"><table><thead><tr><th>Score</th><th>Prototype label</th></tr></thead><tbody><tr><td>85–100</td><td>Strong</td></tr><tr><td>70–84</td><td>Proficient</td></tr><tr><td>Below 70</td><td>Developing</td></tr></tbody></table></div>
+ <p class="plain-note">These thresholds are prototype conventions; they have not been validated against expert human ratings or job performance.</p>
  </div>
 </section>
 <section class="section" aria-labelledby="research-title">
- <div class="section-head"><span class="index">03</span><span class="bar" aria-hidden="true"></span><div class="section-heading"><h2 id="research-title">Evidence, Measurement + Research</h2><h3>Key metrics and data sources</h3></div></div>
- <div class="table-wrap metrics"><table><thead><tr><th>Metric</th><th>Definition</th><th>Data source</th></tr></thead><tbody>
-  <tr><td>Completion rate</td><td>Percentage of started modules completed</td><td>Product analytics</td></tr>
-  <tr><td>Accuracy rate</td><td>Percentage of correct responses</td><td>Assessment data</td></tr>
-  <tr><td>Time on task</td><td>Median time per module</td><td>Product analytics</td></tr>
-  <tr><td>Return rate</td><td>Percentage of learners who return</td><td>Product analytics</td></tr>
-  <tr><td>Engagement</td><td>Active days per learner</td><td>Product analytics</td></tr>
+ <div class="section-head"><span class="index">03</span><span class="bar" aria-hidden="true"></span><div class="section-heading"><h2 id="research-title">Measurement + Research</h2></div></div>
+ <div class="section-content">
+ <h3>What to measure</h3><div class="table-wrap metrics"><table><thead><tr><th>Question</th><th>Evidence</th></tr></thead><tbody>
+ <tr><td>Did learners engage?</td><td>Completion, feedback usefulness, perceived relevance</td></tr>
+ <tr><td>Did skills improve during practice?</td><td>First-to-final ratings &amp; quality on unfamiliar scenarios</td></tr>
+ <tr><td>Did behavior change on the job?</td><td>Observable conversation &amp; decision-making behaviors</td></tr>
+ <tr><td>Did changes create business value?</td><td>Relevant service, leadership or operational indicators</td></tr>
  </tbody></table></div>
+ <h3>Data and reporting</h3><p class="section-copy">The prototype can export scenario responses, round-by-round skill ratings, final scores, and reflections to CSV. A future dashboard could summarize practice completion, skill patterns and areas for improvement. Work outcomes would require separate data collection.</p>
+ <h3>Research that informed the design</h3><div class="table-wrap"><table><thead><tr><th>Research area</th><th>Application</th></tr></thead><tbody>
+ <tr><td>Adult learning</td><td>Workplace-relevant situations &amp; immediate application</td></tr>
+ <tr><td>Practice &amp; feedback</td><td>Repeated responses, focused suggestions &amp; opportunities to revise</td></tr>
+ <tr><td>Cognitive load &amp; multimedia learning</td><td>Short instructions, restrained visuals, consistent sequence</td></tr>
+ <tr><td>Psychological safety</td><td>Low-stakes practice &amp; constructive feedback</td></tr>
+ <tr><td>Universal Design for Learning</td><td>Multiple ways to respond &amp; clearer access to information</td></tr>
+ <tr><td>Evaluation &amp; transfer</td><td>Learning → observed behavior → relevant business measures</td></tr>
+ </tbody></table></div>
+ </div>
 </section>
 </main>
 </body>
