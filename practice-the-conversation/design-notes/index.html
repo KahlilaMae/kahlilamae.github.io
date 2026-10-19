@@ -1,1 +1,75 @@
-
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Design Notes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#381b36;--plum:#6c416d;--muted:#81648c;--line:#bdaac8;--mist:#f1eef5;--paper:#fdfcff;--panel:#f5f0f8}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#f0edf4;color:var(--ink);font-family:'Source Sans 3',Arial,sans-serif;font-size:16px;line-height:1.42}
+.sheet{width:min(1060px,calc(100% - 52px));margin:36px auto 48px;padding:44px 64px 36px;border-radius:26px;background-color:var(--paper);background-image:radial-gradient(circle,rgba(154,125,164,.17) .7px,transparent .9px);background-size:14px 14px;box-shadow:0 20px 42px rgba(68,51,77,.15),0 4px 12px rgba(68,51,77,.05)}
+h1,h2{font-family:'Playfair Display',Georgia,serif;font-weight:400}h1{font-size:clamp(3.2rem,6vw,4.55rem);line-height:1.08;letter-spacing:-.045em;margin:0}h2{font-size:clamp(1.9rem,3.5vw,2.65rem);line-height:1.14;margin:0;letter-spacing:-.035em}h3{font-size:.87rem;letter-spacing:.13em;text-transform:uppercase;color:#754779;font-weight:700;margin:18px 0 10px}p{margin:0}
+.top{display:flex;justify-content:space-between;align-items:start;gap:24px;margin-bottom:34px}.smalltag{font-size:.82rem;letter-spacing:.14em;font-weight:600;color:#906f9d;margin:12px 0 0}.notice{width:288px;min-height:101px;display:flex;align-items:center;gap:16px;background:linear-gradient(105deg,#f2eefa,#f0eaf4);border-radius:13px;padding:17px 19px}.notice svg{width:32px;height:32px;flex-shrink:0;stroke:#9f77a8;stroke-width:1.3;fill:none}.notice strong{display:block;font-size:1rem;line-height:1.22}.notice span{display:block;color:#92799c;line-height:1.22;margin-top:3px}
+.section{padding:26px 0 30px;border-top:2px solid #bea6cb}.section:first-of-type{border-top:0;padding-top:0}.section-head{display:flex;align-items:baseline;gap:18px;margin-bottom:15px}.index{font-family:'Playfair Display',Georgia,serif;font-size:2.75rem;line-height:1;color:#341431;min-width:58px}.bar{width:2px;height:34px;background:#bba2c6;align-self:center}.section-heading h3{margin:3px 0 0;font-size:.83rem;font-weight:600}
+.table-wrap{overflow-x:auto}table{width:100%;border-collapse:collapse;background:rgba(255,255,255,.70);font-size:1rem}th,td{border:1px solid #d8cede;padding:8px 16px;text-align:left;vertical-align:top}th{background:rgba(220,207,229,.48);letter-spacing:.06em;text-transform:uppercase;color:#734577;font-size:.85rem}td:first-child{color:#65436f;font-weight:600}.section .table-wrap{margin:12px 0 20px}
+.flow{display:flex;align-items:stretch;justify-content:space-between;gap:8px;margin:13px 0 6px}.node{flex:1;min-width:0;background:rgba(244,240,249,.93);border:1px solid #e4dbea;border-radius:9px;padding:18px 10px;min-height:85px;display:flex;justify-content:center;align-items:center;text-align:center;gap:9px;font-weight:600;color:#513452;line-height:1.17}.node svg{width:25px;height:25px;stroke:#785381;stroke-width:1.6;fill:none;flex-shrink:0}.arrow{align-self:center;color:#633a6e;font-size:1.6rem;line-height:1}
+.logic-grid{display:grid;grid-template-columns:42% 1fr;gap:34px}.panel{background:linear-gradient(115deg,rgba(240,234,246,.85),rgba(252,250,255,.82));border-radius:10px;padding:15px 22px}.panel h3{margin:0 0 16px}.formula{font-family:Georgia,serif;font-style:italic;font-size:1.65rem;text-align:center;margin:22px 0 19px;color:#41234c;white-space:nowrap}.fraction{display:inline-flex;flex-direction:column;vertical-align:middle;align-items:center;font-size:.95em}.fraction .numerator{padding:0 7px 2px;border-bottom:1px solid currentColor}.fraction .denominator{padding-top:1px}.definition{display:grid;grid-template-columns:24px 1fr;gap:0;font-size:.98rem;color:#8b7294}.definition>*{border-top:1px solid #d7cde1;padding:7px 0}.definition b{font-family:Georgia,serif;font-style:italic;color:#644176}
+.metrics{margin-bottom:0}.metrics td:first-child{font-weight:500}
+@media(max-width:840px){.sheet{width:calc(100% - 24px);margin:12px auto;padding:28px 24px;border-radius:22px}.top{flex-wrap:wrap}.notice{width:100%;max-width:410px}.logic-grid{grid-template-columns:1fr;gap:10px}.flow{flex-wrap:wrap;gap:7px}.node{flex:1 1 40%;min-height:80px}.arrow{flex:0 0 24px;text-align:center}.section-head{gap:12px}}
+@media(max-width:520px){.sheet{padding:24px 16px}.index{font-size:2.2rem;min-width:42px}.bar{height:28px}h2{font-size:1.7rem}.section-head{align-items:center}th,td{padding:7px 9px;font-size:.84rem}.node{flex:1 1 100%;min-height:65px}.arrow{flex:1 1 100%;transform:rotate(90deg);text-align:center}.formula{font-size:1.35rem}}
+</style>
+</head>
+<body>
+<main class="sheet">
+<header class="top">
+  <aside class="notice" aria-label="Adaptive learning clarification">
+    <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M9 3h10l5 5v21H9z M19 3v6h5 M12 14h9 M12 18h9 M12 22h7"/></svg>
+    <p><strong>Not Adaptive Learning</strong><span>This experience does not use adaptive learning with AI.</span></p>
+  </aside>
+</header>
+<section class="section" aria-labelledby="design-title">
+ <div class="section-head"><span class="index">01</span><span class="bar" aria-hidden="true"></span><div class="section-heading"><h2 id="design-title">Behind the Design</h2><h3>Key goals and design flow</h3></div></div>
+ <div class="table-wrap"><table><thead><tr><th>Goal</th><th>Design approach</th></tr></thead><tbody>
+ <tr><td>Build core skills</td><td>Structured progression with clear checkpoints</td></tr>
+ <tr><td>Maintain focus</td><td>Short, purposeful sessions with single objectives</td></tr>
+ <tr><td>Support independence</td><td>Clear guidance and immediate feedback</td></tr>
+ <tr><td>Keep experience consistent</td><td>Unified layout and familiar patterns</td></tr>
+ </tbody></table></div>
+ <h3>Learning flow</h3>
+ <div class="flow" aria-label="Introduce concept, Guided practice, Independent practice, Check understanding">
+  <div class="node"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5h12M8 12h12M8 19h12M3 5h2M3 12h2M3 19h2"/></svg>Introduce<br>concept</div><span class="arrow" aria-hidden="true">→</span>
+  <div class="node"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 2h10l4 4v16H5zM15 2v5h4M8 12h8M8 16h8"/></svg>Guided<br>practice</div><span class="arrow" aria-hidden="true">→</span>
+  <div class="node"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m7 12 3 3 7-7"/></svg>Independent<br>practice</div><span class="arrow" aria-hidden="true">→</span>
+  <div class="node"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 21v-5M10 21v-9M16 21V7M22 21V3"/></svg>Check<br>understanding</div>
+ </div>
+</section>
+<section class="section" aria-labelledby="logic-title">
+ <div class="section-head"><span class="index">02</span><span class="bar" aria-hidden="true"></span><div class="section-heading"><h2 id="logic-title">Behind the Logic</h2><h3>Scoring and progression</h3></div></div>
+ <div class="logic-grid">
+  <div class="panel"><h3>Mastery score</h3><div class="formula">S = <span class="fraction"><span class="numerator">(C + 0.5P + 0.5R)</span><span class="denominator">N</span></span></div>
+   <div class="definition"><b>S</b><span>Mastery score</span><b>C</b><span>Correct responses</span><b>P</b><span>Partial credit</span><b>R</b><span>Revisions</span><b>N</b><span>Total items</span></div>
+  </div>
+  <div><h3>Progression rules</h3><div class="table-wrap"><table><thead><tr><th>Condition</th><th>Action</th></tr></thead><tbody>
+   <tr><td><i>S</i> ≥ 0.8</td><td>Advance to next level</td></tr>
+   <tr><td>0.6 ≤ <i>S</i> &lt; 0.8</td><td>Provide additional practice</td></tr>
+   <tr><td><i>S</i> &lt; 0.6</td><td>Revisit current level</td></tr>
+   <tr><td>Streak ≥ 3</td><td>Unlock challenge set</td></tr>
+  </tbody></table></div></div>
+ </div>
+</section>
+<section class="section" aria-labelledby="research-title">
+ <div class="section-head"><span class="index">03</span><span class="bar" aria-hidden="true"></span><div class="section-heading"><h2 id="research-title">Evidence, Measurement + Research</h2><h3>Key metrics and data sources</h3></div></div>
+ <div class="table-wrap metrics"><table><thead><tr><th>Metric</th><th>Definition</th><th>Data source</th></tr></thead><tbody>
+  <tr><td>Completion rate</td><td>Percentage of started modules completed</td><td>Product analytics</td></tr>
+  <tr><td>Accuracy rate</td><td>Percentage of correct responses</td><td>Assessment data</td></tr>
+  <tr><td>Time on task</td><td>Median time per module</td><td>Product analytics</td></tr>
+  <tr><td>Return rate</td><td>Percentage of learners who return</td><td>Product analytics</td></tr>
+  <tr><td>Engagement</td><td>Active days per learner</td><td>Product analytics</td></tr>
+ </tbody></table></div>
+</section>
+</main>
+</body>
+</html>
