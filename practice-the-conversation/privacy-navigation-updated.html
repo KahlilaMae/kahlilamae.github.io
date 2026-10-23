@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacy | What Would You Say?</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink:#3A2438;
+      --muted:#5B4B58;
+      --paper:#F7F4F7;
+      --card:#FFFDFE;
+      --accent:#7A2E5C;
+      --line:rgba(122,46,92,.11);
+    }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--paper); color:var(--ink); font:400 17px/1.65 'Source Sans 3',Arial,sans-serif; -webkit-font-smoothing:antialiased; }
+    a { color:inherit; }
+    .site-nav { position:sticky; top:0; z-index:10; background:rgba(247,244,247,.96); border-bottom:1px solid var(--line); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px); }
+    .site-nav-inner { width:min(calc(100% - 44px),1060px); min-height:80px; margin:0 auto; display:flex; align-items:center; justify-content:flex-end; gap:38px; }
+    .site-nav-link { color:var(--muted); font-size:15px; font-weight:500; text-decoration:none; min-height:40px; display:inline-flex; align-items:center; border-bottom:2px solid transparent; }
+    .site-nav-link:hover,.site-nav-link:focus-visible { color:var(--accent); border-bottom-color:var(--accent); }
+    .site-nav-link[aria-current="page"] { color:var(--accent); border-bottom-color:var(--accent); }
+    .page-backdrop {
+      min-height:calc(100vh - 80px);
+      padding:54px 22px 80px;
+      background-color:var(--paper);
+      background-image:radial-gradient(circle,rgba(122,46,92,.075) .65px,transparent .75px);
+      background-size:18px 18px;
+    }
+    .privacy-canvas {
+      width:min(100%,1060px);
+      margin:0 auto;
+      padding:56px 66px;
+      background:var(--card);
+      border:1px solid rgba(122,46,92,.035);
+      border-radius:28px;
+      box-shadow:0 7px 30px rgba(58,36,56,.035);
+    }
+    h1 { font:400 clamp(40px,4vw,48px)/1.15 'Playfair Display',Georgia,serif; letter-spacing:-.035em; margin:0 0 27px; text-align:left; }
+    .privacy-copy { max-width:790px; margin:0; color:var(--ink); font-size:17px; line-height:1.65; text-align:left; }
+    .back-action { display:flex; justify-content:flex-end; margin-top:48px; }
+    .back-link { display:inline-flex; align-items:center; justify-content:center; gap:12px; padding:11px 19px; min-height:44px; text-decoration:none; font-size:15px; font-weight:500; color:#fff; background:var(--accent); border-radius:999px; transition:background .2s ease,transform .2s ease; }
+    .back-link:hover,.back-link:focus-visible { background:#63244A; transform:translateY(-1px); }
+    .back-link:focus-visible { outline:3px solid rgba(122,46,92,.35); outline-offset:3px; }
+    footer { width:min(100%,1060px); margin:70px auto 0; padding-top:24px; border-top:1px solid var(--line); text-align:right; color:var(--muted); font-size:13px; }
+    @media(max-width:760px) {
+      .site-nav-inner { width:calc(100% - 32px); min-height:64px; gap:18px; }
+      .site-nav-link { font-size:.78rem; }
+      .page-backdrop { min-height:calc(100vh - 64px); padding:32px 16px 56px; }
+      .privacy-canvas { border-radius:22px; padding:32px 25px; }
+      h1 { margin-bottom:24px; }
+      .back-action { margin-top:40px; }
+      footer { width:100%; margin-top:52px; }
+    }
+    @media(prefers-reduced-motion:reduce) { .back-link { transition:none; } }
+  </style>
+</head>
+<body>
+  <nav class="site-nav" aria-label="Main navigation">
+    <div class="site-nav-inner">
+      <a class="site-nav-link" href="../">Home</a>
+      <a class="site-nav-link" href="../impact.html">Work</a>
+      <a class="site-nav-link" href="./" aria-current="page">Projects</a>
+    </div>
+  </nav>
+  <main class="page-backdrop">
+    <article class="privacy-canvas" aria-labelledby="privacy-title">
+      <h1 id="privacy-title">Privacy</h1>
+      <p class="privacy-copy">This prototype demonstrates how adaptive conversation practice could work. Your responses are not collected or saved. This prototype is for demonstration and testing purposes only. Please avoid sharing personal or confidential information.</p>
+      <div class="back-action"><a class="back-link" href="./" aria-label="Return to What Would You Say?">Back to prototype <span aria-hidden="true">→</span></a></div>
+    </article>
+    <footer>© 2026 Kahlila Mae Liverpool</footer>
+  </main>
+</body>
+</html>
