@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Design Notes | Kahlila Mae Liverpool</title>
+<meta content="The thinking, logic, and measurement behind What Would You Say?" name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400&amp;family=Source+Sans+3:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<style>
+:root{--bg:#F5EBF3;--paper:#FBF7FA;--ink:#3A2438;--muted:#5B4B58;--berry:#7A2E5C;--line:rgba(122,46,92,.18);--wash:#F2E8F0}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:'Source Sans 3',Arial,sans-serif;font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:var(--berry)}.site-nav{width:min(100% - 44px,1060px);margin:0 auto;border-bottom:1px solid var(--line);min-height:80px;display:flex;align-items:center;justify-content:flex-end}.nav-links{display:flex;gap:31px;align-items:center;flex-wrap:wrap}.nav-links a{text-decoration:none;color:var(--berry);font-weight:500;font-size:15px;padding:8px 0 6px;border-bottom:2px solid transparent}.nav-links a.active{border-color:var(--berry)}.nav-links a:focus-visible{outline:2px solid var(--berry);outline-offset:4px}
+.sheet{width:min(100% - 44px,1060px);margin:36px auto 90px;padding:clamp(26px,5vw,66px);border-radius:28px;background-color:var(--paper);background-image:radial-gradient(rgba(122,46,92,.075) .65px,transparent .75px);background-size:18px 18px;box-shadow:0 18px 40px rgba(58,36,56,.10),0 3px 9px rgba(58,36,56,.045)}
+h1,h2,h3{font-family:'Playfair Display',Georgia,serif;font-weight:400;color:var(--ink)}h1{font-size:clamp(2.9rem,5.3vw,4.5rem);line-height:1.15;letter-spacing:-.035em;margin:0 0 16px}.chapter{border-top:1px solid var(--line);padding-top:44px;margin-top:44px}.chapter-label{font-size:17px;font-weight:600;letter-spacing:.11em;color:var(--berry);text-transform:uppercase;margin:0 0 12px}.chapter h2{font-size:clamp(2.15rem,3.8vw,3rem);line-height:1.22;letter-spacing:-.025em;margin:0 0 21px}.story{max-width:790px}.story p{margin:0 0 16px}.story .question{font-size:clamp(1.08rem,2vw,1.26rem);font-weight:500;line-height:1.55}.note{background:var(--wash);padding:17px 21px;border-radius:10px;margin:21px 0 0;max-width:850px}.note strong{display:block;font-weight:600;margin-bottom:3px}.note p{margin:0}.section-detail{margin-top:40px}.section-detail h3{font-family:'Source Sans 3',Arial,sans-serif;font-size:1.3rem;font-weight:600;margin:0 0 12px}.section-detail>p{max-width:790px;margin:0 0 18px}.minor-label{font-size:12px;text-transform:uppercase;color:var(--berry);letter-spacing:.1em;font-weight:600;margin:0 0 15px}.section-detail h3.minor-label{font-family:'Source Sans 3',Arial,sans-serif;font-size:12px;font-weight:600;color:var(--berry);text-transform:uppercase;letter-spacing:.1em;margin:0 0 15px}.details-list{display:grid;grid-template-columns:1fr 1fr;gap:16px 44px;padding:0;list-style:none;margin:0}.details-list li{padding:0 0 14px;border-bottom:1px solid var(--line)}.details-list strong{display:block;font-weight:600}.details-list span{display:block;color:var(--muted);font-size:.93rem}.flow{display:flex;align-items:stretch;flex-wrap:wrap;gap:8px;margin-top:18px}.flow-step{background:rgba(122,46,92,.055);border:1px solid var(--line);border-radius:9px;padding:10px 13px;flex:1 1 125px;min-width:110px;text-align:center;font-size:14px;line-height:1.35}.flow-step.reflect-step{margin-top:0}.flow-arrow{align-self:center;color:var(--berry)}.table-wrap{overflow-x:auto;margin:15px 0 0}table{border-collapse:collapse;width:100%;min-width:470px;font-size:15px;line-height:1.5;background:rgba(251,247,250,.82)}th,td{padding:12px 13px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}th{font-weight:600;color:var(--berry);background:rgba(122,46,92,.06)}td:first-child{font-weight:500}.small{font-size:.88rem;color:var(--muted)}.tiny-note{font-size:.88rem;color:var(--muted);margin:12px 0}.graph{margin:23px 0 10px;padding:20px 22px;background:rgba(122,46,92,.045);border-radius:12px}.graph-title{font-weight:600;font-size:15px;margin-bottom:15px}.bar-row{display:grid;grid-template-columns:minmax(100px,175px) 1fr 55px;align-items:center;gap:12px;margin:10px 0;font-size:14px}.bar-track{height:11px;background:#E6D8E2;border-radius:20px;overflow:hidden}.bar-fill{height:100%;background:var(--berry);border-radius:20px}.bar-row strong{text-align:right;font-weight:600}.formula{font-size:1rem;margin:15px 0;padding:17px 20px;border-left:2px solid var(--berry);background:rgba(122,46,92,.045)}.evidence-chain{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:18px 0}.evidence-chain span{background:rgba(122,46,92,.06);border:1px solid var(--line);padding:8px 11px;border-radius:8px;font-size:14px}.evidence-chain b{color:var(--berry);font-weight:400}.quiet-alert{font-size:14px;padding:12px 16px;background:rgba(122,46,92,.06);border-radius:9px;margin-top:19px;color:var(--muted)}.quiet-alert strong{color:var(--ink);font-weight:600}footer{margin-top:50px;border-top:1px solid var(--line);padding-top:22px;text-align:right;color:var(--muted);font-size:13px}
+@media(max-width:650px){.sheet{margin-top:20px;padding:26px 22px}.site-nav{min-height:66px}.nav-links{gap:17px}.nav-links a{font-size:13px}.chapter{padding-top:32px;margin-top:35px}.details-list{grid-template-columns:1fr}.flow-arrow{display:none}.flow-step{flex-basis:100%;text-align:left}.bar-row{grid-template-columns:95px 1fr 42px;gap:8px}.evidence-chain b{display:none}.evidence-chain span{width:100%}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+.ai-notice{display:flex;align-items:center;gap:10px;color:var(--muted);font-size:14px;line-height:1.4;margin:0 0 8px}.ai-notice-icon{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;min-width:22px;border:1px solid var(--berry);border-radius:50%;color:var(--berry);font-weight:600;font-family:'Source Sans 3',Arial,sans-serif}.ai-notice p{margin:0}@media(max-width:650px){.ai-notice{align-items:flex-start}}
+
+/* Quiet circular future-direction diagram */
+.future-cycle{position:relative;max-width:360px;height:220px;margin:14px auto 0}
+.future-cycle svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible;pointer-events:none}
+.future-node{position:absolute;width:35%;min-height:46px;display:flex;align-items:center;justify-content:center;text-align:center;padding:10px 12px;background:var(--wash);border:1px solid rgba(122,46,92,.07);border-radius:12px;color:var(--ink);font-weight:500;line-height:1.25;font-size:14px}
+.future-node.top{top:0;left:32.5%}.future-node.right{top:39%;right:0}.future-node.bottom{bottom:0;left:32.5%}.future-node.left{top:39%;left:0}
+.talk-note{display:flex;gap:12px;align-items:flex-start;background:rgba(122,46,92,.045);border:1px solid var(--line);border-radius:12px;padding:14px 16px;max-width:790px}.talk-note svg{width:28px;height:28px;min-width:28px;stroke:var(--berry);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;margin-top:2px}.talk-note p{margin:0}.prototype-footer{border-top:1px solid var(--line);margin-top:55px;padding-top:16px;font-size:13px;color:#958496;text-align:left}
+@media(max-width:650px){.future-cycle{height:auto;max-width:390px;display:flex;flex-direction:column;gap:15px;align-items:center;padding:0}.future-cycle svg{display:none}.future-node,.future-node.top,.future-node.right,.future-node.bottom,.future-node.left{position:static;width:100%;min-height:60px}.future-node:not(:last-child)::after{display:none}.future-cycle .future-mobile-arrow{color:var(--berry);line-height:1;margin:-6px 0;font-size:20px}}
+@media(min-width:651px){.future-mobile-arrow{display:none}}
+.ai-future-description{max-width:790px;margin:58px 0 0;line-height:1.65}.ai-future-description span{display:block}
+
+/* Shared quiet emphasis for privacy and technical-collaboration notes */
+.reflective-use{margin:30px 0 0;max-width:790px}
+.privacy-note{max-width:790px;margin:17px 0 22px;padding:10px 15px;border-left:2px solid rgba(122,46,92,.45);background:rgba(122,46,92,.035);border-radius:0 6px 6px 0;font-size:inherit;line-height:inherit;color:var(--ink);display:flex;align-items:flex-start;gap:11px}.privacy-note-icon{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;min-width:22px;border:1px solid var(--berry);border-radius:50%;color:var(--berry);font-weight:600;font-size:14px;line-height:1;margin-top:3px}
+
+/* More generous rhythm in the AI / LLM explanation; original palette retained. */
+.llm-detail h3{margin-bottom:20px}
+.llm-detail>p:not(.privacy-note){margin:0 0 24px;max-width:790px}
+.llm-detail .flow{margin:26px 0 32px;row-gap:16px}
+.llm-detail .privacy-note{margin:30px 0 32px;padding:15px 17px;max-width:850px}
+.llm-detail>p:last-child{margin-bottom:0}
+.prototype-footer .evolving-note{margin-top:8px}
+
+/* Visual concept preview: existing content and functionality preserved */
+
+:root{--bg:#F7F4F7;--paper:#FFFDFE;--wash:#FCFAFC;--line:rgba(122,46,92,.11)}
+.sheet{box-shadow:0 8px 28px rgba(58,36,56,.035);background-image:radial-gradient(rgba(122,46,92,.055) .58px,transparent .73px);padding-left:clamp(32px,7vw,92px);padding-right:clamp(32px,7vw,92px)}
+.chapter{padding-top:56px;margin-top:56px;border-top:1px solid rgba(122,46,92,.11)}
+.section-detail{margin-top:49px}
+.note{background:transparent;border-left:2px solid #BEACB8;padding:10px 0 10px 20px;border-radius:0}
+.flow-step,.evidence-chain span,.future-node{background:transparent;border:1px solid rgba(122,46,92,.15);border-radius:5px}
+.graph{background:transparent;border:1px solid rgba(122,46,92,.12)}
+.formula{background:transparent;border-left-color:#BEACB8}
+.talk-note{background:transparent;border-color:rgba(122,46,92,.12)}
+.privacy-note{background:rgba(122,46,92,.025)!important}
+.table-wrap table{background:transparent}th{background:transparent}td,th{border-color:rgba(122,46,92,.10)}
+.details-list li{border-color:rgba(122,46,92,.10)}
+
+
+/* Option 2 refinement: more understated content-first hierarchy */
+:root{--bg:#F7F4F7;--paper:#FFFDFE;--wash:#F7F1F6}
+.sheet{box-shadow:0 7px 30px rgba(58,36,56,.035);background-image:radial-gradient(rgba(122,46,92,.06) .58px,transparent .73px)}
+.chapter{border-top-color:rgba(122,46,92,.10)}
+.chapter-label{color:#884B72;letter-spacing:.12em}
+.note{background:rgba(122,46,92,.038);border-left:2px solid rgba(122,46,92,.42);border-radius:0 6px 6px 0;padding:17px 22px;max-width:770px}
+.privacy-note,.llm-detail .privacy-note{background:rgba(122,46,92,.028)!important;border-left:2px solid rgba(122,46,92,.42);border-radius:0 6px 6px 0}
+.flow-step,.evidence-chain span,.future-node{border-color:rgba(122,46,92,.105);background:rgba(255,255,255,.40);border-radius:6px}
+.flow-arrow,.evidence-chain b{color:#A98CA2}
+.graph{border-color:rgba(122,46,92,.09);background:rgba(255,255,255,.22)}
+.graph .bar-track{background:#ECE5EB}.graph .bar-fill{background:#936A86}
+.formula{background:transparent;border-left:2px solid rgba(122,46,92,.26)}
+.talk-note{border-color:rgba(122,46,92,.095);background:rgba(122,46,92,.023)}
+.table-wrap th{color:#7A4569;background:rgba(122,46,92,.017)}
+.table-wrap td,.table-wrap th{border-color:rgba(122,46,92,.09)}
+.future-node{background:rgba(122,46,92,.035)}
+.section-detail h3{letter-spacing:-.01em}
+@media(max-width:650px){.sheet{padding-left:25px;padding-right:25px}.note{padding:15px 18px}}
+
+/* Concept preview only: more breathing room, no content edits */
+.chapter{padding-top:74px;margin-top:86px}
+.chapter h2{margin-bottom:30px}
+.chapter-label{margin-bottom:19px}
+.story p{margin-bottom:26px}
+.section-detail{margin-top:72px}
+.section-detail h3{margin-bottom:23px}
+.section-detail>p{margin-bottom:26px}
+.note{margin-top:35px;margin-bottom:12px;padding:22px 25px}
+.details-list{row-gap:25px;column-gap:48px}
+.details-list li{padding-bottom:21px}
+.flow{margin-top:29px;row-gap:18px}
+.flow-step{padding-top:16px;padding-bottom:16px}
+.graph{margin-top:34px;margin-bottom:28px;padding:30px 28px}
+.bar-row{margin:17px 0}
+.formula{margin:28px 0;padding:21px 25px}
+.table-wrap{margin-top:26px}
+th,td{padding-top:17px;padding-bottom:17px}
+.talk-note{padding:22px 24px;gap:17px}
+.reflective-use{margin-top:39px}
+.future-cycle{margin-top:35px;margin-bottom:32px}
+.ai-future-description{margin-top:78px;line-height:1.85}
+.ai-future-description span{margin-bottom:9px}
+.llm-detail h3{margin-bottom:28px}
+.llm-detail>p:not(.privacy-note){margin-bottom:34px;line-height:1.8}
+.llm-detail .flow{margin-top:39px;margin-bottom:45px;row-gap:22px}
+.llm-detail .privacy-note{margin-top:42px;margin-bottom:43px;padding:20px 23px}
+.evidence-chain{margin-top:30px;margin-bottom:30px;row-gap:16px}
+.prototype-footer{margin-top:75px}
+@media(max-width:650px){.chapter{margin-top:55px;padding-top:48px}.section-detail{margin-top:50px}.ai-future-description{margin-top:45px}}
+
+/* Preview only: Option 1 refined fine plum chapter rule */
+.chapter{border-top:1px solid #BEA8B9;}
+
+/* Chapter-opening visual hierarchy (01–05 only). Subsections retain their existing styles. */
+.chapter {
+  border-top: 1px solid #BEA8B9;
+  padding-top: 74px;
+  margin-top: 86px;
+}
+.chapter > .chapter-label {
+  margin: 0 0 22px;
+  color: #884B72;
+  font-family: 'Source Sans 3', Arial, sans-serif;
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: .12em;
+  line-height: 1.45;
+  text-transform: uppercase;
+}
+.chapter > h2 {
+  margin: 0 0 34px;
+  color: #3A2438;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(2.15rem, 3.8vw, 3rem);
+  font-weight: 400;
+  line-height: 1.22;
+  letter-spacing: -.025em;
+}
+@media (max-width: 650px) {
+  .chapter { margin-top: 55px; padding-top: 48px; }
+  .chapter > .chapter-label { margin-bottom: 16px; }
+  .chapter > h2 { margin-bottom: 25px; }
+}
+
+/* Align both Research paragraphs with the page's standard body text. */
+.research-section > p,
+.research-section > p.research-areas {
+  font-family: 'Source Sans 3', Arial, sans-serif;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 1.65;
+  color: var(--ink);
+  letter-spacing: normal;
+  text-transform: none;
+  max-width: 790px;
+  margin: 0 0 26px;
+}
+
+/* Scoring explanation uses the same plain body-text treatment as other paragraphs. */
+.scoring-explanation{max-width:790px;margin:35px 0 12px}
+.scoring-explanation p{font-family:'Source Sans 3',Arial,sans-serif;font-size:17px;font-weight:400;font-style:normal;line-height:1.65;letter-spacing:normal;text-transform:none;color:var(--ink);margin:0 0 16px;max-width:790px}
+
+/* Keep the goal outside the proposed user-practice cycle. */
+.future-outcome{max-width:360px;text-align:center;margin:16px auto 0;font-size:15px;font-weight:600;color:var(--berry)}
+/* Pull only the first chapter divider closer to the opening note. */
+.sheet > section.chapter:first-of-type { margin-top: 48px; }
+@media (max-width:650px) { .sheet > section.chapter:first-of-type { margin-top: 34px; } }
+
+/* Compact scenario list in the future reusable-format subsection. */
+.reusable-format > p{max-width:790px;margin:0 0 22px}
+.reusable-format .reusable-scenario-heading{margin:52px 0 10px}
+.reusable-scenario-table{margin:0 0 22px;max-width:790px}
+.reusable-scenario-table table{min-width:0;width:100%;font-size:15px;line-height:1.4}
+.reusable-scenario-table th,.reusable-scenario-table td{padding:9px 13px}
+.reusable-format .reusable-scenario-table + p{margin:0}
+
+/* Future-capability process: same restrained flow style as elsewhere on this page. */
+.reusable-format > .flow{margin:22px 0 27px;gap:7px;align-items:stretch}
+.reusable-format > .flow .flow-step{flex:1 1 145px;min-width:110px;padding:12px 10px;font-size:13px}
+.reusable-format > .flow .flow-arrow{font-size:14px}
+@media(max-width:650px){.reusable-format > .flow .flow-step{flex-basis:100%;text-align:left}}
+
+/* Compact learning flow, using the same step styling as the other diagrams. */
+.adaptive-practice-flow{max-width:680px;margin:25px 0 0;gap:7px;align-items:stretch}
+.adaptive-practice-flow .flow-step{flex:1 1 115px;min-width:105px;padding:12px 9px;font-size:13px}
+.adaptive-practice-flow .flow-arrow{font-size:14px}
+.future-outcome{max-width:680px;text-align:left;margin:14px 0 0;font-size:14px;font-weight:500;color:var(--berry)}
+@media(max-width:650px){.adaptive-practice-flow .flow-step{flex-basis:100%;text-align:left}}
+/* Research references: a compact, readable table without changing other tables. */
+.research-section .table-wrap{max-width:660px;margin-top:16px}
+.research-section table{width:100%;min-width:0;font-size:14.5px;line-height:1.4}
+.research-section th,.research-section td{padding:9px 12px}
+@media(max-width:650px){.research-section .table-wrap{max-width:100%}.research-section table{font-size:14px}}
+
+
+/* Typography preview: one consistent type scale. Content and page layout preserved. */
+:root { --body-size:17px; --table-size:15px; --label-size:14px; --small-size:13px; }
+body {font-family:'Source Sans 3',Arial,sans-serif; font-size:var(--body-size); line-height:1.65;}
+h1 {font-family:'Playfair Display',Georgia,serif; font-size:clamp(42px,5.5vw,64px); line-height:1.15;}
+.chapter > h2 {font-family:'Playfair Display',Georgia,serif;font-size:clamp(32px,3.8vw,42px);line-height:1.25;}
+.chapter > .chapter-label {font-family:'Source Sans 3',Arial,sans-serif;font-size:var(--label-size);line-height:1.5;letter-spacing:.11em;}
+.section-detail h3, .scoring-explanation h3 {font-family:'Source Sans 3',Arial,sans-serif;font-size:21px;font-weight:600;line-height:1.4;letter-spacing:normal;text-transform:none;color:var(--ink);}
+.section-detail h3.minor-label {font-family:'Source Sans 3',Arial,sans-serif;font-size:var(--label-size);font-weight:600;line-height:1.45;color:var(--berry);letter-spacing:.09em;text-transform:uppercase;}
+.story .question, .story p, .section-detail > p, .reusable-format > p, .ai-future-description, .note p, .note strong, .scoring-explanation p, .research-section > p {font-family:'Source Sans 3',Arial,sans-serif;font-size:var(--body-size);line-height:1.65;}
+.story .question {font-weight:500;}
+.note strong{font-weight:600;}
+table, .reusable-scenario-table table, .research-section table {font-family:'Source Sans 3',Arial,sans-serif;font-size:var(--table-size);line-height:1.5;}
+.table-wrap td, .table-wrap th, .research-section th, .research-section td, .reusable-scenario-table th, .reusable-scenario-table td {padding:11px 13px;}
+.graph-title, .bar-row, .flow-step, .reusable-format > .flow .flow-step, .adaptive-practice-flow .flow-step, .evidence-chain span, .future-outcome {font-family:'Source Sans 3',Arial,sans-serif;font-size:var(--table-size);line-height:1.5;}
+.small, .tiny-note, .prototype-footer, footer, .privacy-note-icon {font-family:'Source Sans 3',Arial,sans-serif;font-size:var(--small-size);line-height:1.5;}
+.future-outcome{max-width:790px;text-align:left;margin:14px 0 0;font-family:'Source Sans 3',Arial,sans-serif;font-size:var(--body-size);font-weight:400;line-height:1.65;color:var(--ink)}
+/* Increased contrast for small supplementary labels. */
+.prototype-footer, footer {color:#695867;}
+/* Keyboard controls and skip navigation. */
+.skip-link {position:absolute;left:14px;top:-80px;z-index:999;background:#FFFDFE;color:#522A49;border:2px solid #7A2E5C;padding:10px 16px;border-radius:6px;font-weight:600;}
+.skip-link:focus {top:12px;}
+a:focus-visible, .table-wrap:focus-visible {outline:3px solid #7A2E5C;outline-offset:4px;border-radius:4px;}
+.table-wrap {scrollbar-width:thin;}
+@media(max-width:650px){
+ .chapter > h2{font-size:clamp(30px,7vw,36px)}
+ .table-wrap{max-width:100%}
+ .research-section table{font-size:var(--table-size)}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* Team skill-gap example: use existing graph and typography styles. */
+.team-skills-section .graph{max-width:790px}
+.team-skills-section .graph h4{font-family:'Source Sans 3',Arial,sans-serif;font-size:21px;font-weight:600;line-height:1.4;color:var(--ink);margin:0 0 22px}
+.team-skills-section .graph .minor-label{margin:0 0 8px}
+.team-skills-section .bar-row{grid-template-columns:minmax(140px,190px) 1fr 55px}
+.team-skills-section .tiny-note{margin:23px 0 0}
+@media(max-width:650px){.team-skills-section .bar-row{grid-template-columns:minmax(100px,125px) 1fr 43px;gap:8px}}
+
+/* Quiet card grid: document order preserves the journey without visible numbers. */
+.journey-flow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;list-style:none;margin:29px 0 0;padding:0}
+.journey-flow .flow-step{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;min-width:0;padding:15px 10px;font-size:15px;line-height:1.45;}
+.journey-flow .flow-step::before{display:none}
+@media(max-width:800px){.journey-flow{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:480px){.journey-flow{grid-template-columns:1fr}.journey-flow .flow-step{align-items:flex-start;text-align:left}}
+/* Clear separation between the practice flow and its intended outcome. */
+.future-outcome { margin-top: 60px; }
+@media (max-width: 650px) { .future-outcome { margin-top: 44px; } }
+
+/* Future Directions: quieter transitions without changing the visual system. */
+section[aria-labelledby="next-heading"] > .section-detail { margin-top: 78px; }
+section[aria-labelledby="next-heading"] .section-detail > .flow { margin-top: 34px; margin-bottom: 34px; }
+section[aria-labelledby="next-heading"] .adaptive-practice-flow { margin-top: 32px; margin-bottom: 0; }
+section[aria-labelledby="next-heading"] .future-outcome { max-width: 740px; margin-top: 60px; margin-bottom: 0; }
+@media (max-width: 650px) {
+  section[aria-labelledby="next-heading"] > .section-detail { margin-top: 54px; }
+  section[aria-labelledby="next-heading"] .future-outcome { margin-top: 44px; }
+}
+
+/* Future Directions: text-only conversation flow and LLM comparison. */
+.reflection-path{display:flex;align-items:stretch;gap:9px;margin:28px 0 0;max-width:900px}
+.reflection-stage{min-width:0;flex:1 1 0;padding:19px 15px;background:rgba(122,46,92,.035);border:1px solid var(--line);border-radius:8px}
+.reflection-stage strong,.reflection-stage span{display:block}
+.reflection-stage strong{font-weight:600;font-size:15px;line-height:1.4;color:var(--ink);margin-bottom:8px}
+.reflection-stage span{font-size:14px;line-height:1.5;color:var(--muted)}
+.reflection-arrow{flex:0 0 auto;align-self:center;color:#A98CA2;font-size:19px}
+.llm-compare{display:grid;grid-template-columns:1fr 1fr;gap:18px;max-width:850px;margin:28px 0 0}
+.llm-compare-column{min-width:0;padding:24px 25px;background:rgba(122,46,92,.035);border:1px solid var(--line);border-radius:8px}
+.llm-compare-column h4{font:600 18px/1.4 'Source Sans 3',Arial,sans-serif;color:var(--ink);margin:0 0 19px}
+.llm-compare-column ul{list-style:none;margin:0;padding:0}
+.llm-compare-column li{padding:0 0 15px;margin:0 0 15px;border-bottom:1px solid var(--line)}
+.llm-compare-column li:last-child{border-bottom:0;margin-bottom:0;padding-bottom:0}
+.llm-compare-column li strong,.llm-compare-column li span{display:block}
+.llm-compare-column li strong{font-weight:600;font-size:15px;line-height:1.45;color:var(--ink)}
+.llm-compare-column li span{font-size:14px;line-height:1.5;color:var(--muted);margin-top:3px}
+.section-detail .visual-closing{max-width:790px;margin:24px 0 0;line-height:1.65}
+@media(max-width:800px){.reflection-path{display:grid;grid-template-columns:1fr;gap:9px}.reflection-stage{padding:16px 18px}.reflection-arrow{justify-self:center;transform:rotate(90deg)}}
+@media(max-width:650px){.llm-compare{grid-template-columns:1fr;gap:12px}.llm-compare-column{padding:20px}}
+/* Keep contextual explanations and caution notes grouped with their section openings. */
+.opening-context,.section-context{max-width:790px;margin:16px 0 16px;font-size:17px;line-height:1.65;color:var(--ink)}
+.section-context + .privacy-note{margin-top:12px}
+@media(max-width:650px){.opening-context,.section-context{font-size:var(--body-size,17px)}}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to main content</a><nav aria-label="Main navigation" class="site-nav"><div class="nav-links"><a href="../../index.html">Home</a><a href="../../impact.html">Work</a><a class="active" aria-current="page" href="../index.html">Projects</a></div></nav>
+<main class="sheet" id="main-content">
+<h1>Design Notes</h1>
+<p class="opening-context">These notes explain the design decisions behind the prototype, including what the current experience can and cannot do.</p>
+<div class="privacy-note" role="note"><span aria-hidden="true" class="privacy-note-icon">!</span><span>This prototype uses rule-based logic and predefined feedback, rather than LLM-generated responses.</span></div>
+<section aria-labelledby="design-heading" class="chapter">
+<p class="chapter-label">01 / Design</p><h2 id="design-heading">It started with a question</h2>
+<div class="story"><p class="question">What happens when someone knows what they should do, but struggles to do it in the moment?</p></div>
+<div class="note"><strong>Design decision</strong><p>Practice a response rather than select an answer.</p></div>
+<div class="section-detail"><h3 class="minor-label eyebrow-heading">Design choices and why they matter</h3><ul class="details-list">
+<li><strong>Realistic situations</strong><span>Upset Customer, Software Delay, and Performance Conversation focus on judgment and workplace communication.</span></li>
+<li><strong>Active practice</strong><span>Users type or speak in their own words instead of choosing a multiple-choice response.</span></li>
+<li><strong>Psychological safety</strong><span>People can practice, get feedback, and try again without pressure.</span></li>
+<li><strong>Personalization</strong><span>Using someone's name and responding to their choices can make the practice feel more personal.</span></li>
+<li><strong>Cognitive load</strong><span>One step at a time, with enough space and clear wording to focus on what matters.</span></li>
+<li><strong>Accessibility</strong><span>Clear language, readable layouts, and options to type or speak support accessibility. Accessibility testing is still needed.</span></li>
+</ul></div>
+<div class="section-detail reusable-format">
+<h3>Reusable format</h3>
+<p>A manager might see a skill their team needs to strengthen. A scenario could be created or adapted around that need, giving people a way to practice and receive feedback.</p>
+<div aria-label="Proposed process for a new team learning need" class="flow"><span class="flow-step">Manager identifies a skill gap</span><span aria-hidden="true" class="flow-arrow">→</span><span class="flow-step">Create or adapt a scenario</span><span aria-hidden="true" class="flow-arrow">→</span><span class="flow-step">Team members practice and receive feedback</span><span aria-hidden="true" class="flow-arrow">→</span><span class="flow-step">Manager checks job performance</span></div>
+<h3 class="reusable-scenario-heading">Other practice scenarios</h3>
+<div aria-label="" class="table-wrap reusable-scenario-table" role="region" tabindex="0"><table><thead><tr><th scope="col">Example Scenarios </th></tr></thead><tbody>
+<tr><td>When a Customer Questions a Product's Value</td></tr>
+<tr><td>When a Product Launch Changes the Team's Priorities</td></tr>
+<tr><td>When Usage Data Reveals a Gap in Product Adoption</td></tr>
+</tbody></table></div>
+<p>The question is whether this helps teams respond more quickly when business needs change.</p>
+</div>
+</section>
+<section aria-labelledby="logic-heading" class="chapter">
+<p class="chapter-label">02 / Logic</p><h2 id="logic-heading">How the experience responds</h2>
+<div class="note"><strong>Design decision</strong><p>Each response matters. What someone says influences which follow-up comes next.</p></div>
+<p class="section-context">The prototype uses defined indicators to assess typed and transcribed responses.</p>
+<p class="privacy-note">
+<span aria-hidden="true" class="privacy-note-icon">!</span>
+<span>The system uses language patterns to give feedback; it cannot fully judge someone's intent or tone.</span>
+</p>
+<div class="section-detail"><h3 class="minor-label eyebrow-heading">How the system processes a response</h3><div class="flow"><span class="flow-step">Typed response or speech transcript</span><span aria-hidden="true" class="flow-arrow">→</span><span class="flow-step">Language and structure indicators</span><span aria-hidden="true" class="flow-arrow">→</span><span class="flow-step">Five skill ratings</span><span aria-hidden="true" class="flow-arrow">→</span><span class="flow-step">What worked / Try next</span></div></div>
+<div class="section-detail"><h3>How scenarios branch differently</h3><div aria-label="How scenarios branch differently" class="table-wrap" role="region" tabindex="0"><table><thead><tr><th scope="col">Scenario</th><th scope="col">How the next step is selected</th></tr></thead><tbody><tr><td>Upset Customer</td><td>More structured follow-up sequence; feedback changes based on assessed skills.</td></tr><tr><td>Software Delay</td><td>Initial launch, delay, or unclear recommendation changes the next authored information.</td></tr><tr><td>Performance Conversation</td><td>Accountability, support, or balanced approaches lead to different authored follow-ups.</td></tr></tbody></table></div></div>
+<div class="section-detail"><h3>Skills assessed by scenario</h3><div aria-label="Skills assessed by scenario" class="table-wrap" role="region" tabindex="0"><table><thead><tr><th scope="col">Scenario</th><th scope="col">Skills assessed</th></tr></thead><tbody><tr><td>Upset Customer</td><td>Empathy, Listening, Ownership, Problem Solving &amp; Communication</td></tr><tr><td>Software Delay</td><td>Judgment, Risk Assessment, Perspective Taking, Problem Solving &amp; Communication</td></tr><tr><td>Performance Conversation</td><td>Diagnosis, Accountability, Curiosity, Judgment &amp; Communication</td></tr></tbody></table></div><p class="tiny-note"></p></div>
+
+</section>
+<section aria-labelledby="business-heading" class="chapter">
+<p class="chapter-label">03 / Business Impact</p><h2 id="business-heading">How to measure impact</h2>
+<div class="story"><p>How can you tell whether someone is actually getting better?</p></div>
+<div class="note"><strong>Design decision</strong><p>Practice scores tell part of the story. The bigger question is whether people are doing something differently at work.</p></div>
+<div class="section-detail"><h3 class="minor-label eyebrow-heading">From practice to business impact</h3><div class="evidence-chain"><span>Practice</span><b>→</b><span>What someone learns</span><b>→</b><span>What they do differently</span><b>→</b><span>What changes at work</span><b>→</b><span>The value created</span></div><p>Improvement in practice matters, but it is only a starting point. What do people carry into their work, and where might they still need support?</p></div>
+<div class="section-detail"><h3>Evidence to look for</h3><div aria-label="Evidence to look for table" class="table-wrap" role="region" tabindex="0"><table><thead><tr><th scope="col">Level</th><th scope="col">Question</th><th scope="col">Evidence</th></tr></thead><tbody><tr><td>Reaction</td><td>Was practice relevant &amp; useful?</td><td>Relevance, usability &amp; user feedback</td></tr><tr><td>Learning</td><td>Did demonstrated skills improve?</td><td>Response quality, rubric scores &amp; unfamiliar-scenario assessments</td></tr><tr><td>Behavior</td><td>Did people apply the skills at work?</td><td>Observed conversations, coaching follow-up &amp; work samples</td></tr><tr><td>Results</td><td>Did changes in behavior help the organization?</td><td>Role-relevant customer, leadership or operational measures</td></tr></tbody></table></div></div>
+<div class="section-detail team-skills-section">
+<h3>Identifying skill gaps</h3>
+<p>Individual practice results could also help identify patterns across a team. If several people struggle with the same skill, managers could use that information to identify development needs and provide more targeted support.</p>
+<div class="graph" role="group" aria-labelledby="team-view-heading" aria-describedby="team-view-caption">
+<p class="minor-label">Illustrative team view</p>
+<h4 id="team-view-heading">Where does the team need more practice?</h4>
+<div class="bar-row"><span>Active listening</span><div class="bar-track" role="meter" aria-label="Active listening" aria-valuemin="0" aria-valuemax="100" aria-valuenow="85"><div class="bar-fill" style="width:85%"></div></div><strong>85%</strong></div>
+<div class="bar-row"><span>Clear communication</span><div class="bar-track" role="meter" aria-label="Clear communication" aria-valuemin="0" aria-valuemax="100" aria-valuenow="72"><div class="bar-fill" style="width:72%"></div></div><strong>72%</strong></div>
+<div class="bar-row"><span>Accountability</span><div class="bar-track" role="meter" aria-label="Accountability" aria-valuemin="0" aria-valuemax="100" aria-valuenow="48"><div class="bar-fill" style="width:48%"></div></div><strong>48%</strong></div>
+<p class="tiny-note" id="team-view-caption">Example percentages representing a team's achievement of defined skill criteria, not actual user data.</p>
+</div>
+</div>
+<div class="section-detail"><h3 class="minor-label eyebrow-heading">How scoring works</h3>
+<div aria-label="How scoring works" class="table-wrap" role="region" tabindex="0"><table><thead><tr><th scope="col">Method</th><th scope="col">Calculation</th></tr></thead><tbody><tr><th scope="row">Skills assessed</th><td>Five skills per scenario.</td></tr><tr><th scope="row">Score per skill</th><td>1–5 points in each completed round.</td></tr><tr><th scope="row">Final skill score</th><td>Average the scores from completed rounds only (up to three), round the average to the nearest whole number, then multiply by 4. Maximum: 20 points per skill.</td></tr><tr><th scope="row">Overall score</th><td>Add the five final skill scores. Maximum: 100 points.</td></tr></tbody></table></div>
+<p class="tiny-note">Incomplete rounds are excluded. These rule-based scores describe performance in practice, not validated workplace proficiency.</p>
+<p class="privacy-note"><span aria-hidden="true" class="privacy-note-icon">!</span><span>This is a design prototype and has not yet been formally evaluated or validated through research.</span></p>
+<div aria-label="Illustrative final skill points: Empathy 16 of 20, Listening 12 of 20, Ownership 20 of 20, Problem Solving 16 of 20, Communication 16 of 20. Total 80 of 100." class="graph" role="img"><div class="graph-title">Illustrative skill report — 80 / 100</div><div class="bar-row"><span>Empathy</span><div class="bar-track"><div class="bar-fill" style="width:80%"></div></div><strong>16/20</strong></div><div class="bar-row"><span>Listening</span><div class="bar-track"><div class="bar-fill" style="width:60%"></div></div><strong>12/20</strong></div><div class="bar-row"><span>Ownership</span><div class="bar-track"><div class="bar-fill" style="width:100%"></div></div><strong>20/20</strong></div><div class="bar-row"><span>Problem Solving</span><div class="bar-track"><div class="bar-fill" style="width:80%"></div></div><strong>16/20</strong></div><div class="bar-row"><span>Communication</span><div class="bar-track"><div class="bar-fill" style="width:80%"></div></div><strong>16/20</strong></div></div></div>
+</section>
+<section aria-labelledby="next-heading" class="chapter">
+<p class="chapter-label">04 / Future Directions</p><h2 id="next-heading">What’s next</h2><div class="story"><p>Could more personalized feedback help someone respond differently when a real conversation becomes difficult?</p></div><div class="note"><strong>Design decision</strong><p>Explore how an LLM could make feedback more individualized without replacing human judgment.</p></div>
+<div class="section-detail"><h3>Feedback report card</h3>
+<div class="reflection-path" role="group" aria-label="How a feedback report card can lead to practice at work">
+<div class="reflection-stage"><strong>Feedback report card</strong><span>Notice what worked and what could improve.</span></div>
+<span class="reflection-arrow" aria-hidden="true">→</span>
+<div class="reflection-stage"><strong>Reflect together</strong><span>Team member and manager talk through the feedback.</span></div>
+<span class="reflection-arrow" aria-hidden="true">→</span>
+<div class="reflection-stage"><strong>Choose one behavior</strong><span>Identify what to practice next.</span></div>
+<span class="reflection-arrow" aria-hidden="true">→</span>
+<div class="reflection-stage"><strong>Try it at work</strong><span>Look for a change in real conversations.</span></div>
+</div>
+<p class="visual-closing">The value is not the report itself. The question is whether the conversation helps someone do something differently at work.</p></div>
+<div class="section-detail"><h3>How the LLM would fit</h3>
+<p class="section-context">Adding an LLM would require a secure technical integration while keeping the learning design in place.</p>
+<p class="privacy-note"><span aria-hidden="true" class="privacy-note-icon">!</span><span>Integrating an LLM into the learning experience would require additional technical development, testing, and safeguards, with support from machine learning engineers as needed.</span></p>
+<div class="llm-compare" role="group" aria-label="What stays in place and what an LLM would add">
+<div class="llm-compare-column"><h4>What stays in place</h4><ul>
+<li><strong>Learning design</strong><span>The scenarios and practice structure.</span></li>
+<li><strong>Skill rubric</strong><span>The criteria for assessing responses.</span></li>
+<li><strong>Feedback quality checks</strong><span>Required format and alignment with the rubric.</span></li>
+<li><strong>Expert review</strong><span>Feedback quality tested before real use.</span></li>
+</ul></div>
+<div class="llm-compare-column"><h4>What the LLM adds</h4><ul>
+<li><strong>More responsive feedback</strong><span>Suggestions informed by the user's response and rubric.</span></li>
+<li><strong>More responsive follow-up questions</strong><span>Additional practice shaped by what the user says.</span></li>
+</ul></div>
+</div>
+<p class="visual-closing">The LLM would support the experience, not replace the learning design or human judgment. A secure backend would pass the response and scenario context to the model before the app checks what is displayed.</p></div>
+<div class="section-detail"><h3>LLM-supported adaptive learning</h3>
+
+<div aria-label="Proposed learning cycle: responsive practice, individualized feedback, another attempt, and reflection" class="flow adaptive-practice-flow">
+<span class="flow-step">Responsive practice</span><span aria-hidden="true" class="flow-arrow">→</span>
+<span class="flow-step">Individualized feedback</span><span aria-hidden="true" class="flow-arrow">→</span>
+<span class="flow-step">Try again</span><span aria-hidden="true" class="flow-arrow">→</span>
+<span class="flow-step">Reflect</span>
+</div>
+<p class="future-outcome">The goal is to understand whether skills developed through practice lead to meaningful changes in how people work, and whether those changes support business priorities and improve the bottom line.</p></div>
+<div class="section-detail llm-detail"><h3>Risks and Mitigations</h3>
+<p>The approach would set clear instructions for how the LLM should respond, check its feedback, and provide a backup if its response was unclear or inappropriate.</p>
+<p class="privacy-note"><span aria-hidden="true" class="privacy-note-icon">!</span><span>User responses would need clear privacy and retention rules before this could be tested with people.</span></p>
+<div aria-label="Evaluation and safeguards table" class="table-wrap" role="region" tabindex="0"><table aria-label="LLM feedback evaluation and human oversight"><tbody>
+<tr><th scope="row">Human evaluation</th><td>Compare LLM-generated feedback with expert ratings to evaluate its accuracy, consistency, and usefulness.</td></tr>
+<tr><th scope="row">LLM limitations</th><td>The LLM could make practice more responsive and individualized, but shouldn't be the only judge of someone's skills.</td></tr>
+<tr><th scope="row">Continued monitoring</th><td>Regularly check for scoring errors and bias, with human review when feedback is unclear or inconsistent.</td></tr>
+</tbody></table></div></div>
+<div class="section-detail research-section"><h3>Research behind the design</h3><p>The design draws on established learning theories and design frameworks.</p><div aria-label="Research behind the design table" class="table-wrap" role="region" tabindex="0"><table aria-label="Learning principles and design frameworks"><thead><tr><th scope="col">Learning theories and principles</th><th scope="col">Design and evaluation frameworks</th></tr></thead><tbody><tr><td><a href="https://www.annualreviews.org/content/journals/10.1146/annurev-orgpsych-012420-060109" target="_blank" rel="noopener noreferrer">Workplace Instruction and Learning Design</a></td><td><a href="https://udlguidelines.cast.org/" target="_blank" rel="noopener noreferrer">Universal Design for Learning</a></td></tr><tr><td><a href="https://doi.org/10.1037/0033-295X.100.3.363" target="_blank" rel="noopener noreferrer">Deliberate practice</a></td><td><a href="https://www.kirkpatrickpartners.com/the-kirkpatrick-model/" target="_blank" rel="noopener noreferrer">Kirkpatrick evaluation</a></td></tr><tr><td><a href="https://doi.org/10.3102/003465430298487" target="_blank" rel="noopener noreferrer">Feedback</a></td><td></td></tr><tr><td><a href="https://doi.org/10.1207/s15516709cog1202_4" target="_blank" rel="noopener noreferrer">Cognitive load</a></td><td></td></tr><tr><td><a href="https://doi.org/10.2307/2666999" target="_blank" rel="noopener noreferrer">Psychological safety</a></td><td></td></tr></tbody></table></div></div>
+</section>
+
+<p style="text-align:center; font-size:12px; color:#958496; margin-top:40px;">
+  © 2026 Kahlila Mae Liverpool
+</p>
+</main>
+</body>
+</html>
