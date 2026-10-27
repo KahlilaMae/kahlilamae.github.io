@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#ffffff">
+<meta name="description" content="A closer look at the ideas I’m exploring — projects by Kahlila Mae Liverpool.">
+<title>Projects | Kahlila Mae Liverpool</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=Playfair+Display:wght@400&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#F5EBF3;--card:#FBF7FA;--ink:#3A2438;--muted:#5B4B58;--accent:#7A2E5C;--line:rgba(122,46,92,.18);--float-rest:0 3px 7px rgba(58,36,56,.09),0 15px 35px rgba(58,36,56,.12);--float-hover:0 7px 13px rgba(58,36,56,.12),0 21px 43px rgba(58,36,56,.16)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:'DM Sans',Arial,sans-serif;-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}a:focus-visible{outline:3px solid var(--accent);outline-offset:5px}.skip{position:absolute;left:12px;top:-80px;padding:10px;background:var(--card);z-index:10}.skip:focus{top:12px}
+.wrap{width:min(calc(100% - 120px),1040px);margin-inline:auto}
+/* Center the heading and two-tile group within the existing footer rule. */
+main > .wrap{max-width:900px}
+header{border-bottom:1px solid var(--line)}.nav{max-width:900px;min-height:70px;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{font-family:'Playfair Display',Georgia,serif;font-size:1.15rem}.nav-links{display:flex;gap:36px;align-items:center}.nav-links a{font-size:.95rem;font-weight:500;color:var(--accent);padding:8px 0}.nav-links a[aria-current="page"]{text-decoration:underline;text-underline-offset:9px;text-decoration-thickness:2px}
+main{position:relative;padding:105px 0 74px;min-height:calc(100vh - 172px)}h1,h2{font-family:'Playfair Display',Georgia,serif;font-weight:400;letter-spacing:-.035em}.eyebrow{font-family:'DM Sans',Arial,sans-serif;font-size:.8125rem;font-weight:500;line-height:1.4;letter-spacing:.15em;text-transform:uppercase;color:var(--accent);margin:0 0 14px}h1{font-size:3rem;line-height:1.12;margin:0 0 15px}.subtitle{color:var(--muted);font-size:1rem;line-height:1.5;margin:0 0 48px}.dots{position:absolute;right:max(4%,calc((100vw - 1140px)/2));top:30px;width:160px;height:148px;background-image:radial-gradient(rgba(122,46,92,.23) 1px,transparent 1.4px);background-size:17px 17px;pointer-events:none;opacity:.75}
+.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:36px;max-width:900px}
+.project-card{min-height:365px;display:flex;flex-direction:column;min-width:0;background:linear-gradient(150deg,#A65B81 0%,#88345F 52%,#641B47 100%);color:var(--card);border-radius:26px;padding:30px 32px;box-shadow:0 9px 18px rgba(58,36,56,.19),0 24px 40px rgba(58,36,56,.20),0 38px 62px rgba(58,36,56,.12);transition:transform .26s ease,box-shadow .26s ease}
+.project-card:nth-child(2){background:linear-gradient(150deg,#994A76 0%,#792855 52%,#5B1A46 100%)}
+.icon-badge{width:66px;height:66px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:rgba(251,247,250,.13);border:1px solid rgba(251,247,250,.10);margin-bottom:22px}
+.card-icon{width:38px;height:38px;color:var(--card)}
+.card-title{font-family:"Playfair Display",Georgia,serif;font-size:clamp(1.65rem,2.5vw,2.05rem);line-height:1.14;font-weight:400;letter-spacing:normal;margin:0 0 18px}
+.card-description{font-family:'DM Sans',Arial,sans-serif;font-size:.95rem;font-weight:400;line-height:1.625;color:var(--card);margin:0}
+.card-action{margin-top:auto;padding-top:32px;display:flex;align-items:center;gap:15px}
+.arrow-circle{flex:0 0 38px;width:38px;height:38px;border-radius:50%;background:var(--card);color:var(--accent);display:flex;align-items:center;justify-content:center}
+.arrow{height:22px;width:22px}
+.card-label{font-size:.75rem;color:var(--card);letter-spacing:.15em;text-transform:uppercase;font-weight:500;line-height:1.4;margin:0}
+footer{padding:28px 0 38px;text-align:center;color:var(--muted);font-size:.8125rem;line-height:1.4}.footer-rule{width:min(calc(100% - 120px),1040px);height:1px;background:rgba(122,46,92,.14);margin:auto}
+@media(hover:hover){.project-card:hover{transform:translateY(-3px);box-shadow:0 14px 24px rgba(58,36,56,.22),0 30px 56px rgba(58,36,56,.24),0 44px 76px rgba(58,36,56,.15)}}@media(max-width:760px){.wrap,.footer-rule{width:min(calc(100% - 40px),1040px)}.nav{min-height:70px;align-items:flex-start;flex-direction:column;justify-content:center;gap:9px;padding:15px 0}.nav-links{gap:25px}.nav-links a{font-size:.85rem}.dots{width:98px;height:100px;right:18px;top:22px;opacity:.4}main{padding:80px 0 70px;min-height:unset}.subtitle{max-width:300px;margin-bottom:34px}.cards{grid-template-columns:1fr;gap:24px}.project-card{min-height:410px;padding:34px 30px}.icon-badge{width:68px;height:68px;margin-bottom:20px}.card-icon{width:42px;height:42px}.card-label{font-size:.75rem}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.project-card{transition:none}.project-card:hover{transform:none}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+<header><nav class="wrap nav" aria-label="Main navigation"><a class="brand" href="../">Kahlila Mae Liverpool</a><div class="nav-links"><a href="../">Home</a><a href="../impact.html">Work</a><a href="./" aria-current="page">Projects</a></div></nav></header>
+<main id="main"><span class="dots" aria-hidden="true"></span><div class="wrap"><p class="eyebrow">Current Explorations</p><h1>Projects</h1><p class="subtitle">A closer look at the ideas I’m leaning into.</p>
+<div class="cards">
+<a class="project-card" href="../practice-the-conversation/" aria-label="What Would You Say? — Interactive Prototype">
+  <div class="icon-badge"><svg class="card-icon" viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="3.3" stroke-linejoin="round" aria-hidden="true"><path d="M12 32c0-12 11-22 26-22s26 10 26 22S53 54 38 54c-4 0-8-.6-11-2L13 59l4-15c-3-4-5-8-5-12Z"/><path d="M21 49c-8 3-13 10-13 17l-2 7 13-6c5 3 10 4 16 3 9-1 16-7 19-14"/></svg></div>
+  <h2 class="card-title">What Would You Say?</h2>
+  <p class="card-description">Work through challenging conversations and practice with feedback.</p>
+  <div class="card-action"><span class="arrow-circle" aria-hidden="true"><svg class="arrow" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 18h27m-11-11 11 11-11 11"/></svg></span><span class="card-label">Interactive Prototype</span></div>
+</a>
+<a class="project-card" href="../when-knowing-doesnt-close-the-gap/" aria-label="When Knowing Doesn’t Close the Gap — Video Experience">
+  <div class="icon-badge"><svg class="card-icon" viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="3.3" aria-hidden="true"><circle cx="40" cy="40" r="31"/><path d="M33 24v32l25-16Z" fill="currentColor" stroke="none"/></svg></div>
+  <h2 class="card-title">When Knowing<br>Doesn’t Close the Gap</h2>
+  <p class="card-description">What helps people move from understanding to doing?</p>
+  <div class="card-action"><span class="arrow-circle" aria-hidden="true"><svg class="arrow" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 18h27m-11-11 11 11-11 11"/></svg></span><span class="card-label">Video Experience</span></div>
+</a>
+</div></div></main><div class="footer-rule"></div><footer class="wrap">© 2026 Kahlila Mae Liverpool. All rights reserved.</footer>
+</body></html>
