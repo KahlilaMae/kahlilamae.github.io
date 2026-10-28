@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <title>Closing the Gap | Kahlila Mae Liverpool</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=Playfair+Display:wght@400&display=swap" rel="stylesheet">
+  <style>
+    :root{--paper:#F5EBF3;--card:#FBF7FA;--ink:#3A2438;--muted:#5B4B58;--accent:#7A2E5C;--line:rgba(122,46,92,.18)}
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--paper);color:var(--ink);font-family:'DM Sans',Arial,sans-serif;font-size:1rem;line-height:1.625;-webkit-font-smoothing:antialiased}
+    a{color:inherit;text-decoration:none}
+    a:focus-visible{outline:3px solid var(--accent);outline-offset:4px}
+    .wrap{width:min(calc(100% - 120px),1040px);margin-inline:auto}
+    header{position:sticky;top:0;z-index:10;background:rgba(245,235,243,.97);border-bottom:1px solid var(--line);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+    .nav{min-height:70px;display:flex;justify-content:space-between;align-items:center;gap:24px}
+    .brand,h1,.tile-title{font-family:'Playfair Display',Georgia,serif;font-weight:400}
+    .brand{font-size:1.15rem;white-space:nowrap}
+    .links{display:flex;align-items:center;gap:36px}
+    .links a{font-size:.95rem;font-weight:500;color:var(--accent);padding:8px 0}
+    .links a[aria-current]{text-decoration:underline;text-underline-offset:9px;text-decoration-thickness:2px}
+    main{padding:72px 0 145px;min-height:calc(100vh - 70px)}
+    .detail{max-width:1040px}
+    .eyebrow{color:var(--accent);font-size:.8125rem;line-height:1.4;letter-spacing:.15em;font-weight:500;text-transform:uppercase}
+    h1{font-size:clamp(2.7rem,5.5vw,4.4rem);line-height:1.12;letter-spacing:-.035em;margin:14px 0 18px}
+    .lead{color:var(--muted);font-size:1rem;line-height:1.625;max-width:740px;margin:0}
+    .video-tile{display:flex;flex-direction:column;align-items:flex-start;width:min(100%,540px);min-height:330px;margin-top:48px;padding:32px;border-radius:26px;background:linear-gradient(145deg,#8A315F 0%,#67234A 100%);color:var(--card);box-shadow:0 10px 28px rgba(58,36,56,.14)}
+    .tile-icon{width:76px;height:76px;display:inline-flex;align-items:center;justify-content:center;border-radius:50%;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.16);color:var(--card)}
+    .tile-icon svg{width:36px;height:36px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+    .tile-title{font-size:clamp(1.65rem,2.5vw,2.05rem);line-height:1.14;margin:25px 0 14px}
+    .tile-note{font-size:1rem;line-height:1.625;margin:0;color:var(--card)}
+    .tile-return{display:inline-flex;gap:14px;align-items:center;margin-top:auto;padding-top:46px;font-size:.9rem;font-weight:500;color:var(--card)}
+    .tile-arrow{display:inline-flex;align-items:center;justify-content:center;flex:0 0 42px;width:42px;height:42px;border-radius:50%;background:var(--card);color:var(--accent)}
+    .tile-arrow svg{width:23px;height:23px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+    .tile-return:hover .tile-arrow{transform:translateX(3px)}
+    .footer-rule{width:min(calc(100% - 120px),1040px);height:1px;background:rgba(122,46,92,.14);margin:auto}
+    footer{padding:28px 0 38px;text-align:center;color:var(--muted);font-size:.8125rem}
+    @media(max-width:760px){.wrap,.footer-rule{width:min(calc(100% - 40px),1040px)}.nav{gap:14px;flex-wrap:wrap;padding:12px 0}.links{gap:22px}.links a{font-size:.85rem}main{padding:48px 0 100px;min-height:unset}.video-tile{padding:28px;min-height:315px;margin-top:42px}}
+    @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto;transition:none!important}}
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="wrap nav" aria-label="Main navigation">
+      <a class="brand" href="../">Kahlila Mae Liverpool</a>
+      <div class="links">
+        <a href="../">Home</a>
+        <a href="../impact.html">Work</a>
+        <a href="../projects/" aria-current="page">Projects</a>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <div class="wrap detail">
+      <div class="eyebrow">Video Experience</div>
+      <h1>Closing the Gap</h1>
+      <p class="lead">This video explores how explicit practice and individualized coaching help people move from knowing what to do to putting it into practice.</p>
+      <section class="video-tile" aria-label="Closing the Gap project status">
+        <span class="tile-icon" aria-hidden="true">
+          <svg viewBox="0 0 36 36"><path d="M13 8.5 28 18 13 27.5Z"/></svg>
+        </span>
+        <h2 class="tile-title">Closing the Gap</h2>
+        <p class="tile-note">This video is currently in development.</p>
+        <a class="tile-return" href="../practice-the-conversation/">
+          <span class="tile-arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 12h18m-7-7 7 7-7 7"/></svg></span>
+          <span>Return to What Would You Say?</span>
+        </a>
+      </section>
+    </div>
+  </main>
+  <div class="footer-rule"></div>
+  <footer class="wrap">© 2026 Kahlila Mae Liverpool. All rights reserved.</footer>
+</body>
+</html>
