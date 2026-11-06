@@ -310,6 +310,22 @@ section[aria-labelledby="next-heading"] .llm-architecture ~ .llm-compare { margi
   section[aria-labelledby="next-heading"] .llm-architecture ~ .llm-compare { margin-top:38px; }
   section[aria-labelledby="next-heading"] .llm-compare + .visual-closing { margin-top:32px; }
 }
+
+/* Approved editorial layout for Experience Responses. */
+.editorial-logic .editorial-decision{max-width:850px;border-left:1px solid var(--berry);padding:0 0 0 18px;margin:30px 0 28px;background:none;box-shadow:none}
+.editorial-decision strong{display:block;color:var(--berry);font-weight:600;margin:0 0 5px}
+.editorial-decision p{margin:0}
+.editorial-logic .editorial-context{max-width:850px;margin:0 0 30px}
+.editorial-process{margin:0}
+.editorial-process h3.minor-label{font-family:'Source Sans 3',Arial,sans-serif;font-size:14px;line-height:1.5;font-weight:600;color:var(--berry);letter-spacing:.1em;text-transform:uppercase;margin:0 0 18px}
+.editorial-logic .editorial-process .flow{margin:0;gap:10px;align-items:stretch}
+.editorial-logic .editorial-process .flow-step{background:transparent;border:1px solid var(--line);border-radius:3px;box-shadow:none;padding:16px 14px;font-size:16px;line-height:1.5;display:flex;align-items:center;justify-content:center}
+.editorial-logic .editorial-process .flow-arrow{font-weight:400;color:var(--berry)}
+.editorial-feedback{max-width:850px;margin:30px 0 0;padding:0;background:none;border:0;box-shadow:none}
+.editorial-feedback h3{font-family:'Source Sans 3',Arial,sans-serif;font-size:1.1rem;line-height:1.5;font-weight:600;color:var(--berry);margin:0 0 7px}
+.editorial-feedback p{margin:0}
+.editorial-logic .editorial-feedback + .section-detail{border-top:1px solid var(--line);padding-top:26px;margin-top:38px}
+@media(max-width:650px){.editorial-logic .editorial-decision{margin:25px 0 24px;padding-left:15px}.editorial-logic .editorial-context{margin-bottom:26px}.editorial-logic .editorial-process .flow-step{justify-content:flex-start;text-align:left}.editorial-feedback{margin-top:26px}}
 </style>
 </head>
 <body>
@@ -343,16 +359,12 @@ section[aria-labelledby="next-heading"] .llm-architecture ~ .llm-compare { margi
 <p>The question is whether people handle the real conversation better.</p>
 </div>
 </section>
-<section aria-labelledby="logic-heading" class="chapter">
+<section aria-labelledby="logic-heading" class="chapter editorial-logic">
 <p class="chapter-label">02 / Logic</p><h2 id="logic-heading">Experience Responses</h2>
-<div class="privacy-note" role="note"><span aria-hidden="true" class="privacy-note-icon">!</span><span>This prototype uses rule-based logic and predefined feedback, rather than LLM-generated responses.</span></div>
-<div class="note"><strong>Design decision</strong><p>Each response matters. What someone says influences which follow-up comes next.</p></div>
-<p class="section-context logic-indicators-spacing">The prototype uses defined indicators to assess typed and transcribed responses.</p>
-<p class="privacy-note">
-<span aria-hidden="true" class="privacy-note-icon">!</span>
-<span>The system uses language patterns to give feedback; it cannot fully judge someone's intent or tone.</span>
-</p>
-<div class="section-detail"><h3 class="minor-label eyebrow-heading">How the system processes a response</h3><div class="flow"><span class="flow-step">Typed response or speech transcript</span><span aria-hidden="true" class="flow-arrow">→</span><span class="flow-step">Language and structure indicators</span><span aria-hidden="true" class="flow-arrow">→</span><span class="flow-step">Five skill ratings</span><span aria-hidden="true" class="flow-arrow">→</span><span class="flow-step">What worked / Try next</span></div></div>
+<div class="editorial-decision"><strong>Design decision</strong><p>Each response matters. What someone says influences which follow-up comes next.</p></div>
+<p class="editorial-context">The prototype uses defined indicators to assess typed and transcribed responses.</p>
+<div class="editorial-process"><h3 class="minor-label eyebrow-heading">How the system processes a response</h3><div class="flow"><span class="flow-step">Typed response or speech transcript</span><span aria-hidden="true" class="flow-arrow">→</span><span class="flow-step">Language and structure indicators</span><span aria-hidden="true" class="flow-arrow">→</span><span class="flow-step">Five skill ratings</span><span aria-hidden="true" class="flow-arrow">→</span><span class="flow-step">What worked / Try next</span></div></div>
+<div class="editorial-feedback"><h3>About the feedback</h3><p>This prototype uses rule-based logic and predefined feedback, rather than LLM-generated responses. Language patterns inform the feedback; they cannot fully capture intent or tone.</p></div>
 <div class="section-detail"><h3>How scenarios branch differently</h3><div aria-label="How scenarios branch differently" class="table-wrap" role="region" tabindex="0"><table><thead><tr><th scope="col">Scenario</th><th scope="col">How the next step is selected</th></tr></thead><tbody><tr><td>Upset Customer</td><td>Same follow-ups for everyone; feedback changes with assessed skills.</td></tr><tr><td>Software Delay</td><td>Initial launch, delay, or unclear recommendation changes the next authored information.</td></tr><tr><td>Performance Conversation</td><td>Accountability, support, or balanced approaches lead to different authored follow-ups.</td></tr></tbody></table></div></div>
 <div class="section-detail"><h3>Skills assessed by scenario</h3><div aria-label="Skills assessed by scenario" class="table-wrap" role="region" tabindex="0"><table><thead><tr><th scope="col">Scenario</th><th scope="col">Skills assessed</th></tr></thead><tbody><tr><td>Upset Customer</td><td>Empathy, Listening, Ownership, Problem Solving, Communication</td></tr><tr><td>Software Delay</td><td>Judgment, Risk Assessment, Perspective Taking, Problem Solving, Communication</td></tr><tr><td>Performance Conversation</td><td>Diagnosis, Accountability, Curiosity, Judgment, Communication</td></tr></tbody></table></div><p class="tiny-note"></p></div>
 
