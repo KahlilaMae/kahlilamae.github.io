@@ -1337,6 +1337,25 @@ main > section[aria-label="A few of my favorites"] {
   }
 }
 
+
+/* Where I've Contributed: spacious logo strip beneath the existing hero. */
+.contributions-section{padding:28px 0 64px;}
+.contributions-heading{margin:0 0 48px;font-size:.8125rem;line-height:1.4;font-family:'DM Sans',Arial,sans-serif;font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:var(--accent);}
+.contributions-logos{display:grid;grid-template-columns:.65fr 1fr 1.3fr 1.4fr;gap:40px;align-items:center;min-height:64px;}
+.contributions-logo{display:flex;align-items:center;justify-content:center;min-width:0;}
+.contributions-logo img{display:block;width:100%;height:auto;max-height:64px;object-fit:contain;}
+.contributions-logo--apple img{width:44px;height:54px;}
+@media(max-width:760px){
+  .contributions-section{padding:28px 0 52px;}
+  .contributions-heading{margin-bottom:40px;}
+  .contributions-logos{grid-template-columns:repeat(2,minmax(0,1fr));gap:40px 28px;}
+}
+@media(max-width:449px){
+  .contributions-logos{grid-template-columns:1fr;gap:36px;}
+  .contributions-logo img{max-width:250px;}
+  .contributions-logo--apple img{max-width:44px;}
+}
+
 </style>
 </head>
 
@@ -1412,6 +1431,20 @@ My Projects
 
 </header>
 
+
+
+<!-- WHERE I'VE CONTRIBUTED -->
+<section class="contributions-section" aria-labelledby="contributions-heading">
+  <div class="wrap">
+    <h2 class="contributions-heading" id="contributions-heading">Where I’ve Contributed</h2>
+    <div class="contributions-logos">
+      <div class="contributions-logo contributions-logo--apple"><img src="assets/contributions/apple.svg" width="44" height="54" alt="Apple" title="Apple Professional Learning through HCS Technology Group"></div>
+      <div class="contributions-logo"><img src="assets/contributions/sfusd.svg" width="250" height="60" alt="San Francisco Unified School District (SFUSD)"></div>
+      <div class="contributions-logo"><img src="assets/contributions/sf-state.svg" width="1579" height="293" alt="San Francisco State University"></div>
+      <div class="contributions-logo"><img src="assets/contributions/sjsu-research-foundation.svg" width="355" height="45" alt="San José State University Research Foundation"></div>
+    </div>
+  </div>
+</section>
 
 <!-- WHAT GUIDES ME -->
 
