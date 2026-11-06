@@ -338,7 +338,7 @@ section[aria-labelledby="next-heading"] .llm-architecture ~ .llm-compare { margi
 <p class="chapter-label">01 / Design</p><h2 id="design-heading">It started with a question</h2>
 <div class="story"><p class="question">What happens when someone knows what they should do, but struggles to do it in the moment?</p><p>I designed short practice scenarios to help employees strengthen specific skills through immediate, individualized feedback—with the goal of improving job performance and contributing to business results.</p></div>
 <div class="note"><strong>Design decision</strong><p>Practice a response rather than select an answer.</p></div>
-<div class="section-detail"><h3 class="minor-label eyebrow-heading">Design choices and why they matter</h3><ul class="details-list">
+<div class="section-detail"><h3 class="minor-label eyebrow-heading">Design Choices</h3><ul class="details-list">
 <li><strong>Realistic situations</strong><span>Upset Customer, Software Delay, and Performance Conversation focus on judgment and workplace communication.</span></li>
 <li><strong>Active practice</strong><span>Users type or speak in their own words instead of choosing a multiple-choice response.</span></li>
 <li><strong>Low-stakes practice</strong><span>Try, get feedback, try again.</span></li>
@@ -348,7 +348,7 @@ section[aria-labelledby="next-heading"] .llm-architecture ~ .llm-compare { margi
 </ul></div>
 <div class="section-detail reusable-format">
 <h3>Reusable format</h3>
-<p>A manager might see a skill their team needs to strengthen. A scenario could be created or adapted around that need, giving people a way to practice and receive feedback.</p>
+<p>Managers could adapt a practice scenario around a team’s skill gap.</p>
 <div aria-label="Proposed process for a new team learning need" class="flow"><span class="flow-step">Manager identifies a skill gap</span><span aria-hidden="true" class="flow-arrow">→</span><span class="flow-step">Create or adapt a scenario</span><span aria-hidden="true" class="flow-arrow">→</span><span class="flow-step">Team members practice and receive feedback</span><span aria-hidden="true" class="flow-arrow">→</span><span class="flow-step">Manager checks job performance</span></div>
 <h3 class="reusable-scenario-heading">Other practice scenarios</h3>
 <div aria-label="" class="table-wrap reusable-scenario-table" role="region" tabindex="0"><table><thead><tr><th scope="col">Example Scenarios </th></tr></thead><tbody>
@@ -356,28 +356,28 @@ section[aria-labelledby="next-heading"] .llm-architecture ~ .llm-compare { margi
 <tr><td>When a Product Launch Changes the Team's Priorities</td></tr>
 <tr><td>When Usage Data Reveals a Gap in Product Adoption</td></tr>
 </tbody></table></div>
-<p>The question is whether people handle the real conversation better.</p>
+
 </div>
 </section>
 <section aria-labelledby="logic-heading" class="chapter editorial-logic">
 <p class="chapter-label">02 / Logic</p><h2 id="logic-heading">Experience Responses</h2>
-<div class="editorial-decision"><strong>Design decision</strong><p>Each response matters. What someone says influences which follow-up comes next.</p></div>
+<div class="editorial-decision"><strong>Design decision</strong><p>Feedback responds to assessed skills. Some scenarios also change the follow-up.</p></div>
 <p class="editorial-context">The prototype uses defined indicators to assess typed and transcribed responses.</p>
 <div class="editorial-process"><h3 class="minor-label eyebrow-heading">Response Process</h3><div class="flow"><span class="flow-step">Typed response or speech transcript</span><span aria-hidden="true" class="flow-arrow">→</span><span class="flow-step">Language and structure indicators</span><span aria-hidden="true" class="flow-arrow">→</span><span class="flow-step">Five skill ratings</span><span aria-hidden="true" class="flow-arrow">→</span><span class="flow-step">What worked / Try next</span></div></div>
 <div class="editorial-feedback"><h3>About the feedback</h3><p>This prototype uses rule-based logic and predefined feedback, rather than LLM-generated responses. Language patterns inform the feedback; they cannot fully capture intent or tone.</p></div>
 <div class="section-detail"><h3>Scenario Paths</h3><div aria-label="Scenario Paths" class="table-wrap" role="region" tabindex="0"><table><thead><tr><th scope="col">Scenario</th><th scope="col">Next Step</th></tr></thead><tbody><tr><td>Upset Customer</td><td>Same follow-ups for everyone; feedback changes with assessed skills.</td></tr><tr><td>Software Delay</td><td>Initial launch, delay, or unclear recommendation changes the next authored information.</td></tr><tr><td>Performance Conversation</td><td>Accountability, support, or balanced approaches lead to different authored follow-ups.</td></tr></tbody></table></div></div>
-<div class="section-detail"><h3>Skills assessed by scenario</h3><div aria-label="Skills assessed by scenario" class="table-wrap" role="region" tabindex="0"><table><thead><tr><th scope="col">Scenario</th><th scope="col">Skills assessed</th></tr></thead><tbody><tr><td>Upset Customer</td><td>Empathy, Listening, Ownership, Problem Solving, Communication</td></tr><tr><td>Software Delay</td><td>Judgment, Risk Assessment, Perspective Taking, Problem Solving, Communication</td></tr><tr><td>Performance Conversation</td><td>Diagnosis, Accountability, Curiosity, Judgment, Communication</td></tr></tbody></table></div><p class="tiny-note"></p></div>
+<div class="section-detail"><h3>Skills by Scenario</h3><div aria-label="Skills by Scenario" class="table-wrap" role="region" tabindex="0"><table><thead><tr><th scope="col">Scenario</th><th scope="col">Skills assessed</th></tr></thead><tbody><tr><td>Upset Customer</td><td>Empathy, Listening, Ownership, Problem Solving, Communication</td></tr><tr><td>Software Delay</td><td>Judgment, Risk Assessment, Perspective Taking, Problem Solving, Communication</td></tr><tr><td>Performance Conversation</td><td>Diagnosis, Accountability, Curiosity, Judgment, Communication</td></tr></tbody></table></div><p class="tiny-note"></p></div>
 
 </section>
 <section aria-labelledby="business-heading" class="chapter">
 <p class="chapter-label">03 / Business Impact</p><h2 id="business-heading">Measuring Impact</h2>
 <div class="story"><p>The goal is to help employees build needed skills quickly and improve performance at work. Each practice scenario should connect a specific skill to a business need.</p><p>For example, practicing how to clarify a customer’s concern and take ownership could support faster resolution and fewer repeat contacts. Those are outcomes to test, alongside improvements in the responses.</p></div>
 <div class="note"><strong>Design decision</strong><p>Practice scores tell part of the story. The bigger question is whether people are doing something differently at work.</p></div>
-<div class="section-detail"><h3 class="minor-label eyebrow-heading">From practice to business impact</h3><div class="evidence-chain"><span>Practice</span><b>→</b><span>What someone learns</span><b>→</b><span>What they do differently</span><b>→</b><span>What changes at work</span><b>→</b><span>The value created</span></div><p>Improvement in practice matters, but it is only a starting point. What do people carry into their work, and where might they still need support?</p></div>
-<div class="section-detail"><h3>Evidence to look for</h3><div aria-label="Evidence to look for table" class="table-wrap" role="region" tabindex="0"><table><thead><tr><th scope="col">Level</th><th scope="col">Question</th><th scope="col">Evidence</th></tr></thead><tbody><tr><td>Reaction</td><td>Was practice relevant &amp; useful?</td><td>Relevance, usability &amp; user feedback</td></tr><tr><td>Learning</td><td>Did demonstrated skills improve?</td><td>Response quality, rubric scores &amp; unfamiliar-scenario assessments</td></tr><tr><td>Behavior</td><td>Did people apply the skills at work?</td><td>Observed conversations, coaching follow-up &amp; work samples</td></tr><tr><td>Results</td><td>Did changes in behavior help the organization?</td><td>Role-relevant customer, leadership or operational measures</td></tr></tbody></table></div></div>
+<div class="section-detail"><h3 class="minor-label eyebrow-heading">Practice to Impact</h3><div class="evidence-chain"><span>Practice</span><b>→</b><span>What someone learns</span><b>→</b><span>What they do differently</span><b>→</b><span>What changes at work</span><b>→</b><span>The value created</span></div><p>Improvement in practice matters, but it is only a starting point. What do people carry into their work, and where might they still need support?</p></div>
+<div class="section-detail"><h3>Evidence</h3><div aria-label="Evidence table" class="table-wrap" role="region" tabindex="0"><table><thead><tr><th scope="col">Level</th><th scope="col">Question</th><th scope="col">Evidence</th></tr></thead><tbody><tr><td>Reaction</td><td>Was practice relevant &amp; useful?</td><td>Relevance, usability &amp; user feedback</td></tr><tr><td>Learning</td><td>Did demonstrated skills improve?</td><td>Response quality, rubric scores &amp; unfamiliar-scenario assessments</td></tr><tr><td>Behavior</td><td>Did people apply the skills at work?</td><td>Observed conversations, coaching follow-up &amp; work samples</td></tr><tr><td>Results</td><td>Did changes in behavior help the organization?</td><td>Role-relevant customer, leadership or operational measures</td></tr></tbody></table></div></div>
 <div class="section-detail team-skills-section">
 <h3>Identifying skill gaps</h3>
-<p>Individual practice results could also help identify patterns across a team. If several people struggle with the same skill, managers could use that information to identify development needs and provide more targeted support.</p>
+<p>Patterns across practice results could help managers identify shared skill gaps and target support.</p>
 <div class="graph" role="group" aria-labelledby="team-view-heading" aria-describedby="team-view-caption">
 <p class="minor-label">Illustrative team view</p>
 <h4 id="team-view-heading">Where does the team need more practice?</h4>
@@ -407,7 +407,7 @@ section[aria-labelledby="next-heading"] .llm-architecture ~ .llm-compare { margi
 </div>
 <p class="visual-closing">The value is not the report itself. The question is whether the conversation helps someone do something differently at work.</p></div>
 <div class="section-detail"><h3>LLM Integration</h3>
-<p class="section-context">The next step is exploring how a secure backend could connect the practice experience to an LLM for more individualized feedback.</p>
+<p class="section-context">The next step is connecting an LLM through a secure backend to provide more individualized feedback.</p>
 <div class="llm-architecture" role="img" aria-label="Proposed integration: The What Would You Say GitHub website sends practice responses to a Cloudflare Worker, which securely communicates with the OpenAI API to generate personalized coaching.">
   <div class="architecture-node"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="12" rx="1.5"/><path d="M2.5 19h19l-1.6-3H4.1z"/></svg><strong>GitHub website</strong><span>What Would You Say?</span></div>
   <div class="architecture-arrow" aria-hidden="true">↕</div>
@@ -437,7 +437,7 @@ section[aria-labelledby="next-heading"] .llm-architecture ~ .llm-compare { margi
 <span class="flow-step">Try again</span><span aria-hidden="true" class="flow-arrow">→</span>
 <span class="flow-step">Reflect</span>
 </div>
-<p class="future-outcome">The goal is to understand whether skills developed through practice lead to meaningful changes in how people work, and whether those changes support business priorities and improve the bottom line.</p></div>
+<p class="future-outcome">The goal is to test whether practice improves job performance and business results.</p></div>
 <div class="section-detail llm-detail"><h3>Risks and Mitigations</h3>
 <p>The approach would set clear instructions for how the LLM should respond, check its feedback, and provide a backup if its response was unclear or inappropriate.</p>
 <p class="privacy-note"><span aria-hidden="true" class="privacy-note-icon">!</span><span>User responses would need clear privacy and retention rules before this could be tested with people.</span></p>
