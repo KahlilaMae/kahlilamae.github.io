@@ -396,10 +396,10 @@ section[aria-labelledby="next-heading"] .llm-architecture ~ .llm-compare { margi
 .sheet .chapter .future-outcome,
 .sheet .chapter .scoring-explanation p,
 .sheet .chapter .editorial-context,
-.sheet .chapter .editorial-feedback{max-width:70ch}
+.sheet .chapter .editorial-feedback{max-width:100%}
 .sheet .chapter .note,
 .sheet .chapter .editorial-decision{
- max-width:70ch;background:transparent;border:0;border-left:1px solid var(--berry);
+ max-width:100%;background:transparent;border:0;border-left:1px solid var(--berry);
  border-radius:0;box-shadow:none;padding:0 0 0 18px;margin:28px 0;
 }
 .sheet .chapter .note strong,
@@ -407,7 +407,7 @@ section[aria-labelledby="next-heading"] .llm-architecture ~ .llm-compare { margi
 .sheet .chapter .note p,
 .sheet .chapter .editorial-decision p{margin:0}
 .sheet .chapter .privacy-note{
- display:block;max-width:70ch;background:transparent!important;border:0;border-radius:0;
+ display:block;max-width:100%;background:transparent!important;border:0;border-radius:0;
  box-shadow:none;padding:0;margin:24px 0;color:var(--ink);font-size:17px;line-height:1.65;
 }
 .sheet .chapter .privacy-note-icon{display:none}
@@ -465,7 +465,7 @@ section[aria-labelledby="next-heading"] .llm-architecture ~ .llm-compare { margi
 .sheet .report-card-purpose dl>div{margin:0 0 22px}
 .sheet .report-card-purpose dt{font-size:17px;font-weight:600;line-height:1.5;color:var(--ink);margin:0 0 6px}
 .sheet .report-card-purpose dd{font-size:17px;line-height:1.65;margin:0}
-.sheet .report-card-purpose>p{margin:24px 0 0;max-width:70ch}
+.sheet .report-card-purpose>p{margin:24px 0 0;max-width:100%}
 .sheet .report-card-figure{margin:0;min-width:0}
 .sheet .report-card-figure a{display:block}
 .sheet .report-card-figure img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:3px}
@@ -478,7 +478,7 @@ section[aria-labelledby="next-heading"] .llm-architecture ~ .llm-compare { margi
 <a class="skip-link" href="#main-content">Skip to main content</a><nav aria-label="Main navigation" class="site-nav"><div class="nav-links"><a href="../../index.html">Home</a><a href="../../impact.html">Work</a><a class="active" aria-current="page" href="/projects/">Projects</a></div></nav>
 <main class="sheet" id="main-content">
 <p style="text-align:left;color:var(--muted);line-height:1.6;margin:0 0 4px">Design Notes</p>
-<h1 style="margin:0 0 6px;color:#7A2E5C">What Would You Say?</h1>
+<h1 style="margin:0 0 6px;color:var(--ink)">What Would You Say?</h1>
 <p style="text-align:left;color:var(--muted);line-height:1.6;margin:0">Scenario-Based Practice Conversations</p>
 <section aria-labelledby="design-heading" class="chapter">
 <p class="chapter-label">01 / Design</p><h2 id="design-heading">It started with a question</h2>
@@ -530,7 +530,7 @@ section[aria-labelledby="next-heading"] .llm-architecture ~ .llm-compare { margi
 <div><dt>Understand the skill</dt><dd>Review skill scores alongside responses and feedback from each round.</dd></div>
 <div><dt>Plan the next practice</dt><dd>Choose one next action and set a practice reminder. Immediate feedback and another attempt keep the practice loop going.</dd></div>
 <div><dt>Focus the conversation</dt><dd>Use an employee’s own words to discuss what worked, what needs attention, and what to try next.</dd></div>
-<div><dt>See growth</dt><dd>Review changes across rounds. Employees can save and compare reports from later practice; the prototype does not store a progress history.</dd></div>
+<div><dt>Growth over time</dt><dd>Review changes across rounds. The employer and employee can compare saved reports over time to see progress. The prototype does not store a progress history.</dd></div>
 </dl>
 <p>This gives coaching a specific behavior to target and a business result to check.</p>
 </div>
