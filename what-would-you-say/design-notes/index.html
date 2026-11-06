@@ -380,6 +380,84 @@ section[aria-labelledby="next-heading"] .llm-architecture ~ .llm-compare { margi
   line-height:1.5;
 }
 .sheet .chapter .llm-compare-column li span{font-size:17px;line-height:1.65}
+
+/* Shared editorial rhythm and restrained explanatory styling. */
+.sheet .chapter .section-detail{margin-top:36px}
+.sheet .chapter h3,
+.sheet .chapter h3.minor-label,
+.sheet .chapter h4{margin-bottom:14px}
+.sheet .chapter .story p{margin-bottom:18px}
+.sheet .chapter .story,
+.sheet .chapter .story p,
+.sheet .chapter .section-detail > p,
+.sheet .chapter .section-context,
+.sheet .chapter .opening-context,
+.sheet .chapter .visual-closing,
+.sheet .chapter .future-outcome,
+.sheet .chapter .scoring-explanation p,
+.sheet .chapter .editorial-context,
+.sheet .chapter .editorial-feedback{max-width:70ch}
+.sheet .chapter .note,
+.sheet .chapter .editorial-decision{
+ max-width:70ch;background:transparent;border:0;border-left:1px solid var(--berry);
+ border-radius:0;box-shadow:none;padding:0 0 0 18px;margin:28px 0;
+}
+.sheet .chapter .note strong,
+.sheet .chapter .editorial-decision strong{display:block;color:var(--berry);font-weight:600;margin:0 0 6px}
+.sheet .chapter .note p,
+.sheet .chapter .editorial-decision p{margin:0}
+.sheet .chapter .privacy-note{
+ display:block;max-width:70ch;background:transparent!important;border:0;border-radius:0;
+ box-shadow:none;padding:0;margin:24px 0;color:var(--ink);font-size:17px;line-height:1.65;
+}
+.sheet .chapter .privacy-note-icon{display:none}
+.sheet .chapter .table-wrap{margin-top:16px}
+.sheet .chapter .editorial-context{margin:0 0 32px}
+.sheet .chapter .editorial-process{margin-top:32px}
+.sheet .chapter .editorial-feedback{margin-top:32px}
+.sheet .chapter .editorial-feedback + .section-detail{margin-top:36px;padding-top:28px}
+.sheet .chapter .flow{margin-top:18px;gap:10px}
+.sheet .chapter .flow-step,
+.sheet .chapter .reflection-stage,
+.sheet .chapter .evidence-chain span{
+ background:transparent;border:1px solid var(--line);border-radius:3px;box-shadow:none;
+ padding:16px 14px;
+}
+.sheet .chapter .flow-arrow,
+.sheet .chapter .reflection-arrow,
+.sheet .chapter .architecture-arrow,
+.sheet .chapter .evidence-chain b{color:#8C6D83;font-weight:400}
+.sheet .chapter .reflection-path{margin-top:18px}
+.sheet .chapter .llm-architecture{
+ max-width:100%;margin:20px 0 0;padding:0;border:0;border-radius:0;background:transparent;box-shadow:none;
+}
+.sheet .chapter .architecture-node{
+ background:transparent;border:1px solid var(--line);border-radius:3px;box-shadow:none;padding:16px 14px;
+}
+.sheet .chapter .architecture-arrow{padding:8px 0}
+.sheet .chapter .llm-architecture + .privacy-note{margin:24px 0 0}
+.sheet .chapter .llm-compare,
+.sheet .chapter .llm-architecture ~ .llm-compare{
+ max-width:100%;margin-top:36px;gap:28px;
+}
+.sheet .chapter .llm-compare-column{
+ min-width:0;padding:0;border:0;border-radius:0;background:transparent;box-shadow:none;
+}
+.sheet .chapter .llm-compare-column + .llm-compare-column{
+ border-left:1px solid var(--line);padding-left:28px;
+}
+.sheet .chapter .llm-compare-column h4{margin:0 0 14px}
+.sheet .chapter .llm-compare-column li{border:0;padding:0;margin:0 0 18px}
+.sheet .chapter .llm-compare-column li:last-child{margin-bottom:0}
+.sheet .chapter .llm-compare + .visual-closing{margin-top:28px}
+@media(max-width:650px){
+ .sheet .chapter .section-detail{margin-top:32px}
+ .sheet .chapter .note,.sheet .chapter .editorial-decision{padding-left:15px;margin:24px 0}
+ .sheet .chapter .llm-compare,.sheet .chapter .llm-architecture ~ .llm-compare{margin-top:32px;gap:28px}
+ .sheet .chapter .llm-compare-column + .llm-compare-column{border-left:0;border-top:1px solid var(--line);padding:24px 0 0}
+ .sheet .chapter .flow-step{flex-basis:100%;text-align:left}
+ .sheet .chapter .privacy-note{margin:22px 0}
+}
 </style>
 </head>
 <body>
@@ -444,7 +522,7 @@ section[aria-labelledby="next-heading"] .llm-architecture ~ .llm-compare { margi
 <div class="section-detail"><h3 class="minor-label eyebrow-heading">Scoring</h3>
 <div aria-label="Scoring" class="table-wrap" role="region" tabindex="0"><table><thead><tr><th scope="col">Method</th><th scope="col">Calculation</th></tr></thead><tbody><tr><th scope="row">Skills assessed</th><td>Five skills per scenario.</td></tr><tr><th scope="row">Score per skill</th><td>1–5 points in each completed round.</td></tr><tr><th scope="row">Final skill score</th><td>Average the scores from completed rounds only (up to three), round the average to the nearest whole number, then multiply by 4. Maximum: 20 points per skill.</td></tr><tr><th scope="row">Overall score</th><td>Add the five final skill scores. Maximum: 100 points.</td></tr></tbody></table></div>
 <p class="tiny-note scoring-rounds-spacing">Incomplete rounds are excluded. These rule-based scores describe performance in practice, not validated workplace proficiency.</p>
-<p class="privacy-note"><span aria-hidden="true" class="privacy-note-icon">!</span><span>This is a design prototype and has not yet been formally evaluated or validated through research.</span></p>
+<p class="privacy-note"><span>This is a design prototype and has not yet been formally evaluated or validated through research.</span></p>
 <div aria-label="Illustrative final skill points: Empathy 16 of 20, Listening 12 of 20, Ownership 20 of 20, Problem Solving 16 of 20, Communication 16 of 20. Total 80 of 100." class="graph" role="img"><div class="graph-title">Illustrative skill report — 80 / 100</div><div class="bar-row"><span>Empathy</span><div class="bar-track"><div class="bar-fill" style="width:80%"></div></div><strong>16/20</strong></div><div class="bar-row"><span>Listening</span><div class="bar-track"><div class="bar-fill" style="width:60%"></div></div><strong>12/20</strong></div><div class="bar-row"><span>Ownership</span><div class="bar-track"><div class="bar-fill" style="width:100%"></div></div><strong>20/20</strong></div><div class="bar-row"><span>Problem Solving</span><div class="bar-track"><div class="bar-fill" style="width:80%"></div></div><strong>16/20</strong></div><div class="bar-row"><span>Communication</span><div class="bar-track"><div class="bar-fill" style="width:80%"></div></div><strong>16/20</strong></div></div></div>
 </section>
 <section aria-labelledby="next-heading" class="chapter">
@@ -469,7 +547,7 @@ section[aria-labelledby="next-heading"] .llm-architecture ~ .llm-compare { margi
   <div class="architecture-arrow" aria-hidden="true">↕</div>
   <div class="architecture-node"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4c-2-2-6-1-6 2-3 0-4 4-2 6-2 3 0 6 3 6 1 3 5 3 5 0V4Zm0 0c2-2 6-1 6 2 3 0 4 4 2 6 2 3 0 6-3 6-1 3-5 3-5 0V4ZM8 9h4m-4 5h4m0-5h4m-4 5h4"/></svg><strong>OpenAI API</strong><span>Analyzes responses and generates personalized coaching</span></div>
 </div>
-<p class="privacy-note"><span aria-hidden="true" class="privacy-note-icon">!</span><span>Integrating an LLM into the learning experience would require additional technical development, testing, and safeguards, with support from machine learning engineers as needed.</span></p>
+<p class="privacy-note"><span>Integrating an LLM into the learning experience would require additional technical development, testing, and safeguards, with support from machine learning engineers as needed.</span></p>
 <div class="llm-compare" role="group" aria-label="What stays in place and what an LLM would add">
 <div class="llm-compare-column"><h4>What stays in place</h4><ul>
 <li><strong>Learning design</strong><span>The scenarios and practice structure.</span></li>
@@ -494,7 +572,7 @@ section[aria-labelledby="next-heading"] .llm-architecture ~ .llm-compare { margi
 <p class="future-outcome">The goal is to test whether practice improves job performance and business results.</p></div>
 <div class="section-detail llm-detail"><h3>Risks and mitigations</h3>
 <p>The approach would set clear instructions for how the LLM should respond, check its feedback, and provide a backup if its response was unclear or inappropriate.</p>
-<p class="privacy-note"><span aria-hidden="true" class="privacy-note-icon">!</span><span>User responses would need clear privacy and retention rules before this could be tested with people.</span></p>
+<p class="privacy-note"><span>User responses would need clear privacy and retention rules before this could be tested with people.</span></p>
 <div aria-label="Evaluation and safeguards table" class="table-wrap" role="region" tabindex="0"><table aria-label="LLM feedback evaluation and human oversight"><tbody>
 <tr><th scope="row">Human evaluation</th><td>Compare LLM-generated feedback with expert ratings to evaluate its accuracy, consistency, and usefulness.</td></tr>
 <tr><th scope="row">LLM limitations</th><td>The LLM could make practice more responsive and individualized, but shouldn't be the only judge of someone's skills.</td></tr>
