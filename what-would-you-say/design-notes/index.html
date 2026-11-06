@@ -458,6 +458,20 @@ section[aria-labelledby="next-heading"] .llm-architecture ~ .llm-compare { margi
  .sheet .chapter .flow-step{flex-basis:100%;text-align:left}
  .sheet .chapter .privacy-note{margin:22px 0}
 }
+
+/* Report card: current practice, evidence, and a user-directed practice loop. */
+.sheet .report-card-overview{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:32px;align-items:start;margin-top:24px}
+.sheet .report-card-purpose dl{margin:0}
+.sheet .report-card-purpose dl>div{margin:0 0 22px}
+.sheet .report-card-purpose dt{font-size:17px;font-weight:600;line-height:1.5;color:var(--ink);margin:0 0 6px}
+.sheet .report-card-purpose dd{font-size:17px;line-height:1.65;margin:0}
+.sheet .report-card-purpose>p{margin:24px 0 0;max-width:70ch}
+.sheet .report-card-figure{margin:0;min-width:0}
+.sheet .report-card-figure a{display:block}
+.sheet .report-card-figure img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:3px}
+.sheet .report-card-figure figcaption{font-size:14px;line-height:1.5;color:var(--muted);margin-top:12px}
+.sheet .chapter .report-practice-loop{margin-top:28px}
+@media(max-width:760px){.sheet .report-card-overview{grid-template-columns:1fr;gap:26px}.sheet .report-card-figure{max-width:520px}.sheet .report-card-purpose dl>div{margin-bottom:18px}}
 </style>
 </head>
 <body>
@@ -507,6 +521,33 @@ section[aria-labelledby="next-heading"] .llm-architecture ~ .llm-compare { margi
 <div class="note"><strong>Design decision</strong><p>Practice scores tell part of the story. The bigger question is whether people are doing something differently at work.</p></div>
 <div class="section-detail"><h3 class="minor-label eyebrow-heading">Practice to impact</h3><div class="evidence-chain"><span>Practice</span><b>→</b><span>What someone learns</span><b>→</b><span>What they do differently</span><b>→</b><span>What changes at work</span><b>→</b><span>The value created</span></div><p>Improvement in practice matters, but it is only a starting point. What do people carry into their work, and where might they still need support?</p></div>
 <div class="section-detail"><h3>Evidence</h3><div aria-label="Evidence table" class="table-wrap" role="region" tabindex="0"><table><thead><tr><th scope="col">Level</th><th scope="col">Question</th><th scope="col">Evidence</th></tr></thead><tbody><tr><td>Reaction</td><td>Was practice relevant &amp; useful?</td><td>Relevance, usability &amp; user feedback</td></tr><tr><td>Learning</td><td>Did demonstrated skills improve?</td><td>Response quality, rubric scores &amp; unfamiliar-scenario assessments</td></tr><tr><td>Behavior</td><td>Did people apply the skills at work?</td><td>Observed conversations, coaching follow-up &amp; work samples</td></tr><tr><td>Results</td><td>Did changes in behavior help the organization?</td><td>Role-relevant customer, leadership or operational measures</td></tr></tbody></table></div></div>
+<div class="section-detail report-card-design">
+<h3>The report card</h3>
+<p>The report card helps employees understand their skill scores and plan when to practice next. Their own responses give employees, managers, and teams a starting point for specific, actionable feedback.</p>
+<div class="report-card-overview">
+<div class="report-card-purpose">
+<dl>
+<div><dt>Understand the skill</dt><dd>Review skill scores alongside responses and feedback from each round.</dd></div>
+<div><dt>Plan the next practice</dt><dd>Choose one next action and set a practice reminder. Immediate feedback and another attempt keep the practice loop going.</dd></div>
+<div><dt>Focus the conversation</dt><dd>Use an employee’s own words to discuss what worked, what needs attention, and what to try next.</dd></div>
+<div><dt>See growth</dt><dd>Review changes across rounds. Employees can save and compare reports from later practice; the prototype does not store a progress history.</dd></div>
+</dl>
+<p>This gives coaching a specific behavior to target and a business result to check.</p>
+</div>
+<figure class="report-card-figure">
+<a href="../assets/report-card-example.svg" target="_blank" rel="noopener noreferrer" aria-label="Open the illustrative report card at full size">
+<img src="../assets/report-card-example.svg" width="1040" height="1510" loading="lazy" alt="Illustrative Upset Customer progress report: 60 out of 100 overall; Empathy, Listening and Ownership 12 out of 20, Problem Solving 8, Communication 16; sample responses and feedback; a next action and practice reminder."/>
+</a>
+<figcaption>Illustrative report card with selected responses and scores from a sample scenario. Open the image to read it in full.</figcaption>
+</figure>
+</div>
+<div class="flow report-practice-loop" role="group" aria-label="Report card practice loop">
+<span class="flow-step">Review feedback</span><span class="flow-arrow" aria-hidden="true">→</span>
+<span class="flow-step">Discuss one skill</span><span class="flow-arrow" aria-hidden="true">→</span>
+<span class="flow-step">Set next practice</span><span class="flow-arrow" aria-hidden="true">→</span>
+<span class="flow-step">Try and compare</span>
+</div>
+</div>
 <div class="section-detail team-skills-section">
 <h3>Identifying skill gaps</h3>
 <p>Patterns across practice results could help managers identify shared skill gaps and target support.</p>
@@ -527,17 +568,6 @@ section[aria-labelledby="next-heading"] .llm-architecture ~ .llm-compare { margi
 </section>
 <section aria-labelledby="next-heading" class="chapter">
 <p class="chapter-label">04 / Future Directions</p><h2 id="next-heading">What’s next</h2><div class="story"><p>Could more personalized feedback help someone respond differently when a real conversation becomes difficult?</p></div><div class="note"><strong>Design decision</strong><p>Explore how an LLM could make feedback more individualized without replacing human judgment.</p></div>
-<div class="section-detail"><h3>Feedback report card</h3>
-<div class="reflection-path" role="group" aria-label="How a feedback report card can lead to practice at work">
-<div class="reflection-stage"><strong>Feedback report card</strong><span>Notice what worked and what could improve.</span></div>
-<span class="reflection-arrow" aria-hidden="true">→</span>
-<div class="reflection-stage"><strong>Reflect together</strong><span>Team member and manager talk through the feedback.</span></div>
-<span class="reflection-arrow" aria-hidden="true">→</span>
-<div class="reflection-stage"><strong>Choose one behavior</strong><span>Identify what to practice next.</span></div>
-<span class="reflection-arrow" aria-hidden="true">→</span>
-<div class="reflection-stage"><strong>Try it at work</strong><span>Look for a change in real conversations.</span></div>
-</div>
-<p class="visual-closing">The value is not the report itself. The question is whether the conversation helps someone do something differently at work.</p></div>
 <div class="section-detail"><h3>LLM integration</h3>
 <p class="section-context">The next step is connecting an LLM through a secure backend to provide more individualized feedback.</p>
 <div class="llm-architecture" role="img" aria-label="Proposed integration: The What Would You Say GitHub website sends practice responses to a Cloudflare Worker, which securely communicates with the OpenAI API to generate personalized coaching.">
