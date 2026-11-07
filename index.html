@@ -1341,20 +1341,20 @@ main > section[aria-label="A few of my favorites"] {
 /* Where I've Contributed: balanced logo sizes and equal visible gaps. */
 .contributions-section{padding:28px 0 64px;}
 .contributions-heading{margin:0 0 48px;font-size:.8125rem;line-height:1.4;font-family:'DM Sans',Arial,sans-serif;font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:var(--accent);}
-.contributions-logos{display:grid;grid-template-columns:44px minmax(0,190px) minmax(0,180px) minmax(0,240px);justify-content:space-between;gap:40px;align-items:center;min-height:64px;padding:0 24px;}
+.contributions-logos{display:grid;grid-template-columns:44px minmax(0,190px) minmax(0,180px) minmax(0,240px);justify-content:center;gap:clamp(32px,7vw,96px);align-items:center;min-height:64px;padding:0 24px;}
 .contributions-logo{display:flex;align-items:center;justify-content:center;min-width:0;}
 .contributions-logo img{display:block;width:100%;height:auto;max-height:64px;object-fit:contain;}
 .contributions-logo--apple img{width:44px;height:54px;}
 @media(max-width:760px){
   .contributions-section{padding:28px 0 52px;}
   .contributions-heading{margin-bottom:40px;}
-  .contributions-logos{grid-template-columns:repeat(2,minmax(0,1fr));gap:40px 28px;padding:0;justify-items:center;}
+  .contributions-logos{grid-template-columns:repeat(2,minmax(0,1fr));gap:36px 24px;padding:0;justify-items:center;}
   .contributions-logo:nth-child(2){width:100%;max-width:190px;}
   .contributions-logo:nth-child(3){width:100%;max-width:180px;}
   .contributions-logo:nth-child(4){width:100%;max-width:240px;}
 }
 @media(max-width:449px){
-  .contributions-logos{grid-template-columns:1fr;gap:36px;}
+  .contributions-logos{grid-template-columns:1fr;gap:32px;}
   .contributions-logo--apple img{max-width:44px;}
 }
 
