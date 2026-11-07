@@ -5535,7 +5535,7 @@
       gap: 12px;
     }
     .conversation-selector .design-notes-tile.privacy-nav-link {
-      margin-top: 20px; /* breathing room after Design Notes divider */
+      margin-top: 0;
     }
     @media (max-width: 820px) {
       .conversation-selector .design-notes-copy {
@@ -5548,7 +5548,12 @@
       }
     }
 
-  </style>
+  
+/* Quiet secondary links without arrows, grouped more closely. */
+.conversation-selector .design-notes-arrow{display:none;}
+.conversation-selector .privacy-nav-link{padding-top:8px;}
+
+</style>
 
 </head>
 
