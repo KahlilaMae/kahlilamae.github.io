@@ -750,7 +750,16 @@
     .card-main .role-line{margin:0;}
     .card-main h2{margin:10px 0 20px;}
 
-  </style>
+  
+/* Footer divider and spacing match the Projects page. */
+.footer-rule{width:min(calc(100% - 120px),1040px);height:1px;background:rgba(122,46,92,.14);margin:auto;}
+footer{padding-top:28px;padding-bottom:38px;}
+@media(max-width:760px){.footer-rule{width:min(calc(100% - 40px),1040px);}}
+
+.footer-rule{width:min(calc(100vw - 120px),1040px);position:relative;left:50%;transform:translateX(-50%);margin:0;}
+@media(max-width:760px){.footer-rule{width:min(calc(100vw - 40px),1040px);}}
+
+</style>
 
   <script
     data-goatcounter="https://kahlilamae.goatcounter.com/count"
@@ -1208,6 +1217,7 @@
       </div>
     </section>
 
+    <div class="footer-rule" aria-hidden="true"></div>
     <footer>
       &copy; 2026 Kahlila Mae Liverpool. All rights reserved.
     </footer>
