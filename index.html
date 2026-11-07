@@ -1360,7 +1360,7 @@ main > section[aria-label="A few of my favorites"] {
 
 
 /* Quiet link to the full approach page. */
-.guides-actions{margin-top:28px;text-align:right;}
+.guides-actions{margin-top:56px;text-align:right;}
 .approach-link{display:inline-block;padding:4px 0;color:var(--accent);font-size:.875rem;line-height:1.6;}
 .approach-link:hover{text-decoration:underline;text-underline-offset:4px;}
 
@@ -1386,6 +1386,11 @@ nav .nav{justify-content:flex-end;}
 @media (hover:hover){
   .guides-content:hover{box-shadow:0 8px 24px rgba(58,36,56,.055),0 2px 6px rgba(58,36,56,.025);}
 }
+
+
+/* Quiet homepage links with intentional breathing room. */
+.home-explore-actions{margin-top:56px;text-align:right;}
+.hero-explore-actions{margin-top:48px;}
 
 </style>
 </head>
@@ -1452,7 +1457,7 @@ I’m curious about how people learn and what helps us grow.
 
 </header>
 
-
+<div class="wrap home-explore-actions hero-explore-actions"><a class="approach-link" href="projects/">Explore my projects <span aria-hidden="true">→</span></a></div>
 
 <!-- WHERE I'VE CONTRIBUTED -->
 <section class="contributions-section" aria-labelledby="contributions-heading">
@@ -1464,6 +1469,7 @@ I’m curious about how people learn and what helps us grow.
       <div class="contributions-logo"><img src="assets/contributions/sf-state.svg" width="1579" height="293" alt="San Francisco State University"></div>
       <div class="contributions-logo"><img src="assets/contributions/sjsu-research-foundation.svg" width="355" height="45" alt="San José State University Research Foundation"></div>
     </div>
+    <div class="home-explore-actions"><a class="approach-link" href="impact.html">Explore my work <span aria-hidden="true">→</span></a></div>
   </div>
 </section>
 
