@@ -1420,6 +1420,12 @@ main > section[aria-label="A few of my favorites"] > .human{padding-top:0;}
 /* Raise only the hero text group; the portrait stays fixed. */
 @media(min-width:761px){.hero-copy{position:relative;top:-72px;}}
 
+
+/* Footer divider and spacing match the Projects page. */
+.footer-rule{width:min(calc(100% - 120px),1040px);height:1px;background:rgba(122,46,92,.14);margin:auto;}
+footer{padding-top:28px;padding-bottom:38px;}
+@media(max-width:760px){.footer-rule{width:min(calc(100% - 40px),1040px);}}
+
 </style>
 </head>
 
@@ -1632,6 +1638,7 @@ Email
 <!-- FOOTER -->
 
 
+<div class="footer-rule" aria-hidden="true"></div>
 <footer class="wrap">
   <div style="text-align:center;">
     <div>© 2026 Kahlila Mae Liverpool. All rights reserved.</div>
