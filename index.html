@@ -1364,6 +1364,14 @@ main > section[aria-label="A few of my favorites"] {
 .approach-link{display:inline-block;padding:4px 0;color:var(--accent);font-size:.875rem;line-height:1.6;}
 .approach-link:hover{text-decoration:underline;text-underline-offset:4px;}
 
+/* Homepage navigation matches the existing site links. */
+.nav-links .nav-link{color:var(--muted);}
+.nav-links .nav-link.active{color:var(--accent);}
+@media(max-width:760px){
+  .nav{flex-wrap:wrap;padding-top:14px;padding-bottom:10px;gap:10px;}
+  .nav-links{margin-left:auto;}
+}
+
 </style>
 </head>
 
@@ -1375,13 +1383,19 @@ main > section[aria-label="A few of my favorites"] {
 
 <!-- NAVIGATION -->
 
-<nav>
+<nav aria-label="Main">
 
 <div class="wrap nav">
 
 <a class="brand" href="./">
 Kahlila Mae Liverpool
 </a>
+
+<div class="nav-links">
+<a class="nav-link active" href="./" aria-current="page">Home</a>
+<a class="nav-link" href="impact.html">Work</a>
+<a class="nav-link" href="projects/">Projects</a>
+</div>
 
 </div>
 
