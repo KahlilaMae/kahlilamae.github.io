@@ -215,26 +215,27 @@ nav{
 }
 
 .nav-links{
-  display:grid;
-  grid-template-columns:repeat(3,132px);
-  gap:10px;
+  display:flex;
+  justify-content:flex-end;
+  gap:38px;
   align-items:center;
 }
 
 .nav-link{
-  width:132px;
+  width:auto;
   min-height:40px;
   display:inline-flex;
   align-items:center;
   justify-content:center;
-  padding:0 10px 3px;
+  padding:0 0 3px;
+  white-space:nowrap;
+  border-bottom:2px solid transparent;
   text-align:center;
 }
 
 .nav-link.active{
-  text-decoration:underline;
-  text-underline-offset:8px;
-  text-decoration-thickness:2px;
+  text-decoration:none;
+  border-bottom-color:var(--accent);
 }
 
 @media(max-width:760px){
@@ -243,15 +244,14 @@ nav{
   }
 
   .nav-links{
-    grid-template-columns:repeat(3,minmax(0,1fr));
-    gap:6px;
-    width:min(100%,420px);
+    gap:14px;
+    width:auto;
   }
 
   .nav-link{
-    width:100%;
+    width:auto;
     min-height:38px;
-    padding:0 4px 3px;
+    padding:0 6px 3px;
     font-size:.78rem;
   }
 }
@@ -1367,6 +1367,7 @@ main > section[aria-label="A few of my favorites"] {
 /* Homepage navigation matches the existing site links. */
 .nav-links .nav-link{color:var(--muted);}
 .nav-links .nav-link.active{color:var(--accent);}
+.nav-links .nav-link:last-child{padding-left:2px;padding-right:2px;}
 @media(max-width:760px){
   .nav{flex-wrap:wrap;padding-top:14px;padding-bottom:10px;gap:10px;}
   .nav-links{margin-left:auto;}
