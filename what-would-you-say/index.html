@@ -8833,7 +8833,7 @@ renderRubric();
   consentLabel.style.cssText = "display:flex;align-items:start;gap:10px;margin:14px 0;font:15px/1.4 Arial,sans-serif;color:#3A2438";
   const consent = document.createElement("input");
   consent.type = "checkbox";
-  consentLabel.append(consent, document.createTextNode("I agree to receive AI feedback on my response."));
+  consentLabel.append(consent, document.createTextNode("I agree to submit my response for LLM feedback."));
   const verification = document.createElement("div");
   verification.id = "dev-turnstile";
   verification.style.cssText = "margin:12px 0;min-height:0";
