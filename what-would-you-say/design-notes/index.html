@@ -489,6 +489,42 @@ section[aria-labelledby="next-heading"] .llm-architecture ~ .llm-compare { margi
   .sheet .chapter .story p.question { font-size:clamp(30px,7vw,36px); }
 }
 </style>
+<style>
+/* Match the homepage What Guides Me soft plum card. */
+.sheet .chapter .note,
+.sheet .chapter .editorial-decision,
+.sheet .chapter .flow-step,
+.sheet .chapter .editorial-process .flow-step,
+.sheet .chapter .llm-architecture,
+.sheet .chapter .graph,
+.sheet .chapter .llm-compare-column {
+  background:#F0E7EF;
+}
+.sheet .chapter .note,
+.sheet .chapter .editorial-decision {
+  border-left:2px solid rgba(122,46,92,.3);
+  border-radius:10px;
+  padding:20px 24px;
+}
+.sheet .chapter .table-wrap {
+  border:1px solid rgba(122,46,92,.14);
+  border-radius:10px;
+}
+.sheet .chapter .table-wrap table { background:#FBF7FA; }
+.sheet .chapter .table-wrap thead th,
+.sheet .chapter .table-wrap tbody th { background:#F0E7EF; }
+.sheet .chapter .table-wrap tbody tr:nth-child(even) td { background:rgba(240,231,239,.55); }
+.sheet .chapter .table-wrap th,
+.sheet .chapter .table-wrap td { border-bottom-color:rgba(122,46,92,.14); }
+.sheet .chapter .llm-compare-column {
+  border-radius:10px;
+  padding:20px 24px;
+}
+@media(max-width:650px) {
+  .sheet .chapter .note,.sheet .chapter .editorial-decision,
+  .sheet .chapter .llm-compare-column { padding:18px; }
+}
+</style>
 </head>
 <body>
 <a class="skip-link" href="#main-content">Skip to main content</a><nav aria-label="Main navigation" class="site-nav"><div class="nav-links"><a href="../../index.html">Home</a><a href="../../impact.html">Work</a><a class="active" aria-current="page" href="/projects/">Projects</a></div></nav>
