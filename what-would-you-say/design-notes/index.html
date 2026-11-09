@@ -590,7 +590,8 @@ section[aria-labelledby="next-heading"] .llm-architecture ~ .llm-compare { margi
 <section aria-labelledby="next-heading" class="chapter">
 <p class="chapter-label">04 / Future Directions</p><h2 id="next-heading">What’s next</h2><div class="story"><p>Could more personalized feedback help someone respond differently when a real conversation becomes difficult?</p></div><div class="note"><strong>Design decision</strong><p>Explore how an LLM could make feedback more individualized without replacing human judgment.</p></div>
 <div class="section-detail"><h3>LLM integration</h3>
-<p class="section-context">The next step is connecting an LLM through a secure backend to provide more individualized feedback.</p>
+<p class="section-context"><strong>Current prototype status · November 9, 2026.</strong> A private development prototype is connected to a Cloudflare backend, and the response-to-feedback flow has been verified in simulation. The OpenAI API key and spending controls are configured. Live LLM-generated feedback is the next verification step; the successful simulation results are placeholders.</p>
+<p class="section-context">Further research and development with a machine learning engineer will focus on scoring reliability, feedback quality, and validation before broader use. The public experience remains the rule-based prototype.</p>
 <ul class="section-context llm-process-summary">
 <li><strong>Your prototype is the interface.</strong> It presents the scenario and collects the employee’s response.</li>
 <li><strong>Cloudflare is the secure middle layer.</strong> It checks that requests come from your approved prototype and keeps the API key out of the webpage.</li>
