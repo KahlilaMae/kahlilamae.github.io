@@ -8869,19 +8869,71 @@ renderRubric();
       if (report && !report.querySelector(".dev-label")) {
         const note = document.createElement("p");
         note.className = "dev-label";
-        note.textContent = live ? "EXPERIMENTAL AI PROTOTYPE — Scores are not validated performance assessments. Report export is disabled during verification." : "SIMULATION ONLY — All skill scores are placeholders. This is not a performance evaluation.";
+        note.textContent = live ? "EXPERIMENTAL AI PROTOTYPE — Scores are not validated performance assessments. PDF includes experimental AI feedback and the responses from this practice." : "SIMULATION ONLY — All skill scores are placeholders. This is not a performance evaluation.";
         note.style.cssText = "background:#F5EBF3;padding:15px;border-left:3px solid #7A2E5C";
         report.prepend(note);
       }
       document.querySelectorAll(".report-share-button").forEach(button => {
-        button.disabled=true;
-        button.title="PDF export will be available after report verification.";
+        button.disabled=roundFeedback.length !== maxRounds || roundFeedback.some(item => !item);
+        button.title="Download or share your experimental AI practice report.";
       });
     };
   }
-  window.shareProgressReport = function(){ alert("Sharing is unavailable while the AI report is being verified."); };
-  window.downloadReportCard = function(){ alert("PDF export is unavailable while the AI report is being verified."); };
-  window.buildProgressReportPdf = function(){ throw new Error("AI report export awaits verification."); };
+  window.buildProgressReportPdf = function() {
+    if (roundFeedback.length !== maxRounds || roundFeedback.some(item => !item)) throw new Error("Complete all rounds before exporting.");
+    if (!window.jspdf?.jsPDF) throw new Error("The PDF tool did not load. Refresh and try again.");
+    const doc = new window.jspdf.jsPDF({unit:"mm", format:"a4"});
+    let y = 24;
+    function line(text, size=11, italic=false) {
+      doc.setFont("helvetica", italic ? "italic" : "normal");
+      doc.setFontSize(size);
+      doc.setTextColor(91,75,88);
+      for (const row of doc.splitTextToSize(String(text), 170)) {
+        if(y>270) { doc.addPage(); y=24; }
+        doc.text(row,20,y); y+=size*0.48;
+      }
+      y+=4;
+    }
+    line("What Would You Say?", 21);
+    line("Experimental AI Practice Report", 15);
+    line("Scores are not validated measures of proficiency or workplace performance.", 10, true);
+    line("Scenario: " + (scenarioConfigs[activeScenario].title || activeScenario));
+    const finalScores=getFinalScores();
+    const labels=getLabels();
+    Object.entries(finalScores).forEach(([key,value]) => line((labels[key] || key) + ": " + Math.round(value*4) + "/20"));
+    roundFeedback.forEach((feedback,index) => {
+      line("Round " + (index+1),14);
+      line("Your response: " + (roundResponses[index] || ""));
+      line("What worked: " + feedback.strength);
+      line("Try next: " + feedback.improvement);
+      line("AI-generated feedback for this response. Further validation is required.",10,true);
+    });
+    const reflection=document.getElementById("reflectionText");
+    if(reflection?.innerText?.trim()) { line("Your next action",14); line(reflection.innerText.trim()); }
+    const pages=doc.getNumberOfPages();
+    for(let page=1;page<=pages;page++) {
+      doc.setPage(page);doc.setFontSize(8);doc.setFont("helvetica","normal");
+      doc.text("© 2026 Kahlila Mae Liverpool. All rights reserved.",20,287);
+      doc.text(page+" / "+pages,180,287);
+    }
+    return {doc,filename:"What-Would-You-Say-AI-Practice-Report.pdf"};
+  };
+  window.downloadReportCard = function() {
+    try { const report=window.buildProgressReportPdf(); report.doc.save(report.filename); }
+    catch(error) { alert(error.message); }
+  };
+  window.shareProgressReport = async function(event) {
+    event?.stopPropagation();
+    try {
+      const report=window.buildProgressReportPdf();
+      const file=new File([report.doc.output("blob")],report.filename,{type:"application/pdf"});
+      if(navigator.canShare?.({files:[file]}) && navigator.share) {
+        try { await navigator.share({title:"AI Practice Report",files:[file]}); return; }
+        catch(error) { if(error.name === "AbortError") return; }
+      }
+      report.doc.save(report.filename);
+    } catch(error) { alert(error.message); }
+  };
 
   function getTurnstileToken() {
     return new Promise((resolve, reject) => {
