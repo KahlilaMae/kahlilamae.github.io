@@ -6413,7 +6413,7 @@ and your contact details were not saved.</p>
     <div id="rubricDetails"></div>
 
     <div class="prototype-note">
-      This prototype connects to an LLM through a Cloudflare backend. Feedback responds to the content of each practice response. Scores are experimental and have not been validated as measures of proficiency or workplace performance.
+      This prototype uses an LLM to provide feedback on each practice response. Scores are experimental and have not been validated as measures of proficiency or workplace performance.
     </div>
   </section>
 
@@ -8825,15 +8825,15 @@ renderRubric();
 
   const banner = document.createElement("p");
   banner.setAttribute("role", "note");
-  banner.textContent = live ? "AI PROTOTYPE. Responses are sent through Cloudflare to OpenAI for experimental feedback. Scores are not validated performance assessments." : "PRIVATE DEVELOPMENT COPY — SIMULATION ONLY. Feedback and scores are placeholders, not actual assessments. Responses may be transmitted to Cloudflare.";
-  banner.style.cssText = "background:transparent;color:#5B4B58;padding:10px 22px;margin:0 auto;max-width:1120px;text-align:center;font:400 12px/1.5 \"DM Sans\",Arial,sans-serif";
+  banner.textContent = "AI prototype · Responses go through Cloudflare to OpenAI. Feedback and scores are experimental.";
+  banner.style.cssText = "background:#E8D9E5;color:#3A2438;padding:13px 22px;margin:0;width:100%;box-sizing:border-box;text-align:center;font:400 13px/1.6 \"DM Sans\",Arial,sans-serif";
   document.body.prepend(banner);
 
   const consentLabel = document.createElement("label");
   consentLabel.style.cssText = "display:flex;align-items:start;gap:10px;margin:14px 0;font:15px/1.4 Arial,sans-serif;color:#3A2438";
   const consent = document.createElement("input");
   consent.type = "checkbox";
-  consentLabel.append(consent, document.createTextNode(live ? "I agree to send this fictional practice response through Cloudflare to OpenAI for experimental AI feedback." : "I agree to send this practice response to the Cloudflare test evaluator. The results are simulated, not AI-generated."));
+  consentLabel.append(consent, document.createTextNode("I agree to receive AI feedback on my response."));
   const verification = document.createElement("div");
   verification.id = "dev-turnstile";
   verification.style.cssText = "margin:12px 0;min-height:0";
@@ -8938,7 +8938,7 @@ renderRubric();
   function getTurnstileToken() {
     return new Promise((resolve, reject) => {
       if (siteKey.startsWith("REPLACE_")) return reject(new Error("Add the public Turnstile site key to the private development adapter first."));
-      if (typeof window.turnstile?.render !== "function") return reject(new Error("Cloudflare Turnstile did not load."));
+      if (typeof window.turnstile?.render !== "function") return reject(new Error("Verification did not load. Please refresh and try again."));
       verification.replaceChildren();
       let settled = false;
       let timeout = setTimeout(() => fail("Verification timed out."), 90000);
