@@ -489,6 +489,86 @@ section[aria-labelledby="next-heading"] .llm-architecture ~ .llm-compare { margi
   .sheet .chapter .story p.question { font-size:clamp(30px,7vw,36px); }
 }
 </style>
+<style>
+/* Editorial accent: approved option 4, preserving type sizes and content. */
+.sheet .chapter .note,
+.sheet .chapter .editorial-decision {
+  background:#F5EBF3;
+  border:0;
+  border-top:2px solid rgba(122,46,92,.6);
+  border-radius:0 0 10px 10px;
+  padding:22px 24px;
+  box-shadow:none;
+}
+.sheet .chapter .note strong,
+.sheet .chapter .editorial-decision strong { color:#7A2E5C; }
+.sheet .chapter .flow,
+.sheet .chapter .editorial-process {
+  background:#F5EBF3;
+  border-radius:10px;
+  padding:18px;
+  counter-reset:editorial-step;
+}
+.sheet .chapter .flow .flow-step,
+.sheet .chapter .editorial-process .flow-step {
+  background:transparent;
+  border:0;
+  box-shadow:none;
+  border-radius:0;
+  padding:10px 12px;
+}
+.sheet .chapter .flow .flow-step::before,
+.sheet .chapter .editorial-process .flow-step::before {
+  counter-increment:editorial-step;
+  content:counter(editorial-step,decimal-leading-zero);
+  display:block;
+  font-family:'Playfair Display',Georgia,serif;
+  font-size:1.6rem;
+  font-weight:400;
+  line-height:1.2;
+  color:#7A2E5C;
+  margin-bottom:7px;
+}
+.sheet .chapter .flow-arrow,
+.sheet .chapter .architecture-arrow { color:rgba(122,46,92,.5); }
+.sheet .chapter .table-wrap {
+  border:1px solid rgba(122,46,92,.12);
+  border-top:2px solid rgba(122,46,92,.6);
+  border-radius:0 0 10px 10px;
+  background:#FBF7FA;
+}
+.sheet .chapter .table-wrap table { background:transparent; }
+.sheet .chapter .table-wrap th,
+.sheet .chapter .table-wrap td {
+  padding:17px 19px;
+  border-bottom:1px solid rgba(122,46,92,.12);
+}
+.sheet .chapter .table-wrap thead th { background:#EEDFE9; color:#7A2E5C; }
+.sheet .chapter .table-wrap tbody tr:nth-child(even) { background:#F5EBF3; }
+.sheet .chapter .table-wrap tbody th { background:transparent; color:#7A2E5C; }
+.sheet .chapter .table-wrap tbody tr:last-child > * { border-bottom:0; }
+.sheet .chapter .llm-architecture,
+.sheet .chapter .graph {
+  background:#F5EBF3;
+  border:0;
+  border-top:2px solid rgba(122,46,92,.6);
+  border-radius:0 0 10px 10px;
+  box-shadow:none;
+  padding:22px 24px;
+}
+.sheet .chapter .llm-compare-column {
+  background:#F5EBF3;
+  border-top:2px solid rgba(122,46,92,.6);
+  border-radius:0 0 10px 10px;
+  padding:22px 24px;
+}
+@media(max-width:650px) {
+  .sheet .chapter .note,.sheet .chapter .editorial-decision,
+  .sheet .chapter .llm-compare-column,.sheet .chapter .llm-architecture,
+  .sheet .chapter .graph { padding:18px; }
+  .sheet .chapter .table-wrap th,.sheet .chapter .table-wrap td { padding:13px; }
+}
+</style>
 </head>
 <body>
 <a class="skip-link" href="#main-content">Skip to main content</a><nav aria-label="Main navigation" class="site-nav"><div class="nav-links"><a href="../../index.html">Home</a><a href="../../impact.html">Work</a><a class="active" aria-current="page" href="/projects/">Projects</a></div></nav>
