@@ -591,6 +591,12 @@ section[aria-labelledby="next-heading"] .llm-architecture ~ .llm-compare { margi
 <p class="chapter-label">04 / Future Directions</p><h2 id="next-heading">What’s next</h2><div class="story"><p>Could more personalized feedback help someone respond differently when a real conversation becomes difficult?</p></div><div class="note"><strong>Design decision</strong><p>Explore how an LLM could make feedback more individualized without replacing human judgment.</p></div>
 <div class="section-detail"><h3>LLM integration</h3>
 <p class="section-context">The next step is connecting an LLM through a secure backend to provide more individualized feedback.</p>
+<ul class="section-context llm-process-summary">
+<li><strong>Your prototype is the interface.</strong> It presents the scenario and collects the employee’s response.</li>
+<li><strong>Cloudflare is the secure middle layer.</strong> It checks that requests come from your approved prototype and keeps the API key out of the webpage.</li>
+<li><strong>The LLM evaluates the response.</strong> It receives the scenario, scoring instructions, and employee’s response, then returns scores and feedback.</li>
+<li><strong>Your prototype displays the results.</strong> Those results feed into the practice experience and report.</li>
+</ul>
 <div class="llm-architecture" role="img" aria-label="Proposed integration: The What Would You Say GitHub website sends practice responses to a Cloudflare Worker, which securely communicates with the OpenAI API to generate personalized coaching.">
   <div class="architecture-node"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="12" rx="1.5"/><path d="M2.5 19h19l-1.6-3H4.1z"/></svg><strong>GitHub website</strong><span>What Would You Say?</span></div>
   <div class="architecture-arrow" aria-hidden="true">↕</div>
