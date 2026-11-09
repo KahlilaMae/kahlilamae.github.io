@@ -42,6 +42,11 @@
     }
     h1 { font:400 clamp(40px,4vw,48px)/1.15 'Playfair Display',Georgia,serif; letter-spacing:-.035em; margin:0 0 27px; text-align:left; }
     .privacy-copy { max-width:790px; margin:0; color:var(--ink); font-size:17px; line-height:1.65; text-align:left; }
+    .privacy-copy, .privacy-list { max-width:680px; }
+    .privacy-list { margin:28px 0 0; padding-left:25px; }
+    .privacy-list li { padding-left:9px; margin-bottom:22px; line-height:1.65; }
+    .privacy-list li::marker { color:var(--accent); font-weight:600; }
+    .privacy-list strong { color:var(--accent); font-weight:600; }
     .back-action { display:flex; justify-content:flex-end; margin-top:48px; }
     .back-link { display:inline-flex; align-items:center; justify-content:center; gap:12px; padding:11px 19px; min-height:44px; text-decoration:none; font-size:15px; font-weight:500; color:#fff; background:var(--accent); border-radius:999px; transition:background .2s ease,transform .2s ease; }
     .back-link:hover,.back-link:focus-visible { background:#63244A; transform:translateY(-1px); }
@@ -70,7 +75,14 @@
   <main class="page-backdrop">
     <article class="privacy-canvas" aria-labelledby="privacy-title">
       <h1 id="privacy-title">Privacy</h1>
-      <p class="privacy-copy">This experimental prototype sends your practice response and scenario information through Cloudflare to OpenAI when you consent and submit it. OpenAI generates feedback and scores; these are not validated measures of proficiency or workplace performance. Responses remain in the current page for your report. This prototype does not intentionally save responses to an application database. Service providers may process and retain data under their own policies. Use fictional information only and do not include personal or confidential information.</p>
+      <p class="privacy-copy">Here’s what to know about your data when you use this prototype:</p>
+      <ol class="privacy-list">
+        <li><strong>When you submit</strong> — Your response and scenario information are sent through Cloudflare to OpenAI with your consent.</li>
+        <li><strong>Feedback</strong> — LLM feedback and scores are experimental, not validated measures of proficiency or workplace performance.</li>
+        <li><strong>Your responses</strong> — Responses stay on this page for your report. This prototype does not intentionally save them to an application database.</li>
+        <li><strong>Provider policies</strong> — Service providers may process and retain data under their own policies.</li>
+        <li><strong>Before you respond</strong> — Avoid personal or confidential information.</li>
+      </ol>
       <div class="back-action"><a class="back-link" href="./" aria-label="Return to What Would You Say?">Back to prototype <span aria-hidden="true">→</span></a></div>
     </article>
     <footer>© 2026 Kahlila Mae Liverpool</footer>
