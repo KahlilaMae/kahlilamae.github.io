@@ -6339,7 +6339,7 @@ and your contact details were not saved.</p>
       </div>
       <div class="design-item">
         <strong>Behavior-based feedback</strong>
-        <span>Responses are assessed using language patterns.</span>
+        <span>An LLM provides experimental feedback on each response.</span>
       </div>
       <div class="design-item">
         <strong>Adaptive practice</strong>
@@ -6413,7 +6413,7 @@ and your contact details were not saved.</p>
     <div id="rubricDetails"></div>
 
     <div class="prototype-note">
-      This prototype uses rule-based language patterns as proxies for observable behaviors. In a production AI-enabled experience, responses could be evaluated more deeply for meaning, context, reasoning, and change over time.
+      This prototype connects to an LLM through a Cloudflare backend. Feedback responds to the content of each practice response. Scores are experimental and have not been validated as measures of proficiency or workplace performance.
     </div>
   </section>
 
@@ -8797,6 +8797,193 @@ renderRubric();
 </script>
 
 
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit" async defer></script>
+<script>
+/**
+ * Private development integration — simulation and live development modes.
+ * © 2026 Kahlila Mae Liverpool
+ * All rights reserved.
+ * Original content, designs, and materials may not be reproduced or redistributed without permission.
+ *
+ * Do not publish. Placeholder scores are not evidence of proficiency.
+ */
+(function () {
+  "use strict";
+  const endpoint = "https://practice-conversation-evaluator.kahlila-liverpool.workers.dev/evaluate";
+  const siteKey = "0x4AAAAAAFyl4_AcC0XPhbRW";
+  const expectedMode = "live";
+  const live = expectedMode === "live";
+  let pending = false;
+  let roundFeedback = [];
+  const originalOpenScenario = window.openScenario;
+  window.openScenario = function() { roundFeedback = []; return originalOpenScenario(); };
+  const skills = {
+    customer: ["empathy", "listening", "ownership", "problemSolving", "communication"],
+    software: ["judgment", "riskAssessment", "perspectiveTaking", "problemSolving", "communication"],
+    performance: ["diagnosis", "accountability", "curiosity", "judgment", "communication"]
+  };
+
+  const banner = document.createElement("p");
+  banner.setAttribute("role", "note");
+  banner.textContent = live ? "AI PROTOTYPE. Responses are sent through Cloudflare to OpenAI for experimental feedback. Scores are not validated performance assessments. Use fictional information only." : "PRIVATE DEVELOPMENT COPY — SIMULATION ONLY. Feedback and scores are placeholders, not actual assessments. Responses may be transmitted to Cloudflare.";
+  banner.style.cssText = "background:#3A2438;color:white;padding:14px 20px;margin:0;text-align:center;font:600 14px/1.5 Arial,sans-serif";
+  document.body.prepend(banner);
+
+  const consentLabel = document.createElement("label");
+  consentLabel.style.cssText = "display:flex;align-items:start;gap:10px;margin:14px 0;font:15px/1.4 Arial,sans-serif;color:#3A2438";
+  const consent = document.createElement("input");
+  consent.type = "checkbox";
+  consentLabel.append(consent, document.createTextNode(live ? "I agree to send this fictional practice response through Cloudflare to OpenAI for experimental AI feedback." : "I agree to send this practice response to the Cloudflare test evaluator. The results are simulated, not AI-generated."));
+  const verification = document.createElement("div");
+  verification.id = "dev-turnstile";
+  verification.style.cssText = "margin:12px 0;min-height:0";
+  const status = document.getElementById("status");
+  if (status && status.parentNode) {
+    status.parentNode.insertBefore(consentLabel, status);
+    status.parentNode.insertBefore(verification, status);
+    status.setAttribute("aria-live","polite");
+  }
+  const updateStatus = text => { if(status) status.textContent=text; };
+
+  // A fixed simulation score cannot represent growth between rounds.
+  window.renderChangeSummary = function() {
+    const summary = document.getElementById("changeSummary");
+    if (summary) summary.textContent = live ? "Experimental AI scores describe this practice only; changes do not establish growth or workplace performance." : "Simulation only — changes in skill performance cannot be assessed from placeholder scores.";
+  };
+  const originalGenerateReport = window.generateReport;
+  if (typeof originalGenerateReport === "function") {
+    window.generateReport = function() {
+      originalGenerateReport();
+      // The original report infers skill strengths from numeric scores.
+      // These are synthetic simulation values, so replace those inferences.
+      const meaning = document.getElementById("reportMeaningCopy");
+      if (meaning) meaning.textContent = live ? "Experimental AI-generated scores are not validated measures of proficiency or workplace performance." : "Simulation only: these placeholder scores do not measure performance, progress, strengths, or development needs.";
+      const reportResponses = document.getElementById("reportResponseChat");
+      if (reportResponses) reportResponses.querySelectorAll(".response-chat-feedback").forEach((item, index) => {
+        const feedback = roundFeedback[index];
+        item.textContent = feedback ? "What worked: " + feedback.strength + " Try next: " + feedback.improvement : "No verified AI feedback was recorded for this round.";
+      });
+      const overallLabel = document.querySelector(".report-overall-section .report-section-title");
+      if (overallLabel) overallLabel.textContent = live ? "Experimental AI Overall Score" : "Illustrative Overall Score";
+      const report = document.getElementById("reportCard");
+      if (report && !report.querySelector(".dev-label")) {
+        const note = document.createElement("p");
+        note.className = "dev-label";
+        note.textContent = live ? "EXPERIMENTAL AI PROTOTYPE — Scores are not validated performance assessments. Report export is disabled during verification." : "SIMULATION ONLY — All skill scores are placeholders. This is not a performance evaluation.";
+        note.style.cssText = "background:#F5EBF3;padding:15px;border-left:3px solid #7A2E5C";
+        report.prepend(note);
+      }
+      document.querySelectorAll(".report-share-button").forEach(button => {
+        button.disabled=true;
+        button.title="PDF export will be available after report verification.";
+      });
+    };
+  }
+  window.shareProgressReport = function(){ alert("Sharing is unavailable while the AI report is being verified."); };
+  window.downloadReportCard = function(){ alert("PDF export is unavailable while the AI report is being verified."); };
+  window.buildProgressReportPdf = function(){ throw new Error("AI report export awaits verification."); };
+
+  function getTurnstileToken() {
+    return new Promise((resolve, reject) => {
+      if (siteKey.startsWith("REPLACE_")) return reject(new Error("Add the public Turnstile site key to the private development adapter first."));
+      if (typeof window.turnstile?.render !== "function") return reject(new Error("Cloudflare Turnstile did not load."));
+      verification.replaceChildren();
+      let settled = false;
+      let timeout = setTimeout(() => fail("Verification timed out."), 90000);
+      function accept(token) { if(settled)return; settled=true; clearTimeout(timeout); resolve(token); }
+      function fail(message) { if(settled)return; settled=true; clearTimeout(timeout); reject(new Error(message)); }
+      try {
+        window.turnstile.render(verification, {
+          sitekey: siteKey,
+          callback: accept,
+          "error-callback": () => fail("Verification failed."),
+          "expired-callback": () => fail("Verification expired."),
+          "timeout-callback": () => fail("Verification timed out.")
+        });
+      } catch { fail("Cannot create Turnstile widget."); }
+    });
+  }
+
+  window.evaluateResponse = async function() {
+    if (pending || !transcriptText.trim()) return;
+    const raw = transcriptText.trim();
+    if (!responseQualityPromptShown && needsMoreThoughtfulResponse(raw)) {
+      responseQualityPromptShown = true;
+      showResponseQualityPrompt();
+      return;
+    }
+    hideResponseQualityPrompt();
+    if (!consent.checked) { updateStatus("Please agree to the evaluation request first."); return; }
+    pending = true;
+    const button = document.getElementById("evaluateButton");
+    if(button) button.disabled=true;
+    try {
+      updateStatus("Verifying evaluation request...");
+      const turnstileToken = await getTurnstileToken();
+      const prompt = document.getElementById("customerText")?.innerText?.trim() || scenarioConfigs[activeScenario].opening;
+      const response = await fetch(endpoint, {
+        method: "POST", headers: {"Content-Type": "application/json"}, cache:"no-store", signal: AbortSignal.timeout(60000),
+        body: JSON.stringify({ scenario:activeScenario, round:currentRound, prompt, response:raw, turnstileToken })
+      });
+      if(!response.ok) {
+        // Display only known diagnostics; never echo arbitrary server content.
+        const messages = {
+          ORIGIN_NOT_ALLOWED: "The evaluator has not allowed this preview address.",
+          TURNSTILE_TOKEN_REJECTED: "Turnstile rejected the verification token. Check the widget and server secret configuration.",
+          TURNSTILE_HOSTNAME_MISMATCH: "The verified Turnstile hostname does not match this preview address."
+        };
+        let failure;
+        try { failure = await response.json(); } catch { /* Preserve HTTP fallback. */ }
+        const legacy = {
+          "Origin not permitted": messages.ORIGIN_NOT_ALLOWED,
+          "Verification failed": "Server-side Turnstile verification failed. Check the deployed hostname check and widget configuration."
+        };
+        const detail = messages[failure?.code] || legacy[failure?.error] || "Evaluation rejected.";
+        throw new Error(detail + " (HTTP " + response.status + "). No scores recorded.");
+      }
+      const data = await response.json();
+      const keys=skills[activeScenario];
+      if (data.mode!==expectedMode || data.scenario!==activeScenario || data.round!==currentRound ||
+          ["strength","improvement","nextChallenge"].some(key => typeof data[key] !== "string" || data[key].length > 4000) ||
+          !data.scores || keys.some(key=>!Number.isInteger(data.scores[key]) || data.scores[key]<1 || data.scores[key]>5))
+        throw new Error("Unexpected evaluation mode or invalid feedback. No scores recorded.");
+
+      roundFeedback[currentRound-1] = { strength: data.strength, improvement: data.improvement };
+      roundResponses[currentRound-1] = raw;
+      keys.forEach(key=>scores[key][currentRound-1] = data.scores[key]);
+      const normalized=raw.toLowerCase();
+      if(activeScenario==="software" && currentRound===1) softwareRoundOneDecision=detectSoftwareDecision(normalized);
+      if(activeScenario==="performance" && currentRound===1) performanceRoundOneApproach=detectPerformanceApproach(normalized);
+      updateStatus(live ? "AI feedback received. Experimental scores are not validated assessments." : "Simulation successful. All scores are placeholders.");
+      if(currentRound>=maxRounds){ showReflectionStep(); return; }
+      const feedback=document.getElementById("feedback");
+      feedback.replaceChildren();
+      for(const [title, value] of [
+        [live ? "Experimental AI feedback" : "Simulation only", live ? "Review this feedback critically; scores are not validated measures of proficiency." : "No real assessment occurred. Displayed scores are placeholders."],
+        [live ? "What worked" : "What worked (placeholder)", data.strength],
+        [live ? "Try next" : "Try next (placeholder)", data.improvement]
+      ]){
+        const section=document.createElement("div");
+        section.className="feedback-section";
+        const strong=document.createElement("strong");strong.textContent=title;
+        section.append(strong,document.createTextNode(" "+String(value||"")));
+        feedback.append(section);
+      }
+      const adaptive=document.getElementById("adaptiveNote");
+      if(adaptive) {
+        adaptive.textContent=live ? "AI-generated feedback for this response. Further validation is required." : "Simulation only. No individualized feedback.";
+        adaptive.style.fontStyle=live ? "italic" : "";
+        adaptive.style.color=live ? "#5B4B58" : "";
+      }
+      renderScoreBars("roundScoreBars",data.scores);
+      document.getElementById("feedbackCard").classList.remove("hidden");
+      document.getElementById("feedbackCard").scrollIntoView({behavior:"smooth",block:"start"});
+    } catch(e) { updateStatus(e.message || "Evaluation failed; no scores recorded."); }
+    finally { pending=false; if(button)button.disabled=false; verification.replaceChildren(); }
+  };
+})();
+</script>
 </body>
 
 </html>
+
