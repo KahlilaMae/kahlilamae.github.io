@@ -554,7 +554,7 @@ section[aria-labelledby="next-heading"] .llm-architecture ~ .llm-compare { margi
 </header>
 <section aria-labelledby="design-heading" class="chapter">
 <p class="chapter-label">01 / Design</p><h2 id="design-heading">It started with a question</h2>
-<div class="story"><p class="question">Can short scenarios build essential skills?</p><p>These short practice scenarios are designed to help employees strengthen specific skills through immediate, individualized feedback. The feedback and report card guide continued learning and practice, with the goal of changing behavior and contributing to business results.</p></div>
+<div class="story"><p class="question">Can short scenarios build essential skills?</p><p>These short practice scenarios are designed to help employees strengthen specific skills through immediate, individualized feedback. The feedback guides continued practice. The report card supports conversations among employees, teams, and managers about specific skills and how to apply them at work. The goal is to improve performance and contribute to business results.</p></div>
 <div class="note"><strong>Design decision</strong><p>Practice a response rather than select an answer.</p></div>
 <div class="section-detail"><h3 class="minor-label eyebrow-heading">Design choices</h3><ul class="details-list">
 <li><strong>Realistic situations</strong><span>Upset Customer, Software Delay, and Performance Conversation focus on judgment and workplace communication.</span></li>
@@ -595,7 +595,7 @@ section[aria-labelledby="next-heading"] .llm-architecture ~ .llm-compare { margi
 <div class="section-detail"><h3>Evidence</h3><div aria-label="Evidence table" class="table-wrap" role="region" tabindex="0"><table><thead><tr><th scope="col">Level</th><th scope="col">Question</th><th scope="col">Evidence</th></tr></thead><tbody><tr><td>Reaction</td><td>Was practice relevant &amp; useful?</td><td>Relevance, usability &amp; user feedback</td></tr><tr><td>Learning</td><td>Did demonstrated skills improve?</td><td>Response quality, rubric scores &amp; unfamiliar-scenario assessments</td></tr><tr><td>Behavior</td><td>Did people apply the skills at work?</td><td>Observed conversations, coaching follow-up &amp; work samples</td></tr><tr><td>Results</td><td>Did changes in behavior help the organization?</td><td>Role-relevant customer, leadership or operational measures</td></tr></tbody></table></div></div>
 <div class="section-detail report-card-design">
 <h3>The report card</h3>
-<p>The report card helps employees understand their skill scores and plan when to practice next. Their own responses give employees, managers, and teams a starting point for specific, actionable feedback.</p>
+<p>The report card helps employees understand their skill scores and plan when to practice next. It also supports conversations among employees, teams, and managers, using specific examples from the employee’s responses.</p>
 <div class="report-card-overview">
 <figure class="report-card-figure">
 <a href="../assets/report-card-example.svg" target="_blank" rel="noopener noreferrer" aria-label="Open the illustrative report card at full size">
@@ -607,8 +607,8 @@ section[aria-labelledby="next-heading"] .llm-architecture ~ .llm-compare { margi
 <dl>
 <div><dt>Understand the skill</dt><dd>Review skill scores alongside responses and feedback from each round.</dd></div>
 <div><dt>Plan the next practice</dt><dd>Choose one next action and set a practice reminder. Immediate feedback and another attempt keep the practice loop going.</dd></div>
-<div><dt>Focus the conversation</dt><dd>Use an employee’s own words to discuss what worked, what needs attention, and what to try next.</dd></div>
-<div><dt>Growth over time</dt><dd>Review changes across rounds. The employer and employee can compare saved reports over time to see progress. The prototype does not store a progress history.</dd></div>
+<div><dt>Focus the conversation</dt><dd>Employees, teams, and managers can use examples from the report card to discuss a specific skill and agree on what to practice next.</dd></div>
+<div><dt>Growth over time</dt><dd>Review changes across rounds. Employees, teams, and managers can compare saved reports to discuss changes in practice and where support is needed. The prototype does not store a progress history.</dd></div>
 </dl>
 <p>This gives coaching a specific behavior to target and a business result to check.</p>
 </div>
@@ -617,7 +617,7 @@ section[aria-labelledby="next-heading"] .llm-architecture ~ .llm-compare { margi
 </div>
 <div class="section-detail team-skills-section">
 <h3>Identifying skill gaps</h3>
-<p>Patterns across practice results could help managers identify shared skill gaps and target support.</p>
+<p>Patterns across practice results can help employees, teams, and managers discuss shared skill gaps and decide where more practice is needed.</p>
 <div class="flow report-practice-loop" role="group" aria-label="Report card practice loop">
 <span class="flow-step">Review feedback</span><span class="flow-arrow" aria-hidden="true">→</span>
 <span class="flow-step">Discuss one skill</span><span class="flow-arrow" aria-hidden="true">→</span>
