@@ -579,11 +579,11 @@ section[aria-labelledby="next-heading"] .llm-architecture ~ .llm-compare { margi
 </section>
 <section aria-labelledby="logic-heading" class="chapter editorial-logic">
 <p class="chapter-label">02 / Logic</p><h2 id="logic-heading">How the experience responds</h2>
-<div class="editorial-decision"><strong>Design decision</strong><p>Feedback responds to assessed skills. Some scenarios also change the follow-up.</p></div>
-<p class="editorial-context">The prototype uses defined indicators to assess typed and transcribed responses.</p>
-<div class="editorial-process"><h3 class="minor-label eyebrow-heading">Response process</h3><div class="flow"><span class="flow-step">Typed response or speech transcript</span><span aria-hidden="true" class="flow-arrow">→</span><span class="flow-step">Language and structure indicators</span><span aria-hidden="true" class="flow-arrow">→</span><span class="flow-step">Five skill ratings</span><span aria-hidden="true" class="flow-arrow">→</span><span class="flow-step">What worked / Try next</span></div></div>
-<div class="editorial-feedback"><h3>About the feedback</h3><p>After each of the three rounds, employees receive feedback on their response to help them adjust their approach in the next round or a future conversation.</p><p>The original prototype used rule-based scoring and predefined feedback. LLM integration is now in development to provide feedback informed more directly by each employee’s response.</p></div>
-<div class="section-detail"><h3>Scenario paths</h3><div aria-label="Scenario Paths" class="table-wrap" role="region" tabindex="0"><table><thead><tr><th scope="col">Scenario</th><th scope="col">Next Step</th></tr></thead><tbody><tr><td>Upset Customer</td><td>Same follow-ups for everyone; feedback changes with assessed skills.</td></tr><tr><td>Software Delay</td><td>Initial launch, delay, or unclear recommendation changes the next authored information.</td></tr><tr><td>Performance Conversation</td><td>Accountability, support, or balanced approaches lead to different authored follow-ups.</td></tr></tbody></table></div></div>
+<div class="editorial-decision"><strong>Design decision</strong><p>The skill rubric guides feedback. Scenario follow-ups remain authored, with branching in Software Delay and Performance Conversation.</p></div>
+<p class="editorial-context">The current prototype sends typed or transcribed responses to OpenAI through a Cloudflare backend for rubric-guided scores and feedback. The original version used language indicators and predefined feedback.</p>
+<div class="editorial-process"><h3 class="minor-label eyebrow-heading">Response process</h3><div class="flow"><span class="flow-step">Typed response or speech transcript</span><span aria-hidden="true" class="flow-arrow">→</span><span class="flow-step">LLM review against the skill rubric</span><span aria-hidden="true" class="flow-arrow">→</span><span class="flow-step">Five skill ratings</span><span aria-hidden="true" class="flow-arrow">→</span><span class="flow-step">What worked / Try next</span></div></div>
+<div class="editorial-feedback"><h3>About the feedback</h3><p>After each of the three rounds, employees receive feedback on their response to help them adjust their approach in the next round or a future conversation.</p><p>The OpenAI connection is implemented. Feedback quality and scoring consistency still need evaluation; the scores are experimental, not validated measures of proficiency.</p></div>
+<div class="section-detail"><h3>Scenario paths</h3><p>These follow-ups are authored in advance. The LLM currently generates scores and feedback, not the next scenario question.</p><div aria-label="Scenario Paths" class="table-wrap" role="region" tabindex="0"><table><thead><tr><th scope="col">Scenario</th><th scope="col">Next Step</th></tr></thead><tbody><tr><td>Upset Customer</td><td>Same follow-ups for everyone; feedback changes with assessed skills.</td></tr><tr><td>Software Delay</td><td>Initial launch, delay, or unclear recommendation changes the next authored information.</td></tr><tr><td>Performance Conversation</td><td>Accountability, support, or balanced approaches lead to different authored follow-ups.</td></tr></tbody></table></div></div>
 <div class="section-detail"><h3>Skills by scenario</h3><div aria-label="Skills by Scenario" class="table-wrap" role="region" tabindex="0"><table><thead><tr><th scope="col">Scenario</th><th scope="col">Skills assessed</th></tr></thead><tbody><tr><td>Upset Customer</td><td>Empathy, Listening, Ownership, Problem Solving, Communication</td></tr><tr><td>Software Delay</td><td>Judgment, Risk Assessment, Perspective Taking, Problem Solving, Communication</td></tr><tr><td>Performance Conversation</td><td>Diagnosis, Accountability, Curiosity, Judgment, Communication</td></tr></tbody></table></div><p class="tiny-note"></p></div>
 
 </section>
@@ -645,14 +645,14 @@ section[aria-labelledby="next-heading"] .llm-architecture ~ .llm-compare { margi
 </div>
 <div class="section-detail"><h3 class="minor-label eyebrow-heading">Scoring</h3>
 <div aria-label="Scoring" class="table-wrap" role="region" tabindex="0"><table><thead><tr><th scope="col">Method</th><th scope="col">Calculation</th></tr></thead><tbody><tr><th scope="row">Skills assessed</th><td>Five skills per scenario.</td></tr><tr><th scope="row">Score per skill</th><td>1–5 points in each completed round.</td></tr><tr><th scope="row">Final skill score</th><td>Average the scores from completed rounds only (up to three), round the average to the nearest whole number, then multiply by 4. Maximum: 20 points per skill.</td></tr><tr><th scope="row">Overall score</th><td>Add the five final skill scores. Maximum: 100 points.</td></tr></tbody></table></div>
-<p class="tiny-note scoring-rounds-spacing">Incomplete rounds are excluded. These rule-based scores describe performance in practice, not validated workplace proficiency.</p>
+<p class="tiny-note scoring-rounds-spacing">Incomplete rounds are excluded. The current LLM-generated scores are experimental practice ratings, not validated measures of workplace proficiency.</p>
 <p class="privacy-note"><span>This is a design prototype and has not yet been formally evaluated or validated through research.</span></p>
 </div>
 </section>
 <section aria-labelledby="next-heading" class="chapter">
-<p class="chapter-label">04 / Future Directions</p><h2 id="next-heading">What’s next</h2><div class="story"><p>Could more personalized feedback help someone respond differently when a real conversation becomes difficult?</p></div><div class="note"><strong>Design decision</strong><p>Explore how an LLM could make feedback more individualized without replacing human judgment.</p></div>
+<p class="chapter-label">04 / Future Directions</p><h2 id="next-heading">What’s next</h2><div class="story"><p>Could more personalized feedback help someone respond differently when a real conversation becomes difficult?</p></div><div class="note"><strong>Design decision</strong><p>Evaluate whether LLM-generated feedback supports useful practice while retaining human judgment.</p></div>
 <div class="section-detail"><h3>LLM integration</h3>
-<p class="section-context"><strong>Current prototype status · November 9, 2026.</strong> The public prototype is connected to OpenAI through a Cloudflare backend, and live AI-generated feedback has been received in the private preview. Public testing is the next stage. Feedback quality, scoring consistency, and complete reports across all three scenarios still need verification. Scores are experimental and are not validated measures of proficiency.</p>
+<p class="section-context"><strong>Current prototype status · November 10, 2026.</strong> The OpenAI connection is implemented in the public prototype through a Cloudflare backend. Live AI-generated feedback has been received in the private preview; complete public testing remains to be verified. Feedback quality, scoring consistency, and complete reports across all three scenarios still need verification. Scores are experimental and are not validated measures of proficiency.</p>
 <p class="section-context">Further research and development with a machine learning engineer will focus on scoring reliability, feedback quality, and validation before broader use. PDF export is available after all three rounds return valid AI responses. Reports include the recorded AI feedback and experimental score labels; report quality still requires review.</p>
 <p class="section-context">The employee’s response and scoring instructions are sent through Cloudflare to the LLM. Returned scores and feedback appear in the practice experience and report.</p>
 <div class="llm-architecture" role="img" aria-label="Current integration: The What Would You Say GitHub website sends practice responses to a Cloudflare Worker, which securely communicates with the OpenAI API to generate personalized coaching.">
@@ -663,20 +663,20 @@ section[aria-labelledby="next-heading"] .llm-architecture ~ .llm-compare { margi
   <div class="architecture-node"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4c-2-2-6-1-6 2-3 0-4 4-2 6-2 3 0 6 3 6 1 3 5 3 5 0V4Zm0 0c2-2 6-1 6 2 3 0 4 4 2 6 2 3 0 6-3 6-1 3-5 3-5 0V4ZM8 9h4m-4 5h4m0-5h4m-4 5h4"/></svg><strong>OpenAI API</strong><span>Analyzes responses and generates personalized coaching</span></div>
 </div>
 
-<div class="llm-compare" role="group" aria-label="What stays in place and what an LLM would add">
+<div class="llm-compare" role="group" aria-label="Retained learning design, current LLM feedback, and proposed follow-up questions">
 <div class="llm-compare-column"><h4>What stays in place</h4><ul>
 <li><strong>Learning design</strong><span>The scenarios and practice structure.</span></li>
 <li><strong>Skill rubric</strong><span>The criteria for assessing responses.</span></li>
 <li><strong>Feedback quality checks</strong><span>Required format and alignment with the rubric.</span></li>
 <li><strong>Expert review</strong><span>Feedback quality tested before real use.</span></li>
 </ul></div>
-<div class="llm-compare-column"><h4>What the LLM adds</h4><ul>
-<li><strong>More responsive feedback</strong><span>Suggestions informed by the user's response and rubric.</span></li>
-<li><strong>More responsive follow-up questions</strong><span>Additional practice shaped by what the user says.</span></li>
+<div class="llm-compare-column"><h4>Current feedback and proposed follow-ups</h4><ul>
+<li><strong>Current: response-specific feedback</strong><span>LLM-generated suggestions informed by the employee’s response and rubric; quality still needs evaluation.</span></li>
+<li><strong>Proposed: responsive follow-up questions</strong><span>Future exploration of LLM-generated questions shaped by the employee’s response. This is not implemented in the current prototype.</span></li>
 </ul></div>
 </div>
 <p class="visual-closing">The LLM supports the experience without replacing the learning design or human judgment.</p></div>
-<div class="section-detail"><h3>LLM-supported adaptive learning</h3>
+<div class="section-detail"><h3>Proposed adaptive practice</h3>
 
 <div aria-label="Proposed learning cycle: responsive practice, individualized feedback, another attempt, and reflection" class="flow adaptive-practice-flow">
 <span class="flow-step">Responsive practice</span><span aria-hidden="true" class="flow-arrow">→</span>
