@@ -5560,7 +5560,10 @@
 .conversation-selector .design-notes-tile:focus-visible{border-bottom:1px solid rgba(122,46,92,.10);}
 
     .report-next-action-heading { display:flex; align-items:baseline; justify-content:space-between; gap:16px; }
-    .report-next-action-edit { background:none; border:0; padding:10px; color:var(--accent); font:inherit; text-decoration:underline; text-underline-offset:4px; cursor:pointer; }
+    .report-next-action-controls { display:flex; justify-content:flex-end; }
+    .report-next-action-edit { display:inline-flex; align-items:center; justify-content:center; gap:8px; min-height:44px; margin-top:14px; padding:8px 18px; background:var(--card); border:1px solid rgba(122,46,92,.3); border-radius:999px; color:var(--accent); font:inherit; font-size:.88rem; font-weight:500; text-decoration:none; cursor:pointer; }
+    .report-next-action-edit.hidden { display:none; }
+    .report-next-action-edit svg { width:18px; height:18px; fill:none; stroke:currentColor; stroke-width:1.7; stroke-linecap:round; stroke-linejoin:round; }
     #reportNextActionDraft { display:block; width:100%; min-height:108px; margin-bottom:14px; padding:18px; border:1px solid var(--line); border-radius:16px; background:#fff; color:var(--ink); font:inherit; resize:vertical; }
     #reportNextActionDraft:focus-visible, .report-next-action-edit:focus-visible { outline:2px solid var(--accent); outline-offset:3px; }
     #reportNextActionStatus { color:var(--muted); font-size:.88rem; }
@@ -6129,13 +6132,20 @@
       <section class="report-next-change" aria-labelledby="reportNextChangeTitle">
         <div class="report-next-action-heading">
           <h3 id="reportNextChangeTitle" class="report-section-title">Your next action</h3>
-          <button type="button" id="editReportNextAction" class="report-next-action-edit" onclick="editReportNextAction()" aria-controls="reportNextActionEditor" aria-expanded="false">Edit</button>
         </div>
         <p class="report-next-change-label">What will you do differently next time?</p>
-        <div id="reportNextSmallChange" class="report-next-change-value"></div>
+        <div class="report-next-change-value">
+          <div id="reportNextSmallChange"></div>
+          <div class="report-next-action-controls">
+            <button type="button" id="editReportNextAction" class="report-next-action-edit" onclick="editReportNextAction()" aria-controls="reportNextActionEditor" aria-expanded="false">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m4 16-1 5 5-1L20 8a2.1 2.1 0 0 0-4-4L4 16Z"/><path d="m14 6 4 4"/></svg>
+              Edit
+            </button>
+          </div>
         <div id="reportNextActionEditor" class="hidden">
           <textarea id="reportNextActionDraft" aria-label="What will you do differently next time?" rows="3"></textarea>
           <button type="button" class="pill-button button-berry" onclick="saveReportNextAction()">Save changes</button>
+        </div>
         </div>
         <p id="reportNextActionStatus" role="status" aria-live="polite"></p>
 
