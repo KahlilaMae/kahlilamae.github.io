@@ -578,7 +578,7 @@ section[aria-labelledby="next-heading"] .llm-architecture ~ .llm-compare { margi
 </div>
 </section>
 <section aria-labelledby="logic-heading" class="chapter editorial-logic">
-<p class="chapter-label">02 / Logic</p><h2 id="logic-heading">Experience Responses</h2>
+<p class="chapter-label">02 / Logic</p><h2 id="logic-heading">How the experience responds</h2>
 <div class="editorial-decision"><strong>Design decision</strong><p>Feedback responds to assessed skills. Some scenarios also change the follow-up.</p></div>
 <p class="editorial-context">The prototype uses defined indicators to assess typed and transcribed responses.</p>
 <div class="editorial-process"><h3 class="minor-label eyebrow-heading">Response process</h3><div class="flow"><span class="flow-step">Typed response or speech transcript</span><span aria-hidden="true" class="flow-arrow">→</span><span class="flow-step">Language and structure indicators</span><span aria-hidden="true" class="flow-arrow">→</span><span class="flow-step">Five skill ratings</span><span aria-hidden="true" class="flow-arrow">→</span><span class="flow-step">What worked / Try next</span></div></div>
@@ -589,13 +589,13 @@ section[aria-labelledby="next-heading"] .llm-architecture ~ .llm-compare { margi
 </section>
 <section aria-labelledby="business-heading" class="chapter">
 <p class="chapter-label">03 / Business Impact</p><h2 id="business-heading">Measuring Impact</h2>
-<div class="story"><p>The goal is to help employees build needed skills quickly and improve performance at work. Each practice scenario should connect a specific skill to a business need.</p><p>For example, practicing how to clarify a customer’s concern and take ownership could support faster resolution and fewer repeat contacts. Those are outcomes to test, alongside improvements in the responses.</p></div>
+<div class="story"><p>Practicing how to clarify a customer’s concern and take ownership could support faster resolution and fewer repeat contacts. Those are outcomes to test, alongside improvements in the responses.</p></div>
 <div class="note"><strong>Design decision</strong><p>Practice scores tell part of the story. The bigger question is whether people are doing something differently at work.</p></div>
-<div class="section-detail"><h3 class="minor-label eyebrow-heading">Practice to impact</h3><div class="evidence-chain"><span>Practice</span><b>→</b><span>What someone learns</span><b>→</b><span>What they do differently</span><b>→</b><span>What changes at work</span><b>→</b><span>The value created</span></div><p>Improvement in practice matters, but it is only a starting point. What do people carry into their work, and where might they still need support?</p></div>
+
 <div class="section-detail"><h3>Evidence</h3><div aria-label="Evidence table" class="table-wrap" role="region" tabindex="0"><table><thead><tr><th scope="col">Level</th><th scope="col">Question</th><th scope="col">Evidence</th></tr></thead><tbody><tr><td>Reaction</td><td>Was practice relevant &amp; useful?</td><td>Relevance, usability &amp; user feedback</td></tr><tr><td>Learning</td><td>Did demonstrated skills improve?</td><td>Response quality, rubric scores &amp; unfamiliar-scenario assessments</td></tr><tr><td>Behavior</td><td>Did people apply the skills at work?</td><td>Observed conversations, coaching follow-up &amp; work samples</td></tr><tr><td>Results</td><td>Did changes in behavior help the organization?</td><td>Role-relevant customer, leadership or operational measures</td></tr></tbody></table></div></div>
 <div class="section-detail report-card-design">
 <h3>The report card</h3>
-<p>The report card helps employees understand their skill scores and plan when to practice next. It also supports conversations among employees, teams, and managers, using specific examples from the employee’s responses.</p>
+<p>The report card brings skill scores, responses, and feedback together to guide the next practice and coaching conversation.</p>
 <div class="report-card-overview">
 <figure class="report-card-figure">
 <a href="../assets/report-card-example.svg" target="_blank" rel="noopener noreferrer" aria-label="Open the illustrative report card at full size">
@@ -610,14 +610,14 @@ section[aria-labelledby="next-heading"] .llm-architecture ~ .llm-compare { margi
 <div><dt>Focus the conversation</dt><dd>Employees, teams, and managers can use examples from the report card to discuss a specific skill and agree on what to practice next.</dd></div>
 <div><dt>Growth over time</dt><dd>Review changes across rounds. Employees, teams, and managers can compare saved reports to discuss changes in practice and where support is needed. The prototype does not store a progress history.</dd></div>
 </dl>
-<p>This gives coaching a specific behavior to target and a business result to check.</p>
+
 </div>
 </div>
 
 </div>
 <div class="section-detail team-skills-section">
 <h3>Identifying skill gaps</h3>
-<p>Patterns across practice results can help employees, teams, and managers discuss shared skill gaps and decide where more practice is needed.</p>
+<p>The individual view highlights skills to practice. A future team reporting concept could help managers identify shared skill gaps.</p>
 <div class="flow report-practice-loop" role="group" aria-label="Report card practice loop">
 <span class="flow-step">Review feedback</span><span class="flow-arrow" aria-hidden="true">→</span>
 <span class="flow-step">Discuss one skill</span><span class="flow-arrow" aria-hidden="true">→</span>
@@ -635,12 +635,12 @@ section[aria-labelledby="next-heading"] .llm-architecture ~ .llm-compare { margi
 <p class="tiny-note" id="individual-view-caption">Illustrative Upset Customer practice scores, matching the report-card example. These are not actual employee data or validated measures of workplace proficiency.</p>
 </div>
 <div class="graph" role="group" aria-labelledby="team-view-heading" aria-describedby="team-view-caption">
-<p class="minor-label">Illustrative team view</p>
+<p class="minor-label">Future reporting concept · Team view</p>
 <h4 id="team-view-heading">Where does the team need more practice?</h4>
 <div class="bar-row"><span>Listening</span><div class="bar-track" role="meter" aria-label="Listening" aria-valuemin="0" aria-valuemax="100" aria-valuenow="85"><div class="bar-fill" style="width:85%"></div></div><strong>85%</strong></div>
 <div class="bar-row"><span>Communication</span><div class="bar-track" role="meter" aria-label="Communication" aria-valuemin="0" aria-valuemax="100" aria-valuenow="72"><div class="bar-fill" style="width:72%"></div></div><strong>72%</strong></div>
 <div class="bar-row"><span>Accountability</span><div class="bar-track" role="meter" aria-label="Accountability" aria-valuemin="0" aria-valuemax="100" aria-valuenow="48"><div class="bar-fill" style="width:48%"></div></div><strong>48%</strong></div>
-<p class="tiny-note" id="team-view-caption">Example percentages representing a team's achievement of defined skill criteria, not actual user data.</p>
+<p class="tiny-note" id="team-view-caption">Proposed team reporting, not an existing prototype feature. Percentages are illustrative and do not represent actual employee data.</p>
 </div>
 </div>
 <div class="section-detail"><h3 class="minor-label eyebrow-heading">Scoring</h3>
@@ -654,12 +654,7 @@ section[aria-labelledby="next-heading"] .llm-architecture ~ .llm-compare { margi
 <div class="section-detail"><h3>LLM integration</h3>
 <p class="section-context"><strong>Current prototype status · November 9, 2026.</strong> The public prototype is connected to OpenAI through a Cloudflare backend, and live AI-generated feedback has been received in the private preview. Public testing is the next stage. Feedback quality, scoring consistency, and complete reports across all three scenarios still need verification. Scores are experimental and are not validated measures of proficiency.</p>
 <p class="section-context">Further research and development with a machine learning engineer will focus on scoring reliability, feedback quality, and validation before broader use. PDF export is available after all three rounds return valid AI responses. Reports include the recorded AI feedback and experimental score labels; report quality still requires review.</p>
-<ul class="section-context llm-process-summary">
-<li><strong>The prototype is the interface.</strong> It presents the scenario and collects the employee’s response.</li>
-<li><strong>Cloudflare is the secure middle layer.</strong> It checks that requests come from the approved prototype and keeps the API key out of the webpage.</li>
-<li><strong>The LLM evaluates the response.</strong> It receives the scenario, scoring instructions, and employee’s response, then returns scores and feedback.</li>
-<li><strong>The prototype displays the results.</strong> Those results feed into the practice experience and report.</li>
-</ul>
+<p class="section-context">The employee’s response and scoring instructions are sent through Cloudflare to the LLM. Returned scores and feedback appear in the practice experience and report.</p>
 <div class="llm-architecture" role="img" aria-label="Current integration: The What Would You Say GitHub website sends practice responses to a Cloudflare Worker, which securely communicates with the OpenAI API to generate personalized coaching.">
   <div class="architecture-node"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="12" rx="1.5"/><path d="M2.5 19h19l-1.6-3H4.1z"/></svg><strong>GitHub website</strong><span>What Would You Say?</span></div>
   <div class="architecture-arrow" aria-hidden="true">↕</div>
