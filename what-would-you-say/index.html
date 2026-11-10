@@ -2,6 +2,68 @@
 <html lang="en">
 
 <head>
+<script>
+
+// Anonymous scenario totals only. No names, responses, scores, or attempt IDs are sent.
+const scenarioAnalytics = (() => {
+  const labels = {customer:"Upset Customer", software:"Software Delay", performance:"Performance Conversation"};
+  const exclusionKey = "wwys-exclude-my-testing";
+  let excluded = false;
+  let exclusionSaved = false;
+  try { excluded = localStorage.getItem(exclusionKey) === "1"; } catch {}
+  if (location.hash === "#exclude-my-testing") {
+    excluded = true;
+    try { localStorage.setItem(exclusionKey, "1"); exclusionSaved = true; } catch {}
+    document.addEventListener("DOMContentLoaded", () => {
+      const note = document.createElement("p");
+      note.setAttribute("role", "status");
+      note.textContent = exclusionSaved
+        ? "Your testing is excluded in this browser. Your scenario starts and completions will not be counted."
+        : "Your testing is excluded for this page only. Browser storage is unavailable; use this exclusion link every time you test.";
+      note.style.cssText = "margin:0;padding:14px 24px;background:#EEDDE8;color:#3A2438;text-align:center;font:16px/1.5 Arial,sans-serif";
+      document.body.prepend(note);
+    });
+  }
+  const queue = [];
+  let attempt = null;
+  function isExcluded() {
+    try { return excluded || localStorage.getItem(exclusionKey) === "1"; } catch { return excluded; }
+  }
+  function flush() {
+    if (isExcluded()) { queue.length = 0; return; }
+    if (typeof window.goatcounter?.count !== "function") return;
+    while (queue.length) {
+      const event = queue.shift();
+      try { window.goatcounter.count(event); } catch {}
+    }
+  }
+  function send(stage, scenario) {
+    if (isExcluded() || location.hostname !== "kahlilamae.github.io" || !labels[scenario]) return;
+    queue.push({path:"scenario-" + scenario + "-" + stage, title:labels[scenario] + " — " + (stage === "started" ? "Started" : "Completed"), event:true, no_session:true, referrer:""});
+    flush();
+  }
+  window.goatcounter = window.goatcounter || {};
+  window.goatcounter.no_onload = true;
+  document.addEventListener("DOMContentLoaded", () => {
+    if (isExcluded() || location.hostname !== "kahlilamae.github.io") return;
+    const script = document.createElement("script");
+    script.src = "https://gc.zgo.at/count.js";
+    script.dataset.goatcounter = "https://kahlilamae.goatcounter.com/count";
+    script.onload = flush;
+    script.async = true;
+    document.head.append(script);
+  });
+  return {
+    start(scenario) { attempt = {scenario, completed:false}; send("started", scenario); },
+    complete(scenario, valid) {
+      if (!valid || !attempt || attempt.scenario !== scenario || attempt.completed) return;
+      attempt.completed = true;
+      send("completed", scenario);
+    }
+  };
+})();
+
+</script>
 
   <meta charset="UTF-8">
 
@@ -6979,6 +7041,7 @@ function conversationNotBuilt(name) {
 }
 
 function openScenario() {
+  scenarioAnalytics.start(activeScenario);
   const config = scenarioConfigs[activeScenario];
   document.body.classList.remove("report-visible", "report-expanded");
   currentRound = 1;
@@ -8107,6 +8170,13 @@ function generateReport() {
   document.getElementById("viewFullReportButton")?.setAttribute("aria-expanded", "false");
   document.body.classList.add("report-visible");
   document.getElementById("reportCard").classList.remove("hidden");
+  scenarioAnalytics.complete(activeScenario,
+    currentRound === maxRounds &&
+    Array.from({length:maxRounds}, (_, i) => i).every(i =>
+      Boolean(roundResponses[i]?.trim()) &&
+      scenarioConfigs[activeScenario].skills.every(([key]) => Number.isInteger(scores[key]?.[i]))
+    )
+  );
 
   const postScenarioContent = document.getElementById("postScenarioContent");
   if (postScenarioContent) postScenarioContent.classList.add("hidden");
