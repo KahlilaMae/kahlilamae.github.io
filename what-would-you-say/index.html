@@ -5559,6 +5559,12 @@
 .conversation-selector .design-notes-tile:hover,
 .conversation-selector .design-notes-tile:focus-visible{border-bottom:1px solid rgba(122,46,92,.10);}
 
+    .report-next-action-heading { display:flex; align-items:baseline; justify-content:space-between; gap:16px; }
+    .report-next-action-edit { background:none; border:0; padding:10px; color:var(--accent); font:inherit; text-decoration:underline; text-underline-offset:4px; cursor:pointer; }
+    #reportNextActionDraft { display:block; width:100%; min-height:108px; margin-bottom:14px; padding:18px; border:1px solid var(--line); border-radius:16px; background:#fff; color:var(--ink); font:inherit; resize:vertical; }
+    #reportNextActionDraft:focus-visible, .report-next-action-edit:focus-visible { outline:2px solid var(--accent); outline-offset:3px; }
+    #reportNextActionStatus { color:var(--muted); font-size:.88rem; }
+    #reportNextActionStatus:empty { display:none; }
 </style>
 
 </head>
@@ -6121,9 +6127,17 @@
       </section>
 
       <section class="report-next-change" aria-labelledby="reportNextChangeTitle">
-        <h3 id="reportNextChangeTitle" class="report-section-title">Your next action</h3>
+        <div class="report-next-action-heading">
+          <h3 id="reportNextChangeTitle" class="report-section-title">Your next action</h3>
+          <button type="button" id="editReportNextAction" class="report-next-action-edit" onclick="editReportNextAction()" aria-controls="reportNextActionEditor" aria-expanded="false">Edit</button>
+        </div>
         <p class="report-next-change-label">What will you do differently next time?</p>
         <div id="reportNextSmallChange" class="report-next-change-value"></div>
+        <div id="reportNextActionEditor" class="hidden">
+          <textarea id="reportNextActionDraft" aria-label="What will you do differently next time?" rows="3"></textarea>
+          <button type="button" class="pill-button button-berry" onclick="saveReportNextAction()">Save changes</button>
+        </div>
+        <p id="reportNextActionStatus" role="status" aria-live="polite"></p>
 
         <div class="next-change-guidance-grid" aria-label="Ways to use your small change">
           <div class="next-change-guidance-card">
@@ -7920,7 +7934,43 @@ function getLevel(totalPoints) {
   return "Developing";
 }
 
+function editReportNextAction() {
+  document.getElementById("reportNextActionDraft").value = document.getElementById("reflectionText").innerText.trim();
+  document.getElementById("reportNextSmallChange").classList.add("hidden");
+  document.getElementById("reportNextActionEditor").classList.remove("hidden");
+  const edit = document.getElementById("editReportNextAction");
+  edit.setAttribute("aria-expanded", "true");
+  edit.classList.add("hidden");
+  setText("reportNextActionStatus", "");
+  document.getElementById("reportNextActionDraft").focus();
+}
+
+function saveReportNextAction() {
+  const draft = document.getElementById("reportNextActionDraft");
+  const value = draft.value.trim();
+  if (!value) {
+    setText("reportNextActionStatus", "Add your next action before saving.");
+    draft.focus();
+    return;
+  }
+  document.getElementById("reflectionText").innerText = value;
+  document.getElementById("reportNextSmallChange").textContent = value;
+  closeReportNextActionEditor();
+  setText("reportNextActionStatus", "Changes saved.");
+  document.getElementById("editReportNextAction").focus();
+}
+
+function closeReportNextActionEditor() {
+  document.getElementById("reportNextActionEditor").classList.add("hidden");
+  document.getElementById("reportNextSmallChange").classList.remove("hidden");
+  const edit = document.getElementById("editReportNextAction");
+  edit.classList.remove("hidden");
+  edit.setAttribute("aria-expanded", "false");
+  setText("reportNextActionStatus", "");
+}
+
 function generateReport() {
+  closeReportNextActionEditor();
   const finalScores = getFinalScores();
   const totalPoints = Object.values(finalScores)
     .reduce((sum,score) => sum + (score * 4), 0);
