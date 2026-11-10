@@ -582,7 +582,7 @@ section[aria-labelledby="next-heading"] .llm-architecture ~ .llm-compare { margi
 <div class="editorial-decision"><strong>Design decision</strong><p>Feedback responds to assessed skills. Some scenarios also change the follow-up.</p></div>
 <p class="editorial-context">The prototype uses defined indicators to assess typed and transcribed responses.</p>
 <div class="editorial-process"><h3 class="minor-label eyebrow-heading">Response process</h3><div class="flow"><span class="flow-step">Typed response or speech transcript</span><span aria-hidden="true" class="flow-arrow">→</span><span class="flow-step">Language and structure indicators</span><span aria-hidden="true" class="flow-arrow">→</span><span class="flow-step">Five skill ratings</span><span aria-hidden="true" class="flow-arrow">→</span><span class="flow-step">What worked / Try next</span></div></div>
-<div class="editorial-feedback"><h3>About the feedback</h3><p>This prototype uses rule-based logic and predefined feedback, rather than LLM-generated responses. Language patterns inform the feedback; they cannot fully capture intent or tone.</p></div>
+<div class="editorial-feedback"><h3>About the feedback</h3><p>The original prototype used rule-based scoring and predefined feedback. LLM integration is now in development to provide feedback informed more directly by each employee’s response.</p></div>
 <div class="section-detail"><h3>Scenario paths</h3><div aria-label="Scenario Paths" class="table-wrap" role="region" tabindex="0"><table><thead><tr><th scope="col">Scenario</th><th scope="col">Next Step</th></tr></thead><tbody><tr><td>Upset Customer</td><td>Same follow-ups for everyone; feedback changes with assessed skills.</td></tr><tr><td>Software Delay</td><td>Initial launch, delay, or unclear recommendation changes the next authored information.</td></tr><tr><td>Performance Conversation</td><td>Accountability, support, or balanced approaches lead to different authored follow-ups.</td></tr></tbody></table></div></div>
 <div class="section-detail"><h3>Skills by scenario</h3><div aria-label="Skills by Scenario" class="table-wrap" role="region" tabindex="0"><table><thead><tr><th scope="col">Scenario</th><th scope="col">Skills assessed</th></tr></thead><tbody><tr><td>Upset Customer</td><td>Empathy, Listening, Ownership, Problem Solving, Communication</td></tr><tr><td>Software Delay</td><td>Judgment, Risk Assessment, Perspective Taking, Problem Solving, Communication</td></tr><tr><td>Performance Conversation</td><td>Diagnosis, Accountability, Curiosity, Judgment, Communication</td></tr></tbody></table></div><p class="tiny-note"></p></div>
 
@@ -652,7 +652,7 @@ section[aria-labelledby="next-heading"] .llm-architecture ~ .llm-compare { margi
 <section aria-labelledby="next-heading" class="chapter">
 <p class="chapter-label">04 / Future Directions</p><h2 id="next-heading">What’s next</h2><div class="story"><p>Could more personalized feedback help someone respond differently when a real conversation becomes difficult?</p></div><div class="note"><strong>Design decision</strong><p>Explore how an LLM could make feedback more individualized without replacing human judgment.</p></div>
 <div class="section-detail"><h3>LLM integration</h3>
-<p class="section-context"><strong>Current prototype status · November 9, 2026.</strong> The public prototype is connected to OpenAI through a Cloudflare backend. Live AI-generated feedback has been received in the private preview. Public testing is the next stage; feedback quality, complete reports, and all scenarios still require verification. Scores are experimental and are not validated measures of proficiency.</p>
+<p class="section-context"><strong>Current prototype status · November 9, 2026.</strong> The public prototype is connected to OpenAI through a Cloudflare backend, and live AI-generated feedback has been received in the private preview. Public testing is the next stage. Feedback quality, scoring consistency, and complete reports across all three scenarios still need verification. Scores are experimental and are not validated measures of proficiency.</p>
 <p class="section-context">Further research and development with a machine learning engineer will focus on scoring reliability, feedback quality, and validation before broader use. PDF export is available after all three rounds return valid AI responses. Reports include the recorded AI feedback and experimental score labels; report quality still requires review.</p>
 <ul class="section-context llm-process-summary">
 <li><strong>The prototype is the interface.</strong> It presents the scenario and collects the employee’s response.</li>
@@ -660,14 +660,14 @@ section[aria-labelledby="next-heading"] .llm-architecture ~ .llm-compare { margi
 <li><strong>The LLM evaluates the response.</strong> It receives the scenario, scoring instructions, and employee’s response, then returns scores and feedback.</li>
 <li><strong>The prototype displays the results.</strong> Those results feed into the practice experience and report.</li>
 </ul>
-<div class="llm-architecture" role="img" aria-label="Proposed integration: The What Would You Say GitHub website sends practice responses to a Cloudflare Worker, which securely communicates with the OpenAI API to generate personalized coaching.">
+<div class="llm-architecture" role="img" aria-label="Current integration: The What Would You Say GitHub website sends practice responses to a Cloudflare Worker, which securely communicates with the OpenAI API to generate personalized coaching.">
   <div class="architecture-node"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="12" rx="1.5"/><path d="M2.5 19h19l-1.6-3H4.1z"/></svg><strong>GitHub website</strong><span>What Would You Say?</span></div>
   <div class="architecture-arrow" aria-hidden="true">↕</div>
   <div class="architecture-node architecture-worker"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18H18a4 4 0 0 0 .1-8 6.5 6.5 0 0 0-12.6 2A3 3 0 0 0 7 18Z"/></svg><strong>Cloudflare Worker</strong><span>Protects the API key, validates requests, and manages AI calls</span></div>
   <div class="architecture-arrow" aria-hidden="true">↕</div>
   <div class="architecture-node"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4c-2-2-6-1-6 2-3 0-4 4-2 6-2 3 0 6 3 6 1 3 5 3 5 0V4Zm0 0c2-2 6-1 6 2 3 0 4 4 2 6 2 3 0 6-3 6-1 3-5 3-5 0V4ZM8 9h4m-4 5h4m0-5h4m-4 5h4"/></svg><strong>OpenAI API</strong><span>Analyzes responses and generates personalized coaching</span></div>
 </div>
-<p class="privacy-note"><span>Integrating an LLM into the learning experience would require additional technical development, testing, and safeguards, with support from machine learning engineers as needed.</span></p>
+
 <div class="llm-compare" role="group" aria-label="What stays in place and what an LLM would add">
 <div class="llm-compare-column"><h4>What stays in place</h4><ul>
 <li><strong>Learning design</strong><span>The scenarios and practice structure.</span></li>
@@ -680,7 +680,7 @@ section[aria-labelledby="next-heading"] .llm-architecture ~ .llm-compare { margi
 <li><strong>More responsive follow-up questions</strong><span>Additional practice shaped by what the user says.</span></li>
 </ul></div>
 </div>
-<p class="visual-closing">The LLM would support the experience, not replace the learning design or human judgment. A secure backend would pass the response and scenario context to the model before the app checks what is displayed.</p></div>
+<p class="visual-closing">The LLM supports the experience without replacing the learning design or human judgment.</p></div>
 <div class="section-detail"><h3>LLM-supported adaptive learning</h3>
 
 <div aria-label="Proposed learning cycle: responsive practice, individualized feedback, another attempt, and reflection" class="flow adaptive-practice-flow">
