@@ -7653,11 +7653,6 @@ function evaluateResponse() {
   const weakest = findWeakestSkill(roundScores);
   document.getElementById("evaluateButton").disabled = true;
 
-  if (currentRound >= maxRounds) {
-    showReflectionStep();
-    return;
-  }
-
   displayFeedback(roundScores, weakest);
   renderScoreBars("roundScoreBars", roundScores);
 
@@ -9007,7 +9002,6 @@ renderRubric();
       if(activeScenario==="software" && currentRound===1) softwareRoundOneDecision=detectSoftwareDecision(normalized);
       if(activeScenario==="performance" && currentRound===1) performanceRoundOneApproach=detectPerformanceApproach(normalized);
       updateStatus(live ? "AI feedback received. Experimental scores are not validated assessments." : "Simulation successful. All scores are placeholders.");
-      if(currentRound>=maxRounds){ showReflectionStep(); return; }
       const feedback=document.getElementById("feedback");
       feedback.replaceChildren();
       for(const [title, value] of [
