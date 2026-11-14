@@ -234,10 +234,12 @@ main:has(> .name-entry-screen:not([hidden])){width:min(100%,968px)}
 .billing-reminder{border-bottom:1px solid rgba(122,46,92,.16);padding-bottom:14px;margin-bottom:16px}
 .billing-reminder strong{color:#7a2e5c}
 .billing-reminder p{margin:5px 0 0}
-.folders{gap:5px;padding-left:0}
-.folders button{min-width:0;min-height:44px;padding:9px 15px;border:1px solid #d8c3d1;border-bottom:0;border-radius:11px 11px 0 0;background:#f7f4f7;color:#5b4b58;font-size:1.2rem}
+.folders{gap:7px;padding-left:0}
+.folders button{min-width:0;min-height:54px;padding:10px clamp(12px,2.6vw,19px);border:1px solid #dac8d5;border-bottom:0;border-radius:13px 13px 0 0;background:#f7f4f7;color:#766775;font:500 clamp(19px,3vw,24px)/1.2 'Playfair Display',Georgia,serif}
 .folders button::before{content:none}
-.folders button[aria-pressed=true]{background:#fffafd;color:#3a2438}
+.folders button:disabled{opacity:1}
+.folders button[aria-pressed=true]{background:#fffafd;color:#3a2438;font-weight:600;z-index:auto}
+.folders + .panel{margin-top:0}
 .impact-detail{margin:24px 0}
 .impact-detail h3:not(:first-child){margin-top:22px}
 .growth-roadmap{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;list-style:none;padding:0;margin:18px 0 0}
