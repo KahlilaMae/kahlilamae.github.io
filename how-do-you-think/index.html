@@ -92,9 +92,54 @@ button:not(.quiet):not(.action){border-radius:999px}
 .name-field input{flex:1;min-width:0;font:inherit;border:0;border-radius:12px;background:transparent;color:#3a2438;padding:8px 12px}
 .name-field button{flex:none;width:48px;height:48px;font-size:23px;padding:0}
 .name-field input:focus-visible,.name-field button:focus-visible{outline:3px solid #a65b81;outline-offset:2px}
+
+.site-nav{background:#FBF7FA;border-bottom:1px solid rgba(122,46,92,.18)}
+.site-nav-inner{width:min(calc(100% - 48px),920px);margin:0 auto;min-height:88px;display:flex;align-items:center;justify-content:flex-end}
+.site-nav-links{display:flex;align-items:center;gap:clamp(16px,5vw,38px)}
+.site-nav .site-nav-link{display:inline-flex;align-items:center;min-height:40px;padding-bottom:3px;border-bottom:2px solid transparent;font:500 .95rem "DM Sans",Arial,sans-serif;color:#5B4B58;text-decoration:none}
+.site-nav .site-nav-link:hover,.site-nav .site-nav-link:focus-visible,.site-nav .site-nav-link.is-current,.site-nav .site-nav-link[aria-current]{color:#7A2E5C;border-bottom-color:currentColor}
+@media print{.site-nav{display:none}}
 </style>
+<nav class="site-nav" aria-label="Portfolio">
+
+  <div class="site-nav-inner">
+
+
+    <div class="site-nav-links">
+
+
+      <a
+        class="site-nav-link"
+        href="../"
+      >
+        Home
+      </a>
+
+
+      <a
+        class="site-nav-link"
+        href="../impact.html"
+      >
+        Work
+      </a>
+
+
+      <a
+        class="site-nav-link active"
+        href="/projects/"
+        aria-current="page"
+      >
+        Projects
+      </a>
+
+
+    </div>
+
+
+  </div>
+
+</nav>
 <main>
-<header><nav aria-label="Portfolio"><a href="https://kahlilamae.github.io/">Home</a><a href="https://kahlilamae.github.io/work.html">Work</a><span aria-current="page">Projects</span></nav></header>
 <section class="welcome" id="welcome">
 <svg width="56" height="56" viewBox="0 0 56 56" aria-hidden="true" fill="none" stroke="currentColor"><circle cx="28" cy="28" r="27" fill="#ffffff20" stroke="#ffffff40"/><circle cx="28" cy="23" r="5" stroke-width="1.6"/><path d="M20 38v-4a8 8 0 0 1 16 0v4" stroke-width="1.6" stroke-linecap="round"/></svg>
 <p class="eyebrow">Billing policy rollout</p>
@@ -108,7 +153,6 @@ button:not(.quiet):not(.action){border-radius:999px}
 </form>
 </section>
 <section id="project" hidden>
-<a href="../projects/">Back to Projects</a>
 <h1>How Do You Think?</h1>
 <aside class="scenario project-card"><h2 tabindex="-1" id="scenarioTitle" class="card-title">Billing policy rollout</h2><div class="scenario-body"><p class="card-description" data-listen="Billing scenario">Credits above $500 require manager approval. A $650 credit is due, the manager is out, and the customer’s payment goes through tonight.</p><button id="start">Give your perspective</button></div></aside>
 <div class="folder" id="folder" hidden>
