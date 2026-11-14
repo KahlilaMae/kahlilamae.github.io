@@ -47,7 +47,11 @@ button:not(.quiet):not(.action){border-radius:999px}
 .project-links{display:grid;margin-top:64px}
 .project-links a{display:block;padding:12px 0;border-bottom:1px solid rgba(122,46,92,.14);color:#3a2438;font:400 1.05rem/1.5 "Playfair Display",Georgia,serif;text-decoration:none}
 .project-links a:hover,.project-links a:focus-visible{color:#7a2e5c;text-decoration:underline;text-underline-offset:4px}
-#privacy-statement{margin-top:24px;padding:24px;border:1px solid #d9b7c8;border-radius:16px}
+#privacy-statement{max-width:760px;margin:0 auto;padding:clamp(24px,6vw,56px);background:#FBF7FA;border:1px solid #d9b7c8;border-radius:22px}
+    #privacy-statement .back-action { display:flex; justify-content:flex-end; margin-top:48px; }
+    #close-privacy { display:inline-flex; align-items:center; justify-content:center; gap:12px; padding:11px 19px; min-height:44px; text-decoration:none; font-size:15px; font-weight:500; color:#fff; background:#7A2E5C; border-radius:999px; transition:background .2s ease,transform .2s ease; }
+    #close-privacy:hover,#close-privacy:focus-visible { background:#63244A; transform:translateY(-1px); }
+    #close-privacy:focus-visible { outline:3px solid rgba(122,46,92,.35); outline-offset:3px; }
 
 .copyright {
 
@@ -301,12 +305,12 @@ main:has(> .name-entry-screen:not([hidden])){width:min(100%,968px)}
 <footer class="project-links" aria-label="Project information">
   <a href="#privacy-statement" id="privacy-link">Privacy Policy</a>
 </footer>
-<section id="privacy-statement" tabindex="-1" hidden>
-  <h2>Privacy Policy</h2>
+</section>
+<section id="privacy-statement" tabindex="-1" aria-labelledby="privacy-title" hidden>
+  <h1 id="privacy-title">Privacy Policy</h1>
   <p>This experience keeps typed and transcribed responses in the current page. It does not submit them to a project server.</p>
   <p>If you choose Speak, your browser may send audio to its speech recognition provider. You can use the text field instead.</p>
-  <button class="quiet" type="button" id="close-privacy">Back to the scenario</button>
-</section>
+  <div class="back-action"><a id="close-privacy" href="./">Back to scenario <span aria-hidden="true">→</span></a></div>
 </section>
 <section class="result" id="result" hidden tabindex="-1">
 <h2 class="report-main-title">How We Think</h2>
@@ -392,7 +396,15 @@ function showImpactReport(isReport) {
   if (isReport) window.scrollTo(0, 0);
 }
 window.addEventListener('popstate', event => {
-  if (get('reflection').textContent) showImpactReport(Boolean(event.state?.impactReport));
+  if (event.state?.privacy) {
+    showPrivacy();
+  } else if (!get('privacy-statement').hidden) {
+    get('privacy-statement').hidden=true;
+    get('project').hidden=false;
+    get('privacy-link').focus();
+  } else if (get('reflection').textContent) {
+    showImpactReport(Boolean(event.state?.impactReport));
+  }
 });
 
 const speakerIcon="<svg viewBox=\"0 0 24 24\" aria-hidden=\"true\">\n                          <path d=\"M11 5 6 9H3v6h3l5 4V5Z\" />\n                          <path d=\"M15.5 8.5a5 5 0 0 1 0 7\" />\n                          <path d=\"M18.5 5.5a9 9 0 0 1 0 13\" />\n                        </svg>";
@@ -472,15 +484,22 @@ for(const id of ['initial','reconsider']){
   };
 }
 
+function showPrivacy() {
+  window.speechSynthesis?.cancel();
+  get('project').hidden=true;
+  get('privacy-statement').hidden=false;
+  get('privacy-statement').focus({ preventScroll: true });
+  window.scrollTo(0, 0);
+}
 get('privacy-link').addEventListener('click',event=>{
   event.preventDefault();
-  get('privacy-statement').hidden=false;
-  get('privacy-statement').focus();
+  history.pushState({ privacy: true }, '', '#privacy-statement');
+  showPrivacy();
 });
-get('close-privacy').onclick=()=>{
-  get('privacy-statement').hidden=true;
-  get('privacy-link').focus();
-};
+get('close-privacy').addEventListener('click',event=>{
+  event.preventDefault();
+  history.back();
+});
 
 get('edit-report').onclick=()=>history.back();
 function buildImpactPdf(Pdf, nextStep, followUp, impact){
