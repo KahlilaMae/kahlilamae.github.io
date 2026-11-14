@@ -42,7 +42,7 @@ button:not(.quiet):not(.action){border-radius:999px}
 .scenario-body .listen-row{flex-direction:column;gap:10px;margin:0 0 12px}
 .scenario-body .listen-row p{order:-1}
 .scenario-body .voice-control{background:transparent!important;border-color:transparent!important;padding-left:0!important}
-.scenario-body #start{width:100%;min-height:44px;border-radius:10px;background:#7a2e5c;color:#fff;border-color:#7a2e5c}
+.scenario-body #start{width:100%;min-height:48px;border-radius:999px;background:#862F5E;color:#fff;border-color:#862F5E}
 
 .project-links{display:grid;margin-top:64px}
 .project-links a{display:block;padding:12px 0;border-bottom:1px solid rgba(122,46,92,.14);color:#3a2438;font:400 1.05rem/1.5 "Playfair Display",Georgia,serif;text-decoration:none}
@@ -287,7 +287,7 @@ main:has(> .name-entry-screen:not([hidden])){width:min(100%,968px)}
 </section>
 <section id="project" hidden>
 <h1>How We Think</h1>
-<aside class="scenario project-card"><h2 tabindex="-1" id="scenarioTitle" class="card-title">Billing rollout</h2><div class="scenario-body"><p class="card-description" data-listen="Billing scenario">Credits above $500 require manager approval. A $650 credit is due, the manager is out, and the customer’s payment goes through tonight.</p><button id="start">Give your perspective</button></div></aside>
+<aside id="billing-scenario" class="scenario project-card"><h2 tabindex="-1" id="scenarioTitle" class="card-title">Billing rollout</h2><div class="scenario-body"><p class="card-description" data-listen="Billing scenario">Credits above $500 require manager approval. A $650 credit is due, the manager is out, and the customer’s payment goes through tonight.</p><button id="start">Give your perspective <span aria-hidden="true">→</span></button></div></aside>
 <div class="folder" id="folder" hidden>
 <div class="folders" role="group" aria-label="Perspectives"><button id="employee" aria-controls="employeePanel" aria-pressed="true">Employee</button><button id="manager" aria-controls="managerPanel" aria-pressed="false" disabled>Manager</button></div>
 <section class="panel" id="employeePanel" aria-labelledby="employee">
@@ -302,7 +302,7 @@ main:has(> .name-entry-screen:not([hidden])){width:min(100%,968px)}
 
 </section>
 </div>
-<footer class="project-links" aria-label="Project information">
+<footer id="scenario-links" class="project-links" aria-label="Project information">
   <a href="#privacy-statement" id="privacy-link">Privacy Policy</a>
 </footer>
 </section>
@@ -359,9 +359,20 @@ function showPerspective(isManager){
 }
 
 
+function showResponseScreen(visible) {
+  window.speechSynthesis?.cancel();
+  get('billing-scenario').hidden=visible;
+  get('scenario-links').hidden=visible;
+  get('folder').hidden=!visible;
+  const target=visible
+    ? (get('first').hidden ? get('manager') : get('employee'))
+    : get('start');
+  target.focus({ preventScroll: true });
+  window.scrollTo(0, 0);
+}
 get('start').onclick=()=>{
-  get('folder').hidden=false;
-  get('employee').focus();
+  history.pushState({ responseScreen: true }, '', '#perspective');
+  showResponseScreen(true);
 };
 get('employee').onclick=()=>showPerspective(false);
 get('manager').onclick=()=>showPerspective(true);
@@ -402,8 +413,12 @@ window.addEventListener('popstate', event => {
     get('privacy-statement').hidden=true;
     get('project').hidden=false;
     get('privacy-link').focus();
-  } else if (get('reflection').textContent) {
-    showImpactReport(Boolean(event.state?.impactReport));
+  } else if (event.state?.impactReport && get('reflection').textContent) {
+    showImpactReport(true);
+  } else if (!get('result').hidden) {
+    showImpactReport(false);
+  } else if (event.state?.responseScreen || !get('folder').hidden) {
+    showResponseScreen(Boolean(event.state?.responseScreen));
   }
 });
 
