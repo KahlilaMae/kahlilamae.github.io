@@ -475,7 +475,8 @@ function saveResponse(value){
   get('savedWrap').hidden=false;
   get('first').hidden=true;
   get('manager').disabled=false;
-  get('hint').textContent='Open the Manager tab to see the other perspective.';
+  get('hint').hidden=true;
+  showPerspective(true);
   get('manager').focus();
 }
 get('first').onsubmit=event=>{
