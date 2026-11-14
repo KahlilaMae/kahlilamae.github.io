@@ -265,6 +265,17 @@ main:has(> .name-entry-screen:not([hidden])){width:min(100%,968px)}
 .folders button:disabled{opacity:1}
 .folders button[aria-pressed=true]{background:#fffafd;color:#3a2438;font-weight:600}
 .folders + .panel,.folders ~ .panel{margin-top:0;border-color:#dac8d5}
+.impact-dashboard{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.8fr);gap:26px;align-items:start}
+.leadership-decision{background:#f4e8f1;border-radius:12px;padding:18px}
+.impact-divider{border:0;border-top:1px solid #e6d6e1;margin:28px 0}
+#impact-estimate table{width:100%;border-collapse:collapse;border:1px solid #dac5d4;text-align:left;font-variant-numeric:tabular-nums}
+#impact-estimate caption{text-align:left;font-weight:600;padding:0 0 10px}
+#impact-estimate th,#impact-estimate td{padding:9px 7px;border-bottom:1px solid #e9dce5}
+#impact-estimate thead{background:#673451;color:#fff}
+#impact-estimate th:not(:first-child),#impact-estimate td{text-align:right}
+#impact-estimate tbody tr:nth-child(2){background:#faf2f8}
+#impact-estimate tbody tr:last-child{background:#f0e2ed;color:#542744;font-weight:600}
+@media(max-width:760px){.impact-dashboard{grid-template-columns:1fr;gap:0}}
 </style>
 <nav class="site-nav" aria-label="Portfolio">
 
@@ -358,37 +369,7 @@ main:has(> .name-entry-screen:not([hidden])){width:min(100%,968px)}
 <h2 class="report-main-title">How Do You Think?</h2>
 <h3 id="impact-report-title">Business Impact Report</h3>
 <p class="report-scenario">Billing rollout</p>
-<p>A shared summary for the employee and manager to review what they would do next and how it could affect the work.</p>
-<section class="impact-detail" id="sales-scorecard" aria-labelledby="sales-scorecard-title">
-<h3 id="sales-scorecard-title">Executive scorecard</h3>
-<p>Illustrative sales figures for accounts affected by billing delays.</p>
-<dl class="sales-metrics">
-<div><dt>Upcoming renewal revenue</dt><dd><strong>$1.2M</strong><span>120 upcoming renewals × $10,000</span></dd></div>
-<div><dt>Additional revenue to retain</dt><dd><strong>$60K</strong><span>6 additional renewals × $10,000</span></dd></div>
-</dl>
-<p><strong>Decision for leadership.</strong> Approve a one-team pilot to resolve urgent credits before the payment cutoff. Track on-time resolution and test whether the renewal rate for affected accounts rises from an illustrative 85% baseline to 90%. Use the results to decide whether to expand regionally.</p>
-</section>
-<p><strong>Your next step</strong></p><p class="response" id="reflection"></p>
-<p><strong>Sample manager follow-up</strong></p><blockquote data-listen="Manager follow-up">For urgent credits above $500, flag the payment deadline and send the request to the designated backup approver when your manager is out. Document the approval before applying the credit.</blockquote>
-<section class="impact-detail" id="business-environment">
-<h3>Current business environment</h3>
-<p>The $500 approval threshold gives managers oversight of larger credits. In this scenario, the team may miss tonight’s payment cutoff because the guidance leaves backup approval unclear. A late credit can lead to a payment correction and another customer contact.</p>
-<h3>Where to grow</h3>
-<p><strong>Clarify ownership.</strong> Publish who can approve urgent credits when the manager is out. Give staff one place to record the payment deadline and approval decision.</p>
-<p><strong>Connect your next step to a result.</strong> Review your response above. Who would you contact before the cutoff? What would you track to see whether your approach reduces rework while keeping approvals documented?</p>
-</section>
-<h3>Business impact</h3><div class="impact-summary" id="impact-estimate">
-<table style="width:100%;text-align:left;border-collapse:collapse">
-<caption style="text-align:left;margin-bottom:8px">Illustrative quarterly savings</caption>
-<thead><tr><th scope="col">Scale</th><th scope="col">Staff</th><th scope="col">Value of time saved</th></tr></thead>
-<tbody>
-<tr><th scope="row">Individual</th><td>1</td><td>$900</td></tr>
-<tr><th scope="row">Regional</th><td>200</td><td>$180,000</td></tr>
-<tr><th scope="row">Nationwide</th><td>10,000</td><td><strong>$9 million</strong></td></tr>
-</tbody>
-</table>
-<p>Assumes a 50% reduction in quarterly rework valued at $1,800 per staff member.</p>
-</div>
+<p>See the proposed rollout, what it could mean for customer renewals and staff time, and what you and your manager can do next.</p>
 <section class="impact-detail" id="growth-plan" aria-labelledby="growth-plan-title">
 <h3 id="growth-plan-title">Three-year growth plan</h3>
 <p>Use this illustrative plan to decide when the process is ready to expand.</p>
@@ -398,6 +379,41 @@ main:has(> .name-entry-screen:not([hidden])){width:min(100%,968px)}
 <li><span class="growth-year">Year 3</span><h4>Standardize nationwide</h4><p>Operations expands to 10,000 staff if regions sustain the gains. Review time saved alongside approval compliance each quarter and fix any step that still causes delays.</p></li>
 </ol>
 </section>
+<div class="impact-dashboard">
+<section class="impact-detail leadership-decision" id="leadership-decision">
+<h3>Decision for leadership</h3><p>Approve a one-team pilot to resolve urgent credits before the payment cutoff. Track on-time resolution and test whether the renewal rate for affected accounts rises from an illustrative 85% baseline to 90%. Use the results to decide whether to expand regionally.</p>
+</section>
+<section class="impact-detail" id="sales-scorecard" aria-labelledby="sales-scorecard-title">
+<h3 id="sales-scorecard-title">Business impact at a glance</h3>
+<p>Illustrative sales figures for accounts affected by billing delays.</p>
+<dl class="sales-metrics">
+<div><dt>Upcoming renewal revenue</dt><dd><strong>$1.2M</strong><span>120 upcoming renewals × $10,000</span></dd></div>
+<div><dt>Additional revenue to retain</dt><dd><strong>$60K</strong><span>6 additional renewals × $10,000</span></dd></div>
+</dl>
+<div class="impact-summary" id="impact-estimate">
+<table>
+<caption>Illustrative quarterly value of staff time saved</caption>
+<thead><tr><th scope="col">Scale</th><th scope="col">Staff</th><th scope="col">Value of time saved</th></tr></thead>
+<tbody>
+<tr><th scope="row">Individual</th><td>1</td><td>$900</td></tr>
+<tr><th scope="row">Regional</th><td>200</td><td>$180,000</td></tr>
+<tr><th scope="row">Nationwide</th><td>10,000</td><td><strong>$9 million</strong></td></tr>
+</tbody>
+</table>
+<p>Assumes a 50% reduction in quarterly rework valued at $1,800 per staff member.</p>
+</div>
+</section>
+</div>
+<hr class="impact-divider">
+<section class="impact-detail" id="business-environment">
+<h3>What needs to change</h3>
+<p>The $500 approval threshold gives managers oversight of larger credits. In this scenario, the team may miss tonight’s payment cutoff because the guidance leaves backup approval unclear. A late credit can lead to a payment correction and another customer contact.</p>
+<h3>Where to grow</h3>
+<p><strong>Clarify ownership.</strong> Publish who can approve urgent credits when the manager is out. Give staff one place to record the payment deadline and approval decision.</p>
+<p><strong>Connect your next step to a result.</strong> Review your response below. Who would you contact before the cutoff? What would you track to see whether your approach reduces rework while keeping approvals documented?</p>
+</section>
+<p><strong>Sample manager follow-up</strong></p><blockquote data-listen="Manager follow-up">For urgent credits above $500, flag the payment deadline and send the request to the designated backup approver when your manager is out. Document the approval before applying the credit.</blockquote>
+<p><strong>Your next step</strong></p><p class="response" id="reflection"></p>
 <div class="report-actions">
   <button type="button" id="edit-report"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m4 16-1 5 5-1L20 8a2.1 2.1 0 0 0-4-4L4 16Z"/><path d="m14 6 4 4"/></svg> Edit next step</button>
   <button type="button" id="print-report"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12M8 7l4-4 4 4M5 14v4a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-4"/></svg> Download PDF</button>
@@ -602,7 +618,7 @@ function buildImpactPdf(Pdf, nextStep, followUp, impactSections){
   write('How Do You Think?',23,'times');
   write(get('impact-report-title').textContent,17,'times');
   write('Billing rollout',11);
-  for(const [label,body] of [impactSections[0],['Your next step',nextStep],['Manager follow-up',followUp],...impactSections.slice(1)]){
+  for(const [label,body] of [...impactSections,['Manager follow-up',followUp],['Your next step',nextStep]]){
     write(label,14,'times');
     write(body,11);
   }
@@ -624,10 +640,10 @@ get('print-report').onclick=()=>{
   const report=get('result');
   const followUp=report.querySelector('blockquote').textContent.trim();
   const impactSections=[
-    ['Executive scorecard', get('sales-scorecard').innerText.trim()],
-    ['Business environment and growth areas', get('business-environment').innerText.trim()],
-    ['Illustrative business impact', get('impact-estimate').innerText.trim()],
-    ['Three-year growth plan', get('growth-plan').innerText.trim()]
+    ['Three-year growth plan', get('growth-plan').innerText.trim()],
+    ['Decision for leadership', get('leadership-decision').querySelector('p').innerText.trim()],
+    ['Business impact at a glance', get('sales-scorecard').innerText.trim()],
+    ['What needs to change', get('business-environment').innerText.trim()]
   ];
   buildImpactPdf(Pdf,nextStep,followUp,impactSections).save('Business-Impact-Report.pdf');
 };
