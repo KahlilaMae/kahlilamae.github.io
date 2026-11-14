@@ -278,6 +278,14 @@ main:has(> .name-entry-screen:not([hidden])){width:min(100%,968px)}
 @media(max-width:760px){.impact-dashboard{grid-template-columns:1fr;gap:0}}
 #first > button{display:block;margin-inline-start:auto}
 #employeePanel #hint{text-align:right}
+.billing-split{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-bottom:16px}
+.billing-split strong{color:#7a2e5c}
+.billing-split p{margin:6px 0 0}
+.customer-message{background:#fffafd;border-left:3px solid #7a2e5c;border-radius:8px;padding:12px 16px}
+.customer-message strong{display:flex;align-items:center;gap:8px}
+.customer-message svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.7}
+.customer-message blockquote{margin:7px 0 0;padding:0;border:0}
+@media(max-width:580px){.billing-split{grid-template-columns:1fr}}
 </style>
 <nav class="site-nav" aria-label="Portfolio">
 
@@ -338,11 +346,11 @@ main:has(> .name-entry-screen:not([hidden])){width:min(100%,968px)}
 </section>
 <section id="project" hidden>
 <h1>How Do You Think?</h1>
-<aside id="billing-scenario" class="scenario project-card"><h2 tabindex="-1" id="scenarioTitle" class="card-title">Billing rollout</h2><div class="scenario-body"><p class="card-description">Your team is starting to use a new billing rule that leadership has already approved. You’re handling a $650 credit, which requires manager approval under the new rule. Your manager is out, and the customer’s payment goes through tonight. The customer messages you: “Will the $650 credit be applied before my payment goes through tonight? I need to know what amount will come out of my account.”</p><button id="start">Give your perspective <span aria-hidden="true">→</span></button></div></aside>
+<aside id="billing-scenario" class="scenario project-card"><h2 tabindex="-1" id="scenarioTitle" class="card-title">Billing rollout</h2><div class="scenario-body"><div class="billing-split"><div><strong>Billing context</strong><p>Under the new billing rule, credits over $500 need approval. You’ve routed a $650 credit to the backup approvals team. They’ve received it, but haven’t confirmed whether they can review it before tonight’s payment cutoff.</p></div><div class="customer-message"><strong><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3"/><path d="M5 20v-2a7 7 0 0 1 14 0v2"/></svg>Customer message</strong><blockquote>“Will the $650 credit be applied before my payment goes through tonight? I need to know what amount will come out of my account.”</blockquote></div></div><button id="start">Give your perspective <span aria-hidden="true">→</span></button></div></aside>
 <div class="folder" id="folder" hidden>
 <div class="folders" role="group" aria-label="Perspectives"><button id="employee" aria-controls="employeePanel" aria-pressed="true">Employee</button><button id="manager" aria-controls="managerPanel" aria-pressed="false" disabled>Manager</button></div>
 <section class="panel" id="employeePanel" aria-labelledby="employee">
-<div class="billing-reminder"><strong>Billing rollout</strong><p>Your team is starting to use a new billing rule that leadership has already approved. You’re handling a $650 credit, which requires manager approval under the new rule. Your manager is out, and the customer’s payment goes through tonight. The customer messages you: “Will the $650 credit be applied before my payment goes through tonight? I need to know what amount will come out of my account.”</p></div>
+<div class="billing-reminder"><strong>Billing rollout</strong><div class="billing-split"><div><strong>Billing context</strong><p>Under the new billing rule, credits over $500 need approval. You’ve routed a $650 credit to the backup approvals team. They’ve received it, but haven’t confirmed whether they can review it before tonight’s payment cutoff.</p></div><div class="customer-message"><strong><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3"/><path d="M5 20v-2a7 7 0 0 1 14 0v2"/></svg>Customer message</strong><blockquote>“Will the $650 credit be applied before my payment goes through tonight? I need to know what amount will come out of my account.”</blockquote></div></div></div>
 <form id="first"><label for="initial"><span>What would you tell the customer now, and what would you do before tonight’s payment cutoff? Explain what you can confidently promise while the credit is still awaiting approval.</span></label><textarea id="initial" required></textarea><button>Save response <span aria-hidden="true">→</span></button></form>
 <div id="savedWrap" hidden><p class="response" id="saved"></p></div>
 <small id="hint">Save a response to open the Manager tab.</small>
@@ -409,12 +417,12 @@ main:has(> .name-entry-screen:not([hidden])){width:min(100%,968px)}
 <hr class="impact-divider">
 <section class="impact-detail" id="business-environment">
 <h3>What needs to change</h3>
-<p>The $500 approval threshold gives managers oversight of larger credits. In this scenario, the team may miss tonight’s payment cutoff because the guidance leaves backup approval unclear. A late credit can lead to a payment correction and another customer contact.</p>
+<p>The $500 approval threshold gives managers oversight of larger credits. In this scenario, the team may miss tonight’s payment cutoff because the backup team hasn’t confirmed when it can review the request. A late credit can lead to a payment correction and another customer contact.</p>
 <h3>Where to grow</h3>
-<p><strong>Clarify ownership.</strong> Publish who can approve urgent credits when the manager is out. Give staff one place to record the payment deadline and approval decision.</p>
+<p><strong>Clarify ownership.</strong> Make it clear how to flag a request at risk of missing the cutoff. Record the deadline, review status, and approval decision in the same ticket.</p>
 <p><strong>Connect your next step to a result.</strong> Review your response below. Who would you contact before the cutoff? What would you track to see whether your approach reduces rework while keeping approvals documented?</p>
 </section>
-<p><strong>Sample manager follow-up</strong></p><blockquote data-listen="Manager follow-up">For urgent credits above $500, flag the payment deadline and send the request to the designated backup approver when your manager is out. Document the approval before applying the credit.</blockquote>
+<p><strong>Sample manager follow-up</strong></p><blockquote data-listen="Manager follow-up">For urgent credits above $500, flag the payment deadline and follow up in the backup approvals queue to confirm who owns the review and when they expect to decide. Document the approval before applying the credit.</blockquote>
 <p><strong>Your next step</strong></p><p class="response" id="reflection"></p>
 <div class="report-actions">
   <button type="button" id="edit-report"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m4 16-1 5 5-1L20 8a2.1 2.1 0 0 0-4-4L4 16Z"/><path d="m14 6 4 4"/></svg> Edit next step</button>
