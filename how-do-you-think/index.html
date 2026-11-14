@@ -2,24 +2,24 @@
 <html lang="en">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>How We Think</title>
+<title>How Do You Think?</title>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=Playfair+Display:wght@400&display=swap" rel="stylesheet">
 <style>
-*{box-sizing:border-box}body{margin:0;background:#fcf7f7;color:#3a2438;font:17px/1.6 system-ui,sans-serif}main{max-width:850px;margin:auto;padding:32px 24px 64px}header{border-bottom:1px solid #dac7d2;padding-bottom:14px;font:21px Georgia,serif}h1,h2,h3{font-family:Georgia,serif;line-height:1.12;font-weight:500}h1{font-size:clamp(48px,8vw,78px);margin:0 0 18px}h2{font-size:36px;margin:0 0 12px}h3{font-size:26px;margin:0 0 10px}p{max-width:62ch}.intro{margin:55px 0 0;padding:clamp(24px,7vw,60px);border:1px solid #dac7d2;background:#fffafa}.intro p{font-size:20px}.scenario{margin:28px 0;padding:24px;background:#f7ecef}button{font:inherit;cursor:pointer;border:1px solid #673451;background:#673451;color:white;padding:9px 15px;border-radius:4px}button:disabled{opacity:.55;cursor:default}button:focus-visible,textarea:focus-visible{outline:3px solid #9b577e;outline-offset:3px}.quiet{background:transparent;color:#673451;border:0;text-decoration:underline;padding-left:0}.folders{display:flex;gap:5px}.folders button{color:#3a2438;background:#fcf7f7;border:1px solid #cbb0c0;border-radius:12px 15px 0 0;padding:9px 22px}.folders [aria-pressed=true]{background:#f4e4ea;font-weight:650;border-bottom-color:#f4e4ea}.panel{border:1px solid #cbb0c0;background:#f4e4ea;padding:clamp(18px,5vw,32px);margin-top:-1px}textarea{display:block;width:100%;min-height:92px;margin:10px 0 14px;padding:10px;font:inherit;border:1px solid #aa839a;border-radius:4px;color:inherit;background:#fffafa}small{display:block;margin:10px 0;color:#5b4b58}blockquote{margin:12px 0 20px;padding-left:16px;border-left:2px solid #aa839a}.result{margin-top:22px}.response{white-space:pre-wrap;overflow-wrap:anywhere}[hidden]{display:none!important}
-.intro{background:transparent;border-color:#bda6b3}.intro p{max-width:37ch;margin-bottom:26px}.intro small{margin-top:22px}.scenario{margin:28px 0;background:transparent;border:1px solid #bda6b3;padding:clamp(24px,6vw,48px)}.scenario p{max-width:48ch;margin-bottom:24px}.folders{gap:0;padding-left:12px}.folders button{position:relative;isolation:isolate;border:0;border-radius:0;background:none;min-width:126px;padding:10px 24px 11px 16px;font:clamp(20px,4vw,26px) Georgia,serif;text-align:left}.folders button::before{content:"";position:absolute;inset:0 7px 0 0;z-index:-1;border:1px solid #bda6b3;border-radius:9px 12px 0 0;background:#fcf7f7;transform:skewX(12deg);transform-origin:bottom left}.folders [aria-pressed=true]{background:none;z-index:1}.folders [aria-pressed=true]::before{background:#f4e4ea;border-bottom-color:#f4e4ea}.folder{margin-top:24px}.panel{min-height:230px}
+*{box-sizing:border-box}body{margin:0;background:#fcf7f7;color:#3a2438;font:17px/1.6 system-ui,sans-serif}main{max-width:850px;margin:auto;padding:32px 24px 64px}header{border-bottom:1px solid #dac7d2;padding-bottom:14px;font:21px Georgia,serif}h1,h2,h3{font-family:Georgia,serif;line-height:1.12;font-weight:500}h1{font-size:clamp(48px,8vw,78px);margin:0 0 18px}h2{font-size:36px;margin:0 0 12px}h3{font-size:26px;margin:0 0 10px}p{max-width:62ch}.intro{margin:55px 0 0;padding:clamp(24px,7vw,60px);border:1px solid #dac7d2;background:#fffafa}.intro p{font-size:20px}.scenario{margin:28px 0;padding:24px;background:#f7ecef}button{font:inherit;cursor:pointer;border:1px solid #673451;background:#673451;color:white;padding:9px 15px;border-radius:4px}button:disabled{opacity:.55;cursor:default}button:focus-visible,textarea:focus-visible{outline:3px solid #9b577e;outline-offset:3px}.quiet{background:transparent;color:#673451;border:0;text-decoration:underline;padding-left:0}.panel{border:1px solid #cbb0c0;background:#f4e4ea;padding:clamp(18px,5vw,32px);margin-top:-1px}textarea{display:block;width:100%;min-height:92px;margin:10px 0 14px;padding:10px;font:inherit;border:1px solid #aa839a;border-radius:4px;color:inherit;background:#fffafa}small{display:block;margin:10px 0;color:#5b4b58}blockquote{margin:12px 0 20px;padding-left:16px;border-left:2px solid #aa839a}.result{margin-top:22px}.response{white-space:pre-wrap;overflow-wrap:anywhere}[hidden]{display:none!important}
+.intro{background:transparent;border-color:#bda6b3}.intro p{max-width:37ch;margin-bottom:26px}.intro small{margin-top:22px}.scenario{margin:28px 0;background:transparent;border:1px solid #bda6b3;padding:clamp(24px,6vw,48px)}.scenario p{max-width:48ch;margin-bottom:24px}.folder{margin-top:24px}.panel{min-height:230px}
 
 body{background:#f8f5f8}main{max-width:1130px}header nav{display:flex;justify-content:flex-end;gap:28px;font:16px system-ui}nav a{color:inherit;text-decoration:none}nav [aria-current]{color:#7a2e5c;border-bottom:2px solid;padding-bottom:6px}.projects{padding-top:clamp(50px,9vw,116px)}.eyebrow,.action{text-transform:uppercase;letter-spacing:.14em;font-size:13px}.eyebrow{color:#7a2e5c;margin-bottom:24px}.project-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;margin-top:42px}.project-card{position:relative;min-height:330px;padding:28px;display:flex;flex-direction:column;border-radius:24px;color:#fff8fc;background:linear-gradient(145deg,#934b70,#67244f 70%,#511b40);box-shadow:0 16px 30px #45203644}.project-card h2{font-size:clamp(26px,3vw,37px);margin:22px 0 6px}.project-card p{margin:8px 0 24px}.badge,.action b{display:inline-grid;place-items:center;border-radius:50%;width:52px;height:52px;background:#ffffff22;font-size:28px}.action{margin-top:auto;display:flex;gap:12px;align-items:center;color:inherit;background:transparent;border:0;padding:0;text-align:left}.action b{width:36px;height:36px;background:#fff8fc;color:#67244f;font-weight:400;font-size:21px}.action::after{content:"";position:absolute;inset:0;border-radius:24px}.action:focus-visible::after{outline:3px solid #7a2e5c;outline-offset:4px}#project{max-width:850px;margin:auto;padding-top:28px}@media(max-width:820px){.project-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:540px){.project-grid{grid-template-columns:1fr}.project-card{min-height:270px}}
 .project-card{min-height:365px;display:flex;flex-direction:column;min-width:0;background:linear-gradient(150deg,#A65B81 0%,#88345F 52%,#641B47 100%);color:var(--card);border-radius:26px;padding:30px 32px;box-shadow:0 9px 18px rgba(58,36,56,.19),0 24px 40px rgba(58,36,56,.20),0 38px 62px rgba(58,36,56,.12);transition:transform .26s ease,box-shadow .26s ease}
 .card-title{font-family:"Playfair Display",Georgia,serif;font-size:clamp(1.65rem,2.5vw,2.05rem);line-height:1.14;font-weight:400;letter-spacing:normal;margin:0 0 18px}
 .card-description{font-family:'DM Sans',Arial,sans-serif;font-size:.95rem;font-weight:400;line-height:1.625;color:var(--card);margin:0}
 body{background:#FBF7FA;font-family:'DM Sans',Arial,sans-serif}
-h1,h2,h3,.folders button{font-family:'Playfair Display',Georgia,serif}
+h1,h2,h3
 main>header{display:none}
 .scenario,.panel{min-height:0;box-shadow:0 3px 7px rgba(58,36,56,.09),0 15px 35px rgba(58,36,56,.12)}
 .scenario{gap:8px}.scenario .quiet{background:transparent;color:#fff8fc;border:0}
 .scenario button,.scenario .quiet{align-self:flex-start;background:#FBF7FA;color:#63244A;border-color:#FBF7FA}
 .panel{border-color:rgba(122,46,92,.25);border-radius:0 22px 22px 22px;background:#fffafd}
-.folders [aria-pressed=true]::before{background:#fffafd;border-bottom-color:#fffafd}
+
 .result{border-top:1px solid rgba(122,46,92,.18);padding-top:22px}
 button:not(.quiet):not(.action){border-radius:999px}
 
@@ -239,12 +239,12 @@ main:has(> .name-entry-screen:not([hidden])){width:min(100%,968px)}
 .billing-reminder{border-bottom:1px solid rgba(122,46,92,.16);padding-bottom:14px;margin-bottom:16px}
 .billing-reminder strong{color:#7a2e5c}
 .billing-reminder p{margin:5px 0 0}
-.folders{gap:7px;padding-left:0}
-.folders button{min-width:0;min-height:54px;padding:10px clamp(12px,2.6vw,19px);border:1px solid #dac8d5;border-bottom:0;border-radius:13px 13px 0 0;background:#f7f4f7;color:#766775;font:500 clamp(19px,3vw,24px)/1.2 'Playfair Display',Georgia,serif}
-.folders button::before{content:none}
-.folders button:disabled{opacity:1}
-.folders button[aria-pressed=true]{background:#fffafd;color:#3a2438;font-weight:600;z-index:auto}
-.folders + .panel{margin-top:0}
+
+
+
+
+
+
 .impact-detail{margin:24px 0}
 .impact-detail h3:not(:first-child){margin-top:22px}
 .growth-roadmap{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;list-style:none;padding:0;margin:18px 0 0}
@@ -260,6 +260,11 @@ main:has(> .name-entry-screen:not([hidden])){width:min(100%,968px)}
 .sales-metrics strong{display:block;font:2rem 'Playfair Display',Georgia,serif;margin:6px 0}
 .sales-metrics span{display:block}
 @media(max-width:480px){.sales-metrics{grid-template-columns:1fr}}
+.folders{display:flex;align-items:end;gap:7px}
+.folders button{min-height:54px;padding:10px clamp(12px,3vw,19px);border:1px solid #dac8d5;border-bottom:0;border-radius:13px 13px 0 0;background:#f4f1f4;color:#766775;font:500 clamp(19px,3vw,24px)/1.2 'Playfair Display',Georgia,serif}
+.folders button:disabled{opacity:1}
+.folders button[aria-pressed=true]{background:#fffafd;color:#3a2438;font-weight:600}
+.folders + .panel,.folders ~ .panel{margin-top:0;border-color:#dac8d5}
 </style>
 <nav class="site-nav" aria-label="Portfolio">
 
@@ -319,7 +324,7 @@ main:has(> .name-entry-screen:not([hidden])){width:min(100%,968px)}
 </form>
 </section>
 <section id="project" hidden>
-<h1>How We Think</h1>
+<h1>How Do You Think?</h1>
 <aside id="billing-scenario" class="scenario project-card"><h2 tabindex="-1" id="scenarioTitle" class="card-title">Billing rollout</h2><div class="scenario-body"><p class="card-description" data-listen="Billing scenario">Credits above $500 require manager approval. A $650 credit is due, the manager is out, and the customer’s payment goes through tonight.</p><button id="start">Give your perspective <span aria-hidden="true">→</span></button></div></aside>
 <div class="folder" id="folder" hidden>
 <div class="folders" role="group" aria-label="Perspectives"><button id="employee" aria-controls="employeePanel" aria-pressed="true">Employee</button><button id="manager" aria-controls="managerPanel" aria-pressed="false" disabled>Manager</button></div>
@@ -350,7 +355,7 @@ main:has(> .name-entry-screen:not([hidden])){width:min(100%,968px)}
   <div class="back-action"><a id="close-privacy" href="./">Back to scenario <span aria-hidden="true">→</span></a></div>
 </section>
 <section class="result" id="result" hidden tabindex="-1">
-<h2 class="report-main-title">How We Think</h2>
+<h2 class="report-main-title">How Do You Think?</h2>
 <h3 id="impact-report-title">Business Impact Report</h3>
 <p class="report-scenario">Billing rollout</p>
 <p>A shared summary for the employee and manager to review what they would do next and how it could affect the work.</p>
@@ -594,7 +599,7 @@ function buildImpactPdf(Pdf, nextStep, followUp, impactSections){
     }
     y+=4;
   }
-  write('How We Think',23,'times');
+  write('How Do You Think?',23,'times');
   write(get('impact-report-title').textContent,17,'times');
   write('Billing rollout',11);
   for(const [label,body] of [impactSections[0],['Your next step',nextStep],['Manager follow-up',followUp],...impactSections.slice(1)]){
