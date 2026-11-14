@@ -84,10 +84,30 @@ button:not(.quiet):not(.action){border-radius:999px}
 #result .report-main-title{font:clamp(28px,5vw,40px) 'Playfair Display',Georgia,serif;margin-bottom:12px;color:#3a2438}
 #result .report-scenario{font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:#7a2e5c}
 #result .response,#result blockquote{background:white;border:1px solid #e6d7df;border-radius:12px;padding:14px;margin:8px 0 20px}
+
+.welcome{margin:clamp(36px,8vw,88px) 0 0;padding:clamp(22px,5vw,42px);background:linear-gradient(135deg,#88345f,#641b47);color:#fff;border-radius:26px;box-shadow:0 15px 35px #3a24381f}
+.welcome h1{font-size:clamp(38px,6vw,64px);margin:16px 0}
+.welcome .eyebrow{font-size:.8rem;letter-spacing:.16em;text-transform:uppercase}
+.name-field{display:flex;background:#fbf7fa;border-radius:16px;padding:5px;margin-top:12px;gap:6px}
+.name-field input{flex:1;min-width:0;font:inherit;border:0;border-radius:12px;background:transparent;color:#3a2438;padding:8px 12px}
+.name-field button{flex:none;width:48px;height:48px;font-size:23px;padding:0}
+.name-field input:focus-visible,.name-field button:focus-visible{outline:3px solid #a65b81;outline-offset:2px}
 </style>
 <main>
 <header><nav aria-label="Portfolio"><a href="https://kahlilamae.github.io/">Home</a><a href="https://kahlilamae.github.io/work.html">Work</a><span aria-current="page">Projects</span></nav></header>
-<section id="project">
+<section class="welcome" id="welcome">
+<svg width="56" height="56" viewBox="0 0 56 56" aria-hidden="true" fill="none" stroke="currentColor"><circle cx="28" cy="28" r="27" fill="#ffffff20" stroke="#ffffff40"/><circle cx="28" cy="23" r="5" stroke-width="1.6"/><path d="M20 38v-4a8 8 0 0 1 16 0v4" stroke-width="1.6" stroke-linecap="round"/></svg>
+<p class="eyebrow">Billing policy rollout</p>
+<h1>Before we begin…</h1>
+<form id="welcome-form">
+<label for="first-name">What’s your first name?</label>
+<div class="name-field">
+<input id="first-name" autocomplete="given-name" placeholder="Type your first name…" maxlength="80" required>
+<button type="submit" aria-label="Continue to the scenario">→</button>
+</div>
+</form>
+</section>
+<section id="project" hidden>
 <a href="../projects/">Back to Projects</a>
 <h1>How Do You Think?</h1>
 <aside class="scenario project-card"><h2 tabindex="-1" id="scenarioTitle" class="card-title">Billing policy rollout</h2><div class="scenario-body"><p class="card-description" data-listen="Billing scenario">Credits above $500 require manager approval. A $650 credit is due, the manager is out, and the customer’s payment goes through tonight.</p><button id="start">Give your perspective</button></div></aside>
@@ -144,6 +164,15 @@ button:not(.quiet):not(.action){border-radius:999px}
 <script src="https://unpkg.com/jspdf@4.2.1/dist/jspdf.umd.min.js"></script>
 <script>
 const get=id=>document.getElementById(id);
+get('welcome-form').addEventListener('submit',event=>{
+  event.preventDefault();
+  const field=get('first-name');
+  if(!field.value.trim()){field.focus();return;}
+  get('welcome').hidden=true;
+  get('project').hidden=false;
+  field.value='';
+  get('scenarioTitle').focus();
+});
 function showPerspective(isManager){
   window.speechSynthesis?.cancel();
   get('employeePanel').hidden=isManager;
