@@ -299,14 +299,14 @@ main:has(> .name-entry-screen:not([hidden])){width:min(100%,968px)}
 <div class="folders" role="group" aria-label="Perspectives"><button id="employee" aria-controls="employeePanel" aria-pressed="true">Employee</button><button id="manager" aria-controls="managerPanel" aria-pressed="false" disabled>Manager</button></div>
 <section class="panel" id="employeePanel" aria-labelledby="employee">
 <div class="billing-reminder"><strong>Billing rollout</strong><p>Credits above $500 require manager approval. A $650 credit is due, the manager is out, and the customer’s payment goes through tonight.</p></div>
-<form id="first"><label for="initial"><span>What would you do about the credit, and why?</span></label><textarea id="initial" required></textarea><button>Save response</button></form>
+<form id="first"><label for="initial"><span>What would you do about the credit, and why?</span></label><textarea id="initial" required></textarea><button>Save response <span aria-hidden="true">→</span></button></form>
 <div id="savedWrap" hidden><p class="response" id="saved" data-listen="Your first response"></p></div>
 <small id="hint">Save a response to open the Manager tab.</small>
 </section>
 <section class="panel" id="managerPanel" aria-labelledby="manager" hidden>
 <h3>Why approval matters</h3>
 <blockquote>We review larger credits so customers are treated consistently. I expected urgent credits to be escalated, but the rollout guidance didn’t say who could approve one when I’m out.</blockquote>
-<form id="second"><label for="reconsider"><span data-listen="Reflection prompt">After hearing the manager, what would you do next? What still needs to be clarified?</span></label><textarea id="reconsider" required></textarea><button>See the Business Impact Report</button></form>
+<form id="second"><label for="reconsider"><span data-listen="Reflection prompt">After hearing the manager, what would you do next? What still needs to be clarified?</span></label><textarea id="reconsider" required></textarea><button>See the Business Impact Report <span aria-hidden="true">→</span></button></form>
 
 </section>
 </div>
