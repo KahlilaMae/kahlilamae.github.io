@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How Do You Think?</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=Playfair+Display:wght@400&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}body{margin:0;background:#fcf7f7;color:#3a2438;font:17px/1.6 system-ui,sans-serif}main{max-width:850px;margin:auto;padding:32px 24px 64px}header{border-bottom:1px solid #dac7d2;padding-bottom:14px;font:21px Georgia,serif}h1,h2,h3{font-family:Georgia,serif;line-height:1.12;font-weight:500}h1{font-size:clamp(48px,8vw,78px);margin:0 0 18px}h2{font-size:36px;margin:0 0 12px}h3{font-size:26px;margin:0 0 10px}p{max-width:62ch}.intro{margin:55px 0 0;padding:clamp(24px,7vw,60px);border:1px solid #dac7d2;background:#fffafa}.intro p{font-size:20px}.scenario{margin:28px 0;padding:24px;background:#f7ecef}button{font:inherit;cursor:pointer;border:1px solid #673451;background:#673451;color:white;padding:9px 15px;border-radius:4px}button:disabled{opacity:.55;cursor:default}button:focus-visible,textarea:focus-visible{outline:3px solid #9b577e;outline-offset:3px}.quiet{background:transparent;color:#673451;border:0;text-decoration:underline;padding-left:0}.folders{display:flex;gap:5px}.folders button{color:#3a2438;background:#fcf7f7;border:1px solid #cbb0c0;border-radius:12px 15px 0 0;padding:9px 22px}.folders [aria-pressed=true]{background:#f4e4ea;font-weight:650;border-bottom-color:#f4e4ea}.panel{border:1px solid #cbb0c0;background:#f4e4ea;padding:clamp(18px,5vw,32px);margin-top:-1px}textarea{display:block;width:100%;min-height:92px;margin:10px 0 14px;padding:10px;font:inherit;border:1px solid #aa839a;border-radius:4px;color:inherit;background:#fffafa}small{display:block;margin:10px 0;color:#5b4b58}blockquote{margin:12px 0 20px;padding-left:16px;border-left:2px solid #aa839a}.result{margin-top:22px}.response{white-space:pre-wrap;overflow-wrap:anywhere}[hidden]{display:none!important}
+.intro{background:transparent;border-color:#bda6b3}.intro p{max-width:37ch;margin-bottom:26px}.intro small{margin-top:22px}.scenario{margin:28px 0;background:transparent;border:1px solid #bda6b3;padding:clamp(24px,6vw,48px)}.scenario p{max-width:48ch;margin-bottom:24px}.folders{gap:0;padding-left:12px}.folders button{position:relative;isolation:isolate;border:0;border-radius:0;background:none;min-width:126px;padding:10px 24px 11px 16px;font:clamp(20px,4vw,26px) Georgia,serif;text-align:left}.folders button::before{content:"";position:absolute;inset:0 7px 0 0;z-index:-1;border:1px solid #bda6b3;border-radius:9px 12px 0 0;background:#fcf7f7;transform:skewX(12deg);transform-origin:bottom left}.folders [aria-pressed=true]{background:none;z-index:1}.folders [aria-pressed=true]::before{background:#f4e4ea;border-bottom-color:#f4e4ea}.folder{margin-top:24px}.panel{min-height:230px}
+
+body{background:#f8f5f8}main{max-width:1130px}header nav{display:flex;justify-content:flex-end;gap:28px;font:16px system-ui}nav a{color:inherit;text-decoration:none}nav [aria-current]{color:#7a2e5c;border-bottom:2px solid;padding-bottom:6px}.projects{padding-top:clamp(50px,9vw,116px)}.eyebrow,.action{text-transform:uppercase;letter-spacing:.14em;font-size:13px}.eyebrow{color:#7a2e5c;margin-bottom:24px}.project-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;margin-top:42px}.project-card{position:relative;min-height:330px;padding:28px;display:flex;flex-direction:column;border-radius:24px;color:#fff8fc;background:linear-gradient(145deg,#934b70,#67244f 70%,#511b40);box-shadow:0 16px 30px #45203644}.project-card h2{font-size:clamp(26px,3vw,37px);margin:22px 0 6px}.project-card p{margin:8px 0 24px}.badge,.action b{display:inline-grid;place-items:center;border-radius:50%;width:52px;height:52px;background:#ffffff22;font-size:28px}.action{margin-top:auto;display:flex;gap:12px;align-items:center;color:inherit;background:transparent;border:0;padding:0;text-align:left}.action b{width:36px;height:36px;background:#fff8fc;color:#67244f;font-weight:400;font-size:21px}.action::after{content:"";position:absolute;inset:0;border-radius:24px}.action:focus-visible::after{outline:3px solid #7a2e5c;outline-offset:4px}#project{max-width:850px;margin:auto;padding-top:28px}@media(max-width:820px){.project-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:540px){.project-grid{grid-template-columns:1fr}.project-card{min-height:270px}}
+.project-card{min-height:365px;display:flex;flex-direction:column;min-width:0;background:linear-gradient(150deg,#A65B81 0%,#88345F 52%,#641B47 100%);color:var(--card);border-radius:26px;padding:30px 32px;box-shadow:0 9px 18px rgba(58,36,56,.19),0 24px 40px rgba(58,36,56,.20),0 38px 62px rgba(58,36,56,.12);transition:transform .26s ease,box-shadow .26s ease}
+.card-title{font-family:"Playfair Display",Georgia,serif;font-size:clamp(1.65rem,2.5vw,2.05rem);line-height:1.14;font-weight:400;letter-spacing:normal;margin:0 0 18px}
+.card-description{font-family:'DM Sans',Arial,sans-serif;font-size:.95rem;font-weight:400;line-height:1.625;color:var(--card);margin:0}
+body{background:#FBF7FA;font-family:'DM Sans',Arial,sans-serif}
+h1,h2,h3,.folders button{font-family:'Playfair Display',Georgia,serif}
+main>header{display:none}
+.scenario,.panel{min-height:0;box-shadow:0 3px 7px rgba(58,36,56,.09),0 15px 35px rgba(58,36,56,.12)}
+.scenario{gap:8px}.scenario .quiet{background:transparent;color:#fff8fc;border:0}
+.scenario button,.scenario .quiet{align-self:flex-start;background:#FBF7FA;color:#63244A;border-color:#FBF7FA}
+.panel{border-color:rgba(122,46,92,.25);border-radius:0 22px 22px 22px;background:#fffafd}
+.folders [aria-pressed=true]::before{background:#fffafd;border-bottom-color:#fffafd}
+.result{border-top:1px solid rgba(122,46,92,.18);padding-top:22px}
+button:not(.quiet):not(.action){border-radius:999px}
+
+.voice-control{display:inline-flex;gap:8px;align-items:center;margin:8px 0 12px;border:1px solid #cbb0c0!important;background:#FBF7FA!important;color:#7A2E5C!important;text-decoration:none;padding:8px 12px!important;border-radius:999px}
+.voice-control svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+
+.listen-row{display:flex;align-items:flex-start;gap:12px;margin:12px 0}
+.listen-row>*{min-width:0}
+.listen-row .voice-control{flex:none;margin:0}
+.listen-row p,.listen-row blockquote{margin:0}
+.speak-row{position:relative;margin:10px 0 14px}
+.speak-row textarea{display:block;width:100%;min-height:120px;margin:0;padding-bottom:58px}
+.speak-row .voice-control{position:absolute;right:10px;bottom:8px;min-height:44px;margin:0}
+@media(max-width:420px){.listen-row{flex-wrap:wrap}}
+
+.scenario.project-card{padding:0;gap:0;overflow:hidden;border:1px solid #d9b7c8;background:linear-gradient(120deg,#641b47,#a34670);border-radius:20px}
+.scenario .card-title{color:#fff;margin:0;padding:24px clamp(20px,5vw,32px)}
+.scenario-body{padding:20px clamp(20px,5vw,32px) 24px;background:#fff9f3;border-radius:12px 12px 0 0;color:#3a2438}
+.scenario-body .card-description{color:inherit;max-width:60ch}
+.scenario-body .listen-row{flex-direction:column;gap:10px;margin:0 0 12px}
+.scenario-body .listen-row p{order:-1}
+.scenario-body .voice-control{background:transparent!important;border-color:transparent!important;padding-left:0!important}
+.scenario-body #start{width:100%;min-height:44px;border-radius:10px;background:#7a2e5c;color:#fff;border-color:#7a2e5c}
+
+.project-links{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 28px;margin-top:36px;padding-top:16px;border-top:1px solid rgba(122,46,92,.18)}
+.project-links a{color:#7a2e5c;text-underline-offset:4px;padding:8px 0}
+#privacy-statement{margin-top:24px;padding:24px;border:1px solid #d9b7c8;border-radius:16px}
+
+.copyright {
+
+      margin-top:
+        160px;
+
+      padding-top:
+        24px;
+
+      border-top: 1px solid rgba(122,46,92,.14);
+
+      color:
+        #5B4B58;
+
+      font-size:
+        .8rem;
+
+      text-align:
+        center;
+
+      padding-bottom:
+        8px;
+
+    }
+
+.report-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+@media print{
+  main{max-width:none;margin:0;padding:0}
+  main>*:not(#project),#project>*:not(.folder),.folder>*:not(#managerPanel),#managerPanel>*:not(#result),.report-actions,.voice-control{display:none!important}
+  #managerPanel,#result{border:0;background:white;box-shadow:none;margin:0;padding:0;color:#222}
+  #reflection{white-space:pre-wrap;overflow-wrap:anywhere}
+}
+
+#result{background:#FBF7FA;border:1px solid #ddc5d2;border-radius:22px;padding:clamp(18px,4vw,32px);box-shadow:0 12px 32px #3a243814}
+#result .report-main-title{font:clamp(28px,5vw,40px) 'Playfair Display',Georgia,serif;margin-bottom:12px;color:#3a2438}
+#result .report-scenario{font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:#7a2e5c}
+#result .response,#result blockquote{background:white;border:1px solid #e6d7df;border-radius:12px;padding:14px;margin:8px 0 20px}
+</style>
+<main>
+<header><nav aria-label="Portfolio"><a href="https://kahlilamae.github.io/">Home</a><a href="https://kahlilamae.github.io/work.html">Work</a><span aria-current="page">Projects</span></nav></header>
+<section id="project">
+<a href="../projects/">Back to Projects</a>
+<h1>How Do You Think?</h1>
+<aside class="scenario project-card"><h2 tabindex="-1" id="scenarioTitle" class="card-title">Billing policy rollout</h2><div class="scenario-body"><p class="card-description" data-listen="Billing scenario">Credits above $500 require manager approval. A $650 credit is due, the manager is out, and the customer’s payment goes through tonight.</p><button id="start">Give your perspective</button></div></aside>
+<div class="folder" id="folder" hidden>
+<div class="folders" role="group" aria-label="Perspectives"><button id="employee" aria-controls="employeePanel" aria-pressed="true">Employee</button><button id="manager" aria-controls="managerPanel" aria-pressed="false" disabled>Manager</button></div>
+<section class="panel" id="employeePanel" aria-labelledby="employee">
+<form id="first"><label for="initial"><span>What would you do about the credit, and why?</span></label><textarea id="initial" required></textarea><button>Save response</button></form>
+<div id="savedWrap" hidden><p class="response" id="saved" data-listen="Your first response"></p></div>
+<small id="hint">Save a response to open the Manager tab.</small>
+</section>
+<section class="panel" id="managerPanel" aria-labelledby="manager" hidden>
+<h3>Why approval matters</h3>
+<blockquote>We review larger credits so customers are treated consistently. I expected urgent credits to be escalated, but the rollout guidance didn’t say who could approve one when I’m out.</blockquote>
+<form id="second"><label for="reconsider"><span data-listen="Reflection prompt">After hearing the manager, what would you do next? What still needs to be clarified?</span></label><textarea id="reconsider" required></textarea><button>See the follow-up</button></form>
+<section class="result" id="result" hidden tabindex="-1">
+<h2 class="report-main-title">How Do You Think?</h2>
+<h3>Business Impact Report</h3>
+<p class="report-scenario">Billing policy rollout</p>
+<p>A shared summary for the employee and manager to review what they would do next and how it could affect the work.</p>
+<p><strong>Your next step</strong></p><p class="response" id="reflection"></p>
+<p><strong>Sample manager follow-up</strong></p><blockquote data-listen="Manager follow-up">For urgent credits above $500, flag the payment deadline and send the request to the designated backup approver when your manager is out. Document the approval before applying the credit.</blockquote>
+<h3>Business impact</h3><div class="impact-summary">
+<table style="width:100%;text-align:left;border-collapse:collapse">
+<caption style="text-align:left;margin-bottom:8px">Illustrative quarterly savings</caption>
+<thead><tr><th scope="col">Scale</th><th scope="col">Staff</th><th scope="col">Value of time saved</th></tr></thead>
+<tbody>
+<tr><th scope="row">Individual</th><td>1</td><td>$900</td></tr>
+<tr><th scope="row">Regional</th><td>200</td><td>$180,000</td></tr>
+<tr><th scope="row">Nationwide</th><td>10,000</td><td><strong>$9 million</strong></td></tr>
+</tbody>
+</table>
+<p>Assumes a 50% reduction in quarterly rework valued at $1,800 per staff member.</p>
+</div>
+<div class="report-actions">
+  <button type="button" id="edit-report">Edit next step</button>
+  <button type="button" id="print-report">Download PDF</button>
+</div>
+</section>
+</section>
+</div>
+<footer class="project-links" aria-label="Project information">
+  <a href="design-notes.html">Design Notes</a>
+  <a href="#privacy-statement" id="privacy-link">Privacy Statement</a>
+</footer>
+<section id="privacy-statement" tabindex="-1" hidden>
+  <h2>Privacy Statement</h2>
+  <p>This experience keeps typed and transcribed responses in the current page. It does not submit them to a project server.</p>
+  <p>If you choose Speak, your browser may send audio to its speech recognition provider. You can use the text field instead.</p>
+  <button class="quiet" type="button" id="close-privacy">Back to the scenario</button>
+</section>
+</section>
+<footer class="copyright">© 2026 Kahlila Mae Liverpool. All rights reserved.</footer>
+</main>
+<script src="https://unpkg.com/jspdf@4.2.1/dist/jspdf.umd.min.js"></script>
+<script>
+const get=id=>document.getElementById(id);
+function showPerspective(isManager){
+  window.speechSynthesis?.cancel();
+  get('employeePanel').hidden=isManager;
+  get('managerPanel').hidden=!isManager;
+  get('employee').setAttribute('aria-pressed',String(!isManager));
+  get('manager').setAttribute('aria-pressed',String(isManager));
+}
+
+
+get('start').onclick=()=>{
+  get('folder').hidden=false;
+  get('employee').focus();
+};
+get('employee').onclick=()=>showPerspective(false);
+get('manager').onclick=()=>showPerspective(true);
+function saveResponse(value){
+  get('saved').textContent=value;
+  get('savedWrap').hidden=false;
+  get('first').hidden=true;
+  get('manager').disabled=false;
+  get('hint').textContent='Open the Manager tab to see the other perspective.';
+  get('manager').focus();
+}
+get('first').onsubmit=event=>{
+  event.preventDefault();
+  const input=get('initial');
+  if(input.value.trim()) saveResponse(input.value.trim());
+  else input.focus();
+};
+get('second').onsubmit=event=>{
+  event.preventDefault();
+  const input=get('reconsider');
+  if(!input.value.trim()){input.focus();return;}
+  get('reflection').textContent=input.value.trim();
+  get('result').hidden=false;
+  get('result').focus();
+};
+
+const speakerIcon="<svg viewBox=\"0 0 24 24\" aria-hidden=\"true\">\n                          <path d=\"M11 5 6 9H3v6h3l5 4V5Z\" />\n                          <path d=\"M15.5 8.5a5 5 0 0 1 0 7\" />\n                          <path d=\"M18.5 5.5a9 9 0 0 1 0 13\" />\n                        </svg>";
+const listeningStatus=document.createElement('small');
+listeningStatus.setAttribute('role','status');
+document.querySelector('main').append(listeningStatus);
+document.querySelectorAll('[data-listen]').forEach(source=>{
+  const control=document.createElement('button');
+  control.type='button';
+  control.className='quiet voice-control';
+  control.innerHTML=speakerIcon+'<span>Listen</span>';
+  control.setAttribute('aria-label','Listen to '+source.dataset.listen);
+  const anchor=source.closest('label') || source;
+  const row=document.createElement('div');
+  row.className='listen-row';
+  anchor.before(row);
+  row.append(control,anchor);
+  control.onclick=()=>{
+    if (!('speechSynthesis' in window)) {
+      listeningStatus.textContent='Audio preview is unavailable in this browser. The full text is on screen.';
+      return;
+    }
+    if (window.speechSynthesis.speaking) {
+      window.speechSynthesis.cancel();
+      if (control.querySelector('span').textContent==='Stop listening') {
+        control.innerHTML=speakerIcon+'<span>Listen</span>';
+        return;
+      }
+    }
+    const speech=new SpeechSynthesisUtterance(source.textContent);
+    speech.lang='en-US';
+    control.querySelector('span').textContent='Stop listening';
+    const reset=()=>{control.innerHTML=speakerIcon+'<span>Listen</span>';};
+    speech.onend=reset;
+    speech.onerror=reset;
+    window.speechSynthesis.speak(speech);
+  };
+});
+
+const micIcon="<svg viewBox=\"0 0 24 24\" aria-hidden=\"true\">\n              <path d=\"M12 15a3 3 0 0 0 3-3V6a3 3 0 0 0-6 0v6a3 3 0 0 0 3 3Z\" />\n              <path d=\"M19 11v1a7 7 0 0 1-14 0v-1\" />\n              <path d=\"M12 19v3\" />\n              <path d=\"M8 22h8\" />\n            </svg>";
+const Recognition=window.SpeechRecognition || window.webkitSpeechRecognition;
+for(const id of ['initial','reconsider']){
+  const field=get(id);
+  const button=document.createElement('button');
+  const status=document.createElement('small');
+  status.setAttribute('role','status');
+  button.type='button';
+  button.className='voice-control';
+  button.innerHTML=micIcon+'<span>Speak</span>';
+  button.setAttribute('aria-label',id==='initial'?'Speak your response':'Speak your reflection');
+  const row=document.createElement('div');
+  row.className='speak-row';
+  field.before(row);
+  row.append(field,button);
+  row.after(status);
+  button.onclick=()=>{
+    if(!Recognition){status.textContent='Speech input is unavailable here. You can type your response.';return;}
+    window.speechSynthesis?.cancel();
+    const recognition=new Recognition();
+    recognition.lang='en-US';
+    button.disabled=true;
+    status.textContent='Listening…';
+    recognition.onresult=event=>{
+      const transcript=event.results[0][0].transcript;
+      field.value=[field.value.trim(),transcript].filter(Boolean).join(' ');
+      status.textContent='Response captured. You can edit it before continuing.';
+    };
+    recognition.onerror=()=>{status.textContent='Speech input could not capture your response. Try again or type it.';};
+    recognition.onend=()=>{
+      button.disabled=false;
+      if(status.textContent==='Listening…')status.textContent='You can speak again or type your response.';
+    };
+    try{recognition.start();}catch{
+      button.disabled=false;
+      status.textContent='Microphone access is unavailable. You can type your response.';
+    }
+  };
+}
+
+get('privacy-link').addEventListener('click',event=>{
+  event.preventDefault();
+  get('privacy-statement').hidden=false;
+  get('privacy-statement').focus();
+});
+get('close-privacy').onclick=()=>{
+  get('privacy-statement').hidden=true;
+  get('privacy-link').focus();
+};
+
+get('edit-report').onclick=()=>{
+  get('reconsider').focus();
+};
+function buildImpactPdf(Pdf, nextStep, followUp, impact){
+  const doc=new Pdf({unit:'mm',format:'a4'});
+  let y=24;
+  function write(value,size,font='helvetica'){
+    doc.setFont(font,'normal');
+    doc.setFontSize(size);
+    doc.setTextColor(58,36,56);
+    for(const line of doc.splitTextToSize(value,170)){
+      if(y>269){doc.addPage();y=24;}
+      doc.text(line,20,y);
+      y+=size*.48;
+    }
+    y+=4;
+  }
+  write('How Do You Think?',23,'times');
+  write('Business Impact Report',17,'times');
+  write('Billing policy rollout',11);
+  for(const [label,body] of [['Your next step',nextStep],['Manager follow-up',followUp],['Potential business impact',impact]]){
+    write(label,14,'times');
+    write(body,11);
+  }
+  const pages=doc.getNumberOfPages();
+  for(let page=1;page<=pages;page++){
+    doc.setPage(page);
+    doc.setFontSize(8);
+    doc.text('© 2026 Kahlila Mae Liverpool. All rights reserved.',20,287);
+    doc.text(page+' / '+pages,180,287);
+  }
+  return doc;
+}
+get('print-report').onclick=()=>{
+  const nextStep=get('reconsider').value.trim();
+  if(!nextStep){get('reconsider').focus();return;}
+  const Pdf=window.jspdf?.jsPDF;
+  if(!Pdf){alert('The PDF tool did not load. Refresh and try again.');return;}
+  get('reflection').textContent=nextStep;
+  const report=get('result');
+  const followUp=report.querySelector('blockquote').textContent.trim();
+  const impact=[...report.querySelectorAll('h3')].at(-1).nextElementSibling.innerText.trim();
+  buildImpactPdf(Pdf,nextStep,followUp,impact).save('Business-Impact-Report.pdf');
+};
+</script>
+</html>
