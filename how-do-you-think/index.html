@@ -2,7 +2,7 @@
 <html lang="en">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>How Do You Think?</title>
+<title>How We Think</title>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=Playfair+Display:wght@400&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box}body{margin:0;background:#fcf7f7;color:#3a2438;font:17px/1.6 system-ui,sans-serif}main{max-width:850px;margin:auto;padding:32px 24px 64px}header{border-bottom:1px solid #dac7d2;padding-bottom:14px;font:21px Georgia,serif}h1,h2,h3{font-family:Georgia,serif;line-height:1.12;font-weight:500}h1{font-size:clamp(48px,8vw,78px);margin:0 0 18px}h2{font-size:36px;margin:0 0 12px}h3{font-size:26px;margin:0 0 10px}p{max-width:62ch}.intro{margin:55px 0 0;padding:clamp(24px,7vw,60px);border:1px solid #dac7d2;background:#fffafa}.intro p{font-size:20px}.scenario{margin:28px 0;padding:24px;background:#f7ecef}button{font:inherit;cursor:pointer;border:1px solid #673451;background:#673451;color:white;padding:9px 15px;border-radius:4px}button:disabled{opacity:.55;cursor:default}button:focus-visible,textarea:focus-visible{outline:3px solid #9b577e;outline-offset:3px}.quiet{background:transparent;color:#673451;border:0;text-decoration:underline;padding-left:0}.folders{display:flex;gap:5px}.folders button{color:#3a2438;background:#fcf7f7;border:1px solid #cbb0c0;border-radius:12px 15px 0 0;padding:9px 22px}.folders [aria-pressed=true]{background:#f4e4ea;font-weight:650;border-bottom-color:#f4e4ea}.panel{border:1px solid #cbb0c0;background:#f4e4ea;padding:clamp(18px,5vw,32px);margin-top:-1px}textarea{display:block;width:100%;min-height:92px;margin:10px 0 14px;padding:10px;font:inherit;border:1px solid #aa839a;border-radius:4px;color:inherit;background:#fffafa}small{display:block;margin:10px 0;color:#5b4b58}blockquote{margin:12px 0 20px;padding-left:16px;border-left:2px solid #aa839a}.result{margin-top:22px}.response{white-space:pre-wrap;overflow-wrap:anywhere}[hidden]{display:none!important}
@@ -153,7 +153,7 @@ button:not(.quiet):not(.action){border-radius:999px}
 </form>
 </section>
 <section id="project" hidden>
-<h1>How Do You Think?</h1>
+<h1>How We Think</h1>
 <aside class="scenario project-card"><h2 tabindex="-1" id="scenarioTitle" class="card-title">Billing policy rollout</h2><div class="scenario-body"><p class="card-description" data-listen="Billing scenario">Credits above $500 require manager approval. A $650 credit is due, the manager is out, and the customer’s payment goes through tonight.</p><button id="start">Give your perspective</button></div></aside>
 <div class="folder" id="folder" hidden>
 <div class="folders" role="group" aria-label="Perspectives"><button id="employee" aria-controls="employeePanel" aria-pressed="true">Employee</button><button id="manager" aria-controls="managerPanel" aria-pressed="false" disabled>Manager</button></div>
@@ -167,7 +167,7 @@ button:not(.quiet):not(.action){border-radius:999px}
 <blockquote>We review larger credits so customers are treated consistently. I expected urgent credits to be escalated, but the rollout guidance didn’t say who could approve one when I’m out.</blockquote>
 <form id="second"><label for="reconsider"><span data-listen="Reflection prompt">After hearing the manager, what would you do next? What still needs to be clarified?</span></label><textarea id="reconsider" required></textarea><button>See the follow-up</button></form>
 <section class="result" id="result" hidden tabindex="-1">
-<h2 class="report-main-title">How Do You Think?</h2>
+<h2 class="report-main-title">How We Think</h2>
 <h3>Business Impact Report</h3>
 <p class="report-scenario">Billing policy rollout</p>
 <p>A shared summary for the employee and manager to review what they would do next and how it could affect the work.</p>
@@ -359,7 +359,7 @@ function buildImpactPdf(Pdf, nextStep, followUp, impact){
     }
     y+=4;
   }
-  write('How Do You Think?',23,'times');
+  write('How We Think',23,'times');
   write('Business Impact Report',17,'times');
   write('Billing policy rollout',11);
   for(const [label,body] of [['Your next step',nextStep],['Manager follow-up',followUp],['Potential business impact',impact]]){
