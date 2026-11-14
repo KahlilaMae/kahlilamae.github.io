@@ -76,8 +76,8 @@ button:not(.quiet):not(.action){border-radius:999px}
 .report-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
 @media print{
   main{max-width:none;margin:0;padding:0}
-  main>*:not(#project),#project>*:not(.folder),.folder>*:not(#managerPanel),#managerPanel>*:not(#result),.report-actions,.voice-control{display:none!important}
-  #managerPanel,#result{border:0;background:white;box-shadow:none;margin:0;padding:0;color:#222}
+  main>*:not(#result),.report-actions,.voice-control{display:none!important}
+  #result{border:0;background:white;box-shadow:none;margin:0;padding:0;color:#222}
   #reflection{white-space:pre-wrap;overflow-wrap:anywhere}
 }
 
@@ -295,6 +295,19 @@ main:has(> .name-entry-screen:not([hidden])){width:min(100%,968px)}
 <h3>Why approval matters</h3>
 <blockquote>We review larger credits so customers are treated consistently. I expected urgent credits to be escalated, but the rollout guidance didn’t say who could approve one when I’m out.</blockquote>
 <form id="second"><label for="reconsider"><span data-listen="Reflection prompt">After hearing the manager, what would you do next? What still needs to be clarified?</span></label><textarea id="reconsider" required></textarea><button>See the Business Impact Report</button></form>
+
+</section>
+</div>
+<footer class="project-links" aria-label="Project information">
+  <a href="#privacy-statement" id="privacy-link">Privacy Policy</a>
+</footer>
+<section id="privacy-statement" tabindex="-1" hidden>
+  <h2>Privacy Policy</h2>
+  <p>This experience keeps typed and transcribed responses in the current page. It does not submit them to a project server.</p>
+  <p>If you choose Speak, your browser may send audio to its speech recognition provider. You can use the text field instead.</p>
+  <button class="quiet" type="button" id="close-privacy">Back to the scenario</button>
+</section>
+</section>
 <section class="result" id="result" hidden tabindex="-1">
 <h2 class="report-main-title">How We Think</h2>
 <h3>Business Impact Report</h3>
@@ -318,18 +331,6 @@ main:has(> .name-entry-screen:not([hidden])){width:min(100%,968px)}
   <button type="button" id="edit-report">Edit next step</button>
   <button type="button" id="print-report">Download PDF</button>
 </div>
-</section>
-</section>
-</div>
-<footer class="project-links" aria-label="Project information">
-  <a href="#privacy-statement" id="privacy-link">Privacy Policy</a>
-</footer>
-<section id="privacy-statement" tabindex="-1" hidden>
-  <h2>Privacy Policy</h2>
-  <p>This experience keeps typed and transcribed responses in the current page. It does not submit them to a project server.</p>
-  <p>If you choose Speak, your browser may send audio to its speech recognition provider. You can use the text field instead.</p>
-  <button class="quiet" type="button" id="close-privacy">Back to the scenario</button>
-</section>
 </section>
 <footer class="copyright">© 2026 Kahlila Mae Liverpool. All rights reserved.</footer>
 </main>
@@ -379,9 +380,20 @@ get('second').onsubmit=event=>{
   const input=get('reconsider');
   if(!input.value.trim()){input.focus();return;}
   get('reflection').textContent=input.value.trim();
-  get('result').hidden=false;
-  get('result').focus();
+  history.pushState({ impactReport: true }, '', '#business-impact-report');
+  showImpactReport(true);
 };
+
+function showImpactReport(isReport) {
+  window.speechSynthesis?.cancel();
+  get('project').hidden=isReport;
+  get('result').hidden=!isReport;
+  (isReport ? get('result') : get('reconsider')).focus({ preventScroll: isReport });
+  if (isReport) window.scrollTo(0, 0);
+}
+window.addEventListener('popstate', event => {
+  if (get('reflection').textContent) showImpactReport(Boolean(event.state?.impactReport));
+});
 
 const speakerIcon="<svg viewBox=\"0 0 24 24\" aria-hidden=\"true\">\n                          <path d=\"M11 5 6 9H3v6h3l5 4V5Z\" />\n                          <path d=\"M15.5 8.5a5 5 0 0 1 0 7\" />\n                          <path d=\"M18.5 5.5a9 9 0 0 1 0 13\" />\n                        </svg>";
 const listeningStatus=document.createElement('small');
@@ -470,9 +482,7 @@ get('close-privacy').onclick=()=>{
   get('privacy-link').focus();
 };
 
-get('edit-report').onclick=()=>{
-  get('reconsider').focus();
-};
+get('edit-report').onclick=()=>history.back();
 function buildImpactPdf(Pdf, nextStep, followUp, impact){
   const doc=new Pdf({unit:'mm',format:'a4'});
   let y=24;
