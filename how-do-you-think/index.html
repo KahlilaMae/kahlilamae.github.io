@@ -47,7 +47,12 @@ button:not(.quiet):not(.action){border-radius:999px}
 .project-links{display:grid;margin-top:64px}
 .project-links a{display:block;padding:12px 0;border-bottom:1px solid rgba(122,46,92,.14);color:#3a2438;font:400 1.05rem/1.5 "Playfair Display",Georgia,serif;text-decoration:none}
 .project-links a:hover,.project-links a:focus-visible{color:#7a2e5c;text-decoration:underline;text-underline-offset:4px}
-#privacy-statement{max-width:760px;margin:0 auto;padding:clamp(24px,6vw,56px);background:#FBF7FA;border:1px solid #d9b7c8;border-radius:22px}
+#privacy-statement{width:min(100%,1060px);margin:0 auto;padding:clamp(24px,6vw,56px) clamp(20px,7vw,66px);background:#FBF7FA;border:1px solid rgba(122,46,92,.035);border-radius:28px;box-shadow:0 7px 30px rgba(58,36,56,.035)}
+#privacy-statement h1{font:400 clamp(40px,4vw,48px)/1.15 'Playfair Display',Georgia,serif;letter-spacing:-.035em;margin:0 0 27px}
+#privacy-statement .privacy-copy,#privacy-statement .privacy-list{max-width:680px;font-size:17px;line-height:1.65}
+#privacy-statement .privacy-list{margin:28px 0 0;padding-left:25px}
+#privacy-statement li{padding-left:9px;margin-bottom:22px}
+#privacy-statement li::marker,#privacy-statement li strong{color:#7a2e5c;font-weight:600}
     #privacy-statement .back-action { display:flex; justify-content:flex-end; margin-top:48px; }
     #close-privacy { display:inline-flex; align-items:center; justify-content:center; gap:12px; padding:11px 19px; min-height:44px; text-decoration:none; font-size:15px; font-weight:500; color:#fff; background:#7A2E5C; border-radius:999px; transition:background .2s ease,transform .2s ease; }
     #close-privacy:hover,#close-privacy:focus-visible { background:#63244A; transform:translateY(-1px); }
@@ -337,8 +342,11 @@ main:has(> .name-entry-screen:not([hidden])){width:min(100%,968px)}
 </section>
 <section id="privacy-statement" tabindex="-1" aria-labelledby="privacy-title" hidden>
   <h1 id="privacy-title">Privacy Policy</h1>
-  <p>This experience keeps typed and transcribed responses in the current page. It does not submit them to a project server.</p>
-  <p>If you choose Speak, your browser may send audio to its speech recognition provider. You can use the text field instead.</p>
+  <p class="privacy-copy">Here’s what to know about your data when you use this prototype.</p>
+  <ol class="privacy-list">
+    <li><strong>Your responses.</strong> This experience keeps typed and transcribed responses on the current page. It does not submit them to a project server.</li>
+    <li><strong>Speech recognition.</strong> If you choose Speak, your browser may send audio to its speech recognition provider. You can use the text field instead.</li>
+  </ol>
   <div class="back-action"><a id="close-privacy" href="./">Back to scenario <span aria-hidden="true">→</span></a></div>
 </section>
 <section class="result" id="result" hidden tabindex="-1">
