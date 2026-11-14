@@ -227,6 +227,9 @@ button:not(.quiet):not(.action){border-radius:999px}
 .site-nav .site-nav-link:hover,.site-nav .site-nav-link:focus-visible,.site-nav .site-nav-link.is-current,.site-nav .site-nav-link[aria-current]{color:#7A2E5C;border-bottom-color:currentColor}
 @media print{.site-nav{display:none}}
 main:has(> .name-entry-screen:not([hidden])){width:min(100%,968px)}
+.billing-reminder{border-bottom:1px solid rgba(122,46,92,.16);padding-bottom:14px;margin-bottom:16px}
+.billing-reminder strong{color:#7a2e5c}
+.billing-reminder p{margin:5px 0 0}
 </style>
 <nav class="site-nav" aria-label="Portfolio">
 
@@ -291,6 +294,7 @@ main:has(> .name-entry-screen:not([hidden])){width:min(100%,968px)}
 <div class="folder" id="folder" hidden>
 <div class="folders" role="group" aria-label="Perspectives"><button id="employee" aria-controls="employeePanel" aria-pressed="true">Employee</button><button id="manager" aria-controls="managerPanel" aria-pressed="false" disabled>Manager</button></div>
 <section class="panel" id="employeePanel" aria-labelledby="employee">
+<div class="billing-reminder"><strong>Billing rollout</strong><p>Credits above $500 require manager approval. A $650 credit is due, the manager is out, and the customer’s payment goes through tonight.</p></div>
 <form id="first"><label for="initial"><span>What would you do about the credit, and why?</span></label><textarea id="initial" required></textarea><button>Save response</button></form>
 <div id="savedWrap" hidden><p class="response" id="saved" data-listen="Your first response"></p></div>
 <small id="hint">Save a response to open the Manager tab.</small>
