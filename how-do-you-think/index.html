@@ -322,7 +322,7 @@ main:has(> .name-entry-screen:not([hidden])){width:min(100%,968px)}
 </section>
 <section class="result" id="result" hidden tabindex="-1">
 <h2 class="report-main-title">How We Think</h2>
-<h3>Business Impact Report</h3>
+<h3 id="impact-report-title">Business Impact Report</h3>
 <p class="report-scenario">Billing rollout</p>
 <p>A shared summary for the employee and manager to review what they would do next and how it could affect the work.</p>
 <p><strong>Your next step</strong></p><p class="response" id="reflection"></p>
@@ -355,6 +355,7 @@ get('welcome-form').addEventListener('submit',event=>{
   if(!field.value.trim()){field.focus();return;}
   get('welcome').hidden=true;
   get('project').hidden=false;
+  get('impact-report-title').textContent=`${field.value.trim()}’s Business Impact Report`;
   field.value='';
   get('scenarioTitle').focus();
 });
@@ -540,7 +541,7 @@ function buildImpactPdf(Pdf, nextStep, followUp, impact){
     y+=4;
   }
   write('How We Think',23,'times');
-  write('Business Impact Report',17,'times');
+  write(get('impact-report-title').textContent,17,'times');
   write('Billing rollout',11);
   for(const [label,body] of [['Your next step',nextStep],['Manager follow-up',followUp],['Potential business impact',impact]]){
     write(label,14,'times');
