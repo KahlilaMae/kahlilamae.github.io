@@ -283,7 +283,7 @@ main:has(> .name-entry-screen:not([hidden])){width:min(100%,968px)}
 </section>
 <section id="project" hidden>
 <h1>How We Think</h1>
-<aside class="scenario project-card"><h2 tabindex="-1" id="scenarioTitle" class="card-title">Billing policy rollout</h2><div class="scenario-body"><p class="card-description" data-listen="Billing scenario">Credits above $500 require manager approval. A $650 credit is due, the manager is out, and the customer’s payment goes through tonight.</p><button id="start">Give your perspective</button></div></aside>
+<aside class="scenario project-card"><h2 tabindex="-1" id="scenarioTitle" class="card-title">Billing rollout</h2><div class="scenario-body"><p class="card-description" data-listen="Billing scenario">Credits above $500 require manager approval. A $650 credit is due, the manager is out, and the customer’s payment goes through tonight.</p><button id="start">Give your perspective</button></div></aside>
 <div class="folder" id="folder" hidden>
 <div class="folders" role="group" aria-label="Perspectives"><button id="employee" aria-controls="employeePanel" aria-pressed="true">Employee</button><button id="manager" aria-controls="managerPanel" aria-pressed="false" disabled>Manager</button></div>
 <section class="panel" id="employeePanel" aria-labelledby="employee">
@@ -298,7 +298,7 @@ main:has(> .name-entry-screen:not([hidden])){width:min(100%,968px)}
 <section class="result" id="result" hidden tabindex="-1">
 <h2 class="report-main-title">How We Think</h2>
 <h3>Business Impact Report</h3>
-<p class="report-scenario">Billing policy rollout</p>
+<p class="report-scenario">Billing rollout</p>
 <p>A shared summary for the employee and manager to review what they would do next and how it could affect the work.</p>
 <p><strong>Your next step</strong></p><p class="response" id="reflection"></p>
 <p><strong>Sample manager follow-up</strong></p><blockquote data-listen="Manager follow-up">For urgent credits above $500, flag the payment deadline and send the request to the designated backup approver when your manager is out. Document the approval before applying the credit.</blockquote>
@@ -489,7 +489,7 @@ function buildImpactPdf(Pdf, nextStep, followUp, impact){
   }
   write('How We Think',23,'times');
   write('Business Impact Report',17,'times');
-  write('Billing policy rollout',11);
+  write('Billing rollout',11);
   for(const [label,body] of [['Your next step',nextStep],['Manager follow-up',followUp],['Potential business impact',impact]]){
     write(label,14,'times');
     write(body,11);
