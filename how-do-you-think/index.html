@@ -216,6 +216,13 @@ button:not(.quiet):not(.action){border-radius:999px}
     }
 
 .name-entry-screen .eyebrow{font-size:.8rem;letter-spacing:.16em;text-transform:uppercase}
+.site-nav{background:#FBF7FA;border-bottom:1px solid rgba(122,46,92,.18)}
+.site-nav-inner{width:min(calc(100% - 48px),920px);margin:0 auto;min-height:88px;display:flex;align-items:center;justify-content:flex-end}
+.site-nav-links{display:flex;align-items:center;gap:clamp(16px,5vw,38px)}
+.site-nav .site-nav-link{display:inline-flex;align-items:center;min-height:40px;padding-bottom:3px;border-bottom:2px solid transparent;font:500 .95rem "DM Sans",Arial,sans-serif;color:#5B4B58;text-decoration:none}
+.site-nav .site-nav-link:hover,.site-nav .site-nav-link:focus-visible,.site-nav .site-nav-link.is-current,.site-nav .site-nav-link[aria-current]{color:#7A2E5C;border-bottom-color:currentColor}
+@media print{.site-nav{display:none}}
+main:has(> .name-entry-screen:not([hidden])){width:min(100%,968px)}
 </style>
 <nav class="site-nav" aria-label="Portfolio">
 
