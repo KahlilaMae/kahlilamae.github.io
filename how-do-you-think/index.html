@@ -77,7 +77,11 @@ button:not(.quiet):not(.action){border-radius:999px}
 
     }
 
-.report-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.report-actions{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:10px;margin-top:18px}
+.report-actions button{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:10px 18px;border-radius:999px;font-size:.9rem;font-weight:500}
+.report-actions svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+#edit-report{background:#fbf7fa;border-color:rgba(122,46,92,.3);color:#7a2e5c}
+#print-report{background:#862f5e;border-color:#862f5e;color:#fff}
 @media print{
   main{max-width:none;margin:0;padding:0}
   main>*:not(#result),.report-actions,.voice-control{display:none!important}
@@ -340,8 +344,8 @@ main:has(> .name-entry-screen:not([hidden])){width:min(100%,968px)}
 <p>Assumes a 50% reduction in quarterly rework valued at $1,800 per staff member.</p>
 </div>
 <div class="report-actions">
-  <button type="button" id="edit-report">Edit next step</button>
-  <button type="button" id="print-report">Download PDF</button>
+  <button type="button" id="edit-report"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m4 16-1 5 5-1L20 8a2.1 2.1 0 0 0-4-4L4 16Z"/><path d="m14 6 4 4"/></svg> Edit next step</button>
+  <button type="button" id="print-report"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12M8 7l4-4 4 4M5 14v4a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-4"/></svg> Download PDF</button>
 </div>
 </section>
 <footer class="copyright">© 2026 Kahlila Mae Liverpool. All rights reserved.</footer>
