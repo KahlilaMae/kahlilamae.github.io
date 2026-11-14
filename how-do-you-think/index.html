@@ -238,6 +238,14 @@ main:has(> .name-entry-screen:not([hidden])){width:min(100%,968px)}
 .folders button{min-width:0;min-height:44px;padding:9px 15px;border:1px solid #d8c3d1;border-bottom:0;border-radius:11px 11px 0 0;background:#f7f4f7;color:#5b4b58;font-size:1.2rem}
 .folders button::before{content:none}
 .folders button[aria-pressed=true]{background:#fffafd;color:#3a2438}
+.impact-detail{margin:24px 0}
+.impact-detail h3:not(:first-child){margin-top:22px}
+.growth-roadmap{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;list-style:none;padding:0;margin:18px 0 0}
+.growth-roadmap li{padding:16px;border:1px solid #e6d7df;border-top:3px solid #7a2e5c;border-radius:12px;background:#fffafd}
+.growth-year{color:#7a2e5c;font-size:.85rem;font-weight:600}
+.growth-roadmap h4{margin:6px 0 8px}
+.growth-roadmap p{margin:0}
+@media(max-width:680px){.growth-roadmap{grid-template-columns:1fr}}
 </style>
 <nav class="site-nav" aria-label="Portfolio">
 
@@ -331,7 +339,14 @@ main:has(> .name-entry-screen:not([hidden])){width:min(100%,968px)}
 <p>A shared summary for the employee and manager to review what they would do next and how it could affect the work.</p>
 <p><strong>Your next step</strong></p><p class="response" id="reflection"></p>
 <p><strong>Sample manager follow-up</strong></p><blockquote data-listen="Manager follow-up">For urgent credits above $500, flag the payment deadline and send the request to the designated backup approver when your manager is out. Document the approval before applying the credit.</blockquote>
-<h3>Business impact</h3><div class="impact-summary">
+<section class="impact-detail" id="business-environment">
+<h3>Current business environment</h3>
+<p>The $500 approval threshold gives managers oversight of larger credits. In this scenario, the team may miss tonight’s payment cutoff because the guidance leaves backup approval unclear. A late credit can lead to a payment correction and another customer contact.</p>
+<h3>Where to grow</h3>
+<p><strong>Clarify ownership.</strong> Publish who can approve urgent credits when the manager is out. Give staff one place to record the payment deadline and approval decision.</p>
+<p><strong>Connect your next step to a result.</strong> Review your response above. Who would you contact before the cutoff? What would you track to see whether your approach reduces rework while keeping approvals documented?</p>
+</section>
+<h3>Business impact</h3><div class="impact-summary" id="impact-estimate">
 <table style="width:100%;text-align:left;border-collapse:collapse">
 <caption style="text-align:left;margin-bottom:8px">Illustrative quarterly savings</caption>
 <thead><tr><th scope="col">Scale</th><th scope="col">Staff</th><th scope="col">Value of time saved</th></tr></thead>
@@ -343,6 +358,15 @@ main:has(> .name-entry-screen:not([hidden])){width:min(100%,968px)}
 </table>
 <p>Assumes a 50% reduction in quarterly rework valued at $1,800 per staff member.</p>
 </div>
+<section class="impact-detail" id="growth-plan" aria-labelledby="growth-plan-title">
+<h3 id="growth-plan-title">Three-year growth plan</h3>
+<p>Use this illustrative plan to decide when the process is ready to expand.</p>
+<ol class="growth-roadmap">
+<li><span class="growth-year">Year 1</span><h4>Pilot with one team</h4><p>The billing lead tests the backup approval path. Track the share of urgent credits resolved before cutoff and the hours spent on corrections. Use the first month as a baseline.</p></li>
+<li><span class="growth-year">Year 2</span><h4>Expand regionally</h4><p>Regional leads roll out the process to 200 staff after the pilot shows fewer late credits and an approval audit confirms that decisions are documented. Compare results across teams each quarter.</p></li>
+<li><span class="growth-year">Year 3</span><h4>Standardize nationwide</h4><p>Operations expands to 10,000 staff if regions sustain the gains. Review time saved alongside approval compliance each quarter and fix any step that still causes delays.</p></li>
+</ol>
+</section>
 <div class="report-actions">
   <button type="button" id="edit-report"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m4 16-1 5 5-1L20 8a2.1 2.1 0 0 0-4-4L4 16Z"/><path d="m14 6 4 4"/></svg> Edit next step</button>
   <button type="button" id="print-report"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12M8 7l4-4 4 4M5 14v4a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-4"/></svg> Download PDF</button>
@@ -530,7 +554,7 @@ get('close-privacy').addEventListener('click',event=>{
 });
 
 get('edit-report').onclick=()=>history.back();
-function buildImpactPdf(Pdf, nextStep, followUp, impact){
+function buildImpactPdf(Pdf, nextStep, followUp, impactSections){
   const doc=new Pdf({unit:'mm',format:'a4'});
   let y=24;
   function write(value,size,font='helvetica'){
@@ -547,7 +571,7 @@ function buildImpactPdf(Pdf, nextStep, followUp, impact){
   write('How We Think',23,'times');
   write(get('impact-report-title').textContent,17,'times');
   write('Billing rollout',11);
-  for(const [label,body] of [['Your next step',nextStep],['Manager follow-up',followUp],['Potential business impact',impact]]){
+  for(const [label,body] of [['Your next step',nextStep],['Manager follow-up',followUp],...impactSections]){
     write(label,14,'times');
     write(body,11);
   }
@@ -568,8 +592,12 @@ get('print-report').onclick=()=>{
   get('reflection').textContent=nextStep;
   const report=get('result');
   const followUp=report.querySelector('blockquote').textContent.trim();
-  const impact=[...report.querySelectorAll('h3')].at(-1).nextElementSibling.innerText.trim();
-  buildImpactPdf(Pdf,nextStep,followUp,impact).save('Business-Impact-Report.pdf');
+  const impactSections=[
+    ['Business environment and growth areas', get('business-environment').innerText.trim()],
+    ['Illustrative business impact', get('impact-estimate').innerText.trim()],
+    ['Three-year growth plan', get('growth-plan').innerText.trim()]
+  ];
+  buildImpactPdf(Pdf,nextStep,followUp,impactSections).save('Business-Impact-Report.pdf');
 };
 </script>
 </html>
