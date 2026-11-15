@@ -287,7 +287,7 @@ main:has(> .name-entry-screen:not([hidden])){width:min(100%,968px)}
 .manager-stock-bar{display:flex;height:8px;gap:3px;margin:12px 0;border-radius:12px;overflow:hidden}
 .manager-stock-bar span:first-child{width:60%;background:#7a2e5c}
 .manager-stock-bar span:last-child{flex:1;background:#b986a4}
-.manager-stock-numbers{display:flex;flex-wrap:wrap;gap:12px 28px}
+.manager-stock-numbers{display:grid;grid-template-columns:60% minmax(0,1fr);column-gap:3px}
 .manager-stock-numbers strong{display:block;color:#7a2e5c;font:28px Georgia,serif}
 </style>
 <nav class="site-nav" aria-label="Portfolio">
