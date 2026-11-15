@@ -379,12 +379,12 @@ What would you still want leadership to clarify?</span></label><textarea id="rec
 <h3 id="impact-report-title">Business Impact Report</h3>
 <p class="report-scenario">Billing rollout</p>
 <section class="impact-detail" id="growth-plan" aria-labelledby="growth-plan-title">
-<h3 id="growth-plan-title">Three-year growth plan</h3>
+<h3 id="growth-plan-title">One-year rollout plan</h3>
 <p>Use this illustrative plan to decide when the process is ready to expand.</p>
 <ol class="growth-roadmap">
-<li><span class="growth-year">Year 1</span><h4>Pilot with one team</h4><p>Test a standard explanation of account credits and card refunds with one team. Compare repeat contacts per 100 refund cases with the first-month baseline.</p></li>
-<li><span class="growth-year">Year 2</span><h4>Expand regionally</h4><p>Expand to the regional team if repeat contacts fall from 30 to 20 per 100 cases and refund accuracy holds.</p></li>
-<li><span class="growth-year">Year 3</span><h4>Standardize nationwide</h4><p>Expand nationwide if regional teams sustain the improvement. Track repeat contacts and staff time saved each quarter.</p></li>
+<li><span class="growth-year">Months 1–3</span><h4>Pilot with one team</h4><p>Test a standard explanation of account credits and card refunds with one team. Compare repeat contacts per 100 refund cases with the first-month baseline.</p></li>
+<li><span class="growth-year">Months 4–6</span><h4>Expand regionally</h4><p>Expand to the regional team if repeat contacts fall from 30 to 20 per 100 cases and refund accuracy holds.</p></li>
+<li><span class="growth-year">Months 7–12</span><h4>Standardize nationwide</h4><p>Expand nationwide if regional teams sustain the improvement. Track repeat contacts and staff time saved each quarter.</p></li>
 </ol>
 </section>
 <div class="impact-dashboard">
@@ -648,7 +648,7 @@ get('print-report').onclick=()=>{
   const report=get('result');
   const followUp=report.querySelector('blockquote').textContent.trim();
   const impactSections=[
-    ['Three-year growth plan', get('growth-plan').innerText.trim()],
+    ['One-year rollout plan', get('growth-plan').innerText.trim()],
     ['The decision', get('leadership-decision').querySelector('p').innerText.trim()],
     ['Business impact at a glance', get('sales-scorecard').innerText.trim()],
     ['What needs to change', get('business-environment').innerText.trim()]
