@@ -289,9 +289,13 @@ main:has(> .name-entry-screen:not([hidden])){width:min(100%,968px)}
 .manager-stock-bar span:last-child{flex:1;background:#b986a4}
 .manager-stock-numbers{display:grid;grid-template-columns:60% minmax(0,1fr);column-gap:3px}
 .manager-stock-numbers strong{display:block;color:#7a2e5c;font:28px Georgia,serif}
-.perspective-header{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:10px}
+.perspective-box{margin:0 0 14px;padding:16px;border:1px solid #d9c4d1;border-radius:12px;background:#fdf9fb}
+.perspective-actions{display:flex;justify-content:flex-end;gap:8px}
+.impact-choices{display:flex;flex-wrap:wrap;gap:0 24px}
+.impact-choices label{display:inline-flex;align-items:center;gap:8px;min-height:44px}
+.impact-choices input{width:18px;height:18px;accent-color:#7a2e5c}
 #edit-perspective,#cancel-perspective{background:#fff;color:#7a2e5c;border:1px solid #cfb5c6;border-radius:9px;min-height:44px}
-#employee-impact{margin-bottom:0}
+
 </style>
 <nav class="site-nav" aria-label="Portfolio">
 
@@ -425,21 +429,26 @@ main:has(> .name-entry-screen:not([hidden])){width:min(100%,968px)}
 </div>
 <hr class="impact-divider">
 <section class="impact-detail" aria-labelledby="perspective-heading">
-<div class="perspective-header"><h3 id="perspective-heading">Your perspective</h3><button type="button" id="edit-perspective">Edit</button></div>
+<h3 id="perspective-heading">Your perspective</h3>
+<div class="perspective-box" role="group" aria-labelledby="impact-label">
+<strong id="impact-label">Impact type</strong>
+<div class="impact-choices" id="impact-type">
+<label><input type="checkbox" value="Drive revenue"> Drive revenue</label>
+<label><input type="checkbox" value="Save money"> Save money</label>
+<label><input type="checkbox" value="Save time"> Save time</label>
+</div>
+</div>
+<div class="perspective-box">
+<strong id="perspective-question">How would your perspective help?</strong>
 <div id="perspective-summary">
 <p class="response" id="report-perspective"></p>
-<strong id="impact-label">Potential business impact</strong>
-<p class="response" id="employee-impact">Select Edit to add the expected impact.</p>
+<div class="perspective-actions"><button type="button" id="edit-perspective">Edit</button></div>
 </div>
 <form id="perspective-form" hidden>
-<label for="perspective-input">Your idea</label>
-<textarea id="perspective-input" required></textarea>
-<label for="impact-type">Impact type</label>
-<select id="impact-type" required><option value="">Select an impact</option><option>Potential revenue</option><option>Potential cost savings</option><option>Potential time savings</option></select>
-<p><label for="impact-input">How would your idea help?</label></p>
-<textarea id="impact-input" required></textarea>
-<button type="submit">Save</button> <button type="button" id="cancel-perspective">Cancel</button>
+<textarea id="perspective-input" aria-labelledby="perspective-question" required></textarea>
+<div class="perspective-actions"><button type="submit">Save</button><button type="button" id="cancel-perspective">Cancel</button></div>
 </form>
+</div>
 </section>
 <div class="report-actions">
   <button type="button" id="print-report"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12M8 7l4-4 4 4M5 14v4a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-4"/></svg> Download PDF</button>
@@ -624,34 +633,23 @@ get('close-privacy').addEventListener('click',event=>{
 
 get('edit-perspective').onclick=()=>{
   get('perspective-input').value=get('saved').textContent;
-  get('impact-type').value=get('employee-impact').dataset.type || '';
-  get('impact-input').value=get('employee-impact').dataset.value || '';
   get('perspective-summary').hidden=true;
-  get('edit-perspective').hidden=true;
   get('perspective-form').hidden=false;
   get('perspective-input').focus();
 };
 function closePerspectiveEditor(){
   get('perspective-form').hidden=true;
   get('perspective-summary').hidden=false;
-  get('edit-perspective').hidden=false;
   get('edit-perspective').focus();
 }
 get('cancel-perspective').onclick=closePerspectiveEditor;
 get('perspective-form').onsubmit=event=>{
   event.preventDefault();
   const idea=get('perspective-input').value.trim();
-  const impact=get('impact-input').value.trim();
-  if(!idea || !impact){get(idea ? 'impact-input' : 'perspective-input').focus();return;}
+  if(!idea){get('perspective-input').focus();return;}
   get('saved').textContent=idea;
   get('initial').value=idea;
   get('report-perspective').textContent=idea;
-  const type=get('impact-type').value;
-  get('impact-label').textContent=type;
-  const output=get('employee-impact');
-  output.dataset.type=type;
-  output.dataset.value=impact;
-  output.textContent=impact;
   closePerspectiveEditor();
 };
 function buildImpactPdf(Pdf, impactSections){
@@ -692,8 +690,8 @@ get('print-report').onclick=()=>{
     ['Business impact at a glance', get('sales-scorecard').innerText.trim()],
     ['Your perspective', get('report-perspective').textContent]
   ];
-  const impact=get('employee-impact').dataset.value;
-  if(impact) impactSections.push([get('impact-label').textContent,impact]);
+  const impactTypes=Array.from(get('impact-type').querySelectorAll('input:checked'), input=>input.value);
+  if(impactTypes.length) impactSections.splice(-1,0,['Impact type',impactTypes.join(', ')]);
   buildImpactPdf(Pdf,impactSections).save('Business-Impact-Report.pdf');
 };
 </script>
