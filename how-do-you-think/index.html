@@ -387,7 +387,6 @@ main:has(> .name-entry-screen:not([hidden])){width:min(100%,968px)}
 <section class="result" id="result" hidden tabindex="-1">
 <h2 class="report-main-title">How Do You Think?</h2>
 <p class="report-scenario">When Stock Runs Out</p>
-<h3 id="impact-report-title">Business Impact Report</h3>
 <section class="impact-detail" id="growth-plan" aria-labelledby="growth-plan-title">
 <h3 id="growth-plan-title">Three-month rollout plan</h3>
 <ol class="growth-roadmap">
@@ -446,7 +445,6 @@ get('welcome-form').addEventListener('submit',event=>{
   if(!field.value.trim()){field.focus();return;}
   get('welcome').hidden=true;
   get('project').hidden=false;
-  get('impact-report-title').textContent=`${field.value.trim()}’s Business Impact Report`;
   field.value='';
   get('scenario-subtitle').focus();
 });
@@ -629,7 +627,6 @@ function buildImpactPdf(Pdf, followUp, impactSections){
   }
   write('How Do You Think?',23,'times');
   write(document.querySelector('.report-scenario').textContent,11);
-  write(get('impact-report-title').textContent,17,'times');
   for(const [label,body] of [...impactSections,['Manager follow-up',followUp],['Your perspective',get('report-perspective').textContent]]){
     write(label,14,'times');
     write(body,11);
