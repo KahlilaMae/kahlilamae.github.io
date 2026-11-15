@@ -85,13 +85,11 @@ button:not(.quiet):not(.action):not(.folders button){border-radius:999px}
 .report-actions{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:10px;margin-top:18px}
 .report-actions button{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:10px 18px;border-radius:999px;font-size:.9rem;font-weight:500}
 .report-actions svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
-#edit-report{background:#fbf7fa;border-color:rgba(122,46,92,.3);color:#7a2e5c}
 #print-report{background:#862f5e;border-color:#862f5e;color:#fff}
 @media print{
   main{max-width:none;margin:0;padding:0}
   main>*:not(#result),.report-actions,.voice-control{display:none!important}
   #result{border:0;background:white;box-shadow:none;margin:0;padding:0;color:#222}
-  #reflection{white-space:pre-wrap;overflow-wrap:anywhere}
 }
 
 #result{background:#FBF7FA;border:1px solid #ddc5d2;border-radius:22px;padding:clamp(18px,4vw,32px);box-shadow:0 12px 32px #3a243814}
@@ -276,7 +274,7 @@ main:has(> .name-entry-screen:not([hidden])){width:min(100%,968px)}
 #impact-estimate tbody tr:nth-child(2){background:#faf2f8}
 #impact-estimate tbody tr:last-child{background:#f0e2ed;color:#542744;font-weight:600}
 @media(max-width:760px){.impact-dashboard{grid-template-columns:1fr;gap:0}}
-#first > button,#second > button{display:block;margin-inline-start:auto}
+#first > button,#open-impact-report{display:block;margin-inline-start:auto}
 .billing-split{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-bottom:16px}
 .billing-split strong{color:#7a2e5c}
 .billing-split p{margin:6px 0 0}
@@ -285,6 +283,12 @@ main:has(> .name-entry-screen:not([hidden])){width:min(100%,968px)}
 .customer-message svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.7}
 .customer-message blockquote{margin:7px 0 0;padding:0;border:0}
 @media(max-width:580px){.billing-split{grid-template-columns:1fr}}
+.manager-stock{margin:18px 0;padding:14px 0;border-block:1px solid #e1d2dd}
+.manager-stock-bar{display:flex;height:8px;gap:3px;margin:12px 0;border-radius:12px;overflow:hidden}
+.manager-stock-bar span:first-child{width:60%;background:#7a2e5c}
+.manager-stock-bar span:last-child{flex:1;background:#b986a4}
+.manager-stock-numbers{display:flex;flex-wrap:wrap;gap:12px 28px}
+.manager-stock-numbers strong{display:block;color:#7a2e5c;font:28px Georgia,serif}
 </style>
 <nav class="site-nav" aria-label="Portfolio">
 
@@ -355,8 +359,14 @@ main:has(> .name-entry-screen:not([hidden])){width:min(100%,968px)}
 </section>
 <section class="panel" id="managerPanel" aria-labelledby="manager" hidden>
 <h3>The Business Reason</h3>
-<blockquote><p>Stock shortages are costing us device sales.</p><p>We approved substitutes at the quoted price to keep orders on schedule and protect profit margins.</p><p>Our growth goal is to recover sales we would otherwise lose when devices are out of stock.</p></blockquote>
-<form id="second"><label for="reconsider"><span>How would you pilot your proposed change on at-risk orders?<br>What results would convince you to expand it?</span></label><textarea id="reconsider" required></textarea><button>Business Impact Report <span aria-hidden="true">→</span></button></form>
+<p>When the requested model is short on stock, we risk losing the whole order.</p>
+<figure class="manager-stock">
+<figcaption><strong>15,000 devices needed by rollout</strong></figcaption>
+<div class="manager-stock-bar" aria-hidden="true"><span></span><span></span></div>
+<div class="manager-stock-numbers"><div><strong>9,000</strong>Requested model</div><div><strong>6,000</strong>Approved substitute</div></div>
+</figure>
+<p><strong>Why we approved substitutes.</strong> Reps can fill more orders on time at the quoted price. Every order still has to meet the minimum profit margin.</p>
+<button type="button" id="open-impact-report">Business Impact Report <span aria-hidden="true">→</span></button>
 
 </section>
 </div>
@@ -420,10 +430,8 @@ main:has(> .name-entry-screen:not([hidden])){width:min(100%,968px)}
 <p><strong>Connect your next step to a result.</strong> What would the pilot need to show about recovered sales and gross profit before leadership expands it?</p>
 </section>
 <p><strong>Sample manager follow-up</strong></p><blockquote data-listen="Manager follow-up">Ask whether the customer can deploy more than one device model. If they need a match, check whether you can reserve enough of one model across warehouses and still meet the deadline and minimum margin.</blockquote>
-<p><strong>Your first perspective</strong></p><p class="response" id="report-perspective"></p>
-<p><strong>Your next step</strong></p><p class="response" id="reflection"></p>
+<p><strong>Your perspective</strong></p><p class="response" id="report-perspective"></p>
 <div class="report-actions">
-  <button type="button" id="edit-report"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m4 16-1 5 5-1L20 8a2.1 2.1 0 0 0-4-4L4 16Z"/><path d="m14 6 4 4"/></svg> Edit next step</button>
   <button type="button" id="print-report"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12M8 7l4-4 4 4M5 14v4a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-4"/></svg> Download PDF</button>
 </div>
 </section>
@@ -482,12 +490,8 @@ get('first').onsubmit=event=>{
   if(input.value.trim()) saveResponse(input.value.trim());
   else input.focus();
 };
-get('second').onsubmit=event=>{
-  event.preventDefault();
-  const input=get('reconsider');
-  if(!input.value.trim()){input.focus();return;}
+get('open-impact-report').onclick=()=>{
   get('report-perspective').textContent=get('saved').textContent;
-  get('reflection').textContent=input.value.trim();
   history.pushState({ impactReport: true }, '', '#business-impact-report');
   showImpactReport(true);
 };
@@ -496,7 +500,7 @@ function showImpactReport(isReport) {
   window.speechSynthesis?.cancel();
   get('project').hidden=isReport;
   get('result').hidden=!isReport;
-  (isReport ? get('result') : get('reconsider')).focus({ preventScroll: isReport });
+  (isReport ? get('result') : get('open-impact-report')).focus({ preventScroll: isReport });
   if (isReport) window.scrollTo(0, 0);
 }
 window.addEventListener('popstate', event => {
@@ -506,7 +510,7 @@ window.addEventListener('popstate', event => {
     get('privacy-statement').hidden=true;
     get('project').hidden=false;
     get('privacy-link').focus();
-  } else if (event.state?.impactReport && get('reflection').textContent) {
+  } else if (event.state?.impactReport && get('saved').textContent) {
     showImpactReport(true);
   } else if (!get('result').hidden) {
     showImpactReport(false);
@@ -554,7 +558,7 @@ document.querySelectorAll('[data-listen]').forEach(source=>{
 
 const micIcon="<svg viewBox=\"0 0 24 24\" aria-hidden=\"true\">\n              <path d=\"M12 15a3 3 0 0 0 3-3V6a3 3 0 0 0-6 0v6a3 3 0 0 0 3 3Z\" />\n              <path d=\"M19 11v1a7 7 0 0 1-14 0v-1\" />\n              <path d=\"M12 19v3\" />\n              <path d=\"M8 22h8\" />\n            </svg>";
 const Recognition=window.SpeechRecognition || window.webkitSpeechRecognition;
-for(const id of ['initial','reconsider']){
+for(const id of ['initial']){
   const field=get(id);
   const button=document.createElement('button');
   const status=document.createElement('small');
@@ -562,7 +566,7 @@ for(const id of ['initial','reconsider']){
   button.type='button';
   button.className='voice-control';
   button.innerHTML=micIcon+'<span>Speak</span>';
-  button.setAttribute('aria-label',id==='initial'?'Speak your response':'Speak your reflection');
+  button.setAttribute('aria-label','Speak your response');
   const row=document.createElement('div');
   row.className='speak-row';
   field.before(row);
@@ -609,8 +613,7 @@ get('close-privacy').addEventListener('click',event=>{
   history.back();
 });
 
-get('edit-report').onclick=()=>history.back();
-function buildImpactPdf(Pdf, nextStep, followUp, impactSections){
+function buildImpactPdf(Pdf, followUp, impactSections){
   const doc=new Pdf({unit:'mm',format:'a4'});
   let y=24;
   function write(value,size,font='helvetica'){
@@ -627,7 +630,7 @@ function buildImpactPdf(Pdf, nextStep, followUp, impactSections){
   write('How Do You Think?',23,'times');
   write(get('impact-report-title').textContent,17,'times');
   write(document.querySelector('.report-scenario').textContent,11);
-  for(const [label,body] of [...impactSections,['Manager follow-up',followUp],['Your first perspective',get('report-perspective').textContent],['Your next step',nextStep]]){
+  for(const [label,body] of [...impactSections,['Manager follow-up',followUp],['Your perspective',get('report-perspective').textContent]]){
     write(label,14,'times');
     write(body,11);
   }
@@ -641,11 +644,8 @@ function buildImpactPdf(Pdf, nextStep, followUp, impactSections){
   return doc;
 }
 get('print-report').onclick=()=>{
-  const nextStep=get('reconsider').value.trim();
-  if(!nextStep){get('reconsider').focus();return;}
   const Pdf=window.jspdf?.jsPDF;
   if(!Pdf){alert('The PDF tool did not load. Refresh and try again.');return;}
-  get('reflection').textContent=nextStep;
   const report=get('result');
   const followUp=report.querySelector('blockquote').textContent.trim();
   const impactSections=[
@@ -654,7 +654,7 @@ get('print-report').onclick=()=>{
     ['Business impact at a glance', get('sales-scorecard').innerText.trim()],
     ['What needs to change', get('business-environment').innerText.trim()]
   ];
-  buildImpactPdf(Pdf,nextStep,followUp,impactSections).save('Business-Impact-Report.pdf');
+  buildImpactPdf(Pdf,followUp,impactSections).save('Business-Impact-Report.pdf');
 };
 </script>
 </html>
