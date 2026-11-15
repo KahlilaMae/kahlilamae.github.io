@@ -276,7 +276,7 @@ main:has(> .name-entry-screen:not([hidden])){width:min(100%,968px)}
 #impact-estimate tbody tr:nth-child(2){background:#faf2f8}
 #impact-estimate tbody tr:last-child{background:#f0e2ed;color:#542744;font-weight:600}
 @media(max-width:760px){.impact-dashboard{grid-template-columns:1fr;gap:0}}
-#first > button{display:block;margin-inline-start:auto}
+#first > button,#second > button{display:block;margin-inline-start:auto}
 .billing-split{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-bottom:16px}
 .billing-split strong{color:#7a2e5c}
 .billing-split p{margin:6px 0 0}
@@ -356,7 +356,7 @@ main:has(> .name-entry-screen:not([hidden])){width:min(100%,968px)}
 <section class="panel" id="managerPanel" aria-labelledby="manager" hidden>
 <h3>Why approval matters</h3>
 <blockquote>The new rule lets customers request a refund to their original payment method after an account credit posts. Explain that the posted credit is on their account and that the card refund can take 5 to 7 business days after it’s issued.</blockquote>
-<form id="second"><label for="reconsider"><span>After hearing the manager, what would you do next? What still needs to be clarified?</span></label><textarea id="reconsider" required></textarea><button>See the Business Impact Report <span aria-hidden="true">→</span></button></form>
+<form id="second"><label for="reconsider"><span>After hearing the manager, what would you do next? What still needs to be clarified?</span></label><textarea id="reconsider" required></textarea><button>Business Impact Report <span aria-hidden="true">→</span></button></form>
 
 </section>
 </div>
