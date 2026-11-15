@@ -436,18 +436,24 @@ main:has(> .name-entry-screen:not([hidden])){width:min(100%,968px)}
 <label><input type="checkbox" value="Drive revenue"> Drive revenue</label>
 <label><input type="checkbox" value="Save money"> Save money</label>
 <label><input type="checkbox" value="Save time"> Save time</label>
+<label><input type="checkbox" value="Improve customer experience"> Improve customer experience</label>
+<label><input type="checkbox" value="Reduce risk"> Reduce risk</label>
 </div>
 </div>
 <div class="perspective-box">
 <strong id="perspective-question">How would your perspective help?</strong>
 <div id="perspective-summary">
 <p class="response" id="report-perspective"></p>
-<div class="perspective-actions"><button type="button" id="edit-perspective">Edit</button></div>
+
 </div>
 <form id="perspective-form" hidden>
-<textarea id="perspective-input" aria-labelledby="perspective-question" required></textarea>
-<div class="perspective-actions"><button type="submit">Save</button><button type="button" id="cancel-perspective">Cancel</button></div>
+<textarea id="perspective-input" aria-labelledby="perspective-question"></textarea>
 </form>
+<div class="perspective-actions">
+<button type="button" id="cancel-perspective" hidden>Cancel</button>
+<button type="button" id="edit-perspective">Edit</button>
+<button type="submit" form="perspective-form" id="save-perspective">Save</button>
+</div>
 </div>
 </section>
 <div class="report-actions">
@@ -631,26 +637,41 @@ get('close-privacy').addEventListener('click',event=>{
   history.back();
 });
 
+const impactChoices=Array.from(get('impact-type').querySelectorAll('input'));
+let savedImpactTypes=[];
 get('edit-perspective').onclick=()=>{
+  get('cancel-perspective').hidden=false;
+  get('perspective-input').required=true;
+  get('save-perspective').textContent='Save';
   get('perspective-input').value=get('saved').textContent;
   get('perspective-summary').hidden=true;
   get('perspective-form').hidden=false;
   get('perspective-input').focus();
 };
 function closePerspectiveEditor(){
+  get('cancel-perspective').hidden=true;
   get('perspective-form').hidden=true;
   get('perspective-summary').hidden=false;
   get('edit-perspective').focus();
 }
-get('cancel-perspective').onclick=closePerspectiveEditor;
+get('cancel-perspective').onclick=()=>{
+  get('perspective-input').required=false;
+  closePerspectiveEditor();
+};
+get('impact-type').onchange=()=>{get('save-perspective').textContent='Save';};
 get('perspective-form').onsubmit=event=>{
   event.preventDefault();
-  const idea=get('perspective-input').value.trim();
-  if(!idea){get('perspective-input').focus();return;}
-  get('saved').textContent=idea;
-  get('initial').value=idea;
-  get('report-perspective').textContent=idea;
-  closePerspectiveEditor();
+  if(!get('perspective-form').hidden){
+    const idea=get('perspective-input').value.trim();
+    if(!idea){get('perspective-input').focus();return;}
+    get('saved').textContent=idea;
+    get('initial').value=idea;
+    get('report-perspective').textContent=idea;
+    closePerspectiveEditor();
+  }
+  savedImpactTypes=impactChoices.filter(input=>input.checked).map(input=>input.value);
+  get('perspective-input').required=false;
+  get('save-perspective').textContent='Saved';
 };
 function buildImpactPdf(Pdf, impactSections){
   const doc=new Pdf({unit:'mm',format:'a4'});
@@ -690,8 +711,7 @@ get('print-report').onclick=()=>{
     ['Business impact at a glance', get('sales-scorecard').innerText.trim()],
     ['Your perspective', get('report-perspective').textContent]
   ];
-  const impactTypes=Array.from(get('impact-type').querySelectorAll('input:checked'), input=>input.value);
-  if(impactTypes.length) impactSections.splice(-1,0,['Impact type',impactTypes.join(', ')]);
+  if(savedImpactTypes.length) impactSections.splice(-1,0,['Impact type',savedImpactTypes.join(', ')]);
   buildImpactPdf(Pdf,impactSections).save('Business-Impact-Report.pdf');
 };
 </script>
