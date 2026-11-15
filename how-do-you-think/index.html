@@ -333,7 +333,7 @@ main:has(> .name-entry-screen:not([hidden])){width:min(100%,968px)}
         <path d="M5 21v-2.5A7 7 0 0 1 12 11a7 7 0 0 1 7 7.5V21"></path>
       </svg>
     </div>
-<p class="eyebrow">Billing rollout</p>
+<p class="eyebrow">When Stock Runs Out</p>
 <h1 class="name-entry-title">Before we begin…</h1>
 <form id="welcome-form">
 <label class="name-entry-label" for="first-name">What’s your first name?</label>
@@ -345,19 +345,18 @@ main:has(> .name-entry-screen:not([hidden])){width:min(100%,968px)}
 </section>
 <section id="project" hidden>
 <h1>How Do You Think?</h1>
-<aside id="billing-scenario" class="scenario project-card"><h2 tabindex="-1" id="scenarioTitle" class="card-title">Billing rollout</h2><div class="scenario-body"><div class="billing-split"><div><strong>Context</strong><p>Leadership approved a new billing rule. A customer was charged twice for a service and has a $650 account credit. Under the new rule, they can request a refund to their original payment method. Card refunds can take 5 to 7 business days.</p></div><div class="customer-message"><strong><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3"/><path d="M5 20v-2a7 7 0 0 1 14 0v2"/></svg>Customer message</strong><blockquote>“This happened last year, and the money was credited back to my card in 2 days. Can you do that again?”</blockquote></div></div><button id="start">Give your perspective <span aria-hidden="true">→</span></button></div></aside>
+<aside id="billing-scenario" class="scenario project-card"><h2 tabindex="-1" id="scenarioTitle" class="card-title">When Stock Runs Out</h2><div class="scenario-body"><div class="billing-split"><div><strong>Context</strong><p>When the requested model can’t ship on time, sales reps can offer an approved, in-stock device at the original quoted price if the order meets the minimum profit margin. A business needs 15,000 devices for its employees by its rollout deadline. You can ship 9,000 of the requested model and 6,000 of an approved alternative in time.</p></div><div class="customer-message"><strong><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3"/><path d="M5 20v-2a7 7 0 0 1 14 0v2"/></svg>Customer message</strong><blockquote>“Our IT team can prepare only one device model before rollout. Can you deliver all 15,000 in the same model?”</blockquote><p>The customer places the order with another supplier.</p></div></div><button id="start">Give your perspective <span aria-hidden="true">→</span></button></div></aside>
 <div class="folder" id="folder" hidden>
 <div class="folders" role="group" aria-label="Perspectives"><button id="employee" aria-controls="employeePanel" aria-pressed="true">Employee</button><button id="manager" aria-controls="managerPanel" aria-pressed="false" disabled>Manager</button></div>
 <section class="panel" id="employeePanel" aria-labelledby="employee">
-<div class="billing-reminder"><strong>Billing rollout</strong><div class="billing-split"><div><strong>Context</strong><p>Leadership approved a new billing rule. A customer was charged twice for a service and has a $650 account credit. Under the new rule, they can request a refund to their original payment method. Card refunds can take 5 to 7 business days.</p></div><div class="customer-message"><strong><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3"/><path d="M5 20v-2a7 7 0 0 1 14 0v2"/></svg>Customer message</strong><blockquote>“This happened last year, and the money was credited back to my card in 2 days. Can you do that again?”</blockquote></div></div></div>
-<form id="first"><label for="initial"><span>What would you tell the customer about the $650 credit they see now? What would you tell them about when to expect it?</span></label><textarea id="initial" required></textarea><button>Save response <span aria-hidden="true">→</span></button></form>
+<div class="billing-reminder"><strong>When Stock Runs Out</strong><div class="billing-split"><div><strong>Context</strong><p>When the requested model can’t ship on time, sales reps can offer an approved, in-stock device at the original quoted price if the order meets the minimum profit margin. A business needs 15,000 devices for its employees by its rollout deadline. You can ship 9,000 of the requested model and 6,000 of an approved alternative in time.</p></div><div class="customer-message"><strong><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3"/><path d="M5 20v-2a7 7 0 0 1 14 0v2"/></svg>Customer message</strong><blockquote>“Our IT team can prepare only one device model before rollout. Can you deliver all 15,000 in the same model?”</blockquote><p>The customer places the order with another supplier.</p></div></div></div>
+<form id="first"><label for="initial"><span>What did the policy overlook about what this business needed?<br>What would you change to recover more orders like this one?</span></label><textarea id="initial" required></textarea><button>Save response <span aria-hidden="true">→</span></button></form>
 <div id="savedWrap" hidden><p class="response" id="saved"></p></div>
 </section>
 <section class="panel" id="managerPanel" aria-labelledby="manager" hidden>
-<h3>Why refunds changed</h3>
-<blockquote><p>Leadership wanted customers charged twice to have a clear way to get their money back on their card.</p><p>This customer got their money in 2 days last year. Explain that the account credit has posted and the card refund can take 5 to 7 business days once issued.</p></blockquote>
-<form id="second"><label for="reconsider"><span>What would you change in your response to the customer?<br>
-What would you still want leadership to clarify?</span></label><textarea id="reconsider" required></textarea><button>Business Impact Report <span aria-hidden="true">→</span></button></form>
+<h3>The Business Reason</h3>
+<blockquote><p>Stock shortages are costing us device sales.</p><p>We approved substitutes at the quoted price to keep orders on schedule and protect profit margins.</p><p>Our growth goal is to recover sales we would otherwise lose when devices are out of stock.</p></blockquote>
+<form id="second"><label for="reconsider"><span>How would you pilot your proposed change on at-risk orders?<br>What results would convince you to expand it?</span></label><textarea id="reconsider" required></textarea><button>Business Impact Report <span aria-hidden="true">→</span></button></form>
 
 </section>
 </div>
@@ -377,50 +376,51 @@ What would you still want leadership to clarify?</span></label><textarea id="rec
 <section class="result" id="result" hidden tabindex="-1">
 <h2 class="report-main-title">How Do You Think?</h2>
 <h3 id="impact-report-title">Business Impact Report</h3>
-<p class="report-scenario">Billing rollout</p>
+<p class="report-scenario">When Stock Runs Out</p>
 <section class="impact-detail" id="growth-plan" aria-labelledby="growth-plan-title">
 <h3 id="growth-plan-title">Three-month rollout plan</h3>
 <p>Use this illustrative plan to decide when the process is ready to expand.</p>
 <ol class="growth-roadmap">
-<li><span class="growth-year">Month 1</span><h4>Pilot with one team</h4><p>Test a standard explanation of account credits and card refunds with one team. Compare repeat contacts per 100 refund cases with the first-month baseline.</p></li>
-<li><span class="growth-year">Month 2</span><h4>Expand regionally</h4><p>Expand to the regional team if repeat contacts fall from 30 to 20 per 100 cases and refund accuracy holds.</p></li>
-<li><span class="growth-year">Month 3</span><h4>Standardize nationwide</h4><p>Expand nationwide if regional teams sustain the improvement. Track repeat contacts and staff time saved each quarter.</p></li>
+<li><span class="growth-year">Month 1</span><h4>Pilot with one team</h4><p>Let one sales team check inventory across warehouses and reserve matching devices for at-risk orders. Compare order recovery and gross profit with similar orders under the current policy.</p></li>
+<li><span class="growth-year">Month 2</span><h4>Expand regionally</h4><p>Expand to a regional team if more orders close and sales still meet the minimum margin after added shipping costs.</p></li>
+<li><span class="growth-year">Month 3</span><h4>Decide whether to scale</h4><p>Extend the process to more teams if the regional results hold. Track recovered orders and gross profit each quarter.</p></li>
 </ol>
 </section>
 <div class="impact-dashboard">
 <section class="impact-detail leadership-decision" id="leadership-decision">
-<h3>The decision</h3><p>Pilot the new refund explanation with one team. Aim to cut repeat contacts from 30 to 20 per 100 cases and raise renewals among affected accounts from 85% to 90%.</p>
+<h3>The decision</h3><p>Pilot cross-warehouse reservations so reps can fill at-risk orders with one device model and protect margins.</p>
 </section>
 <section class="impact-detail" id="sales-scorecard" aria-labelledby="sales-scorecard-title">
 <h3 id="sales-scorecard-title">Business impact at a glance</h3>
-<p>Illustrative renewal figures for accounts that requested a card refund and are due to renew.</p>
+<p>Illustrative annual revenue opportunity across business accounts. The pilot would test how many additional orders the change can recover.</p>
 <dl class="sales-metrics">
-<div><dt>Upcoming renewal revenue</dt><dd><strong>$1.2M</strong><span>120 upcoming renewals × $10,000</span></dd></div>
-<div><dt>Additional revenue to retain</dt><dd><strong>$60K</strong><span>120 renewals due × 5 percentage points × $10,000</span></dd></div>
+<div><dt>Additional device orders recovered</dt><dd><strong>20</strong><span>1,000 devices per recovered order on average</span></dd></div>
+<div><dt>Modeled annual device revenue</dt><dd><strong>$10M</strong><span>20 recovered orders × 1,000 devices × $500 per device</span></dd></div>
 </dl>
 <div class="impact-summary" id="impact-estimate">
 <table>
-<caption>Illustrative quarterly value of staff time saved</caption>
-<thead><tr><th scope="col">Scale</th><th scope="col">Refund cases</th><th scope="col">Value of time saved</th></tr></thead>
+<caption>Illustrative annual revenue by orders recovered</caption>
+<thead><tr><th scope="col">Orders recovered</th><th scope="col">Devices sold</th><th scope="col">Additional revenue</th></tr></thead>
 <tbody>
-<tr><th scope="row">Pilot team</th><td>120</td><td>$120</td></tr>
-<tr><th scope="row">Regional</th><td>1,200</td><td>$1,200</td></tr>
-<tr><th scope="row">Nationwide</th><td>12,000</td><td><strong>$12,000</strong></td></tr>
+<tr><th scope="row">10</th><td>10,000</td><td>$5 million</td></tr>
+<tr><th scope="row">20</th><td>20,000</td><td><strong>$10 million</strong></td></tr>
+<tr><th scope="row">30</th><td>30,000</td><td>$15 million</td></tr>
 </tbody>
 </table>
-<p>Illustrative quarterly volumes. Reducing repeat contacts by 10 per 100 refund cases saves 12, 120, or 1,200 contacts at these volumes. At 15 minutes per contact and $40 per staff hour, each avoided contact saves $10 in staff time.</p>
+<p>These projections show revenue before costs. Review gross profit after any added shipping costs when deciding whether to expand.</p>
 </div>
 </section>
 </div>
 <hr class="impact-divider">
 <section class="impact-detail" id="business-environment">
 <h3>What needs to change</h3>
-<p>A posted account credit can look like a completed refund to a customer who received money back on their card last year. If the difference and expected timing are unclear, they may contact support again.</p>
+<p>A split order can meet the delivery deadline and still fall short of what the customer can deploy. Confirm whether all devices must be the same model before offering substitutes.</p>
 <h3>Where to grow</h3>
-<p><strong>Explain the refund option.</strong> Confirm whether the customer wants the money returned to their original payment method. Record when the refund is issued and the timing you shared.</p>
-<p><strong>Connect your next step to a result.</strong> Review your response below. Does it explain where the $650 is now and when the customer can expect the money back after the refund is issued?</p>
+<p><strong>Check for matching stock.</strong> Find out whether warehouses can supply the same model in time and what it would cost to ship the order.</p>
+<p><strong>Connect your next step to a result.</strong> What would the pilot need to show about recovered sales and gross profit before leadership expands it?</p>
 </section>
-<p><strong>Sample manager follow-up</strong></p><blockquote data-listen="Manager follow-up">Acknowledge that the customer received a card refund last year. Explain that the $650 currently appears as an account credit, offer to request the refund to their original payment method, and share the expected processing time.</blockquote>
+<p><strong>Sample manager follow-up</strong></p><blockquote data-listen="Manager follow-up">Ask whether the customer can deploy more than one device model. If they need a match, check whether you can reserve enough of one model across warehouses and still meet the deadline and minimum margin.</blockquote>
+<p><strong>Your first perspective</strong></p><p class="response" id="report-perspective"></p>
 <p><strong>Your next step</strong></p><p class="response" id="reflection"></p>
 <div class="report-actions">
   <button type="button" id="edit-report"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m4 16-1 5 5-1L20 8a2.1 2.1 0 0 0-4-4L4 16Z"/><path d="m14 6 4 4"/></svg> Edit next step</button>
@@ -486,6 +486,7 @@ get('second').onsubmit=event=>{
   event.preventDefault();
   const input=get('reconsider');
   if(!input.value.trim()){input.focus();return;}
+  get('report-perspective').textContent=get('saved').textContent;
   get('reflection').textContent=input.value.trim();
   history.pushState({ impactReport: true }, '', '#business-impact-report');
   showImpactReport(true);
@@ -625,8 +626,8 @@ function buildImpactPdf(Pdf, nextStep, followUp, impactSections){
   }
   write('How Do You Think?',23,'times');
   write(get('impact-report-title').textContent,17,'times');
-  write('Billing rollout',11);
-  for(const [label,body] of [...impactSections,['Manager follow-up',followUp],['Your next step',nextStep]]){
+  write(document.querySelector('.report-scenario').textContent,11);
+  for(const [label,body] of [...impactSections,['Manager follow-up',followUp],['Your first perspective',get('report-perspective').textContent],['Your next step',nextStep]]){
     write(label,14,'times');
     write(body,11);
   }
