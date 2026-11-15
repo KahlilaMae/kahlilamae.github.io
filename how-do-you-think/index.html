@@ -289,6 +289,9 @@ main:has(> .name-entry-screen:not([hidden])){width:min(100%,968px)}
 .manager-stock-bar span:last-child{flex:1;background:#b986a4}
 .manager-stock-numbers{display:grid;grid-template-columns:60% minmax(0,1fr);column-gap:3px}
 .manager-stock-numbers strong{display:block;color:#7a2e5c;font:28px Georgia,serif}
+.perspective-header{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:10px}
+#edit-perspective,#cancel-perspective{background:#fff;color:#7a2e5c;border:1px solid #cfb5c6;border-radius:9px;min-height:44px}
+#employee-impact{margin-bottom:0}
 </style>
 <nav class="site-nav" aria-label="Portfolio">
 
@@ -421,15 +424,23 @@ main:has(> .name-entry-screen:not([hidden])){width:min(100%,968px)}
 </section>
 </div>
 <hr class="impact-divider">
-<section class="impact-detail" id="business-environment">
-<h3>What needs to change</h3>
-<p>A split order can meet the delivery deadline and still fall short of what the customer can deploy. Confirm whether all devices must be the same model before offering substitutes.</p>
-<h3>Where to grow</h3>
-<p><strong>Check for matching stock.</strong> Find out whether warehouses can supply the same model in time and what it would cost to ship the order.</p>
-<p><strong>Connect your next step to a result.</strong> What would the pilot need to show about recovered sales and gross profit before leadership expands it?</p>
+<section class="impact-detail" aria-labelledby="perspective-heading">
+<div class="perspective-header"><h3 id="perspective-heading">Your perspective</h3><button type="button" id="edit-perspective">Edit</button></div>
+<div id="perspective-summary">
+<p class="response" id="report-perspective"></p>
+<strong id="impact-label">Potential business impact</strong>
+<p class="response" id="employee-impact">Select Edit to add the expected impact.</p>
+</div>
+<form id="perspective-form" hidden>
+<label for="perspective-input">Your idea</label>
+<textarea id="perspective-input" required></textarea>
+<label for="impact-type">Impact type</label>
+<select id="impact-type" required><option value="">Select an impact</option><option>Potential revenue</option><option>Potential cost savings</option><option>Potential time savings</option></select>
+<p><label for="impact-input">How would your idea help?</label></p>
+<textarea id="impact-input" required></textarea>
+<button type="submit">Save</button> <button type="button" id="cancel-perspective">Cancel</button>
+</form>
 </section>
-<p><strong>Sample manager follow-up</strong></p><blockquote data-listen="Manager follow-up">Ask whether the customer can deploy more than one device model. If they need a match, check whether you can reserve enough of one model across warehouses and still meet the deadline and minimum margin.</blockquote>
-<p><strong>Your perspective</strong></p><p class="response" id="report-perspective"></p>
 <div class="report-actions">
   <button type="button" id="print-report"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12M8 7l4-4 4 4M5 14v4a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-4"/></svg> Download PDF</button>
 </div>
@@ -611,7 +622,39 @@ get('close-privacy').addEventListener('click',event=>{
   history.back();
 });
 
-function buildImpactPdf(Pdf, followUp, impactSections){
+get('edit-perspective').onclick=()=>{
+  get('perspective-input').value=get('saved').textContent;
+  get('impact-type').value=get('employee-impact').dataset.type || '';
+  get('impact-input').value=get('employee-impact').dataset.value || '';
+  get('perspective-summary').hidden=true;
+  get('edit-perspective').hidden=true;
+  get('perspective-form').hidden=false;
+  get('perspective-input').focus();
+};
+function closePerspectiveEditor(){
+  get('perspective-form').hidden=true;
+  get('perspective-summary').hidden=false;
+  get('edit-perspective').hidden=false;
+  get('edit-perspective').focus();
+}
+get('cancel-perspective').onclick=closePerspectiveEditor;
+get('perspective-form').onsubmit=event=>{
+  event.preventDefault();
+  const idea=get('perspective-input').value.trim();
+  const impact=get('impact-input').value.trim();
+  if(!idea || !impact){get(idea ? 'impact-input' : 'perspective-input').focus();return;}
+  get('saved').textContent=idea;
+  get('initial').value=idea;
+  get('report-perspective').textContent=idea;
+  const type=get('impact-type').value;
+  get('impact-label').textContent=type;
+  const output=get('employee-impact');
+  output.dataset.type=type;
+  output.dataset.value=impact;
+  output.textContent=impact;
+  closePerspectiveEditor();
+};
+function buildImpactPdf(Pdf, impactSections){
   const doc=new Pdf({unit:'mm',format:'a4'});
   let y=24;
   function write(value,size,font='helvetica'){
@@ -627,7 +670,7 @@ function buildImpactPdf(Pdf, followUp, impactSections){
   }
   write('How Do You Think?',23,'times');
   write(document.querySelector('.report-scenario').textContent,11);
-  for(const [label,body] of [...impactSections,['Manager follow-up',followUp],['Your perspective',get('report-perspective').textContent]]){
+  for(const [label,body] of impactSections){
     write(label,14,'times');
     write(body,11);
   }
@@ -643,15 +686,15 @@ function buildImpactPdf(Pdf, followUp, impactSections){
 get('print-report').onclick=()=>{
   const Pdf=window.jspdf?.jsPDF;
   if(!Pdf){alert('The PDF tool did not load. Refresh and try again.');return;}
-  const report=get('result');
-  const followUp=report.querySelector('blockquote').textContent.trim();
   const impactSections=[
     ['Three-month rollout plan', get('growth-plan').innerText.trim()],
     ['The decision', get('leadership-decision').querySelector('p').innerText.trim()],
     ['Business impact at a glance', get('sales-scorecard').innerText.trim()],
-    ['What needs to change', get('business-environment').innerText.trim()]
+    ['Your perspective', get('report-perspective').textContent]
   ];
-  buildImpactPdf(Pdf,followUp,impactSections).save('Business-Impact-Report.pdf');
+  const impact=get('employee-impact').dataset.value;
+  if(impact) impactSections.push([get('impact-label').textContent,impact]);
+  buildImpactPdf(Pdf,impactSections).save('Business-Impact-Report.pdf');
 };
 </script>
 </html>
