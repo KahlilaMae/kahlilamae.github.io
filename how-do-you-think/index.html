@@ -275,6 +275,9 @@ main:has(> .name-entry-screen:not([hidden])){width:min(100%,968px)}
 #impact-estimate tbody tr:last-child{background:#f0e2ed;color:#542744;font-weight:600}
 @media(max-width:760px){.impact-dashboard{grid-template-columns:1fr;gap:0}}
 #first > button,#open-impact-report{display:block;margin-inline-start:auto}
+#first label[for="verification"]{display:block;margin-top:16px}
+.verification-summary{margin-top:16px}
+.verification-summary .response{margin-top:6px}
 .billing-split{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-bottom:16px}
 .billing-split strong{color:#7a2e5c}
 .billing-split p{margin:6px 0 0}
@@ -390,8 +393,11 @@ main:has(> .name-entry-screen:not([hidden])){width:min(100%,968px)}
 <div class="folders" role="group" aria-label="Perspectives"><button id="manager" aria-controls="managerPanel" aria-pressed="true">Policy</button><button id="employee" aria-controls="employeePanel" aria-pressed="false">Your Recommendation</button></div>
 <section class="panel" id="employeePanel" aria-labelledby="employee" hidden>
 <div class="billing-reminder"><div class="billing-split"><div><strong>The policy</strong><p>Customer service can offer an approved in-stock substitute model at the quoted price if the order meets the minimum profit margin.</p><p><strong>The order</strong><br>A business needs <b>15,000 devices</b> for its employees. You can ship 9,000 of the requested model and 6,000 of an approved alternative on time.</p></div><div class="customer-message"><strong><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3"/><path d="M5 20v-2a7 7 0 0 1 14 0v2"/></svg>Customer message</strong><blockquote>“Our IT team can prepare only one device model before rollout. Can you deliver all 15,000 in the same model?”</blockquote></div></div></div>
-<form id="first"><label for="initial"><span>What would you change to recover more orders like this?</span></label><textarea id="initial" required></textarea><button>Save response <span aria-hidden="true">→</span></button></form>
+<form id="first"><label for="initial"><span>What would you change to recover more orders like this?</span></label><textarea id="initial" required></textarea>
+<label for="verification"><span>What would you need to verify before making the offer?</span> <small>(optional)</small></label>
+<textarea id="verification"></textarea><button>Save response <span aria-hidden="true">→</span></button></form>
 <div id="savedWrap" hidden><p class="response" id="saved"></p>
+<div class="verification-summary" id="saved-verification-wrap" hidden><strong>What would you need to verify before making the offer?</strong><p class="response" id="saved-verification"></p></div>
 <button type="button" id="open-impact-report">Business Impact Report <span aria-hidden="true">→</span></button>
 </div>
 </section>
@@ -533,6 +539,7 @@ main:has(> .name-entry-screen:not([hidden])){width:min(100%,968px)}
 <button type="submit" form="perspective-form" id="save-perspective">Save</button>
 </div>
 </div>
+<div class="verification-summary" id="report-verification-wrap" hidden><strong id="report-verification-question">What would you need to verify before making the offer?</strong><p class="response" id="report-verification"></p></div>
 </section>
 <div class="report-actions">
   <details class="report-share" id="report-share">
@@ -590,6 +597,9 @@ get('employee').onclick=()=>showPerspective(false);
 get('manager').onclick=()=>showPerspective(true);
 function saveResponse(value){
   get('saved').textContent=value;
+  const verification=get('verification').value.trim();
+  get('saved-verification').textContent=verification;
+  get('saved-verification-wrap').hidden=!verification;
   get('savedWrap').hidden=false;
   get('first').hidden=true;
   get('open-impact-report').focus();
@@ -602,6 +612,9 @@ get('first').onsubmit=event=>{
 };
 get('open-impact-report').onclick=()=>{
   get('report-perspective').textContent=get('saved').textContent;
+  const verification=get('saved-verification').textContent;
+  get('report-verification').textContent=verification;
+  get('report-verification-wrap').hidden=!verification;
   history.pushState({ impactReport: true }, '', '#business-impact-report');
   showImpactReport(true);
 };
@@ -669,7 +682,7 @@ document.querySelectorAll('[data-listen]').forEach(source=>{
 
 const micIcon="<svg viewBox=\"0 0 24 24\" aria-hidden=\"true\">\n              <path d=\"M12 15a3 3 0 0 0 3-3V6a3 3 0 0 0-6 0v6a3 3 0 0 0 3 3Z\" />\n              <path d=\"M19 11v1a7 7 0 0 1-14 0v-1\" />\n              <path d=\"M12 19v3\" />\n              <path d=\"M8 22h8\" />\n            </svg>";
 const Recognition=window.SpeechRecognition || window.webkitSpeechRecognition;
-for(const id of ['initial']){
+for(const id of ['initial','verification']){
   const field=get(id);
   const button=document.createElement('button');
   const status=document.createElement('small');
@@ -677,7 +690,7 @@ for(const id of ['initial']){
   button.type='button';
   button.className='voice-control';
   button.innerHTML=micIcon+'<span>Speak</span>';
-  button.setAttribute('aria-label','Speak your response');
+  button.setAttribute('aria-label',id==='verification' ? 'Speak your verification response' : 'Speak your recommendation');
   const row=document.createElement('div');
   row.className='speak-row';
   field.before(row);
@@ -807,11 +820,16 @@ reportShare.addEventListener('keydown',event=>{
     reportShareToggle.focus();
   }
 });
+function verificationReportEntry(){
+  return [get('report-verification-question').textContent,get('report-verification').textContent];
+}
 function reportShareText(){
   const lines=['Business Impact Report',document.querySelector('.report-scenario').textContent.trim()];
   if(savedImpactTypes.length) lines.push('Impact type: '+savedImpactTypes.join(', '));
   const idea=get('report-perspective').textContent.trim();
   if(idea) lines.push(idea);
+  const [question,verification]=verificationReportEntry();
+  if(verification) lines.push(question+'\n'+verification);
   return lines.join('\n\n');
 }
 get('share-report-email').onclick=()=>{
@@ -846,6 +864,8 @@ get('print-report').onclick=()=>{
     ['How would your idea help?', get('report-perspective').textContent]
   ];
   if(savedImpactTypes.length) impactSections.splice(-1,0,['Impact type',savedImpactTypes.join(', ')]);
+  const verification=verificationReportEntry();
+  if(verification[1]) impactSections.push(verification);
   buildImpactPdf(Pdf,impactSections).save('Business-Impact-Report.pdf');
 };
 </script>
