@@ -283,8 +283,6 @@ main:has(> .name-entry-screen:not([hidden])){width:min(100%,968px)}
 #first label[for="verification"]{display:block;margin-top:16px}
 .verification-summary{margin-top:16px}
 .verification-summary .response{margin-top:6px}
-/* Match the 16px padding and 1px border around the recommendation response. */
-#result #report-verification{max-width:none;margin-inline:17px}
 .billing-split{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-bottom:16px}
 .billing-split strong{color:#7a2e5c}
 .billing-split p{margin:6px 0 0}
@@ -317,8 +315,8 @@ main:has(> .name-entry-screen:not([hidden])){width:min(100%,968px)}
 .consideration-options{list-style:none;margin:0;padding:0 14px}
 .consideration-options li{padding:10px 0;border-top:1px solid #e6d7df}
 .consideration-options p{margin:2px 0 0;color:#5b4b58}
-#result #report-perspective,#result #perspective-input{width:100%;max-width:none;min-height:160px;background:#fff;border:1px solid #e6d7df;border-radius:12px;padding:14px}
-#perspective-input{resize:vertical}
+#result #report-perspective,#result #perspective-input,#result #report-verification,#result #verification-edit-input{width:100%;max-width:none;min-height:160px;background:#fff;border:1px solid #e6d7df;border-radius:12px;padding:14px}
+#perspective-input,#verification-edit-input{resize:vertical}
 .report-share{position:relative;max-width:100%}
 .report-share summary{display:flex;align-items:center;gap:6px;min-height:44px;padding:8px 0 8px 12px;cursor:pointer;list-style:none;color:var(--muted,#5b4b58);font-size:.9rem}
 .report-share summary::-webkit-details-marker{display:none}
@@ -332,7 +330,7 @@ main:has(> .name-entry-screen:not([hidden])){width:min(100%,968px)}
 .impact-choices{display:flex;flex-wrap:wrap;gap:0 24px}
 .impact-choices label{display:inline-flex;align-items:center;gap:8px;min-height:44px}
 .impact-choices input{width:18px;height:18px;accent-color:#7a2e5c}
-#edit-perspective,#cancel-perspective{background:#fff;color:#7a2e5c;border:1px solid #cfb5c6;border-radius:9px;min-height:44px}
+#edit-perspective,#cancel-perspective,#edit-verification,#cancel-verification{background:#fff;color:#7a2e5c;border:1px solid #cfb5c6;border-radius:9px;min-height:44px}
 
 </style>
 <nav class="site-nav" aria-label="Portfolio">
@@ -547,7 +545,18 @@ main:has(> .name-entry-screen:not([hidden])){width:min(100%,968px)}
 <button type="submit" form="perspective-form" id="save-perspective">Save</button>
 </div>
 </div>
-<div class="verification-summary" id="report-verification-wrap" hidden><strong id="report-verification-question">What would you need to verify before making the offer?</strong><p class="response" id="report-verification"></p></div>
+<div class="perspective-box" id="report-verification-wrap" hidden>
+<strong id="report-verification-question">What would you need to verify before making the offer?</strong>
+<p class="response" id="report-verification"></p>
+<form id="verification-edit-form" hidden>
+<textarea id="verification-edit-input" aria-labelledby="report-verification-question" required></textarea>
+</form>
+<div class="perspective-actions">
+<button type="button" id="cancel-verification" hidden>Cancel</button>
+<button type="button" id="edit-verification">Edit</button>
+<button type="submit" form="verification-edit-form" id="save-verification" disabled>Save</button>
+</div>
+</div>
 </section>
 <div class="report-actions">
   <details class="report-share" id="report-share">
@@ -784,6 +793,32 @@ get('perspective-form').onsubmit=event=>{
   savedImpactTypes=impactChoices.filter(input=>input.checked).map(input=>input.value);
   get('perspective-input').required=false;
   get('save-perspective').textContent='Saved';
+};
+const verificationEditor=get('verification-edit-form');
+const verificationInput=get('verification-edit-input');
+const verificationResponse=get('report-verification');
+function setVerificationEditing(editing){
+  verificationEditor.hidden=!editing;
+  verificationResponse.hidden=editing;
+  get('cancel-verification').hidden=!editing;
+  get('save-verification').disabled=!editing;
+  (editing ? verificationInput : get('edit-verification')).focus();
+}
+get('edit-verification').onclick=()=>{
+  verificationInput.value=verificationResponse.textContent;
+  get('save-verification').textContent='Save';
+  setVerificationEditing(true);
+};
+get('cancel-verification').onclick=()=>setVerificationEditing(false);
+verificationEditor.onsubmit=event=>{
+  event.preventDefault();
+  const value=verificationInput.value.trim();
+  if(!value){verificationInput.focus();return;}
+  get('verification').value=value;
+  get('saved-verification').textContent=value;
+  verificationResponse.textContent=value;
+  get('save-verification').textContent='Saved';
+  setVerificationEditing(false);
 };
 function buildImpactPdf(Pdf, impactSections){
   const doc=new Pdf({unit:'mm',format:'a4'});
