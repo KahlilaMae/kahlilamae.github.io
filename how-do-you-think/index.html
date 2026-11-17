@@ -296,11 +296,12 @@ main:has(> .name-entry-screen:not([hidden])){width:min(100%,968px)}
 #considerations-heading{font:inherit;font-weight:700;margin:0}
 #additional-considerations > p{margin:6px 0 12px}
 .consideration-groups{display:grid;gap:10px}
-.consideration-group{border:1px solid #e6d7df;border-radius:10px;background:#fff}
+.consideration-group{border-radius:10px;background:#f3ecf2}
 .consideration-group summary{display:grid;grid-template-columns:minmax(0,1fr) 18px;gap:12px;align-items:center;padding:12px 14px;cursor:pointer;list-style:none;border-radius:10px}
 .consideration-group summary::-webkit-details-marker{display:none}
 .consideration-group summary:focus-visible{outline:3px solid #9b577e;outline-offset:2px}
-.consideration-group[open] summary{background:#f5edf3;border-radius:10px 10px 0 0}
+.consideration-group summary strong{font-weight:400}
+.consideration-group[open] summary{border-radius:10px 10px 0 0}
 .consideration-group summary svg{width:18px;height:18px;fill:none;stroke:#7a2e5c;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
 .consideration-group[open] summary svg{transform:rotate(180deg)}
 .consideration-options{list-style:none;margin:0;padding:0 14px}
