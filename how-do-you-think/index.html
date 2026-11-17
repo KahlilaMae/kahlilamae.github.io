@@ -404,7 +404,7 @@ main:has(> .name-entry-screen:not([hidden])){width:min(100%,968px)}
 </section>
 <div class="impact-dashboard">
 <section class="impact-detail leadership-decision" id="leadership-decision">
-<h3>The decision</h3><p>Pilot cross-warehouse reservations so customer service can fill at-risk orders with one device model and protect margins.</p>
+<h3>The policy</h3><p>Customer service can offer an approved in-stock substitute model at the quoted price if the order meets the minimum profit margin.</p>
 </section>
 <section class="impact-detail" id="sales-scorecard" aria-labelledby="sales-scorecard-title">
 <h3 id="sales-scorecard-title">Business impact at a glance</h3>
@@ -707,7 +707,7 @@ get('print-report').onclick=()=>{
   if(!Pdf){alert('The PDF tool did not load. Refresh and try again.');return;}
   const impactSections=[
     ['Three-month rollout plan', get('growth-plan').innerText.trim()],
-    ['The decision', get('leadership-decision').querySelector('p').innerText.trim()],
+    ['The policy', get('leadership-decision').querySelector('p').innerText.trim()],
     ['Business impact at a glance', get('sales-scorecard').innerText.trim()],
     ['Your perspective', get('report-perspective').textContent]
   ];
