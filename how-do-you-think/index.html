@@ -290,6 +290,23 @@ main:has(> .name-entry-screen:not([hidden])){width:min(100%,968px)}
 .manager-stock-numbers{display:grid;grid-template-columns:60% minmax(0,1fr);column-gap:3px}
 .manager-stock-numbers strong{display:block;color:#7a2e5c;font:28px Georgia,serif}
 .perspective-box{margin:0 0 14px;padding:16px;border:1px solid #d9c4d1;border-radius:12px;background:#fdf9fb}
+#perspective-heading{margin-bottom:32px}
+#perspective-heading ~ .perspective-box{margin:0 0 36px}
+#perspective-heading ~ .perspective-box:last-child{margin-bottom:0}
+#considerations-heading{font:inherit;font-weight:700;margin:0}
+#additional-considerations > p{margin:6px 0 12px}
+.consideration-options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:24px;list-style:none;margin:0;padding:0}
+.consideration-options li{padding:12px 0;border-top:1px solid #e6d7df}
+.consideration-options li:nth-child(-n+2){border-top:0}
+.consideration-options p{margin:3px 0 0;color:#5b4b58}
+#result #report-perspective,#result #perspective-input{width:100%;max-width:none;min-height:160px;background:#fff;border:1px solid #e6d7df;border-radius:12px;padding:14px}
+#perspective-input{resize:vertical}
+.report-actions .report-share-option{background:#fff;border-color:#d9c4d1;color:#7a2e5c}
+#report-share-status{text-align:right;max-width:none;margin:8px 0 0}
+@media(max-width:620px){
+  .consideration-options{grid-template-columns:1fr}
+  .consideration-options li:nth-child(2){border-top:1px solid #e6d7df}
+}
 .perspective-actions{display:flex;justify-content:flex-end;gap:8px}
 .impact-choices{display:flex;flex-wrap:wrap;gap:0 24px}
 .impact-choices label{display:inline-flex;align-items:center;gap:8px;min-height:44px}
@@ -430,6 +447,23 @@ main:has(> .name-entry-screen:not([hidden])){width:min(100%,968px)}
 <hr class="impact-divider">
 <section class="impact-detail" aria-labelledby="perspective-heading">
 <h3 id="perspective-heading">Your perspective</h3>
+<section class="perspective-box" id="additional-considerations" aria-labelledby="considerations-heading">
+<h4 id="considerations-heading">Additional considerations</h4>
+<p>Consider the options below in your response.</p>
+<ul class="consideration-options" role="list">
+<li><strong>Move up an incoming shipment</strong><p>Get the requested model to the customer on time.</p></li>
+<li><strong>Source from an authorized distributor</strong><p>Fill the 6,000-unit gap if the order still meets margin.</p></li>
+<li><strong>Switch to one approved model</strong><p>Offer 15,000 matching units at the quoted price if the order meets margin.</p></li>
+<li><strong>Split delivery using the same model</strong><p>Ship 9,000 now and 6,000 later if the customer can roll out in phases.</p></li>
+<li><strong>Move the rollout date</strong><p>Give IT more time to prepare one model.</p></li>
+<li><strong>Use temporary or existing devices</strong><p>Keep employees working until the rest arrive.</p></li>
+<li><strong>Have the vendor prep and test substitutes</strong><p>Ease IT’s workload if the customer accepts two models.</p></li>
+<li><strong>Reallocate stock from a later order</strong><p>Fill the gap if the later order can still ship as agreed.</p></li>
+<li><strong>Request priority production</strong><p>Ask for 6,000 more units if timing and margin allow.</p></li>
+<li><strong>Offer certified refurbished units</strong><p>Fill the gap with the same model if the customer accepts refurbished units.</p></li>
+<li><strong>Offer a newer model for the full order</strong><p>Keep one model and stay on schedule if stock and pricing work.</p></li>
+</ul>
+</section>
 <div class="perspective-box" role="group" aria-labelledby="impact-label">
 <strong id="impact-label">Impact type</strong>
 <div class="impact-choices" id="impact-type">
@@ -441,7 +475,7 @@ main:has(> .name-entry-screen:not([hidden])){width:min(100%,968px)}
 </div>
 </div>
 <div class="perspective-box">
-<strong id="perspective-question">How would your perspective help?</strong>
+<strong id="perspective-question">How would your idea help?</strong>
 <div id="perspective-summary">
 <p class="response" id="report-perspective"></p>
 
@@ -457,8 +491,12 @@ main:has(> .name-entry-screen:not([hidden])){width:min(100%,968px)}
 </div>
 </section>
 <div class="report-actions">
-  <button type="button" id="print-report"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12M8 7l4-4 4 4M5 14v4a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-4"/></svg> Download PDF</button>
+  <button type="button" class="report-share-option" id="share-report-slack"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3.5a1.7 1.7 0 0 1 3.4 0v5.1H9zM9 10h3.4v4H9zM14 3.5h2.1a1.7 1.7 0 0 1 0 3.4H14zM14 8.6h6.5a1.7 1.7 0 0 1 0 3.4H14zM20.5 14a1.7 1.7 0 0 1 0 3.4h-5.1V14zM14 14v6.5a1.7 1.7 0 0 1-3.4 0V14zM8.6 20.5H7a1.7 1.7 0 0 1 0-3.4h1.6zM8.6 15.4H3.5a1.7 1.7 0 0 1 0-3.4h5.1zM3.5 10a1.7 1.7 0 0 1 0-3.4h5.1V10zM10 10H8.6V8.6H10z"/></svg> Slack</button>
+  <button type="button" class="report-share-option" id="share-report-email"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m3 7 9 7 9-7"></path></svg> Email</button>
+  <button type="button" class="report-share-option" id="share-report-text"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="15" rx="3"></rect><path d="M8 19v2l4-2M7 9h10M7 13h7"></path></svg> Text</button>
+  <button type="button" id="print-report"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v11M8 10l4 4 4-4M5 15v3a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-3"/></svg> Download PDF</button>
 </div>
+<p id="report-share-status" role="status" hidden><span id="report-share-message"></span> <a href="https://app.slack.com/" target="_blank" rel="noopener" id="open-report-slack" hidden>Open Slack</a></p>
 </section>
 <footer class="copyright">© 2026 Kahlila Mae Liverpool. All rights reserved.</footer>
 </main>
@@ -702,6 +740,34 @@ function buildImpactPdf(Pdf, impactSections){
   }
   return doc;
 }
+function reportShareText(){
+  const lines=['Business Impact Report',document.querySelector('.report-scenario').textContent.trim()];
+  if(savedImpactTypes.length) lines.push('Impact type: '+savedImpactTypes.join(', '));
+  const idea=get('report-perspective').textContent.trim();
+  if(idea) lines.push(idea);
+  return lines.join('\n\n');
+}
+get('share-report-email').onclick=()=>{
+  window.location.href='mailto:?subject='+encodeURIComponent('Business Impact Report')+'&body='+encodeURIComponent(reportShareText());
+};
+get('share-report-text').onclick=()=>{
+  window.location.href='sms:?body='+encodeURIComponent(reportShareText());
+};
+get('share-report-slack').onclick=async()=>{
+  const status=get('report-share-status');
+  const message=get('report-share-message');
+  const link=get('open-report-slack');
+  link.hidden=true;
+  try{
+    await navigator.clipboard.writeText(reportShareText());
+    message.textContent='Report summary copied. Paste it into your Slack message.';
+    link.hidden=false;
+  }catch{
+    message.textContent='Could not copy the report summary. You can download the PDF and attach it in Slack.';
+    link.hidden=false;
+  }
+  status.hidden=false;
+};
 get('print-report').onclick=()=>{
   const Pdf=window.jspdf?.jsPDF;
   if(!Pdf){alert('The PDF tool did not load. Refresh and try again.');return;}
@@ -709,7 +775,8 @@ get('print-report').onclick=()=>{
     ['Three-month rollout plan', get('growth-plan').innerText.trim()],
     ['The policy', get('leadership-decision').querySelector('p').innerText.trim()],
     ['Business impact at a glance', get('sales-scorecard').innerText.trim()],
-    ['Your perspective', get('report-perspective').textContent]
+    ['Additional considerations', Array.from(get('additional-considerations').querySelectorAll('li'), item => item.innerText.trim()).join('\n\n')],
+    ['How would your idea help?', get('report-perspective').textContent]
   ];
   if(savedImpactTypes.length) impactSections.splice(-1,0,['Impact type',savedImpactTypes.join(', ')]);
   buildImpactPdf(Pdf,impactSections).save('Business-Impact-Report.pdf');
