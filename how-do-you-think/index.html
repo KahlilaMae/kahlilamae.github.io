@@ -387,13 +387,15 @@ main:has(> .name-entry-screen:not([hidden])){width:min(100%,968px)}
 <p id="scenario-subtitle" tabindex="-1" style="margin:0 0 18px;color:#7a2e5c;font-weight:600">When Stock Runs Out</p>
 <aside id="billing-scenario" class="scenario project-card"><div class="scenario-body"><div class="billing-split"><div><strong>The policy</strong><p>Customer service can offer an approved in-stock substitute model at the quoted price if the order meets the minimum profit margin.</p><p><strong>The order</strong><br>A business needs <b>15,000 devices</b> for its employees. You can ship 9,000 of the requested model and 6,000 of an approved alternative on time.</p></div><div class="customer-message"><strong><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3"/><path d="M5 20v-2a7 7 0 0 1 14 0v2"/></svg>Customer message</strong><blockquote>“Our IT team can prepare only one device model before rollout. Can you deliver all 15,000 in the same model?”</blockquote></div></div><button id="start">Give your perspective <span aria-hidden="true">→</span></button></div></aside>
 <div class="folder" id="folder" hidden>
-<div class="folders" role="group" aria-label="Perspectives"><button id="employee" aria-controls="employeePanel" aria-pressed="true">Employee</button><button id="manager" aria-controls="managerPanel" aria-pressed="false" disabled>Manager</button></div>
-<section class="panel" id="employeePanel" aria-labelledby="employee">
+<div class="folders" role="group" aria-label="Perspectives"><button id="manager" aria-controls="managerPanel" aria-pressed="true">Manager</button><button id="employee" aria-controls="employeePanel" aria-pressed="false">Employee</button></div>
+<section class="panel" id="employeePanel" aria-labelledby="employee" hidden>
 <div class="billing-reminder"><div class="billing-split"><div><strong>The policy</strong><p>Customer service can offer an approved in-stock substitute model at the quoted price if the order meets the minimum profit margin.</p><p><strong>The order</strong><br>A business needs <b>15,000 devices</b> for its employees. You can ship 9,000 of the requested model and 6,000 of an approved alternative on time.</p></div><div class="customer-message"><strong><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3"/><path d="M5 20v-2a7 7 0 0 1 14 0v2"/></svg>Customer message</strong><blockquote>“Our IT team can prepare only one device model before rollout. Can you deliver all 15,000 in the same model?”</blockquote></div></div></div>
 <form id="first"><label for="initial"><span>What would you change to recover more orders like this?</span></label><textarea id="initial" required></textarea><button>Save response <span aria-hidden="true">→</span></button></form>
-<div id="savedWrap" hidden><p class="response" id="saved"></p></div>
+<div id="savedWrap" hidden><p class="response" id="saved"></p>
+<button type="button" id="open-impact-report">Business Impact Report <span aria-hidden="true">→</span></button>
+</div>
 </section>
-<section class="panel" id="managerPanel" aria-labelledby="manager" hidden>
+<section class="panel" id="managerPanel" aria-labelledby="manager">
 <h3>The Business Reason</h3>
 <p>When the requested model is short on stock, we risk losing the whole order.</p>
 <figure class="manager-stock">
@@ -402,8 +404,6 @@ main:has(> .name-entry-screen:not([hidden])){width:min(100%,968px)}
 <div class="manager-stock-numbers"><div><strong>9,000</strong>Requested model</div><div><strong>6,000</strong>Approved substitute</div></div>
 </figure>
 <p><strong>Why we approved substitutes.</strong> Customer service can fill more orders on time at the quoted price. Every order still has to meet the minimum profit margin.</p>
-<button type="button" id="open-impact-report">Business Impact Report <span aria-hidden="true">→</span></button>
-
 </section>
 </div>
 <footer id="scenario-links" class="project-links" aria-label="Project information">
@@ -575,13 +575,14 @@ function showResponseScreen(visible) {
   get('scenario-links').hidden=visible;
   get('folder').hidden=!visible;
   const target=visible
-    ? (get('first').hidden ? get('manager') : get('employee'))
+    ? (get('managerPanel').hidden ? get('employee') : get('manager'))
     : get('start');
   target.focus({ preventScroll: true });
   window.scrollTo(0, 0);
 }
 get('start').onclick=()=>{
   history.pushState({ responseScreen: true }, '', '#perspective');
+  showPerspective(true);
   showResponseScreen(true);
 };
 get('employee').onclick=()=>showPerspective(false);
@@ -590,9 +591,7 @@ function saveResponse(value){
   get('saved').textContent=value;
   get('savedWrap').hidden=false;
   get('first').hidden=true;
-  get('manager').disabled=false;
-  showPerspective(true);
-  get('manager').focus();
+  get('open-impact-report').focus();
 }
 get('first').onsubmit=event=>{
   event.preventDefault();
@@ -610,6 +609,7 @@ function showImpactReport(isReport) {
   window.speechSynthesis?.cancel();
   get('project').hidden=isReport;
   get('result').hidden=!isReport;
+  if (!isReport) showPerspective(false);
   (isReport ? get('result') : get('open-impact-report')).focus({ preventScroll: isReport });
   if (isReport) window.scrollTo(0, 0);
 }
