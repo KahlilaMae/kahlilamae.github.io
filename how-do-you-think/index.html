@@ -294,10 +294,18 @@ main:has(> .name-entry-screen:not([hidden])){width:min(100%,968px)}
 #perspective-heading ~ .perspective-box:last-child{margin-bottom:0}
 #considerations-heading{font:inherit;font-weight:700;margin:0}
 #additional-considerations > p{margin:6px 0 12px}
-.consideration-options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:24px;list-style:none;margin:0;padding:0}
-.consideration-options li{padding:12px 0;border-top:1px solid #e6d7df}
-.consideration-options li:nth-child(-n+2){border-top:0}
-.consideration-options p{margin:3px 0 0;color:#5b4b58}
+.consideration-groups{display:grid;gap:10px}
+.consideration-group{border:1px solid #e6d7df;border-radius:10px;background:#fff}
+.consideration-group summary{display:grid;grid-template-columns:minmax(0,1fr) 18px;gap:12px;align-items:start;padding:12px 14px;cursor:pointer;list-style:none;border-radius:10px}
+.consideration-group summary::-webkit-details-marker{display:none}
+.consideration-group summary:focus-visible{outline:3px solid #9b577e;outline-offset:2px}
+.consideration-group[open] summary{background:#f5edf3;border-radius:10px 10px 0 0}
+.consideration-summary{display:block;margin-top:2px;color:#5b4b58}
+.consideration-group summary svg{width:18px;height:18px;margin-top:4px;fill:none;stroke:#7a2e5c;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.consideration-group[open] summary svg{transform:rotate(180deg)}
+.consideration-options{list-style:none;margin:0;padding:0 14px}
+.consideration-options li{padding:10px 0;border-top:1px solid #e6d7df}
+.consideration-options p{margin:2px 0 0;color:#5b4b58}
 #result #report-perspective,#result #perspective-input{width:100%;max-width:none;min-height:160px;background:#fff;border:1px solid #e6d7df;border-radius:12px;padding:14px}
 #perspective-input{resize:vertical}
 .report-share{position:relative;max-width:100%}
@@ -309,10 +317,6 @@ main:has(> .name-entry-screen:not([hidden])){width:min(100%,968px)}
 .report-share-options button{justify-content:flex-start;width:100%;padding:8px 10px;border:1px solid transparent;border-radius:8px;background:#fff;color:#7a2e5c}
 .report-share-options button:hover,.report-share-options button:focus-visible{background:#f8f2f6}
 #report-share-status{text-align:right;max-width:none;margin:8px 0 0}
-@media(max-width:620px){
-  .consideration-options{grid-template-columns:1fr}
-  .consideration-options li:nth-child(2){border-top:1px solid #e6d7df}
-}
 .perspective-actions{display:flex;justify-content:flex-end;gap:8px}
 .impact-choices{display:flex;flex-wrap:wrap;gap:0 24px}
 .impact-choices label{display:inline-flex;align-items:center;gap:8px;min-height:44px}
@@ -456,19 +460,51 @@ main:has(> .name-entry-screen:not([hidden])){width:min(100%,968px)}
 <section class="perspective-box" id="additional-considerations" aria-labelledby="considerations-heading">
 <h4 id="considerations-heading">Additional considerations</h4>
 <p>Consider the options below in your response.</p>
-<ul class="consideration-options" role="list">
-<li><strong>Move up an incoming shipment</strong><p>Get the requested model to the customer on time.</p></li>
-<li><strong>Source from an authorized distributor</strong><p>Fill the 6,000-unit gap if the order still meets margin.</p></li>
-<li><strong>Switch to one approved model</strong><p>Offer 15,000 matching units at the quoted price if the order meets margin.</p></li>
-<li><strong>Split delivery using the same model</strong><p>Ship 9,000 now and 6,000 later if the customer can roll out in phases.</p></li>
-<li><strong>Move the rollout date</strong><p>Give IT more time to prepare one model.</p></li>
-<li><strong>Use temporary or existing devices</strong><p>Keep employees working until the rest arrive.</p></li>
-<li><strong>Have the vendor prep and test substitutes</strong><p>Ease IT’s workload if the customer accepts two models.</p></li>
-<li><strong>Reallocate stock from a later order</strong><p>Fill the gap if the later order can still ship as agreed.</p></li>
-<li><strong>Request priority production</strong><p>Ask for 6,000 more units if timing and margin allow.</p></li>
-<li><strong>Offer certified refurbished units</strong><p>Fill the gap with the same model if the customer accepts refurbished units.</p></li>
-<li><strong>Offer a newer model for the full order</strong><p>Keep one model and stay on schedule if stock and pricing work.</p></li>
-</ul>
+<div class="consideration-groups">
+<details class="consideration-group">
+  <summary>
+    <span><strong>Find more stock</strong><span class="consideration-summary">Get more of the requested model.</span></span>
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+  </summary>
+  <ul class="consideration-options" role="list">
+    <li><strong>Move up an incoming shipment</strong><p>Get the requested model to the customer on time.</p></li>
+    <li><strong>Source from an authorized distributor</strong><p>Fill the 6,000-unit gap if the order still meets margin.</p></li>
+    <li><strong>Reallocate stock from a later order</strong><p>Fill the gap if the later order can still ship as agreed.</p></li>
+    <li><strong>Request priority production</strong><p>Ask for 6,000 more units if timing and margin allow.</p></li>
+    <li><strong>Offer certified refurbished units</strong><p>Fill the gap with the same model if the customer accepts refurbished units.</p></li>
+  </ul>
+</details>
+<details class="consideration-group">
+  <summary>
+    <span><strong>Offer a different model</strong><span class="consideration-summary">Explore a substitute for some or all of the order.</span></span>
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+  </summary>
+  <ul class="consideration-options" role="list">
+    <li><strong>Switch to one approved model</strong><p>Offer 15,000 matching units at the quoted price if the order meets margin.</p></li>
+    <li><strong>Offer a newer model for the full order</strong><p>Keep one model and stay on schedule if stock and pricing work.</p></li>
+    <li><strong>Have the vendor prep and test substitutes</strong><p>Ease IT’s workload if the customer accepts two models.</p></li>
+  </ul>
+</details>
+<details class="consideration-group">
+  <summary>
+    <span><strong>Adjust the rollout</strong><span class="consideration-summary">Deliver in phases or move the start date.</span></span>
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+  </summary>
+  <ul class="consideration-options" role="list">
+    <li><strong>Split delivery using the same model</strong><p>Ship 9,000 now and 6,000 later if the customer can roll out in phases.</p></li>
+    <li><strong>Move the rollout date</strong><p>Give IT more time to prepare one model.</p></li>
+  </ul>
+</details>
+<details class="consideration-group">
+  <summary>
+    <span><strong>Cover the gap temporarily</strong><span class="consideration-summary">Keep employees working while they wait for devices.</span></span>
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+  </summary>
+  <ul class="consideration-options" role="list">
+    <li><strong>Use temporary or existing devices</strong><p>Keep employees working until the rest arrive.</p></li>
+  </ul>
+</details>
+</div>
 </section>
 <div class="perspective-box" role="group" aria-labelledby="impact-label">
 <strong id="impact-label">Impact type</strong>
@@ -804,7 +840,7 @@ get('print-report').onclick=()=>{
     ['Three-month rollout plan', get('growth-plan').innerText.trim()],
     ['The policy', get('leadership-decision').querySelector('p').innerText.trim()],
     ['Business impact at a glance', get('sales-scorecard').innerText.trim()],
-    ['Additional considerations', Array.from(get('additional-considerations').querySelectorAll('li'), item => item.innerText.trim()).join('\n\n')],
+    ['Additional considerations', Array.from(get('additional-considerations').querySelectorAll('li'), item => Array.from(item.children, part => part.textContent.trim()).join('\n')).join('\n\n')],
     ['How would your idea help?', get('report-perspective').textContent]
   ];
   if(savedImpactTypes.length) impactSections.splice(-1,0,['Impact type',savedImpactTypes.join(', ')]);
