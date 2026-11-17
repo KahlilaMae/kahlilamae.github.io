@@ -275,8 +275,8 @@ main:has(> .name-entry-screen:not([hidden])){width:min(100%,968px)}
 #impact-estimate tbody tr:last-child{background:#f0e2ed;color:#542744;font-weight:600}
 @media(max-width:760px){.impact-dashboard{grid-template-columns:1fr;gap:0}}
 #first > button,#open-impact-report,#to-recommendation{display:block;margin-inline-start:auto}
-#first > .save-response{min-height:44px;background:transparent;color:#673451;border-color:#cbb0c0}
-#first > .save-response:hover{background:#f3e8ee;border-color:#9e6b89}
+#first > .save-response,#to-recommendation{min-height:44px;padding:8px 14px;background:transparent;color:#614257;border:1px solid #dac8d5;font-size:.875rem;font-weight:400}
+#first > .save-response:hover,#to-recommendation:hover{background:#f6edf3;border-color:#b993ab}
 #first label[for="verification"]{display:block;margin-top:16px}
 .verification-summary{margin-top:16px}
 .verification-summary .response{margin-top:6px}
@@ -413,7 +413,7 @@ main:has(> .name-entry-screen:not([hidden])){width:min(100%,968px)}
 </figure>
 <p>Customer service can offer an approved substitute at the quoted price. The order must still meet the minimum profit margin.</p>
 <p>This customer needs all 15,000 devices to be the same model. Before making an offer, check whether one approved model can ship in time.</p>
-<button type="button" id="to-recommendation">Your Recommendation <span aria-hidden="true">→</span></button>
+<button type="button" id="to-recommendation">Your Recommendation</button>
 </section>
 </div>
 <footer id="scenario-links" class="project-links" aria-label="Project information">
