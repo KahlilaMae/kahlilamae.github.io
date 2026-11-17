@@ -330,7 +330,9 @@ main:has(> .name-entry-screen:not([hidden])){width:min(100%,968px)}
 .impact-choices{display:flex;flex-wrap:wrap;gap:0 24px}
 .impact-choices label{display:inline-flex;align-items:center;gap:8px;min-height:44px}
 .impact-choices input{width:18px;height:18px;accent-color:#7a2e5c}
-#edit-perspective,#cancel-perspective,#edit-verification,#cancel-verification{background:#fff;color:#7a2e5c;border:1px solid #cfb5c6;border-radius:9px;min-height:44px}
+#cancel-perspective,#cancel-verification{background:#fff;color:#7a2e5c;border:1px solid #cfb5c6;border-radius:9px;min-height:44px}
+#result .perspective-actions button:is([id^="edit-"],[id^="save-"]){min-height:44px;padding:8px 6px;background:transparent;border:0;border-radius:0;color:#614257;font-size:.875rem;font-weight:400}
+#result .perspective-actions button:is([id^="edit-"],[id^="save-"]):enabled:hover{text-decoration:underline;text-underline-offset:3px}
 
 </style>
 <nav class="site-nav" aria-label="Portfolio">
