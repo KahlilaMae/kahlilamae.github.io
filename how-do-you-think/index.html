@@ -44,7 +44,7 @@ button:not(.quiet):not(.action):not(.folders button){border-radius:999px}
 .scenario-body .listen-row{flex-direction:column;gap:10px;margin:0 0 12px}
 .scenario-body .listen-row p{order:-1}
 .scenario-body .voice-control{background:transparent!important;border-color:transparent!important;padding-left:0!important}
-.scenario-body #start{display:block;margin-inline-start:auto;max-width:100%;min-height:44px;padding-inline:20px;border-radius:999px;background:#862F5E;color:#fff;border-color:#862F5E}
+#billing-scenario #start{margin-inline-start:auto;max-width:100%}
 
 .project-links{display:grid;margin-top:64px}
 .project-links a{display:block;padding:12px 0;border-bottom:1px solid rgba(122,46,92,.14);color:#3a2438;font:400 1.05rem/1.5 "Playfair Display",Georgia,serif;text-decoration:none}
@@ -277,9 +277,9 @@ main:has(> .name-entry-screen:not([hidden])){width:min(100%,968px)}
 #impact-estimate tbody tr:last-child{background:#f0e2ed;color:#542744;font-weight:600}
 @media(max-width:760px){.impact-dashboard{grid-template-columns:1fr;gap:0}}
 #first > button,#open-impact-report,#to-recommendation{display:block;margin-inline-start:auto}
-#first > .save-response,#to-recommendation{display:flex;align-items:center;gap:8px;min-height:44px;padding:8px 0;background:transparent;color:#614257;border:0;font-size:.875rem;font-weight:400}
-#first > .save-response:hover,#to-recommendation:hover{background:transparent;text-decoration:underline;text-underline-offset:3px}
-#first > .save-response svg,#to-recommendation svg{width:18px;height:12px;flex:none;fill:none;stroke:currentColor;stroke-width:1}
+#first > .save-response,#to-recommendation,#billing-scenario #start{display:flex;align-items:center;gap:8px;min-height:44px;padding:8px 0;background:transparent;color:#614257;border:0;font-size:.875rem;font-weight:400}
+#first > .save-response:hover,#to-recommendation:hover,#billing-scenario #start:hover{background:transparent;text-decoration:underline;text-underline-offset:3px}
+#first > .save-response svg,#to-recommendation svg,#billing-scenario #start svg{width:18px;height:12px;flex:none;fill:none;stroke:currentColor;stroke-width:1}
 #first label[for="verification"]{display:block;margin-top:16px}
 .verification-summary{margin-top:16px}
 .verification-summary .response{margin-top:6px}
@@ -393,7 +393,7 @@ main:has(> .name-entry-screen:not([hidden])){width:min(100%,968px)}
 <section id="project" hidden>
 <h1>How Do You Think?</h1>
 <p id="scenario-subtitle" tabindex="-1" style="margin:0 0 18px;color:#7a2e5c;font-weight:600">When Stock Runs Out</p>
-<aside id="billing-scenario" class="scenario project-card"><div class="scenario-body"><div class="billing-split"><div><strong>The policy</strong><p>Customer service can offer an approved in-stock substitute model at the quoted price if the order meets the minimum profit margin.</p><p><strong>The order</strong><br>A business needs <b>15,000 devices</b> for its employees. You can ship 9,000 of the requested model and 6,000 of an approved alternative on time.</p></div><div class="customer-message"><strong><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3"/><path d="M5 20v-2a7 7 0 0 1 14 0v2"/></svg>Customer message</strong><blockquote>“Our IT team can prepare only one device model before rollout. Can you deliver all 15,000 in the same model?”</blockquote></div></div><button id="start">Give your perspective <span aria-hidden="true">→</span></button></div></aside>
+<aside id="billing-scenario" class="scenario project-card"><div class="scenario-body"><div class="billing-split"><div><strong>The policy</strong><p>Customer service can offer an approved in-stock substitute model at the quoted price if the order meets the minimum profit margin.</p><p><strong>The order</strong><br>A business needs <b>15,000 devices</b> for its employees. You can ship 9,000 of the requested model and 6,000 of an approved alternative on time.</p></div><div class="customer-message"><strong><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3"/><path d="M5 20v-2a7 7 0 0 1 14 0v2"/></svg>Customer message</strong><blockquote>“Our IT team can prepare only one device model before rollout. Can you deliver all 15,000 in the same model?”</blockquote></div></div><button id="start" type="button">Your Perspective <svg viewBox="0 0 18 12" aria-hidden="true"><path d="M1 6h15m-5-4 5 4-5 4"/></svg></button></div></aside>
 <div class="folder" id="folder" hidden>
 <div class="folders" role="group" aria-label="Perspectives"><button id="manager" aria-controls="managerPanel" aria-pressed="true">Policy</button><button id="employee" aria-controls="employeePanel" aria-pressed="false">Your Recommendation</button></div>
 <section class="panel" id="employeePanel" aria-labelledby="employee" hidden>
