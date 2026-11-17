@@ -256,6 +256,7 @@ main:has(> .name-entry-screen:not([hidden])){width:min(100%,968px)}
 .sales-metrics dd{margin:0}
 .sales-metrics strong{display:block;font:2rem 'Playfair Display',Georgia,serif;margin:6px 0}
 .sales-metrics span{display:block}
+.sales-metrics strong .revenue-unit{display:inline;font-size:.62em;line-height:1;color:#5b4b58}
 @media(max-width:480px){.sales-metrics{grid-template-columns:1fr}}
 .folders{display:flex;align-items:end;gap:7px}
 .folders button{min-height:54px;padding:10px clamp(12px,3vw,19px);border:1px solid #dac8d5;border-bottom:0;border-radius:13px 13px 0 0;background:#f4f1f4;color:#766775;font:500 clamp(19px,3vw,24px)/1.2 'Playfair Display',Georgia,serif}
@@ -437,7 +438,7 @@ main:has(> .name-entry-screen:not([hidden])){width:min(100%,968px)}
 <p>Annual revenue opportunity across business accounts.</p>
 <dl class="sales-metrics">
 <div><dt>Additional device orders recovered</dt><dd><strong>20</strong><span>1,000 devices per recovered order on average</span></dd></div>
-<div><dt>Modeled annual device revenue</dt><dd><strong>$10M</strong><span>20 recovered orders × 1,000 devices × $500 per device</span></dd></div>
+<div><dt>Modeled annual device revenue</dt><dd><strong><span class="revenue-unit">$</span>10<span class="revenue-unit">M</span></strong><span>20 recovered orders × 1,000 devices × $500 per device</span></dd></div>
 </dl>
 <div class="impact-summary" id="impact-estimate">
 <table>
