@@ -85,7 +85,6 @@ button:not(.quiet):not(.action):not(.folders button){border-radius:999px}
 .report-actions{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:10px;margin-top:18px}
 .report-actions button{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:10px 18px;border-radius:999px;font-size:.9rem;font-weight:500}
 .report-actions svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
-#print-report{background:#862f5e;border-color:#862f5e;color:#fff}
 @media print{
   main{max-width:none;margin:0;padding:0}
   main>*:not(#result),.report-actions,.voice-control{display:none!important}
@@ -301,7 +300,14 @@ main:has(> .name-entry-screen:not([hidden])){width:min(100%,968px)}
 .consideration-options p{margin:3px 0 0;color:#5b4b58}
 #result #report-perspective,#result #perspective-input{width:100%;max-width:none;min-height:160px;background:#fff;border:1px solid #e6d7df;border-radius:12px;padding:14px}
 #perspective-input{resize:vertical}
-.report-actions .report-share-option{background:#fff;border-color:#d9c4d1;color:#7a2e5c}
+.report-share{position:relative;max-width:100%}
+.report-share summary{display:flex;align-items:center;gap:6px;min-height:44px;padding:8px 0 8px 12px;cursor:pointer;list-style:none;color:var(--muted,#5b4b58);font-size:.9rem}
+.report-share summary::-webkit-details-marker{display:none}
+.report-share summary svg{width:14px;height:14px}
+.report-share summary:focus-visible{outline:3px solid #9b577e;outline-offset:3px;border-radius:4px}
+.report-share-options{position:absolute;right:0;top:calc(100% + 4px);z-index:5;display:grid;width:176px;padding:4px;border:1px solid #d9c4d1;border-radius:12px;background:#fff;box-shadow:0 4px 12px #3a24381a}
+.report-share-options button{justify-content:flex-start;width:100%;padding:8px 10px;border:1px solid transparent;border-radius:8px;background:#fff;color:#7a2e5c}
+.report-share-options button:hover,.report-share-options button:focus-visible{background:#f8f2f6}
 #report-share-status{text-align:right;max-width:none;margin:8px 0 0}
 @media(max-width:620px){
   .consideration-options{grid-template-columns:1fr}
@@ -491,10 +497,15 @@ main:has(> .name-entry-screen:not([hidden])){width:min(100%,968px)}
 </div>
 </section>
 <div class="report-actions">
-  <button type="button" class="report-share-option" id="share-report-slack"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3.5a1.7 1.7 0 0 1 3.4 0v5.1H9zM9 10h3.4v4H9zM14 3.5h2.1a1.7 1.7 0 0 1 0 3.4H14zM14 8.6h6.5a1.7 1.7 0 0 1 0 3.4H14zM20.5 14a1.7 1.7 0 0 1 0 3.4h-5.1V14zM14 14v6.5a1.7 1.7 0 0 1-3.4 0V14zM8.6 20.5H7a1.7 1.7 0 0 1 0-3.4h1.6zM8.6 15.4H3.5a1.7 1.7 0 0 1 0-3.4h5.1zM3.5 10a1.7 1.7 0 0 1 0-3.4h5.1V10zM10 10H8.6V8.6H10z"/></svg> Slack</button>
-  <button type="button" class="report-share-option" id="share-report-email"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m3 7 9 7 9-7"></path></svg> Email</button>
-  <button type="button" class="report-share-option" id="share-report-text"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="15" rx="3"></rect><path d="M8 19v2l4-2M7 9h10M7 13h7"></path></svg> Text</button>
-  <button type="button" id="print-report"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v11M8 10l4 4 4-4M5 15v3a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-3"/></svg> Download PDF</button>
+  <details class="report-share" id="report-share">
+    <summary id="report-share-toggle">Share <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+    <div class="report-share-options">
+      <button type="button" class="report-share-option" id="share-report-slack"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3.5a1.7 1.7 0 0 1 3.4 0v5.1H9zM9 10h3.4v4H9zM14 3.5h2.1a1.7 1.7 0 0 1 0 3.4H14zM14 8.6h6.5a1.7 1.7 0 0 1 0 3.4H14zM20.5 14a1.7 1.7 0 0 1 0 3.4h-5.1V14zM14 14v6.5a1.7 1.7 0 0 1-3.4 0V14zM8.6 20.5H7a1.7 1.7 0 0 1 0-3.4h1.6zM8.6 15.4H3.5a1.7 1.7 0 0 1 0-3.4h5.1zM3.5 10a1.7 1.7 0 0 1 0-3.4h5.1V10zM10 10H8.6V8.6H10z"/></svg> Slack</button>
+      <button type="button" class="report-share-option" id="share-report-email"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m3 7 9 7 9-7"></path></svg> Email</button>
+      <button type="button" class="report-share-option" id="share-report-text"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="15" rx="3"></rect><path d="M8 19v2l4-2M7 9h10M7 13h7"></path></svg> Text</button>
+      <button type="button" id="print-report"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v11M8 10l4 4 4-4M5 15v3a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-3"/></svg> Download PDF</button>
+    </div>
+  </details>
 </div>
 <p id="report-share-status" role="status" hidden><span id="report-share-message"></span> <a href="https://app.slack.com/" target="_blank" rel="noopener" id="open-report-slack" hidden>Open Slack</a></p>
 </section>
@@ -740,6 +751,24 @@ function buildImpactPdf(Pdf, impactSections){
   }
   return doc;
 }
+const reportShare=get('report-share');
+const reportShareToggle=get('report-share-toggle');
+reportShare.addEventListener('click',event=>{
+  if(event.target.closest('.report-share-options button')){
+    reportShare.open=false;
+    reportShareToggle.focus();
+  }
+});
+document.addEventListener('click',event=>{
+  if(reportShare.open&&!reportShare.contains(event.target)) reportShare.open=false;
+});
+reportShare.addEventListener('keydown',event=>{
+  if(event.key==='Escape'&&reportShare.open){
+    event.preventDefault();
+    reportShare.open=false;
+    reportShareToggle.focus();
+  }
+});
 function reportShareText(){
   const lines=['Business Impact Report',document.querySelector('.report-scenario').textContent.trim()];
   if(savedImpactTypes.length) lines.push('Impact type: '+savedImpactTypes.join(', '));
