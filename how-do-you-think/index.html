@@ -401,10 +401,10 @@ main:has(> .name-entry-screen:not([hidden])){width:min(100%,968px)}
 <section class="panel" id="employeePanel" aria-labelledby="employee" hidden>
 <div class="billing-reminder"><div class="billing-split"><div><strong>The policy</strong><p>Customer service can offer an approved in-stock substitute model at the quoted price if the order meets the minimum profit margin.</p><p><strong>The order</strong><br>A business needs <b>15,000 devices</b> for its employees. You can ship 9,000 of the requested model and 6,000 of an approved alternative on time.</p></div><div class="customer-message"><strong><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3"/><path d="M5 20v-2a7 7 0 0 1 14 0v2"/></svg>Customer message</strong><blockquote>“Our IT team can prepare only one device model before rollout. Can you deliver all 15,000 in the same model?”</blockquote></div></div></div>
 <form id="first"><label for="initial"><span>What would you change to recover more orders like this?</span></label><textarea id="initial" required></textarea>
-<label for="verification"><span>What would you need to verify before making the offer?</span></label>
+<label for="verification"><span>What should you verify before the offer?</span></label>
 <textarea id="verification"></textarea><button type="submit" class="save-response">Save response <svg viewBox="0 0 18 12" aria-hidden="true"><path d="M1 6h15m-5-4 5 4-5 4"/></svg></button></form>
 <div id="savedWrap" hidden><p class="response" id="saved"></p>
-<div class="verification-summary" id="saved-verification-wrap" hidden><strong>What would you need to verify before making the offer?</strong><p class="response" id="saved-verification"></p></div>
+<div class="verification-summary" id="saved-verification-wrap" hidden><strong>What should you verify before the offer?</strong><p class="response" id="saved-verification"></p></div>
 <button type="button" id="open-impact-report">Business Impact Report <svg viewBox="0 0 18 12" aria-hidden="true"><path d="M1 6h15m-5-4 5 4-5 4"/></svg></button>
 </div>
 </section>
@@ -533,7 +533,7 @@ main:has(> .name-entry-screen:not([hidden])){width:min(100%,968px)}
 </div>
 </div>
 <div class="perspective-box">
-<strong id="perspective-question">How would your idea help?</strong>
+<strong id="perspective-question">What would your idea improve?</strong>
 <div id="perspective-summary">
 <p class="response" id="report-perspective"></p>
 
@@ -548,7 +548,7 @@ main:has(> .name-entry-screen:not([hidden])){width:min(100%,968px)}
 </div>
 </div>
 <div class="perspective-box" id="report-verification-wrap" hidden>
-<strong id="report-verification-question">What would you need to verify before making the offer?</strong>
+<strong id="report-verification-question">What should you verify before the offer?</strong>
 <p class="response" id="report-verification"></p>
 <form id="verification-edit-form" hidden>
 <textarea id="verification-edit-input" aria-labelledby="report-verification-question" required></textarea>
@@ -910,7 +910,7 @@ get('print-report').onclick=()=>{
     ['The policy', get('leadership-decision').querySelector('p').innerText.trim()],
     ['Business impact at a glance', get('sales-scorecard').innerText.trim()],
     ['Additional considerations', Array.from(get('additional-considerations').querySelectorAll('li'), item => Array.from(item.children, part => part.textContent.trim()).join('\n')).join('\n\n')],
-    ['How would your idea help?', get('report-perspective').textContent]
+    ['What would your idea improve?', get('report-perspective').textContent]
   ];
   if(savedImpactTypes.length) impactSections.splice(-1,0,['Impact type',savedImpactTypes.join(', ')]);
   const verification=verificationReportEntry();
