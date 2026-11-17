@@ -296,12 +296,11 @@ main:has(> .name-entry-screen:not([hidden])){width:min(100%,968px)}
 #additional-considerations > p{margin:6px 0 12px}
 .consideration-groups{display:grid;gap:10px}
 .consideration-group{border:1px solid #e6d7df;border-radius:10px;background:#fff}
-.consideration-group summary{display:grid;grid-template-columns:minmax(0,1fr) 18px;gap:12px;align-items:start;padding:12px 14px;cursor:pointer;list-style:none;border-radius:10px}
+.consideration-group summary{display:grid;grid-template-columns:minmax(0,1fr) 18px;gap:12px;align-items:center;padding:12px 14px;cursor:pointer;list-style:none;border-radius:10px}
 .consideration-group summary::-webkit-details-marker{display:none}
 .consideration-group summary:focus-visible{outline:3px solid #9b577e;outline-offset:2px}
 .consideration-group[open] summary{background:#f5edf3;border-radius:10px 10px 0 0}
-.consideration-summary{display:block;margin-top:2px;color:#5b4b58}
-.consideration-group summary svg{width:18px;height:18px;margin-top:4px;fill:none;stroke:#7a2e5c;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.consideration-group summary svg{width:18px;height:18px;fill:none;stroke:#7a2e5c;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
 .consideration-group[open] summary svg{transform:rotate(180deg)}
 .consideration-options{list-style:none;margin:0;padding:0 14px}
 .consideration-options li{padding:10px 0;border-top:1px solid #e6d7df}
@@ -463,7 +462,7 @@ main:has(> .name-entry-screen:not([hidden])){width:min(100%,968px)}
 <div class="consideration-groups">
 <details class="consideration-group">
   <summary>
-    <span><strong>Find more stock</strong><span class="consideration-summary">Get more of the requested model.</span></span>
+    <strong>Find more stock</strong>
     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
   </summary>
   <ul class="consideration-options" role="list">
@@ -476,7 +475,7 @@ main:has(> .name-entry-screen:not([hidden])){width:min(100%,968px)}
 </details>
 <details class="consideration-group">
   <summary>
-    <span><strong>Offer a different model</strong><span class="consideration-summary">Explore a substitute for some or all of the order.</span></span>
+    <strong>Offer a different model</strong>
     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
   </summary>
   <ul class="consideration-options" role="list">
@@ -487,7 +486,7 @@ main:has(> .name-entry-screen:not([hidden])){width:min(100%,968px)}
 </details>
 <details class="consideration-group">
   <summary>
-    <span><strong>Adjust the rollout</strong><span class="consideration-summary">Deliver in phases or move the start date.</span></span>
+    <strong>Adjust the rollout</strong>
     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
   </summary>
   <ul class="consideration-options" role="list">
@@ -497,7 +496,7 @@ main:has(> .name-entry-screen:not([hidden])){width:min(100%,968px)}
 </details>
 <details class="consideration-group">
   <summary>
-    <span><strong>Cover the gap temporarily</strong><span class="consideration-summary">Keep employees working while they wait for devices.</span></span>
+    <strong>Cover the gap</strong>
     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
   </summary>
   <ul class="consideration-options" role="list">
