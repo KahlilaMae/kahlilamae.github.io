@@ -326,7 +326,7 @@ button.scenario-next:hover {
 .manager-stock-numbers{display:grid;grid-template-columns:60% minmax(0,1fr);column-gap:3px}
 .manager-stock-numbers strong{display:block;color:#7a2e5c;font:28px Georgia,serif}
 .perspective-box{margin:0 0 14px;padding:16px;border:1px solid #d9c4d1;border-radius:12px;background:#fdf9fb}
-#perspective-heading{margin-bottom:32px}
+#perspective-heading{margin-bottom:32px;overflow-wrap:anywhere}
 #perspective-heading ~ .perspective-box{margin:0 0 36px}
 #perspective-heading ~ .perspective-box:last-child{margin-bottom:0}
 #considerations-heading{font:inherit;font-weight:700;margin:0}
@@ -609,7 +609,9 @@ const get=id=>document.getElementById(id);
 get('welcome-form').addEventListener('submit',event=>{
   event.preventDefault();
   const field=get('first-name');
-  if(!field.value.trim()){field.focus();return;}
+  const firstName=field.value.trim();
+  if(!firstName){field.focus();return;}
+  get('perspective-heading').textContent=firstName+'’s perspective';
   get('welcome').hidden=true;
   get('project').hidden=false;
   field.value='';
