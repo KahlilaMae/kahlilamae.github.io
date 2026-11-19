@@ -31,7 +31,8 @@
   >
 
 
-  <style>
+  <link rel="stylesheet" href="../assets/project-colors.css">
+<style>
 
     :root {
 
@@ -41,7 +42,7 @@
       --paper: #FBF7FA;
       --card: #FBF7FA;
 
-      --accent: #7A2E5C;
+      --accent: var(--conversation-color);
       --accent-dark: #63244A;
 
       --line: rgba(122,46,92,.18);
@@ -1834,7 +1835,7 @@
       padding: 30px 30px 28px;
       border: 0;
       border-radius: 26px;
-      background: linear-gradient(145deg, #8A315F 0%, #67234A 100%);
+      background: var(--conversation-color);
       color: #FBF7FA;
       text-align: left;
       cursor: pointer;
@@ -1845,13 +1846,7 @@
       transition: transform .22s ease, box-shadow .22s ease, filter .22s ease;
     }
 
-    .conversation-choice:nth-child(2) {
-      background: linear-gradient(145deg, #9A3B70 0%, #742750 100%);
-    }
 
-    .conversation-choice:nth-child(3) {
-      background: linear-gradient(145deg, #7A2E5C 0%, #55203F 100%);
-    }
 
     .conversation-choice:hover,
     .conversation-choice:focus-visible {
@@ -2096,7 +2091,7 @@
 
     .conversation-practice-card {
       padding: 38px;
-      background: linear-gradient(145deg, #87305f 0%, #70254f 100%);
+      background: var(--conversation-color);
       box-shadow: 0 14px 34px rgba(58,36,56,.12);
     }
 
@@ -2981,7 +2976,7 @@
       --muted: #5B4B58;
       --paper: #FBF7FA;
       --card: #FBF7FA;
-      --accent: #862F5E;
+      --accent: var(--conversation-color);
       --accent-dark: #70264F;
       --line: rgba(134,47,94,.18);
       --soft-line: rgba(134,47,94,.14);
@@ -3522,7 +3517,7 @@
       max-width: 760px;
       margin: 58px 0 0;
       padding: 42px 40px 38px;
-      background: linear-gradient(145deg, #8A315F 0%, #67234A 100%);
+      background: var(--conversation-color);
       border-radius: 26px;
       box-shadow: 0 10px 28px rgba(58, 36, 56, .10);
       color: #FBF7FA;
