@@ -3478,7 +3478,7 @@ const scenarioAnalytics = (() => {
       position: relative;
       max-width: 1040px;
       margin: 0 auto;
-      padding: 34px 34px 106px;
+      padding: 34px 34px 24px;
       background: rgba(251,247,250,.92);
       border: 1px solid rgba(134,47,94,.14);
       border-radius: 28px;
@@ -3531,6 +3531,27 @@ const scenarioAnalytics = (() => {
       align-items: flex-end;
       justify-content: flex-end;
       gap: 18px;
+    }
+
+    .report-design-notes {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      width: fit-content;
+      min-height: 44px;
+      margin: 24px 0 0 auto;
+      color: var(--muted);
+      font-size: .9rem;
+      text-decoration: none;
+    }
+
+    .report-design-notes:hover {
+      color: var(--accent);
+    }
+
+    .report-design-notes:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 4px;
     }
 
     .report-practice-actions {
@@ -6291,6 +6312,9 @@ const scenarioAnalytics = (() => {
           </button>
         </div>
       </div>
+      <a class="report-design-notes" href="design-notes/index.html" target="_blank" rel="noopener" aria-label="Design Notes (opens in a new tab)">
+        Design Notes <span aria-hidden="true">→</span>
+      </a>
       </div>
       </div>
       <div class="report-open-actions">
