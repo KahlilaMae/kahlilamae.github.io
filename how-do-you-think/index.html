@@ -234,6 +234,85 @@ button:not(.quiet):not(.action):not(.folders button){border-radius:999px}
 .site-nav .site-nav-link:hover,.site-nav .site-nav-link:focus-visible,.site-nav .site-nav-link.is-current,.site-nav .site-nav-link[aria-current]{color:#7A2E5C;border-bottom-color:currentColor}
 @media print{.site-nav{display:none}}
 main:has(> .name-entry-screen:not([hidden])){width:min(100%,968px)}
+main:has(> #scenario-welcome:not([hidden])) {
+  max-width: 1300px;
+}
+#scenario-welcome {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: center;
+  gap: 24px clamp(24px, 4vw, 56px);
+  padding: clamp(24px, 5vw, 64px);
+  border: 1px solid #e4ccd9;
+  border-radius: clamp(24px, 4vw, 44px);
+}
+.scenario-welcome-copy h1 {
+  font-size: clamp(2.6rem, 6vw, 4.75rem);
+  overflow-wrap: anywhere;
+}
+.scenario-welcome-copy p {
+  margin: 0;
+  max-width: 34ch;
+  font-size: clamp(1.125rem, 2vw, 1.625rem);
+  line-height: 1.45;
+}
+.scenario-welcome-copy p + p {
+  margin-top: clamp(1.25rem, 2.2vw, 1.875rem);
+}
+.scenario-welcome-steps {
+  padding: clamp(20px, 3vw, 38px);
+  background: #f5ebf3;
+  border-radius: 26px;
+}
+.scenario-welcome-steps h2 {
+  margin: 0 0 18px;
+  font-size: clamp(1.8rem, 3.6vw, 2.8rem);
+}
+.scenario-welcome-steps ul {
+  display: grid;
+  gap: 14px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.scenario-welcome-steps li {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: clamp(1rem, 1.55vw, 1.25rem);
+  line-height: 1.4;
+}
+.scenario-welcome-icon {
+  display: grid;
+  flex: 0 0 42px;
+  height: 42px;
+  place-items: center;
+  border-radius: 50%;
+  background: #eedfe9;
+  color: #7a2e5c;
+}
+.scenario-welcome-icon svg {
+  width: 24px;
+  height: 24px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+#scenario-welcome .scenario-next {
+  grid-column: 1 / -1;
+  justify-self: end;
+  width: auto;
+  margin: 0;
+  min-width: 168px;
+}
+@media (max-width: 740px) {
+  #scenario-welcome {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+  }
+}
 .billing-reminder{border-bottom:1px solid rgba(122,46,92,.16);padding-bottom:14px;margin-bottom:16px}
 .billing-reminder strong{color:#7a2e5c}
 .billing-reminder p{margin:5px 0 0}
@@ -415,9 +494,28 @@ button.scenario-next:hover {
 <label class="name-entry-label" for="first-name">What’s your first name?</label>
 <div class="name-entry-control">
 <input class="name-entry-input" id="first-name" autocomplete="given-name" placeholder="Type your first name…" maxlength="80" required>
-<button class="name-entry-submit" type="submit" aria-label="Continue to the scenario">→</button>
+<button class="name-entry-submit" type="submit" aria-label="Continue to the welcome screen">→</button>
 </div>
 </form>
+</section>
+<section id="scenario-welcome" aria-labelledby="scenario-greeting" hidden>
+  <div class="scenario-welcome-copy">
+    <h1 id="scenario-greeting" tabindex="-1"></h1>
+    <p>You’re on the customer service team. The device model your customer ordered is out of stock.</p>
+    <p>How would the new policy shape your response?</p>
+  </div>
+  <section class="scenario-welcome-steps" aria-labelledby="scenario-steps-title">
+    <h2 id="scenario-steps-title">What you’ll do</h2>
+    <ul role="list">
+      <li><span class="scenario-welcome-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 3h8l4 4v14H6zM14 3v5h4M9 12h6m-6 4h6"/></svg></span>Read the context</li>
+      <li><span class="scenario-welcome-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5 9 9 0 0 1-3.8-.8L4 21l1.6-4.5A8.5 8.5 0 1 1 21 11.5Z"/></svg></span>Share your perspective</li>
+      <li><span class="scenario-welcome-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M5 21a7 7 0 0 1 14 0"/></svg></span>See the manager’s reasoning</li>
+      <li><span class="scenario-welcome-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 15h4v6H3zm7-5h4v11h-4zm7-7h4v18h-4z"/></svg></span>View the Business Impact Report</li>
+    </ul>
+  </section>
+  <button type="button" id="begin-scenario" class="scenario-next">
+    <span>Let’s start</span><svg viewBox="0 0 18 12" aria-hidden="true"><path d="M1 6h15m-5-4 5 4-5 4"/></svg>
+  </button>
 </section>
 <section id="project" hidden>
 <h1>How Do You Think?</h1>
@@ -611,11 +709,19 @@ get('welcome-form').addEventListener('submit',event=>{
   const firstName=field.value.trim();
   if(!firstName){field.focus();return;}
   get('perspective-heading').textContent=firstName+'’s perspective';
+  get('scenario-greeting').textContent='Hi '+firstName+'!';
   get('welcome').hidden=true;
-  get('project').hidden=false;
+  get('scenario-welcome').hidden=false;
   field.value='';
-  get('scenario-subtitle').focus();
+  get('scenario-greeting').focus({ preventScroll: true });
+  window.scrollTo(0, 0);
 });
+get('begin-scenario').onclick=()=>{
+  get('scenario-welcome').hidden=true;
+  get('project').hidden=false;
+  get('scenario-subtitle').focus({ preventScroll: true });
+  window.scrollTo(0, 0);
+};
 function showPerspective(isManager){
   window.speechSynthesis?.cancel();
   get('employeePanel').hidden=isManager;
