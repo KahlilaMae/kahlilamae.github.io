@@ -275,38 +275,37 @@ main:has(> .name-entry-screen:not([hidden])){width:min(100%,968px)}
 #impact-estimate tbody tr:nth-child(2){background:#faf2f8}
 #impact-estimate tbody tr:last-child{background:#f0e2ed;color:#542744;font-weight:600}
 @media(max-width:760px){.impact-dashboard{grid-template-columns:1fr;gap:0}}
+.scenario button.scenario-next,
 button.scenario-next {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 10px;
   max-width: 100%;
   min-height: 44px;
   margin-inline-start: auto;
-  padding: 5px 18px 5px 5px;
-  border: 0;
-  background: #7a2e5c;
+  padding: 9px 21px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  background: #862f5e;
   color: #fbf7fa;
-  box-shadow: 0 4px 10px rgba(58,36,56,.14);
-  font-size: .9375rem;
-  font-weight: 500;
-  line-height: 1.25;
+  box-shadow: 0 5px 16px rgba(58,36,56,.15), 0 2px 5px rgba(58,36,56,.08);
+  font: 500 .9375rem/1.25 'DM Sans', Arial, sans-serif;
   text-align: left;
 }
+.scenario button.scenario-next:hover,
 button.scenario-next:hover {
-  background: #67244f;
+  background: #6f254d;
 }
 .scenario-next svg {
-  box-sizing: border-box;
   flex: none;
-  width: 32px;
-  height: 32px;
-  padding: 7px;
-  border-radius: 50%;
-  background: #fbf7fa;
-  color: #7a2e5c;
+  width: 18px;
+  height: 12px;
   fill: none;
   stroke: currentColor;
   stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 #first label[for="verification"]{display:block;margin-top:16px}
 .verification-summary{margin-top:16px}
@@ -423,17 +422,17 @@ button.scenario-next:hover {
 <section id="project" hidden>
 <h1>How Do You Think?</h1>
 <p id="scenario-subtitle" tabindex="-1" style="margin:0 0 18px;color:#7a2e5c;font-weight:600">When Stock Runs Out</p>
-<aside id="billing-scenario" class="scenario project-card"><div class="scenario-body"><div class="billing-split"><div><strong>The policy</strong><p>Customer service can offer an approved in-stock substitute model at the quoted price if the order meets the minimum profit margin.</p><p><strong>The order</strong><br>A business needs <b>15,000 devices</b> for its employees. You can ship 9,000 of the requested model and 6,000 of an approved alternative on time.</p></div><div class="customer-message"><strong><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3"/><path d="M5 20v-2a7 7 0 0 1 14 0v2"/></svg>Customer message</strong><blockquote>“Our IT team can prepare only one device model before rollout. Can you deliver all 15,000 in the same model?”</blockquote></div></div><button id="start" type="button" class="scenario-next"><svg viewBox="0 0 18 12" aria-hidden="true"><path d="M1 6h15m-5-4 5 4-5 4"/></svg><span>Review the policy</span></button></div></aside>
+<aside id="billing-scenario" class="scenario project-card"><div class="scenario-body"><div class="billing-split"><div><strong>The policy</strong><p>Customer service can offer an approved in-stock substitute model at the quoted price if the order meets the minimum profit margin.</p><p><strong>The order</strong><br>A business needs <b>15,000 devices</b> for its employees. You can ship 9,000 of the requested model and 6,000 of an approved alternative on time.</p></div><div class="customer-message"><strong><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3"/><path d="M5 20v-2a7 7 0 0 1 14 0v2"/></svg>Customer message</strong><blockquote>“Our IT team can prepare only one device model before rollout. Can you deliver all 15,000 in the same model?”</blockquote></div></div><button id="start" type="button" class="scenario-next"><span>Review the policy</span><svg viewBox="0 0 18 12" aria-hidden="true"><path d="M1 6h15m-5-4 5 4-5 4"/></svg></button></div></aside>
 <div class="folder" id="folder" hidden>
 <div class="folders" role="group" aria-label="Perspectives"><button id="manager" aria-controls="managerPanel" aria-pressed="true">Policy</button><button id="employee" aria-controls="employeePanel" aria-pressed="false">Your Recommendation</button></div>
 <section class="panel" id="employeePanel" aria-labelledby="employee" hidden>
 <div class="billing-reminder"><div class="billing-split"><div><strong>The policy</strong><p>Customer service can offer an approved in-stock substitute model at the quoted price if the order meets the minimum profit margin.</p><p><strong>The order</strong><br>A business needs <b>15,000 devices</b> for its employees. You can ship 9,000 of the requested model and 6,000 of an approved alternative on time.</p></div><div class="customer-message"><strong><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3"/><path d="M5 20v-2a7 7 0 0 1 14 0v2"/></svg>Customer message</strong><blockquote>“Our IT team can prepare only one device model before rollout. Can you deliver all 15,000 in the same model?”</blockquote></div></div></div>
 <form id="first"><label for="initial"><span>What would you change to recover more orders like this?</span></label><textarea id="initial" required></textarea>
 <label for="verification"><span>What should you verify before the offer?</span></label>
-<textarea id="verification"></textarea><button type="submit" class="scenario-next"><svg viewBox="0 0 18 12" aria-hidden="true"><path d="M1 6h15m-5-4 5 4-5 4"/></svg><span>Save your response</span></button></form>
+<textarea id="verification"></textarea><button type="submit" class="scenario-next"><span>Save your response</span><svg viewBox="0 0 18 12" aria-hidden="true"><path d="M1 6h15m-5-4 5 4-5 4"/></svg></button></form>
 <div id="savedWrap" hidden><p class="response" id="saved"></p>
 <div class="verification-summary" id="saved-verification-wrap" hidden><strong>What should you verify before the offer?</strong><p class="response" id="saved-verification"></p></div>
-<button type="button" id="open-impact-report" class="scenario-next"><svg viewBox="0 0 18 12" aria-hidden="true"><path d="M1 6h15m-5-4 5 4-5 4"/></svg><span>See your Business Impact Report</span></button>
+<button type="button" id="open-impact-report" class="scenario-next"><span>See your Business Impact Report</span><svg viewBox="0 0 18 12" aria-hidden="true"><path d="M1 6h15m-5-4 5 4-5 4"/></svg></button>
 </div>
 </section>
 <section class="panel" id="managerPanel" aria-labelledby="manager">
@@ -446,7 +445,7 @@ button.scenario-next:hover {
 </figure>
 <p>Customer service can offer an approved substitute at the quoted price. The order must still meet the minimum profit margin.</p>
 <p>This customer needs all 15,000 devices to be the same model. Before making an offer, check whether one approved model can ship in time.</p>
-<button type="button" id="to-recommendation" class="scenario-next"><svg viewBox="0 0 18 12" aria-hidden="true"><path d="M1 6h15m-5-4 5 4-5 4"/></svg><span>Give your recommendation</span></button>
+<button type="button" id="to-recommendation" class="scenario-next"><span>Give your recommendation</span><svg viewBox="0 0 18 12" aria-hidden="true"><path d="M1 6h15m-5-4 5 4-5 4"/></svg></button>
 </section>
 </div>
 <footer id="scenario-links" class="project-links" aria-label="Project information">
