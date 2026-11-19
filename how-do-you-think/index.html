@@ -398,11 +398,16 @@ button.scenario-next:hover {
 .customer-message blockquote{margin:7px 0 0;padding:0;border:0}
 @media(max-width:580px){.billing-split{grid-template-columns:1fr}}
 .manager-stock{margin:18px 0;padding:14px 0;border-block:1px solid #e1d2dd}
-.manager-stock-bar{display:flex;height:8px;gap:3px;margin:12px 0;border-radius:12px;overflow:hidden}
-.manager-stock-bar span:first-child{width:60%;background:#7a2e5c}
-.manager-stock-bar span:last-child{flex:1;background:#b986a4}
-.manager-stock-numbers{display:grid;grid-template-columns:60% minmax(0,1fr);column-gap:3px}
+.manager-stock-bar,.manager-stock-numbers{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,2fr);gap:3px}
+.manager-stock-bar{height:8px;margin:12px 0;border-radius:12px;overflow:hidden}
+.manager-stock-bar span:first-child{background:#7a2e5c}
+.manager-stock-bar span:last-child{background:#b986a4}
 .manager-stock-numbers strong{display:block;color:#7a2e5c;font:28px Georgia,serif}
+.policy-title{font-size:clamp(1.9rem,4vw,2.65rem)}
+.policy-questions{margin:0 0 28px}
+.policy-questions div + div{margin-top:16px;padding-top:16px;border-top:1px solid #e1d2dd}
+.policy-questions dt{font-weight:600}
+.policy-questions dd{margin:4px 0 0;max-width:62ch}
 .perspective-box{margin:0 0 14px;padding:16px;border:1px solid #d9c4d1;border-radius:12px;background:#fdf9fb}
 #perspective-heading{margin-bottom:32px;overflow-wrap:anywhere}
 #perspective-heading ~ .perspective-box{margin:0 0 36px}
@@ -501,7 +506,7 @@ button.scenario-next:hover {
 <section id="scenario-welcome" aria-labelledby="scenario-greeting" hidden>
   <div class="scenario-welcome-copy">
     <h1 id="scenario-greeting" tabindex="-1"></h1>
-    <p>You’re on the customer service team. The device model your customer ordered is out of stock.</p>
+    <p>You’re on the sales team. The device model your customer ordered is out of stock.</p>
     <p>How would the new policy shape your response?</p>
   </div>
   <section class="scenario-welcome-steps" aria-labelledby="scenario-steps-title">
@@ -520,11 +525,11 @@ button.scenario-next:hover {
 <section id="project" hidden>
 <h1>How Do You Think?</h1>
 <p id="scenario-subtitle" tabindex="-1" style="margin:0 0 18px;color:#7a2e5c;font-weight:600">When Stock Runs Out</p>
-<aside id="billing-scenario" class="scenario project-card"><div class="scenario-body"><div class="billing-split"><div><strong>The policy</strong><p>Customer service can offer an approved in-stock substitute model at the quoted price if the order meets the minimum profit margin.</p><p><strong>The order</strong><br>A business needs <b>15,000 devices</b> for its employees. You can ship 9,000 of the requested model and 6,000 of an approved alternative on time.</p></div><div class="customer-message"><strong><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3"/><path d="M5 20v-2a7 7 0 0 1 14 0v2"/></svg>Customer message</strong><blockquote>“Our IT team can prepare only one device model before rollout. Can you deliver all 15,000 in the same model?”</blockquote></div></div><button id="start" type="button" class="scenario-next"><span>Review the policy</span><svg viewBox="0 0 18 12" aria-hidden="true"><path d="M1 6h15m-5-4 5 4-5 4"/></svg></button></div></aside>
+<aside id="billing-scenario" class="scenario project-card"><div class="scenario-body"><div class="billing-split"><div><strong>The policy</strong><p>The sales team can offer an approved in-stock substitute model at the quoted price if the order meets the minimum profit margin.</p><p><strong>The order</strong><br>A business needs <b>15,000 devices</b> for its employees. You can ship 9,000 of the requested model and 6,000 of an approved alternative on time.</p></div><div class="customer-message"><strong><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3"/><path d="M5 20v-2a7 7 0 0 1 14 0v2"/></svg>Customer message</strong><blockquote>“Our IT team can prepare only one device model before rollout. Can you deliver all 15,000 in the same model?”</blockquote></div></div><button id="start" type="button" class="scenario-next"><span>Review the policy</span><svg viewBox="0 0 18 12" aria-hidden="true"><path d="M1 6h15m-5-4 5 4-5 4"/></svg></button></div></aside>
 <div class="folder" id="folder" hidden>
 <div class="folders" role="group" aria-label="Perspectives"><button id="manager" aria-controls="managerPanel" aria-pressed="true">Policy</button><button id="employee" aria-controls="employeePanel" aria-pressed="false">Your Recommendation</button></div>
 <section class="panel" id="employeePanel" aria-labelledby="employee" hidden>
-<div class="billing-reminder"><div class="billing-split"><div><strong>The policy</strong><p>Customer service can offer an approved in-stock substitute model at the quoted price if the order meets the minimum profit margin.</p><p><strong>The order</strong><br>A business needs <b>15,000 devices</b> for its employees. You can ship 9,000 of the requested model and 6,000 of an approved alternative on time.</p></div><div class="customer-message"><strong><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3"/><path d="M5 20v-2a7 7 0 0 1 14 0v2"/></svg>Customer message</strong><blockquote>“Our IT team can prepare only one device model before rollout. Can you deliver all 15,000 in the same model?”</blockquote></div></div></div>
+<div class="billing-reminder"><div class="billing-split"><div><strong>The policy</strong><p>The sales team can offer an approved in-stock substitute model at the quoted price if the order meets the minimum profit margin.</p><p><strong>The order</strong><br>A business needs <b>15,000 devices</b> for its employees. You can ship 9,000 of the requested model and 6,000 of an approved alternative on time.</p></div><div class="customer-message"><strong><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3"/><path d="M5 20v-2a7 7 0 0 1 14 0v2"/></svg>Customer message</strong><blockquote>“Our IT team can prepare only one device model before rollout. Can you deliver all 15,000 in the same model?”</blockquote></div></div></div>
 <form id="first"><label for="initial"><span>What would you change to recover more orders like this?</span></label><textarea id="initial" required></textarea>
 <label for="verification"><span>What should you verify before the offer?</span></label>
 <textarea id="verification"></textarea><button type="submit" class="scenario-next"><span>Save your response</span><svg viewBox="0 0 18 12" aria-hidden="true"><path d="M1 6h15m-5-4 5 4-5 4"/></svg></button></form>
@@ -534,15 +539,26 @@ button.scenario-next:hover {
 </div>
 </section>
 <section class="panel" id="managerPanel" aria-labelledby="manager">
-<h3>The Business Reason</h3>
-<p>When the requested model is short on stock, we risk losing the whole order.</p>
+<h3 class="policy-title">The Stock Gap</h3>
 <figure class="manager-stock">
 <figcaption><strong>15,000 devices needed by rollout</strong></figcaption>
 <div class="manager-stock-bar" aria-hidden="true"><span></span><span></span></div>
 <div class="manager-stock-numbers"><div><strong>9,000</strong>Requested model</div><div><strong>6,000</strong>Approved substitute</div></div>
 </figure>
-<p>Customer service can offer an approved substitute at the quoted price. The order must still meet the minimum profit margin.</p>
-<p>This customer needs all 15,000 devices to be the same model. Before making an offer, check whether one approved model can ship in time.</p>
+<dl class="policy-questions">
+  <div>
+    <dt>What can sales offer?</dt>
+    <dd>An approved in-stock model at the quoted price, if the order meets the minimum profit margin.</dd>
+  </div>
+  <div>
+    <dt>Why this policy?</dt>
+    <dd>It gives the customer another option and helps keep the sale profitable.</dd>
+  </div>
+  <div>
+    <dt>What should I check?</dt>
+    <dd>Can one approved model ship all 15,000 devices on time?</dd>
+  </div>
+</dl>
 <button type="button" id="to-recommendation" class="scenario-next"><span>Give your recommendation</span><svg viewBox="0 0 18 12" aria-hidden="true"><path d="M1 6h15m-5-4 5 4-5 4"/></svg></button>
 </section>
 </div>
@@ -572,7 +588,7 @@ button.scenario-next:hover {
 </section>
 <div class="impact-dashboard">
 <section class="impact-detail leadership-decision" id="leadership-decision">
-<h3>The policy</h3><p>Customer service can offer an approved in-stock substitute model at the quoted price if the order meets the minimum profit margin.</p>
+<h3>The policy</h3><p>The sales team can offer an approved in-stock substitute model at the quoted price if the order meets the minimum profit margin.</p>
 </section>
 <section class="impact-detail" id="sales-scorecard" aria-labelledby="sales-scorecard-title">
 <h3 id="sales-scorecard-title">Business impact at a glance</h3>
