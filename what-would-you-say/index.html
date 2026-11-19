@@ -1511,7 +1511,7 @@ const scenarioAnalytics = (() => {
     }
 
     .future-note-question {
-      margin: 0;
+      margin: 0 0 10px;
       max-width: 720px;
       color: var(--ink);
       font-size: .98rem;
@@ -6078,7 +6078,7 @@ const scenarioAnalytics = (() => {
           <div class="future-note-bubble">
             <h2 class="future-note-title">Your next action</h2>
             <p id="reflectionPromptText" class="future-note-question">
-              What is one thing you would do differently in your next conversation?
+              What’s one thing you’ll do differently next time?
             </p>
 
             <div
@@ -6672,7 +6672,7 @@ const scenarioConfigs = {
     speaker: "Customer",
     hearLabel: "Listen to the customer",
     opening: "I've contacted your company three times about this charge. Nobody has fixed it, and now I've been charged again. I'm frustrated and I need someone to actually take accountability.",
-    reflectionPrompt: "What is one thing you would do differently in your next conversation?",
+    reflectionPrompt: "What’s one thing you’ll do differently next time?",
     audio: {
       opening: "./customer-opening.m4a",
       ownership: "./customer-ownership.m4a",
@@ -6759,7 +6759,7 @@ const scenarioConfigs = {
     speaker: "Product Lead",
     hearLabel: "Listen to the product lead",
     opening: "We're scheduled to release the software tomorrow. Late today, we received a report that a small number of users may be losing unsaved work. Engineering has not been able to reproduce the issue, and everything else has passed testing. Leadership is unavailable, and we need to make a recommendation within the hour.",
-    reflectionPrompt: "What is one thing you would do differently in your next conversation?",
+    reflectionPrompt: "What’s one thing you’ll do differently next time?",
     audio: {
       opening: "./software-opening.m4a",
       delayChallenge: "./software-delay-challenge.m4a",
@@ -6838,7 +6838,7 @@ const scenarioConfigs = {
     speaker: "Employee",
     hearLabel: "Listen to the employee",
     opening: "I know I've missed a couple of deadlines, but I've also been covering work that used to belong to two people. I'm still getting things done. I'm not sure why this is suddenly being treated like a performance issue.",
-    reflectionPrompt: "What is one thing you would do differently in your next conversation?",
+    reflectionPrompt: "What’s one thing you’ll do differently next time?",
     audio: {
       opening: "./performance-opening.m4a",
       accountabilityChallenge: "./performance-accountability-challenge.m4a",
@@ -7900,7 +7900,7 @@ function showReflectionStep() {
 
   setText(
     "reflectionPromptText",
-    "What is one thing you would do differently in your next conversation?"
+    "What’s one thing you’ll do differently next time?"
   );
   setText("reflectionStatus", "");
 
